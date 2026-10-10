@@ -27,7 +27,7 @@
   .panel { @apply bg-canvas; }
 
   /* Buttons: square, 2px border, DECA blue */
-  .btn { @apply inline-flex h-10 select-none items-center justify-center gap-2 whitespace-nowrap border-2 px-4 text-[13px] font-semibold tracking-label transition-colors duration-150 disabled:pointer-events-none disabled:opacity-40; }
+  .btn { @apply inline-flex h-10 select-none rounded-soft items-center justify-center gap-2 whitespace-nowrap border-2 px-4 text-[13px] font-semibold tracking-label transition-colors duration-150 disabled:pointer-events-none disabled:opacity-40; }
   .btn-primary { @apply btn border-brand bg-brand text-white hover:border-brand-hover hover:bg-brand-hover; }
   .btn-secondary { @apply btn border-brand bg-transparent text-brand hover:bg-brand hover:text-white; }
   .btn-ghost { @apply btn border-transparent text-ink-2 hover:bg-canvas hover:text-ink; }
@@ -37,13 +37,13 @@
   .btn-lg { @apply h-12 px-6 text-sm; }
 
   /* Labels */
-  .tag { @apply inline-flex items-center bg-tag px-2 py-1 text-[10px] font-bold uppercase leading-none tracking-label text-white; }
-  .badge { @apply inline-flex items-center gap-1 border border-brand/30 bg-tint px-2 py-0.5 text-xs font-semibold text-brand; }
-  .badge-neutral { @apply inline-flex items-center gap-1 border border-line bg-white px-2 py-0.5 text-xs font-medium text-ink-2; }
+  .tag { @apply inline-flex items-center rounded-soft bg-tag px-2 py-1 text-[10px] font-bold uppercase leading-none tracking-label text-white; }
+  .badge { @apply inline-flex items-center gap-1 rounded-soft border border-brand/30 bg-tint px-2 py-0.5 text-xs font-semibold text-brand; }
+  .badge-neutral { @apply inline-flex items-center gap-1 rounded-soft border border-line bg-white px-2 py-0.5 text-xs font-medium text-ink-2; }
 
   /* Forms */
   .field-label { @apply mb-1.5 block text-xs font-semibold text-ink; }
-  .input { @apply h-10 w-full border border-line-strong bg-white px-3 text-sm text-ink placeholder:text-ink-3 transition-colors hover:border-ink-3 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand; }
+  .input { @apply h-10 w-full rounded-soft border border-line-strong bg-white px-3 text-sm text-ink placeholder:text-ink-3 transition-colors hover:border-ink-3 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand; }
   textarea.input { @apply h-auto py-2.5; }
 
   /* Type */
@@ -58,3 +58,9 @@
   .enter { animation: enter .3s cubic-bezier(.16,1,.3,1) both; }
   @keyframes enter { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 }
+
+/* Infinite cluster ticker on Home. Pauses on hover; static for reduced motion. */
+.marquee-track { animation: marquee 38s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }

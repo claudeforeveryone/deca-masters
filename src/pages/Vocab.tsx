@@ -1,16 +1,19 @@
 import { useState } from 'react'
 import { ArrowLeft, ArrowRight, Check, ArrowsClockwise, CheckSquare, Square } from '@phosphor-icons/react'
-import { EVENTS, VOCAB, eventName, eventOf, type EventId } from '../data/mock'
+import { EXAMS, examOf, type ExamId } from '../data/events'
+import { VOCAB } from '../data/questions'
+import { useMyEvent } from '../store'
 import { EmptyState, Meter, PageBand, SectionHeader } from '../components/ui'
 
-type Filter = EventId | 'all'
+type Filter = ExamId | 'all'
 
 export default function Vocab() {
-  const [filter, setFilter] = useState<Filter>('all')
+  const { exam } = useMyEvent()
+  const [filter, setFilter] = useState<Filter>(exam)
   const [i, setI] = useState(0)
   const [flipped, setFlipped] = useState(false)
   const [known, setKnown] = useState<Set<string>>(new Set())
-  const deck = VOCAB.filter((v) => filter === 'all' || v.event === filter)
+  const deck = VOCAB.filter((v) => filter === 'all' || v.exam === filter)
   const card = deck[i % Math.max(deck.length, 1)]
 
   const go = (d: number) => {
@@ -26,19 +29,20 @@ export default function Vocab() {
     })
     go(1)
   }
+  const chips = [{ id: 'all' as Filter, name: 'All terms', color: '#0072CE', fg: '#FFFFFF' }, ...EXAMS.map((x) => ({ ...x, id: x.id as Filter }))]
 
   return (
     <div>
-      <PageBand tag="Study" title="Vocab" description="Flashcards for the terms that show up on cluster exams. Trainers can assign their own decks." />
+      <PageBand tag="Study" title="Vocab" description={`Flashcards for the terms that show up on cluster exams. Starting with the ${examOf(exam).name} exam.`} />
 
       <div className="mb-8 flex flex-wrap gap-2">
-        {[{ id: 'all', name: 'All terms', color: '#0072CE', fg: '#FFFFFF' }, ...EVENTS].map((e) => {
+        {chips.map((e) => {
           const on = filter === e.id
           return (
             <button
               key={e.id}
-              onClick={() => { setFilter(e.id as Filter); setI(0); setFlipped(false) }}
-              className="border-2 px-3 py-1.5 text-[13px] font-semibold transition-colors"
+              onClick={() => { setFilter(e.id); setI(0); setFlipped(false) }}
+              className="rounded-soft border-2 px-3 py-1.5 text-[13px] font-semibold transition-colors"
               style={on ? { background: e.color, borderColor: e.color, color: e.fg } : { borderColor: '#E4E4E4', color: '#333333' }}
             >
               {e.name}
@@ -48,7 +52,7 @@ export default function Vocab() {
       </div>
 
       {!card ? (
-        <div className="panel"><EmptyState icon={<ArrowsClockwise size={20} />} title="No cards for this event yet" body="Pick another event or ask your trainer to assign a deck." /></div>
+        <div className="panel"><EmptyState icon={<ArrowsClockwise size={20} />} title="No cards for this exam yet" body="Pick another exam or ask your trainer to assign a deck." /></div>
       ) : (
         <div className="grid gap-10 lg:grid-cols-[1fr_320px]">
           <div>
@@ -59,17 +63,13 @@ export default function Vocab() {
             >
               <div className="flex w-full items-center justify-between">
                 <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-label">
-                  <span className="h-3 w-3" style={{ background: eventOf(card.event).color }} aria-hidden />
-                  {eventName(card.event)}
+                  <span className="h-3 w-3" style={{ background: examOf(card.exam).color }} aria-hidden />
+                  {examOf(card.exam).name}
                 </span>
                 <span className={`num text-sm ${flipped ? 'text-ink-3' : 'text-white/80'}`}>{(i % deck.length) + 1} / {deck.length}</span>
               </div>
               <div key={String(flipped) + card.term} className="enter flex flex-1 items-center py-8">
-                {flipped ? (
-                  <p className="max-w-[46ch] text-xl leading-relaxed text-ink">{card.def}</p>
-                ) : (
-                  <p className="display text-4xl sm:text-5xl">{card.term}</p>
-                )}
+                {flipped ? <p className="max-w-[46ch] text-xl leading-relaxed text-ink">{card.def}</p> : <p className="display text-4xl sm:text-5xl">{card.term}</p>}
               </div>
               <span className={`text-[13px] font-semibold ${flipped ? 'text-brand' : 'text-white/85'}`}>{flipped ? 'Definition' : 'Click the card to see the definition'}</span>
             </button>

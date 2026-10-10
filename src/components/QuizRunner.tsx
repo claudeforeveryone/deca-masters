@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { CheckCircle, XCircle, Timer, X, ArrowRight, ArrowCounterClockwise } from '@phosphor-icons/react'
-import { eventName, type Question } from '../data/mock'
+import { examOf } from '../data/events'
+import type { Question } from '../data/questions'
 
 export type QuizResult = { correct: number; total: number; seconds: number; wrongIds: string[] }
 
@@ -83,14 +84,14 @@ export default function QuizRunner({ title, questions, timeLimitSec, eloPerCorre
         <div className="min-w-0">
           <p className="truncate text-[11px] font-bold uppercase tracking-label text-brand">{title}</p>
           <p className="text-[13px] text-ink-3">
-            {eventName(q.event)}, {q.instructionalArea}
+            {examOf(q.exam).name}, {q.area}
           </p>
         </div>
         <div className="flex shrink-0 items-center gap-2">
-          <span className={`num inline-flex items-center gap-1.5 rounded-md border px-2 py-1 text-sm ${lowTime ? 'border-bad/30 bg-bad-bg text-bad' : 'border-line text-ink-2'}`}>
+          <span className={`num inline-flex items-center gap-1.5 rounded-soft border px-2 py-1 text-sm ${lowTime ? 'border-bad/30 bg-bad-bg text-bad' : 'border-line text-ink-2'}`}>
             <Timer size={15} /> {fmtTime(remaining ?? elapsed)}
           </span>
-          <span className="num rounded-md border border-line px-2 py-1 text-sm text-ink-2">+{correctSoFar * eloPerCorrect}</span>
+          <span className="num rounded-soft border border-line px-2 py-1 text-sm text-ink-2">+{correctSoFar * eloPerCorrect}</span>
           {onExit && (
             <button onClick={onExit} className="btn-ghost w-9 px-0" aria-label="Exit">
               <X size={18} />
@@ -160,9 +161,8 @@ export default function QuizRunner({ title, questions, timeLimitSec, eloPerCorre
   )
 }
 
-export function ResultCard({ r, eloPerCorrect = 8, title = 'Session complete', onAgain, onDone }: { r: QuizResult; eloPerCorrect?: number; title?: string; onAgain?: () => void; onDone: () => void }) {
+export function ResultCard({ r, delta, title = 'Session complete', onAgain, onDone, note }: { r: QuizResult; delta: number; title?: string; onAgain?: () => void; onDone: () => void; note?: string }) {
   const pct = Math.round((r.correct / r.total) * 100)
-  const delta = r.correct * eloPerCorrect - (r.total - r.correct) * Math.round(eloPerCorrect / 2)
   return (
     <div className="surface enter mx-auto mt-12 max-w-md border-t-4 border-t-brand p-8">
       <p className="text-[11px] font-bold uppercase tracking-label text-brand">{title}</p>
@@ -181,6 +181,7 @@ export function ResultCard({ r, eloPerCorrect = 8, title = 'Session complete', o
           <dd className={`num mt-0.5 font-medium ${delta >= 0 ? 'text-good' : 'text-bad'}`}>{delta >= 0 ? '+' : ''}{delta}</dd>
         </div>
       </dl>
+      {note && <p className="mt-5 text-sm text-ink-3">{note}</p>}
       <div className="mt-8 flex gap-2">
         <button className="btn-primary flex-1" onClick={onDone}>Done</button>
         {onAgain && (

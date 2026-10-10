@@ -1,6 +1,10 @@
 import { Link, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import TopNav from './components/TopNav'
 import Logo from './components/Logo'
+import { useStore } from './store'
+import Welcome from './pages/Welcome'
+import Register from './pages/Register'
+import Login from './pages/Login'
 import Home from './pages/Home'
 import Leaderboard from './pages/Leaderboard'
 import Play from './pages/Play'
@@ -12,25 +16,38 @@ import Me from './pages/Me'
 const FOOTER = [
   { title: 'Practice', links: [['Play', '/play'], ['Vocab', '/vocab'], ['Arena', '/arena']] },
   { title: 'Compete', links: [['Leaderboard', '/leaderboard'], ['Chapter', '/chapter']] },
-  { title: 'Account', links: [['Profile', '/me'], ['Career', '/me']] },
+  { title: 'Account', links: [['Profile', '/me'], ['Create account', '/register']] },
 ]
 
 export default function App() {
   const { pathname } = useLocation()
+  const { signedIn } = useStore()
+
   return (
     <div className="flex min-h-[100dvh] flex-col">
       <TopNav />
       <main key={pathname} className="enter container-page flex-1 pb-20">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/leaderboard" element={<Leaderboard />} />
-          <Route path="/play" element={<Play />} />
-          <Route path="/vocab" element={<Vocab />} />
-          <Route path="/arena" element={<Arena />} />
-          <Route path="/chapter" element={<Chapter />} />
-          <Route path="/me" element={<Me />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
+        {signedIn ? (
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/leaderboard" element={<Leaderboard />} />
+            <Route path="/play" element={<Play />} />
+            <Route path="/vocab" element={<Vocab />} />
+            <Route path="/arena" element={<Arena />} />
+            <Route path="/chapter" element={<Chapter />} />
+            <Route path="/me" element={<Me />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        ) : (
+          <Routes>
+            <Route path="/" element={<Welcome />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        )}
       </main>
       <footer className="bg-navy-footer text-[#8F8F8F]">
         <div className="container-page grid gap-10 py-14 md:grid-cols-[1.4fr_repeat(3,1fr)]">
