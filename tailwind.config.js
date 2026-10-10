@@ -16,7 +16,6 @@ export default {
       },
       fontFamily: {
         sans: ['"Geist Variable"', 'system-ui', 'sans-serif'],
-        mono: ['"Geist Mono Variable"', 'ui-monospace', 'monospace'],
       },
       boxShadow: {
         sm: '0 1px 2px rgba(11,31,58,.05)',
