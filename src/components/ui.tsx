@@ -175,9 +175,14 @@ export const ClusterIcon = ({ id, size = 22 }: { id: ClusterId; size?: number })
   return <I size={size} />
 }
 
+// Each half of the marquee track holds this many copies of the six clusters
+// (3 x 6 x 260px = 4680px), wider than any realistic screen, so the loop never
+// shows a gap. The track scrolls exactly one half, then restarts seamlessly.
+const MARQUEE_SETS = 3
+
 /** Infinite scrolling strip of DECA's six career clusters (deca.org hero bar, animated). */
 export function ClusterMarquee() {
-  const tiles = [...CLUSTERS, ...CLUSTERS]
+  const tiles = Array.from({ length: MARQUEE_SETS * 2 }, () => CLUSTERS).flat()
   return (
     <div className="marquee bleed overflow-hidden" aria-label="DECA career clusters">
       <div className="marquee-track flex w-max">
