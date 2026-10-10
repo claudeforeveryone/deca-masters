@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Sword, PaperPlaneTilt, Check, X, Trophy, MagnifyingGlass, Clock, Lightning, Users } from '@phosphor-icons/react'
 import { EVENTS, ME, PLAYERS, QUESTIONS, type EventId, type Player } from '../data/mock'
 import QuizRunner, { fmtTime, type QuizResult } from '../components/QuizRunner'
-import { Avatar, EmptyState, PageHeader, Segmented } from '../components/ui'
+import { Avatar, EmptyState, PageBand, SectionHeader, Tabs } from '../components/ui'
 
 const MATCH_SECONDS = 150 // 10 questions, 2:30 on the clock
 const FRIENDS = new Set(['p0', 'p2', 'p5', 'p7'])
@@ -45,11 +45,11 @@ export default function Arena() {
   if (opponent && !match)
     return (
       <div>
-        <div className="mx-auto mb-8 flex max-w-2xl items-center justify-between rounded-xl bg-ink px-5 py-4 text-white">
+        <div className="bleed diamond-pattern bg-navy-midnight text-white"><div className="container-page flex max-w-2xl items-center justify-between py-5">
           <Versus p={ME} />
-          <span className="text-xs font-semibold tracking-wide text-tint-3">VS</span>
+          <span className="text-sm font-extrabold tracking-label text-tint-3">VS</span>
           <Versus p={opponent} right />
-        </div>
+        </div></div>
         <QuizRunner title="Arena match" questions={QUESTIONS.slice(0, 10)} timeLimitSec={MATCH_SECONDS} showExplanations={false} eloPerCorrect={12} onFinish={finish} />
       </div>
     )
@@ -59,7 +59,7 @@ export default function Arena() {
     const won = didWin(match)
     const tie = me.correct === them.correct && me.seconds === them.seconds
     return (
-      <div className="surface enter mx-auto max-w-lg p-8">
+      <div className="surface enter mx-auto mt-12 max-w-lg border-t-4 border-t-brand p-8">
         <div className="flex items-center gap-3">
           <span className={`grid h-10 w-10 place-items-center rounded-lg ${won ? 'bg-tint text-brand' : 'bg-canvas text-ink-3'}`}>
             <Trophy size={22} weight={won ? 'fill' : 'regular'} />
@@ -94,42 +94,43 @@ export default function Arena() {
 
   return (
     <div>
-      <PageHeader
+      <PageBand
+        tag="1v1"
         title="Arena"
         description="Challenge anyone to a 1v1. Ten questions, two and a half minutes. Most correct wins, and ties go to the faster player."
       />
 
-      <div className="grid gap-6 lg:grid-cols-[1fr_340px]">
-        <section className="surface">
-          <div className="flex flex-col gap-3 border-b border-line p-4 sm:flex-row sm:items-center sm:justify-between">
-            <Segmented options={LIST_TABS} value={tab} onChange={setTab} size="sm" />
+      <div className="grid gap-12 lg:grid-cols-[1fr_340px]">
+        <section>
+          <Tabs options={LIST_TABS} value={tab} onChange={setTab} />
+          <div className="mt-5 flex flex-col gap-2 sm:flex-row">
+            <label className="relative block flex-1">
+              <span className="sr-only">Search players</span>
+              <MagnifyingGlass size={16} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-ink-3" />
+              <input className="input pl-9" placeholder="Search players" value={q} onChange={(e) => setQ(e.target.value)} />
+            </label>
             <div className="flex gap-2">
-              <label className="relative block flex-1 sm:w-52">
-                <span className="sr-only">Search players</span>
-                <MagnifyingGlass size={15} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-ink-3" />
-                <input className="input h-9 pl-8" placeholder="Search players" value={q} onChange={(e) => setQ(e.target.value)} />
-              </label>
               <label className="sr-only" htmlFor="arena-event">Event</label>
-              <select id="arena-event" className="input h-9 w-auto" value={event} onChange={(e) => setEvent(e.target.value as EventId | 'mixed')}>
+              <select id="arena-event" className="input w-full sm:w-56" value={event} onChange={(e) => setEvent(e.target.value as EventId | 'mixed')}>
                 <option value="mixed">Mixed</option>
                 {EVENTS.map((e) => <option key={e.id} value={e.id}>{e.name}</option>)}
               </select>
             </div>
           </div>
           {list.length === 0 ? (
-            <EmptyState icon={<Users size={18} />} title="No players here" body={tab === 'Online' ? 'Nobody matching is online. Try Everyone.' : 'Try a different search.'} />
+            <div className="panel mt-5"><EmptyState icon={<Users size={20} />} title="No players here" body={tab === 'Online' ? 'Nobody matching is online. Try Everyone.' : 'Try a different search.'} /></div>
           ) : (
-            <ul className="divide-y divide-line">
+            <ul className="mt-5 divide-y divide-line border-y border-line">
               {list.map((p) => {
                 const sent = outgoing.some((o) => o.to.id === p.id)
                 return (
-                  <li key={p.id} className="flex items-center gap-3 px-4 py-3">
+                  <li key={p.id} className="flex items-center gap-4 px-2 py-4">
                     <span className="relative">
                       <Avatar name={p.name} size={36} />
                       {p.online && <span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-white bg-good" aria-label="Online" />}
                     </span>
                     <div className="min-w-0 flex-1">
-                      <p className="truncate text-sm font-medium">
+                      <p className="truncate text-sm font-semibold text-ink">
                         {p.name}
                         {FRIENDS.has(p.id) && <span className="badge-neutral ml-2">Friend</span>}
                       </p>
@@ -147,19 +148,19 @@ export default function Arena() {
           )}
         </section>
 
-        <aside className="space-y-6">
+        <aside className="space-y-10">
           <section>
-            <h2 className="h-section mb-3">Incoming</h2>
+            <SectionHeader title="Incoming challenges" />
             {incoming.length === 0 ? (
-              <div className="surface"><EmptyState icon={<Lightning size={18} />} title="No challenges waiting" /></div>
+              <div className="panel"><EmptyState icon={<Lightning size={20} />} title="No challenges waiting" /></div>
             ) : (
               <ul className="space-y-2">
                 {incoming.map((c) => (
-                  <li key={c.id} className="surface p-4">
+                  <li key={c.id} className="panel p-5">
                     <div className="flex items-center gap-3">
                       <Avatar name={c.from.name} size={32} />
                       <div className="min-w-0 flex-1">
-                        <p className="truncate text-sm font-medium">{c.from.name}</p>
+                        <p className="truncate text-sm font-semibold text-ink">{c.from.name}</p>
                         <p className="truncate text-xs text-ink-3">{eventLabel(c.event)}</p>
                       </div>
                       <span className="num text-xs text-ink-3">{c.from.elo.toLocaleString()}</span>
@@ -180,7 +181,7 @@ export default function Arena() {
 
           {outgoing.length > 0 && (
             <section>
-              <h2 className="h-section mb-3">Sent</h2>
+              <SectionHeader title="Sent" />
               <ul className="surface divide-y divide-line">
                 {outgoing.map((c) => (
                   <li key={c.id} className="flex items-center gap-3 px-4 py-3">
@@ -197,7 +198,7 @@ export default function Arena() {
           )}
 
           <section>
-            <h2 className="h-section mb-3">Recent matches</h2>
+            <SectionHeader title="Recent matches" />
             {history.length === 0 ? (
               <p className="text-sm text-ink-3">Your match results will show up here.</p>
             ) : (

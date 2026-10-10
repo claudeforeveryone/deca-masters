@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Copy, Check, LinkSimple, Megaphone, Newspaper, UserMinus, Prohibit, EnvelopeSimple, Plus, Shuffle, PencilSimple, ShieldCheck, ArrowSquareOut, UserPlus } from '@phosphor-icons/react'
 import { ANNOUNCEMENTS, ATTENDANCE, EVENTS, ME, MY_STATS, PLAYERS, QUESTIONS, eventName, type EventId, type Player } from '../data/mock'
-import { Avatar, Meter, RankRow, Stat, Toggle } from '../components/ui'
+import { Avatar, Meter, PageBand, RankRow, Stat, Toggle } from '../components/ui'
 
 type Role = 'President' | 'Executive' | 'Trainer' | 'Member'
 const TABS = ['Classroom', 'Leaderboard', 'Members', 'Trainers', 'Attendance', 'Insights', 'Assignments'] as const
@@ -23,32 +23,30 @@ export default function Chapter() {
 
   return (
     <div>
-      <header className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-        <div className="flex items-center gap-4">
-          <span className="grid h-12 w-12 place-items-center rounded-xl bg-ink text-lg font-semibold text-white">L</span>
-          <div>
-            <h1 className="text-2xl font-semibold">{CHAPTER_NAME}</h1>
-            <p className="text-sm text-ink-3">Lincoln High, {chapterPlayers().length * 9} members</p>
-          </div>
-        </div>
-        <div className="flex flex-wrap items-center gap-2">
-          <label className="flex items-center gap-2 text-sm text-ink-3">
-            Preview as
-            <select className="input h-9 w-auto" value={viewAs} onChange={(e) => setViewAs(e.target.value as Role)}>
-              {(['President', 'Executive', 'Trainer', 'Member'] as Role[]).map((r) => <option key={r}>{r}</option>)}
-            </select>
-          </label>
-          <button className="btn-secondary" onClick={() => setJoined(false)}>Leave</button>
-        </div>
-      </header>
+      <PageBand
+        tag="Your chapter"
+        title={CHAPTER_NAME}
+        description={`Lincoln High, ${chapterPlayers().length * 9} members. Chapter code ${CODE}.`}
+        actions={
+          <>
+            <label className="flex items-center gap-2 text-sm font-semibold text-white">
+              Preview as
+              <select className="input w-auto border-white text-ink" value={viewAs} onChange={(e) => setViewAs(e.target.value as Role)}>
+                {(['President', 'Executive', 'Trainer', 'Member'] as Role[]).map((r) => <option key={r}>{r}</option>)}
+              </select>
+            </label>
+            <button className="btn-outline-white" onClick={() => setJoined(false)}>Leave</button>
+          </>
+        }
+      />
 
-      <nav className="mb-8 mt-6 flex gap-6 overflow-x-auto border-b border-line" aria-label="Chapter sections">
+      <nav className="mb-10 flex gap-8 overflow-x-auto border-b border-line" aria-label="Chapter sections">
         {visible.map((t) => (
           <button
             key={t}
             onClick={() => setTab(t)}
-            className={`-mb-px whitespace-nowrap border-b-2 pb-3 text-sm font-medium transition-colors ${
-              current === t ? 'border-brand text-ink' : 'border-transparent text-ink-3 hover:text-ink'
+            className={`-mb-px whitespace-nowrap border-b-2 pb-3 text-sm font-semibold transition-colors ${
+              current === t ? 'border-brand text-brand' : 'border-transparent text-ink-3 hover:text-ink'
             }`}
           >
             {t}
@@ -71,10 +69,9 @@ export default function Chapter() {
 
 function JoinOrRegister({ onDone }: { onDone: () => void }) {
   return (
-    <div className="mx-auto max-w-3xl">
-      <h1 className="text-2xl font-semibold sm:text-[28px]">Join your chapter</h1>
-      <p className="mt-1.5 text-ink-3">Your chapter gets its own leaderboard, classroom and trainers.</p>
-      <div className="mt-8 grid gap-4 md:grid-cols-2">
+    <div>
+      <PageBand tag="Chapters" title="Join your chapter" description="Your chapter gets its own leaderboard, classroom and trainers." />
+      <div className="grid gap-6 md:grid-cols-2">
         <form className="surface p-6" onSubmit={(e) => { e.preventDefault(); onDone() }}>
           <h2 className="font-semibold">Have a code?</h2>
           <p className="mt-1 text-sm text-ink-3">Get it from your chapter president, or open their invite link.</p>
@@ -140,7 +137,7 @@ function Classroom({ canPost, isPresident }: { canPost: boolean; isPresident: bo
           {posts.map((a) => {
             const Icon = a.type === 'Link' ? LinkSimple : a.type === 'Newsletter' ? Newspaper : Megaphone
             return (
-              <li key={a.id} className="surface p-5">
+              <li key={a.id} className="panel p-6">
                 <div className="flex items-center gap-2.5">
                   <Avatar name={a.author} size={28} />
                   <div className="min-w-0 flex-1 text-sm">
@@ -149,7 +146,7 @@ function Classroom({ canPost, isPresident }: { canPost: boolean; isPresident: bo
                   </div>
                   <span className="badge-neutral"><Icon size={13} /> {a.type}</span>
                 </div>
-                <h3 className="mt-3 font-semibold">{a.title}</h3>
+                <h3 className="mt-4 text-lg text-brand">{a.title}</h3>
                 {a.body && <p className="mt-1 max-w-[65ch] text-sm leading-relaxed text-ink-2">{a.body}</p>}
                 {a.url && (
                   <a href={a.url} target="_blank" rel="noreferrer" className="link mt-2 inline-flex items-center gap-1 text-sm">
@@ -319,7 +316,7 @@ function Trainers({ isAdmin }: { isAdmin: boolean }) {
         {EVENTS.map((e) => (
           <li key={e.id} className="flex flex-col gap-3 px-5 py-4 sm:flex-row sm:items-center">
             <div className="sm:w-56">
-              <p className="font-medium">{e.name}</p>
+              <p className="flex items-center gap-2.5 font-semibold text-ink"><span className="h-3 w-3" style={{ background: e.color }} aria-hidden />{e.name}</p>
               <p className="num text-xs text-ink-3">{trainers[e.id].length}/2 trainers</p>
             </div>
             <div className="flex flex-1 flex-wrap gap-1.5">

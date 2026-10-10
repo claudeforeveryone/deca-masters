@@ -1,17 +1,19 @@
 // Mock data used until the backend (auth, realtime 1v1, chapters, email) is wired up.
 
+// Colours are DECA's official career cluster colours (deca.org). fg keeps text readable on each.
 export const EVENTS = [
-  { id: 'entrepreneurship', name: 'Entrepreneurship', color: '#0072CE' },
-  { id: 'finance', name: 'Finance', color: '#14406F' },
-  { id: 'marketing', name: 'Marketing', color: '#4FA8F0' },
-  { id: 'hospitality', name: 'Hospitality & Tourism', color: '#1B4F8A' },
-  { id: 'management', name: 'Business Management', color: '#005BA6' },
-  { id: 'core', name: 'Principles & Core', color: '#0A2342' },
+  { id: 'entrepreneurship', name: 'Entrepreneurship', color: '#7C8689', fg: '#FFFFFF' },
+  { id: 'finance', name: 'Finance', color: '#009B46', fg: '#FFFFFF' },
+  { id: 'marketing', name: 'Marketing', color: '#CC1D36', fg: '#FFFFFF' },
+  { id: 'hospitality', name: 'Hospitality & Tourism', color: '#0B74BF', fg: '#FFFFFF' },
+  { id: 'management', name: 'Business Management', color: '#F7BC00', fg: '#141414' },
+  { id: 'core', name: 'Principles & Core', color: '#002D6B', fg: '#FFFFFF' },
 ] as const
 
 export type EventId = (typeof EVENTS)[number]['id']
 
-export const eventName = (id: EventId) => EVENTS.find((e) => e.id === id)!.name
+export const eventOf = (id: EventId) => EVENTS.find((e) => e.id === id)!
+export const eventName = (id: EventId) => eventOf(id).name
 
 export type Player = {
   id: string

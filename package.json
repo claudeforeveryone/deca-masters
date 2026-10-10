@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fontsource-variable/geist": "^5.1.0",
+    "@fontsource-variable/montserrat": "^5.1.0",
     "@phosphor-icons/react": "^2.1.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

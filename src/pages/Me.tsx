@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Trophy, Flame, Crosshair, Sword, BookOpenText, Lightning, Camera, ArrowCounterClockwise, CaretUp, CaretDown, CheckCircle } from '@phosphor-icons/react'
-import { ACHIEVEMENTS, EVENTS, ME, MY_STATS, PAST_EXAMS, PLAYERS, QUESTIONS, eventName } from '../data/mock'
-import { Avatar, EloChart, EmptyState, Meter, RankRow, Segmented, Stat } from '../components/ui'
+import { ACHIEVEMENTS, EVENTS, ME, MY_STATS, PAST_EXAMS, PLAYERS, QUESTIONS, eventName, eventOf } from '../data/mock'
+import { ArrowLink, Avatar, EloChart, EmptyState, Meter, RankRow, SectionHeader, Stat, Tabs } from '../components/ui'
 import QuizRunner, { ResultCard, type QuizResult } from '../components/QuizRunner'
 
 const TABS = ['Overview', 'Career'] as const
@@ -10,40 +10,41 @@ const ACH_ICONS = { trophy: Trophy, flame: Flame, target: Crosshair, swords: Swo
 export default function Me() {
   const [tab, setTab] = useState<(typeof TABS)[number]>('Overview')
   return (
-    <div className="space-y-8">
-      <ProfileHeader />
-      <Segmented options={TABS} value={tab} onChange={setTab} />
-      <div key={tab} className="enter">{tab === 'Overview' ? <Overview /> : <Career />}</div>
+    <div>
+      <ProfileBand />
+      <Tabs options={TABS} value={tab} onChange={setTab} />
+      <div key={tab} className="enter mt-10">{tab === 'Overview' ? <Overview /> : <Career />}</div>
     </div>
   )
 }
 
-function ProfileHeader() {
+function ProfileBand() {
   return (
-    <section className="flex flex-col gap-6 sm:flex-row sm:items-center">
-      <div className="relative w-fit">
-        <Avatar name={ME.name} size={80} />
-        <button className="absolute -bottom-1 -right-1 grid h-8 w-8 place-items-center rounded-full border border-line bg-white text-ink-2 shadow-sm hover:text-ink" aria-label="Change profile photo">
-          <Camera size={15} />
-        </button>
-      </div>
-      <div className="flex-1">
-        <h1 className="text-2xl font-semibold sm:text-[28px]">{ME.name}</h1>
-        <p className="mt-1 text-ink-3">{ME.school}, grade {ME.grade}</p>
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          <span className="badge">{ME.chapter}</span>
-          <span className="badge-neutral">Main event: Marketing</span>
+    <section className="bleed diamond-pattern mb-10 bg-brand text-white">
+      <div className="container-page flex flex-col gap-8 py-10 sm:py-14 lg:flex-row lg:items-end lg:justify-between">
+        <div className="flex items-center gap-6">
+          <div className="relative">
+            <Avatar name={ME.name} size={96} inverse />
+            <button className="absolute -bottom-2 -right-2 grid h-9 w-9 place-items-center bg-navy text-white hover:bg-navy-deep" aria-label="Change profile photo">
+              <Camera size={16} />
+            </button>
+          </div>
+          <div>
+            <h1 className="display text-4xl sm:text-5xl">{ME.name}</h1>
+            <p className="mt-2 text-white/90">{ME.school}, grade {ME.grade}</p>
+            <p className="mt-1 text-sm text-white/80">{ME.chapter}, main event Marketing</p>
+          </div>
         </div>
-      </div>
-      <div className="flex gap-8 sm:text-right">
-        <div>
-          <p className="text-[13px] text-ink-3">ELO</p>
-          <p className="num text-3xl font-semibold">{ME.elo.toLocaleString()}</p>
-        </div>
-        <div>
-          <p className="text-[13px] text-ink-3">Rank</p>
-          <p className="num text-3xl font-semibold">#{MY_STATS.rank}</p>
-        </div>
+        <dl className="flex gap-10">
+          <div>
+            <dt className="text-[11px] font-bold uppercase tracking-label text-white/80">ELO</dt>
+            <dd className="num text-5xl font-extrabold">{ME.elo.toLocaleString()}</dd>
+          </div>
+          <div>
+            <dt className="text-[11px] font-bold uppercase tracking-label text-white/80">Rank</dt>
+            <dd className="num text-5xl font-extrabold">#{MY_STATS.rank}</dd>
+          </div>
+        </dl>
       </div>
     </section>
   )
@@ -55,63 +56,74 @@ function Overview() {
   const sections = [...MY_STATS.bySection].sort((a, b) => b.accuracy - a.accuracy)
 
   return (
-    <div className="space-y-10">
-      <section className="surface grid grid-cols-2 gap-6 p-5 sm:p-6 md:grid-cols-4">
-        <Stat label="Accuracy" value={`${MY_STATS.accuracy}%`} />
-        <Stat label="Questions" value={MY_STATS.questionsDone.toLocaleString()} />
-        <Stat label="Time practiced" value={`${MY_STATS.timeSpentHrs}h`} />
-        <Stat label="Arena record" value={`${MY_STATS.arenaRecord.w}-${MY_STATS.arenaRecord.l}`} />
-        <Stat label="Current streak" value={`${MY_STATS.streak}d`} />
-        <Stat label="Best streak" value={`${MY_STATS.bestStreak}d`} />
-        <Stat label="Best exam" value={`${MY_STATS.bestPaper.score}%`} hint={MY_STATS.bestPaper.name} />
-        <Stat label="Exams taken" value={PAST_EXAMS.length} hint="Full and practice" />
+    <div className="space-y-16">
+      <section className="grid grid-cols-2 gap-px border border-line bg-line md:grid-cols-4">
+        {[
+          ['Accuracy', `${MY_STATS.accuracy}%`, undefined],
+          ['Questions', MY_STATS.questionsDone.toLocaleString(), undefined],
+          ['Time practiced', `${MY_STATS.timeSpentHrs}h`, undefined],
+          ['Arena record', `${MY_STATS.arenaRecord.w}-${MY_STATS.arenaRecord.l}`, 'Wins and losses'],
+          ['Current streak', `${MY_STATS.streak} days`, undefined],
+          ['Best streak', `${MY_STATS.bestStreak} days`, undefined],
+          ['Best exam', `${MY_STATS.bestPaper.score}%`, MY_STATS.bestPaper.name],
+          ['Exams taken', String(PAST_EXAMS.length), 'Full and practice'],
+        ].map(([label, value, hint]) => (
+          <div key={label} className="bg-white p-6">
+            <Stat label={label!} value={value} hint={hint} />
+          </div>
+        ))}
       </section>
 
-      <div className="grid gap-8 lg:grid-cols-[1fr_320px]">
-        <div className="space-y-8">
+      <div className="grid gap-12 lg:grid-cols-[1fr_340px]">
+        <div className="space-y-12">
           <section>
-            <h2 className="h-section mb-4">Accuracy by event</h2>
-            <ul className="space-y-4">
-              {sections.map((s) => (
-                <li key={s.event} className="grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-1.5 sm:grid-cols-[200px_1fr_100px]">
-                  <span className="text-sm font-medium">{eventName(s.event)}</span>
-                  <span className="num text-right text-sm sm:order-last">
-                    {s.accuracy}% <span className="text-xs text-ink-3">of {s.done}</span>
-                  </span>
-                  <div className="col-span-2 sm:col-span-1"><Meter value={s.accuracy} /></div>
-                </li>
-              ))}
+            <SectionHeader title="Accuracy by career cluster" />
+            <ul className="space-y-5">
+              {sections.map((s) => {
+                const e = eventOf(s.event)
+                return (
+                  <li key={s.event} className="grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 sm:grid-cols-[210px_1fr_110px]">
+                    <span className="flex items-center gap-2.5 text-sm font-semibold text-ink">
+                      <span className="h-3 w-3 shrink-0" style={{ background: e.color }} aria-hidden />
+                      {e.name}
+                    </span>
+                    <span className="num text-right text-sm font-semibold text-ink sm:order-last">
+                      {s.accuracy}% <span className="text-xs font-normal text-ink-3">of {s.done}</span>
+                    </span>
+                    <div className="col-span-2 sm:col-span-1"><Meter value={s.accuracy} color={e.color} /></div>
+                  </li>
+                )
+              })}
             </ul>
           </section>
 
-          <section className="surface p-5 sm:p-6">
-            <h2 className="h-section">ELO over time</h2>
-            <div className="mt-5"><EloChart data={MY_STATS.eloHistory} height={160} /></div>
+          <section>
+            <SectionHeader title="ELO over time" action={<span className="num text-sm font-semibold text-good">+{ME.elo - MY_STATS.eloHistory[0]} this season</span>} />
+            <EloChart data={MY_STATS.eloHistory} height={170} />
           </section>
         </div>
 
         <aside>
-          <h2 className="h-section mb-3">Players near you</h2>
-          <div className="surface p-2">
+          <SectionHeader title="Players near you" action={<ArrowLink to="/leaderboard">All</ArrowLink>} />
+          <div className="divide-y divide-line border border-line">
             {around.map((p) => <RankRow key={p.id} p={p} rank={PLAYERS.indexOf(p) + 1} me={p.id === ME.id} />)}
           </div>
         </aside>
       </div>
 
       <section>
-        <h2 className="h-section mb-4">Achievements</h2>
-        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <SectionHeader title="Achievements" />
+        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {ACHIEVEMENTS.map((a, i) => {
             const Icon = ACH_ICONS[a.icon as keyof typeof ACH_ICONS]
+            const feature = i === 0
             return (
-              <li key={a.title} className={`flex items-start gap-4 rounded-xl p-4 ${i === 0 ? 'bg-ink text-white' : 'surface'}`}>
-                <span className={`grid h-10 w-10 shrink-0 place-items-center rounded-lg ${i === 0 ? 'bg-white/10 text-tint-3' : 'bg-tint text-brand'}`}>
-                  <Icon size={20} weight="duotone" />
-                </span>
+              <li key={a.title} className={`flex items-start gap-4 p-6 ${feature ? 'bg-navy-midnight text-white' : 'panel'}`}>
+                <Icon size={30} weight="duotone" className={feature ? 'text-tint-2' : 'text-brand'} />
                 <div className="min-w-0">
-                  <p className="font-medium">{a.title}</p>
-                  <p className={`mt-0.5 text-sm ${i === 0 ? 'text-white/65' : 'text-ink-3'}`}>{a.desc}</p>
-                  <p className={`mt-2 text-xs ${i === 0 ? 'text-white/50' : 'text-ink-3'}`}>Earned {a.date}</p>
+                  <p className={`font-semibold ${feature ? 'text-white' : 'text-brand'}`}>{a.title}</p>
+                  <p className={`mt-1 text-sm ${feature ? 'text-white/80' : 'text-ink-2'}`}>{a.desc}</p>
+                  <p className={`mt-3 text-xs ${feature ? 'text-white/60' : 'text-ink-3'}`}>Earned {a.date}</p>
                 </div>
               </li>
             )
@@ -150,9 +162,9 @@ function Career() {
   if (redo) return <QuizRunner title="Missed questions" questions={QUESTIONS.filter((q) => redo.includes(q.id))} onFinish={setResult} onExit={() => setRedo(null)} />
 
   const SortHead = ({ k, label, className = '' }: { k: SortKey; label: string; className?: string }) => (
-    <th className={`px-4 py-2.5 font-medium ${className}`} aria-sort={sort === k ? (dir === 1 ? 'ascending' : 'descending') : 'none'}>
+    <th className={`py-3 pr-4 ${className}`} aria-sort={sort === k ? (dir === 1 ? 'ascending' : 'descending') : 'none'}>
       <button
-        className={`inline-flex items-center gap-1 ${sort === k ? 'text-ink' : 'hover:text-ink'}`}
+        className={`inline-flex items-center gap-1 uppercase ${sort === k ? 'text-brand' : 'hover:text-brand'}`}
         onClick={() => (sort === k ? setDir(dir === 1 ? -1 : 1) : (setSort(k), setDir(-1)))}
       >
         {label}
@@ -162,49 +174,56 @@ function Career() {
   )
 
   return (
-    <div className="space-y-5">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <Segmented options={CAREER_TABS} value={tab} onChange={setTab} size="sm" />
+    <div className="space-y-8">
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <div className="flex gap-2">
+          {CAREER_TABS.map((t) => (
+            <button key={t} onClick={() => setTab(t)} className={tab === t ? 'btn-primary btn-sm' : 'btn-secondary btn-sm'}>{t}</button>
+          ))}
+        </div>
         {tab === 'Missed questions' && (
           <div className="flex gap-2">
-            <label className="sr-only" htmlFor="missed-event">Event</label>
-            <select id="missed-event" className="input h-9 w-auto" value={eventFilter} onChange={(e) => setEventFilter(e.target.value)}>
-              <option value="all">All events</option>
+            <label className="sr-only" htmlFor="missed-event">Career cluster</label>
+            <select id="missed-event" className="input w-auto" value={eventFilter} onChange={(e) => setEventFilter(e.target.value)}>
+              <option value="all">All clusters</option>
               {EVENTS.map((e) => <option key={e.id} value={e.id}>{e.name}</option>)}
             </select>
             <button className="btn-primary" disabled={!wrong.length} onClick={() => setRedo(wrong.map((w) => w.q.id))}>
-              <ArrowCounterClockwise size={15} /> Redo all {wrong.length}
+              <ArrowCounterClockwise size={16} /> Redo all {wrong.length}
             </button>
           </div>
         )}
       </div>
 
       {tab === 'Past exams' ? (
-        <div className="surface overflow-x-auto">
+        <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead className="table-head">
               <tr>
-                <th className="px-4 py-2.5 font-medium">Exam</th>
+                <th className="py-3 pr-4">Exam</th>
                 <SortHead k="date" label="Date" className="hidden sm:table-cell" />
                 <SortHead k="accuracy" label="Accuracy" />
                 <SortHead k="time" label="Time" />
-                <th className="hidden px-4 py-2.5 font-medium sm:table-cell">ELO</th>
-                <th className="px-4 py-2.5"><span className="sr-only">Actions</span></th>
+                <th className="hidden py-3 pr-4 sm:table-cell">ELO</th>
+                <th className="py-3"><span className="sr-only">Actions</span></th>
               </tr>
             </thead>
             <tbody className="divide-y divide-line">
               {exams.map((e) => (
                 <tr key={e.id} className="hover:bg-canvas">
-                  <td className="px-4 py-3">
-                    <p className="font-medium">{e.name}</p>
-                    <p className="text-xs text-ink-3">{eventName(e.event)}</p>
+                  <td className="py-4 pr-4">
+                    <p className="font-semibold text-ink">{e.name}</p>
+                    <p className="mt-0.5 flex items-center gap-1.5 text-xs text-ink-3">
+                      <span className="h-2 w-2" style={{ background: eventOf(e.event).color }} aria-hidden />
+                      {eventName(e.event)}
+                    </p>
                   </td>
-                  <td className="num hidden px-4 py-3 text-ink-2 sm:table-cell">{new Date(e.date + 'T12:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</td>
-                  <td className={`num px-4 py-3 font-medium ${e.accuracy < 70 ? 'text-bad' : ''}`}>{e.accuracy}%</td>
-                  <td className="num px-4 py-3 text-ink-2">{e.timeMin}m</td>
-                  <td className={`num hidden px-4 py-3 sm:table-cell ${e.eloDelta >= 0 ? 'text-good' : 'text-bad'}`}>{e.eloDelta >= 0 ? '+' : ''}{e.eloDelta}</td>
-                  <td className="px-4 py-3 text-right">
-                    <button className="btn-ghost btn-sm whitespace-nowrap text-brand" onClick={() => setRedo(e.wrongIds)}>Redo misses</button>
+                  <td className="num hidden py-4 pr-4 text-ink-2 sm:table-cell">{new Date(e.date + 'T12:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</td>
+                  <td className={`num py-4 pr-4 font-semibold ${e.accuracy < 70 ? 'text-bad' : 'text-ink'}`}>{e.accuracy}%</td>
+                  <td className="num py-4 pr-4 text-ink-2">{e.timeMin} min</td>
+                  <td className={`num hidden py-4 pr-4 font-semibold sm:table-cell ${e.eloDelta >= 0 ? 'text-good' : 'text-bad'}`}>{e.eloDelta >= 0 ? '+' : ''}{e.eloDelta}</td>
+                  <td className="py-4 text-right">
+                    <ArrowLink onClick={() => setRedo(e.wrongIds)}>Redo misses</ArrowLink>
                   </td>
                 </tr>
               ))}
@@ -212,17 +231,19 @@ function Career() {
           </table>
         </div>
       ) : wrong.length === 0 ? (
-        <div className="surface"><EmptyState icon={<CheckCircle size={18} />} title="Nothing missed here" body="No missed questions for this event." /></div>
+        <div className="panel"><EmptyState icon={<CheckCircle size={20} />} title="Nothing missed here" body="No missed questions in this cluster." /></div>
       ) : (
-        <ul className="surface divide-y divide-line">
+        <ul className="grid gap-6 md:grid-cols-2">
           {wrong.map(({ q, from }) => (
-            <li key={q.id} className="flex flex-col gap-3 px-5 py-4 sm:flex-row sm:items-start">
-              <div className="min-w-0 flex-1">
-                <p className="text-xs text-ink-3">{eventName(q.event)}, from {from}</p>
-                <p className="mt-1 text-[15px]">{q.prompt}</p>
-                <p className="mt-2 inline-flex items-center gap-1.5 text-sm text-good"><CheckCircle size={15} weight="fill" /> {q.choices[q.answer]}</p>
-              </div>
-              <button className="btn-secondary btn-sm self-start" onClick={() => setRedo([q.id])}>Redo</button>
+            <li key={q.id} className="panel flex flex-col p-6">
+              <p className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-label text-ink-3">
+                <span className="h-2.5 w-2.5" style={{ background: eventOf(q.event).color }} aria-hidden />
+                {eventName(q.event)}
+              </p>
+              <p className="mt-3 flex-1 font-medium text-ink">{q.prompt}</p>
+              <p className="mt-3 flex items-center gap-1.5 text-sm font-semibold text-good"><CheckCircle size={16} weight="fill" /> {q.choices[q.answer]}</p>
+              <p className="mt-1 text-xs text-ink-3">Missed in {from}</p>
+              <div className="mt-5"><ArrowLink onClick={() => setRedo([q.id])}>Redo question</ArrowLink></div>
             </li>
           ))}
         </ul>

@@ -1,18 +1,18 @@
 import { useEffect, useRef, useState } from 'react'
 import { NavLink, Link, useLocation } from 'react-router-dom'
-import { Bell, List, X, Sword, Users, Trophy, BookOpenText, Lightning, House, UserCircle } from '@phosphor-icons/react'
+import { Bell, List, X } from '@phosphor-icons/react'
 import { ME, NOTIFICATIONS } from '../data/mock'
 import { Avatar } from './ui'
 import Logo from './Logo'
 
 const LINKS = [
-  { to: '/', label: 'Home', icon: House },
-  { to: '/leaderboard', label: 'Leaderboard', icon: Trophy },
-  { to: '/play', label: 'Play', icon: Lightning },
-  { to: '/vocab', label: 'Vocab', icon: BookOpenText },
-  { to: '/arena', label: 'Arena', icon: Sword },
-  { to: '/chapter', label: 'Chapter', icon: Users },
-  { to: '/me', label: 'Me', icon: UserCircle },
+  { to: '/', label: 'Home' },
+  { to: '/leaderboard', label: 'Leaderboard' },
+  { to: '/play', label: 'Play' },
+  { to: '/vocab', label: 'Vocab' },
+  { to: '/arena', label: 'Arena' },
+  { to: '/chapter', label: 'Chapter' },
+  { to: '/me', label: 'Me' },
 ]
 
 export default function TopNav() {
@@ -36,21 +36,20 @@ export default function TopNav() {
   }, [bell])
 
   return (
-    <header className="sticky top-0 z-30 border-b border-line bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/85">
-      <div className="mx-auto flex h-16 max-w-6xl items-center gap-6 px-4 sm:px-6">
-        <Link to="/" className="flex shrink-0 items-center gap-2.5">
+    <header className="sticky top-0 z-30 border-b border-line bg-white">
+      <div className="container-page flex h-16 items-stretch gap-8">
+        <Link to="/" className="flex shrink-0 items-center" aria-label="DECA Masters home">
           <Logo />
-          <span className="text-[15px] font-semibold tracking-tight">DECA Masters</span>
         </Link>
 
-        <nav className="hidden items-center gap-0.5 lg:flex">
+        <nav className="hidden items-stretch gap-6 lg:flex">
           {LINKS.map(({ to, label }) => (
             <NavLink
               key={to}
               to={to}
               end={to === '/'}
               className={({ isActive }) =>
-                `rounded-lg px-3 py-2 text-sm font-medium transition-colors ${isActive ? 'bg-tint text-brand' : 'text-ink-3 hover:text-ink'}`
+                `-mb-px flex items-center border-b-2 text-sm font-medium transition-colors ${isActive ? 'border-brand text-brand' : 'border-transparent text-ink hover:text-brand'}`
               }
             >
               {label}
@@ -58,36 +57,31 @@ export default function TopNav() {
           ))}
         </nav>
 
-        <div className="ml-auto flex items-center gap-1.5">
-          <span className="num mr-1 hidden rounded-md border border-line px-2 py-1 text-[13px] text-ink-2 sm:inline">
-            {ME.elo.toLocaleString()} <span className="font-sans text-ink-3">ELO</span>
-          </span>
+        <div className="ml-auto flex items-center gap-2">
+          <span className="num mr-2 hidden text-[13px] font-semibold text-brand sm:inline">{ME.elo.toLocaleString()} ELO</span>
 
           <div className="relative" ref={bellRef}>
-            <button aria-label={`Notifications, ${unread} unread`} onClick={() => setBell((b) => !b)} className="btn-ghost relative w-9 px-0">
-              <Bell size={19} />
+            <button aria-label={`Notifications, ${unread} unread`} onClick={() => setBell((b) => !b)} className="relative grid h-10 w-10 place-items-center text-ink hover:text-brand">
+              <Bell size={20} />
               {unread > 0 && (
-                <span className="num absolute right-1 top-1 grid h-4 min-w-4 place-items-center rounded-full bg-brand px-1 text-[10px] font-semibold text-white">
-                  {unread}
-                </span>
+                <span className="num absolute right-1 top-1.5 grid h-4 min-w-4 place-items-center bg-brand px-1 text-[10px] font-bold text-white">{unread}</span>
               )}
             </button>
             {bell && (
-              <div className="absolute right-0 mt-2 w-[min(22rem,calc(100vw-2rem))] overflow-hidden rounded-xl border border-line bg-white shadow-pop">
+              <div className="absolute right-0 mt-3 w-[min(24rem,calc(100vw-2rem))] border border-line bg-white shadow-[0_12px_32px_rgba(20,20,20,.12)]">
                 <div className="flex items-center justify-between border-b border-line px-4 py-3">
-                  <span className="text-sm font-semibold">Notifications</span>
+                  <span className="text-sm font-semibold text-ink">Notifications</span>
                   {unread > 0 && (
-                    <button className="text-[13px] font-medium text-brand hover:underline" onClick={() => setNotes(notes.map((n) => ({ ...n, unread: false })))}>
+                    <button className="text-xs font-semibold text-brand hover:underline" onClick={() => setNotes(notes.map((n) => ({ ...n, unread: false })))}>
                       Mark all read
                     </button>
                   )}
                 </div>
-                <ul className="max-h-[22rem] overflow-y-auto py-1">
+                <ul className="max-h-[24rem] divide-y divide-line overflow-y-auto">
                   {notes.map((n) => (
-                    <li key={n.id} className="flex gap-3 px-4 py-3 hover:bg-canvas">
-                      <span className={`mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full ${n.unread ? 'bg-brand' : 'bg-transparent'}`} aria-hidden />
+                    <li key={n.id} className={`flex gap-3 px-4 py-3 ${n.unread ? 'border-l-2 border-brand bg-tint' : 'border-l-2 border-transparent'}`}>
                       <div className="min-w-0 text-sm">
-                        <p className={n.unread ? 'text-ink' : 'text-ink-2'}>{n.text}</p>
+                        <p className={n.unread ? 'font-medium text-ink' : 'text-ink-2'}>{n.text}</p>
                         <p className="mt-0.5 text-xs text-ink-3">{n.time}</p>
                         {n.kind === 'arena' && (
                           <div className="mt-2.5 flex gap-2">
@@ -104,27 +98,27 @@ export default function TopNav() {
           </div>
 
           <Link to="/me" className="ml-1 hidden sm:block" aria-label="Your profile">
-            <Avatar name={ME.name} size={32} />
+            <Avatar name={ME.name} size={34} />
           </Link>
 
-          <button className="btn-ghost w-9 px-0 lg:hidden" onClick={() => setMenu((m) => !m)} aria-label="Menu" aria-expanded={menu}>
-            {menu ? <X size={20} /> : <List size={20} />}
+          <button className="grid h-10 w-10 place-items-center text-ink lg:hidden" onClick={() => setMenu((m) => !m)} aria-label="Menu" aria-expanded={menu}>
+            {menu ? <X size={22} /> : <List size={22} />}
           </button>
         </div>
       </div>
 
       {menu && (
-        <nav className="border-t border-line bg-white px-4 py-2 lg:hidden">
-          {LINKS.map(({ to, label, icon: Icon }) => (
+        <nav className="border-t border-line bg-white lg:hidden">
+          {LINKS.map(({ to, label }) => (
             <NavLink
               key={to}
               to={to}
               end={to === '/'}
               className={({ isActive }) =>
-                `flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium ${isActive ? 'bg-tint text-brand' : 'text-ink-2'}`
+                `block border-b border-line px-4 py-4 text-sm font-medium ${isActive ? 'border-l-4 border-l-brand text-brand' : 'text-ink'}`
               }
             >
-              <Icon size={18} /> {label}
+              {label}
             </NavLink>
           ))}
         </nav>

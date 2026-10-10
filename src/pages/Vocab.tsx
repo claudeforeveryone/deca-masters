@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { ArrowLeft, ArrowRight, Check, ArrowsClockwise, CheckCircle, Circle } from '@phosphor-icons/react'
-import { EVENTS, VOCAB, eventName, type EventId } from '../data/mock'
-import { EmptyState, Meter, PageHeader } from '../components/ui'
+import { ArrowLeft, ArrowRight, Check, ArrowsClockwise, CheckSquare, Square } from '@phosphor-icons/react'
+import { EVENTS, VOCAB, eventName, eventOf, type EventId } from '../data/mock'
+import { EmptyState, Meter, PageBand, SectionHeader } from '../components/ui'
 
 type Filter = EventId | 'all'
 
@@ -29,69 +29,74 @@ export default function Vocab() {
 
   return (
     <div>
-      <PageHeader title="Vocab" description="Flashcards for the terms that show up on cluster exams. Trainers can assign their own decks." />
+      <PageBand tag="Study" title="Vocab" description="Flashcards for the terms that show up on cluster exams. Trainers can assign their own decks." />
 
-      <div className="mb-6 flex gap-1.5 overflow-x-auto pb-1">
-        {[{ id: 'all', name: 'All terms' }, ...EVENTS].map((e) => (
-          <button
-            key={e.id}
-            onClick={() => { setFilter(e.id as Filter); setI(0); setFlipped(false) }}
-            className={`whitespace-nowrap rounded-lg border px-3 py-1.5 text-sm font-medium transition-colors ${
-              filter === e.id ? 'border-brand bg-tint text-brand' : 'border-line bg-white text-ink-2 hover:border-line-strong'
-            }`}
-          >
-            {e.name}
-          </button>
-        ))}
+      <div className="mb-8 flex flex-wrap gap-2">
+        {[{ id: 'all', name: 'All terms', color: '#0072CE', fg: '#FFFFFF' }, ...EVENTS].map((e) => {
+          const on = filter === e.id
+          return (
+            <button
+              key={e.id}
+              onClick={() => { setFilter(e.id as Filter); setI(0); setFlipped(false) }}
+              className="border-2 px-3 py-1.5 text-[13px] font-semibold transition-colors"
+              style={on ? { background: e.color, borderColor: e.color, color: e.fg } : { borderColor: '#E4E4E4', color: '#333333' }}
+            >
+              {e.name}
+            </button>
+          )
+        })}
       </div>
 
       {!card ? (
-        <div className="surface"><EmptyState icon={<ArrowsClockwise size={18} />} title="No cards for this event yet" body="Pick another event or ask your trainer to assign a deck." /></div>
+        <div className="panel"><EmptyState icon={<ArrowsClockwise size={20} />} title="No cards for this event yet" body="Pick another event or ask your trainer to assign a deck." /></div>
       ) : (
-        <div className="grid gap-6 lg:grid-cols-[1fr_300px]">
+        <div className="grid gap-10 lg:grid-cols-[1fr_320px]">
           <div>
             <button
               onClick={() => setFlipped((f) => !f)}
               aria-label={flipped ? 'Show term' : 'Show definition'}
-              className={`flex min-h-[300px] w-full flex-col rounded-xl border p-8 text-left transition-colors ${flipped ? 'border-brand/30 bg-tint' : 'border-line bg-white hover:border-line-strong'}`}
+              className={`flex min-h-[320px] w-full flex-col p-8 text-left sm:p-10 ${flipped ? 'border-2 border-brand bg-white' : 'diamond-pattern bg-brand text-white'}`}
             >
-              <div className="flex w-full items-center justify-between text-[13px] text-ink-3">
-                <span>{eventName(card.event)}</span>
-                <span className="num">{(i % deck.length) + 1} / {deck.length}</span>
+              <div className="flex w-full items-center justify-between">
+                <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-label">
+                  <span className="h-3 w-3" style={{ background: eventOf(card.event).color }} aria-hidden />
+                  {eventName(card.event)}
+                </span>
+                <span className={`num text-sm ${flipped ? 'text-ink-3' : 'text-white/80'}`}>{(i % deck.length) + 1} / {deck.length}</span>
               </div>
-              <div key={String(flipped) + card.term} className="enter flex flex-1 items-center">
+              <div key={String(flipped) + card.term} className="enter flex flex-1 items-center py-8">
                 {flipped ? (
-                  <p className="max-w-[48ch] text-lg leading-relaxed text-ink">{card.def}</p>
+                  <p className="max-w-[46ch] text-xl leading-relaxed text-ink">{card.def}</p>
                 ) : (
-                  <p className="text-3xl font-semibold sm:text-4xl">{card.term}</p>
+                  <p className="display text-4xl sm:text-5xl">{card.term}</p>
                 )}
               </div>
-              <span className="text-[13px] text-ink-3">{flipped ? 'Definition' : 'Click to reveal the definition'}</span>
+              <span className={`text-[13px] font-semibold ${flipped ? 'text-brand' : 'text-white/85'}`}>{flipped ? 'Definition' : 'Click the card to see the definition'}</span>
             </button>
 
-            <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-              <div className="flex gap-1">
-                <button className="btn-secondary w-9 px-0" onClick={() => go(-1)} aria-label="Previous"><ArrowLeft size={16} /></button>
-                <button className="btn-secondary w-9 px-0" onClick={() => go(1)} aria-label="Next"><ArrowRight size={16} /></button>
-              </div>
+            <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
               <div className="flex gap-2">
+                <button className="btn-ghost w-10 border-line px-0" onClick={() => go(-1)} aria-label="Previous"><ArrowLeft size={18} /></button>
+                <button className="btn-ghost w-10 border-line px-0" onClick={() => go(1)} aria-label="Next"><ArrowRight size={18} /></button>
+              </div>
+              <div className="flex gap-3">
                 <button className="btn-secondary" onClick={() => mark(false)}><ArrowsClockwise size={16} /> Still learning</button>
                 <button className="btn-primary" onClick={() => mark(true)}><Check size={16} /> Got it</button>
               </div>
             </div>
           </div>
 
-          <aside className="surface h-fit p-5">
-            <div className="flex items-baseline justify-between">
-              <h2 className="h-section">Progress</h2>
-              <span className="num text-sm text-ink-3">{known.size}/{VOCAB.length}</span>
-            </div>
-            <div className="mt-3"><Meter value={(known.size / VOCAB.length) * 100} /></div>
-            <ul className="mt-5 space-y-2.5">
+          <aside>
+            <SectionHeader title="Your progress" action={<span className="num text-sm font-semibold text-brand">{known.size}/{VOCAB.length}</span>} />
+            <Meter value={(known.size / VOCAB.length) * 100} />
+            <ul className="mt-6 divide-y divide-line border-y border-line">
               {deck.map((v, k) => (
                 <li key={v.term}>
-                  <button onClick={() => { setI(k); setFlipped(false) }} className={`flex w-full items-center gap-2.5 text-left text-sm ${card.term === v.term ? 'font-medium text-ink' : 'text-ink-2 hover:text-ink'}`}>
-                    {known.has(v.term) ? <CheckCircle size={16} weight="fill" className="text-brand" /> : <Circle size={16} className="text-line-strong" />}
+                  <button
+                    onClick={() => { setI(k); setFlipped(false) }}
+                    className={`flex w-full items-center gap-3 px-2 py-3 text-left text-sm ${card.term === v.term ? 'bg-tint font-semibold text-brand' : 'text-ink-2 hover:bg-canvas'}`}
+                  >
+                    {known.has(v.term) ? <CheckSquare size={18} weight="fill" className="text-brand" /> : <Square size={18} className="text-line-strong" />}
                     {v.term}
                   </button>
                 </li>

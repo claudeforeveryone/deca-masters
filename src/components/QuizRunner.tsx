@@ -78,10 +78,10 @@ export default function QuizRunner({ title, questions, timeLimitSec, eloPerCorre
   const lowTime = remaining !== null && remaining <= 15
 
   return (
-    <div className="mx-auto max-w-2xl">
+    <div className="mx-auto max-w-2xl pt-10">
       <div className="mb-6 flex items-center justify-between gap-4">
         <div className="min-w-0">
-          <p className="truncate text-sm font-semibold">{title}</p>
+          <p className="truncate text-[11px] font-bold uppercase tracking-label text-brand">{title}</p>
           <p className="text-[13px] text-ink-3">
             {eventName(q.event)}, {q.instructionalArea}
           </p>
@@ -103,7 +103,7 @@ export default function QuizRunner({ title, questions, timeLimitSec, eloPerCorre
         {results.map((r, k) => (
           <span
             key={k}
-            className={`h-1 flex-1 rounded-full transition-colors ${
+            className={`h-1.5 flex-1 transition-colors ${
               r === true ? 'bg-brand' : r === false ? 'bg-bad' : k === i ? 'bg-ink-3' : 'bg-line'
             }`}
           />
@@ -113,14 +113,14 @@ export default function QuizRunner({ title, questions, timeLimitSec, eloPerCorre
       <p className="num mb-2 text-[13px] text-ink-3">
         {String(i + 1).padStart(2, '0')} / {String(questions.length).padStart(2, '0')}
       </p>
-      <h2 key={q.id + i} className="enter text-xl font-medium leading-snug sm:text-[22px]">{q.prompt}</h2>
+      <h2 key={q.id + i} className="enter text-xl font-semibold leading-snug sm:text-2xl">{q.prompt}</h2>
 
       <div className="mt-6 grid gap-2.5">
         {q.choices.map((c, idx) => {
           const isAnswer = idx === q.answer
           const state =
             picked === null
-              ? 'border-line bg-white hover:border-brand/50 hover:bg-tint/40'
+              ? 'border-line bg-white hover:border-brand hover:bg-tint'
               : isAnswer
                 ? 'border-good bg-good-bg'
                 : idx === picked
@@ -131,9 +131,9 @@ export default function QuizRunner({ title, questions, timeLimitSec, eloPerCorre
               key={idx}
               onClick={() => choose(idx)}
               disabled={picked !== null}
-              className={`flex items-center gap-3.5 rounded-xl border px-4 py-3.5 text-left transition-colors disabled:cursor-default ${state}`}
+              className={`flex items-center gap-4 border-2 px-4 py-4 text-left transition-colors disabled:cursor-default ${state}`}
             >
-              <span className={`num grid h-7 w-7 shrink-0 place-items-center rounded-md border text-[13px] ${picked === null ? 'border-line text-ink-3' : 'border-transparent text-ink-2'}`}>
+              <span className={`grid h-8 w-8 shrink-0 place-items-center text-[13px] font-bold ${picked === null ? "bg-canvas text-ink" : "bg-white/70 text-ink"}`}>
                 {'ABCD'[idx]}
               </span>
               <span className="flex-1 text-[15px]">{c}</span>
@@ -145,7 +145,7 @@ export default function QuizRunner({ title, questions, timeLimitSec, eloPerCorre
       </div>
 
       {picked !== null && showExplanations && (
-        <div className="enter mt-6 flex flex-col gap-4 rounded-xl border border-line bg-white p-5 sm:flex-row sm:items-end sm:justify-between">
+        <div className="enter mt-6 flex flex-col gap-4 border-l-4 border-brand bg-canvas p-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className={`text-sm font-semibold ${picked === q.answer ? 'text-good' : 'text-bad'}`}>{picked === q.answer ? 'Correct' : 'Incorrect'}</p>
             <p className="mt-1 max-w-[52ch] text-sm text-ink-2">{q.explanation}</p>
@@ -164,8 +164,8 @@ export function ResultCard({ r, eloPerCorrect = 8, title = 'Session complete', o
   const pct = Math.round((r.correct / r.total) * 100)
   const delta = r.correct * eloPerCorrect - (r.total - r.correct) * Math.round(eloPerCorrect / 2)
   return (
-    <div className="surface enter mx-auto max-w-md p-8">
-      <p className="text-sm text-ink-3">{title}</p>
+    <div className="surface enter mx-auto mt-12 max-w-md border-t-4 border-t-brand p-8">
+      <p className="text-[11px] font-bold uppercase tracking-label text-brand">{title}</p>
       <p className="num mt-2 text-5xl font-semibold">{pct}%</p>
       <dl className="mt-6 grid grid-cols-3 gap-4 border-t border-line pt-5">
         <div>
