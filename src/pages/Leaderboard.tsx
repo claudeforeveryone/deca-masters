@@ -1,87 +1,114 @@
 import { useState } from 'react'
-import { Users } from 'lucide-react'
+import { MagnifyingGlass, Users } from '@phosphor-icons/react'
 import { CHAPTERS, ME, PLAYERS } from '../data/mock'
-import { PageHeader, PlayerRow, Tabs } from '../components/ui'
+import { Avatar, EmptyState, PageHeader, Segmented } from '../components/ui'
 
 const TABS = ['Players', 'Chapters'] as const
 
 export default function Leaderboard() {
   const [tab, setTab] = useState<(typeof TABS)[number]>('Players')
   const [q, setQ] = useState('')
-  const players = PLAYERS.filter((p) => p.name.toLowerCase().includes(q.toLowerCase()))
+  const players = PLAYERS.filter((p) => `${p.name} ${p.school}`.toLowerCase().includes(q.toLowerCase()))
 
   return (
     <div>
       <PageHeader
         title="Leaderboard"
-        subtitle="Players ranked by ELO. Chapters ranked by the combined ELO of every member."
-        action={<Tabs tabs={TABS} value={tab} onChange={setTab} />}
+        description={tab === 'Players' ? 'Every player, ranked by ELO.' : 'Chapters ranked by the combined ELO of all members.'}
+        actions={<Segmented options={TABS} value={tab} onChange={setTab} />}
       />
 
       {tab === 'Players' ? (
-        <>
-          {/* Podium */}
-          <div className="mb-6 grid grid-cols-3 items-end gap-3 sm:gap-6">
-            {[1, 0, 2].map((idx) => {
-              const p = PLAYERS[idx]
-              const h = idx === 0 ? 'h-36' : idx === 1 ? 'h-28' : 'h-20'
-              return (
-                <div key={p.id} className="text-center">
-                  <img src={p.avatar} className="mx-auto h-14 w-14 rounded-full ring-4 ring-white shadow-card" alt="" />
-                  <p className="mt-2 truncate text-sm font-bold">{p.name}</p>
-                  <p className="text-xs font-semibold text-deca">{p.elo} ELO</p>
-                  <div className={`mt-2 ${h} rounded-t-2xl ${idx === 0 ? 'bg-deca' : 'bg-navy-700'} grid place-items-center text-3xl font-extrabold text-white`}>
-                    {idx + 1}
-                  </div>
+        <div className="grid gap-6 lg:grid-cols-[280px_1fr]">
+          {/* Top three */}
+          <ol className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1 lg:content-start">
+            {PLAYERS.slice(0, 3).map((p, i) => (
+              <li key={p.id} className={`flex items-center gap-4 rounded-xl p-4 ${i === 0 ? 'bg-ink text-white' : 'surface'}`}>
+                <span className={`num text-2xl font-semibold ${i === 0 ? 'text-tint-3' : 'text-ink-3'}`}>{i + 1}</span>
+                <Avatar name={p.name} size={40} />
+                <div className="min-w-0">
+                  <p className="truncate font-medium">{p.name}</p>
+                  <p className={`num text-sm ${i === 0 ? 'text-white/70' : 'text-ink-3'}`}>{p.elo.toLocaleString()} ELO</p>
                 </div>
-              )
-            })}
-          </div>
-          <div className="card p-4">
-            <input className="input mb-3" placeholder="Search players…" value={q} onChange={(e) => setQ(e.target.value)} />
-            <div className="space-y-1">
-              {players.map((p) => (
-                <PlayerRow
-                  key={p.id}
-                  p={p}
-                  rank={PLAYERS.indexOf(p) + 1}
-                  highlight={p.id === ME.id}
-                  right={
-                    <div className="flex items-center gap-4">
-                      <span className="hidden text-xs text-navy/50 sm:inline">{p.school} · Gr {p.grade}</span>
-                      <span className="w-14 text-right text-sm font-bold text-deca">{p.elo}</span>
-                    </div>
-                  }
-                />
-              ))}
+              </li>
+            ))}
+          </ol>
+
+          <div className="surface overflow-hidden">
+            <div className="border-b border-line p-3">
+              <label className="relative block">
+                <span className="sr-only">Search players</span>
+                <MagnifyingGlass size={16} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-ink-3" />
+                <input className="input pl-9" placeholder="Search by name or school" value={q} onChange={(e) => setQ(e.target.value)} />
+              </label>
             </div>
+            {players.length === 0 ? (
+              <EmptyState icon={<MagnifyingGlass size={18} />} title="No players match" body="Try a different name or school." />
+            ) : (
+              <table className="w-full text-sm">
+                <thead className="table-head">
+                  <tr>
+                    <th className="w-14 px-4 py-2.5 font-medium">#</th>
+                    <th className="px-2 py-2.5 font-medium">Player</th>
+                    <th className="hidden px-4 py-2.5 font-medium md:table-cell">School</th>
+                    <th className="hidden px-4 py-2.5 font-medium sm:table-cell">Grade</th>
+                    <th className="px-4 py-2.5 text-right font-medium">ELO</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-line">
+                  {players.map((p) => {
+                    const rank = PLAYERS.indexOf(p) + 1
+                    const me = p.id === ME.id
+                    return (
+                      <tr key={p.id} className={me ? 'bg-tint' : 'hover:bg-canvas'}>
+                        <td className={`num px-4 py-3 ${rank <= 3 ? 'font-semibold text-brand' : 'text-ink-3'}`}>{rank}</td>
+                        <td className="px-2 py-3">
+                          <div className="flex items-center gap-3">
+                            <Avatar name={p.name} size={28} />
+                            <span className="font-medium">{p.name}{me && <span className="ml-1.5 font-normal text-ink-3">(you)</span>}</span>
+                          </div>
+                        </td>
+                        <td className="hidden px-4 py-3 text-ink-2 md:table-cell">{p.school}</td>
+                        <td className="num hidden px-4 py-3 text-ink-2 sm:table-cell">{p.grade}</td>
+                        <td className="num px-4 py-3 text-right font-medium">{p.elo.toLocaleString()}</td>
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+            )}
           </div>
-        </>
+        </div>
       ) : (
-        <div className="card overflow-hidden">
+        <div className="surface overflow-hidden">
           <table className="w-full text-sm">
-            <thead className="bg-navy text-left text-xs uppercase tracking-wide text-sky-200">
+            <thead className="table-head">
               <tr>
-                <th className="px-4 py-3">#</th>
-                <th className="px-4 py-3">Chapter</th>
-                <th className="hidden px-4 py-3 sm:table-cell">President</th>
-                <th className="px-4 py-3">Members</th>
-                <th className="px-4 py-3 text-right">Total ELO</th>
+                <th className="w-14 px-4 py-2.5 font-medium">#</th>
+                <th className="px-2 py-2.5 font-medium">Chapter</th>
+                <th className="hidden px-4 py-2.5 font-medium md:table-cell">President</th>
+                <th className="px-4 py-2.5 font-medium">Members</th>
+                <th className="px-4 py-2.5 text-right font-medium">Total ELO</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-sky-100">
-              {CHAPTERS.map((c, i) => (
-                <tr key={c.id} className={c.name === ME.chapter ? 'bg-sky-100' : ''}>
-                  <td className="px-4 py-3 font-bold">{i + 1}</td>
-                  <td className="px-4 py-3">
-                    <p className="font-semibold">{c.name}</p>
-                    <p className="text-xs text-navy/50">{c.school}</p>
-                  </td>
-                  <td className="hidden px-4 py-3 sm:table-cell">{c.president}</td>
-                  <td className="px-4 py-3"><span className="chip"><Users className="h-3 w-3" />{c.members}</span></td>
-                  <td className="px-4 py-3 text-right font-extrabold text-deca">{c.totalElo.toLocaleString()}</td>
-                </tr>
-              ))}
+            <tbody className="divide-y divide-line">
+              {CHAPTERS.map((c, i) => {
+                const mine = c.name === ME.chapter
+                return (
+                  <tr key={c.id} className={mine ? 'bg-tint' : 'hover:bg-canvas'}>
+                    <td className={`num px-4 py-3.5 ${i < 3 ? 'font-semibold text-brand' : 'text-ink-3'}`}>{i + 1}</td>
+                    <td className="px-2 py-3.5">
+                      <p className="font-medium">{c.name}{mine && <span className="ml-1.5 font-normal text-ink-3">(yours)</span>}</p>
+                      <p className="text-xs text-ink-3">{c.school}</p>
+                    </td>
+                    <td className="hidden px-4 py-3.5 text-ink-2 md:table-cell">{c.president}</td>
+                    <td className="px-4 py-3.5">
+                      <span className="num inline-flex items-center gap-1.5 text-ink-2"><Users size={14} /> {c.members}</span>
+                    </td>
+                    <td className="num px-4 py-3.5 text-right font-medium">{c.totalElo.toLocaleString()}</td>
+                  </tr>
+                )
+              })}
             </tbody>
           </table>
         </div>

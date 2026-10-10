@@ -20,13 +20,9 @@ export type Player = {
   chapter: string
   grade: number
   elo: number
-  avatar: string
   online?: boolean
 }
 
-const AVATAR_COLORS = ['0072CE', '0A2342', '4FA8F0', '1B4F8A', '005BA6']
-const avatar = (name: string, i: number) =>
-  `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=${AVATAR_COLORS[i % AVATAR_COLORS.length]}&color=fff&bold=true`
 
 const raw: [string, string, string, number, number, boolean?][] = [
   ['Maya Chen', 'Lincoln High', 'Lincoln DECA', 12, 2140, true],
@@ -51,7 +47,6 @@ export const PLAYERS: Player[] = raw.map(([name, school, chapter, grade, elo, on
   grade,
   elo,
   online,
-  avatar: avatar(name, i),
 }))
 
 export const ME = PLAYERS.find((p) => p.name === 'Alex Rivera')!
@@ -77,12 +72,12 @@ export const MY_STATS = {
 }
 
 export const ACHIEVEMENTS = [
-  { icon: '🏆', title: 'Top 10 Global', desc: 'Reached rank #11 or better on the player leaderboard', date: 'Sep 28' },
-  { icon: '🔥', title: '20-Day Streak', desc: 'Practiced 20 days in a row', date: 'Sep 14' },
-  { icon: '🎯', title: 'Sharpshooter', desc: 'Scored 90%+ on a full 100-question exam', date: 'Aug 30' },
-  { icon: '⚔️', title: 'Arena Veteran', desc: 'Won 25 Arena 1v1 matches', date: 'Aug 21' },
-  { icon: '📚', title: 'Vocab Master', desc: 'Mastered 500 vocab cards', date: 'Aug 2' },
-  { icon: '⚡', title: 'Speed Demon', desc: 'Finished a 10-question Arena match in under 90 seconds', date: 'Jul 19' },
+  { icon: 'trophy', title: 'Top 15 Global', desc: 'Reached the global top 15 on the player leaderboard', date: 'Sep 28' },
+  { icon: 'flame', title: '20-Day Streak', desc: 'Practiced 20 days in a row', date: 'Sep 14' },
+  { icon: 'target', title: 'Sharpshooter', desc: 'Scored 90%+ on a full 100-question exam', date: 'Aug 30' },
+  { icon: 'swords', title: 'Arena Veteran', desc: 'Won 25 Arena 1v1 matches', date: 'Aug 21' },
+  { icon: 'book', title: 'Vocab Master', desc: 'Mastered 500 vocab cards', date: 'Aug 2' },
+  { icon: 'bolt', title: 'Speed Demon', desc: 'Finished a 10-question Arena match in under 90 seconds', date: 'Jul 19' },
 ]
 
 export type Chapter = {
@@ -186,7 +181,7 @@ export const VOCAB = [
   { term: 'Market share', def: 'A company’s sales as a percentage of total industry sales.', event: 'marketing' as EventId },
   { term: 'Liquidity', def: 'How quickly an asset can be converted to cash without losing value.', event: 'finance' as EventId },
   { term: 'Bootstrapping', def: 'Starting a business using personal savings and revenue rather than outside capital.', event: 'entrepreneurship' as EventId },
-  { term: 'RevPAR', def: 'Revenue per available room — a key hotel performance metric.', event: 'hospitality' as EventId },
+  { term: 'RevPAR', def: 'Revenue per available room, a key hotel performance metric.', event: 'hospitality' as EventId },
   { term: 'Span of control', def: 'The number of employees a manager directly supervises.', event: 'management' as EventId },
   { term: 'Channel of distribution', def: 'The path a product takes from producer to final consumer.', event: 'marketing' as EventId },
   { term: 'Gross margin', def: 'Revenue minus cost of goods sold, often shown as a percentage of revenue.', event: 'finance' as EventId },
@@ -206,7 +201,7 @@ export type PastExam = {
 export const PAST_EXAMS: PastExam[] = [
   { id: 'e1', name: 'Marketing Cluster Exam #4', event: 'marketing', date: '2026-10-08', accuracy: 94, timeMin: 52, eloDelta: 38, wrongIds: ['q7'] },
   { id: 'e2', name: 'Finance Cluster Exam #2', event: 'finance', date: '2026-10-05', accuracy: 66, timeMin: 61, eloDelta: -12, wrongIds: ['q2', 'q8'] },
-  { id: 'e3', name: 'Daily Challenge — Oct 4', event: 'core', date: '2026-10-04', accuracy: 80, timeMin: 6, eloDelta: 9, wrongIds: ['q4', 'q9'] },
+  { id: 'e3', name: 'Daily Challenge, Oct 4', event: 'core', date: '2026-10-04', accuracy: 80, timeMin: 6, eloDelta: 9, wrongIds: ['q4', 'q9'] },
   { id: 'e4', name: 'Entrepreneurship Practice #1', event: 'entrepreneurship', date: '2026-10-01', accuracy: 72, timeMin: 48, eloDelta: 4, wrongIds: ['q3', 'q10'] },
   { id: 'e5', name: 'BM+A Cluster Exam #3', event: 'management', date: '2026-09-27', accuracy: 85, timeMin: 44, eloDelta: 21, wrongIds: ['q6'] },
   { id: 'e6', name: 'Hospitality Cluster Exam #1', event: 'hospitality', date: '2026-09-22', accuracy: 74, timeMin: 57, eloDelta: 6, wrongIds: ['q5'] },
@@ -216,14 +211,14 @@ export const NOTIFICATIONS = [
   { id: 'n1', kind: 'arena', text: 'Maya Chen challenged you to an Arena 1v1 (Marketing)', time: '2m ago', unread: true },
   { id: 'n2', kind: 'chapter', text: 'Lincoln DECA posted a new announcement: “States prep schedule”', time: '1h ago', unread: true },
   { id: 'n3', kind: 'assignment', text: 'Your Finance trainer assigned “Ratios flashcard set”', time: '3h ago', unread: true },
-  { id: 'n4', kind: 'streak', text: 'Keep your 9-day streak alive — today’s Daily is ready', time: '6h ago', unread: false },
+  { id: 'n4', kind: 'streak', text: 'Keep your 9-day streak alive. Today’s Daily is ready', time: '6h ago', unread: false },
   { id: 'n5', kind: 'rank', text: 'You moved up to #11 on the global leaderboard', time: '1d ago', unread: false },
 ]
 
 export const ANNOUNCEMENTS = [
-  { id: 'a1', type: 'Newsletter', author: 'Maya Chen', role: 'President', title: 'Weekly Newsletter — Week of Oct 6', body: 'District competition is 5 weeks out. Everyone should finish 2 full cluster exams this week. Roleplay practice is Thursday after school in Room 214.', date: 'Oct 6' },
+  { id: 'a1', type: 'Newsletter', author: 'Maya Chen', role: 'President', title: 'Weekly newsletter: week of Oct 6', body: 'District competition is 5 weeks out. Everyone should finish 2 full cluster exams this week. Roleplay practice is Thursday after school in Room 214.', date: 'Oct 6' },
   { id: 'a2', type: 'Announcement', author: 'Sofia Ramirez', role: 'VP Competitive Events', title: 'States prep schedule', body: 'Practice schedule for the next month is posted below. Attendance is taken at every session.', date: 'Oct 4' },
-  { id: 'a3', type: 'Link', author: 'Jordan Lee', role: 'Finance Trainer', title: 'Finance performance indicators PDF', body: 'https://www.deca.org/compete — review the PIs for your event before Thursday.', date: 'Oct 2' },
+  { id: 'a3', type: 'Link', author: 'Jordan Lee', role: 'Finance Trainer', title: 'Finance performance indicators PDF', body: 'Review the performance indicators for your event before Thursday.', url: 'https://www.deca.org/compete', date: 'Oct 2' },
 ]
 
 export const ATTENDANCE = [

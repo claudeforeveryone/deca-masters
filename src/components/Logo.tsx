@@ -1,11 +1,10 @@
-// Placeholder diamond mark. Drop the official DECA logo at public/deca-logo.png
-// (with chapter permission) and swap this component for an <img>.
-export default function Logo({ className = '' }: { className?: string }) {
+// Placeholder mark. Swap for the official DECA logo only with permission.
+export default function Logo({ size = 28 }: { size?: number }) {
   return (
-    <svg viewBox="0 0 64 64" className={className} aria-hidden>
-      <rect x="10" y="10" width="44" height="44" rx="6" transform="rotate(45 32 32)" fill="#0072CE" />
-      <rect x="18" y="18" width="28" height="28" rx="4" transform="rotate(45 32 32)" fill="#fff" />
-      <rect x="24" y="24" width="16" height="16" rx="2" transform="rotate(45 32 32)" fill="#0A2342" />
+    <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden>
+      <rect width="32" height="32" rx="8" fill="#0B1F3A" />
+      <rect x="9" y="9" width="14" height="14" rx="2" transform="rotate(45 16 16)" fill="#0B6FCB" />
+      <rect x="13" y="13" width="6" height="6" rx="1" transform="rotate(45 16 16)" fill="#fff" />
     </svg>
   )
 }
