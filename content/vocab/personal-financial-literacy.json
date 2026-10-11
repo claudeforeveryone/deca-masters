@@ -1,0 +1,1394 @@
+{
+  "slug": "personal-financial-literacy",
+  "title": "Personal Financial Literacy terms",
+  "status": "sourced",
+  "disclaimer": "Definitions reused from openly licensed and public-domain sources (credited on each term). Not official DECA content.",
+  "builtAt": "2026-10-11",
+  "builtBy": "shared-account agent (Project Omega), scripted extraction (tools/vocab/build-vocab-open.js)",
+  "termCount": 80,
+  "coverage": {
+    "Earning Income": 11,
+    "Spending": 13,
+    "Saving": 13,
+    "Investing": 17,
+    "Managing Credit": 11,
+    "Managing Risk": 15
+  },
+  "gaps": null,
+  "notes": [
+    "Public-domain US federal sources (SEC Investor.gov, BLS, USPTO, FDIC, CFPB): credited as the agencies ask; no seals or logos; no endorsement implied. US-specific facts (laws, agencies, figures) are US context, not Canadian.",
+    "Every definition is copied from its source glossary (HTML tags removed). Any trim or correction is marked source.adapted = true and named after \"Adapted:\" in the attribution."
+  ],
+  "sources": [
+    {
+      "type": "pd",
+      "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guides (Themes 1-5)",
+      "publisher": "Federal Deposit Insurance Corporation (FDIC)",
+      "url": "https://www.fdic.gov/consumer-resource-center/money-smart-young-people",
+      "licence": "Public domain (US federal work)",
+      "licenceUrl": null,
+      "attribution": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guides (Themes 1-5), Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/consumer-resource-center/money-smart-young-people. Public domain (US federal work).",
+      "licenceEvidence": "US federal work, not protected by copyright (17 U.S.C. 105). FDIC FIL-58-2001 (https://www.fdic.gov/news/financial-institution-letters/2001/fil0158.html): \"The Money Smart training modules can be easily reproduced and have no copyright restrictions.\" The Money Smart for Young People page says users must not \"use the FDIC name or logo to imply that FDIC endorses their organization or its products or services.\"",
+      "licenceCheckedAt": "2026-10-11",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "termsUsed": 56
+    },
+    {
+      "type": "pd",
+      "title": "Investor.gov Glossary",
+      "publisher": "U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy)",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary",
+      "licence": "Public domain (US federal work)",
+      "licenceUrl": null,
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "licenceEvidence": "US federal work (17 U.S.C. 105). Investor.gov footer: \"Paid for by the U.S. Securities and Exchange Commission.\" and links to the SEC privacy page (https://www.sec.gov/privacy.htm): \"Information presented on sec.gov is considered public information and may be copied or further distributed by users of the web site without the SEC’s permission.\" / \"Please consider appropriate citation to the SEC as the source.\"",
+      "licenceCheckedAt": "2026-10-11",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "termsUsed": 23
+    },
+    {
+      "type": "pd",
+      "title": "Ask CFPB",
+      "publisher": "Consumer Financial Protection Bureau (CFPB)",
+      "url": "https://www.consumerfinance.gov/ask-cfpb/",
+      "licence": "Public domain (US federal work)",
+      "licenceUrl": null,
+      "attribution": "Ask CFPB, Consumer Financial Protection Bureau (CFPB), https://www.consumerfinance.gov/ask-cfpb/. Public domain (US federal work).",
+      "licenceEvidence": "CFPB website privacy policy (https://www.consumerfinance.gov/privacy/website-privacy-policy/): \"Information created by the CFPB is in the public domain and you may reproduce, publish, or otherwise use it without the Bureau's permission.\" / \"Please consider appropriate citation to the Bureau as the source.\" Third-party copyrighted material on the site is excluded.",
+      "licenceCheckedAt": "2026-10-11",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "termsUsed": 1
+    },
+    {
+      "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 1: Earn, Words To Know",
+      "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-1.pdf",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guides (Themes 1-5), Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/consumer-resource-center/money-smart-young-people. Public domain (US federal work).",
+      "partOf": "https://www.fdic.gov/consumer-resource-center/money-smart-young-people"
+    },
+    {
+      "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Words To Know",
+      "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guides (Themes 1-5), Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/consumer-resource-center/money-smart-young-people. Public domain (US federal work).",
+      "partOf": "https://www.fdic.gov/consumer-resource-center/money-smart-young-people"
+    },
+    {
+      "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Words To Know",
+      "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guides (Themes 1-5), Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/consumer-resource-center/money-smart-young-people. Public domain (US federal work).",
+      "partOf": "https://www.fdic.gov/consumer-resource-center/money-smart-young-people"
+    },
+    {
+      "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 4: Borrow, Words To Know",
+      "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-4.pdf",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guides (Themes 1-5), Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/consumer-resource-center/money-smart-young-people. Public domain (US federal work).",
+      "partOf": "https://www.fdic.gov/consumer-resource-center/money-smart-young-people"
+    },
+    {
+      "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Words To Know",
+      "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guides (Themes 1-5), Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/consumer-resource-center/money-smart-young-people. Public domain (US federal work).",
+      "partOf": "https://www.fdic.gov/consumer-resource-center/money-smart-young-people"
+    },
+    {
+      "title": "Investor.gov Glossary: 401(k) Plan",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/401k-plan",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Defined Contribution Plan",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/defined-contribution-plan",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Defined Benefit Plan",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/defined-benefit-plan",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Certificate of Deposit",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/certificate-deposit",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Individual Retirement Account (IRA)",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/individual-retirement-account-ira",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Purchasing Power",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/purchasing-power",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Bonds",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/bonds",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Mutual Funds",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/mutual-funds",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Exchange-Traded Fund (ETF)",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/exchange-traded-fund-etf",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Index Fund",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/index-fund",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Dividend",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/dividend",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Capital Gain",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/capital-gain",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Risk",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/risk",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Risk Tolerance",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/risk-tolerance",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Time Horizon",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/time-horizon",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Diversification",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/diversification",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Asset Allocation",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/asset-allocation",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Portfolio",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/portfolio",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Dollar Cost Averaging",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/dollar-cost-averaging",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Real Return",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/real-return",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Principal",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/principal",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Ponzi Schemes",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/ponzi-schemes",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Pyramid Schemes",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/pyramid-schemes",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Ask CFPB: What is a credit score?",
+      "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-credit-score-en-315/",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Ask CFPB, Consumer Financial Protection Bureau (CFPB), https://www.consumerfinance.gov/ask-cfpb/. Public domain (US federal work).",
+      "partOf": "https://www.consumerfinance.gov/ask-cfpb/"
+    }
+  ],
+  "terms": [
+    {
+      "id": "pfl-v-001",
+      "term": "Career",
+      "definition": "The type of work a person pursues for the majority of their life that may involve formal education, special training, or be within a specific industry.",
+      "area": "Earning Income",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 1: Earn, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-1.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 1: Earn, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-1.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-002",
+      "term": "Job",
+      "definition": "A specific duty, task, or activity someone completes using his or her time, skills, and energy to earn money.",
+      "area": "Earning Income",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 1: Earn, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-1.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 1: Earn, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-1.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-003",
+      "term": "Income",
+      "definition": "Money that you receive from jobs, allowances, gifts, interest, dividends, and other sources.",
+      "area": "Earning Income",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 1: Earn, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-1.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 1: Earn, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-1.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-004",
+      "term": "Gross Income (Gross Pay)",
+      "definition": "Earnings before deductions (as for taxes or expenses) are subtracted.",
+      "area": "Earning Income",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 1: Earn, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-1.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 1: Earn, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-1.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-005",
+      "term": "Net Income (Take-Home Pay)",
+      "definition": "The gross pay minus deductions (such as for taxes, health care premiums, and retirement savings).",
+      "area": "Earning Income",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 1: Earn, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-1.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 1: Earn, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-1.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-006",
+      "term": "Paycheck",
+      "definition": "A check that is used to pay an employee for his or her work.",
+      "area": "Earning Income",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 1: Earn, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-1.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 1: Earn, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-1.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-007",
+      "term": "Income Tax",
+      "definition": "Taxes on income, both earned (salaries, wages, tips, commissions) and unearned (interest, dividends). Income taxes can be levied on both individuals (personal income taxes) and businesses (business and corporate income taxes).",
+      "area": "Earning Income",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 1: Earn, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-1.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 1: Earn, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-1.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-008",
+      "term": "Social Security",
+      "definition": "A federal government program that provides retirement, survivors, and disability benefits, funded by a tax on income.",
+      "area": "Earning Income",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 1: Earn, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-1.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 1: Earn, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-1.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-009",
+      "term": "401(k) Plan",
+      "definition": "An employer-sponsored retirement savings plan that gives employees a choice of investment options, typically mutual funds. Employees who participate in a traditional 401(k) plan have a portion of their pre-tax salary invested directly in the option or options they choose. These contributions and any earnings from the 401(k) investments are not taxed until they are withdrawn.",
+      "area": "Earning Income",
+      "source": {
+        "title": "Investor.gov Glossary: 401(k) Plan",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/401k-plan",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"401(k) Plan,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/401k-plan. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-010",
+      "term": "Defined Contribution Plan",
+      "definition": "A retirement savings plan, such as a 401(k) plan, that does not promise a specific payment upon retirement. In these plans, the employee or the employer (or both) contribute to the employee's individual account. The employee bears the investment risks.",
+      "area": "Earning Income",
+      "source": {
+        "title": "Investor.gov Glossary: Defined Contribution Plan",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/defined-contribution-plan",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Defined Contribution Plan,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/defined-contribution-plan. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-011",
+      "term": "Defined Benefit Plan",
+      "definition": "Defined benefit plans also are known as pension plans. Employers sponsor defined benefit plans and promise the plan's investments will provide you with a specified monthly benefit at retirement. The employer bears the investment risks.",
+      "area": "Earning Income",
+      "source": {
+        "title": "Investor.gov Glossary: Defined Benefit Plan",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/defined-benefit-plan",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Defined Benefit Plan,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/defined-benefit-plan. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-012",
+      "term": "Budget",
+      "definition": "A plan that outlines what money you expect to earn or receive (your income) and how you will save it or spend it (your expenses) for a given period of time; also called a spending plan.",
+      "area": "Spending",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-013",
+      "term": "Cash Flow",
+      "definition": "The amount of money flowing in (income) and flowing out (expenses) of a personal budget.",
+      "area": "Spending",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-014",
+      "term": "Expense",
+      "definition": "The cost of goods and services.",
+      "area": "Spending",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-015",
+      "term": "Fixed Expense",
+      "definition": "An expense that does not change from month to month.",
+      "area": "Spending",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-016",
+      "term": "Variable Expense",
+      "definition": "Money that a person spends or gives away that varies from month to month.",
+      "area": "Spending",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-017",
+      "term": "Need",
+      "definition": "Something you must have to survive, such as clothes, shelter, or food.",
+      "area": "Spending",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-018",
+      "term": "Want",
+      "definition": "Something that you would like to have but that you could live without, such as a TV or tickets to a baseball game.",
+      "area": "Spending",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-019",
+      "term": "Rent",
+      "definition": "The amount of money needed to live in or use someone else’s property, such as a home, condo, or apartment.",
+      "area": "Spending",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-020",
+      "term": "Philanthropy",
+      "definition": "Giving money or time for the purpose of trying to make life better for others.",
+      "area": "Spending",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-021",
+      "term": "Debit Card",
+      "definition": "A plastic card that can be used to deposit or withdraw cash from a checking or other bank deposit account, such as at automated teller machines or at retail locations that accept cards.",
+      "area": "Spending",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 4: Borrow, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-4.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 4: Borrow, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-4.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-022",
+      "term": "Financial Aid",
+      "definition": "Award(s) to individuals to help pay for education expenses.",
+      "area": "Spending",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-023",
+      "term": "Grant",
+      "definition": "A form of financial aid, often based on financial need that does not need to be repaid (unless, for example, you withdraw from school and owe a refund).",
+      "area": "Spending",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-024",
+      "term": "Scholarship",
+      "definition": "Money awarded to students based on academic or other achievements to help pay for education expenses. Scholarships generally do not have to be repaid.",
+      "area": "Spending",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-025",
+      "term": "Save",
+      "definition": "To set something, like money, aside to use in the future.",
+      "area": "Saving",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-026",
+      "term": "Savings Account",
+      "definition": "A bank account that you can use to set aside money, and that pays you interest.",
+      "area": "Saving",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-027",
+      "term": "Checking Account",
+      "definition": "A deposit account at a financial institution that allows consumers to make deposits, pay bills, and make withdrawals. Money that is in a checking account is very liquid, meaning it can be easily accessed.",
+      "area": "Saving",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-028",
+      "term": "Bank",
+      "definition": "A financial institution and business that accepts deposits, makes loans, and handles other financial transactions.",
+      "area": "Saving",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-029",
+      "term": "Credit Union",
+      "definition": "A not-for-profit financial institution owned by its members and represented by a volunteer board of directors who are elected by the membership. To become a member, you must meet the credit union’s field of membership requirements and open a share account.",
+      "area": "Saving",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-030",
+      "term": "Federal Deposit Insurance Corporation (FDIC)",
+      "definition": "Preserves and promotes public confidence in the U.S. financial system by insuring deposits in banks and thrift institutions for at least $250,000. An independent agency of the federal government, the FDIC was created in 1933 in response to the thousands of bank failures that occurred in the 1920s and early 1930s. Since the start of FDIC insurance on January 1, 1934, no depositor has lost a single cent of insured funds as a result of a failure.",
+      "area": "Saving",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-031",
+      "term": "Interest",
+      "definition": "Money that a bank or other financial institution pays you for keeping money on deposit with them, or the amount of money you pay a bank as a fee when you borrow money. You can earn interest from a bank (such as when you keep money in a saving account) or pay interest (such as when you borrow money).",
+      "area": "Saving",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-032",
+      "term": "Compound Interest",
+      "definition": "The interest paid on principal and previously earned interest.",
+      "area": "Saving",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-033",
+      "term": "Financial Planning",
+      "definition": "Identifying a person’s financial goals, needs, and expected earning, saving, investing, insurance, and debt management activities.",
+      "area": "Saving",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-034",
+      "term": "Inflation",
+      "definition": "A rise in the general level of prices of goods and services in an economy over a period of time; the opposite is deflation.",
+      "area": "Saving",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 1: Earn, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-1.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 1: Earn, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-1.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-035",
+      "term": "Certificate of Deposit",
+      "definition": "A certificate of deposit (CD) is a savings account that holds a fixed amount of money for a fixed period of time, such as six months, one year, or five years. In exchange, the issuing bank or credit union pays you interest. When you cash in or redeem your CD, you receive the money you originally invested plus any interest. Certificates of deposit are considered to be one of the safest savings options. A CD bought through a federally insured bank or credit union is insured up to $250,000.",
+      "area": "Saving",
+      "source": {
+        "title": "Investor.gov Glossary: Certificate of Deposit",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/certificate-deposit",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Certificate of Deposit,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/certificate-deposit. Public domain (US federal work). Adapted: corrected the typo \"redeemyour\" to \"redeem your\".",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-036",
+      "term": "Individual Retirement Account (IRA)",
+      "definition": "Individual Retirement Accounts (IRAs) provide tax advantages for retirement savings. You can contribute each year up to the maximum amount allowed by the Internal Revenue Service. There are several types of IRAs available - traditional IRAs, Roth IRAs, SEP IRAs, and SIMPLE IRAs.",
+      "area": "Saving",
+      "source": {
+        "title": "Investor.gov Glossary: Individual Retirement Account (IRA)",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/individual-retirement-account-ira",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Individual Retirement Account (IRA),\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/individual-retirement-account-ira. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-037",
+      "term": "Purchasing Power",
+      "definition": "The amount of goods and services that can be purchased by a given unit of currency, taking into account the effect of inflation.",
+      "area": "Saving",
+      "source": {
+        "title": "Investor.gov Glossary: Purchasing Power",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/purchasing-power",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Purchasing Power,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/purchasing-power. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-038",
+      "term": "Invest",
+      "definition": "To put money at risk with the goal of making a profit (return) in the future.",
+      "area": "Investing",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-039",
+      "term": "Investment",
+      "definition": "Using money or time in a way that you expect will bring you a return or increase in value.",
+      "area": "Investing",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-040",
+      "term": "Stock",
+      "definition": "An investment that represents a share of ownership in a company.",
+      "area": "Investing",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 3: Save and Invest, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-3.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-041",
+      "term": "Bonds",
+      "definition": "A bond is a debt security, similar to an IOU. Borrowers issue bonds to raise money from investors willing to lend them money for a certain amount of time. When you buy a bond, you are lending to the issuer, which may be a government, municipality, or corporation. In return, the issuer promises to pay you a specified rate of interest during the life of the bond and to repay the principal, also known as face value or par value of the bond, when it “matures,” or comes due after a set period of time.",
+      "area": "Investing",
+      "source": {
+        "title": "Investor.gov Glossary: Bonds",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/bonds",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Bonds,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/bonds. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-042",
+      "term": "Mutual Funds",
+      "definition": "A mutual fund is an SEC-registered open-end investment company that pools money from many investors. It invests the money in stocks, bonds, short-term money-market instruments, other securities or assets, or some combination of these investments. The combined holdings the mutual fund owns are known as its portfolio, which is managed by an SEC-registered investment adviser. Each mutual fund share represents an investor’s part ownership of the mutual fund’s portfolio and the income the portfolio generates.",
+      "area": "Investing",
+      "source": {
+        "title": "Investor.gov Glossary: Mutual Funds",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/mutual-funds",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Mutual Funds,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/mutual-funds. Public domain (US federal work). Adapted: kept the first paragraph only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-043",
+      "term": "Exchange-Traded Fund (ETF)",
+      "definition": "An ETF is an exchange-traded investment product that must register with the SEC as an open-end investment company (or sometimes as a unit investment trust). ETFs are similar to mutual funds. Like mutual funds, they pool money from many investors and invest the money in stocks, bonds, short-term money-market instruments, other securities or assets, or some combination of these investments. The combined holdings of the ETF are known as its portfolio, which is usually managed by an SEC-registered investment adviser. Each ETF share represents an investor’s part ownership of the ETF’s portfolio and the income the portfolio generates.",
+      "area": "Investing",
+      "source": {
+        "title": "Investor.gov Glossary: Exchange-Traded Fund (ETF)",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/exchange-traded-fund-etf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Exchange-Traded Fund (ETF),\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/exchange-traded-fund-etf. Public domain (US federal work). Adapted: kept the first 2 paragraphs only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-044",
+      "term": "Index Fund",
+      "definition": "An index fund is a mutual fund, exchange-traded fund (ETF), or unit investment trust (UIT). These funds follow a passive investment strategy designed to achieve approximately the same return as a particular index before fees. An index fund will attempt to achieve its investment objective primarily by investing in the securities (stocks or bonds) of companies that are included in the selected index. Some index funds may also use derivatives (like options or futures) to help achieve their investment objective or invest in a representative sample of the companies included in an index.",
+      "area": "Investing",
+      "source": {
+        "title": "Investor.gov Glossary: Index Fund",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/index-fund",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Index Fund,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/index-fund. Public domain (US federal work). Adapted: kept the first paragraph only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-045",
+      "term": "Dividend",
+      "definition": "A portion of a company's profit paid to shareholders. Public companies that pay dividends usually do so on a fixed schedule although they can issue them at any time. Unscheduled dividend payments are known as special dividends or extra dividends.",
+      "area": "Investing",
+      "source": {
+        "title": "Investor.gov Glossary: Dividend",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/dividend",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Dividend,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/dividend. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-046",
+      "term": "Capital Gain",
+      "definition": "The profit that comes when an investment is sold for more than the price the investor paid for it.",
+      "area": "Investing",
+      "source": {
+        "title": "Investor.gov Glossary: Capital Gain",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/capital-gain",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Capital Gain,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/capital-gain. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-047",
+      "term": "Risk",
+      "definition": "In finance, risk refers to the degree of uncertainty about the rate of return on an asset and the potential harm that could arise when financial returns are not what the investor expected. In general, as investment risks rise, investors seek higher returns to compensate them for taking on such risks.",
+      "area": "Investing",
+      "source": {
+        "title": "Investor.gov Glossary: Risk",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/risk",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Risk,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/risk. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-048",
+      "term": "Risk Tolerance",
+      "definition": "An investor's ability and willingness to lose some or all of an investment in exchange for greater potential returns.",
+      "area": "Investing",
+      "source": {
+        "title": "Investor.gov Glossary: Risk Tolerance",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/risk-tolerance",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Risk Tolerance,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/risk-tolerance. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-049",
+      "term": "Time Horizon",
+      "definition": "Your time horizon is the number of months, years, or decades you need to invest to achieve your financial goal.",
+      "area": "Investing",
+      "source": {
+        "title": "Investor.gov Glossary: Time Horizon",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/time-horizon",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Time Horizon,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/time-horizon. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-050",
+      "term": "Diversification",
+      "definition": "Diversification is a strategy that can be neatly summed up as \"Don't put all your eggs in one basket.\" The strategy involves spreading your money among various investments in the hope that if one loses money, the others will make up for those losses.",
+      "area": "Investing",
+      "source": {
+        "title": "Investor.gov Glossary: Diversification",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/diversification",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Diversification,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/diversification. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-051",
+      "term": "Asset Allocation",
+      "definition": "Asset allocation involves dividing your investments among different categories, such as stocks, bonds, and cash.",
+      "area": "Investing",
+      "source": {
+        "title": "Investor.gov Glossary: Asset Allocation",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/asset-allocation",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Asset Allocation,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/asset-allocation. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-052",
+      "term": "Portfolio",
+      "definition": "The combined holdings of stock, bond, commodity, real estate and other investments by an individual or institutional investor.",
+      "area": "Investing",
+      "source": {
+        "title": "Investor.gov Glossary: Portfolio",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/portfolio",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Portfolio,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/portfolio. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-053",
+      "term": "Dollar Cost Averaging",
+      "definition": "Dollar-cost averaging means investing your money in equal portions, at regular intervals, regardless of the ups and downs in the market. This investment strategy can help you manage risk by following a consistent pattern of adding new money to your investment over a long period of time. By making regular investments with the same amount of money each time, you will buy more of an investment when its price is low and less of the investment when its price is high.",
+      "area": "Investing",
+      "source": {
+        "title": "Investor.gov Glossary: Dollar Cost Averaging",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/dollar-cost-averaging",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Dollar Cost Averaging,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/dollar-cost-averaging. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-054",
+      "term": "Real Return",
+      "definition": "Real return is what is earned on an investment after accounting for taxes and inflation. Real returns are lower than nominal returns, which do not subtract taxes and inflation.",
+      "area": "Investing",
+      "source": {
+        "title": "Investor.gov Glossary: Real Return",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/real-return",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Real Return,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/real-return. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-055",
+      "term": "Credit",
+      "definition": "The ability to borrow money and pay it back later.",
+      "area": "Managing Credit",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 4: Borrow, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-4.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 4: Borrow, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-4.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-056",
+      "term": "Credit Card",
+      "definition": "A plastic card that can be used to obtain credit (such as to purchase goods and services).",
+      "area": "Managing Credit",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 4: Borrow, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-4.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 4: Borrow, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-4.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-057",
+      "term": "Credit Report",
+      "definition": "A record of your credit - and some bill repayment history - and the status of your credit accounts. This information includes how often you make your payments on time, how much credit you have, how much credit you have available, how much credit you are using, and whether a debt or bill collector is collecting money you owe.",
+      "area": "Managing Credit",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 4: Borrow, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-4.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 4: Borrow, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-4.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-058",
+      "term": "Creditworthiness",
+      "definition": "A creditor’s measure of a consumer’s past and future ability and willingness to repay debts.",
+      "area": "Managing Credit",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 4: Borrow, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-4.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 4: Borrow, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-4.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-059",
+      "term": "Debt-to-Income Ratio",
+      "definition": "A ratio that measures your monthly debt payments against your monthly gross income. To calculate, you divide your monthly debt by your monthly gross income. For example: if you pay $200 each month for a car loan and $1,000 each month for a home loan, your total debt payment each month is $1,200 ($200 + $1,000). If your monthly gross income is $4,000, then your debt-to-income ratio is 30% ($1,200 ÷ $4,000).",
+      "area": "Managing Credit",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 4: Borrow, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-4.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 4: Borrow, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-4.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-060",
+      "term": "Credit Card Accountability Responsibility and Disclosure Act",
+      "definition": "A law that prohibits certain practices that are unfair or abusive. The law also makes the rates and fees on credit cards more transparent so consumers can understand how much they are paying for their credit card and can compare different cards.",
+      "area": "Managing Credit",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 4: Borrow, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-4.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 4: Borrow, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-4.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-061",
+      "term": "Student Loans",
+      "definition": "A sum of money borrowed by an individual to help pay for college with the intent that it will be repaid at a future date, along with any agreed-upon interest.",
+      "area": "Managing Credit",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 4: Borrow, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-4.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 4: Borrow, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-4.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-062",
+      "term": "Direct Loan",
+      "definition": "A low-interest loan for students and parents to help pay for the cost of a student’s education after high school.",
+      "area": "Managing Credit",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-063",
+      "term": "Mortgage (Home Loan)",
+      "definition": "A contract, signed by a borrower when a home loan is made, that gives the lender the right to take possession of the property if the borrower fails to pay off, or defaults on, the loan.",
+      "area": "Managing Credit",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 2: Spend, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-2.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-064",
+      "term": "Credit score",
+      "definition": "A credit score is a prediction of your credit behavior, such as how likely you are to pay a loan back on time, based on information from your credit reports.",
+      "area": "Managing Credit",
+      "source": {
+        "title": "Ask CFPB: What is a credit score?",
+        "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-credit-score-en-315/",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"What is a credit score?,\" Ask CFPB, Consumer Financial Protection Bureau, https://www.consumerfinance.gov/ask-cfpb/what-is-a-credit-score-en-315/. Public domain (US federal work). Adapted: kept the first sentence of the answer only; term label taken from the page title.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-065",
+      "term": "Principal",
+      "definition": "The total amount of money being borrowed or lent; the initial amount of money invested.",
+      "area": "Managing Credit",
+      "source": {
+        "title": "Investor.gov Glossary: Principal",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/principal",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Principal,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/principal. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-066",
+      "term": "Insurance",
+      "definition": "A contractual relationship that exists when one party (the Insurer), for a fee (the premium) agrees to reimburse another party (the Insured or third party on behalf of the Insured) for a specific loss.",
+      "area": "Managing Risk",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-067",
+      "term": "Premium",
+      "definition": "The amount of money that has to be paid for an insurance policy.",
+      "area": "Managing Risk",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-068",
+      "term": "Deductible",
+      "definition": "The dollar amount or percentage of a loss that you have to pay before the insurance policy begins to pay.",
+      "area": "Managing Risk",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-069",
+      "term": "Claim",
+      "definition": "Request to an insurance company for payment for a covered loss under an insurance policy.",
+      "area": "Managing Risk",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-070",
+      "term": "Auto Insurance",
+      "definition": "A contract between you and an insurance company in which you agree to pay a fee (premium) and in return, the insurance company agrees to pay for certain expenses associated with an accident or other covered losses on your vehicle.",
+      "area": "Managing Risk",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-071",
+      "term": "Health Insurance",
+      "definition": "A contract that requires your health insurer to pay some or all of your health care costs in exchange for a premium (money paid).",
+      "area": "Managing Risk",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-072",
+      "term": "Homeowner’s Insurance",
+      "definition": "An insurance policy that covers a homeowner’s house, other structures on their property, and personal contents against losses caused by such things as windstorms, fire, and theft. It generally also provides liability coverage (for example: this coverage would be applicable if you are found responsible for the injury of a friend who injures themselves while visiting you).",
+      "area": "Managing Risk",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-073",
+      "term": "Property Insurance",
+      "definition": "Insurance to protect you against damage that may occur to your property.",
+      "area": "Managing Risk",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-074",
+      "term": "Life Insurance",
+      "definition": "A form of insurance that will pay money to a beneficiary if the policyholder dies.",
+      "area": "Managing Risk",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-075",
+      "term": "Disability Insurance",
+      "definition": "Protects a person from loss of income due to a covered illness or injury.",
+      "area": "Managing Risk",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-076",
+      "term": "Estate Planning",
+      "definition": "Planning for what will happen with assets or property after death.",
+      "area": "Managing Risk",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-077",
+      "term": "Identity Theft",
+      "definition": "When someone steals another person’s identity to commit fraud, such as by using his or her name or Social Security number to get something. Identity theft is a crime.",
+      "area": "Managing Risk",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf. Public domain (US federal work); use does not imply FDIC endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-078",
+      "term": "Phishing",
+      "definition": "When fraudsters impersonate a business or government agency to try to get you to give them personal information, such as through an email or text message. Can also be thought of as “fishing for confidential information.”",
+      "area": "Managing Risk",
+      "source": {
+        "title": "Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Words To Know",
+        "url": "https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Words To Know\" in Money Smart for Young People, Grades 9-12 Parent/Caregiver Guide, Theme 5: Protect, Federal Deposit Insurance Corporation (FDIC), https://www.fdic.gov/resources/consumers/money-smart/documents/parent-caregiver-guides/fdic-gr9-12-parentguide-module-5.pdf. Public domain (US federal work); use does not imply FDIC endorsement. Adapted: added the missing closing quotation mark.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-079",
+      "term": "Ponzi Schemes",
+      "definition": "A Ponzi scheme is an investment fraud that pays existing investors with funds collected from new investors. Ponzi schemes are named after Charles Ponzi. In the 1920s, Ponzi promised investors a 50% return within a few months for what he claimed was an investment in international mail coupons. Ponzi used funds from new investors to pay fake “returns” to earlier investors.",
+      "area": "Managing Risk",
+      "source": {
+        "title": "Investor.gov Glossary: Ponzi Schemes",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/ponzi-schemes",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Ponzi Schemes,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/ponzi-schemes. Public domain (US federal work). Adapted: kept the first paragraph only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-v-080",
+      "term": "Pyramid Schemes",
+      "definition": "A pyramid scheme is an investment fraud in which new participants’ fees are typically used to pay money to existing participants for recruiting new members. Pyramid scheme organizers may pitch the scheme as a business opportunity such as a multi-level marketing (MLM) program. Fraudsters frequently use social media, Internet advertising, company websites, group presentations, conference calls, and YouTube videos to promote a pyramid scheme.",
+      "area": "Managing Risk",
+      "source": {
+        "title": "Investor.gov Glossary: Pyramid Schemes",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/pyramid-schemes",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Pyramid Schemes,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/pyramid-schemes. Public domain (US federal work). Adapted: kept the first paragraph only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    }
+  ]
+}

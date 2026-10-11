@@ -1,0 +1,1586 @@
+{
+  "season": "2026-2027",
+  "source": "deca.org/compete high school event list ('2026-2027 Official Competitive Events', 60 events) and each linked event page, cross-checked against the 2026-27 Competitive Events poster, the 2026-2027 Exam Blueprint (DECA Guide 2026-27 p. 39) and the 2026-27 DECA Guide event guideline PDFs linked from each event page; checked 2026-10-11",
+  "sourceUrls": [
+    "https://www.deca.org/compete",
+    "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3d42b495bca6da26387d56_2026-27_CE_Poster.pdf",
+    "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c69fcf9672174167a66c9_HS_Blueprint.pdf",
+    "https://www.decadirect.org/articles/deca-announces-competitive-event-topics-and-updates-for-2026-2027"
+  ],
+  "disclaimer": "Reference data compiled for DECA Masters, an independent practice tool not affiliated with DECA Inc. Event facts come from public deca.org pages; summaries are original. Not official DECA material: confirm details in the current DECA Guide and with your chartered association.",
+  "fieldNotes": {
+    "category": "Category label exactly as shown on the deca.org event list.",
+    "cluster": "DECA Masters cluster slug mapped from the official career cluster on deca.org (kept verbatim in officialCluster).",
+    "exam": "Exam slug for the 100-question exam the event uses, or null when the event has no exam.",
+    "format.presentMinutes": "Maximum time with the judge (interview, presentation or consultation), including judge questions where the guidelines say so.",
+    "format.judgeAppearance": "Text of the deca.org Appear Before a Judge field; null when the page leaves it blank.",
+    "format.performanceIndicators": "Number of performance indicators listed in each role-play or case study, per the 2026-27 guidelines; null where not applicable."
+  },
+  "events": [
+    {
+      "code": "ACT",
+      "name": "Accounting Applications Series",
+      "category": "Individual Series",
+      "cluster": "finance",
+      "exam": "finance",
+      "components": [
+        "exam",
+        "roleplay"
+      ],
+      "teamSize": "1",
+      "summary": "You play an accounting professional in solo role-plays, using financial records and statements to explain transactions, build reports and guide a manager's decisions.",
+      "officialUrl": "https://www.deca.org/compete/accounting-applications-series",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Finance",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": "2 role-plays, third role-play for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Exam and each preliminary role-play count one third each; in finals the role-play is weighted twice the exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf"
+    },
+    {
+      "code": "AAM",
+      "name": "Apparel and Accessories Marketing Series",
+      "category": "Individual Series",
+      "cluster": "marketing",
+      "exam": "marketing",
+      "components": [
+        "exam",
+        "roleplay"
+      ],
+      "teamSize": "1",
+      "summary": "Solo role-plays set in businesses that design, wholesale or sell clothing and accessories, where you solve marketing and management problems for a fashion brand or store.",
+      "officialUrl": "https://www.deca.org/compete/apparel-and-accessories-marketing-series",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": "2 role-plays, third role-play for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Exam and each preliminary role-play count one third each; in finals the role-play is weighted twice the exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf"
+    },
+    {
+      "code": "ASM",
+      "name": "Automotive Services Marketing Series",
+      "category": "Individual Series",
+      "cluster": "marketing",
+      "exam": "marketing",
+      "components": [
+        "exam",
+        "roleplay"
+      ],
+      "teamSize": "1",
+      "summary": "Solo role-plays set at car dealerships, service shops and auto parts retailers, where you handle marketing and management problems specific to the automotive trade.",
+      "officialUrl": "https://www.deca.org/compete/automotive-services-marketing-series",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": "2 role-plays, third role-play for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Exam and each preliminary role-play count one third each; in finals the role-play is weighted twice the exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf"
+    },
+    {
+      "code": "BFS",
+      "name": "Business Finance Series",
+      "category": "Individual Series",
+      "cluster": "finance",
+      "exam": "finance",
+      "components": [
+        "exam",
+        "roleplay"
+      ],
+      "teamSize": "1",
+      "summary": "Solo role-plays focused on company-level financial planning: you read financial statements and data, then advise leadership on budgets, investments and business decisions.",
+      "officialUrl": "https://www.deca.org/compete/business-finance-series",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Finance",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": "2 role-plays, third role-play for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Exam and each preliminary role-play count one third each; in finals the role-play is weighted twice the exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf"
+    },
+    {
+      "code": "EBG",
+      "name": "Business Growth Plan",
+      "category": "Entrepreneurship",
+      "cluster": "entrepreneurship",
+      "exam": null,
+      "components": [
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "Members who already own and run a business (alone or as a team of up to three owners) write a plan for expanding it, through options like new locations, new markets or new product lines, and pitch that growth strategy to a judge playing a potential source of capital.",
+      "officialUrl": "https://www.deca.org/compete/business-growth-plan",
+      "verifiedAt": "2026-10-11",
+      "notes": "All participants must be documented owners/operators of the business (a parent's business does not qualify). Proof of ownership is excluded from the 20-page limit.",
+      "officialCluster": "Entrepreneurship",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present plan",
+        "performanceIndicators": null,
+        "writtenLimit": "20 pages",
+        "scoring": "Written entry 100 points and presentation 100 points (50/50)."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a832695cc359cd7caee5999_HS_EBG_Guidelines.pdf"
+    },
+    {
+      "code": "BLTDM",
+      "name": "Business Law and Ethics Team Decision Making",
+      "category": "Team Decision Making",
+      "cluster": "business-management",
+      "exam": "business-management",
+      "components": [
+        "exam",
+        "case-study"
+      ],
+      "teamSize": "2",
+      "summary": "Two-person teams get a business case that mixes legal questions, such as contracts, liability, employment or ownership structure, with an ethical dilemma, and must present a well-reasoned recommendation.",
+      "officialUrl": "https://www.deca.org/compete/business-law-and-ethics-team-decision-making",
+      "verifiedAt": "2026-10-11",
+      "notes": "Business law content is based on U.S. law, per the 2026-27 guidelines.",
+      "officialCluster": "Business Management and Administration",
+      "format": {
+        "prepMinutes": 30,
+        "presentMinutes": 15,
+        "judgeAppearance": "1 case study, second case study for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Team members' exam scores are averaged; presentation weighted twice the averaged exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327f7f7f637d914a9fc71_HS_TDM_Guidelines.pdf"
+    },
+    {
+      "code": "BSM",
+      "name": "Business Services Marketing Series",
+      "category": "Individual Series",
+      "cluster": "marketing",
+      "exam": "marketing",
+      "components": [
+        "exam",
+        "roleplay"
+      ],
+      "teamSize": "1",
+      "summary": "Solo role-plays about marketing services, whether a firm sells to other businesses on contract or sells directly to consumers.",
+      "officialUrl": "https://www.deca.org/compete/business-services-marketing-series",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": "2 role-plays, third role-play for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Exam and each preliminary role-play count one third each; in finals the role-play is weighted twice the exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf"
+    },
+    {
+      "code": "BOR",
+      "name": "Business Services Operations Research",
+      "category": "Business Operations Research",
+      "cluster": "business-management",
+      "exam": null,
+      "components": [
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "Working alone or in a team of up to three, you partner with a local service business, run a research study on the season's assigned topic, and turn the findings into a written strategic plan presented to the owner, played by the judge.",
+      "officialUrl": "https://www.deca.org/compete/business-services-operations-research",
+      "verifiedAt": "2026-10-11",
+      "notes": "2026-27 topic (all five categories): work with a local business or organization to research what drives customer loyalty and repeat engagement, then build a customer retention strategy.",
+      "officialCluster": "Business Management and Administration",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present research and strategic plan",
+        "performanceIndicators": null,
+        "writtenLimit": "20 pages",
+        "scoring": "Written entry 100 points and presentation 100 points (50/50)."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c6eb1eae4bc1087206b96_HS_BOR_Guidelines.pdf"
+    },
+    {
+      "code": "PMBS",
+      "name": "Business Solutions Project",
+      "category": "Project Management",
+      "cluster": "business-management",
+      "exam": null,
+      "components": [
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "Working alone or in a team of up to three, you apply the full project management cycle to help a local business or organization fix a real operational problem, then document it in a written report and present the results.",
+      "officialUrl": "https://www.deca.org/compete/business-solutions-project",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Business Management and Administration",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present project",
+        "performanceIndicators": null,
+        "writtenLimit": "20 pages",
+        "scoring": "Written entry 100 points and presentation 100 points (50/50)."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8326d8416396a3c283c30d_HS_PM_Guidelines.pdf"
+    },
+    {
+      "code": "BMOR",
+      "name": "Buying and Merchandising Operations Research",
+      "category": "Business Operations Research",
+      "cluster": "marketing",
+      "exam": null,
+      "components": [
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "Working alone or in a team of up to three, you research a local retailer or consumer-goods wholesaler on the season's assigned topic and build a written strategic plan around how it plans, buys, displays and sells merchandise.",
+      "officialUrl": "https://www.deca.org/compete/buying-and-merchandising-operations-research",
+      "verifiedAt": "2026-10-11",
+      "notes": "2026-27 topic (all five categories): work with a local business or organization to research what drives customer loyalty and repeat engagement, then build a customer retention strategy.",
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present research and strategic plan",
+        "performanceIndicators": null,
+        "writtenLimit": "20 pages",
+        "scoring": "Written entry 100 points and presentation 100 points (50/50)."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c6eb1eae4bc1087206b96_HS_BOR_Guidelines.pdf"
+    },
+    {
+      "code": "BTDM",
+      "name": "Buying and Merchandising Team Decision Making",
+      "category": "Team Decision Making",
+      "cluster": "marketing",
+      "exam": "marketing",
+      "components": [
+        "exam",
+        "case-study"
+      ],
+      "teamSize": "2",
+      "summary": "Two-person teams solve a case about getting the right merchandise to customers, covering demand forecasting, assortment planning, buying, display and selling.",
+      "officialUrl": "https://www.deca.org/compete/buying-and-merchandising-team-decision-making",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": 30,
+        "presentMinutes": 15,
+        "judgeAppearance": "1 case study, second case study for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Team members' exam scores are averaged; presentation weighted twice the averaged exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327f7f7f637d914a9fc71_HS_TDM_Guidelines.pdf"
+    },
+    {
+      "code": "PMCD",
+      "name": "Career Development Project",
+      "category": "Project Management",
+      "cluster": "business-management",
+      "exam": null,
+      "components": [
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "Working alone or in a team of up to three, you plan and run a project that builds career readiness for business fields, such as a mock-interview day or résumé clinic, and report on how it was managed from launch to close.",
+      "officialUrl": "https://www.deca.org/compete/career-development-project",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Business Management and Administration",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present project",
+        "performanceIndicators": null,
+        "writtenLimit": "20 pages",
+        "scoring": "Written entry 100 points and presentation 100 points (50/50)."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8326d8416396a3c283c30d_HS_PM_Guidelines.pdf"
+    },
+    {
+      "code": "PMCA",
+      "name": "Community Awareness Project",
+      "category": "Project Management",
+      "cluster": "business-management",
+      "exam": null,
+      "components": [
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "Working alone or in a team of up to three, you use project management to run a campaign that raises awareness of a community issue, such as road safety or mental health, then document and present the project.",
+      "officialUrl": "https://www.deca.org/compete/community-awareness-project",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Business Management and Administration",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present project",
+        "performanceIndicators": null,
+        "writtenLimit": "20 pages",
+        "scoring": "Written entry 100 points and presentation 100 points (50/50)."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8326d8416396a3c283c30d_HS_PM_Guidelines.pdf"
+    },
+    {
+      "code": "PMCG",
+      "name": "Community Giving Project",
+      "category": "Project Management",
+      "cluster": "business-management",
+      "exam": null,
+      "components": [
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "Working alone or in a team of up to three, you plan and run a fundraiser or donation drive for a charity or cause, working through each phase of project management, and present the written project to a judge.",
+      "officialUrl": "https://www.deca.org/compete/community-giving-project",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Business Management and Administration",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present project",
+        "performanceIndicators": null,
+        "writtenLimit": "20 pages",
+        "scoring": "Written entry 100 points and presentation 100 points (50/50)."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8326d8416396a3c283c30d_HS_PM_Guidelines.pdf"
+    },
+    {
+      "code": "ENT",
+      "name": "Entrepreneurship Series",
+      "category": "Individual Series",
+      "cluster": "entrepreneurship",
+      "exam": "entrepreneurship",
+      "components": [
+        "exam",
+        "roleplay"
+      ],
+      "teamSize": "1",
+      "summary": "Solo role-plays where you think like a founder: spotting opportunities, sizing up a market, lining up funding and managing a young venture.",
+      "officialUrl": "https://www.deca.org/compete/entrepreneurship-series",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Entrepreneurship",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": "2 role-plays, third role-play for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Exam and each preliminary role-play count one third each; in finals the role-play is weighted twice the exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf"
+    },
+    {
+      "code": "ETDM",
+      "name": "Entrepreneurship Team Decision Making",
+      "category": "Team Decision Making",
+      "cluster": "entrepreneurship",
+      "exam": "entrepreneurship",
+      "components": [
+        "exam",
+        "case-study"
+      ],
+      "teamSize": "2",
+      "summary": "Two-person teams work through an entrepreneurial case, such as launching or scaling a small venture, and present a plan that covers the opportunity, the market, financing and management.",
+      "officialUrl": "https://www.deca.org/compete/entrepreneurship-team-decision-making",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Entrepreneurship",
+      "format": {
+        "prepMinutes": 30,
+        "presentMinutes": 15,
+        "judgeAppearance": "1 case study, second case study for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Team members' exam scores are averaged; presentation weighted twice the averaged exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327f7f7f637d914a9fc71_HS_TDM_Guidelines.pdf"
+    },
+    {
+      "code": "FOR",
+      "name": "Finance Operations Research",
+      "category": "Business Operations Research",
+      "cluster": "finance",
+      "exam": null,
+      "components": [
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "Working alone or in a team of up to three, you research a local financial services business, such as a bank, credit union, insurer or accounting firm, on the season's assigned topic and present a written strategic plan.",
+      "officialUrl": "https://www.deca.org/compete/finance-operations-research",
+      "verifiedAt": "2026-10-11",
+      "notes": "2026-27 topic (all five categories): work with a local business or organization to research what drives customer loyalty and repeat engagement, then build a customer retention strategy.",
+      "officialCluster": "Finance",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present research and strategic plan",
+        "performanceIndicators": null,
+        "writtenLimit": "20 pages",
+        "scoring": "Written entry 100 points and presentation 100 points (50/50)."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c6eb1eae4bc1087206b96_HS_BOR_Guidelines.pdf"
+    },
+    {
+      "code": "FCE",
+      "name": "Financial Consulting",
+      "category": "Professional Selling and Consulting",
+      "cluster": "finance",
+      "exam": "finance",
+      "components": [
+        "exam",
+        "presentation"
+      ],
+      "teamSize": "1",
+      "summary": "A prepared solo consultation: you research a real financial services firm and advise a client played by the judge. The 2026-27 client is a small-business owner planning for retirement and succession.",
+      "officialUrl": "https://www.deca.org/compete/financial-consulting",
+      "verifiedAt": "2026-10-11",
+      "notes": "Uses the Finance cluster exam. Presentation is up to 15 minutes including judge questions.",
+      "officialCluster": "Finance",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Consultation",
+        "performanceIndicators": null,
+        "writtenLimit": null,
+        "scoring": "Presentation (100 points) weighted twice the exam score; exam score carries into finals."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c771dcc9f1c5e613efc57_HS_PSC_Guidelines.pdf"
+    },
+    {
+      "code": "PMFL",
+      "name": "Financial Literacy Project",
+      "category": "Project Management",
+      "cluster": "business-management",
+      "exam": null,
+      "components": [
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "Working alone or in a team of up to three, you plan and deliver a project that teaches money skills such as budgeting, credit or investing to a chosen audience, then present how it was managed.",
+      "officialUrl": "https://www.deca.org/compete/financial-literacy-project",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Business Management and Administration",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present project",
+        "performanceIndicators": null,
+        "writtenLimit": "20 pages",
+        "scoring": "Written entry 100 points and presentation 100 points (50/50)."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8326d8416396a3c283c30d_HS_PM_Guidelines.pdf"
+    },
+    {
+      "code": "FTDM",
+      "name": "Financial Services Team Decision Making",
+      "category": "Team Decision Making",
+      "cluster": "finance",
+      "exam": "finance",
+      "components": [
+        "exam",
+        "case-study"
+      ],
+      "teamSize": "2",
+      "summary": "Two-person teams take on a case set in a bank or other financial institution and use financial statements and data to recommend a course of action.",
+      "officialUrl": "https://www.deca.org/compete/financial-services-team-decision-making",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Finance",
+      "format": {
+        "prepMinutes": 30,
+        "presentMinutes": 15,
+        "judgeAppearance": "1 case study, second case study for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Team members' exam scores are averaged; presentation weighted twice the averaged exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327f7f7f637d914a9fc71_HS_TDM_Guidelines.pdf"
+    },
+    {
+      "code": "FMS",
+      "name": "Food Marketing Series",
+      "category": "Individual Series",
+      "cluster": "marketing",
+      "exam": "marketing",
+      "components": [
+        "exam",
+        "roleplay"
+      ],
+      "teamSize": "1",
+      "summary": "Solo role-plays covering marketing and management in businesses that sell food, from grocery retailers to wholesalers and food manufacturers.",
+      "officialUrl": "https://www.deca.org/compete/food-marketing-series",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": "2 role-plays, third role-play for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Exam and each preliminary role-play count one third each; in finals the role-play is weighted twice the exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf"
+    },
+    {
+      "code": "EFB",
+      "name": "Franchise Business Plan",
+      "category": "Entrepreneurship",
+      "cluster": "entrepreneurship",
+      "exam": null,
+      "components": [
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "Working alone or in a team of up to three, you write a business plan proposal for buying into an existing franchise and pitch it to a judge who plays a potential source of financing.",
+      "officialUrl": "https://www.deca.org/compete/franchise-business-plan",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Entrepreneurship",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present plan",
+        "performanceIndicators": null,
+        "writtenLimit": "20 pages",
+        "scoring": "Written entry 100 points and presentation 100 points (50/50)."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c713c8e4955853e3f76f0_HS_EFB_Guidelines.pdf"
+    },
+    {
+      "code": "HTOR",
+      "name": "Hospitality and Tourism Operations Research",
+      "category": "Business Operations Research",
+      "cluster": "hospitality-tourism",
+      "exam": null,
+      "components": [
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "Working alone or in a team of up to three, you research a local hospitality or tourism business, such as a hotel, restaurant, attraction or event venue, on the season's assigned topic and present a written strategic plan.",
+      "officialUrl": "https://www.deca.org/compete/hospitality-and-tourism-operations-research",
+      "verifiedAt": "2026-10-11",
+      "notes": "2026-27 topic (all five categories): work with a local business or organization to research what drives customer loyalty and repeat engagement, then build a customer retention strategy.",
+      "officialCluster": "Hospitality and Tourism",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present research and strategic plan",
+        "performanceIndicators": null,
+        "writtenLimit": "20 pages",
+        "scoring": "Written entry 100 points and presentation 100 points (50/50)."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c6eb1eae4bc1087206b96_HS_BOR_Guidelines.pdf"
+    },
+    {
+      "code": "HTPS",
+      "name": "Hospitality and Tourism Professional Selling",
+      "category": "Professional Selling and Consulting",
+      "cluster": "hospitality-tourism",
+      "exam": "hospitality-tourism",
+      "components": [
+        "exam",
+        "presentation"
+      ],
+      "teamSize": "1",
+      "summary": "A prepared solo sales presentation on a hospitality or tourism offering. For 2026-27 you represent a tour wholesaler pitching experience-based group travel packages to a travel agency.",
+      "officialUrl": "https://www.deca.org/compete/hospitality-and-tourism-professional-selling",
+      "verifiedAt": "2026-10-11",
+      "notes": "Uses the Hospitality and Tourism cluster exam. The deca.org event page leaves Interview Time blank; the 2026-27 guidelines set a 15-minute maximum including judge questions.",
+      "officialCluster": "Hospitality and Tourism",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Sales presentation",
+        "performanceIndicators": null,
+        "writtenLimit": null,
+        "scoring": "Presentation (100 points) weighted twice the exam score; exam score carries into finals."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c771dcc9f1c5e613efc57_HS_PSC_Guidelines.pdf"
+    },
+    {
+      "code": "HTDM",
+      "name": "Hospitality Services Team Decision Making",
+      "category": "Team Decision Making",
+      "cluster": "hospitality-tourism",
+      "exam": "hospitality-tourism",
+      "components": [
+        "exam",
+        "case-study"
+      ],
+      "teamSize": "2",
+      "summary": "Two-person teams handle a management or marketing case set in a hotel, convention service or food and beverage operation.",
+      "officialUrl": "https://www.deca.org/compete/hospitality-services-team-decision-making",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Hospitality and Tourism",
+      "format": {
+        "prepMinutes": 30,
+        "presentMinutes": 15,
+        "judgeAppearance": "1 case study, second case study for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Team members' exam scores are averaged; presentation weighted twice the averaged exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327f7f7f637d914a9fc71_HS_TDM_Guidelines.pdf"
+    },
+    {
+      "code": "HLM",
+      "name": "Hotel and Lodging Management Series",
+      "category": "Individual Series",
+      "cluster": "hospitality-tourism",
+      "exam": "hospitality-tourism",
+      "components": [
+        "exam",
+        "roleplay"
+      ],
+      "teamSize": "1",
+      "summary": "Solo role-plays on running hotels and other lodging properties, including guest services, conventions and food and beverage operations.",
+      "officialUrl": "https://www.deca.org/compete/hotel-and-lodging-management-series",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Hospitality and Tourism",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": "2 role-plays, third role-play for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Exam and each preliminary role-play count one third each; in finals the role-play is weighted twice the exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf"
+    },
+    {
+      "code": "HRM",
+      "name": "Human Resources Management Series",
+      "category": "Individual Series",
+      "cluster": "business-management",
+      "exam": "business-management",
+      "components": [
+        "exam",
+        "roleplay"
+      ],
+      "teamSize": "1",
+      "summary": "Solo role-plays on the people side of management: hiring, onboarding, training, performance reviews, pay and workplace safety.",
+      "officialUrl": "https://www.deca.org/compete/human-resources-management-series",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Business Management and Administration",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": "2 role-plays, third role-play for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Exam and each preliminary role-play count one third each; in finals the role-play is weighted twice the exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf"
+    },
+    {
+      "code": "EIB",
+      "name": "Independent Business Plan",
+      "category": "Entrepreneurship",
+      "cluster": "entrepreneurship",
+      "exam": null,
+      "components": [
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "Working alone or in a team of up to three, you write a full business plan for a brand-new venture of any kind and ask a judge, playing a banker or venture capitalist, to finance it.",
+      "officialUrl": "https://www.deca.org/compete/independent-business-plan",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Entrepreneurship",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present plan",
+        "performanceIndicators": null,
+        "writtenLimit": "20 pages",
+        "scoring": "Written entry 100 points and presentation 100 points (50/50)."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c722ce4784af00229b066_HS_EIB_Guidelines.pdf"
+    },
+    {
+      "code": "EIP",
+      "name": "Innovation Plan",
+      "category": "Entrepreneurship",
+      "cluster": "entrepreneurship",
+      "exam": null,
+      "components": [
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "Working alone or in a team of up to three, you build a concept pitch deck for a new business, product or service idea and pitch the market opportunity to a judge playing a venture capitalist.",
+      "officialUrl": "https://www.deca.org/compete/innovation-plan",
+      "verifiedAt": "2026-10-11",
+      "notes": "No cluster exam.",
+      "officialCluster": "Entrepreneurship",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present plan",
+        "performanceIndicators": null,
+        "writtenLimit": "20-slide pitch deck",
+        "scoring": "One 100-point presentation evaluation; pitch deck sections are scored on the presentation form."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c727b824720be717aa59f_HS_EIP_Guidelines.pdf"
+    },
+    {
+      "code": "IMCE",
+      "name": "Integrated Marketing Campaign-Event",
+      "category": "Integrated Marketing Campaign",
+      "cluster": "marketing",
+      "exam": "marketing",
+      "components": [
+        "exam",
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "Acting as agency account managers (one to three members), you pitch a campaign of 45 days or less for a real event, such as a festival, tournament or charity fundraiser; each member also writes the marketing exam.",
+      "officialUrl": "https://www.deca.org/compete/integrated-marketing-campaign-event",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present campaign",
+        "performanceIndicators": null,
+        "writtenLimit": "20-slide pitch deck",
+        "scoring": "Presentation evaluation (100 points) weighted twice the exam score; team exam scores are averaged."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c735b9a806700f706652b_HS_IMC_Guidelines.pdf"
+    },
+    {
+      "code": "IMCP",
+      "name": "Integrated Marketing Campaign-Product",
+      "category": "Integrated Marketing Campaign",
+      "cluster": "marketing",
+      "exam": "marketing",
+      "components": [
+        "exam",
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "Acting as agency account managers (one to three members), you pitch a campaign of 45 days or less for a real retail product, including goods sold online; each member also writes the marketing exam.",
+      "officialUrl": "https://www.deca.org/compete/integrated-marketing-campaign-product",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present campaign",
+        "performanceIndicators": null,
+        "writtenLimit": "20-slide pitch deck",
+        "scoring": "Presentation evaluation (100 points) weighted twice the exam score; team exam scores are averaged."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c735b9a806700f706652b_HS_IMC_Guidelines.pdf"
+    },
+    {
+      "code": "IMCS",
+      "name": "Integrated Marketing Campaign-Service",
+      "category": "Integrated Marketing Campaign",
+      "cluster": "marketing",
+      "exam": "marketing",
+      "components": [
+        "exam",
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "Acting as agency account managers (one to three members), you pitch a campaign of 45 days or less for a real service or other intangible offering; each member also writes the marketing exam.",
+      "officialUrl": "https://www.deca.org/compete/integrated-marketing-campaign-service",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present campaign",
+        "performanceIndicators": null,
+        "writtenLimit": "20-slide pitch deck",
+        "scoring": "Presentation evaluation (100 points) weighted twice the exam score; team exam scores are averaged."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c735b9a806700f706652b_HS_IMC_Guidelines.pdf"
+    },
+    {
+      "code": "IBP",
+      "name": "International Business Plan",
+      "category": "Entrepreneurship",
+      "cluster": "entrepreneurship",
+      "exam": null,
+      "components": [
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "Working alone or in a team of up to three, you write a plan for launching a new business venture in another country and present it to a judge playing a business executive.",
+      "officialUrl": "https://www.deca.org/compete/international-business-plan",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Entrepreneurship",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present plan",
+        "performanceIndicators": null,
+        "writtenLimit": "20 pages",
+        "scoring": "Written entry 100 points and presentation 100 points (50/50)."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a91d040fd3ed4c8a5dfaacf_HS_IBP_Guidelines.pdf"
+    },
+    {
+      "code": "MCS",
+      "name": "Marketing Communications Series",
+      "category": "Individual Series",
+      "cluster": "marketing",
+      "exam": "marketing",
+      "components": [
+        "exam",
+        "roleplay"
+      ],
+      "teamSize": "1",
+      "summary": "Solo role-plays on promotion, covering the advertising, publicity and other messages a business uses to inform, persuade or remind its target market.",
+      "officialUrl": "https://www.deca.org/compete/marketing-communications-series",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": "2 role-plays, third role-play for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Exam and each preliminary role-play count one third each; in finals the role-play is weighted twice the exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf"
+    },
+    {
+      "code": "MTDM",
+      "name": "Marketing Management Team Decision Making",
+      "category": "Team Decision Making",
+      "cluster": "marketing",
+      "exam": "marketing",
+      "components": [
+        "exam",
+        "case-study"
+      ],
+      "teamSize": "2",
+      "summary": "Two-person teams solve a marketing management case set in a non-retail business and present their strategy to the judge.",
+      "officialUrl": "https://www.deca.org/compete/marketing-management-team-decision-making",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": 30,
+        "presentMinutes": 15,
+        "judgeAppearance": "1 case study, second case study for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Team members' exam scores are averaged; presentation weighted twice the averaged exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327f7f7f637d914a9fc71_HS_TDM_Guidelines.pdf"
+    },
+    {
+      "code": "PFL",
+      "name": "Personal Financial Literacy",
+      "category": "Personal Financial Literacy",
+      "cluster": "personal-finance",
+      "exam": "personal-financial-literacy",
+      "components": [
+        "exam",
+        "roleplay"
+      ],
+      "teamSize": "1",
+      "summary": "A solo exam and role-play on everyday money decisions: earning income, spending, saving, investing, using credit and managing risk.",
+      "officialUrl": "https://www.deca.org/compete/personal-financial-literacy",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Personal Financial Literacy",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": "1 role-play, second role-play for finalists",
+        "performanceIndicators": 3,
+        "writtenLimit": null,
+        "scoring": "Role-play weighted twice the exam score; exam score carries into finals."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c75038e4955853e3fbb2e_HS_PFL_Guidelines.pdf"
+    },
+    {
+      "code": "PBM",
+      "name": "Principles of Business Management and Administration",
+      "category": "Principles of Business Administration",
+      "cluster": "business-management",
+      "exam": "business-admin-core",
+      "components": [
+        "exam",
+        "roleplay"
+      ],
+      "teamSize": "1",
+      "summary": "For first-year members: a core business exam plus a role-play where you explain basic concepts from management, administration, human resources or operations to a judge.",
+      "officialUrl": "https://www.deca.org/compete/principles-of-business-management-and-administration",
+      "verifiedAt": "2026-10-11",
+      "notes": "Eligibility: first-time high school DECA members in introductory principles courses. Students who were previously DECA members are not eligible; middle school DECA members may enter unless they competed in a competitive event in middle school.",
+      "officialCluster": "Business Management and Administration",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": "1 role-play, second role-play for finalists",
+        "performanceIndicators": 4,
+        "writtenLimit": null,
+        "scoring": "Role-play weighted twice the exam score; exam score carries into finals."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c68346ea8c0dba9b854c1_HS_PBA_Guidelines.pdf"
+    },
+    {
+      "code": "PEN",
+      "name": "Principles of Entrepreneurship",
+      "category": "Principles of Business Administration",
+      "cluster": "entrepreneurship",
+      "exam": "business-admin-core",
+      "components": [
+        "exam",
+        "roleplay"
+      ],
+      "teamSize": "1",
+      "summary": "For first-year members: a core business exam plus a role-play where you explain basic concepts that small-business owners and founders rely on.",
+      "officialUrl": "https://www.deca.org/compete/principles-of-entrepreneurship",
+      "verifiedAt": "2026-10-11",
+      "notes": "Eligibility: first-time high school DECA members in introductory principles courses. Students who were previously DECA members are not eligible; middle school DECA members may enter unless they competed in a competitive event in middle school.",
+      "officialCluster": "Entrepreneurship",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": "1 role-play, second role-play for finalists",
+        "performanceIndicators": 4,
+        "writtenLimit": null,
+        "scoring": "Role-play weighted twice the exam score; exam score carries into finals."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c68346ea8c0dba9b854c1_HS_PBA_Guidelines.pdf"
+    },
+    {
+      "code": "PFN",
+      "name": "Principles of Finance",
+      "category": "Principles of Business Administration",
+      "cluster": "finance",
+      "exam": "business-admin-core",
+      "components": [
+        "exam",
+        "roleplay"
+      ],
+      "teamSize": "1",
+      "summary": "For first-year members: a core business exam plus a role-play where you explain basic concepts from accounting, banking, insurance or investing.",
+      "officialUrl": "https://www.deca.org/compete/principles-of-finance",
+      "verifiedAt": "2026-10-11",
+      "notes": "Eligibility: first-time high school DECA members in introductory principles courses. Students who were previously DECA members are not eligible; middle school DECA members may enter unless they competed in a competitive event in middle school.",
+      "officialCluster": "Finance",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": "1 role-play, second role-play for finalists",
+        "performanceIndicators": 4,
+        "writtenLimit": null,
+        "scoring": "Role-play weighted twice the exam score; exam score carries into finals."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c68346ea8c0dba9b854c1_HS_PBA_Guidelines.pdf"
+    },
+    {
+      "code": "PHT",
+      "name": "Principles of Hospitality and Tourism",
+      "category": "Principles of Business Administration",
+      "cluster": "hospitality-tourism",
+      "exam": "business-admin-core",
+      "components": [
+        "exam",
+        "roleplay"
+      ],
+      "teamSize": "1",
+      "summary": "For first-year members: a core business exam plus a role-play where you explain basic concepts from hotels, restaurants or travel and tourism.",
+      "officialUrl": "https://www.deca.org/compete/principles-of-hospitality",
+      "verifiedAt": "2026-10-11",
+      "notes": "Eligibility: first-time high school DECA members in introductory principles courses. Students who were previously DECA members are not eligible; middle school DECA members may enter unless they competed in a competitive event in middle school.",
+      "officialCluster": "Hospitality and Tourism",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": "1 role-play, second role-play for finalists",
+        "performanceIndicators": 4,
+        "writtenLimit": null,
+        "scoring": "Role-play weighted twice the exam score; exam score carries into finals."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c68346ea8c0dba9b854c1_HS_PBA_Guidelines.pdf"
+    },
+    {
+      "code": "PMK",
+      "name": "Principles of Marketing",
+      "category": "Principles of Business Administration",
+      "cluster": "marketing",
+      "exam": "business-admin-core",
+      "components": [
+        "exam",
+        "roleplay"
+      ],
+      "teamSize": "1",
+      "summary": "For first-year members: a core business exam plus a role-play where you explain basic concepts from advertising, market research, merchandising or selling.",
+      "officialUrl": "https://www.deca.org/compete/principles-of-marketing",
+      "verifiedAt": "2026-10-11",
+      "notes": "Eligibility: first-time high school DECA members in introductory principles courses. Students who were previously DECA members are not eligible; middle school DECA members may enter unless they competed in a competitive event in middle school.",
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": "1 role-play, second role-play for finalists",
+        "performanceIndicators": 4,
+        "writtenLimit": null,
+        "scoring": "Role-play weighted twice the exam score; exam score carries into finals."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c68346ea8c0dba9b854c1_HS_PBA_Guidelines.pdf"
+    },
+    {
+      "code": "PSE",
+      "name": "Professional Selling",
+      "category": "Professional Selling and Consulting",
+      "cluster": "marketing",
+      "exam": "marketing",
+      "components": [
+        "exam",
+        "presentation"
+      ],
+      "teamSize": "1",
+      "summary": "A prepared solo sales presentation. For 2026-27 you sell a platform that combines AI customer-service tools with retail analytics to the owner of a regional store chain.",
+      "officialUrl": "https://www.deca.org/compete/professional-selling",
+      "verifiedAt": "2026-10-11",
+      "notes": "Uses the Marketing cluster exam. The deca.org event page leaves Interview Time blank; the 2026-27 guidelines set a 15-minute maximum including judge questions.",
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Sales presentation",
+        "performanceIndicators": null,
+        "writtenLimit": null,
+        "scoring": "Presentation (100 points) weighted twice the exam score; exam score carries into finals."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c771dcc9f1c5e613efc57_HS_PSC_Guidelines.pdf"
+    },
+    {
+      "code": "QSRM",
+      "name": "Quick Serve Restaurant Management Series",
+      "category": "Individual Series",
+      "cluster": "hospitality-tourism",
+      "exam": "hospitality-tourism",
+      "components": [
+        "exam",
+        "roleplay"
+      ],
+      "teamSize": "1",
+      "summary": "Solo role-plays on managing and marketing quick-service (fast food) restaurants.",
+      "officialUrl": "https://www.deca.org/compete/quick-serve-restaurant-management-series",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Hospitality and Tourism",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": "2 role-plays, third role-play for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Exam and each preliminary role-play count one third each; in finals the role-play is weighted twice the exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf"
+    },
+    {
+      "code": "RFSM",
+      "name": "Restaurant and Food Service Management Series",
+      "category": "Individual Series",
+      "cluster": "hospitality-tourism",
+      "exam": "hospitality-tourism",
+      "components": [
+        "exam",
+        "roleplay"
+      ],
+      "teamSize": "1",
+      "summary": "Solo role-plays on managing and marketing full-service restaurants and other food-service businesses.",
+      "officialUrl": "https://www.deca.org/compete/restaurant-and-food-service-management-series",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Hospitality and Tourism",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": "2 role-plays, third role-play for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Exam and each preliminary role-play count one third each; in finals the role-play is weighted twice the exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf"
+    },
+    {
+      "code": "RMS",
+      "name": "Retail Merchandising Series",
+      "category": "Individual Series",
+      "cluster": "marketing",
+      "exam": "marketing",
+      "components": [
+        "exam",
+        "roleplay"
+      ],
+      "teamSize": "1",
+      "summary": "Solo role-plays on marketing and management tasks that apply in any kind of retail store.",
+      "officialUrl": "https://www.deca.org/compete/retail-merchandising-series",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": "2 role-plays, third role-play for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Exam and each preliminary role-play count one third each; in finals the role-play is weighted twice the exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf"
+    },
+    {
+      "code": "PMSP",
+      "name": "Sales Project",
+      "category": "Project Management",
+      "cluster": "business-management",
+      "exam": null,
+      "components": [
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "Working alone or in a team of up to three, you run a sales or fundraising project that raises money for your own DECA chapter, applying project management from planning through close-out.",
+      "officialUrl": "https://www.deca.org/compete/sales-project",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Business Management and Administration",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present project",
+        "performanceIndicators": null,
+        "writtenLimit": "20 pages",
+        "scoring": "Written entry 100 points and presentation 100 points (50/50)."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8326d8416396a3c283c30d_HS_PM_Guidelines.pdf"
+    },
+    {
+      "code": "SEOR",
+      "name": "Sports and Entertainment Marketing Operations Research",
+      "category": "Business Operations Research",
+      "cluster": "marketing",
+      "exam": null,
+      "components": [
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "Working alone or in a team of up to three, you research a local sports, entertainment or recreation business, such as a team, venue, festival or camp, on the season's assigned topic and present a written strategic plan.",
+      "officialUrl": "https://www.deca.org/compete/sports-and-entertainment-marketing-operations-research",
+      "verifiedAt": "2026-10-11",
+      "notes": "2026-27 topic (all five categories): work with a local business or organization to research what drives customer loyalty and repeat engagement, then build a customer retention strategy.",
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present research and strategic plan",
+        "performanceIndicators": null,
+        "writtenLimit": "20 pages",
+        "scoring": "Written entry 100 points and presentation 100 points (50/50)."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c6eb1eae4bc1087206b96_HS_BOR_Guidelines.pdf"
+    },
+    {
+      "code": "SEM",
+      "name": "Sports and Entertainment Marketing Series",
+      "category": "Individual Series",
+      "cluster": "marketing",
+      "exam": "marketing",
+      "components": [
+        "exam",
+        "roleplay"
+      ],
+      "teamSize": "1",
+      "summary": "Solo role-plays on marketing and managing sports teams and events, entertainment, and recreation or leisure businesses.",
+      "officialUrl": "https://www.deca.org/compete/sports-and-entertainment-marketing-series",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": "2 role-plays, third role-play for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Exam and each preliminary role-play count one third each; in finals the role-play is weighted twice the exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf"
+    },
+    {
+      "code": "STDM",
+      "name": "Sports and Entertainment Marketing Team Decision Making",
+      "category": "Team Decision Making",
+      "cluster": "marketing",
+      "exam": "marketing",
+      "components": [
+        "exam",
+        "case-study"
+      ],
+      "teamSize": "2",
+      "summary": "Two-person teams solve a marketing case drawn from the sports, entertainment or recreation industry.",
+      "officialUrl": "https://www.deca.org/compete/sports-and-entertainment-marketing-team-decision-making",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": 30,
+        "presentMinutes": 15,
+        "judgeAppearance": "1 case study, second case study for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Team members' exam scores are averaged; presentation weighted twice the averaged exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327f7f7f637d914a9fc71_HS_TDM_Guidelines.pdf"
+    },
+    {
+      "code": "ESB",
+      "name": "Start-Up Business Plan",
+      "category": "Entrepreneurship",
+      "cluster": "entrepreneurship",
+      "exam": null,
+      "components": [
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "Working alone or in a team of up to three, you turn an idea for a new business into a pitch deck and pitch it to a judge who plays a potential source of start-up funding.",
+      "officialUrl": "https://www.deca.org/compete/start-up-business-plan",
+      "verifiedAt": "2026-10-11",
+      "notes": "No cluster exam.",
+      "officialCluster": "Entrepreneurship",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present plan",
+        "performanceIndicators": null,
+        "writtenLimit": "20-slide pitch deck",
+        "scoring": "One 100-point presentation evaluation; pitch deck sections are scored on the presentation form."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c72b99c21bd0cc6a58841_HS_ESB_Guidelines.pdf"
+    },
+    {
+      "code": "SMG",
+      "name": "Stock Market Game",
+      "category": "Online Events",
+      "cluster": "finance",
+      "exam": null,
+      "components": [
+        "online",
+        "simulation",
+        "written",
+        "presentation"
+      ],
+      "teamSize": "1-3",
+      "summary": "One to three members manage a simulated $100,000 investment portfolio online during the fall game window. Top teams can qualify for ICDC, where they defend their strategy with a pitch deck and presentation.",
+      "officialUrl": "https://www.deca.org/compete/stock-market-game",
+      "verifiedAt": "2026-10-11",
+      "notes": "Online game window Sep 8 to Dec 4, 2026; teams start with $100,000. Top 25 teams per DECA region are submitted for ICDC qualification; the pitch deck and 15-minute presentation apply to ICDC qualifiers. No exam.",
+      "officialCluster": "Finance",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": 15,
+        "judgeAppearance": "Present portfolio",
+        "performanceIndicators": null,
+        "writtenLimit": "20-slide pitch deck (ICDC qualifiers only)",
+        "scoring": "Qualifying rank by portfolio percent return compared with S&P 500 growth over the game window, net of any borrowed funds; at ICDC, one 100-point presentation evaluation."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c7be61d138e806b01186b_HS_SMG_Guidelines.pdf"
+    },
+    {
+      "code": "TTDM",
+      "name": "Travel and Tourism Team Decision Making",
+      "category": "Team Decision Making",
+      "cluster": "hospitality-tourism",
+      "exam": "hospitality-tourism",
+      "components": [
+        "exam",
+        "case-study"
+      ],
+      "teamSize": "2",
+      "summary": "Two-person teams take on a case from the travel industry, such as tour operators, passenger transportation, attractions or travel agencies.",
+      "officialUrl": "https://www.deca.org/compete/travel-and-tourism-team-decision-making",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Hospitality and Tourism",
+      "format": {
+        "prepMinutes": 30,
+        "presentMinutes": 15,
+        "judgeAppearance": "1 case study, second case study for finalists",
+        "performanceIndicators": 5,
+        "writtenLimit": null,
+        "scoring": "Team members' exam scores are averaged; presentation weighted twice the averaged exam score."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327f7f7f637d914a9fc71_HS_TDM_Guidelines.pdf"
+    },
+    {
+      "code": "VBCAC",
+      "name": "Virtual Business Challenge-Accounting",
+      "category": "Online Events",
+      "cluster": "finance",
+      "exam": null,
+      "components": [
+        "online",
+        "simulation"
+      ],
+      "teamSize": "1-3",
+      "summary": "One to three members run an online accounting simulation, tracking down errors and fraud in the books and using managerial accounting to raise profit.",
+      "officialUrl": "https://www.deca.org/compete/virtual-business-challenge-accounting",
+      "verifiedAt": "2026-10-11",
+      "notes": "Two online qualifying rounds: Oct 13-23, 2026 and Jan 12-22, 2027. The top two teams per DECA region in each round are eligible for ICDC (one team per chapter, per round, per track). At ICDC, teams compete in two simulation sessions of about 15 minutes each. No exam.",
+      "officialCluster": "Finance",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": null,
+        "judgeAppearance": null,
+        "performanceIndicators": null,
+        "writtenLimit": null,
+        "scoring": "Qualifying rounds ranked by simulation results; ICDC rankings use cumulative points from two sessions."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c7ec48e4955853e4382d4_HS_VBC_Guidelines.pdf"
+    },
+    {
+      "code": "VBCEN",
+      "name": "Virtual Business Challenge-Entrepreneurship",
+      "category": "Online Events",
+      "cluster": "entrepreneurship",
+      "exam": null,
+      "components": [
+        "online",
+        "simulation"
+      ],
+      "teamSize": "1-3",
+      "summary": "One to three members launch and grow a simulated start-up online, making decisions on financing, hiring, pricing and marketing.",
+      "officialUrl": "https://www.deca.org/compete/virtual-business-challenge-entrepreneurship",
+      "verifiedAt": "2026-10-11",
+      "notes": "Two online qualifying rounds: Oct 13-23, 2026 and Jan 12-22, 2027. The top two teams per DECA region in each round are eligible for ICDC (one team per chapter, per round, per track). At ICDC, teams compete in two simulation sessions of about 15 minutes each. No exam.",
+      "officialCluster": "Entrepreneurship",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": null,
+        "judgeAppearance": null,
+        "performanceIndicators": null,
+        "writtenLimit": null,
+        "scoring": "Qualifying rounds ranked by simulation results; ICDC rankings use cumulative points from two sessions."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c7ec48e4955853e4382d4_HS_VBC_Guidelines.pdf"
+    },
+    {
+      "code": "VBCFA",
+      "name": "Virtual Business Challenge-Fashion",
+      "category": "Online Events",
+      "cluster": "marketing",
+      "exam": null,
+      "components": [
+        "online",
+        "simulation"
+      ],
+      "teamSize": "1-3",
+      "summary": "One to three members run a simulated fashion design business online, following trends and making decisions on design, buying, pricing, markdowns and promotion.",
+      "officialUrl": "https://www.deca.org/compete/virtual-business-challenge-fashion",
+      "verifiedAt": "2026-10-11",
+      "notes": "Two online qualifying rounds: Oct 13-23, 2026 and Jan 12-22, 2027. The top two teams per DECA region in each round are eligible for ICDC (one team per chapter, per round, per track). At ICDC, teams compete in two simulation sessions of about 15 minutes each. No exam.",
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": null,
+        "judgeAppearance": null,
+        "performanceIndicators": null,
+        "writtenLimit": null,
+        "scoring": "Qualifying rounds ranked by simulation results; ICDC rankings use cumulative points from two sessions."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c7ec48e4955853e4382d4_HS_VBC_Guidelines.pdf"
+    },
+    {
+      "code": "VBCHM",
+      "name": "Virtual Business Challenge-Hotel Management",
+      "category": "Online Events",
+      "cluster": "hospitality-tourism",
+      "exam": null,
+      "components": [
+        "online",
+        "simulation"
+      ],
+      "teamSize": "1-3",
+      "summary": "One to three members manage a simulated hotel online, setting room rates, bidding on group business and scheduling staff while watching competitors and guest ratings.",
+      "officialUrl": "https://www.deca.org/compete/virtual-business-challenge-hotel-management",
+      "verifiedAt": "2026-10-11",
+      "notes": "Two online qualifying rounds: Oct 13-23, 2026 and Jan 12-22, 2027. The top two teams per DECA region in each round are eligible for ICDC (one team per chapter, per round, per track). At ICDC, teams compete in two simulation sessions of about 15 minutes each. No exam.",
+      "officialCluster": "Hospitality and Tourism",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": null,
+        "judgeAppearance": null,
+        "performanceIndicators": null,
+        "writtenLimit": null,
+        "scoring": "Qualifying rounds ranked by simulation results; ICDC rankings use cumulative points from two sessions."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c7ec48e4955853e4382d4_HS_VBC_Guidelines.pdf"
+    },
+    {
+      "code": "VBCPF",
+      "name": "Virtual Business Challenge-Personal Finance",
+      "category": "Online Events",
+      "cluster": "personal-finance",
+      "exam": null,
+      "components": [
+        "online",
+        "simulation"
+      ],
+      "teamSize": "1-3",
+      "summary": "One to three members manage a simulated person's finances online, including bank accounts, cards, bills, credit, taxes and insurance, with the goal of growing net worth.",
+      "officialUrl": "https://www.deca.org/compete/virtual-business-challenge-personal-finance",
+      "verifiedAt": "2026-10-11",
+      "notes": "Two online qualifying rounds: Oct 13-23, 2026 and Jan 12-22, 2027. The top two teams per DECA region in each round are eligible for ICDC (one team per chapter, per round, per track). At ICDC, teams compete in two simulation sessions of about 15 minutes each. No exam.",
+      "officialCluster": "Personal Financial Literacy",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": null,
+        "judgeAppearance": null,
+        "performanceIndicators": null,
+        "writtenLimit": null,
+        "scoring": "Qualifying rounds ranked by simulation results; ICDC rankings use cumulative points from two sessions."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c7ec48e4955853e4382d4_HS_VBC_Guidelines.pdf"
+    },
+    {
+      "code": "VBCRS",
+      "name": "Virtual Business Challenge-Restaurant",
+      "category": "Online Events",
+      "cluster": "hospitality-tourism",
+      "exam": null,
+      "components": [
+        "online",
+        "simulation"
+      ],
+      "teamSize": "1-3",
+      "summary": "One to three members run a simulated restaurant online, using research, menu design and pricing, advertising and purchasing decisions to raise profit.",
+      "officialUrl": "https://www.deca.org/compete/virtual-business-challenge-restaurant",
+      "verifiedAt": "2026-10-11",
+      "notes": "Two online qualifying rounds: Oct 13-23, 2026 and Jan 12-22, 2027. The top two teams per DECA region in each round are eligible for ICDC (one team per chapter, per round, per track). At ICDC, teams compete in two simulation sessions of about 15 minutes each. No exam.",
+      "officialCluster": "Hospitality and Tourism",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": null,
+        "judgeAppearance": null,
+        "performanceIndicators": null,
+        "writtenLimit": null,
+        "scoring": "Qualifying rounds ranked by simulation results; ICDC rankings use cumulative points from two sessions."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c7ec48e4955853e4382d4_HS_VBC_Guidelines.pdf"
+    },
+    {
+      "code": "VBCRT",
+      "name": "Virtual Business Challenge-Retail",
+      "category": "Online Events",
+      "cluster": "marketing",
+      "exam": null,
+      "components": [
+        "online",
+        "simulation"
+      ],
+      "teamSize": "1-3",
+      "summary": "One to three members run a simulated retail store online, making pricing, purchasing and promotion decisions to raise profit.",
+      "officialUrl": "https://www.deca.org/compete/virtual-business-challenge-retail",
+      "verifiedAt": "2026-10-11",
+      "notes": "Two online qualifying rounds: Oct 13-23, 2026 and Jan 12-22, 2027. The top two teams per DECA region in each round are eligible for ICDC (one team per chapter, per round, per track). At ICDC, teams compete in two simulation sessions of about 15 minutes each. No exam. deca.org event page describes a convenience store; the 2026-27 guideline PDF lists supermarket, sporting goods or electronics stores.",
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": null,
+        "judgeAppearance": null,
+        "performanceIndicators": null,
+        "writtenLimit": null,
+        "scoring": "Qualifying rounds ranked by simulation results; ICDC rankings use cumulative points from two sessions."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c7ec48e4955853e4382d4_HS_VBC_Guidelines.pdf"
+    },
+    {
+      "code": "VBCSP",
+      "name": "Virtual Business Challenge-Sports",
+      "category": "Online Events",
+      "cluster": "marketing",
+      "exam": null,
+      "components": [
+        "online",
+        "simulation"
+      ],
+      "teamSize": "1-3",
+      "summary": "One to three members run the business side of a simulated football franchise online, making decisions on ticket prices, promotion and sponsorships.",
+      "officialUrl": "https://www.deca.org/compete/virtual-business-challenge-sports",
+      "verifiedAt": "2026-10-11",
+      "notes": "Two online qualifying rounds: Oct 13-23, 2026 and Jan 12-22, 2027. The top two teams per DECA region in each round are eligible for ICDC (one team per chapter, per round, per track). At ICDC, teams compete in two simulation sessions of about 15 minutes each. No exam.",
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": null,
+        "presentMinutes": null,
+        "judgeAppearance": null,
+        "performanceIndicators": null,
+        "writtenLimit": null,
+        "scoring": "Qualifying rounds ranked by simulation results; ICDC rankings use cumulative points from two sessions."
+      },
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c7ec48e4955853e4382d4_HS_VBC_Guidelines.pdf"
+    }
+  ]
+}

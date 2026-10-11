@@ -1,0 +1,478 @@
+{
+  "slug": "business-management",
+  "title": "Business Management + Administration Cluster Exam",
+  "cluster": "business-management",
+  "status": "placeholder",
+  "placeholderNote": "Only 7 openly licensed questions are cleared for this exam, all from one BCcampus book (CC BY 4.0), so most instructional areas are empty. 94 more questions from OpenStax books (CC BY-NC-SA 4.0) are held in _hold-openstax/exams/business-management.json until OpenStax gives written permission (its books forbid use in AI offerings) or the owner decides to ship them. No other open, publicly keyed 4-choice source was found for Operations, Strategic, Knowledge, Project or Quality Management, Communications, Professional Development or Economics (see sourcesChecked). Do not fill the gaps with AI-written questions.",
+  "blurb": "Practice questions reused from an openly licensed textbook, grouped by the Business Management + Administration exam's instructional areas.",
+  "disclaimer": "Questions reused from openly licensed sources (credited on each question). Not official DECA exam content.",
+  "builtAt": "2026-10-11",
+  "licenceNote": "All questions come from Introduction to Tourism and Hospitality in BC - 2nd Edition (BCcampus), CC BY 4.0. Show each question's attribution line with it. Credit BCcampus and the editors by name only: no logos, no suggestion of endorsement. The book has no AI-use clause.",
+  "selectionNote": "Only items whose correct answer is published in the source (H5P answer data) and that have 4 choices (or 5 trimmed to 4) were used. Items were left out when they are true/false, have 3 choices, accept several answers, or are tourism-only trivia. Risk-process steps three and four (H5P 40, questions 3-4) were left out on purpose: their stems repeat steps one and two, and placing \"risk control\" before \"risk treatment\" is specific to the book's model, so one defensible answer is not guaranteed for a student who learned another model.",
+  "formatNote": "Wording is the source's own, typos included (\"Step one the risk management process is:\", \"injuried\", \"do what ever\", \"worplace\"). Choice order is the source's order. H5P Single Choice Sets store the correct answer first and shuffle on display, so the app should shuffle choices. bma-101 was cut from 5 to 4 choices (adapted: true).",
+  "difficultyNote": "difficulty is an estimate, not an expert rating: 1 = recall of one stated fact, 2 = several facts to weigh.",
+  "explanationNote": "explanationFrom \"source-text\" = the explanation quotes, word for word, the book section the item comes from (and the H5P activity's own feedback where it has one). Each quote was checked against the section page by script.",
+  "idNote": "IDs bma-001 to bma-097 belong to the held OpenStax set's numbering (bma-079, bma-084 and bma-085 were already BCcampus items in it). New BCcampus items start at bma-098 so the held set can be merged back without renumbering.",
+  "held": {
+    "count": 94,
+    "file": "_hold-openstax/exams/business-management.json",
+    "licence": "CC BY-NC-SA 4.0",
+    "reason": "OpenStax books may not be used in AI offerings without OpenStax's written permission (SOURCES.md 1.2). Held pending the owner's decision."
+  },
+  "coverage": {
+    "blueprint": "DECA Guide 2026-27 exam blueprint (Association column used as the target mix, 100 items).",
+    "targets": {
+      "Operations": 24,
+      "Strategic Management": 9,
+      "Emotional Intelligence": 8,
+      "Communications": 6,
+      "Information Management": 6,
+      "Financial Analysis": 6,
+      "Knowledge Management": 7,
+      "Project Management": 7,
+      "Economics": 5,
+      "Professional Development": 5,
+      "Business Law": 5,
+      "Risk Management": 5,
+      "Quality Management": 4,
+      "Customer Relations": 2,
+      "Human Resources Management": 0,
+      "Marketing": 1,
+      "Entrepreneurship": 0
+    },
+    "actual": {
+      "Operations": 1,
+      "Strategic Management": 0,
+      "Emotional Intelligence": 1,
+      "Communications": 0,
+      "Information Management": 0,
+      "Financial Analysis": 0,
+      "Knowledge Management": 0,
+      "Project Management": 0,
+      "Economics": 0,
+      "Professional Development": 0,
+      "Business Law": 2,
+      "Risk Management": 3,
+      "Quality Management": 0,
+      "Customer Relations": 0,
+      "Human Resources Management": 0,
+      "Marketing": 0,
+      "Entrepreneurship": 0
+    },
+    "gaps": [
+      {
+        "area": "Operations",
+        "status": "thin",
+        "have": 1,
+        "target": 24,
+        "heldOpenStax": 24
+      },
+      {
+        "area": "Strategic Management",
+        "status": "placeholder",
+        "have": 0,
+        "target": 9,
+        "heldOpenStax": 9
+      },
+      {
+        "area": "Emotional Intelligence",
+        "status": "thin",
+        "have": 1,
+        "target": 8,
+        "heldOpenStax": 8
+      },
+      {
+        "area": "Communications",
+        "status": "placeholder",
+        "have": 0,
+        "target": 6,
+        "heldOpenStax": 6
+      },
+      {
+        "area": "Information Management",
+        "status": "placeholder",
+        "have": 0,
+        "target": 6,
+        "heldOpenStax": 6
+      },
+      {
+        "area": "Financial Analysis",
+        "status": "placeholder",
+        "have": 0,
+        "target": 6,
+        "heldOpenStax": 6
+      },
+      {
+        "area": "Knowledge Management",
+        "status": "placeholder",
+        "have": 0,
+        "target": 7,
+        "heldOpenStax": 7
+      },
+      {
+        "area": "Project Management",
+        "status": "placeholder",
+        "have": 0,
+        "target": 7,
+        "heldOpenStax": 7
+      },
+      {
+        "area": "Economics",
+        "status": "placeholder",
+        "have": 0,
+        "target": 5,
+        "heldOpenStax": 5
+      },
+      {
+        "area": "Professional Development",
+        "status": "placeholder",
+        "have": 0,
+        "target": 5,
+        "heldOpenStax": 0
+      },
+      {
+        "area": "Business Law",
+        "status": "thin",
+        "have": 2,
+        "target": 5,
+        "heldOpenStax": 4
+      },
+      {
+        "area": "Risk Management",
+        "status": "thin",
+        "have": 3,
+        "target": 5,
+        "heldOpenStax": 3
+      },
+      {
+        "area": "Quality Management",
+        "status": "placeholder",
+        "have": 0,
+        "target": 4,
+        "heldOpenStax": 4
+      },
+      {
+        "area": "Customer Relations",
+        "status": "placeholder",
+        "have": 0,
+        "target": 2,
+        "heldOpenStax": 2
+      },
+      {
+        "area": "Marketing",
+        "status": "placeholder",
+        "have": 0,
+        "target": 1,
+        "heldOpenStax": 1
+      }
+    ]
+  },
+  "sources": [
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition",
+      "publisher": "BCcampus",
+      "authors": "Wendy Anderson and Morgan Westcott (Editors); H5P activities by Blake Rowsell (activity 54 lists no author)",
+      "url": "https://opentextbc.ca/introtourism2e/",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "licenceEvidence": "Book home page, checked 2026-10-11: \"Introduction to Tourism and Hospitality in BC - 2nd Edition Copyright © 2015, 2020, 2021 by Morgan Westcott and Wendy Anderson is licensed under a Creative Commons Attribution 4.0 International License, except where otherwise noted.\" The same statement is in the footer of each cited chapter page. H5P metadata: ids 40, 41, 42 and 44 say CC BY 4.0; id 54 says \"U\" (undisclosed).",
+      "requiredAttribution": "Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "keyFrom": "H5P activity data (MultiChoice \"correct\" flag; Single Choice Set first answer)",
+      "itemsUsed": 7,
+      "questions": 7
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, 11.3 Laws and Regulations",
+      "url": "https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, 11.2 Risk Management Process (H5P activity \"Chapter 11: Risk Management Process\")",
+      "url": "https://opentextbc.ca/introtourism2e/chapter/risk-management-process/",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, 11.5 Occupational Health and Safety in Tourism (H5P activity \"Chapter 11: Occupational Health and Safety\")",
+      "url": "https://opentextbc.ca/introtourism2e/chapter/occupational-health-and-safety-in-tourism/",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, 13.3 Integrating Planning with Education and Experience (H5P activity \"Conflict Resolution\")",
+      "url": "https://opentextbc.ca/introtourism2e/chapter/integrating-planning-with-education-and-experience/",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    }
+  ],
+  "sourcesChecked": [
+    {
+      "title": "Business Writing For Everyone (Arley Cruthers, KPU, CC BY-NC 4.0), H5P 42 \"Genre Knowledge Test\"",
+      "url": "https://kpu.pressbooks.pub/businesswriting/",
+      "result": "Not used. Only 1 four-choice item, and the activity has licence metadata \"U\", no author, and is not embedded in any book page, so the book's licence cannot be confirmed for it (same finding as the business-admin-core review)."
+    },
+    {
+      "title": "NIOSH Youth@Work: Talking Safety (public domain)",
+      "url": "https://www.cdc.gov/niosh/young-workers/talking-safety/index.html",
+      "result": "Not used. The Lesson 1 \"Your Safety IQ Quiz\" is 4 true/false items plus one 3-choice item (checked in the Hawaii edition PDF); no 4-choice MC."
+    },
+    {
+      "title": "Communication at Work (eCampusOntario, CC BY 4.0)",
+      "url": "https://ecampusontario.pressbooks.pub/communicationatwork/h5p-listing/",
+      "result": "Not used. Its 3 H5P activities are drag-and-drop; no MC."
+    },
+    {
+      "title": "Introduction to Operations Management (Mary Drane, Hamid Faramarzi; Seneca Polytechnic editions under CC BY-NC 4.0 and CC BY-NC-SA 4.0; LibreTexts copy CC BY-NC 4.0)",
+      "url": "https://pressbooks.senecapolytechnic.ca/operationsmanagementintro/",
+      "result": "Not used. No H5P activities and no review or MC questions in either Seneca edition or the LibreTexts copy."
+    },
+    {
+      "title": "OpenStax books mapped in SOURCES.md 5.2 (Principles of Accounting Vol 1-2, Principles of Marketing, Foundations of Information Systems, Business Ethics, Business Law I Essentials, Principles of Data Science)",
+      "url": "https://openstax.org/subjects/business",
+      "result": "Held, not used: 94 script-extracted, publisher-keyed items in _hold-openstax/exams/business-management.json (AI clause)."
+    }
+  ],
+  "questions": [
+    {
+      "id": "bma-079",
+      "area": "Business Law",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Which best describes tort law?",
+      "choices": [
+        "body of the law which will allow an injured person to obtain compensation from the person who caused the injury",
+        "body of the law which will allow an injured person to obtain compensation from anyone involved with the incident",
+        "The same as criminal law",
+        "body of the law which will allow companies to obtain compensation from an injuried person"
+      ],
+      "answer": 0,
+      "explanation": "Section 11.3 Laws and Regulations: \"Tort law in Canada refers to the “body of the law which will allow an injured person to obtain compensation from the person who caused the injury” (Tort Law, n.d.).\"",
+      "explanationFrom": "source-text",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, 11.3 Laws and Regulations (H5P activity \"Chapter 11: Tort Law\")",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 11: Tort Law\" by Blake Rowsell, in \"11.3 Laws and Regulations,\" Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source",
+        "publisher": "BCcampus",
+        "itemRef": "h5p id 41",
+        "sectionUrl": "https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/",
+        "h5pLicenceMeta": "CC BY 4.0",
+        "noAI": false
+      }
+    },
+    {
+      "id": "bma-084",
+      "area": "Risk Management",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Step one the risk management process is:",
+      "choices": [
+        "Risk Identification",
+        "Risk Analysis",
+        "Risk Control",
+        "Risk Treatment"
+      ],
+      "answer": 0,
+      "explanation": "Section 11.2 Risk Management Process: \"It has four stages: risk identification, risk analysis, risk control, and risk treatment (DC, 2003a).\" \"The initial stage of the risk management process is systematically identifying risks facing the organization.\" (The book uses the Destination Canada model for small and medium enterprises.)",
+      "explanationFrom": "source-text",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, 11.2 Risk Management Process (H5P activity \"Chapter 11: Risk Management Process\")",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/risk-management-process/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 11: Risk Management Process\" by Blake Rowsell, in \"11.2 Risk Management Process,\" Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/risk-management-process/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source",
+        "publisher": "BCcampus",
+        "itemRef": "h5p id 40, question 1",
+        "sectionUrl": "https://opentextbc.ca/introtourism2e/chapter/risk-management-process/",
+        "h5pLicenceMeta": "CC BY 4.0",
+        "noAI": false
+      }
+    },
+    {
+      "id": "bma-085",
+      "area": "Risk Management",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "What is the purpose of the waiver?",
+      "choices": [
+        "Transfers acceptance of risk",
+        "Allows the operator to do what ever they like",
+        "Transfers the pain of an injury",
+        "Transfers the acceptance of negligence"
+      ],
+      "answer": 0,
+      "explanation": "Section 11.3 Laws and Regulations: \"A waiver is a form of contract that transfers acceptance of the risk to the participants by requiring them to acknowledge the risks present in the activity.\"",
+      "explanationFrom": "source-text",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, 11.3 Laws and Regulations (H5P activity \"Chapter 11: Waivers\")",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 11: Waivers\" by Blake Rowsell, in \"11.3 Laws and Regulations,\" Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source",
+        "publisher": "BCcampus",
+        "itemRef": "h5p id 42, question 1",
+        "sectionUrl": "https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/",
+        "h5pLicenceMeta": "CC BY 4.0",
+        "noAI": false
+      }
+    },
+    {
+      "id": "bma-098",
+      "area": "Risk Management",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Step two the risk management process is:",
+      "choices": [
+        "Risk Analysis",
+        "Risk Identification",
+        "Risk Control",
+        "Risk Treatment"
+      ],
+      "answer": 0,
+      "explanation": "Section 11.2 Risk Management Process: \"It has four stages: risk identification, risk analysis, risk control, and risk treatment (DC, 2003a).\" \"Once an exhaustive list of the risks is compiled, the next step is to ensure a thorough analysis occurs.\" (The book uses the Destination Canada model for small and medium enterprises.)",
+      "explanationFrom": "source-text",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, 11.2 Risk Management Process (H5P activity \"Chapter 11: Risk Management Process\")",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/risk-management-process/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 11: Risk Management Process\" by Blake Rowsell, in \"11.2 Risk Management Process,\" Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/risk-management-process/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source",
+        "publisher": "BCcampus",
+        "itemRef": "h5p id 40, question 2",
+        "sectionUrl": "https://opentextbc.ca/introtourism2e/chapter/risk-management-process/",
+        "h5pLicenceMeta": "CC BY 4.0",
+        "noAI": false
+      }
+    },
+    {
+      "id": "bma-099",
+      "area": "Business Law",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "To be effective, a waiver should include:",
+      "choices": [
+        "1. Outline the risks 2. Waive the participants right to pursue legal action 3. Be short and easy to read 4. Signed",
+        "1. Outline the risks 2. Waive the participants right to a fair trial 3. Be short and easy to read 4. Signed",
+        "1. Outline the activity 2. Waive the participants right to pursue legal action 3. Be short and easy to read 4. Signed",
+        "1. Outline the risks 2. Waive the participants right to pursue legal action 3. Be signed by a friend 4. Be short and easy to read"
+      ],
+      "answer": 0,
+      "explanation": "Section 11.3 Laws and Regulations: \"It should clearly outline the risks in the activity;\" \"It should waive the participant’s right to pursue legal action against the tourism operation in case of negligence;\" \"Current best practices indicate a waiver should not be signed by a friend of the signee or another guest.\"",
+      "explanationFrom": "source-text",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, 11.3 Laws and Regulations (H5P activity \"Chapter 11: Waivers\")",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 11: Waivers\" by Blake Rowsell, in \"11.3 Laws and Regulations,\" Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source",
+        "publisher": "BCcampus",
+        "itemRef": "h5p id 42, question 2",
+        "sectionUrl": "https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/",
+        "h5pLicenceMeta": "CC BY 4.0",
+        "noAI": false
+      }
+    },
+    {
+      "id": "bma-100",
+      "area": "Operations",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "This organization promotes the prevention of worplace injury, rehabilitates those who are injured at work and provides compensation to replace workers loss of wages while recovering from injury.",
+      "choices": [
+        "Go2HR",
+        "TIABC",
+        "WorkSafeBC",
+        "Tourism Vancouver"
+      ],
+      "answer": 2,
+      "explanation": "Section 11.5 Occupational Health and Safety in Tourism: \"WorkSafeBC is the provincial organization for occupational health and safety in BC.\"",
+      "explanationFrom": "source-text",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, 11.5 Occupational Health and Safety in Tourism (H5P activity \"Chapter 11: Occupational Health and Safety\")",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/occupational-health-and-safety-in-tourism/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 11: Occupational Health and Safety\" by Blake Rowsell, in \"11.5 Occupational Health and Safety in Tourism,\" Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/occupational-health-and-safety-in-tourism/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source",
+        "publisher": "BCcampus",
+        "itemRef": "h5p id 44",
+        "sectionUrl": "https://opentextbc.ca/introtourism2e/chapter/occupational-health-and-safety-in-tourism/",
+        "h5pLicenceMeta": "CC BY 4.0",
+        "noAI": false
+      }
+    },
+    {
+      "id": "bma-101",
+      "area": "Emotional Intelligence",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "In workplace conflicts the ultimate goal is to:",
+      "choices": [
+        "Jump to conclusions",
+        "Play favourites",
+        "Find a solution",
+        "Give away something at no charge"
+      ],
+      "answer": 2,
+      "explanation": "Activity feedback: \"Correct! The ulitimate goal is to find a solution.\" Section 13.3 Integrating Planning with Education and Experience: \"In most conflicts, the ultimate goal must be to find a resolution. Avoiding or ignoring conflict is not an effective strategy.\"",
+      "explanationFrom": "source-text",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, 13.3 Integrating Planning with Education and Experience (H5P activity \"Conflict Resolution\")",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/integrating-planning-with-education-and-experience/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Conflict Resolution\", in \"13.3 Integrating Planning with Education and Experience,\" Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/integrating-planning-with-education-and-experience/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection. Adapted: cut from 5 to 4 choices by removing one incorrect option (\"Figure out who to blame\").",
+        "adapted": true,
+        "keyFrom": "source",
+        "publisher": "BCcampus",
+        "itemRef": "h5p id 54, question 1",
+        "sectionUrl": "https://opentextbc.ca/introtourism2e/chapter/integrating-planning-with-education-and-experience/",
+        "h5pLicenceMeta": "U (undisclosed); covered by the book's \"except where otherwise noted\" CC BY 4.0 grant",
+        "noAI": false
+      }
+    }
+  ],
+  "buildVerification": {
+    "verifiedAt": "2026-10-11",
+    "checked": 7,
+    "notes": [
+      "Stems, choices and keys were read by script from the H5P data embedded in the chapter pages (fetched 2026-10-11), not typed by hand.",
+      "Each item was solved before its key was checked against the H5P data and the section text: all agree, and each has exactly one defensible answer.",
+      "Licence re-confirmed on the live book home page on 2026-10-11 (CC BY 4.0, except where otherwise noted).",
+      "No OpenStax item was read by a model in this rebuild; the held file was read only by script for its ids and area counts."
+    ]
+  },
+  "verification": {
+    "verifiedAt": "2026-10-11",
+    "verifier": "independent answer-key and licence check (second pass)",
+    "checked": 7,
+    "removed": 0,
+    "fixed": 0,
+    "notes": [
+      "Each of the 7 items was solved blind before its key was read; all 7 blind answers matched the stored key.",
+      "Live H5P data was fetched from the four cited chapter pages on opentextbc.ca on 2026-10-11 (H5P ids 40, 41, 42, 44, 54 are embedded there). A script compared stems, choices, choice order and keys: all match apart from HTML/whitespace. bma-101 differs only by the documented removal of \"Figure out who to blame\" (adapted: true, noted in its attribution).",
+      "Each key is unique in the source data: the MultiChoice items (41, 44 and 54 q1) have exactly one correct:true answer; the SingleChoiceSet items (40 q1-2, 42 q1-2) store the correct answer first.",
+      "Licence confirmed on each cited page footer: \"Introduction to Tourism and Hospitality in BC - 2nd Edition Copyright © 2015, 2020, 2021 by Morgan Westcott and Wendy Anderson is licensed under a Creative Commons Attribution 4.0 International License, except where otherwise noted.\" H5P metadata: ids 40, 41, 42, 44 = CC BY 4.0, author Blake Rowsell; id 54 = \"U\" with no author, embedded in 13.3 with no separate notice, so the book's grant covers it. No AI-use or other restricting clause on the home or chapter pages.",
+      "Attribution checked: the book home page asks for \"Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence.\" plus \"Download for free from the B.C. Open Collection.\"; every item's line carries that text verbatim and also names the activity, its author where one is given, the section, publisher, URL and licence link (full TASL).",
+      "Every quote in the explanations was found word for word on the cited chapter page or in the H5P feedback.",
+      "Ambiguity reviewed and kept: bma-085's distractor \"Transfers the acceptance of negligence\" is not the waiver's purpose (the book defines it as transferring acceptance of risk; a waiver releases claims, it does not move negligence). bma-084/bma-098: some models (e.g. ISO 31000) add context-setting or evaluation steps, but among the four offered choices identification is first and analysis second in every common model.",
+      "Flag for owner, kept: bma-100 needs BC-specific knowledge (WorkSafeBC). Its key is still the only defensible answer, since go2HR does BC tourism safety training but does not pay wage-loss compensation.",
+      "Duplicates: none within this file. All 7 items also appear in hospitality-tourism.json (ht-016, ht-029, ht-081, ht-082, ht-083, ht-094, ht-095), and 3 appear in entrepreneurship.json (ent-096 to ent-098: WorkSafeBC and risk steps one and two). They were kept because each exam is its own practice set; dedupe by stem if the app ever mixes exams.",
+      "Answer positions: 5 of 7 keys are index 0 because H5P Single Choice Sets store the correct answer first. The app must shuffle choices, as formatNote says.",
+      "No questions were added. The builder's earlier check is kept under buildVerification."
+    ]
+  }
+}

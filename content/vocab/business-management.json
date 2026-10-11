@@ -1,0 +1,1793 @@
+{
+  "slug": "business-management",
+  "title": "Business Management + Administration terms",
+  "status": "sourced",
+  "disclaimer": "Definitions reused from openly licensed and public-domain sources (credited on each term). Not official DECA content.",
+  "builtAt": "2026-10-11",
+  "builtBy": "shared-account agent (Project Omega), scripted extraction (tools/vocab/build-vocab-open.js)",
+  "termCount": 79,
+  "coverage": {
+    "Operations": 16,
+    "Strategic Management": 6,
+    "Emotional Intelligence": 5,
+    "Communications": 5,
+    "Information Management": 3,
+    "Financial Analysis": 5,
+    "Knowledge Management": 4,
+    "Project Management": 8,
+    "Economics": 4,
+    "Professional Development": 3,
+    "Business Law": 4,
+    "Risk Management": 5,
+    "Quality Management": 5,
+    "Customer Relations": 2,
+    "Human Resources Management": 2,
+    "Marketing": 1,
+    "Entrepreneurship": 1
+  },
+  "gaps": null,
+  "notes": [
+    "NC flag: some sources are CC BY-NC 4.0 or CC BY-NC-SA 4.0 (see sources). They are used only because DECA Masters is free and non-commercial (no ads, no paid tier, no sponsorship that makes it commercial). If that changes, these terms must come out.",
+    "ShareAlike: terms from CC BY-NC-SA 4.0 sources, including any adapted versions, must be shared under CC BY-NC-SA 4.0.",
+    "Communication: Fundamentals for the Workplace keeps its glossary as Pressbooks glossary entries. source.url points to the chapter that uses the term (or the book home page when no chapter links it); the definition text itself is in the book's public glossary data (see sources[].glossaryData).",
+    "Public-domain US federal sources (SEC Investor.gov, BLS, USPTO, FDIC, CFPB): credited as the agencies ask; no seals or logos; no endorsement implied. US-specific facts (laws, agencies, figures) are US context, not Canadian.",
+    "Every definition is copied from its source glossary (HTML tags removed). Any trim or correction is marked source.adapted = true and named after \"Adapted:\" in the attribution.",
+    "73 OpenStax glossary terms for this exam are held in _hold-openstax/vocab/business-management.json until OpenStax grants permission (SOURCES.md section 1.2). They are not in this file."
+  ],
+  "sources": [
+    {
+      "type": "cc",
+      "title": "Basic Kitchen and Food Service Management",
+      "publisher": "BCcampus",
+      "authors": "The BC Cook Articulation Committee",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "licenceEvidence": "Book home page (https://opentextbc.ca/basickitchenandfoodservicemanagement/): \"Basic Kitchen and Food Service Management Copyright © 2015 by The BC Cook Articulation Committee is licensed under a Creative Commons Attribution 4.0 International License, except where otherwise noted.\"",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 15
+    },
+    {
+      "type": "cc",
+      "title": "Project Management for Instructional Designers",
+      "publisher": "University of Saskatchewan (SaskOER)",
+      "authors": "ETAD 874",
+      "url": "https://www.saskoer.ca/pm4id/",
+      "licence": "CC BY-NC-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "licenceEvidence": "Book home page (https://www.saskoer.ca/pm4id/): \"Project Management for Instructional Designers Copyright © 2016 by ETAD 874 is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.\"",
+      "nonCommercial": true,
+      "shareAlike": true,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 32
+    },
+    {
+      "type": "pd",
+      "title": "BLS Glossary",
+      "publisher": "U.S. Bureau of Labor Statistics (BLS)",
+      "url": "https://www.bls.gov/bls/glossary.htm",
+      "licence": "Public domain (US federal work)",
+      "licenceUrl": null,
+      "attribution": "BLS Glossary, U.S. Bureau of Labor Statistics (BLS), https://www.bls.gov/bls/glossary.htm. Public domain (US federal work).",
+      "licenceEvidence": "BLS Copyright Information (https://www.bls.gov/opub/copyright-information.htm): \"The Bureau of Labor Statistics (BLS) is a Federal government agency and everything that we publish, both in hard copy and electronically, is in the public domain, except for previously copyrighted photographs and illustrations. You are free to use our public domain material without specific permission, although we do ask that you cite the Bureau of Labor Statistics as the source.\" The BLS emblem is a registered trademark; do not use it.",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 6
+    },
+    {
+      "type": "cc",
+      "title": "Marketing Principles From The River City",
+      "publisher": "VCU Libraries (Virginia Commonwealth University)",
+      "authors": "Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma, Cesar Zamudio",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/",
+      "licence": "CC BY-NC 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "licenceEvidence": "Book home page (https://pressbooks.library.vcu.edu/marketingprinciples/): \"Marketing Principles From The River City Copyright © 2026 by Jodie Ferguson and Cesar Zamudio is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License, except where otherwise noted.\"",
+      "nonCommercial": true,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 7
+    },
+    {
+      "type": "cc",
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition",
+      "publisher": "BCcampus (Capilano University)",
+      "authors": "Wendy Anderson and Morgan Westcott (Editors)",
+      "url": "https://opentextbc.ca/introtourism2e/",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "licenceEvidence": "Book home page (https://opentextbc.ca/introtourism2e/): \"Introduction to Tourism and Hospitality in BC - 2nd Edition Copyright (c) 2015, 2020, 2021 by Morgan Westcott and Wendy Anderson is licensed under a Creative Commons Attribution 4.0 International License, except where otherwise noted.\" Required attribution: \"Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence.\"",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 9
+    },
+    {
+      "type": "cc",
+      "title": "Communication: Fundamentals for the Workplace",
+      "publisher": "Nova Scotia Community College (NSCC)",
+      "authors": "Jordan Smith and NSCC",
+      "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College (NSCC), https://pressbooks.atlanticoer-relatlantique.ca/comm1205/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "licenceEvidence": "Book home page (https://pressbooks.atlanticoer-relatlantique.ca/comm1205/): \"Communication: Fundamentals for the Workplace Copyright © 2021 by Jordan Smith is licensed under a Creative Commons Attribution 4.0 International License, except where otherwise noted.\"",
+      "glossaryData": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/wp-json/pressbooks/v2/glossary?per_page=100",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 6
+    },
+    {
+      "type": "pd",
+      "title": "Investor.gov Glossary",
+      "publisher": "U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy)",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary",
+      "licence": "Public domain (US federal work)",
+      "licenceUrl": null,
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "licenceEvidence": "US federal work (17 U.S.C. 105). Investor.gov footer: \"Paid for by the U.S. Securities and Exchange Commission.\" SEC privacy page (https://www.sec.gov/about/privacy-information): \"Information presented on sec.gov is considered public information and may be copied or further distributed by users of the web site without the SEC’s permission.\" / \"Please consider appropriate citation to the SEC as the source.\"",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 1
+    },
+    {
+      "type": "pd",
+      "title": "USPTO Glossary",
+      "publisher": "United States Patent and Trademark Office (USPTO)",
+      "url": "https://www.uspto.gov/learning-and-resources/glossary",
+      "licence": "Public domain (US federal work)",
+      "licenceUrl": null,
+      "attribution": "USPTO Glossary, United States Patent and Trademark Office (USPTO), https://www.uspto.gov/learning-and-resources/glossary. Public domain (US federal work).",
+      "licenceEvidence": "USPTO Terms of use (https://www.uspto.gov/terms-use-uspto-websites): \"Pursuant to federal law, most government-produced materials appearing on this website are not subject to copyright restrictions within the United States and are therefore in the public domain.\" / \"Public domain information may be freely distributed and copied, but it is requested that in any subsequent use the United States Patent and Trademark Office (USPTO) be given appropriate acknowledgement.\"",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 2
+    },
+    {
+      "type": "cc",
+      "title": "Human Resources in the Food Service and Hospitality Industry",
+      "publisher": "BCcampus",
+      "authors": "The BC Cook Articulation Committee",
+      "url": "https://opentextbc.ca/humanresourcesinfoodservices/",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Human Resources in the Food Service and Hospitality Industry by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/humanresourcesinfoodservices/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "licenceEvidence": "Book home page (https://opentextbc.ca/humanresourcesinfoodservices/): \"Human Resources in the Food Service and Hospitality Industry Copyright © 2015 by The BC Cook Articulation Committee is licensed under a Creative Commons Attribution 4.0 International License, except where otherwise noted.\"",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 1
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-inventory",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-perpetual-inventory",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-physical-inventory",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-par-stock",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-purchase-order",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-invoice",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-receiver",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-specifications",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-fifo",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-point-of-sale-pos-system",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-breakeven-point",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-contribution-margin",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-fixed-cost",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-overhead",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-capital",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-procurement",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-outsourcing",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-request-for-proposal-rfp",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-request-for-quote-rfq",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-vendors",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-suppliers",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-objective",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-emotional-intelligence",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-myers-briggs-type-indicator",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-virtual-teams",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-synchronous-communications",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-asynchronous-communications",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-lesson-learned-meeting",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-version-control",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-project-scope",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-scope-creep",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-work-breakdown-structure-wbs",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-critical-path",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-gantt-chart",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-milestones",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-stakeholders",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-project-sponsor",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-contract",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-risk-assessment",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-risk-avoidance",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-contingency-planning",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-quality-control-qc",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-six-sigma-6",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-kaizen",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-benchmarking",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-fishbone-diagram",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-span-of-control",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "BLS Glossary: Personal protective equipment (PPE)",
+      "url": "https://www.bls.gov/bls/glossary.htm#personal-protective-equipment-ppe",
+      "licence": "Public domain (US federal work)",
+      "attribution": "BLS Glossary, U.S. Bureau of Labor Statistics (BLS), https://www.bls.gov/bls/glossary.htm. Public domain (US federal work).",
+      "partOf": "https://www.bls.gov/bls/glossary.htm"
+    },
+    {
+      "title": "BLS Glossary: Metadata",
+      "url": "https://www.bls.gov/bls/glossary.htm#metadata",
+      "licence": "Public domain (US federal work)",
+      "attribution": "BLS Glossary, U.S. Bureau of Labor Statistics (BLS), https://www.bls.gov/bls/glossary.htm. Public domain (US federal work).",
+      "partOf": "https://www.bls.gov/bls/glossary.htm"
+    },
+    {
+      "title": "BLS Glossary: Taxonomy",
+      "url": "https://www.bls.gov/bls/glossary.htm#taxonomy",
+      "licence": "Public domain (US federal work)",
+      "attribution": "BLS Glossary, U.S. Bureau of Labor Statistics (BLS), https://www.bls.gov/bls/glossary.htm. Public domain (US federal work).",
+      "partOf": "https://www.bls.gov/bls/glossary.htm"
+    },
+    {
+      "title": "BLS Glossary: GDP (gross domestic product)",
+      "url": "https://www.bls.gov/bls/glossary.htm#gdp-gross-domestic-product",
+      "licence": "Public domain (US federal work)",
+      "attribution": "BLS Glossary, U.S. Bureau of Labor Statistics (BLS), https://www.bls.gov/bls/glossary.htm. Public domain (US federal work).",
+      "partOf": "https://www.bls.gov/bls/glossary.htm"
+    },
+    {
+      "title": "BLS Glossary: Inflation",
+      "url": "https://www.bls.gov/bls/glossary.htm#inflation",
+      "licence": "Public domain (US federal work)",
+      "attribution": "BLS Glossary, U.S. Bureau of Labor Statistics (BLS), https://www.bls.gov/bls/glossary.htm. Public domain (US federal work).",
+      "partOf": "https://www.bls.gov/bls/glossary.htm"
+    },
+    {
+      "title": "BLS Glossary: Business cycle",
+      "url": "https://www.bls.gov/bls/glossary.htm#business-cycle",
+      "licence": "Public domain (US federal work)",
+      "attribution": "BLS Glossary, U.S. Bureau of Labor Statistics (BLS), https://www.bls.gov/bls/glossary.htm. Public domain (US federal work).",
+      "partOf": "https://www.bls.gov/bls/glossary.htm"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-swot-analysis",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-ansoff-matrix",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-bcg-growth-share-matrix",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-strategic-business-units-sbus",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-big-data",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-internal-customer",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-slug-4ps-of-the-marketing-mix",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-pestle",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-conflict-management",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-networking",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-transferable-skills",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-negligence",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-risk-transfer",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-risk-retention",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-customer-orientation",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-franchise",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Communication: Fundamentals for the Workplace, glossary",
+      "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/chapter/12-6-the-infographic/",
+      "licence": "CC BY 4.0",
+      "attribution": "Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College (NSCC), https://pressbooks.atlanticoer-relatlantique.ca/comm1205/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/"
+    },
+    {
+      "title": "Investor.gov Glossary: Net Income",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/net-income",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Human Resources in the Food Service and Hospitality Industry, Key Terms",
+      "url": "https://opentextbc.ca/humanresourcesinfoodservices/back-matter/glossary/#dfn-human-resources-management-(hrm)",
+      "licence": "CC BY 4.0",
+      "attribution": "Human Resources in the Food Service and Hospitality Industry by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/humanresourcesinfoodservices/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/humanresourcesinfoodservices/"
+    }
+  ],
+  "terms": [
+    {
+      "id": "bma-v-001",
+      "term": "inventory",
+      "definition": "Total goods in stock at any one time.",
+      "area": "Operations",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-inventory",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"inventory\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-inventory. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-002",
+      "term": "perpetual inventory",
+      "definition": "A system of tracking product as it is received and used, thereby keeping a running total of items on hand",
+      "area": "Operations",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-perpetual-inventory",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"perpetual inventory\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-perpetual-inventory. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-003",
+      "term": "physical inventory",
+      "definition": "A physical inventory requires that all items in storage be counted periodically.",
+      "area": "Operations",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-physical-inventory",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"physical inventory\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-physical-inventory. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-004",
+      "term": "par stock",
+      "definition": "Maximum amount of an item that should be in stock at any one time.",
+      "area": "Operations",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-par-stock",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"par stock\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-par-stock. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-005",
+      "term": "purchase order",
+      "definition": "A document indicating the approval of a quantity of goods ordered from a supplier.",
+      "area": "Operations",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-purchase-order",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"purchase order\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-purchase-order. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-006",
+      "term": "invoice",
+      "definition": "A document indicating the amount owed for goods or services.",
+      "area": "Operations",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-invoice",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"invoice\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-invoice. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-007",
+      "term": "receiver",
+      "definition": "The individual responsible for accepting and checking deliveries.",
+      "area": "Operations",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-receiver",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"receiver\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-receiver. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-008",
+      "term": "specifications",
+      "definition": "Purchase criteria such as size, grade, packaging, market form.",
+      "area": "Operations",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-specifications",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"specifications\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-specifications. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-009",
+      "term": "FIFO",
+      "definition": "First in, first out; a system of managing inventory so that the product received first gets used first.",
+      "area": "Operations",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-fifo",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"FIFO\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-fifo. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-010",
+      "term": "Procurement",
+      "definition": "The process of obtaining goods and services from providers who are outside of the organization.",
+      "area": "Operations",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-procurement",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Procurement\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-procurement. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-011",
+      "term": "Outsourcing",
+      "definition": "Procure work from outside companies.",
+      "area": "Operations",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-outsourcing",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Outsourcing\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-outsourcing. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-012",
+      "term": "Request for proposal (RFP)",
+      "definition": "Describes the work, service, or product to be provided by the vendor and the quality level required.",
+      "area": "Operations",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-request-for-proposal-rfp",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Request for proposal (RFP)\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-request-for-proposal-rfp. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-013",
+      "term": "Request for quote (RFQ)",
+      "definition": "A list of materials and supplies is developed and provided to the suppliers.",
+      "area": "Operations",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-request-for-quote-rfq",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Request for quote (RFQ)\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-request-for-quote-rfq. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-014",
+      "term": "Vendors",
+      "definition": "Provide a unique product or service that cannot be readily purchased in the marketplace and typically provides a product or service that is designed for the project.",
+      "area": "Operations",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-vendors",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Vendors\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-vendors. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-015",
+      "term": "Suppliers",
+      "definition": "Providers of commodities.",
+      "area": "Operations",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-suppliers",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Suppliers\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-suppliers. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-016",
+      "term": "Personal protective equipment (PPE)",
+      "definition": "Equipment used or worn to minimize exposure to serious workplace injuries and illnesses.",
+      "area": "Operations",
+      "source": {
+        "title": "BLS Glossary: Personal protective equipment (PPE)",
+        "url": "https://www.bls.gov/bls/glossary.htm#personal-protective-equipment-ppe",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition of \"Personal protective equipment (PPE)\" from the BLS Glossary, U.S. Bureau of Labor Statistics, https://www.bls.gov/bls/glossary.htm#personal-protective-equipment-ppe. Public domain (US federal work); source: U.S. Bureau of Labor Statistics.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-017",
+      "term": "SWOT analysis",
+      "definition": "Evaluating the company's strengths (S), weaknesses (W), opportunities (O), and threats (T)",
+      "area": "Strategic Management",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-swot-analysis",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"SWOT analysis\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-swot-analysis. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-018",
+      "term": "PESTLE",
+      "definition": "An acronym for political, economic, social, technological, legal and environmental forces.",
+      "area": "Strategic Management",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-pestle",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"PESTLE\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-pestle. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-019",
+      "term": "Ansoff matrix",
+      "definition": "Provides a framework for analyzing options for growth by considering both existing and new products and markets",
+      "area": "Strategic Management",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-ansoff-matrix",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Ansoff matrix\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-ansoff-matrix. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-020",
+      "term": "BCG Growth-Share Matrix",
+      "definition": "Categorizes a company's products or business units into four quadrants based on two key dimensions: market growth rate and relative market share",
+      "area": "Strategic Management",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-bcg-growth-share-matrix",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"BCG Growth-Share Matrix\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-bcg-growth-share-matrix. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-021",
+      "term": "Strategic business units (SBUs)",
+      "definition": "Key businesses, which may include individual business lines, product lines, or brands",
+      "area": "Strategic Management",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-strategic-business-units-sbus",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Strategic business units (SBUs)\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-strategic-business-units-sbus. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-022",
+      "term": "Objective",
+      "definition": "A measurable outcome.",
+      "area": "Strategic Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-objective",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Objective\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-objective. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-023",
+      "term": "Emotional Intelligence",
+      "definition": "The ability to sense, understand, and effectively apply emotions as human energy.",
+      "area": "Emotional Intelligence",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-emotional-intelligence",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Emotional Intelligence\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-emotional-intelligence. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end; removed the repeated term label at the start.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-024",
+      "term": "Myers-Briggs Type Indicator",
+      "definition": "A tool used for identifying how people perceive the world and make decisions.",
+      "area": "Emotional Intelligence",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-myers-briggs-type-indicator",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Myers-Briggs Type Indicator\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-myers-briggs-type-indicator. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end; removed the repeated term label at the start.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-025",
+      "term": "Conflict management",
+      "definition": "The practice of being able to identify and handle conflicts sensibly, fairly, and efficiently.",
+      "area": "Emotional Intelligence",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-conflict-management",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Conflict management\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-conflict-management. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-026",
+      "term": "Groupthink",
+      "definition": "the tendency to accept the group’s ideas and actions in spite of individual concerns",
+      "area": "Emotional Intelligence",
+      "source": {
+        "title": "Communication: Fundamentals for the Workplace, glossary",
+        "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Groupthink\" from the glossary of Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College, https://pressbooks.atlanticoer-relatlantique.ca/comm1205/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-027",
+      "term": "Virtual teams",
+      "definition": "teams that use electronic methods of communicating without face-to-face meetings.",
+      "area": "Emotional Intelligence",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-virtual-teams",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Virtual teams\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-virtual-teams. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-028",
+      "term": "medium or channel",
+      "definition": "The physical means by which an oral or written message is transmitted.",
+      "area": "Communications",
+      "source": {
+        "title": "Communication: Fundamentals for the Workplace, glossary",
+        "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"medium or channel\" from the glossary of Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College, https://pressbooks.atlanticoer-relatlantique.ca/comm1205/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-029",
+      "term": "information overload",
+      "definition": "When a channel carries too many messages for the receiver to absorb or when too many messages are transmitted at the same time for the receiver to handle.",
+      "area": "Communications",
+      "source": {
+        "title": "Communication: Fundamentals for the Workplace, glossary",
+        "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"information overload\" from the glossary of Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College, https://pressbooks.atlanticoer-relatlantique.ca/comm1205/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-030",
+      "term": "active listening",
+      "definition": "Complex process of receiving, understanding and responding to verbal and non-verbal cues.",
+      "area": "Communications",
+      "source": {
+        "title": "Communication: Fundamentals for the Workplace, glossary",
+        "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"active listening\" from the glossary of Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College, https://pressbooks.atlanticoer-relatlantique.ca/comm1205/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-031",
+      "term": "Synchronous communications",
+      "definition": "communications that take place when all the parties are present at the same time. Examples are telephone calls and video conferencing.",
+      "area": "Communications",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-synchronous-communications",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Synchronous communications\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-synchronous-communications. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-032",
+      "term": "Asynchronous communications",
+      "definition": "Communications that take place when the parties are not present at the same time. Examples are e-mail and blogs.",
+      "area": "Communications",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-asynchronous-communications",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Asynchronous communications\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-asynchronous-communications. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-033",
+      "term": "data visualization",
+      "definition": "A visual representation on data that can also be used to compose traditional bar, pie, tables and line charts.",
+      "area": "Information Management",
+      "source": {
+        "title": "Communication: Fundamentals for the Workplace, glossary",
+        "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/chapter/12-6-the-infographic/",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"data visualization\" from the glossary of Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College, https://pressbooks.atlanticoer-relatlantique.ca/comm1205/chapter/12-6-the-infographic/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-034",
+      "term": "Big data",
+      "definition": "Very large databases of customer information",
+      "area": "Information Management",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-big-data",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Big data\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-big-data. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-035",
+      "term": "point-of-sale (POS) system",
+      "definition": "A computerized system that coordinates customer purchases, sales, and costs through various linked terminals in a business.",
+      "area": "Information Management",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-point-of-sale-pos-system",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"point-of-sale (POS) system\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-point-of-sale-pos-system. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-036",
+      "term": "breakeven point",
+      "definition": "The point at which cost and revenue are equal.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-breakeven-point",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"breakeven point\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-breakeven-point. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-037",
+      "term": "contribution margin",
+      "definition": "Portion of sales that can be applied against fixed costs; gross sales minus variable costs.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-contribution-margin",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"contribution margin\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-contribution-margin. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-038",
+      "term": "fixed cost",
+      "definition": "Costs which do not change based on the volume of business.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-fixed-cost",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"fixed cost\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-fixed-cost. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-039",
+      "term": "overhead",
+      "definition": "The ongoing expenses required to operate a business that are not direct costs of producing goods or services.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-overhead",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"overhead\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-overhead. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-040",
+      "term": "Net Income",
+      "definition": "The profit earned by a company after all expenses and taxes have been deducted from revenue. A simple way to think about net income is it’s the price of a widget multiplied by the number of widgets sold (this result is revenue) minus the cost to make and sell the widgets, other expenses and any interest or taxes.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Net Income",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/net-income",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Net Income,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/net-income. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-041",
+      "term": "Lesson learned meeting",
+      "definition": "a review meeting conducted to capture lessons that can be learned from the project, and how those lessons can be transferred and applied to future projects.",
+      "area": "Knowledge Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-lesson-learned-meeting",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Lesson learned meeting\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-lesson-learned-meeting. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-042",
+      "term": "Version control",
+      "definition": "labeling each revision, which enables the team to understand the latest activity and status of the document (or the activity behind the document).",
+      "area": "Knowledge Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-version-control",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Version control\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-version-control. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-043",
+      "term": "Metadata",
+      "definition": "Information describing some object or resource.",
+      "area": "Knowledge Management",
+      "source": {
+        "title": "BLS Glossary: Metadata",
+        "url": "https://www.bls.gov/bls/glossary.htm#metadata",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition of \"Metadata\" from the BLS Glossary, U.S. Bureau of Labor Statistics, https://www.bls.gov/bls/glossary.htm#metadata. Public domain (US federal work); source: U.S. Bureau of Labor Statistics.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-044",
+      "term": "Taxonomy",
+      "definition": "Classification into ordered categories.",
+      "area": "Knowledge Management",
+      "source": {
+        "title": "BLS Glossary: Taxonomy",
+        "url": "https://www.bls.gov/bls/glossary.htm#taxonomy",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition of \"Taxonomy\" from the BLS Glossary, U.S. Bureau of Labor Statistics, https://www.bls.gov/bls/glossary.htm#taxonomy. Public domain (US federal work); source: U.S. Bureau of Labor Statistics.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-045",
+      "term": "Project scope",
+      "definition": "Defines what is inside the project and what is outside.",
+      "area": "Project Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-project-scope",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Project scope\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-project-scope. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-046",
+      "term": "Scope creep",
+      "definition": "the incremental expansion in the project scope.",
+      "area": "Project Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-scope-creep",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Scope creep\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-scope-creep. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-047",
+      "term": "Work breakdown structure (WBS)",
+      "definition": "A list of activities, including estimates of their durations, their relationships with others, and the resources assigned to them.",
+      "area": "Project Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-work-breakdown-structure-wbs",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Work breakdown structure (WBS)\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-work-breakdown-structure-wbs. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-048",
+      "term": "Critical path",
+      "definition": "The path through the network that results in the latest completion date of the project.",
+      "area": "Project Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-critical-path",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Critical path\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-critical-path. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-049",
+      "term": "Gantt chart",
+      "definition": "A type of bar chart used to illustrate activity relationships in a project.",
+      "area": "Project Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-gantt-chart",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Gantt chart\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-gantt-chart. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: kept the first sentence only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-050",
+      "term": "Milestones",
+      "definition": "Significant events in a project which consume no resources and have no duration.",
+      "area": "Project Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-milestones",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Milestones\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-milestones. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-051",
+      "term": "Stakeholders",
+      "definition": "those who have a share or interest in the organization.",
+      "area": "Project Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-stakeholders",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Stakeholders\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-stakeholders. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-052",
+      "term": "Project sponsor",
+      "definition": "The project sponsor is outside the day-to-day operations of the project and has the organizational authority to provide resources and overcome barriers for the project.",
+      "area": "Project Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-project-sponsor",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Project sponsor\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-project-sponsor. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-053",
+      "term": "GDP (gross domestic product)",
+      "definition": "Market value of all goods and services produced within a country in a given period.",
+      "area": "Economics",
+      "source": {
+        "title": "BLS Glossary: GDP (gross domestic product)",
+        "url": "https://www.bls.gov/bls/glossary.htm#gdp-gross-domestic-product",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition of \"GDP (gross domestic product)\" from the BLS Glossary, U.S. Bureau of Labor Statistics, https://www.bls.gov/bls/glossary.htm#gdp-gross-domestic-product. Public domain (US federal work); source: U.S. Bureau of Labor Statistics.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-054",
+      "term": "Inflation",
+      "definition": "Rising prices of goods and services over time.",
+      "area": "Economics",
+      "source": {
+        "title": "BLS Glossary: Inflation",
+        "url": "https://www.bls.gov/bls/glossary.htm#inflation",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition of \"Inflation\" from the BLS Glossary, U.S. Bureau of Labor Statistics, https://www.bls.gov/bls/glossary.htm#inflation. Public domain (US federal work); source: U.S. Bureau of Labor Statistics.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-055",
+      "term": "Business cycle",
+      "definition": "Timeline of periods of growth and decline in an economy.",
+      "area": "Economics",
+      "source": {
+        "title": "BLS Glossary: Business cycle",
+        "url": "https://www.bls.gov/bls/glossary.htm#business-cycle",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition of \"Business cycle\" from the BLS Glossary, U.S. Bureau of Labor Statistics, https://www.bls.gov/bls/glossary.htm#business-cycle. Public domain (US federal work); source: U.S. Bureau of Labor Statistics.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-056",
+      "term": "capital",
+      "definition": "Physical assets or money used in the production of goods and services.",
+      "area": "Economics",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-capital",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"capital\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-capital. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-057",
+      "term": "Networking",
+      "definition": "Creating relationships within a sector for the purpose of enhancing and developing one’s professional identity.",
+      "area": "Professional Development",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-networking",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Networking\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-networking. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-058",
+      "term": "Transferable skills",
+      "definition": "Skills required to perform a variety of tasks that can be transferred from one type of job to another.",
+      "area": "Professional Development",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-transferable-skills",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Transferable skills\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-transferable-skills. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-059",
+      "term": "E-portfolio",
+      "definition": "a collection of digital files that can be navigated much like a personal website",
+      "area": "Professional Development",
+      "source": {
+        "title": "Communication: Fundamentals for the Workplace, glossary",
+        "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"E-portfolio\" from the glossary of Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College, https://pressbooks.atlanticoer-relatlantique.ca/comm1205/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-060",
+      "term": "intellectual property",
+      "definition": "Creations of the mind—creative works or ideas embodied in a form that can be shared or can enable others to recreate, emulate, or manufacture them. There are four ways to protect intellectual property: patents, trademarks, copyrights, and/or trade secrets.",
+      "area": "Business Law",
+      "source": {
+        "title": "USPTO Glossary: intellectual property",
+        "url": "https://www.uspto.gov/learning-and-resources/glossary",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition of \"intellectual property\" from the Glossary, United States Patent and Trademark Office (USPTO), https://www.uspto.gov/learning-and-resources/glossary. Public domain (US federal work); use does not imply USPTO endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-061",
+      "term": "trademark",
+      "definition": "Any word, phrase, symbol, design, or a combination of these things that identifies the source of goods or services. Businesses and individuals use trademarks with their goods or services so that customers recognize them in the marketplace and distinguish them from competitors.",
+      "area": "Business Law",
+      "source": {
+        "title": "USPTO Glossary: trademark",
+        "url": "https://www.uspto.gov/learning-and-resources/glossary",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition of \"trademark\" from the Glossary, United States Patent and Trademark Office (USPTO), https://www.uspto.gov/learning-and-resources/glossary. Public domain (US federal work); use does not imply USPTO endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-062",
+      "term": "Negligence",
+      "definition": "Failing to meet a reasonable standard of care toward others despite being required to do so.",
+      "area": "Business Law",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-negligence",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Negligence\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-negligence. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-063",
+      "term": "Contract",
+      "definition": "An agreement between the organization and an outside provider of a service or materials.",
+      "area": "Business Law",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-contract",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Contract\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-contract. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-064",
+      "term": "Risk assessment",
+      "definition": "includes both the identification of potential risk and the evaluation of the potential impact of the risk.",
+      "area": "Risk Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-risk-assessment",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Risk assessment\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-risk-assessment. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-065",
+      "term": "Risk avoidance",
+      "definition": "Developing an alternative strategy that has a higher probability of success but usually at a higher cost.",
+      "area": "Risk Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-risk-avoidance",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Risk avoidance\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-risk-avoidance. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-066",
+      "term": "Contingency planning",
+      "definition": "Development of alternative plans to respond to the occurrence of a risk event.",
+      "area": "Risk Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-contingency-planning",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Contingency planning\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-contingency-planning. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-067",
+      "term": "Risk transfer",
+      "definition": "A risk mitigation strategy where the risk is transferred to a third party through contract or insurance.",
+      "area": "Risk Management",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-risk-transfer",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Risk transfer\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-risk-transfer. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-068",
+      "term": "Risk retention",
+      "definition": "The level of risk that is retained by the company through a conscious decision-making process.",
+      "area": "Risk Management",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-risk-retention",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Risk retention\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-risk-retention. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-069",
+      "term": "Quality Control (QC)",
+      "definition": "The management of production standards through statistical interpretation of random product measurements, which emphasizes consistency and accuracy.",
+      "area": "Quality Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-quality-control-qc",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Quality Control (QC)\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-quality-control-qc. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-070",
+      "term": "Six Sigma (6σ)",
+      "definition": "Quality management practices based on continuous efforts at improvement involving everyone at the company.",
+      "area": "Quality Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-six-sigma-6",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Six Sigma (6σ)\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-six-sigma-6. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-071",
+      "term": "Kaizen",
+      "definition": "A Japanese quality management term that describes participation by all.",
+      "area": "Quality Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-kaizen",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Kaizen\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-kaizen. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-072",
+      "term": "Benchmarking",
+      "definition": "Comparing your organization’s product or process to a standard of quality or industry best practice.",
+      "area": "Quality Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-benchmarking",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Benchmarking\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-benchmarking. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-073",
+      "term": "Fishbone diagram",
+      "definition": "A drawing that represents cause and effect to determine a quality problem",
+      "area": "Quality Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-fishbone-diagram",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Fishbone diagram\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-fishbone-diagram. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-074",
+      "term": "Customer orientation",
+      "definition": "Positioning a business or organization so that customer interests and value are the highest priority.",
+      "area": "Customer Relations",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-customer-orientation",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Customer orientation\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-customer-orientation. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-075",
+      "term": "Internal customer",
+      "definition": "An individual or group that is associated within the organization, and which the organization serves",
+      "area": "Customer Relations",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-internal-customer",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Internal customer\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-internal-customer. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-076",
+      "term": "human resources management (HRM)",
+      "definition": "The management of people within organizations, focusing on policies and systems.",
+      "area": "Human Resources Management",
+      "source": {
+        "title": "Human Resources in the Food Service and Hospitality Industry, Key Terms",
+        "url": "https://opentextbc.ca/humanresourcesinfoodservices/back-matter/glossary/#dfn-human-resources-management-(hrm)",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"human resources management (HRM)\" from the Key Terms of Human Resources in the Food Service and Hospitality Industry by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/humanresourcesinfoodservices/back-matter/glossary/#dfn-human-resources-management-(hrm). Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-077",
+      "term": "Span of control",
+      "definition": "The span of control represents the number of people reporting to a manager.",
+      "area": "Human Resources Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-span-of-control",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Span of control\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-span-of-control. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-078",
+      "term": "4Ps of the marketing mix",
+      "definition": "Product, place, price, and promotion",
+      "area": "Marketing",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-slug-4ps-of-the-marketing-mix",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"4Ps of the marketing mix\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-slug-4ps-of-the-marketing-mix. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "bma-v-079",
+      "term": "Franchise",
+      "definition": "Enables individuals or investment companies to build or purchase a business and then buy or lease a brand name under which to operate; also can include reservation systems and marketing tools.",
+      "area": "Entrepreneurship",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-franchise",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Franchise\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-franchise. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    }
+  ]
+}

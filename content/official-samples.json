@@ -1,0 +1,670 @@
+{
+  "status": "links-only",
+  "verifiedAt": "2026-10-11",
+  "season": "2026-2027",
+  "disclaimer": "Links to official sample exams that DECA Inc. posts on deca.org. The questions are copyright MBA Research and Curriculum Center and are licensed only as configured within each exam, so DECA Masters links to them and never copies, imports or rewords any question. DECA Masters is independent and not affiliated with DECA Inc. or MBA Research.",
+  "howToUse": "Each exam is a 100-question sample with an answer key at the end. Newest first; the 2025-26 exams are the ones linked from the current deca.org event pages. Check the 2026-27 exam blueprint for the current instructional-area mix.",
+  "blueprint": {
+    "title": "2026-2027 HS Exam Blueprint",
+    "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c69fcf9672174167a66c9_HS_Blueprint.pdf",
+    "pageUrl": "https://www.deca.org/advisor-resources/competitive-events-exam-blueprints"
+  },
+  "verification": "Every url and pageUrl returned HTTP 200 on 2026-10-11 and every url is a PDF; the posted date is read from the PDF cover where printed.",
+  "sources": [
+    {
+      "title": "DECA Advisor Resources exam pages (deca.org/advisor-resources/<cluster>-exam-<year>) and the Sample Exam link on each deca.org event page",
+      "url": "https://www.deca.org/compete",
+      "licence": "All rights reserved (MBA Research / DECA Inc.). Linked only."
+    }
+  ],
+  "clusters": [
+    {
+      "exam": "business-admin-core",
+      "cluster": "core",
+      "title": "Business Administration Core Exam",
+      "usedBy": [
+        "PBM",
+        "PEN",
+        "PFN",
+        "PHT",
+        "PMK"
+      ],
+      "samples": [
+        {
+          "title": "Business Administration Core Exam sample (2025-26)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ed502b052b24e81259ae_BA%20Core-District%20Exam.pdf",
+          "season": "2025-26",
+          "posted": "March 2026",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-administration-core-exam-2026",
+          "current": true
+        },
+        {
+          "title": "Business Administration Core Exam sample (2024-25)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1d65441573664321a854f_24-25_BA%20Core%20Exam.pdf",
+          "season": "2024-25",
+          "posted": "March 2025",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-administration-core-exam-2025",
+          "current": false
+        },
+        {
+          "title": "Business Administration Core Exam sample (2023-24)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65df46ecf9242065c35e1962_HS_Business_Administration_Core_Sample_Exam_24.pdf",
+          "season": "2023-24",
+          "posted": "March 2024",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-administration-core-exam-2024",
+          "current": false
+        },
+        {
+          "title": "Business Administration Core Exam sample (2022-23)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63f8eb8eb66608fec15e8214_HS_Business_Administration_Core_Sample_Exam_23.pdf",
+          "season": "2022-23",
+          "posted": "March 2023",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-administration-core-exam-2023",
+          "current": false
+        },
+        {
+          "title": "Business Administration Core Exam sample (2021-22)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63994ce36160af67a4fb5009_HS_Business_Administration_Core_Sample_Exam_22.pdf",
+          "season": "2021-22",
+          "posted": "March 2022",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-administration-core-exam-2022",
+          "current": false
+        },
+        {
+          "title": "Business Administration Core Exam sample (2020-21)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63994ccb56af0e223bd4737e_HS_Business_Administration_Core_Sample_Exam_21.pdf",
+          "season": "2020-21",
+          "posted": "March 2021",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-administration-core-exam-2021",
+          "current": false
+        },
+        {
+          "title": "Business Administration Core Exam sample (2019-20)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63994cad3051eb77b6561030_HS_Business_Administration_Core_Sample_Exam_20.pdf",
+          "season": "2019-20",
+          "posted": "March 2020",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-administration-core-exam-2020",
+          "current": false
+        },
+        {
+          "title": "Business Administration Core Exam sample (2018-19)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63994c8b110b434215e343c7_HS_Business_Administration_Core_Sample_Exam_19.pdf",
+          "season": "2018-19",
+          "posted": "March 2019",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-administration-core-exam-2019",
+          "current": false
+        },
+        {
+          "title": "Business Administration Core Exam sample (2017-18)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63994c64198d5a2a25e05e48_HS_Business_Administration_Core_Sample_Exam_18.pdf",
+          "season": "2017-18",
+          "posted": null,
+          "pageUrl": "https://www.deca.org/advisor-resources/business-administration-core-exam-2018",
+          "current": false
+        },
+        {
+          "title": "Business Administration Core Exam sample (2016-17)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63994c1bd06de9523f85d08f_HS_Business_Administration_Core_Sample_Exam_17.pdf",
+          "season": "2016-17",
+          "posted": null,
+          "pageUrl": "https://www.deca.org/advisor-resources/business-administration-core-exam-2017",
+          "current": false
+        }
+      ]
+    },
+    {
+      "exam": "business-management",
+      "cluster": "business-management",
+      "title": "Business Management and Administration Career Cluster Exam",
+      "usedBy": [
+        "BLTDM",
+        "HRM"
+      ],
+      "samples": [
+        {
+          "title": "Business Management and Administration Career Cluster Exam sample (2025-26)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1edebf57b826a8b7b652a_BMA-District%20Exam.pdf",
+          "season": "2025-26",
+          "posted": "March 2026",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-management-and-administration-exam-2026",
+          "current": true
+        },
+        {
+          "title": "Business Management and Administration Career Cluster Exam sample (2024-25)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1d6648bc25fcebcdbbaee_24-25_BMA%20District%20Exam.pdf",
+          "season": "2024-25",
+          "posted": "March 2025",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-management-and-administration-exam-2025",
+          "current": false
+        },
+        {
+          "title": "Business Management and Administration Career Cluster Exam sample (2023-24)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65df472e70f0de9ce043e49a_HS_Business_Management_Cluster_Sample_Exam_24.pdf",
+          "season": "2023-24",
+          "posted": "March 2024",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-management-and-administration-exam-2024",
+          "current": false
+        },
+        {
+          "title": "Business Management and Administration Career Cluster Exam sample (2021-22)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639959577966d64f5a03c41a_HS_Business_Management_Administration_Cluster_Sample_Exam_22.pdf",
+          "season": "2021-22",
+          "posted": "March 2022",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-management-and-administration-exam-2022",
+          "current": false
+        },
+        {
+          "title": "Business Management and Administration Career Cluster Exam sample (2020-21)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399592c5e573500084a6c1a_HS_Business_Management_Administration_Cluster_Sample_Exam_21.pdf",
+          "season": "2020-21",
+          "posted": "March 2021",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-management-and-administration-exam-2021",
+          "current": false
+        },
+        {
+          "title": "Business Management and Administration Career Cluster Exam sample (2019-20)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639958f4563d68fd36231a75_HS_Business_Management_Administration_Cluster_Sample_Exam_20.pdf",
+          "season": "2019-20",
+          "posted": "March 2020",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-management-and-administration-exam-2020",
+          "current": false
+        },
+        {
+          "title": "Business Management and Administration Career Cluster Exam sample (2018-19)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639958b5a99163a352032371_HS_Business_Management_Administration_Cluster_Sample_Exam_19.pdf",
+          "season": "2018-19",
+          "posted": "March 2019",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-management-and-administration-exam-2019",
+          "current": false
+        },
+        {
+          "title": "Business Management and Administration Career Cluster Exam sample (2017-18)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639958695cc48e934f8ac852_HS_Business_Management_Administration_Cluster_Sample_Exam_18.pdf",
+          "season": "2017-18",
+          "posted": null,
+          "pageUrl": "https://www.deca.org/advisor-resources/business-management-and-administration-exam-2018",
+          "current": false
+        },
+        {
+          "title": "Business Management and Administration Career Cluster Exam sample (2016-17)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63995812a99163124c02c888_HS_Business_Management_Administration_Cluster_Sample_Exam_17.pdf",
+          "season": "2016-17",
+          "posted": null,
+          "pageUrl": "https://www.deca.org/advisor-resources/business-management-and-administration-exam-2017",
+          "current": false
+        }
+      ]
+    },
+    {
+      "exam": "entrepreneurship",
+      "cluster": "entrepreneurship",
+      "title": "Entrepreneurship Exam",
+      "usedBy": [
+        "ENT",
+        "ETDM"
+      ],
+      "samples": [
+        {
+          "title": "Entrepreneurship Exam sample (2025-26)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ee11b265a7940d828561_Entre-District%20Exam.pdf",
+          "season": "2025-26",
+          "posted": "March 2026",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-exam-2026",
+          "current": true
+        },
+        {
+          "title": "Entrepreneurship Exam sample (2024-25)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1d6bcee16ad4f3fd05cc6_24-25_Entre%20District%20Exam.pdf",
+          "season": "2024-25",
+          "posted": "March 2025",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-exam-2025",
+          "current": false
+        },
+        {
+          "title": "Entrepreneurship Exam sample (2023-24)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65df4655119eda9d94bed97e_HS_Entrepreneurship_Sample_Exam_24.pdf",
+          "season": "2023-24",
+          "posted": "March 2024",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-exam-2024",
+          "current": false
+        },
+        {
+          "title": "Entrepreneurship Exam sample (2022-23)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63f8eb823603a1c86dc634a4_HS_Entrepreneurship_Sample_Exam_23.pdf",
+          "season": "2022-23",
+          "posted": "March 2023",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-exam-2023",
+          "current": false
+        },
+        {
+          "title": "Entrepreneurship Exam sample (2021-22)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63994fa4198d5aa6c0e24ec9_HS_Entrepreneurship_Sample_Exam_22.pdf",
+          "season": "2021-22",
+          "posted": "March 2022",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-exam-2022",
+          "current": false
+        },
+        {
+          "title": "Entrepreneurship Exam sample (2020-21)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63994f8a198d5a539fe223ad_HS_Entrepreneurship_Sample_Exam_21.pdf",
+          "season": "2020-21",
+          "posted": "March 2021",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-exam-2021",
+          "current": false
+        },
+        {
+          "title": "Entrepreneurship Exam sample (2019-20)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63994f5890d41315955081a7_HS_Entrepreneurship_Sample_Exam_20.pdf",
+          "season": "2019-20",
+          "posted": "March 2020",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-exam-2020",
+          "current": false
+        },
+        {
+          "title": "Entrepreneurship Exam sample (2018-19)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63994f388a89172246b47910_HS_Entrepreneurship_Sample_Exam_19.pdf",
+          "season": "2018-19",
+          "posted": "March 2019",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-exam-2019",
+          "current": false
+        },
+        {
+          "title": "Entrepreneurship Exam sample (2017-18)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63994f1d5d0da77a95dcea42_HS_Entrepreneurship_Sample_Exam_18.pdf",
+          "season": "2017-18",
+          "posted": null,
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-exam-2018",
+          "current": false
+        }
+      ]
+    },
+    {
+      "exam": "finance",
+      "cluster": "finance",
+      "title": "Finance Career Cluster Exam",
+      "usedBy": [
+        "ACT",
+        "BFS",
+        "FCE",
+        "FTDM"
+      ],
+      "samples": [
+        {
+          "title": "Finance Career Cluster Exam sample (2025-26)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ee4294aedcb145dba6c1_Finance-District%20Exam.pdf",
+          "season": "2025-26",
+          "posted": "March 2026",
+          "pageUrl": "https://www.deca.org/advisor-resources/finance-exam-2026",
+          "current": true
+        },
+        {
+          "title": "Finance Career Cluster Exam sample (2024-25)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1d710e252d5f3c3e2087d_24-25_Finance%20District%20Exam.pdf",
+          "season": "2024-25",
+          "posted": "March 2025",
+          "pageUrl": "https://www.deca.org/advisor-resources/finance-exam-2025",
+          "current": false
+        },
+        {
+          "title": "Finance Career Cluster Exam sample (2023-24)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65df466d6a2308ca0ec22693_HS_Finance_Cluster_Sample_Exam_24.pdf",
+          "season": "2023-24",
+          "posted": "March 2024",
+          "pageUrl": "https://www.deca.org/advisor-resources/finance-exam-2024",
+          "current": false
+        },
+        {
+          "title": "Finance Career Cluster Exam sample (2022-23)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63f8eba0e577a853887f107f_HS_Finance_Cluster_Sample_Exam_23.pdf",
+          "season": "2022-23",
+          "posted": "March 2023",
+          "pageUrl": "https://www.deca.org/advisor-resources/finance-exam-2023",
+          "current": false
+        },
+        {
+          "title": "Finance Career Cluster Exam sample (2021-22)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399576e2ba12049c88f4438_HS_Finance_Cluster_Sample_Exam_22.pdf",
+          "season": "2021-22",
+          "posted": "March 2022",
+          "pageUrl": "https://www.deca.org/advisor-resources/finance-exam-2022",
+          "current": false
+        },
+        {
+          "title": "Finance Career Cluster Exam sample (2020-21)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63995759d92b28fbe4b18dad_HS_Finance_Cluster_Sample_Exam_21.pdf",
+          "season": "2020-21",
+          "posted": "March 2021",
+          "pageUrl": "https://www.deca.org/advisor-resources/finance-exam-2021",
+          "current": false
+        },
+        {
+          "title": "Finance Career Cluster Exam sample (2019-20)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63995739d92b285452b1641e_HS_Finance_Cluster_Sample_Exam_20.pdf",
+          "season": "2019-20",
+          "posted": "March 2020",
+          "pageUrl": "https://www.deca.org/advisor-resources/finance-exam-2020",
+          "current": false
+        },
+        {
+          "title": "Finance Career Cluster Exam sample (2018-19)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63995714563d689b3f22adc0_HS_Finance_Cluster_Sample_Exam_19.pdf",
+          "season": "2018-19",
+          "posted": "March 2019",
+          "pageUrl": "https://www.deca.org/advisor-resources/finance-exam-2019",
+          "current": false
+        },
+        {
+          "title": "Finance Career Cluster Exam sample (2017-18)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639956e8bc878d9c0dfd9946_HS_Finance_Cluster_Sample_Exam_18.pdf",
+          "season": "2017-18",
+          "posted": null,
+          "pageUrl": "https://www.deca.org/advisor-resources/finance-exam-2018",
+          "current": false
+        },
+        {
+          "title": "Finance Career Cluster Exam sample (2016-17)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639956a85ce8b5d3f1abb5fe_HS_Finance_Cluster_Sample_Exam_17.pdf",
+          "season": "2016-17",
+          "posted": null,
+          "pageUrl": "https://www.deca.org/advisor-resources/finance-exam-2017",
+          "current": false
+        }
+      ]
+    },
+    {
+      "exam": "hospitality-tourism",
+      "cluster": "hospitality-tourism",
+      "title": "Hospitality and Tourism Career Cluster Exam",
+      "usedBy": [
+        "HTPS",
+        "HTDM",
+        "HLM",
+        "QSRM",
+        "RFSM",
+        "TTDM"
+      ],
+      "samples": [
+        {
+          "title": "Hospitality and Tourism Career Cluster Exam sample (2025-26)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ee5b3ca1c1f9ba6535bf_Hospitality-District%20Exam.pdf",
+          "season": "2025-26",
+          "posted": "March 2026",
+          "pageUrl": "https://www.deca.org/advisor-resources/hospitality-and-tourism-exam-2026",
+          "current": true
+        },
+        {
+          "title": "Hospitality and Tourism Career Cluster Exam sample (2024-25)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1d68ac7bf2c1ccdb27759_24-25_Hospitality%20District%20Exam.pdf",
+          "season": "2024-25",
+          "posted": "March 2025",
+          "pageUrl": "https://www.deca.org/advisor-resources/hospitality-and-tourism-exam-2025",
+          "current": false
+        },
+        {
+          "title": "Hospitality and Tourism Career Cluster Exam sample (2023-24)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65df456cc893216a14f3663d_HS_Hospitality_Tourism_Cluster_Sample_Exam_24.pdf",
+          "season": "2023-24",
+          "posted": "March 2024",
+          "pageUrl": "https://www.deca.org/advisor-resources/hospitality-and-tourism-exam-2024",
+          "current": false
+        },
+        {
+          "title": "Hospitality and Tourism Career Cluster Exam sample (2022-23)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63f8ebc5abf0e65bac297cc9_HS_Hospitality_Tourism_Cluster_Sample_Exam_23.pdf",
+          "season": "2022-23",
+          "posted": "March 2023",
+          "pageUrl": "https://www.deca.org/advisor-resources/hospitality-and-tourism-exam-2023",
+          "current": false
+        },
+        {
+          "title": "Hospitality and Tourism Career Cluster Exam sample (2021-22)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399551e2ba120c2588d030e_HS_Hospitality_Tourism_Cluster_Sample_Exam_22.pdf",
+          "season": "2021-22",
+          "posted": "March 2022",
+          "pageUrl": "https://www.deca.org/advisor-resources/hospitality-and-tourism-exam-2022",
+          "current": false
+        },
+        {
+          "title": "Hospitality and Tourism Career Cluster Exam sample (2020-21)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63995506213b16387a88153d_HS_Hospitality_Tourism_Cluster_Sample_Exam_21.pdf",
+          "season": "2020-21",
+          "posted": "March 2021",
+          "pageUrl": "https://www.deca.org/advisor-resources/hospitality-and-tourism-exam-2021",
+          "current": false
+        },
+        {
+          "title": "Hospitality and Tourism Career Cluster Exam sample (2019-20)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639954c82ba120e3048cd17a_HS_Hospitality_Tourism_Cluster_Sample_Exam_20.pdf",
+          "season": "2019-20",
+          "posted": "March 2020",
+          "pageUrl": "https://www.deca.org/advisor-resources/hospitality-and-tourism-exam-2020",
+          "current": false
+        },
+        {
+          "title": "Hospitality and Tourism Career Cluster Exam sample (2018-19)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639954a2563d68674020c074_HS_Hospitality_Tourism_Cluster_Sample_Exam_19.pdf",
+          "season": "2018-19",
+          "posted": "March 2019",
+          "pageUrl": "https://www.deca.org/advisor-resources/hospitality-and-tourism-exam-2019",
+          "current": false
+        },
+        {
+          "title": "Hospitality and Tourism Career Cluster Exam sample (2017-18)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399546d213b161891873235_HS_Hospitality_Tourism_Cluster_Sample_Exam_18.pdf",
+          "season": "2017-18",
+          "posted": null,
+          "pageUrl": "https://www.deca.org/advisor-resources/hospitality-and-tourism-exam-2018",
+          "current": false
+        },
+        {
+          "title": "Hospitality and Tourism Career Cluster Exam sample (2016-17)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639954322db59a60ae02676d_HS_Hospitality_Tourism_Cluster_Sample_Exam_17.pdf",
+          "season": "2016-17",
+          "posted": null,
+          "pageUrl": "https://www.deca.org/advisor-resources/hospitality-and-tourism-exam-2017",
+          "current": false
+        }
+      ]
+    },
+    {
+      "exam": "marketing",
+      "cluster": "marketing",
+      "title": "Marketing Career Cluster Exam",
+      "usedBy": [
+        "AAM",
+        "ASM",
+        "BSM",
+        "BTDM",
+        "FMS",
+        "IMCE",
+        "IMCP",
+        "IMCS",
+        "MCS",
+        "MTDM",
+        "PSE",
+        "RMS",
+        "SEM",
+        "STDM"
+      ],
+      "samples": [
+        {
+          "title": "Marketing Career Cluster Exam sample (2025-26)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1eeab6e1e15a9025b6321_Marketing-District%20Exam.pdf",
+          "season": "2025-26",
+          "posted": "March 2026",
+          "pageUrl": "https://www.deca.org/advisor-resources/marketing-exam-2026",
+          "current": true
+        },
+        {
+          "title": "Marketing Career Cluster Exam sample (2024-25)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1d6a639574efcac4ebd96_24-25_Marketing%20District%20Exam.pdf",
+          "season": "2024-25",
+          "posted": "March 2025",
+          "pageUrl": "https://www.deca.org/advisor-resources/marketing-exam-2025",
+          "current": false
+        },
+        {
+          "title": "Marketing Career Cluster Exam sample (2023-24)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65df42a3765c3c9af7ef6459_HS_Marketing_Cluster_Sample_Exam_24.pdf",
+          "season": "2023-24",
+          "posted": "March 2024",
+          "pageUrl": "https://www.deca.org/advisor-resources/marketing-exam-2024",
+          "current": false
+        },
+        {
+          "title": "Marketing Career Cluster Exam sample (2022-23)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63f8ebb00a0a657ccf0f751c_HS_Marketing_Cluster_Sample_Exam_23.pdf",
+          "season": "2022-23",
+          "posted": "March 2023",
+          "pageUrl": "https://www.deca.org/advisor-resources/marketing-exam-2023",
+          "current": false
+        },
+        {
+          "title": "Marketing Career Cluster Exam sample (2021-22)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639952958ea619c31b8a9632_HS_Marketing_Cluster_Sample_Exam_22.pdf",
+          "season": "2021-22",
+          "posted": "March 2022",
+          "pageUrl": "https://www.deca.org/advisor-resources/marketing-exam-2022",
+          "current": false
+        },
+        {
+          "title": "Marketing Career Cluster Exam sample (2020-21)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63995277ebaea59379b51f73_HS_Marketing_Cluster_Sample_Exam_21.pdf",
+          "season": "2020-21",
+          "posted": "March 2021",
+          "pageUrl": "https://www.deca.org/advisor-resources/marketing-exam-2021",
+          "current": false
+        },
+        {
+          "title": "Marketing Career Cluster Exam sample (2019-20)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639952575e5735f3874482ec_HS_Marketing_Cluster_Sample_Exam_20.pdf",
+          "season": "2019-20",
+          "posted": "March 2020",
+          "pageUrl": "https://www.deca.org/advisor-resources/marketing-exam-2020",
+          "current": false
+        },
+        {
+          "title": "Marketing Career Cluster Exam sample (2018-19)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399522b13cd7a7399f6e261_HS_Marketing_Cluster_Sample_Exam_19.pdf",
+          "season": "2018-19",
+          "posted": "March 2019",
+          "pageUrl": "https://www.deca.org/advisor-resources/marketing-exam-2019",
+          "current": false
+        },
+        {
+          "title": "Marketing Career Cluster Exam sample (2017-18)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639951eb13cd7ac33cf6d7c5_HS_Marketing_Cluster_Sample_Exam_18.pdf",
+          "season": "2017-18",
+          "posted": null,
+          "pageUrl": "https://www.deca.org/advisor-resources/marketing-exam-2018",
+          "current": false
+        },
+        {
+          "title": "Marketing Career Cluster Exam sample (2016-17)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639951d1b6dd5c52da543d0d_HS_Marketing_Cluster_Sample_Exam_17.pdf",
+          "season": "2016-17",
+          "posted": null,
+          "pageUrl": "https://www.deca.org/advisor-resources/marketing-exam-2017",
+          "current": false
+        }
+      ]
+    },
+    {
+      "exam": "personal-financial-literacy",
+      "cluster": "personal-finance",
+      "title": "Personal Financial Literacy Exam",
+      "usedBy": [
+        "PFL"
+      ],
+      "samples": [
+        {
+          "title": "Personal Financial Literacy Exam sample (2025-26)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ee31bd1b037f801c8b16_PFL-District%20Exam.pdf",
+          "season": "2025-26",
+          "posted": "March 2026",
+          "pageUrl": "https://www.deca.org/advisor-resources/personal-financial-literacy-exam-2026",
+          "current": true
+        },
+        {
+          "title": "Personal Financial Literacy Exam sample (2024-25)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1d6f7429f52afc96347f0_24-25_PFL%20District%20Exam.pdf",
+          "season": "2024-25",
+          "posted": "March 2025",
+          "pageUrl": "https://www.deca.org/advisor-resources/personal-financial-literacy-exam-2025",
+          "current": false
+        },
+        {
+          "title": "Personal Financial Literacy Exam sample (2023-24)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65df42888df75e7ada201bcd_HS_Personal_Financial_Literacy_Sample_Exam_24.pdf",
+          "season": "2023-24",
+          "posted": "March 2024",
+          "pageUrl": "https://www.deca.org/advisor-resources/personal-financial-literacy-exam-2024",
+          "current": false
+        },
+        {
+          "title": "Personal Financial Literacy Exam sample (2022-23)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63f8eb980a0a654fa40f481a_HS_Personal_Financial_Literacy_Sample_Exam_23.pdf",
+          "season": "2022-23",
+          "posted": "March 2023",
+          "pageUrl": "https://www.deca.org/advisor-resources/personal-financial-literacy-exam-2023",
+          "current": false
+        },
+        {
+          "title": "Personal Financial Literacy Exam sample (2021-22)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63994a000560045e29c64937_HS_Personal_Financial_Literacy_Sample_Exam_22.pdf",
+          "season": "2021-22",
+          "posted": "March 2022",
+          "pageUrl": "https://www.deca.org/advisor-resources/personal-financial-literacy-exam-2022",
+          "current": false
+        },
+        {
+          "title": "Personal Financial Literacy Exam sample (2020-21)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639949de5291c700b48d8577_HS_Personal_Financial_Literacy_Sample_Exam_21.pdf",
+          "season": "2020-21",
+          "posted": "March 2021",
+          "pageUrl": "https://www.deca.org/advisor-resources/personal-financial-literacy-exam-2021",
+          "current": false
+        },
+        {
+          "title": "Personal Financial Literacy Exam sample (2019-20)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639949c00560046f31c647e5_HS_Personal_Financial_Literacy_Sample_Exam_20.pdf",
+          "season": "2019-20",
+          "posted": "March 2020",
+          "pageUrl": "https://www.deca.org/advisor-resources/personal-financial-literacy-exam-2020",
+          "current": false
+        },
+        {
+          "title": "Personal Financial Literacy Exam sample (2018-19)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639949553051eb3c2e53f420_HS_Personal_Financial_Literacy_Sample_Exam_19.pdf",
+          "season": "2018-19",
+          "posted": "March 2019",
+          "pageUrl": "https://www.deca.org/advisor-resources/personal-financial-literacy-exam-2019",
+          "current": false
+        },
+        {
+          "title": "Personal Financial Literacy Exam sample (2017-18)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63994936bec3e9380f5071d9_HS_Personal_Financial_LIteracy_Sample_Exam_18.pdf",
+          "season": "2017-18",
+          "posted": null,
+          "pageUrl": "https://www.deca.org/advisor-resources/personal-financial-literacy-exam-2018",
+          "current": false
+        },
+        {
+          "title": "Personal Financial Literacy Exam sample (2016-17)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639948be4d467061ce2d058f_HS_Personal_Financial_LIteracy_Sample_Exam_17.pdf",
+          "season": "2016-17",
+          "posted": null,
+          "pageUrl": "https://www.deca.org/advisor-resources/personal-financial-literacy-exam-2017",
+          "current": false
+        }
+      ]
+    }
+  ],
+  "knownIssues": [
+    {
+      "pageUrl": "https://www.deca.org/advisor-resources/business-management-and-administration-exam-2023",
+      "issue": "deca.org's 2023 Business Management and Administration Career Cluster Exam page links the Business Administration Core 2023 sample exam PDF instead of a Business Management and Administration Career Cluster Exam. Left out of the list.",
+      "linkedPdf": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63f8eb8eb66608fec15e8214_HS_Business_Administration_Core_Sample_Exam_23.pdf"
+    }
+  ]
+}

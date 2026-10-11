@@ -1,0 +1,989 @@
+{
+  "cluster": "hospitality-tourism",
+  "status": "placeholder",
+  "placeholderNote": "DECA Masters stores no role-play or case-study text. Each event links to the official sample events DECA Inc. publishes on deca.org (copyright DECA Inc.; linked, never copied). Students open the official PDF, then practise with the trainer's timer, performance-indicator checklist and self-evaluation.",
+  "disclaimer": "Links to official DECA Inc. sample events hosted by DECA. DECA Masters is an independent practice tool, not affiliated with DECA Inc.",
+  "season": "2026-2027",
+  "verifiedAt": "2026-10-11",
+  "verification": "Every url and pageUrl returned HTTP 200 on 2026-10-11; every url is a PDF whose first page names the event code and year shown here.",
+  "sources": [
+    {
+      "title": "DECA high school competitive event pages (Sample Event link and Classroom Resources role-plays)",
+      "url": "https://www.deca.org/compete",
+      "licence": "All rights reserved (DECA Inc.). Linked only, no text reused."
+    },
+    {
+      "title": "DECA Guide 2026-27 event guidelines (prep time, presentation time, judge role)",
+      "url": "https://www.deca.org/compete",
+      "licence": "All rights reserved (DECA Inc.). Facts summarised, no text reused."
+    }
+  ],
+  "events": [
+    {
+      "eventCode": "HTDM",
+      "eventName": "Hospitality Services Team Decision Making",
+      "component": "case-study",
+      "officialUrl": "https://www.deca.org/compete/hospitality-services-team-decision-making",
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327f7f7f637d914a9fc71_HS_TDM_Guidelines.pdf",
+      "officialSamples": [
+        {
+          "title": "Official sample event, 2026-27 format (HTDM-26 District Event)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a45530bd8c137c4a7d155af_DECA_HTDM_2026_District_Event_Sample.pdf",
+          "season": "2026-27",
+          "round": "Sample Event",
+          "instructionalArea": null,
+          "kind": "current-format-sample",
+          "pageUrl": "https://www.deca.org/compete/hospitality-services-team-decision-making",
+          "formatNote": "The 2025-26 District Event reissued by DECA in the 2026-27 layout (Solution criteria and Career Competencies)."
+        },
+        {
+          "title": "District Event: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ee610f7e2623d87448fd_DECA_HTDM_2026_District_Event.pdf",
+          "season": "2025-26",
+          "round": "District Event",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hospitality-services-team-decision-making-2026"
+        },
+        {
+          "title": "District Event: Product/Service Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1da480945459ab0038c9a_DECA_HTDM_2025_District_Event.pdf",
+          "season": "2024-25",
+          "round": "District Event",
+          "instructionalArea": "Product/Service Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hospitality-services-team-decision-making-2025"
+        },
+        {
+          "title": "District Event: Marketing",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dca5ed308eb9bf64e427c0_DECA_HTDM_2024_District_Event.pdf",
+          "season": "2023-24",
+          "round": "District Event",
+          "instructionalArea": "Marketing",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hospitality-services-team-decision-making-2024"
+        },
+        {
+          "title": "District Event: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fcd73175d0ff71b62e1c71_DECA_HTDM_2023_District_Event_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hospitality-services-team-decision-making-2023"
+        },
+        {
+          "title": "District Event: Economics",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639936ffeebc647fafc55db9_DECA_HTDM_2022_District_Event.pdf",
+          "season": "2021-22",
+          "round": "District Event",
+          "instructionalArea": "Economics",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hospitality-services-team-decision-making-2022"
+        },
+        {
+          "title": "District Event (virtual): Promotion",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639936c5e90c14b0a2ccad9b_DECA_HTDM_2021_District_Event_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event (virtual)",
+          "instructionalArea": "Promotion",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hospitality-services-team-decision-making-2021"
+        },
+        {
+          "title": "District Event: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399368ea6db845be8f1973d_DECA_HTDM_2020_District_Event.pdf",
+          "season": "2019-20",
+          "round": "District Event",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hospitality-services-team-decision-making-2020"
+        },
+        {
+          "title": "District Event: Product/Service Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63993654e90c142823cc6aa3_DECA_HTDM_2019_District_Event.pdf",
+          "season": "2018-19",
+          "round": "District Event",
+          "instructionalArea": "Product/Service Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hospitality-services-team-decision-making-2019"
+        },
+        {
+          "title": "District Event: Selling",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639936217966d6e705e22cd0_DECA_HTDM_2018_District_Event.pdf",
+          "season": "2017-18",
+          "round": "District Event",
+          "instructionalArea": "Selling",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hospitality-services-team-decision-making-2018"
+        },
+        {
+          "title": "District Event: Promotion",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639935e119ebca5298fe5498_DECA_HTDM_2017_District_Event.pdf",
+          "season": "2016-17",
+          "round": "District Event",
+          "instructionalArea": "Promotion",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hospitality-services-team-decision-making-2017"
+        }
+      ],
+      "format": {
+        "prepMinutes": 30,
+        "presentationMinutes": 15,
+        "judgeRole": "A qualified business executive who plays the role named in the case study. The team presents its analysis and decisions without interruption, then the judge asks every team the same standard questions; each member should answer at least one.",
+        "performanceIndicators": 5,
+        "participants": "2",
+        "rounds": "1 case study, second case study for finalists"
+      },
+      "placeholder": true,
+      "note": "Open the official sample, then use the trainer's timer, PI checklist and self-evaluation"
+    },
+    {
+      "eventCode": "HLM",
+      "eventName": "Hotel and Lodging Management Series",
+      "component": "roleplay",
+      "officialUrl": "https://www.deca.org/compete/hotel-and-lodging-management-series",
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf",
+      "officialSamples": [
+        {
+          "title": "Official sample event, 2026-27 format (HLM-26 District Event 1)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3dc1fcb8a80d2a84f69501_DECA_HLM_2026_District_Event_1_Sample.pdf",
+          "season": "2026-27",
+          "round": "Sample Event",
+          "instructionalArea": null,
+          "kind": "current-format-sample",
+          "pageUrl": "https://www.deca.org/compete/hotel-and-lodging-management-series",
+          "formatNote": "The 2025-26 District Event 1 reissued by DECA in the 2026-27 layout (Solution criteria and Career Competencies)."
+        },
+        {
+          "title": "District Event 1: Promotion",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ef6b8ec45f640ee0215e_DECA_HLM_2026_District_Event_1.pdf",
+          "season": "2025-26",
+          "round": "District Event 1",
+          "instructionalArea": "Promotion",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hotel-and-lodging-management-2026a"
+        },
+        {
+          "title": "District Event 2: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1fe1f39ba68238a0fd1b0_DECA_HLM_2026_District_Event_2.pdf",
+          "season": "2025-26",
+          "round": "District Event 2",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hotel-and-lodging-management-2026b"
+        },
+        {
+          "title": "District Event 1: Product/Service Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1dd139d37c54d5bbba93f_DECA_HLM_2025_District_Event_1.pdf",
+          "season": "2024-25",
+          "round": "District Event 1",
+          "instructionalArea": "Product/Service Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hotel-and-lodging-management-2025a"
+        },
+        {
+          "title": "District Event 2: Operations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c222139ace2d548e5588a6_DECA_HLM_2025_District_Event_2.pdf",
+          "season": "2024-25",
+          "round": "District Event 2",
+          "instructionalArea": "Operations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hotel-and-lodging-management-2025b"
+        },
+        {
+          "title": "District Event 1: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dcd77b77bfeab621ab2d5a_DECA_HLM_2024_District_Event_1.pdf",
+          "season": "2023-24",
+          "round": "District Event 1",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hotel-and-lodging-management-2024a"
+        },
+        {
+          "title": "District Event 2: Marketing",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dcb08ebbc66d40d0915e0e_DECA_HLM_2024_District_Event_2.pdf",
+          "season": "2023-24",
+          "round": "District Event 2",
+          "instructionalArea": "Marketing",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hotel-and-lodging-management-2024b"
+        },
+        {
+          "title": "District Event 1: Promotion",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fcd7068f1a3549be4b7cde_DECA_HLM_2023_District_Event_1_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event 1",
+          "instructionalArea": "Promotion",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hotel-and-lodging-management-2023a"
+        },
+        {
+          "title": "District Event 2: Pricing",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fcee8a085e1a6f42e26255_DECA_HLM_2023_District_Event_2_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event 2",
+          "instructionalArea": "Pricing",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hotel-and-lodging-management-2023b"
+        },
+        {
+          "title": "District Event 1: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a40982269b97eede0e4fd_DECA_HLM_2022_District_Event_1.pdf",
+          "season": "2021-22",
+          "round": "District Event 1",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hotel-and-lodging-management-2022a"
+        },
+        {
+          "title": "District Event 2: Professional Development",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a40d08ebe8e1750914a8d_DECA_HLM_2022_District_Event_2.pdf",
+          "season": "2021-22",
+          "round": "District Event 2",
+          "instructionalArea": "Professional Development",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hotel-and-lodging-management-2022b"
+        },
+        {
+          "title": "District Event 1 (virtual): Operations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a3fa4cb3f553438b9124c_DECA_HLM_2021_District_Event_1_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event 1 (virtual)",
+          "instructionalArea": "Operations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hotel-and-lodging-management-2021a"
+        },
+        {
+          "title": "District Event 2 (virtual): Product/Service Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a4041671fb06e220735dc_DECA_HLM_2021_District_Event_2_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event 2 (virtual)",
+          "instructionalArea": "Product/Service Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hotel-and-lodging-management-2021b"
+        },
+        {
+          "title": "District Event: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a3e340d37294d0311ab7c_DECA_HLM_2020_Diistrict_Event_1.pdf",
+          "season": "2019-20",
+          "round": "District Event",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hotel-and-lodging-management-2020a"
+        },
+        {
+          "title": "District Event: Selling",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a3e9374caedae98be46e2_DECA_HLM_2020_Diistrict_Event_2.pdf",
+          "season": "2019-20",
+          "round": "District Event",
+          "instructionalArea": "Selling",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hotel-and-lodging-management-2020b"
+        },
+        {
+          "title": "District Event 1: Economics",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a3da6880736fd680d176d_DECA_HLM_2019_District_Event_1.pdf",
+          "season": "2018-19",
+          "round": "District Event 1",
+          "instructionalArea": "Economics",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hotel-and-lodging-management-2019a"
+        },
+        {
+          "title": "District Event 2: Marketing",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a3df2704d9e03a9de8578_DECA_HLM_2019_District_Event_2.pdf",
+          "season": "2018-19",
+          "round": "District Event 2",
+          "instructionalArea": "Marketing",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hotel-and-lodging-management-2019b"
+        },
+        {
+          "title": "District Event 2: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a3d52b5d8d703082418ae_DECA_HLM_2018_District_Event_2.pdf",
+          "season": "2017-18",
+          "round": "District Event 2",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hotel-and-lodging-management-2018a"
+        },
+        {
+          "title": "District Event 1: Marketing",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a3cd1160d0c3711cdf655_DECA_HLM_2017_District_Event_1.pdf",
+          "season": "2016-17",
+          "round": "District Event 1",
+          "instructionalArea": "Marketing",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hotel-and-lodging-management-2017a"
+        },
+        {
+          "title": "District Event 2: Selling",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a3d13190d9c3bf5cce165_DECA_HLM_2017_District_Event_2.pdf",
+          "season": "2016-17",
+          "round": "District Event 2",
+          "instructionalArea": "Selling",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/hotel-and-lodging-management-2017b"
+        }
+      ],
+      "format": {
+        "prepMinutes": 10,
+        "presentationMinutes": 10,
+        "judgeRole": "A qualified business executive who takes the business role named in the event situation. After you present your solution, the judge asks the follow-up questions written into the event, then scores you on the event evaluation form.",
+        "performanceIndicators": 5,
+        "participants": "1",
+        "rounds": "2 role-plays, third role-play for finalists"
+      },
+      "placeholder": true,
+      "note": "Open the official sample, then use the trainer's timer, PI checklist and self-evaluation"
+    },
+    {
+      "eventCode": "PHT",
+      "eventName": "Principles of Hospitality and Tourism",
+      "component": "roleplay",
+      "officialUrl": "https://www.deca.org/compete/principles-of-hospitality",
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c68346ea8c0dba9b854c1_HS_PBA_Guidelines.pdf",
+      "officialSamples": [
+        {
+          "title": "Official sample event, 2026-27 format (PHT-26 District Event)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3dc3aa73ff71d525eb3949_DECA_PHT_2026_District_Event_Sample.pdf",
+          "season": "2026-27",
+          "round": "Sample Event",
+          "instructionalArea": null,
+          "kind": "current-format-sample",
+          "pageUrl": "https://www.deca.org/compete/principles-of-hospitality",
+          "formatNote": "The 2025-26 District Event reissued by DECA in the 2026-27 layout (Solution criteria and Career Competencies)."
+        },
+        {
+          "title": "District Event: Economics",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ed6ba0f434243a419617_DECA_PHT_2026_District_Event.pdf",
+          "season": "2025-26",
+          "round": "District Event",
+          "instructionalArea": "Economics",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-hospitality-and-tourism-2026"
+        },
+        {
+          "title": "District Event: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1d948392150566d076ac7_DECA_PHT_2025_District_Event.pdf",
+          "season": "2024-25",
+          "round": "District Event",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-hospitality-and-tourism-2025"
+        },
+        {
+          "title": "District Event: Communications",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dca85382f4a53d97fe8596_DECA_PHT_2024_District_Event.pdf",
+          "season": "2023-24",
+          "round": "District Event",
+          "instructionalArea": "Communications",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-hospitality-and-tourism-2024"
+        },
+        {
+          "title": "District Event: Economics",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fcd130856fc3912c5760ef_DECA_PHT_2023_District_Event-CR.pdf",
+          "season": "2022-23",
+          "round": "District Event",
+          "instructionalArea": "Economics",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-hospitality-and-tourism-2023"
+        },
+        {
+          "title": "District Event: Emotional Intelligence",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a2bd4503657c807083c0f_DECA_PHT_2022_District_Event.pdf",
+          "season": "2021-22",
+          "round": "District Event",
+          "instructionalArea": "Emotional Intelligence",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-hospitality-and-tourism-2022"
+        },
+        {
+          "title": "District Event (virtual): Communications",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a2b97c220ef64547d2731_DECA_PHT_2021_District_Event_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event (virtual)",
+          "instructionalArea": "Communications",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-hospitality-and-tourism-2021"
+        },
+        {
+          "title": "District Event: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a2b53748f9095f2794338_DECA_PHT_2020_District_Event.pdf",
+          "season": "2019-20",
+          "round": "District Event",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-hospitality-and-tourism-2020"
+        },
+        {
+          "title": "District Event: Economics",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a2afb0fcf13850774dba0_DECA_PHT_2019_District_Event.pdf",
+          "season": "2018-19",
+          "round": "District Event",
+          "instructionalArea": "Economics",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-hospitality-and-tourism-2019"
+        },
+        {
+          "title": "District Event: Communications",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a2a5e49a1f8071176c60a_DECA_PHT_2018_District_Event.pdf",
+          "season": "2017-18",
+          "round": "District Event",
+          "instructionalArea": "Communications",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-hospitality-and-tourism-2018"
+        },
+        {
+          "title": "District Event: Professional Development",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a2a01b6227daca76001bb_DECA_PHT_2017_District_Event.pdf",
+          "season": "2016-17",
+          "round": "District Event",
+          "instructionalArea": "Professional Development",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-hospitality-and-tourism-2017"
+        }
+      ],
+      "format": {
+        "prepMinutes": 10,
+        "presentationMinutes": 10,
+        "judgeRole": "A qualified business executive who plays the role set out in the business situation. After your response, the judge asks the follow-up questions provided in the event, then scores you on the evaluation form.",
+        "performanceIndicators": 4,
+        "participants": "1",
+        "rounds": "1 role-play, second role-play for finalists"
+      },
+      "placeholder": true,
+      "note": "Open the official sample, then use the trainer's timer, PI checklist and self-evaluation"
+    },
+    {
+      "eventCode": "QSRM",
+      "eventName": "Quick Serve Restaurant Management Series",
+      "component": "roleplay",
+      "officialUrl": "https://www.deca.org/compete/quick-serve-restaurant-management-series",
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf",
+      "officialSamples": [
+        {
+          "title": "Official sample event, 2026-27 format (QSRM-26 District Event 1)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3dc23ea806f45ab00dc980_DECA_QSRM_2026_District_Event_1_Sample.pdf",
+          "season": "2026-27",
+          "round": "Sample Event",
+          "instructionalArea": null,
+          "kind": "current-format-sample",
+          "pageUrl": "https://www.deca.org/compete/quick-serve-restaurant-management-series",
+          "formatNote": "The 2025-26 District Event 1 reissued by DECA in the 2026-27 layout (Solution criteria and Career Competencies)."
+        },
+        {
+          "title": "District Event 1: Promotion",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ef83cc2fcf3fb45f2bbd_DECA_QSRM_2026_District_Event_1.pdf",
+          "season": "2025-26",
+          "round": "District Event 1",
+          "instructionalArea": "Promotion",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/quick-serve-restaurant-management-2026a"
+        },
+        {
+          "title": "District Event 2: Market Planning",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ff6cca54b50dc1cc624b_DECA_QSRM_2026_District_Event_2.pdf",
+          "season": "2025-26",
+          "round": "District Event 2",
+          "instructionalArea": "Market Planning",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/quick-serve-restaurant-management-2026b"
+        },
+        {
+          "title": "District Event 1: Operations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1dd8dde611fe2ad5854c5_DECA_QSRM_2025_District_Event_1.pdf",
+          "season": "2024-25",
+          "round": "District Event 1",
+          "instructionalArea": "Operations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/quick-serve-restaurant-management-2025a"
+        },
+        {
+          "title": "District Event 2: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c22315daad99bb4b58a2b5_DECA_QSRM_2025_District_Event_2.pdf",
+          "season": "2024-25",
+          "round": "District Event 2",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/quick-serve-restaurant-management-2025b"
+        },
+        {
+          "title": "District Event 1: Economics",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dcaf81d748029bb2a57bcb_DECA_QSRM_2024_District_Event_1.pdf",
+          "season": "2023-24",
+          "round": "District Event 1",
+          "instructionalArea": "Economics",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/quick-serve-restaurant-management-2024a"
+        },
+        {
+          "title": "District Event 2: Promotion",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dcaf41f8232f7752be0137_DECA_QSRM_2024_District_Event_2.pdf",
+          "season": "2023-24",
+          "round": "District Event 2",
+          "instructionalArea": "Promotion",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/quick-serve-restaurant-management-2024b"
+        },
+        {
+          "title": "District Event 1: Information Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fcd4d0b23a333dc99116ef_DECA_QSRM_2023_District_Event_1_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event 1",
+          "instructionalArea": "Information Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/quick-serve-restaurant-marketing-2023a"
+        },
+        {
+          "title": "District Event 2: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fcf102c24887d198bf335a_DECA_QSRM_2023_District_Event_2_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event 2",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/quick-serve-restaurant-marketing-2023b"
+        },
+        {
+          "title": "District Event 1: Promotion",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a2749c4b13a2bfd981016_DECA_QSRM_2022_District_Event_1.pdf",
+          "season": "2021-22",
+          "round": "District Event 1",
+          "instructionalArea": "Promotion",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/quick-serve-restaurant-marketing-2022a"
+        },
+        {
+          "title": "District Event 2: Product/Service Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a27a0bf7c607f87dff131_DECA_QSRM_2022_District_Event_2.pdf",
+          "season": "2021-22",
+          "round": "District Event 2",
+          "instructionalArea": "Product/Service Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/quick-serve-restaurant-marketing-2022b"
+        },
+        {
+          "title": "District Event 1 (virtual): Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a26ab5a91fd5481b69f95_DECA_QSRM_2021_District_Event_1_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event 1 (virtual)",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/quick-serve-restaurant-marketing-2021a"
+        },
+        {
+          "title": "District Event 2 (virtual): Selling",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a271033be25f12eb04463_DECA_QSRM_2021_District_Event_2_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event 2 (virtual)",
+          "instructionalArea": "Selling",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/quick-serve-restaurant-marketing-2021b"
+        },
+        {
+          "title": "District Event 1: Operations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a2617266e1c3dc35becc7_DECA_QSRM_2020_District_Event_1.pdf",
+          "season": "2019-20",
+          "round": "District Event 1",
+          "instructionalArea": "Operations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/quick-serve-restaurant-management-2020a"
+        },
+        {
+          "title": "District Event 2: Promotion",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a264f25b5eb7793e7a846_DECA_QSRM_2020_District_Event_2.pdf",
+          "season": "2019-20",
+          "round": "District Event 2",
+          "instructionalArea": "Promotion",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/quick-serve-restaurant-management-2020b"
+        },
+        {
+          "title": "District Event 1: Marketing",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a2596dffa3e78c1c1a355_DECA_QSRM_2019_District_Event_1.pdf",
+          "season": "2018-19",
+          "round": "District Event 1",
+          "instructionalArea": "Marketing",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/quick-serve-restaurant-management-2019a"
+        },
+        {
+          "title": "District Event 2: Communications",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a25cfc4b13ad71a9758b3_DECA_QSRM_2019_District_Event_2.pdf",
+          "season": "2018-19",
+          "round": "District Event 2",
+          "instructionalArea": "Communications",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/quick-serve-restaurant-management-2019b"
+        },
+        {
+          "title": "District Event 1: Promotion",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a2513877e4a80af9f7388_DECA_QSRM_2018_District_Event_1.pdf",
+          "season": "2017-18",
+          "round": "District Event 1",
+          "instructionalArea": "Promotion",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/quick-serve-restaurant-management-2018a"
+        },
+        {
+          "title": "District Event 2: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a2555b0606d860e760bfc_DECA_QSRM_2018_District_Event_2.pdf",
+          "season": "2017-18",
+          "round": "District Event 2",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/quick-serve-restaurant-management-2018b"
+        },
+        {
+          "title": "District Event 1: Product/Service Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a21d3fb26f0b6f3471dfd_DECA_QSRM_2017_District_Event_1.pdf",
+          "season": "2016-17",
+          "round": "District Event 1",
+          "instructionalArea": "Product/Service Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/quick-serve-restaurant-management-2017a"
+        },
+        {
+          "title": "District Event 2: Economics",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a24cb877e4a01d29f5430_DECA_QSRM_2017_District_Event_2.pdf",
+          "season": "2016-17",
+          "round": "District Event 2",
+          "instructionalArea": "Economics",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/quick-serve-restaurant-management-2017b"
+        }
+      ],
+      "format": {
+        "prepMinutes": 10,
+        "presentationMinutes": 10,
+        "judgeRole": "A qualified business executive who takes the business role named in the event situation. After you present your solution, the judge asks the follow-up questions written into the event, then scores you on the event evaluation form.",
+        "performanceIndicators": 5,
+        "participants": "1",
+        "rounds": "2 role-plays, third role-play for finalists"
+      },
+      "placeholder": true,
+      "note": "Open the official sample, then use the trainer's timer, PI checklist and self-evaluation"
+    },
+    {
+      "eventCode": "RFSM",
+      "eventName": "Restaurant and Food Service Management Series",
+      "component": "roleplay",
+      "officialUrl": "https://www.deca.org/compete/restaurant-and-food-service-management-series",
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf",
+      "officialSamples": [
+        {
+          "title": "Official sample event, 2026-27 format (RFSM-26 District Event 1)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3dc2533fe1160a258b8acd_DECA_RFSM_2026_District_Event_1_Sample.pdf",
+          "season": "2026-27",
+          "round": "Sample Event",
+          "instructionalArea": null,
+          "kind": "current-format-sample",
+          "pageUrl": "https://www.deca.org/compete/restaurant-and-food-service-management-series",
+          "formatNote": "The 2025-26 District Event 1 reissued by DECA in the 2026-27 layout (Solution criteria and Career Competencies)."
+        },
+        {
+          "title": "District Event 1: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ef9ab265a7940d830a46_DECA_RFSM_2026_District_Event_1.pdf",
+          "season": "2025-26",
+          "round": "District Event 1",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/restaurant-and-food-service-management-2026a"
+        },
+        {
+          "title": "District Event 2: Information Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ffd3aa1cac9d6ab32188_DECA_RFSM_2026_District_Event_2.pdf",
+          "season": "2025-26",
+          "round": "District Event 2",
+          "instructionalArea": "Information Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/restaurant-and-food-service-management-2026b"
+        },
+        {
+          "title": "District Event 1: Product/Service Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1ddc50c5883aa5b4bcf22_DECA_RFSM_2025_District_Event_1.pdf",
+          "season": "2024-25",
+          "round": "District Event 1",
+          "instructionalArea": "Product/Service Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/restaurant-and-food-service-management-2025a"
+        },
+        {
+          "title": "District Event 2: Marketing",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c2236bc6e8b4bbd3500d30_DECA_RFSM_2025_District_Event_2.pdf",
+          "season": "2024-25",
+          "round": "District Event 2",
+          "instructionalArea": "Marketing",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/restaurant-and-food-service-management-2025b"
+        },
+        {
+          "title": "District Event 1: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dcaf011111214f2eabec73_DECA_RFSM_2024_District_Event_1.pdf",
+          "season": "2023-24",
+          "round": "District Event 1",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/restaurant-and-food-service-management-2024a"
+        },
+        {
+          "title": "District Event 2: Operations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dcaeb2713f8a6c5be6953c_DECA_RFSM_2024_District_Event_2.pdf",
+          "season": "2023-24",
+          "round": "District Event 2",
+          "instructionalArea": "Operations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/restaurant-and-food-service-management-2024b"
+        },
+        {
+          "title": "District Event 1: Selling",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fcd758f3ad91270ee45e64_DECA_RFSM_2023_District_Event_1_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event 1",
+          "instructionalArea": "Selling",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/restaurant-and-food-service-management-2023a"
+        },
+        {
+          "title": "District Event 2: Promotion",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fcf18e80cf3360f8a2ecb5_DECA_RFSM_2023_District_Event_2_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event 2",
+          "instructionalArea": "Promotion",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/restaurant-and-food-service-management-2023b"
+        },
+        {
+          "title": "District Event 1: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a1c1e7f9e3140b3508c6a_DECA_RFSM_2022_District_Event_1.pdf",
+          "season": "2021-22",
+          "round": "District Event 1",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/restaurant-and-food-service-management-series-2022b"
+        },
+        {
+          "title": "District Event 2: Product/Service Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a1c717f9e3176ee50f6ea_DECA_RFSM_2022_District_Event_2.pdf",
+          "season": "2021-22",
+          "round": "District Event 2",
+          "instructionalArea": "Product/Service Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/restaurant-and-food-service-management-series-2022a"
+        },
+        {
+          "title": "District Event 1 (virtual): Operations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a19b0f837181acd3cc0f6_DECA_RFSM_2021_District_Event_1_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event 1 (virtual)",
+          "instructionalArea": "Operations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/restaurant-and-food-service-management-series-2021b"
+        },
+        {
+          "title": "District Event 2 (virtual): Marketing",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a1bb0f12961f35dbc539e_DECA_RFSM_2021_District_Event_2_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event 2 (virtual)",
+          "instructionalArea": "Marketing",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/restaurant-and-food-service-management-series-2021a"
+        },
+        {
+          "title": "District Event 1: Market Planning",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a18e531299d77aeed96ea_DECA_RFSM_2020_District_Event_1.pdf",
+          "season": "2019-20",
+          "round": "District Event 1",
+          "instructionalArea": "Market Planning",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/restaurant-and-food-service-management-series-2020b"
+        },
+        {
+          "title": "District Event 2: Product/Service Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a194e5ace5f76db3a5db7_DECA_RFSM_2020_District_Event_2.pdf",
+          "season": "2019-20",
+          "round": "District Event 2",
+          "instructionalArea": "Product/Service Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/restaurant-and-food-service-management-series-2020a"
+        },
+        {
+          "title": "District Event 1: Marketing",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a14fb40f1921ed590401f_DECA_RFSM_2019_District_Event_1.pdf",
+          "season": "2018-19",
+          "round": "District Event 1",
+          "instructionalArea": "Marketing",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/restaurant-and-food-service-management-series-2019b"
+        },
+        {
+          "title": "District Event 2: Promotion",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a18620a054404feaad29b_DECA_RFSM_2019_District_Event_2.pdf",
+          "season": "2018-19",
+          "round": "District Event 2",
+          "instructionalArea": "Promotion",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/restaurant-and-food-service-management-series-2019a"
+        },
+        {
+          "title": "District Event 1: Communications",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a13b97d217595527956e4_DECA_RFSM_2018_District_Event_1.pdf",
+          "season": "2017-18",
+          "round": "District Event 1",
+          "instructionalArea": "Communications",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/restaurant-and-food-service-management-series-2018b"
+        },
+        {
+          "title": "District Event 2: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a1417589171598b2999e8_DECA_RFSM_2018_District_Event_2.pdf",
+          "season": "2017-18",
+          "round": "District Event 2",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/restaurant-and-food-service-management-series-2018a"
+        },
+        {
+          "title": "District Event 1: Promotion",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a1348b3ea60b8bcf68c61_DECA_RFSM_2017_District_Event_1.pdf",
+          "season": "2016-17",
+          "round": "District Event 1",
+          "instructionalArea": "Promotion",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/restaurant-and-food-service-management-series-2017"
+        }
+      ],
+      "format": {
+        "prepMinutes": 10,
+        "presentationMinutes": 10,
+        "judgeRole": "A qualified business executive who takes the business role named in the event situation. After you present your solution, the judge asks the follow-up questions written into the event, then scores you on the event evaluation form.",
+        "performanceIndicators": 5,
+        "participants": "1",
+        "rounds": "2 role-plays, third role-play for finalists"
+      },
+      "placeholder": true,
+      "note": "Open the official sample, then use the trainer's timer, PI checklist and self-evaluation"
+    },
+    {
+      "eventCode": "TTDM",
+      "eventName": "Travel and Tourism Team Decision Making",
+      "component": "case-study",
+      "officialUrl": "https://www.deca.org/compete/travel-and-tourism-team-decision-making",
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327f7f7f637d914a9fc71_HS_TDM_Guidelines.pdf",
+      "officialSamples": [
+        {
+          "title": "Official sample event, 2026-27 format (TTDM-26 District Event)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a45539f4db3a8e656a56479_DECA_TTDM_2026_District_Event_Sample.pdf",
+          "season": "2026-27",
+          "round": "Sample Event",
+          "instructionalArea": null,
+          "kind": "current-format-sample",
+          "pageUrl": "https://www.deca.org/compete/travel-and-tourism-team-decision-making",
+          "formatNote": "The 2025-26 District Event reissued by DECA in the 2026-27 layout (Solution criteria and Career Competencies)."
+        },
+        {
+          "title": "District Event: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ee78d70a4e2b3dc51b6a_DECA_TTDM_2026_District_Event.pdf",
+          "season": "2025-26",
+          "round": "District Event",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/travel-and-tourism-team-decision-making-2026"
+        },
+        {
+          "title": "District Event: Promotion",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1da80b24d9193ed3c2972_DECA_TTDM_2025_District_Event.pdf",
+          "season": "2024-25",
+          "round": "District Event",
+          "instructionalArea": "Promotion",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/travel-and-tourism-team-decision-making-2025"
+        },
+        {
+          "title": "District Event: Marketing",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dca5266031994507dbddbf_DECA_TTDM_2024_District_Event.pdf",
+          "season": "2023-24",
+          "round": "District Event",
+          "instructionalArea": "Marketing",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/travel-and-tourism-team-decision-making-2024"
+        },
+        {
+          "title": "District Event: Promotion",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fcd40744a33457912675f0_DECA_TTDM_2023_District_Event_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event",
+          "instructionalArea": "Promotion",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/travel-and-tourism-team-decision-making-2023"
+        },
+        {
+          "title": "District Event: Product/Service Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639946d5c5970c5306d60ba0_DECA_TTDM_2022_District_Event.pdf",
+          "season": "2021-22",
+          "round": "District Event",
+          "instructionalArea": "Product/Service Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/travel-and-tourism-team-decision-making-2022"
+        },
+        {
+          "title": "District Event (virtual): Promotion",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63994664e90c14f1d8d7f148_DECA_TTDM_2021_District_Event_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event (virtual)",
+          "instructionalArea": "Promotion",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/travel-and-tourism-team-decision-making-2021"
+        },
+        {
+          "title": "District Event: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639945e919fc9215cc97e3bf_DECA_TTDM_2020_District_Event.pdf",
+          "season": "2019-20",
+          "round": "District Event",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/travel-and-tourism-team-decision-making-2020"
+        },
+        {
+          "title": "District Event: Promotion",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63994582bcf646428f043954_DECA_TTDM_2019_District-Event.pdf",
+          "season": "2018-19",
+          "round": "District Event",
+          "instructionalArea": "Promotion",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/travel-and-tourism-team-decision-making-2019"
+        },
+        {
+          "title": "District Event: Market Planning",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399451d19fc92017c96f87b_DECA_TTDM_2018_District_Event.pdf",
+          "season": "2017-18",
+          "round": "District Event",
+          "instructionalArea": "Market Planning",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/travel-and-tourism-team-decision-making-2018"
+        },
+        {
+          "title": "District Event: Marketing",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639944a85e573533b13c1799_DECA_TTDM_2017_District_Event.pdf",
+          "season": "2016-17",
+          "round": "District Event",
+          "instructionalArea": "Marketing",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/travel-and-tourism-team-decision-making-2017"
+        }
+      ],
+      "format": {
+        "prepMinutes": 30,
+        "presentationMinutes": 15,
+        "judgeRole": "A qualified business executive who plays the role named in the case study. The team presents its analysis and decisions without interruption, then the judge asks every team the same standard questions; each member should answer at least one.",
+        "performanceIndicators": 5,
+        "participants": "2",
+        "rounds": "1 case study, second case study for finalists"
+      },
+      "placeholder": true,
+      "note": "Open the official sample, then use the trainer's timer, PI checklist and self-evaluation"
+    }
+  ]
+}

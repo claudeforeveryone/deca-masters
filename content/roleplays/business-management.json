@@ -1,0 +1,461 @@
+{
+  "cluster": "business-management",
+  "status": "placeholder",
+  "placeholderNote": "DECA Masters stores no role-play or case-study text. Each event links to the official sample events DECA Inc. publishes on deca.org (copyright DECA Inc.; linked, never copied). Students open the official PDF, then practise with the trainer's timer, performance-indicator checklist and self-evaluation.",
+  "disclaimer": "Links to official DECA Inc. sample events hosted by DECA. DECA Masters is an independent practice tool, not affiliated with DECA Inc.",
+  "season": "2026-2027",
+  "verifiedAt": "2026-10-11",
+  "verification": "Every url and pageUrl returned HTTP 200 on 2026-10-11; every url is a PDF whose first page names the event code and year shown here.",
+  "sources": [
+    {
+      "title": "DECA high school competitive event pages (Sample Event link and Classroom Resources role-plays)",
+      "url": "https://www.deca.org/compete",
+      "licence": "All rights reserved (DECA Inc.). Linked only, no text reused."
+    },
+    {
+      "title": "DECA Guide 2026-27 event guidelines (prep time, presentation time, judge role)",
+      "url": "https://www.deca.org/compete",
+      "licence": "All rights reserved (DECA Inc.). Facts summarised, no text reused."
+    }
+  ],
+  "events": [
+    {
+      "eventCode": "BLTDM",
+      "eventName": "Business Law and Ethics Team Decision Making",
+      "component": "case-study",
+      "officialUrl": "https://www.deca.org/compete/business-law-and-ethics-team-decision-making",
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327f7f7f637d914a9fc71_HS_TDM_Guidelines.pdf",
+      "officialSamples": [
+        {
+          "title": "Official sample event, 2026-27 format (BLTDM-26 District Event)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a4553b0a8b3699a2eaf25dc_DECA_BLTDM_2026_District_Event_Sample.pdf",
+          "season": "2026-27",
+          "round": "Sample Event",
+          "instructionalArea": null,
+          "kind": "current-format-sample",
+          "pageUrl": "https://www.deca.org/compete/business-law-and-ethics-team-decision-making",
+          "formatNote": "The 2025-26 District Event reissued by DECA in the 2026-27 layout (Solution criteria and Career Competencies)."
+        },
+        {
+          "title": "District Event: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1edf5d70a4e2b3dc50e8c_DECA_BLTDM_2026_District_Event.pdf",
+          "season": "2025-26",
+          "round": "District Event",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-law-and-ethics-team-decision-making-2026"
+        },
+        {
+          "title": "District Event: Economics",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1d9b437877f221a6536c8_DECA_BLTDM_2025_District_Event.pdf",
+          "season": "2024-25",
+          "round": "District Event",
+          "instructionalArea": "Economics",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-law-and-ethics-team-decision-making-2025"
+        },
+        {
+          "title": "District Event: Emotional Intelligence",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dca740622fb7dc57b6d180_DECA_BLTDM_2024_District_Event.pdf",
+          "season": "2023-24",
+          "round": "District Event",
+          "instructionalArea": "Emotional Intelligence",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-law-and-ethics-team-decision-making-2024"
+        },
+        {
+          "title": "District Event: Marketing",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fcd06a18da851ad5a59293_DECA_BLTDM_2023_District_Event_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event",
+          "instructionalArea": "Marketing",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-law-and-ethics-team-decision-making-2023"
+        },
+        {
+          "title": "District Event: Communications",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b7205473911ab31a4641c_DECA_BLTDM_2022_District_Event.pdf",
+          "season": "2021-22",
+          "round": "District Event",
+          "instructionalArea": "Communications",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-law-and-ethics-team-decision-making-2022"
+        },
+        {
+          "title": "District Event (virtual): Communications",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b71dccf86475208e94f76_DECA_BLTDM_2021_District_Event_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event (virtual)",
+          "instructionalArea": "Communications",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-law-and-ethics-team-decision-making-2021"
+        },
+        {
+          "title": "District Event: Emotional Intelligence",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b71b3f30634713d8f7f2d_DECA_BLTDM_2020_District_Event.pdf",
+          "season": "2019-20",
+          "round": "District Event",
+          "instructionalArea": "Emotional Intelligence",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-law-and-ethics-team-decision-making-2020"
+        },
+        {
+          "title": "District Event: Economics",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b713ed95a03488fd8853c_DECA_BLTDM_2019_District_Event.pdf",
+          "season": "2018-19",
+          "round": "District Event",
+          "instructionalArea": "Economics",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-law-and-ethics-team-decision-making-2019"
+        },
+        {
+          "title": "District Event: Communications",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6397d4f06039a04dd66037f8_DECA_BLTDM_2018_District_Event.pdf",
+          "season": "2017-18",
+          "round": "District Event",
+          "instructionalArea": "Communications",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-law-and-ethics-team-decision-making-2018"
+        },
+        {
+          "title": "District Event: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b70bf0b950978a9666bb5_DECA_BLTDM_2017_District_Event.pdf",
+          "season": "2016-17",
+          "round": "District Event",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-law-and-ethics-team-decision-making-2017"
+        }
+      ],
+      "format": {
+        "prepMinutes": 30,
+        "presentationMinutes": 15,
+        "judgeRole": "A qualified business executive who plays the role named in the case study. The team presents its analysis and decisions without interruption, then the judge asks every team the same standard questions; each member should answer at least one.",
+        "performanceIndicators": 5,
+        "participants": "2",
+        "rounds": "1 case study, second case study for finalists"
+      },
+      "placeholder": true,
+      "note": "Open the official sample, then use the trainer's timer, PI checklist and self-evaluation"
+    },
+    {
+      "eventCode": "HRM",
+      "eventName": "Human Resources Management Series",
+      "component": "roleplay",
+      "officialUrl": "https://www.deca.org/compete/human-resources-management-series",
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf",
+      "officialSamples": [
+        {
+          "title": "Official sample event, 2026-27 format (HRM-26 District Event 1)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3dc21217ac5bf81ee3713b_DECA_HRM_2026_District_Event_1_Sample.pdf",
+          "season": "2026-27",
+          "round": "Sample Event",
+          "instructionalArea": null,
+          "kind": "current-format-sample",
+          "pageUrl": "https://www.deca.org/compete/human-resources-management-series",
+          "formatNote": "The 2025-26 District Event 1 reissued by DECA in the 2026-27 layout (Solution criteria and Career Competencies)."
+        },
+        {
+          "title": "District Event 1: Emotional Intelligence",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ef041ee69c1e4b6761be_DECA_HRM_2026_District_Event_1.pdf",
+          "season": "2025-26",
+          "round": "District Event 1",
+          "instructionalArea": "Emotional Intelligence",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/human-resources-management-2026a"
+        },
+        {
+          "title": "District Event 2: Communication Skills",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1fe9145898e3d2f87b1a7_DECA_HRM_2026_District_Event_2.pdf",
+          "season": "2025-26",
+          "round": "District Event 2",
+          "instructionalArea": "Communication Skills",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/human-resources-management-2026b"
+        },
+        {
+          "title": "District Event 1: Communication Skills",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1dd3e7f807fe4ca8f545e_DECA_HRM_2025_District_Event_1.pdf",
+          "season": "2024-25",
+          "round": "District Event 1",
+          "instructionalArea": "Communication Skills",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/human-resources-management-2025a"
+        },
+        {
+          "title": "District Event 2: Emotional Intelligence",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c22268b25be178719220a7_DECA_HRM_2025_District_Event_2.pdf",
+          "season": "2024-25",
+          "round": "District Event 2",
+          "instructionalArea": "Emotional Intelligence",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/human-resources-management-2025b"
+        },
+        {
+          "title": "District Event 1: Emotional Intelligence",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dcd80b1f7465420907adbc_DECA_HRM_2024_District_Event_1.pdf",
+          "season": "2023-24",
+          "round": "District Event 1",
+          "instructionalArea": "Emotional Intelligence",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/human-resources-management-2024a"
+        },
+        {
+          "title": "District Event 2: Human Resources Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dcd7b9dd23c9e404a1abb4_DECA_HRM_2024_District_Event_2.pdf",
+          "season": "2023-24",
+          "round": "District Event 2",
+          "instructionalArea": "Human Resources Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/human-resources-management-2024b"
+        },
+        {
+          "title": "District Event 1: Human Resources Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fcd3888f1a356c7b48c141_DECA_HRM_2023_District_Event_1_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event 1",
+          "instructionalArea": "Human Resources Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/human-resources-management-2023a"
+        },
+        {
+          "title": "District Event 2: Communications",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fcedee8c29ca304621202d_DECA_HRM_2023_District_Event_2_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event 2",
+          "instructionalArea": "Communications",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/human-resources-management-2023b"
+        },
+        {
+          "title": "District Event 1: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a3c3e3c61e6659592c2dd_DECA_HRM_2022_District_Event_1.pdf",
+          "season": "2021-22",
+          "round": "District Event 1",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/human-resources-management-2022a"
+        },
+        {
+          "title": "District Event 2: Emotional Intelligence",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a3c7384281d98b4018fba_DECA_HRM_2022_District_Event_2.pdf",
+          "season": "2021-22",
+          "round": "District Event 2",
+          "instructionalArea": "Emotional Intelligence",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/human-resources-management-2022b"
+        },
+        {
+          "title": "District Event 1 (virtual): Human Resources Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a3be9bd619b615bb11c50_DECA_HRM_2021_District_Event_1_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event 1 (virtual)",
+          "instructionalArea": "Human Resources Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/human-resources-management-2021a"
+        },
+        {
+          "title": "District Event 1: Communications",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a3b2fd81fbfe2875615e9_DECA_HRM_2020_District_Event_1.pdf",
+          "season": "2019-20",
+          "round": "District Event 1",
+          "instructionalArea": "Communications",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/human-resources-management-2020a"
+        },
+        {
+          "title": "District Event 2: Emotional Intelligence",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a3ba0bf43006992d35e83_DECA_HRM_2020_District_Event_2.pdf",
+          "season": "2019-20",
+          "round": "District Event 2",
+          "instructionalArea": "Emotional Intelligence",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/human-resources-management-2020b"
+        },
+        {
+          "title": "District Event 1: Emotional Intelligence",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a3ab45036577d0a1781a8_DECA_HRM_2019_District_Event_1.pdf",
+          "season": "2018-19",
+          "round": "District Event 1",
+          "instructionalArea": "Emotional Intelligence",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/human-resources-management-2019a"
+        },
+        {
+          "title": "District Event 2: Human Resources Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a3af5f39477c47b82cfcc_DECA_HRM_2019_District_Event_2.pdf",
+          "season": "2018-19",
+          "round": "District Event 2",
+          "instructionalArea": "Human Resources Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/human-resources-management-2019b"
+        },
+        {
+          "title": "District Event 1: Economics",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a39d2f39477d962821014_DECA_HRM_2018_District_Event_1.pdf",
+          "season": "2017-18",
+          "round": "District Event 1",
+          "instructionalArea": "Economics",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/human-resources-management-2018a"
+        },
+        {
+          "title": "District Event 2: Human Resources Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a3a7e829e834f987fb30b_DECA_HRM_2018_District_Event_2.pdf",
+          "season": "2017-18",
+          "round": "District Event 2",
+          "instructionalArea": "Human Resources Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/human-resources-management-2018b"
+        },
+        {
+          "title": "District Event 1: Human Resources Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a38b4c8e1ec6874817306_DECA_HRM_2017_District_Event_1.pdf",
+          "season": "2016-17",
+          "round": "District Event 1",
+          "instructionalArea": "Human Resources Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/human-resources-management-2017a"
+        },
+        {
+          "title": "District Event 2: Information Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a38f7d37f86e2ae6b1eea_DECA_HRM_2017_District_Event_2.pdf",
+          "season": "2016-17",
+          "round": "District Event 2",
+          "instructionalArea": "Information Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/human-resources-management-2017b"
+        }
+      ],
+      "format": {
+        "prepMinutes": 10,
+        "presentationMinutes": 10,
+        "judgeRole": "A qualified business executive who takes the business role named in the event situation. After you present your solution, the judge asks the follow-up questions written into the event, then scores you on the event evaluation form.",
+        "performanceIndicators": 5,
+        "participants": "1",
+        "rounds": "2 role-plays, third role-play for finalists"
+      },
+      "placeholder": true,
+      "note": "Open the official sample, then use the trainer's timer, PI checklist and self-evaluation"
+    },
+    {
+      "eventCode": "PBM",
+      "eventName": "Principles of Business Management and Administration",
+      "component": "roleplay",
+      "officialUrl": "https://www.deca.org/compete/principles-of-business-management-and-administration",
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c68346ea8c0dba9b854c1_HS_PBA_Guidelines.pdf",
+      "officialSamples": [
+        {
+          "title": "Official sample event, 2026-27 format (PBM-26 District Event)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3dc36ad90c12202fb7c423_DECA_PBM_2026_District_Event_Sample.pdf",
+          "season": "2026-27",
+          "round": "Sample Event",
+          "instructionalArea": null,
+          "kind": "current-format-sample",
+          "pageUrl": "https://www.deca.org/compete/principles-of-business-management-and-administration",
+          "formatNote": "The 2025-26 District Event reissued by DECA in the 2026-27 layout (Solution criteria and Career Competencies)."
+        },
+        {
+          "title": "District Event: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ed33b265a7940d824efe_DECA_PBM_2026_District_Event.pdf",
+          "season": "2025-26",
+          "round": "District Event",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-business-management-and-administration-2026"
+        },
+        {
+          "title": "District Event: Emotional Intelligence",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1d8f5a3a1584d23e2c785_DECA_PBM_2025_District_Event.pdf",
+          "season": "2024-25",
+          "round": "District Event",
+          "instructionalArea": "Emotional Intelligence",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-business-management-and-administration-2025"
+        },
+        {
+          "title": "District Event: Information Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65e2139d190a5c9517f35782_DECA_PBM_2024_District_Event.pdf",
+          "season": "2023-24",
+          "round": "District Event",
+          "instructionalArea": "Information Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-business-management-and-administration-2024"
+        },
+        {
+          "title": "District Event: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65e2177f1ffe398fdc4c9aa0_DECA_PBM_2023_District_Event_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-business-management-and-administration-2023"
+        },
+        {
+          "title": "District Event: Economics",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65e217664959f33db5a63595_DECA_PBM_2022_District_Event.pdf",
+          "season": "2021-22",
+          "round": "District Event",
+          "instructionalArea": "Economics",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-business-management-and-administration-2022"
+        },
+        {
+          "title": "District Event (virtual): Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65e21739e8e889bbff4217cc_DECA_PBM_2021_District_Event_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event (virtual)",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-business-management-and-administration-2021"
+        },
+        {
+          "title": "District Event: Emotional Intelligence",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65e2171c949e727be7a8fb3e_DECA_PBM_2020_District_Event.pdf",
+          "season": "2019-20",
+          "round": "District Event",
+          "instructionalArea": "Emotional Intelligence",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-business-management-and-administration-2020"
+        },
+        {
+          "title": "District Event: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a2ea56d00202bdb667190_DECA_PBM_2019_District_Event.pdf",
+          "season": "2018-19",
+          "round": "District Event",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-business-management-and-administration-2019"
+        },
+        {
+          "title": "District Event: Economics",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a2e4749a1f8373679cd3f_DECA_PBM_2018_District_Event.pdf",
+          "season": "2017-18",
+          "round": "District Event",
+          "instructionalArea": "Economics",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-business-management-and-administration-2018"
+        },
+        {
+          "title": "District Event: Communications",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a2e12f9da25863463a49f_DECA_PBM_2017_District_Event.pdf",
+          "season": "2016-17",
+          "round": "District Event",
+          "instructionalArea": "Communications",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-business-management-and-administration-2017"
+        }
+      ],
+      "format": {
+        "prepMinutes": 10,
+        "presentationMinutes": 10,
+        "judgeRole": "A qualified business executive who plays the role set out in the business situation. After your response, the judge asks the follow-up questions provided in the event, then scores you on the evaluation form.",
+        "performanceIndicators": 4,
+        "participants": "1",
+        "rounds": "1 role-play, second role-play for finalists"
+      },
+      "placeholder": true,
+      "note": "Open the official sample, then use the trainer's timer, PI checklist and self-evaluation"
+    }
+  ]
+}

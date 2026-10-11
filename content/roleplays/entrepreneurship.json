@@ -1,0 +1,362 @@
+{
+  "cluster": "entrepreneurship",
+  "status": "placeholder",
+  "placeholderNote": "DECA Masters stores no role-play or case-study text. Each event links to the official sample events DECA Inc. publishes on deca.org (copyright DECA Inc.; linked, never copied). Students open the official PDF, then practise with the trainer's timer, performance-indicator checklist and self-evaluation.",
+  "disclaimer": "Links to official DECA Inc. sample events hosted by DECA. DECA Masters is an independent practice tool, not affiliated with DECA Inc.",
+  "season": "2026-2027",
+  "verifiedAt": "2026-10-11",
+  "verification": "Every url and pageUrl returned HTTP 200 on 2026-10-11; every url is a PDF whose first page names the event code and year shown here.",
+  "sources": [
+    {
+      "title": "DECA high school competitive event pages (Sample Event link and Classroom Resources role-plays)",
+      "url": "https://www.deca.org/compete",
+      "licence": "All rights reserved (DECA Inc.). Linked only, no text reused."
+    },
+    {
+      "title": "DECA Guide 2026-27 event guidelines (prep time, presentation time, judge role)",
+      "url": "https://www.deca.org/compete",
+      "licence": "All rights reserved (DECA Inc.). Facts summarised, no text reused."
+    }
+  ],
+  "events": [
+    {
+      "eventCode": "ENT",
+      "eventName": "Entrepreneurship Series",
+      "component": "roleplay",
+      "officialUrl": "https://www.deca.org/compete/entrepreneurship-series",
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf",
+      "officialSamples": [
+        {
+          "title": "Official sample event, 2026-27 format (ENT-26 District Event 1)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3dc1d9c9962ba3fa91eaf1_DECA_ENT_2026_District_Event_1_Sample.pdf",
+          "season": "2026-27",
+          "round": "Sample Event",
+          "instructionalArea": null,
+          "kind": "current-format-sample",
+          "pageUrl": "https://www.deca.org/compete/entrepreneurship-series",
+          "formatNote": "The 2025-26 District Event 1 reissued by DECA in the 2026-27 layout (Solution criteria and Career Competencies)."
+        },
+        {
+          "title": "District Event 1: Product/Service Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ef1fcc15ece18fb2471c_DECA_ENT_2026_District_Event_1.pdf",
+          "season": "2025-26",
+          "round": "District Event 1",
+          "instructionalArea": "Product/Service Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-2026a"
+        },
+        {
+          "title": "District Event 2: Entrepreneurship",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1fd40ca54b50dc1cbb8a8_DECA_ENT_2026_District_Event_2.pdf",
+          "season": "2025-26",
+          "round": "District Event 2",
+          "instructionalArea": "Entrepreneurship",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-2026b"
+        },
+        {
+          "title": "District Event 1: Entrepreneurship",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1dcb04763a03406c18472_DECA_ENT_2025_District_Event_1.pdf",
+          "season": "2024-25",
+          "round": "District Event 1",
+          "instructionalArea": "Entrepreneurship",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-2025a"
+        },
+        {
+          "title": "District Event 2: Channel Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c22109b25be1787190e24f_DECA_ENT_2025_District_Event_2.pdf",
+          "season": "2024-25",
+          "round": "District Event 2",
+          "instructionalArea": "Channel Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-2025b"
+        },
+        {
+          "title": "District Event 1: Marketing",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dcdc39f0df8b7a80fd8a04_DECA_ENT_2024_District_Event_1.pdf",
+          "season": "2023-24",
+          "round": "District Event 1",
+          "instructionalArea": "Marketing",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-2024a"
+        },
+        {
+          "title": "District Event 2: Product/Service Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dcdbdc9386043358922a77_DECA_ENT_2024_District_Event_2.pdf",
+          "season": "2023-24",
+          "round": "District Event 2",
+          "instructionalArea": "Product/Service Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-2024b"
+        },
+        {
+          "title": "District Event 1: Economics",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fcd50caedbd8a6030647b6_DECA_ENT_2023_District_Event_1-CR.pdf",
+          "season": "2022-23",
+          "round": "District Event 1",
+          "instructionalArea": "Economics",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-2023a"
+        },
+        {
+          "title": "District Event 2: Entrepreneurship",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fce9ab7074e163de698ee4_DECA_ENT_2023_District_Event_2_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event 2",
+          "instructionalArea": "Entrepreneurship",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-2023b"
+        },
+        {
+          "title": "District Event 1: Marketing",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b69719f12d86dbe356f3f_DECA_ENT_2022_District_Event_1.pdf",
+          "season": "2021-22",
+          "round": "District Event 1",
+          "instructionalArea": "Marketing",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-2022a"
+        },
+        {
+          "title": "District Event 1 (virtual): Market Planning",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b68f378511f34a01a14a9_DECA_ENT_2021_District_Event_1_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event 1 (virtual)",
+          "instructionalArea": "Market Planning",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-2021a"
+        },
+        {
+          "title": "District Event 2 (virtual): Operations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b693b54a2654f79d63d2c_DECA_ENT_2021_District_Event_2_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event 2 (virtual)",
+          "instructionalArea": "Operations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-2021b"
+        },
+        {
+          "title": "District Event 1: Product/Service Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b684697a28147be62d70c_DECA_ENT_2020_District_Event_1.pdf",
+          "season": "2019-20",
+          "round": "District Event 1",
+          "instructionalArea": "Product/Service Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-2020a"
+        },
+        {
+          "title": "District Event 2: Marketing",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b68b297a28129de631da5_DECA_ENT_2020_District_Event_2.pdf",
+          "season": "2019-20",
+          "round": "District Event 2",
+          "instructionalArea": "Marketing",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-2020b"
+        },
+        {
+          "title": "District Event 1: Channel Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b67ceedc813b2959eeaab_DECA_ENT_2019_District_Event_1.pdf",
+          "season": "2018-19",
+          "round": "District Event 1",
+          "instructionalArea": "Channel Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-2019a"
+        },
+        {
+          "title": "District Event 2: Promotion",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b6803e588425bac8216da_DECA_ENT_2019_District_Event_2.pdf",
+          "season": "2018-19",
+          "round": "District Event 2",
+          "instructionalArea": "Promotion",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-2019b"
+        },
+        {
+          "title": "District Event 1: Information Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b674b2aeadf58eae51497_DECA_ENT_2018_District_Event_1.pdf",
+          "season": "2017-18",
+          "round": "District Event 1",
+          "instructionalArea": "Information Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-2018a"
+        },
+        {
+          "title": "District Event 2: Entrepreneurship",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b679e78511f841f180489_DECA_ENT_2018_District_Event_2.pdf",
+          "season": "2017-18",
+          "round": "District Event 2",
+          "instructionalArea": "Entrepreneurship",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-2018b"
+        }
+      ],
+      "format": {
+        "prepMinutes": 10,
+        "presentationMinutes": 10,
+        "judgeRole": "A qualified business executive who takes the business role named in the event situation. After you present your solution, the judge asks the follow-up questions written into the event, then scores you on the event evaluation form.",
+        "performanceIndicators": 5,
+        "participants": "1",
+        "rounds": "2 role-plays, third role-play for finalists"
+      },
+      "placeholder": true,
+      "note": "Open the official sample, then use the trainer's timer, PI checklist and self-evaluation"
+    },
+    {
+      "eventCode": "ETDM",
+      "eventName": "Entrepreneurship Team Decision Making",
+      "component": "case-study",
+      "officialUrl": "https://www.deca.org/compete/entrepreneurship-team-decision-making",
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327f7f7f637d914a9fc71_HS_TDM_Guidelines.pdf",
+      "officialSamples": [
+        {
+          "title": "Official sample event, 2026-27 format (ETDM-26 District Event)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a455376d264d551dd973e08_DECA_ETDM_2026_District_Event_Sample.pdf",
+          "season": "2026-27",
+          "round": "Sample Event",
+          "instructionalArea": null,
+          "kind": "current-format-sample",
+          "pageUrl": "https://www.deca.org/compete/entrepreneurship-team-decision-making",
+          "formatNote": "The 2025-26 District Event reissued by DECA in the 2026-27 layout (Solution criteria and Career Competencies)."
+        },
+        {
+          "title": "District Event: Product/Service Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ee1fcc15ece18fb20ab2_DECA_ETDM_2026_District_Event.pdf",
+          "season": "2025-26",
+          "round": "District Event",
+          "instructionalArea": "Product/Service Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-team-decision-making-2026"
+        },
+        {
+          "title": "District Event: Promotion",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1d9fc61c4a1f81e590af2_DECA_ETDM_2025_District_Event.pdf",
+          "season": "2024-25",
+          "round": "District Event",
+          "instructionalArea": "Promotion",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-team-decision-making-2025"
+        },
+        {
+          "title": "District Event: Entrepreneurship",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dca6718bb551f553b7d6f4_DECA_ETDM_2024_District_Event.pdf",
+          "season": "2023-24",
+          "round": "District Event",
+          "instructionalArea": "Entrepreneurship",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-team-decision-making-2024"
+        },
+        {
+          "title": "District Event: Promotion",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fcd8c467801e3a419e70f0_DECA_ETDM_2023_District_Event_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event",
+          "instructionalArea": "Promotion",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-team-decision-making-2023"
+        },
+        {
+          "title": "District Event: Product/Service Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b66b07494392bd1c509a4_DECA_ETDM_2022_District_Event.pdf",
+          "season": "2021-22",
+          "round": "District Event",
+          "instructionalArea": "Product/Service Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-team-decision-making-2022"
+        },
+        {
+          "title": "District Event (virtual): Human Resources Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b665f97a2810538629e2c_DECA_ETDM_2021_District_Event_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event (virtual)",
+          "instructionalArea": "Human Resources Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-team-decision-making-2021"
+        },
+        {
+          "title": "District Event: Promotion",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b65d8749439606cc3aee1_DECA_ETDM_2020_District_Event.pdf",
+          "season": "2019-20",
+          "round": "District Event",
+          "instructionalArea": "Promotion",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-team-decision-making-2020"
+        },
+        {
+          "title": "District Event: Marketing",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/659d5001477c3502e7cca0a4_DECA_ETDM_2019_District_Event.pdf",
+          "season": "2018-19",
+          "round": "District Event",
+          "instructionalArea": "Marketing",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/entrepreneurship-team-decision-making-2019"
+        }
+      ],
+      "format": {
+        "prepMinutes": 30,
+        "presentationMinutes": 15,
+        "judgeRole": "A qualified business executive who plays the role named in the case study. The team presents its analysis and decisions without interruption, then the judge asks every team the same standard questions; each member should answer at least one.",
+        "performanceIndicators": 5,
+        "participants": "2",
+        "rounds": "1 case study, second case study for finalists"
+      },
+      "placeholder": true,
+      "note": "Open the official sample, then use the trainer's timer, PI checklist and self-evaluation"
+    },
+    {
+      "eventCode": "PEN",
+      "eventName": "Principles of Entrepreneurship",
+      "component": "roleplay",
+      "officialUrl": "https://www.deca.org/compete/principles-of-entrepreneurship",
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c68346ea8c0dba9b854c1_HS_PBA_Guidelines.pdf",
+      "officialSamples": [
+        {
+          "title": "Official sample event, 2026-27 format (PEN-26 District Event)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3dc378b8a80d2a84f79069_DECA_PEN_2026_District_Event_Sample.pdf",
+          "season": "2026-27",
+          "round": "Sample Event",
+          "instructionalArea": null,
+          "kind": "current-format-sample",
+          "pageUrl": "https://www.deca.org/compete/principles-of-entrepreneurship",
+          "formatNote": "The 2025-26 District Event reissued by DECA in the 2026-27 layout (Solution criteria and Career Competencies)."
+        },
+        {
+          "title": "District Event: Information Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ed7fcc15ece18fb1fa9a_DECA_PEN_2026_District_Event.pdf",
+          "season": "2025-26",
+          "round": "District Event",
+          "instructionalArea": "Information Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-entrepreneurship-2026"
+        },
+        {
+          "title": "District Event: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1d922c9f93d5716d0affe_DECA_PEN_2025_District_Event.pdf",
+          "season": "2024-25",
+          "round": "District Event",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-entrepreneurship-2025"
+        },
+        {
+          "title": "Sample Event: Information Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/66351527008c44d45e7bcf9a_DECA_PEN_Sample_Event.pdf",
+          "season": "2023-24",
+          "round": "Sample Event",
+          "instructionalArea": "Information Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-entrepreneurship"
+        }
+      ],
+      "format": {
+        "prepMinutes": 10,
+        "presentationMinutes": 10,
+        "judgeRole": "A qualified business executive who plays the role set out in the business situation. After your response, the judge asks the follow-up questions provided in the event, then scores you on the evaluation form.",
+        "performanceIndicators": 4,
+        "participants": "1",
+        "rounds": "1 role-play, second role-play for finalists"
+      },
+      "placeholder": true,
+      "note": "Open the official sample, then use the trainer's timer, PI checklist and self-evaluation"
+    }
+  ]
+}

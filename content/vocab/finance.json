@@ -1,0 +1,1728 @@
+{
+  "slug": "finance",
+  "title": "Finance terms",
+  "status": "sourced",
+  "disclaimer": "Definitions reused from openly licensed and public-domain sources (credited on each term). Not official DECA content.",
+  "builtAt": "2026-10-11",
+  "builtBy": "shared-account agent (Project Omega), scripted extraction (tools/vocab/build-vocab-open.js)",
+  "termCount": 77,
+  "coverage": {
+    "Financial Analysis": 31,
+    "Professional Development": 6,
+    "Financial-Information Management": 8,
+    "Emotional Intelligence": 4,
+    "Business Law": 7,
+    "Risk Management": 6,
+    "Economics": 6,
+    "Information Management": 2,
+    "Operations": 2,
+    "Communications": 2,
+    "Customer Relations": 3
+  },
+  "gaps": null,
+  "notes": [
+    "NC flag: some sources are CC BY-NC 4.0 or CC BY-NC-SA 4.0 (see sources). They are used only because DECA Masters is free and non-commercial (no ads, no paid tier, no sponsorship that makes it commercial). If that changes, these terms must come out.",
+    "ShareAlike: terms from CC BY-NC-SA 4.0 sources, including any adapted versions, must be shared under CC BY-NC-SA 4.0.",
+    "Communication: Fundamentals for the Workplace keeps its glossary as Pressbooks glossary entries. source.url points to the chapter that uses the term (or the book home page when no chapter links it); the definition text itself is in the book's public glossary data (see sources[].glossaryData).",
+    "Public-domain US federal sources (SEC Investor.gov, BLS, USPTO, FDIC, CFPB): credited as the agencies ask; no seals or logos; no endorsement implied. US-specific facts (laws, agencies, figures) are US context, not Canadian.",
+    "Every definition is copied from its source glossary (HTML tags removed). Any trim or correction is marked source.adapted = true and named after \"Adapted:\" in the attribution.",
+    "76 OpenStax glossary terms for this exam are held in _hold-openstax/vocab/finance.json until OpenStax grants permission (SOURCES.md section 1.2). They are not in this file."
+  ],
+  "sources": [
+    {
+      "type": "pd",
+      "title": "Investor.gov Glossary",
+      "publisher": "U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy)",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary",
+      "licence": "Public domain (US federal work)",
+      "licenceUrl": null,
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "licenceEvidence": "US federal work (17 U.S.C. 105). Investor.gov footer: \"Paid for by the U.S. Securities and Exchange Commission.\" SEC privacy page (https://www.sec.gov/about/privacy-information): \"Information presented on sec.gov is considered public information and may be copied or further distributed by users of the web site without the SEC’s permission.\" / \"Please consider appropriate citation to the SEC as the source.\"",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 48
+    },
+    {
+      "type": "cc",
+      "title": "Basic Kitchen and Food Service Management",
+      "publisher": "BCcampus",
+      "authors": "The BC Cook Articulation Committee",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "licenceEvidence": "Book home page (https://opentextbc.ca/basickitchenandfoodservicemanagement/): \"Basic Kitchen and Food Service Management Copyright © 2015 by The BC Cook Articulation Committee is licensed under a Creative Commons Attribution 4.0 International License, except where otherwise noted.\"",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 3
+    },
+    {
+      "type": "cc",
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition",
+      "publisher": "BCcampus (Capilano University)",
+      "authors": "Wendy Anderson and Morgan Westcott (Editors)",
+      "url": "https://opentextbc.ca/introtourism2e/",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "licenceEvidence": "Book home page (https://opentextbc.ca/introtourism2e/): \"Introduction to Tourism and Hospitality in BC - 2nd Edition Copyright (c) 2015, 2020, 2021 by Morgan Westcott and Wendy Anderson is licensed under a Creative Commons Attribution 4.0 International License, except where otherwise noted.\" Required attribution: \"Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence.\"",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 8
+    },
+    {
+      "type": "cc",
+      "title": "Communication: Fundamentals for the Workplace",
+      "publisher": "Nova Scotia Community College (NSCC)",
+      "authors": "Jordan Smith and NSCC",
+      "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College (NSCC), https://pressbooks.atlanticoer-relatlantique.ca/comm1205/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "licenceEvidence": "Book home page (https://pressbooks.atlanticoer-relatlantique.ca/comm1205/): \"Communication: Fundamentals for the Workplace Copyright © 2021 by Jordan Smith is licensed under a Creative Commons Attribution 4.0 International License, except where otherwise noted.\"",
+      "glossaryData": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/wp-json/pressbooks/v2/glossary?per_page=100",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 7
+    },
+    {
+      "type": "pd",
+      "title": "BLS Glossary",
+      "publisher": "U.S. Bureau of Labor Statistics (BLS)",
+      "url": "https://www.bls.gov/bls/glossary.htm",
+      "licence": "Public domain (US federal work)",
+      "licenceUrl": null,
+      "attribution": "BLS Glossary, U.S. Bureau of Labor Statistics (BLS), https://www.bls.gov/bls/glossary.htm. Public domain (US federal work).",
+      "licenceEvidence": "BLS Copyright Information (https://www.bls.gov/opub/copyright-information.htm): \"The Bureau of Labor Statistics (BLS) is a Federal government agency and everything that we publish, both in hard copy and electronically, is in the public domain, except for previously copyrighted photographs and illustrations. You are free to use our public domain material without specific permission, although we do ask that you cite the Bureau of Labor Statistics as the source.\" The BLS emblem is a registered trademark; do not use it.",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 7
+    },
+    {
+      "type": "cc",
+      "title": "Project Management for Instructional Designers",
+      "publisher": "University of Saskatchewan (SaskOER)",
+      "authors": "ETAD 874",
+      "url": "https://www.saskoer.ca/pm4id/",
+      "licence": "CC BY-NC-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "licenceEvidence": "Book home page (https://www.saskoer.ca/pm4id/): \"Project Management for Instructional Designers Copyright © 2016 by ETAD 874 is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.\"",
+      "nonCommercial": true,
+      "shareAlike": true,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 3
+    },
+    {
+      "type": "cc",
+      "title": "Marketing Principles From The River City",
+      "publisher": "VCU Libraries (Virginia Commonwealth University)",
+      "authors": "Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma, Cesar Zamudio",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/",
+      "licence": "CC BY-NC 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "licenceEvidence": "Book home page (https://pressbooks.library.vcu.edu/marketingprinciples/): \"Marketing Principles From The River City Copyright © 2026 by Jodie Ferguson and Cesar Zamudio is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License, except where otherwise noted.\"",
+      "nonCommercial": true,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 1
+    },
+    {
+      "title": "Investor.gov Glossary: Asset",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/asset",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Liability/Debt",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/liabilitydebt",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Net Income",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/net-income",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Revenue",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/revenue",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Earnings Per Share",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/earnings-share",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Price-earnings (P/E) Ratio",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/price-earnings-pe-ratio",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Market Capitalization",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/market-capitalization",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Compound Interest",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/compound-interest",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Future Value",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/future-value",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Interest",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/interest",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Principal",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/principal",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Dividend",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/dividend",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Bonds",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/bonds",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Stock",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/stock",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Current Yield",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/current-yield",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Yield Curve",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/yield-curve",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Basis Point",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/basis-point",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Liquidity (or Marketability)",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/liquidity-or-marketability",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Diversification",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/diversification",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Portfolio",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/portfolio",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Asset Allocation",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/asset-allocation",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Derivatives",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/derivatives",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Options",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/options",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Futures contract",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/futures-contract",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Primary Market",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/primary-market",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Secondary Market",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/secondary-market",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Capital Gain",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/capital-gain",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Default",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/default",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Treasury Securities",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/treasury-securities",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Credit Rating Agencies",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/credit-rating-agencies",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Form 10-K",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/annual-report-10k",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Quarterly Reports (10Q)",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/quarterly-reports-10q",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Generally Accepted Accounting Principles (GAAP)",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/generally-accepted-accounting-principles-gaap",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Financial Accounting Standards Board (FASB)",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/financial-accounting-standards-board-fasb",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Public Company Accounting Oversight Board (PCAOB)",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/public-company-accounting-oversight-board-pcaob",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: EDGAR",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/edgar",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Disclosure",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/disclosure",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Security",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/security",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Insider Trading",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/insider-trading",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Blue Sky Laws",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/blue-sky-laws",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Foreign Corrupt Practices Act (FCPA)",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/foreign-corrupt-practices-act-fcpa",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Registration Statement",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/registration-statement",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Corporate Governance",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/corporate-governance",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Board of Directors",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/board-directors",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Risk",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/risk",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Risk Tolerance",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/risk-tolerance",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Ponzi Schemes",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/ponzi-schemes",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Purchasing Power",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/purchasing-power",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-breakeven-point",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-invoice",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-inventory",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-networking",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-transferable-skills",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-informational-interview",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-conflict-management",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-risk-transfer",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-risk-retention",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-customer-orientation",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-service-recovery",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Communication: Fundamentals for the Workplace, glossary",
+      "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/chapter/12-3-presentations-to-persuade/",
+      "licence": "CC BY 4.0",
+      "attribution": "Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College (NSCC), https://pressbooks.atlanticoer-relatlantique.ca/comm1205/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/"
+    },
+    {
+      "title": "Communication: Fundamentals for the Workplace, glossary",
+      "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/chapter/12-6-the-infographic/",
+      "licence": "CC BY 4.0",
+      "attribution": "Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College (NSCC), https://pressbooks.atlanticoer-relatlantique.ca/comm1205/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/"
+    },
+    {
+      "title": "BLS Glossary: Certification",
+      "url": "https://www.bls.gov/bls/glossary.htm#certification",
+      "licence": "Public domain (US federal work)",
+      "attribution": "BLS Glossary, U.S. Bureau of Labor Statistics (BLS), https://www.bls.gov/bls/glossary.htm. Public domain (US federal work).",
+      "partOf": "https://www.bls.gov/bls/glossary.htm"
+    },
+    {
+      "title": "BLS Glossary: Inflation",
+      "url": "https://www.bls.gov/bls/glossary.htm#inflation",
+      "licence": "Public domain (US federal work)",
+      "attribution": "BLS Glossary, U.S. Bureau of Labor Statistics (BLS), https://www.bls.gov/bls/glossary.htm. Public domain (US federal work).",
+      "partOf": "https://www.bls.gov/bls/glossary.htm"
+    },
+    {
+      "title": "BLS Glossary: Deflation",
+      "url": "https://www.bls.gov/bls/glossary.htm#deflation",
+      "licence": "Public domain (US federal work)",
+      "attribution": "BLS Glossary, U.S. Bureau of Labor Statistics (BLS), https://www.bls.gov/bls/glossary.htm. Public domain (US federal work).",
+      "partOf": "https://www.bls.gov/bls/glossary.htm"
+    },
+    {
+      "title": "BLS Glossary: Consumer Price Index",
+      "url": "https://www.bls.gov/bls/glossary.htm#consumer-price-index",
+      "licence": "Public domain (US federal work)",
+      "attribution": "BLS Glossary, U.S. Bureau of Labor Statistics (BLS), https://www.bls.gov/bls/glossary.htm. Public domain (US federal work).",
+      "partOf": "https://www.bls.gov/bls/glossary.htm"
+    },
+    {
+      "title": "BLS Glossary: GDP (gross domestic product)",
+      "url": "https://www.bls.gov/bls/glossary.htm#gdp-gross-domestic-product",
+      "licence": "Public domain (US federal work)",
+      "attribution": "BLS Glossary, U.S. Bureau of Labor Statistics (BLS), https://www.bls.gov/bls/glossary.htm. Public domain (US federal work).",
+      "partOf": "https://www.bls.gov/bls/glossary.htm"
+    },
+    {
+      "title": "BLS Glossary: Business cycle",
+      "url": "https://www.bls.gov/bls/glossary.htm#business-cycle",
+      "licence": "Public domain (US federal work)",
+      "attribution": "BLS Glossary, U.S. Bureau of Labor Statistics (BLS), https://www.bls.gov/bls/glossary.htm. Public domain (US federal work).",
+      "partOf": "https://www.bls.gov/bls/glossary.htm"
+    },
+    {
+      "title": "BLS Glossary: Metadata",
+      "url": "https://www.bls.gov/bls/glossary.htm#metadata",
+      "licence": "Public domain (US federal work)",
+      "attribution": "BLS Glossary, U.S. Bureau of Labor Statistics (BLS), https://www.bls.gov/bls/glossary.htm. Public domain (US federal work).",
+      "partOf": "https://www.bls.gov/bls/glossary.htm"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-emotional-intelligence",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-risk-avoidance",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-procurement",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-customer-satisfaction",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    }
+  ],
+  "terms": [
+    {
+      "id": "fin-v-001",
+      "term": "Asset",
+      "definition": "Any tangible or intangible item that has value in an exchange. A bank account, a home, or shares of stock are all examples of assets.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Asset",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/asset",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Asset,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/asset. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-002",
+      "term": "Liability/Debt",
+      "definition": "An amount owed to a person or organization for borrowed funds. Loans, notes, bonds, and mortgages are forms of debt. These different forms all call for borrowers to pay back the amount they owe, typically with interest, by a specific date, which is set forth in the repayment terms.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Liability/Debt",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/liabilitydebt",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Liability/Debt,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/liabilitydebt. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-003",
+      "term": "Net Income",
+      "definition": "The profit earned by a company after all expenses and taxes have been deducted from revenue. A simple way to think about net income is it’s the price of a widget multiplied by the number of widgets sold (this result is revenue) minus the cost to make and sell the widgets, other expenses and any interest or taxes.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Net Income",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/net-income",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Net Income,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/net-income. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-004",
+      "term": "Revenue",
+      "definition": "The total amount of money, or gross income, generated by a company from selling its goods and services. A simple way to think about revenue is it’s the price of a widget multiplied by the number of widgets sold.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Revenue",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/revenue",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Revenue,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/revenue. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-005",
+      "term": "Earnings Per Share",
+      "definition": "A public company's net profit divided by the number of its common shares.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Earnings Per Share",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/earnings-share",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Earnings Per Share,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/earnings-share. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-006",
+      "term": "Price-earnings (P/E) Ratio",
+      "definition": "A company's P/E ratio is a way of gauging whether the stock price is high or low compared to the past or to other companies. The ratio is calculated by dividing the current stock price by the current earnings per share. Earnings per share are calculated by dividing the earnings for the past 12 months by the number of common shares outstanding.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Price-earnings (P/E) Ratio",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/price-earnings-pe-ratio",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Price-earnings (P/E) Ratio,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/price-earnings-pe-ratio. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-007",
+      "term": "Market Capitalization",
+      "definition": "Market capitalization is the value of a corporation determined by multiplying the current public market price of one share of the corporation by the number of total outstanding shares.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Market Capitalization",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/market-capitalization",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Market Capitalization,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/market-capitalization. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-008",
+      "term": "Compound Interest",
+      "definition": "Interest paid on principal and on accumulated interest.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Compound Interest",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/compound-interest",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Compound Interest,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/compound-interest. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-009",
+      "term": "Future Value",
+      "definition": "The value of an asset at a specified date in the future.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Future Value",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/future-value",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Future Value,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/future-value. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-010",
+      "term": "Interest",
+      "definition": "The price paid for borrowing money. It is expressed as a percentage rate over a period of time.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Interest",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/interest",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Interest,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/interest. Public domain (US federal work). Adapted: kept the first paragraph only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-011",
+      "term": "Principal",
+      "definition": "The total amount of money being borrowed or lent; the initial amount of money invested.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Principal",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/principal",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Principal,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/principal. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-012",
+      "term": "Dividend",
+      "definition": "A portion of a company's profit paid to shareholders. Public companies that pay dividends usually do so on a fixed schedule although they can issue them at any time. Unscheduled dividend payments are known as special dividends or extra dividends.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Dividend",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/dividend",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Dividend,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/dividend. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-013",
+      "term": "Bonds",
+      "definition": "A bond is a debt security, similar to an IOU. Borrowers issue bonds to raise money from investors willing to lend them money for a certain amount of time.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Bonds",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/bonds",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Bonds,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/bonds. Public domain (US federal work). Adapted: kept the first paragraph only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-014",
+      "term": "Stock",
+      "definition": "A share of stock is an instrument that signifies an ownership position (called equity) in a corporation, and a claim on its proportional share in the corporation's assets and profits. Most stocks also provide voting rights, which give shareholders a proportional vote in certain corporate decisions, such as the election of corporate directors.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Stock",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/stock",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Stock,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/stock. Public domain (US federal work). Adapted: kept the first paragraph only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-015",
+      "term": "Current Yield",
+      "definition": "The ratio of the interest rate payable on a bond to the actual market price of the bond, stated as a percentage. For example, a bond with a current market price of $1,000 that pays $80 per year would have a current yield of 8%.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Current Yield",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/current-yield",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Current Yield,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/current-yield. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-016",
+      "term": "Yield Curve",
+      "definition": "A line graph that shows the relative yields on debt over a range of maturities from three months to 30 years. Investors, analysts and economists use yield curves to evaluate bond markets and interest rate expectations.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Yield Curve",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/yield-curve",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Yield Curve,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/yield-curve. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-017",
+      "term": "Basis Point",
+      "definition": "One one-hundredth (.01) of a percentage point. For example, eight percent is equal to 800 basis points.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Basis Point",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/basis-point",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Basis Point,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/basis-point. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-018",
+      "term": "Liquidity (or Marketability)",
+      "definition": "Liquidity generally refers to how easily or quickly a security can be bought or sold in a secondary market. Liquid investments can be sold readily and without paying a hefty fee to get money when it is needed.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Liquidity (or Marketability)",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/liquidity-or-marketability",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Liquidity (or Marketability),\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/liquidity-or-marketability. Public domain (US federal work). Adapted: kept the first paragraph only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-019",
+      "term": "Diversification",
+      "definition": "Diversification is a strategy that can be neatly summed up as \"Don't put all your eggs in one basket.\" The strategy involves spreading your money among various investments in the hope that if one loses money, the others will make up for those losses.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Diversification",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/diversification",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Diversification,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/diversification. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-020",
+      "term": "Portfolio",
+      "definition": "The combined holdings of stock, bond, commodity, real estate and other investments by an individual or institutional investor.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Portfolio",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/portfolio",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Portfolio,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/portfolio. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-021",
+      "term": "Asset Allocation",
+      "definition": "Asset allocation involves dividing your investments among different categories, such as stocks, bonds, and cash.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Asset Allocation",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/asset-allocation",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Asset Allocation,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/asset-allocation. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-022",
+      "term": "Derivatives",
+      "definition": "Financial instruments whose performance is derived, at least in part, from the performance of an underlying asset, security or index. For example, a stock option is a derivative because its value changes in relation to the price movement of the underlying stock.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Derivatives",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/derivatives",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Derivatives,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/derivatives. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-023",
+      "term": "Options",
+      "definition": "Options are contracts giving the purchaser the right – but not the obligation -- to buy or sell a security at a fixed price within a specific period of time. Stock options are traded on a number of exchanges.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Options",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/options",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Options,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/options. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-024",
+      "term": "Futures contract",
+      "definition": "An agreement to buy or sell a specific quantity of a commodity or financial instrument at a specified price on a particular date in the future.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Futures contract",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/futures-contract",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Futures contract,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/futures-contract. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-025",
+      "term": "Primary Market",
+      "definition": "Markets in which newly issued securities are sold to investors and the issuer receives the proceeds.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Primary Market",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/primary-market",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Primary Market,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/primary-market. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-026",
+      "term": "Secondary Market",
+      "definition": "Markets where existing securities are bought and sold.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Secondary Market",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/secondary-market",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Secondary Market,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/secondary-market. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-027",
+      "term": "Capital Gain",
+      "definition": "The profit that comes when an investment is sold for more than the price the investor paid for it.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Capital Gain",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/capital-gain",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Capital Gain,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/capital-gain. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-028",
+      "term": "Default",
+      "definition": "A failure by an issuer to pay principal or interest when due, or to fulfill other obligations, such as reporting requirements.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Default",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/default",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Default,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/default. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-029",
+      "term": "Treasury Securities",
+      "definition": "Treasury securities—including Treasury bills, notes, and bonds—are debt obligations issued by the U.S. Department of the Treasury. Treasury securities are considered one of the safest investments because they are backed by the full faith and credit of the U.S. government.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Treasury Securities",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/treasury-securities",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Treasury Securities,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/treasury-securities. Public domain (US federal work). Adapted: kept the first 2 sentences only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-030",
+      "term": "Credit Rating Agencies",
+      "definition": "Provide their opinion on the creditworthiness of a corporate or government borrower by issuing a grade, or credit rating, on bonds issued by that borrower.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Credit Rating Agencies",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/credit-rating-agencies",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Credit Rating Agencies,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/credit-rating-agencies. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-031",
+      "term": "breakeven point",
+      "definition": "The point at which cost and revenue are equal.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-breakeven-point",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"breakeven point\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-breakeven-point. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-032",
+      "term": "Networking",
+      "definition": "Creating relationships within a sector for the purpose of enhancing and developing one’s professional identity.",
+      "area": "Professional Development",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-networking",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Networking\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-networking. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-033",
+      "term": "Transferable skills",
+      "definition": "Skills required to perform a variety of tasks that can be transferred from one type of job to another.",
+      "area": "Professional Development",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-transferable-skills",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Transferable skills\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-transferable-skills. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-034",
+      "term": "Informational interview",
+      "definition": "A short appointment where you learn about an employer, or a specific role, from someone already established in the field.",
+      "area": "Professional Development",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-informational-interview",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Informational interview\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-informational-interview. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-035",
+      "term": "E-portfolio",
+      "definition": "a collection of digital files that can be navigated much like a personal website",
+      "area": "Professional Development",
+      "source": {
+        "title": "Communication: Fundamentals for the Workplace, glossary",
+        "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"E-portfolio\" from the glossary of Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College, https://pressbooks.atlanticoer-relatlantique.ca/comm1205/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-036",
+      "term": "applicant tracking system (ATS)",
+      "definition": "A system used by employers to screen out job applicants who do not match the skills profile for a particular job.",
+      "area": "Professional Development",
+      "source": {
+        "title": "Communication: Fundamentals for the Workplace, glossary",
+        "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"applicant tracking system (ATS)\" from the glossary of Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College, https://pressbooks.atlanticoer-relatlantique.ca/comm1205/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-037",
+      "term": "Certification",
+      "definition": "Credential for demonstrating competency in a skill or set of skills, typically through the passage of an examination, work experience, training, or some combination of the three.",
+      "area": "Professional Development",
+      "source": {
+        "title": "BLS Glossary: Certification",
+        "url": "https://www.bls.gov/bls/glossary.htm#certification",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition of \"Certification\" from the BLS Glossary, U.S. Bureau of Labor Statistics, https://www.bls.gov/bls/glossary.htm#certification. Public domain (US federal work); source: U.S. Bureau of Labor Statistics.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-038",
+      "term": "Form 10-K",
+      "definition": "The annual report on Form 10-K provides a comprehensive overview of the company's business and financial condition and includes audited financial statements.",
+      "area": "Financial-Information Management",
+      "source": {
+        "title": "Investor.gov Glossary: Form 10-K",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/annual-report-10k",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Form 10-K,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/annual-report-10k. Public domain (US federal work). Adapted: kept paragraph 2 only; kept the first sentence only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-039",
+      "term": "Quarterly Reports (10Q)",
+      "definition": "Each quarter, public companies file reports to the SEC containing unaudited financial statements and information about the company's operations in the previous three months.",
+      "area": "Financial-Information Management",
+      "source": {
+        "title": "Investor.gov Glossary: Quarterly Reports (10Q)",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/quarterly-reports-10q",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Quarterly Reports (10Q),\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/quarterly-reports-10q. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-040",
+      "term": "Generally Accepted Accounting Principles (GAAP)",
+      "definition": "GAAP (Generally Accepted Accounting Principles) are accounting standards, conventions and rules. It is what companies use to measure their financial results.",
+      "area": "Financial-Information Management",
+      "source": {
+        "title": "Investor.gov Glossary: Generally Accepted Accounting Principles (GAAP)",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/generally-accepted-accounting-principles-gaap",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Generally Accepted Accounting Principles (GAAP),\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/generally-accepted-accounting-principles-gaap. Public domain (US federal work). Adapted: kept the first 2 sentences only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-041",
+      "term": "Financial Accounting Standards Board (FASB)",
+      "definition": "The Financial Accounting Standards Board (FASB) is the accounting standard setter for purposes of the Federal Securities Laws.",
+      "area": "Financial-Information Management",
+      "source": {
+        "title": "Investor.gov Glossary: Financial Accounting Standards Board (FASB)",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/financial-accounting-standards-board-fasb",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Financial Accounting Standards Board (FASB),\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/financial-accounting-standards-board-fasb. Public domain (US federal work). Adapted: kept the first sentence only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-042",
+      "term": "Public Company Accounting Oversight Board (PCAOB)",
+      "definition": "The Public Company Accounting Oversight Board (also known as the PCAOB) is a private-sector, nonprofit corporation created by the Sarbanes-Oxley Act of 2002 to oversee accounting professionals who provide independent audit reports for publicly traded companies.",
+      "area": "Financial-Information Management",
+      "source": {
+        "title": "Investor.gov Glossary: Public Company Accounting Oversight Board (PCAOB)",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/public-company-accounting-oversight-board-pcaob",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Public Company Accounting Oversight Board (PCAOB),\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/public-company-accounting-oversight-board-pcaob. Public domain (US federal work). Adapted: kept the first paragraph only; kept the first sentence only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-043",
+      "term": "EDGAR",
+      "definition": "The SEC’s EDGAR database provides free public access to corporate information, allowing you to quickly research a company’s financial information and operations by reviewing registration statements, prospectuses and periodic reports filed on Forms 10-K and 10-Q. You also can find information about recent corporate events reported on Form 8-K.",
+      "area": "Financial-Information Management",
+      "source": {
+        "title": "Investor.gov Glossary: EDGAR",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/edgar",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"EDGAR,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/edgar. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-044",
+      "term": "Disclosure",
+      "definition": "Information about a company’s financial condition and business that it makes public. Investors can use this information to make informed investment decisions about the company’s securities.",
+      "area": "Financial-Information Management",
+      "source": {
+        "title": "Investor.gov Glossary: Disclosure",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/disclosure",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Disclosure,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/disclosure. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-045",
+      "term": "invoice",
+      "definition": "A document indicating the amount owed for goods or services.",
+      "area": "Financial-Information Management",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-invoice",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"invoice\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-invoice. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-046",
+      "term": "Emotional Intelligence",
+      "definition": "The ability to sense, understand, and effectively apply emotions as human energy.",
+      "area": "Emotional Intelligence",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-emotional-intelligence",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Emotional Intelligence\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-emotional-intelligence. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end; removed the repeated term label at the start.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-047",
+      "term": "Conflict management",
+      "definition": "The practice of being able to identify and handle conflicts sensibly, fairly, and efficiently.",
+      "area": "Emotional Intelligence",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-conflict-management",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Conflict management\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-conflict-management. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-048",
+      "term": "manipulation",
+      "definition": "management of facts, ideas or points of view to play upon inherent insecurities or emotional appeals to one’s own advantage",
+      "area": "Emotional Intelligence",
+      "source": {
+        "title": "Communication: Fundamentals for the Workplace, glossary",
+        "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/chapter/12-3-presentations-to-persuade/",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"manipulation\" from the glossary of Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College, https://pressbooks.atlanticoer-relatlantique.ca/comm1205/chapter/12-3-presentations-to-persuade/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-049",
+      "term": "deception",
+      "definition": "use of lies, partial truths, or the omission of relevant information to deceive your audience",
+      "area": "Emotional Intelligence",
+      "source": {
+        "title": "Communication: Fundamentals for the Workplace, glossary",
+        "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/chapter/12-3-presentations-to-persuade/",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"deception\" from the glossary of Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College, https://pressbooks.atlanticoer-relatlantique.ca/comm1205/chapter/12-3-presentations-to-persuade/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-050",
+      "term": "Security",
+      "definition": "An investment instrument such as a stock or bond.",
+      "area": "Business Law",
+      "source": {
+        "title": "Investor.gov Glossary: Security",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/security",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Security,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/security. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-051",
+      "term": "Insider Trading",
+      "definition": "Illegal insider trading refers generally to buying or selling a security, in breach of a fiduciary duty or other relationship of trust and confidence, on the basis of material, nonpublic information about the security. Insider trading violations may also include \"tipping\" such information, securities trading by the person \"tipped,\" and securities trading by those who misappropriate such information.",
+      "area": "Business Law",
+      "source": {
+        "title": "Investor.gov Glossary: Insider Trading",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/insider-trading",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Insider Trading,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/insider-trading. Public domain (US federal work). Adapted: kept the first paragraph only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-052",
+      "term": "Blue Sky Laws",
+      "definition": "In addition to the federal securities laws, every state has its own set of securities laws—commonly referred to as \"Blue Sky Laws\"—that are designed to protect investors against fraudulent sales practices and activities.",
+      "area": "Business Law",
+      "source": {
+        "title": "Investor.gov Glossary: Blue Sky Laws",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/blue-sky-laws",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Blue Sky Laws,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/blue-sky-laws. Public domain (US federal work). Adapted: kept the first sentence only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-053",
+      "term": "Foreign Corrupt Practices Act (FCPA)",
+      "definition": "The Foreign Corrupt Practices Act (“FCPA”) generally prohibits the bribing of foreign officials.",
+      "area": "Business Law",
+      "source": {
+        "title": "Investor.gov Glossary: Foreign Corrupt Practices Act (FCPA)",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/foreign-corrupt-practices-act-fcpa",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Foreign Corrupt Practices Act (FCPA),\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/foreign-corrupt-practices-act-fcpa. Public domain (US federal work). Adapted: kept the first paragraph only; kept the first sentence only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-054",
+      "term": "Registration Statement",
+      "definition": "A registration statement is a filing with the SEC making required disclosures in connection with the registration of a security, a securities offering or an investment company under federal securities laws.",
+      "area": "Business Law",
+      "source": {
+        "title": "Investor.gov Glossary: Registration Statement",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/registration-statement",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Registration Statement,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/registration-statement. Public domain (US federal work). Adapted: kept the first sentence only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-055",
+      "term": "Corporate Governance",
+      "definition": "A framework which may include rules and regulations, corporate charter and bylaws, formal policies, as well as customs and other processes, that determines the leadership, organization, and direction of a company.",
+      "area": "Business Law",
+      "source": {
+        "title": "Investor.gov Glossary: Corporate Governance",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/corporate-governance",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Corporate Governance,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/corporate-governance. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-056",
+      "term": "Board of Directors",
+      "definition": "A group of people elected by shareholders to oversee the management of a corporation.",
+      "area": "Business Law",
+      "source": {
+        "title": "Investor.gov Glossary: Board of Directors",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/board-directors",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Board of Directors,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/board-directors. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-057",
+      "term": "Risk",
+      "definition": "In finance, risk refers to the degree of uncertainty about the rate of return on an asset and the potential harm that could arise when financial returns are not what the investor expected. In general, as investment risks rise, investors seek higher returns to compensate them for taking on such risks.",
+      "area": "Risk Management",
+      "source": {
+        "title": "Investor.gov Glossary: Risk",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/risk",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Risk,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/risk. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-058",
+      "term": "Risk Tolerance",
+      "definition": "An investor's ability and willingness to lose some or all of an investment in exchange for greater potential returns.",
+      "area": "Risk Management",
+      "source": {
+        "title": "Investor.gov Glossary: Risk Tolerance",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/risk-tolerance",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Risk Tolerance,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/risk-tolerance. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-059",
+      "term": "Risk transfer",
+      "definition": "A risk mitigation strategy where the risk is transferred to a third party through contract or insurance.",
+      "area": "Risk Management",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-risk-transfer",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Risk transfer\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-risk-transfer. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-060",
+      "term": "Risk retention",
+      "definition": "The level of risk that is retained by the company through a conscious decision-making process.",
+      "area": "Risk Management",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-risk-retention",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Risk retention\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-risk-retention. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-061",
+      "term": "Risk avoidance",
+      "definition": "Developing an alternative strategy that has a higher probability of success but usually at a higher cost.",
+      "area": "Risk Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-risk-avoidance",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Risk avoidance\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-risk-avoidance. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-062",
+      "term": "Ponzi Schemes",
+      "definition": "A Ponzi scheme is an investment fraud that pays existing investors with funds collected from new investors.",
+      "area": "Risk Management",
+      "source": {
+        "title": "Investor.gov Glossary: Ponzi Schemes",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/ponzi-schemes",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Ponzi Schemes,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/ponzi-schemes. Public domain (US federal work). Adapted: kept the first paragraph only; kept the first sentence only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-063",
+      "term": "Inflation",
+      "definition": "Rising prices of goods and services over time.",
+      "area": "Economics",
+      "source": {
+        "title": "BLS Glossary: Inflation",
+        "url": "https://www.bls.gov/bls/glossary.htm#inflation",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition of \"Inflation\" from the BLS Glossary, U.S. Bureau of Labor Statistics, https://www.bls.gov/bls/glossary.htm#inflation. Public domain (US federal work); source: U.S. Bureau of Labor Statistics.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-064",
+      "term": "Deflation",
+      "definition": "Falling prices for goods and services over time.",
+      "area": "Economics",
+      "source": {
+        "title": "BLS Glossary: Deflation",
+        "url": "https://www.bls.gov/bls/glossary.htm#deflation",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition of \"Deflation\" from the BLS Glossary, U.S. Bureau of Labor Statistics, https://www.bls.gov/bls/glossary.htm#deflation. Public domain (US federal work); source: U.S. Bureau of Labor Statistics.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-065",
+      "term": "Consumer Price Index",
+      "definition": "A measure of the average change over time in the prices paid by urban consumers for a market basket of consumer goods and services.",
+      "area": "Economics",
+      "source": {
+        "title": "BLS Glossary: Consumer Price Index",
+        "url": "https://www.bls.gov/bls/glossary.htm#consumer-price-index",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition of \"Consumer Price Index\" from the BLS Glossary, U.S. Bureau of Labor Statistics, https://www.bls.gov/bls/glossary.htm#consumer-price-index. Public domain (US federal work); source: U.S. Bureau of Labor Statistics.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-066",
+      "term": "GDP (gross domestic product)",
+      "definition": "Market value of all goods and services produced within a country in a given period.",
+      "area": "Economics",
+      "source": {
+        "title": "BLS Glossary: GDP (gross domestic product)",
+        "url": "https://www.bls.gov/bls/glossary.htm#gdp-gross-domestic-product",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition of \"GDP (gross domestic product)\" from the BLS Glossary, U.S. Bureau of Labor Statistics, https://www.bls.gov/bls/glossary.htm#gdp-gross-domestic-product. Public domain (US federal work); source: U.S. Bureau of Labor Statistics.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-067",
+      "term": "Business cycle",
+      "definition": "Timeline of periods of growth and decline in an economy.",
+      "area": "Economics",
+      "source": {
+        "title": "BLS Glossary: Business cycle",
+        "url": "https://www.bls.gov/bls/glossary.htm#business-cycle",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition of \"Business cycle\" from the BLS Glossary, U.S. Bureau of Labor Statistics, https://www.bls.gov/bls/glossary.htm#business-cycle. Public domain (US federal work); source: U.S. Bureau of Labor Statistics.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-068",
+      "term": "Purchasing Power",
+      "definition": "The amount of goods and services that can be purchased by a given unit of currency, taking into account the effect of inflation.",
+      "area": "Economics",
+      "source": {
+        "title": "Investor.gov Glossary: Purchasing Power",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/purchasing-power",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Purchasing Power,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/purchasing-power. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-069",
+      "term": "data visualization",
+      "definition": "A visual representation on data that can also be used to compose traditional bar, pie, tables and line charts.",
+      "area": "Information Management",
+      "source": {
+        "title": "Communication: Fundamentals for the Workplace, glossary",
+        "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/chapter/12-6-the-infographic/",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"data visualization\" from the glossary of Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College, https://pressbooks.atlanticoer-relatlantique.ca/comm1205/chapter/12-6-the-infographic/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-070",
+      "term": "Metadata",
+      "definition": "Information describing some object or resource.",
+      "area": "Information Management",
+      "source": {
+        "title": "BLS Glossary: Metadata",
+        "url": "https://www.bls.gov/bls/glossary.htm#metadata",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition of \"Metadata\" from the BLS Glossary, U.S. Bureau of Labor Statistics, https://www.bls.gov/bls/glossary.htm#metadata. Public domain (US federal work); source: U.S. Bureau of Labor Statistics.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-071",
+      "term": "inventory",
+      "definition": "Total goods in stock at any one time.",
+      "area": "Operations",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-inventory",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"inventory\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-inventory. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-072",
+      "term": "Procurement",
+      "definition": "The process of obtaining goods and services from providers who are outside of the organization.",
+      "area": "Operations",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-procurement",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Procurement\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-procurement. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-073",
+      "term": "inform",
+      "definition": "Providing the necessary information to help receiver make decision or solve problem.",
+      "area": "Communications",
+      "source": {
+        "title": "Communication: Fundamentals for the Workplace, glossary",
+        "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"inform\" from the glossary of Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College, https://pressbooks.atlanticoer-relatlantique.ca/comm1205/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-074",
+      "term": "active listening",
+      "definition": "Complex process of receiving, understanding and responding to verbal and non-verbal cues.",
+      "area": "Communications",
+      "source": {
+        "title": "Communication: Fundamentals for the Workplace, glossary",
+        "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"active listening\" from the glossary of Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College, https://pressbooks.atlanticoer-relatlantique.ca/comm1205/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-075",
+      "term": "Customer orientation",
+      "definition": "Positioning a business or organization so that customer interests and value are the highest priority.",
+      "area": "Customer Relations",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-customer-orientation",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Customer orientation\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-customer-orientation. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-076",
+      "term": "Service recovery",
+      "definition": "What happens when a customer service professional takes actions that result in the customer being satisfied after a service failure has occurred.",
+      "area": "Customer Relations",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-service-recovery",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Service recovery\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-service-recovery. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "fin-v-077",
+      "term": "Customer satisfaction",
+      "definition": "Actual performance minus expected performance for an offering",
+      "area": "Customer Relations",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-customer-satisfaction",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Customer satisfaction\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-customer-satisfaction. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    }
+  ]
+}

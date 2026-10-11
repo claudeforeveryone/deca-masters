@@ -1,0 +1,588 @@
+{
+  "slug": "hospitality-tourism",
+  "title": "Hospitality + Tourism Cluster Exam",
+  "cluster": "hospitality-tourism",
+  "status": "sourced",
+  "blurb": "Practice questions reused from two openly licensed textbooks: an open BC tourism and hospitality textbook (tourism, events, risk, law, safety) and an open customer-service textbook (handling upset customers, goal setting).",
+  "disclaimer": "Questions reused from openly licensed sources (credited on each question). Not official DECA exam content.",
+  "builtAt": "2026-10-11",
+  "coverageNote": "Built only from non-OpenStax sources mapped in SOURCES.md 5.5; 81 OpenStax items stay in _hold-openstax/exams/hospitality-tourism.json until OpenStax grants permission. This is a short practice set, not a full 100-item exam, and it does not follow the blueprint mix. Areas with no item here: Information Management (blueprint 14/15/15), Financial Analysis, Selling, Economics, Communications, Strategic Management, Human Resources Management, Marketing, Pricing, Quality Management and Knowledge Management. Operations has 1 item (workplace safety), with no lodging or food-service items. Customer Relations items come from a customer-contact-centre context. Several BC items are Canada- or BC-specific (WorkSafeBC, TIAC, Destination Canada, Canadian tort law). Difficulty was estimated by reading each item. Choices keep the source order, and H5P Single Choice Sets always list the key first, so keys are uneven: A 9, B 0, C 6, D 4. No item has an \"all/none of the above\" option, so the app can shuffle choices safely. Verification on 2026-10-11 removed 5 items (see verification.notes), leaving 19.",
+  "areaCounts": {
+    "Operations": 1,
+    "Emotional Intelligence": 1,
+    "Customer Relations": 5,
+    "Professional Development": 2,
+    "Product/Service Management": 3,
+    "Business Law": 3,
+    "Promotion": 1,
+    "Market Planning": 1,
+    "Risk Management": 2
+  },
+  "sources": [
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition (BCcampus Open Education)",
+      "authors": "Wendy Anderson and Morgan Westcott (Editors)",
+      "url": "https://opentextbc.ca/introtourism2e/",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "licenceEvidence": "Book home page, checked 2026-10-11: \"Introduction to Tourism and Hospitality in BC - 2nd Edition Copyright © 2015, 2020, 2021 by Morgan Westcott and Wendy Anderson is licensed under a Creative Commons Attribution 4.0 International License, except where otherwise noted.\"",
+      "attribution": "Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "items": 13,
+      "keyFrom": "H5P activity data (MultiChoice \"correct\" flag; SingleChoiceSet first answer)",
+      "flags": [
+        "H5P sub-questions in activity 6, and activities 25 and 54, carry licence metadata \"U\" (undisclosed); the parent activity 6 is tagged CC BY 4.0, and all fall under the book’s \"except where otherwise noted\" CC BY 4.0 statement.",
+        "Canadian/BC-specific content (BC and Canadian agencies, Canadian tort law).",
+        "Source typos kept as published (\"a outbound\", \"injuried\", \"worplace\", \"ulitimate\")."
+      ],
+      "questions": 13
+    },
+    {
+      "title": "Customer Centric Strategy, 2nd Edition (eCampusOntario Pressbooks)",
+      "authors": "Kerri Shields",
+      "url": "https://ecampusontario.pressbooks.pub/customercentricstrategy2/",
+      "licence": "CC BY-NC-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "licenceEvidence": "Book home page and both cited chapter pages, checked 2026-10-11: \"Customer Centric Strategy, 2nd Edition Copyright © 2024 by Kerri Shields is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.\"",
+      "attribution": "Customer Centric Strategy, 2nd Edition by Kerri Shields is licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "questions": 6,
+      "keyFrom": "H5P activity data (MultiChoice \"correct\" flag)",
+      "flags": [
+        "Non-commercial (NC): allowed only while DECA Masters stays free and non-commercial.",
+        "ShareAlike (SA): any adapted item must be shared under CC BY-NC-SA 4.0. No item from this book was adapted.",
+        "SOURCES.md (2.4, 5.5) maps \"Customer Centric Strategy 1e (Shields)\" (LibreTexts copy, CC BY-NC-SA 4.0, \"MC not checked\"). These items come from the 2nd edition on the original publisher’s Pressbooks site (same author and licence), which hosts the H5P self-checks. Add the 2nd edition to SOURCES.md.",
+        "H5P activities 3 and 5 carry licence metadata \"U\" (undisclosed); they fall under the book’s \"except where otherwise noted\" CC BY-NC-SA 4.0 statement. No AI-use condition appears on the book’s pages.",
+        "The book’s test bank (76 MC, 2nd edition) is not in the public repository files (only slides are) and was not used.",
+        "The Chapter 4 quiz is a comprehension check on a third-party, all-rights-reserved video the chapter links (\"How to Deal With Angry Customers\", Userlike, 2020; transcript PDF hosted with the book). The quiz does not credit the video, and four of its items restate the transcript’s own sentences; those four (ht-103 to ht-106) were removed in verification. The kept Chapter 4 items (ht-098 to ht-102) do not use the transcript’s wording.",
+        "Source typos kept as published (\"abour\")."
+      ]
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, H5P activity \"Chapter 11: Occupational Health and Safety\"",
+      "url": "https://opentextbc.ca/introtourism2e/chapter/occupational-health-and-safety-in-tourism/",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, H5P activity \"Conflict Resolution\"",
+      "url": "https://opentextbc.ca/introtourism2e/chapter/integrating-planning-with-education-and-experience/",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, H5P activity \"Chapter 1 History and Overview.\"",
+      "url": "https://opentextbc.ca/introtourism2e/chapter/1-conclusion/",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, H5P activity \"Chapter 6: Cultural Tourism\"",
+      "url": "https://opentextbc.ca/introtourism2e/chapter/attractions/",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, H5P activity \"Chapter 7 Travel Services Key Travel Services\"",
+      "url": "https://opentextbc.ca/introtourism2e/chapter/components-of-travel-services/",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition",
+      "url": "https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, H5P activity \"Chapter 11: Risk Management Process\"",
+      "url": "https://opentextbc.ca/introtourism2e/chapter/risk-management-process/",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Customer Centric Strategy, 2nd Edition, H5P activity \"Chapter 4 - Angry Customers Quiz\"",
+      "url": "https://ecampusontario.pressbooks.pub/customercentricstrategy2/chapter/chapter-4-working-in-a-customer-contact-center/",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Customer Centric Strategy, 2nd Edition by Kerri Shields is licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://ecampusontario.pressbooks.pub/customercentricstrategy2/"
+    },
+    {
+      "title": "Customer Centric Strategy, 2nd Edition, H5P activity \"Chapter 3 - SMART Goals Quiz\"",
+      "url": "https://ecampusontario.pressbooks.pub/customercentricstrategy2/chapter/chapter-3-managing-a-customer-service-team/",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Customer Centric Strategy, 2nd Edition by Kerri Shields is licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://ecampusontario.pressbooks.pub/customercentricstrategy2/"
+    }
+  ],
+  "questions": [
+    {
+      "id": "ht-016",
+      "area": "Operations",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "This organization promotes the prevention of worplace injury, rehabilitates those who are injured at work and provides compensation to replace workers loss of wages while recovering from injury.",
+      "choices": [
+        "Go2HR",
+        "TIABC",
+        "WorkSafeBC",
+        "Tourism Vancouver"
+      ],
+      "answer": 2,
+      "explanation": "Section 11.5 Occupational Health and Safety in Tourism: \"WorkSafeBC is the provincial organization for occupational health and safety in BC.\" Its mandate is to \"Promote the prevention of workplace injury, illness, and disease\", \"Rehabilitate those who are injured and provide timely return to work\" and \"Provide fair compensation to replace workers’ loss of wages while recovering from injuries\".",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, H5P activity \"Chapter 11: Occupational Health and Safety\"",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/occupational-health-and-safety-in-tourism/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 11: Occupational Health and Safety\" by Blake Rowsell in Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/occupational-health-and-safety-in-tourism/. Used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ht-029",
+      "area": "Emotional Intelligence",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "In workplace conflicts the ultimate goal is to:",
+      "choices": [
+        "Jump to conclusions",
+        "Play favourites",
+        "Find a solution",
+        "Give away something at no charge"
+      ],
+      "answer": 2,
+      "explanation": "Activity feedback: \"Correct! The ulitimate goal is to find a solution.\" Section 13.3: \"In most conflicts, the ultimate goal must be to find a resolution. Avoiding or ignoring conflict is not an effective strategy.\"",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, H5P activity \"Conflict Resolution\"",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/integrating-planning-with-education-and-experience/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Conflict Resolution\" in Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/integrating-planning-with-education-and-experience/. Used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection. Adapted: cut from 5 to 4 choices by removing one incorrect option (Figure out who to blame).",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ht-098",
+      "area": "Customer Relations",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "An angry or upset customer needs or wants to _____________.",
+      "choices": [
+        "be acknowledged",
+        "get what they can for free",
+        "make your day miserable",
+        "speak with the manager"
+      ],
+      "answer": 0,
+      "explanation": "Answer from the book’s Self-Check Exercise \"Dealing with Angry Customers\", which gives no rationale. Review Chapter 4, Working in a Customer Contact Center, and the \"How to Deal With Angry Customers\" video the chapter links.",
+      "source": {
+        "title": "Customer Centric Strategy, 2nd Edition, H5P activity \"Chapter 4 - Angry Customers Quiz\"",
+        "url": "https://ecampusontario.pressbooks.pub/customercentricstrategy2/chapter/chapter-4-working-in-a-customer-contact-center/",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 4 - Angry Customers Quiz\" in Customer Centric Strategy, 2nd Edition by Kerri Shields (eCampusOntario Pressbooks), https://ecampusontario.pressbooks.pub/customercentricstrategy2/chapter/chapter-4-working-in-a-customer-contact-center/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ht-099",
+      "area": "Customer Relations",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "It is important to actively listen to angry customers and use paraphrasing when possible in order to ___________.",
+      "choices": [
+        "show them how nice you are",
+        "keep them calm",
+        "ensure you understand the problem fully",
+        "frustrate the customer"
+      ],
+      "answer": 2,
+      "explanation": "Answer from the book’s Self-Check Exercise \"Dealing with Angry Customers\", which gives no rationale. Review Chapter 4, Working in a Customer Contact Center: \"doing a quality job means actively listening to complaints, calming the situation, and resolving the issue as effectively and efficiently as possible.\"",
+      "source": {
+        "title": "Customer Centric Strategy, 2nd Edition, H5P activity \"Chapter 4 - Angry Customers Quiz\"",
+        "url": "https://ecampusontario.pressbooks.pub/customercentricstrategy2/chapter/chapter-4-working-in-a-customer-contact-center/",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 4 - Angry Customers Quiz\" in Customer Centric Strategy, 2nd Edition by Kerri Shields (eCampusOntario Pressbooks), https://ecampusontario.pressbooks.pub/customercentricstrategy2/chapter/chapter-4-working-in-a-customer-contact-center/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ht-100",
+      "area": "Customer Relations",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Which of the following is an appropriate response to say to an angry or upset customer?",
+      "choices": [
+        "Sorry, I can't help you.",
+        "That's not my problem.",
+        "Why are you yelling at me?",
+        "If you bear with me I will see what we can do for you."
+      ],
+      "answer": 3,
+      "explanation": "Answer from the book’s Self-Check Exercise \"Dealing with Angry Customers\", which gives no rationale. Review Chapter 4, Working in a Customer Contact Center: \"All you can do is remain calm, work diligently, and reassure the customer that you are working in their best interest and trying to solve their issue quickly and effectively.\"",
+      "source": {
+        "title": "Customer Centric Strategy, 2nd Edition, H5P activity \"Chapter 4 - Angry Customers Quiz\"",
+        "url": "https://ecampusontario.pressbooks.pub/customercentricstrategy2/chapter/chapter-4-working-in-a-customer-contact-center/",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 4 - Angry Customers Quiz\" in Customer Centric Strategy, 2nd Edition by Kerri Shields (eCampusOntario Pressbooks), https://ecampusontario.pressbooks.pub/customercentricstrategy2/chapter/chapter-4-working-in-a-customer-contact-center/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ht-101",
+      "area": "Customer Relations",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Sometimes you can quickly calm an angry customer by simply __________.",
+      "choices": [
+        "telling the customer abour your policy",
+        "telling the customer to speak more softly",
+        "listening to the customer",
+        "calling them sweety or honey"
+      ],
+      "answer": 2,
+      "explanation": "Answer from the book’s Self-Check Exercise \"Dealing with Angry Customers\", which gives no rationale. Review Chapter 4, Working in a Customer Contact Center: \"doing a quality job means actively listening to complaints, calming the situation, and resolving the issue as effectively and efficiently as possible.\"",
+      "source": {
+        "title": "Customer Centric Strategy, 2nd Edition, H5P activity \"Chapter 4 - Angry Customers Quiz\"",
+        "url": "https://ecampusontario.pressbooks.pub/customercentricstrategy2/chapter/chapter-4-working-in-a-customer-contact-center/",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 4 - Angry Customers Quiz\" in Customer Centric Strategy, 2nd Edition by Kerri Shields (eCampusOntario Pressbooks), https://ecampusontario.pressbooks.pub/customercentricstrategy2/chapter/chapter-4-working-in-a-customer-contact-center/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ht-102",
+      "area": "Customer Relations",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "How should you respond to an angry customer?",
+      "choices": [
+        "Stay calm, but show the customer you are in control and respond with a firm voice and direct questioning.",
+        "Stay calm, tell the customer that most people do not react this badly.",
+        "Stay calm, tell the customer to settle down and ask \"What can I do so you are not so mad\"?",
+        "Stay calm, act professionally, and don't take criticism personally."
+      ],
+      "answer": 3,
+      "explanation": "Answer from the book’s Self-Check Exercise \"Dealing with Angry Customers\", which gives no rationale. Review Chapter 4, Working in a Customer Contact Center: \"Stay calm under pressure, especially when dealing with angry customers. Your professionalism may be tested when dealing with angry customers\".",
+      "source": {
+        "title": "Customer Centric Strategy, 2nd Edition, H5P activity \"Chapter 4 - Angry Customers Quiz\"",
+        "url": "https://ecampusontario.pressbooks.pub/customercentricstrategy2/chapter/chapter-4-working-in-a-customer-contact-center/",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 4 - Angry Customers Quiz\" in Customer Centric Strategy, 2nd Edition by Kerri Shields (eCampusOntario Pressbooks), https://ecampusontario.pressbooks.pub/customercentricstrategy2/chapter/chapter-4-working-in-a-customer-contact-center/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ht-062",
+      "area": "Professional Development",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "TIAC is the acronym for what organization?",
+      "choices": [
+        "The Tourism Industry Association of Canada",
+        "The Travel Industry Association of Canada",
+        "The Tourist Individual Advocate of Canada",
+        "The Team Canada Industry Association"
+      ],
+      "answer": 0,
+      "explanation": "Section 1.3 Canada Overview: \"Founded in 1930 and based in Ottawa, the Tourism Industry Association of Canada (TIAC) is the national private-sector advocate for the industry.\"",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, H5P activity \"Chapter 1 History and Overview.\"",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/1-conclusion/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 1 History and Overview.\" by Wendy Anderson in Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/1-conclusion/. Used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ht-107",
+      "area": "Professional Development",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Which of these goals is specific? (choose one)",
+      "choices": [
+        "Marina will improve in math.",
+        "Marina will get along with other team members.",
+        "Marina will solve 5 multiplication math questions from the end of chapter 4.",
+        "Marina will practice playing the guitar."
+      ],
+      "answer": 2,
+      "explanation": "Chapter 3, Managing a Customer Service Team, Table 3.1 SMART Goals: S = Specific, \"Make your goals specific and narrow for more effective planning\".",
+      "source": {
+        "title": "Customer Centric Strategy, 2nd Edition, H5P activity \"Chapter 3 - SMART Goals Quiz\"",
+        "url": "https://ecampusontario.pressbooks.pub/customercentricstrategy2/chapter/chapter-3-managing-a-customer-service-team/",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 3 - SMART Goals Quiz\" in Customer Centric Strategy, 2nd Edition by Kerri Shields (eCampusOntario Pressbooks), https://ecampusontario.pressbooks.pub/customercentricstrategy2/chapter/chapter-3-managing-a-customer-service-team/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ht-063",
+      "area": "Product/Service Management",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "George is taking a local trip and staying less than 24 hours. The best term to describe George is:",
+      "choices": [
+        "George is a tourist",
+        "George is a foreign traveler",
+        "George is a outbound tourist",
+        "George is an excursionist"
+      ],
+      "answer": 3,
+      "explanation": "Section 1.1 What is Tourism?: \"Excursionists on the other hand are considered same-day visitors (UNWTO, 2020). Sometimes referred to as “day trippers.”\" By contrast, a tourist is \"someone who travels at least 80 km from his or her home for at least 24 hours, for business or leisure or other reasons\" (LinkBC, 2008, p.8).",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, H5P activity \"Chapter 1 History and Overview.\"",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/1-conclusion/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 1 History and Overview.\" by Wendy Anderson in Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/1-conclusion/. Used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ht-064",
+      "area": "Product/Service Management",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Which of the following are NOT considered Cultural or Heritage Tourism?",
+      "choices": [
+        "Theatre, dance, and music, visual arts and crafts",
+        "Culinary tourism",
+        "Museums and cultural centres",
+        "Recreation centres"
+      ],
+      "answer": 3,
+      "explanation": "Section 6.3 Attractions: cultural/heritage tourism \"includes performing arts (theatre, dance, and music), visual arts and crafts, festivals, museums and cultural centres, and historic sites and interpretive centres\" (LinkBC, 2012), and \"Food is also an integral part of the cultural tourism scene.\" Recreation centres are not on that list.",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, H5P activity \"Chapter 6: Cultural Tourism\"",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/attractions/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 6: Cultural Tourism\" by Blake Rowsell in Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/attractions/. Used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection. Adapted: cut from 5 to 4 choices by removing one incorrect option (Historic sites).",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ht-065",
+      "area": "Product/Service Management",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Which is not a key travel service based on the list in section 7.1 (Components of Travel Services)?",
+      "choices": [
+        "Travel agencies (brick and mortar)",
+        "Online Travel Agencies (OTA)",
+        "Global Distribution System (GDS)",
+        "Tour operators"
+      ],
+      "answer": 2,
+      "explanation": "Section 7.1 Components of Travel Services covers travel agencies, online travel agents (OTAs), tour operators and destination marketing organizations. Global distribution systems are a booking tool, not one of those services: \"Many business travel planners rely on global distribution systems (GDS) to price and plan components. GDS combine information from a group of suppliers, such as airlines.\"",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, H5P activity \"Chapter 7 Travel Services Key Travel Services\"",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/components-of-travel-services/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 7 Travel Services Key Travel Services\" in Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/components-of-travel-services/. Used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection. Adapted: \"Review Question\" label removed, \"section 1 of this chapter\" changed to \"section 7.1 (Components of Travel Services)\", and cut from 5 to 4 choices by removing one incorrect option (Destination marketing organizations (DMO)).",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ht-081",
+      "area": "Business Law",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Which best describes tort law?",
+      "choices": [
+        "body of the law which will allow an injured person to obtain compensation from the person who caused the injury",
+        "body of the law which will allow an injured person to obtain compensation from anyone involved with the incident",
+        "The same as criminal law",
+        "body of the law which will allow companies to obtain compensation from an injuried person"
+      ],
+      "answer": 0,
+      "explanation": "Section 11.3 Laws and Regulations: \"Tort law in Canada refers to the “body of the law which will allow an injured person to obtain compensation from the person who caused the injury” (Tort Law, n.d.).\"",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, H5P activity \"Chapter 11: Tort Law\"",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 11: Tort Law\" by Blake Rowsell in Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/. Used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ht-082",
+      "area": "Business Law",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "What is the purpose of the waiver?",
+      "choices": [
+        "Transfers acceptance of risk",
+        "Allows the operator to do what ever they like",
+        "Transfers the pain of an injury",
+        "Transfers the acceptance of negligence"
+      ],
+      "answer": 0,
+      "explanation": "Section 11.3 Laws and Regulations: \"A waiver is a form of contract that transfers acceptance of the risk to the participants by requiring them to acknowledge the risks present in the activity.\"",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, H5P activity \"Chapter 11: Waivers\"",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 11: Waivers\" by Blake Rowsell in Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/. Used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ht-083",
+      "area": "Business Law",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "To be effective, a waiver should include:",
+      "choices": [
+        "1. Outline the risks 2. Waive the participants right to pursue legal action 3. Be short and easy to read 4. Signed",
+        "1. Outline the risks 2. Waive the participants right to a fair trial 3. Be short and easy to read 4. Signed",
+        "1. Outline the activity 2. Waive the participants right to pursue legal action 3. Be short and easy to read 4. Signed",
+        "1. Outline the risks 2. Waive the participants right to pursue legal action 3. Be signed by a friend 4. Be short and easy to read"
+      ],
+      "answer": 0,
+      "explanation": "Section 11.3 Laws and Regulations lists four components. A waiver \"should clearly outline the risks in the activity\", \"should waive the participant’s right to pursue legal action against the tourism operation in case of negligence\", and \"should be relatively short and easy to read ... and include a place for signature\". Also: \"Current best practices indicate a waiver should not be signed by a friend of the signee or another guest.\"",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, H5P activity \"Chapter 11: Waivers\"",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 11: Waivers\" by Blake Rowsell in Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/. Used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ht-086",
+      "area": "Promotion",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "This crown corporation is responsible for promoting Canadian tourism both in Canada and around the world.",
+      "choices": [
+        "Destination Canada",
+        "Tourism Canada",
+        "Team Canada",
+        "The Canadian Tourism Crown Corporation"
+      ],
+      "answer": 0,
+      "explanation": "Section 1.3 Canada Overview: \"Destination Canada, is a Crown corporation previously known as the Canadian Tourism Commission (CTC). Destination Canada is responsible for promoting Canada in both domestic and foreign markets.\"",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, H5P activity \"Chapter 1 History and Overview.\"",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/1-conclusion/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 1 History and Overview.\" by Wendy Anderson in Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/1-conclusion/. Used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ht-090",
+      "area": "Market Planning",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "What country is Canada's biggest international inbound tourist market?",
+      "choices": [
+        "United States of America",
+        "United Kingdom",
+        "India",
+        "China"
+      ],
+      "answer": 0,
+      "explanation": "Section 1.3 Canada Overview: \"The United States is Canada’s biggest tourism market, which we welcome more than all international travellers combined.\"",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, H5P activity \"Chapter 1 History and Overview.\"",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/1-conclusion/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 1 History and Overview.\" by Wendy Anderson in Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/1-conclusion/. Used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection. Adapted: cut from 6 to 4 choices by removing two incorrect options (Germany, Mexico).",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ht-094",
+      "area": "Risk Management",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Step one the risk management process is:",
+      "choices": [
+        "Risk Identification",
+        "Risk Analysis",
+        "Risk Control",
+        "Risk Treatment"
+      ],
+      "answer": 0,
+      "explanation": "Section 11.2 Risk Management Process: the Destination Canada model for small and medium enterprises \"has four stages: risk identification, risk analysis, risk control, and risk treatment (DC, 2003a).\" \"The initial stage of the risk management process is systematically identifying risks facing the organization.\"",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, H5P activity \"Chapter 11: Risk Management Process\"",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/risk-management-process/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 11: Risk Management Process\" by Blake Rowsell in Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/risk-management-process/. Used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ht-095",
+      "area": "Risk Management",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Step two the risk management process is:",
+      "choices": [
+        "Risk Analysis",
+        "Risk Identification",
+        "Risk Control",
+        "Risk Treatment"
+      ],
+      "answer": 0,
+      "explanation": "Section 11.2 Risk Management Process: the model \"has four stages: risk identification, risk analysis, risk control, and risk treatment (DC, 2003a).\" \"A typical risk analysis compares the probability (frequency) of any risks occurring by the consequence (severity) if they do occur.\"",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, H5P activity \"Chapter 11: Risk Management Process\"",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/risk-management-process/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 11: Risk Management Process\" by Blake Rowsell in Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/risk-management-process/. Used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    }
+  ],
+  "verification": {
+    "verifiedAt": "2026-10-11",
+    "removed": 5,
+    "fixed": 1,
+    "notes": [
+      "Method: each of the 24 items was solved before its key was read. On 2026-10-11 the verifier fetched every cited chapter page (8 BC, 2 Customer Centric Strategy) and the H5P data for every cited activity through each book’s h5p_embed endpoint (BC ids 6, 19, 25, 39, 40, 41, 42, 44, 54; CCS ids 3, 5). Stems, choices and keys were compared word for word, and the licence statement was confirmed on every cited page: BC CC BY 4.0 and CCS CC BY-NC-SA 4.0, both \"except where otherwise noted\". The BC home page’s required attribution (\"...by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.\") matches the attribution lines.",
+      "All 24 items matched their H5P source word for word, typos included, and every key matched the H5P correct flag or the SingleChoiceSet first answer. Activity titles and H5P authors in the attribution lines match the H5P metadata. The trims on ht-029, ht-064, ht-065 and ht-090 removed only options the source marks wrong: \"Figure out who to blame\", \"Historic sites\", \"Destination marketing organizations (DMO)\" (section 7.1 lists DMOs), and Germany and Mexico.",
+      "Removed ht-097 (carbon offsetting) as ambiguous. A and B differ only in \"standardized, regulated\" versus \"unregulated\". The book’s own glossary defines carbon offsetting as \"A market-based system that provides options for organizations to invest in green initiatives to offset their own carbon emissions\", with no claim of regulation, and voluntary offset markets are widely described as unregulated. B is therefore defensible, and the source cannot fix the key.",
+      "Removed ht-103, ht-104, ht-105 and ht-106 (CCS Chapter 4 quiz) on licence grounds. The build flag \"Nothing from the video or its transcript is used here\" was wrong. The quiz follows the Userlike video \"How to Deal With Angry Customers\", which is all rights reserved (transcript: https://ecampusontario.pressbooks.pub/app/uploads/sites/3453/2023/07/How-to-Deal-with-Angry-Customers-Transcript.pdf). These four items turn transcript sentences into the stem and key. ht-103: \"dealing with angry customers on a regular basis is tough on your well-being. It can even lead to burnout.\" ht-104: \"It will only make them feel like you're not understanding their view or taking them seriously.\" ht-105: \"calming the customer down should be your first priority. Focus on handling the person first and then the issue.\" ht-106 reuses the washing-machine phone example and \"I'm sorry your phone stopped working. I understand that this is very frustrating for you. This lets you apologize for the situation and show compassion but not take any of the blame.\" The book does not credit this wording to the video, so the expression traces to an all-rights-reserved source, not to the CC BY-NC-SA book.",
+      "Kept CCS items checked against the same transcript: ht-098, ht-099, ht-100, ht-101 and ht-102 cover the same topics but in wording that does not appear in it. ht-107 was checked against the transcript of the Chapter 3 SMART-goals video (21-SMART-Goals-Transcript.pdf), and its goal examples do not appear there.",
+      "Fixed 1: in ht-107’s explanation, the Table 3.1 cell reads \"Make your goals specific and narrow for more effective planning\" with no full stop, so the period now sits outside the quote.",
+      "Kept after a close look. ht-099: active listening can also calm a customer, but paraphrasing exists to check understanding, so C is the single best answer (source key). ht-082: D, \"Transfers the acceptance of negligence\", is a distractor, since section 11.3 states the purpose as \"transfers acceptance of the risk\". ht-063: the book defines a tourist as staying at least 24 hours and an excursionist as a same-day visitor, so D is the only fit. ht-065: section 7.1’s list names travel agencies, OTAs, tour operators and DMOs, while GDS appears later in 7.1 as a booking tool, so only C fits. App users cannot see the book list, so the explanation carries that context. ht-016: go2HR does safety promotion but not rehabilitation or wage compensation, so only WorkSafeBC fits all three clauses.",
+      "Quote check: every quoted passage in the 19 kept explanations was found verbatim in the source. ht-062, ht-063, ht-086 and ht-090 quote sections 1.1 (https://opentextbc.ca/introtourism2e/chapter/what-is-tourism/) and 1.3 (https://opentextbc.ca/introtourism2e/chapter/canada-overview/), not the 1.6 Conclusion page that hosts the H5P activity named in source.url. The explanations name those sections. The \"Correct! ...\" quote in ht-029 is the activity’s own feedback text, found in the H5P data.",
+      "Duplicates: none within this file. Seven items are shared with other exams on purpose, and that sharing was left alone: ht-016, ht-029, ht-081, ht-082, ht-083, ht-094 and ht-095 also appear in business-management.json (bma-100, bma-101, bma-079, bma-085, bma-099, bma-084, bma-098), and ht-016, ht-094 and ht-095 in entrepreneurship.json (ent-096, ent-097, ent-098).",
+      "Metadata updated to match: areaCounts, coverageNote (Operations now 1 item; key positions A 9 / B 0 / C 6 / D 4), source question counts (BC 13, CCS 6), the BC flags (activity 39 is no longer used, and the \"explaination\" typo is gone) and the corrected CCS video flag. 19 questions remain."
+    ],
+    "buildCheck": [
+      "The 13 BC tourism items carried over from the earlier build (ht-016, 029, 062, 063, 064, 065, 081, 082, 083, 086, 090, 094, 095) are unchanged. That build’s verifier solved each one, checked the wording against the H5P data, the keys against the H5P correct flag or SingleChoiceSet first answer, every trim and the CC BY 4.0 statement on each cited page, and confirmed every quote in the explanations.",
+      "New items (ht-097 to ht-107) were extracted by script from each activity’s H5P data (admin-ajax h5p_embed), with stems and choices kept word for word and keys taken from the H5P correct flag. Each has exactly 4 choices and one keyed answer, so nothing was trimmed or adapted. Every quote in their explanations appears verbatim on the cited chapter page.",
+      "ht-097: the key matches the definition in section 10.5 word for word. ht-107: the key matches Table 3.1 (\"Make your goals specific and narrow\"). ht-098 to ht-106: keyed by the source; each was read for a single defensible best answer.",
+      "Left out, BC book: H5P 40 steps three and four (same four-option list as ht-094/095, so they would only repeat it); H5P 39 \"Waste Management\" (section 10.5 does not treat \"Locally sourced produce\" or \"Carbon offsetting\" as waste-management strategies, so more than one choice is defensible); H5P 39 \"Water Conservation\" (the stem says \"25% of Canada is fresh water\" where section 10.5 says BC holds 25% of Canada’s fresh water, and the options include \"Is it not\" and a real brand).",
+      "Left out, Customer Centric Strategy: H5P 3 \"SMART Goals Measurable\", because the activity keys \"The goal includes a deadline for completion\", which contradicts the book’s Table 3.1 (Measurable: \"Determine what evidence will prove you are making progress\"; the end date belongs to Timebound). It was not re-keyed, because the rule is to use the source’s key. Also left out: H5P 5 \"cognitive distancing\", because the book never defines the term and more than one option could be read as a distancing technique.",
+      "Not usable under the 4-choice, one-answer schema: the multi-answer items (CCS H5P 2 and the three \"How SMART is this goal?\" items in H5P 3; BC H5P 6 UNWTO travel-trends item, 15, 48, 51, 53), the 3-option items (BC 17, 20, 21, 24, 43) and the true/false items. The culinary series (food safety, kitchen management, HR in food service) has no H5P activities and no MC.",
+      "IDs: the kept items keep their ids, and new items start at ht-097, so nothing collides with the held OpenStax ids (ht-001 to ht-096) if those items are cleared later."
+    ]
+  }
+}

@@ -1,0 +1,2486 @@
+{
+  "slug": "personal-financial-literacy",
+  "title": "Personal Financial Literacy Exam",
+  "cluster": "personal-finance",
+  "status": "sourced",
+  "blurb": "Practice questions for the Personal Financial Literacy exam, reused from public-domain U.S. government sources: the SEC's Investor.gov investing quizzes and the FDIC's Money Smart for Adults answer keys.",
+  "disclaimer": "Questions reused from openly licensed sources (credited on each question). Not official DECA exam content.",
+  "coverageNote": "Areas follow the DECA Personal Financial Literacy blueprint (Earning Income, Spending, Saving, Investing, Managing Credit, Managing Risk). The open sources lean heavily on investing and fraud, so Earning Income (2), Spending (5) and Managing Credit (9) are thin, and insurance has 1 item. No source item was written or reworded to fill those gaps. Investor.gov quiz items keep their wording; their \"Q1.\"-style question numbers were dropped for display, which is not counted as an adaptation.",
+  "checkedAt": "2026-10-11",
+  "sources": [
+    {
+      "id": "investor-gov-quizzes",
+      "title": "Investing Quizzes (Investor.gov Spotlight)",
+      "publisher": "U.S. Securities and Exchange Commission, Office of Investor Education and Assistance",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "licenceEvidence": [
+        {
+          "url": "https://www.investor.gov/disclaimer",
+          "quote": "The Office of Investor Education and Assistance has provided this information as a service to investors. ... Paid for by the U.S. Securities and Exchange Commission."
+        },
+        {
+          "url": "https://www.sec.gov/about/privacy-information",
+          "quote": "Information presented on sec.gov is considered public information and may be copied or further distributed by users of the web site without the SEC's permission. ... Please consider appropriate citation to the SEC as the source."
+        }
+      ],
+      "notes": "US federal work (17 U.S.C. 105). No copyright notice appears on any quiz page. Do not use the SEC seal or logos, and do not imply SEC endorsement. 54 quiz pages were parsed (found through the Investor.gov sitemap); 136 unique items have 4 options, the rest are true/false or 3-option and were not used. No item cites the rotating quiz index page: the one item first taken from the October 2026 quiz (shown only on the index page) also appears, identically, as question 5 of the January 2026 quiz, which is cited instead.",
+      "attributionTemplate": "Question from \"<quiz title>,\" Investor.gov, U.S. Securities and Exchange Commission, <quiz URL>. Public domain (US federal work).",
+      "questionsUsed": 76
+    },
+    {
+      "id": "fdic-money-smart-adults",
+      "title": "Money Smart for Adults (September 2018), Instructor Guides, Modules 3, 4, 6, 8, 9, 11, 12 and 13",
+      "publisher": "Federal Deposit Insurance Corporation",
+      "url": "https://www.fdic.gov/consumer-resource-center/money-smart-adults",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Money Smart for Adults (September 2018), Instructor Guides, Modules 3, 4, 6, 8, 9, 11, 12 and 13, Federal Deposit Insurance Corporation, https://www.fdic.gov/consumer-resource-center/money-smart-adults. Public domain (US federal work).",
+      "licenceEvidence": [
+        {
+          "url": "https://www.fdic.gov/news/financial-institution-letters/2001/fil0158.html",
+          "quote": "You may also make your own copies of the material. The Money Smart training modules can be easily reproduced and have no copyright restrictions."
+        },
+        {
+          "url": "https://www.fdic.gov/consumer-resource-center/money-smart-adults",
+          "quote": "The Federal Deposit Insurance Corporation is an independent agency created by the Congress to maintain stability and public confidence in the nation's financial system. One way we do that is by providing free, non-biased financial education materials, including this Instructor Guide. (front matter of each Instructor Guide PDF linked from this page)"
+        }
+      ],
+      "notes": "US federal agency work with no copyright notice in the 2018 guides. The explicit \"no copyright restrictions\" statement (FIL-58-2001) was written about the 2001 edition, so confidence is medium to high. Credit the FDIC; do not use the FDIC name or logo to imply endorsement. Only single-answer items were used; true/false and choose-all items were skipped. Item URLs point to the Instructor Guide PDF download links on the FDIC catalog.",
+      "attributionTemplate": "Question from \"Answer Key for Both the Pre- and Post-Training Surveys\" (question <n>) in Money Smart for Adults, Module <n>: <name>, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, <PDF URL>. Public domain (US federal work).",
+      "questionsUsed": 15,
+      "documents": [
+        {
+          "title": "Module 3: Your Income and Expenses, Instructor Guide (September 2018)",
+          "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgwmAAB"
+        },
+        {
+          "title": "Module 4: Your Spending and Saving Plan, Instructor Guide (September 2018)",
+          "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgyIAAR"
+        },
+        {
+          "title": "Module 6: Credit Reports and Scores, Instructor Guide (September 2018)",
+          "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgyXAAR"
+        },
+        {
+          "title": "Module 8: Managing Debt, Instructor Guide (September 2018)",
+          "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000Bcgt9AAB"
+        },
+        {
+          "title": "Module 9: Using Credit Cards, Instructor Guide (September 2018)",
+          "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgzBAAR"
+        },
+        {
+          "title": "Module 11: Protecting Your Identity and Other Assets, Instructor Guide (September 2018)",
+          "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgzkAAB"
+        },
+        {
+          "title": "Module 12: Making Housing Decisions, Instructor Guide (September 2018)",
+          "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000Bch04AAB"
+        },
+        {
+          "title": "Module 13: Buying a Home, Instructor Guide (September 2018)",
+          "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000Bch0JAAR"
+        }
+      ]
+    },
+    {
+      "title": "Investing Quiz - January 2026",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2026-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz – April 2023",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/April-2023-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz - April 2025",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/april-2025",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "August (2021) Quiz",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2021-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz – August 2026",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/August-2026-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Back-to-School Investing Quiz",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/back-to-school-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Compound Interest Quiz",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/compound-interest-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz – December 2022",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2022-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz - Financial Independence",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/financial-independence-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz - January 2025",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2025-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz - August 2023",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/August-2023-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz - August 2025",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2025-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz - December 2024",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2024-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "February (2026) Quiz",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2026-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "HoweyTrade Investing Quiz",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/howeytrade",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz - January 2022",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2022-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "July (2021) Quiz",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/july-2021-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "July (2022) Quiz",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/july-2022-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz – June 2022",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/june-2022-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz - June 2023",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/June-2023-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz - March 2022",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/march-2022-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Mutual Funds and ETFs – Investing Quiz",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz - November 2021",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/november-2021-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "World Investor Week Investing Quiz",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/wiw-2024",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz – February 2024",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2024-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz - December 2021",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2021-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz - February 2022",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2022-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz – February 2023",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2023-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz – June 2026",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/june-2026-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz – May 2024",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/may-2024-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz - Relationship Investment Scams",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/relationship-investment-scams",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz - September 2021",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/september-2021-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Money Smart for Adults, Module 3: Your Income and Expenses, Instructor Guide (September 2018)",
+      "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgwmAAB",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Money Smart for Adults (September 2018), Instructor Guides, Modules 3, 4, 6, 8, 9, 11, 12 and 13, Federal Deposit Insurance Corporation, https://www.fdic.gov/consumer-resource-center/money-smart-adults. Public domain (US federal work).",
+      "partOf": "https://www.fdic.gov/consumer-resource-center/money-smart-adults"
+    },
+    {
+      "title": "Money Smart for Adults, Module 4: Your Spending and Saving Plan, Instructor Guide (September 2018)",
+      "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgyIAAR",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Money Smart for Adults (September 2018), Instructor Guides, Modules 3, 4, 6, 8, 9, 11, 12 and 13, Federal Deposit Insurance Corporation, https://www.fdic.gov/consumer-resource-center/money-smart-adults. Public domain (US federal work).",
+      "partOf": "https://www.fdic.gov/consumer-resource-center/money-smart-adults"
+    },
+    {
+      "title": "Money Smart for Adults, Module 12: Making Housing Decisions, Instructor Guide (September 2018)",
+      "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000Bch04AAB",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Money Smart for Adults (September 2018), Instructor Guides, Modules 3, 4, 6, 8, 9, 11, 12 and 13, Federal Deposit Insurance Corporation, https://www.fdic.gov/consumer-resource-center/money-smart-adults. Public domain (US federal work).",
+      "partOf": "https://www.fdic.gov/consumer-resource-center/money-smart-adults"
+    },
+    {
+      "title": "Money Smart for Adults, Module 13: Buying a Home, Instructor Guide (September 2018)",
+      "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000Bch0JAAR",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Money Smart for Adults (September 2018), Instructor Guides, Modules 3, 4, 6, 8, 9, 11, 12 and 13, Federal Deposit Insurance Corporation, https://www.fdic.gov/consumer-resource-center/money-smart-adults. Public domain (US federal work).",
+      "partOf": "https://www.fdic.gov/consumer-resource-center/money-smart-adults"
+    },
+    {
+      "title": "Money Smart for Adults, Module 6: Credit Reports and Scores, Instructor Guide (September 2018)",
+      "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgyXAAR",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Money Smart for Adults (September 2018), Instructor Guides, Modules 3, 4, 6, 8, 9, 11, 12 and 13, Federal Deposit Insurance Corporation, https://www.fdic.gov/consumer-resource-center/money-smart-adults. Public domain (US federal work).",
+      "partOf": "https://www.fdic.gov/consumer-resource-center/money-smart-adults"
+    },
+    {
+      "title": "Money Smart for Adults, Module 8: Managing Debt, Instructor Guide (September 2018)",
+      "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000Bcgt9AAB",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Money Smart for Adults (September 2018), Instructor Guides, Modules 3, 4, 6, 8, 9, 11, 12 and 13, Federal Deposit Insurance Corporation, https://www.fdic.gov/consumer-resource-center/money-smart-adults. Public domain (US federal work).",
+      "partOf": "https://www.fdic.gov/consumer-resource-center/money-smart-adults"
+    },
+    {
+      "title": "Money Smart for Adults, Module 9: Using Credit Cards, Instructor Guide (September 2018)",
+      "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgzBAAR",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Money Smart for Adults (September 2018), Instructor Guides, Modules 3, 4, 6, 8, 9, 11, 12 and 13, Federal Deposit Insurance Corporation, https://www.fdic.gov/consumer-resource-center/money-smart-adults. Public domain (US federal work).",
+      "partOf": "https://www.fdic.gov/consumer-resource-center/money-smart-adults"
+    },
+    {
+      "title": "Money Smart for Adults, Module 11: Protecting Your Identity and Other Assets, Instructor Guide (September 2018)",
+      "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgzkAAB",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Money Smart for Adults (September 2018), Instructor Guides, Modules 3, 4, 6, 8, 9, 11, 12 and 13, Federal Deposit Insurance Corporation, https://www.fdic.gov/consumer-resource-center/money-smart-adults. Public domain (US federal work).",
+      "partOf": "https://www.fdic.gov/consumer-resource-center/money-smart-adults"
+    }
+  ],
+  "questions": [
+    {
+      "id": "pfl-001",
+      "area": "Earning Income",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "What is a 401(k) plan?",
+      "choices": [
+        "Retirement savings plan sponsored by an employer",
+        "Type of insurance policy",
+        "Type of loan",
+        "Type of bank account"
+      ],
+      "answer": 0,
+      "explanation": "A 401(k) plan is an employer-sponsored retirement savings plan that gives employees a choice of investment options. Employer-sponsored retirement plans generally fall into two categories: defined contribution plans and defined benefit plans. A defined contribution plan, such as a 401(k) plan, does not promise you a specific payment upon retirement. In these plans, you or your employer (or both) contribute to your individual account under the plan. A defined benefit plan promises you a specified monthly benefit at retirement. The benefit may be a fixed dollar amount or may depend on a plan formula that considers factors such as salary and years of service.",
+      "source": {
+        "title": "Investing Quiz - January 2026 (question 5)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2026-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - January 2026,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2026-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-002",
+      "area": "Earning Income",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Paycheck deductions may include:",
+      "choices": [
+        "Withholding for federal income taxes",
+        "Social Security",
+        "Medicare",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Keyed answer from the FDIC answer key for this module's pre- and post-training survey. The answer key gives no written explanation; the topic is covered in Money Smart for Adults Module 3, \"Your Income and Expenses\".",
+      "source": {
+        "title": "Money Smart for Adults, Module 3: Your Income and Expenses, Instructor Guide (September 2018), survey question 5",
+        "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgwmAAB",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Answer Key for Both the Pre- and Post-Training Surveys\" (question 5) in Money Smart for Adults, Module 3: Your Income and Expenses, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgwmAAB. Public domain (US federal work). Adapted: cut from 6 options to 4 by removing two options that are not the key (\"Health Insurance\" and \"None of the above\"); \"All of the above\" remains the keyed answer.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-003",
+      "area": "Spending",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "A spending and saving plan:",
+      "choices": [
+        "Records the value of your assets",
+        "Tells you which bills to pay first if you can't afford to pay them all",
+        "Lists your income and expenses",
+        "Should not include gifts that you receive or give to others"
+      ],
+      "answer": 2,
+      "explanation": "Keyed answer from the FDIC answer key for this module's pre- and post-training survey. The answer key gives no written explanation; the topic is covered in Money Smart for Adults Module 4, \"Your Spending and Saving Plan\".",
+      "source": {
+        "title": "Money Smart for Adults, Module 4: Your Spending and Saving Plan, Instructor Guide (September 2018), survey question 2",
+        "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgyIAAR",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Answer Key for Both the Pre- and Post-Training Surveys\" (question 2) in Money Smart for Adults, Module 4: Your Spending and Saving Plan, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgyIAAR. Public domain (US federal work). Adapted: cut from 6 options to 4 by removing the wrong options \"All of the above\" and \"None of the above\".",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-004",
+      "area": "Spending",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "When you don't have enough money to pay all of your bills on time:",
+      "choices": [
+        "Prioritize which bills to pay in full, in part or late based on what will happen if you don't pay the bill",
+        "Ignore the people you owe until you are able to pay",
+        "Hold off on paying any of your bills until you can pay them all",
+        "All of the above."
+      ],
+      "answer": 0,
+      "explanation": "Keyed answer from the FDIC answer key for this module's pre- and post-training survey. The answer key gives no written explanation; the topic is covered in Money Smart for Adults Module 4, \"Your Spending and Saving Plan\".",
+      "source": {
+        "title": "Money Smart for Adults, Module 4: Your Spending and Saving Plan, Instructor Guide (September 2018), survey question 3",
+        "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgyIAAR",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Answer Key for Both the Pre- and Post-Training Surveys\" (question 3) in Money Smart for Adults, Module 4: Your Spending and Saving Plan, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgyIAAR. Public domain (US federal work). Adapted: cut from 5 options to 4 by removing the wrong option \"None of the above\".",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-005",
+      "area": "Spending",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "If you spend more than your income can support, look for ways to:",
+      "choices": [
+        "Increase your income",
+        "Decrease your expenses",
+        "Increase your expenses",
+        "Both a and b"
+      ],
+      "answer": 3,
+      "explanation": "Keyed answer from the FDIC answer key for this module's pre- and post-training survey. The answer key gives no written explanation; the topic is covered in Money Smart for Adults Module 4, \"Your Spending and Saving Plan\".",
+      "source": {
+        "title": "Money Smart for Adults, Module 4: Your Spending and Saving Plan, Instructor Guide (September 2018), survey question 4",
+        "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgyIAAR",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Answer Key for Both the Pre- and Post-Training Surveys\" (question 4) in Money Smart for Adults, Module 4: Your Spending and Saving Plan, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgyIAAR. Public domain (US federal work). Adapted: cut from 6 options to 4 by removing the wrong options \"Decrease your income\" and \"None of the above\"; options a and b keep their positions so \"Both a and b\" still refers to them.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-006",
+      "area": "Spending",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "How can you estimate what you can afford to pay for housing?",
+      "choices": [
+        "Develop a spending and saving plan and see what you can afford for housing",
+        "Pay whatever is asked",
+        "Ask your landlord or lender what is an affordable housing payment for you",
+        "Understanding what is an affordable payment for housing is not an important step when making housing decisions"
+      ],
+      "answer": 0,
+      "explanation": "Keyed answer from the FDIC answer key for this module's pre- and post-training survey. The answer key gives no written explanation; the topic is covered in Money Smart for Adults Module 12, \"Making Housing Decisions\".",
+      "source": {
+        "title": "Money Smart for Adults, Module 12: Making Housing Decisions, Instructor Guide (September 2018), survey question 6",
+        "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000Bch04AAB",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Answer Key for Both the Pre- and Post-Training Surveys\" (question 6) in Money Smart for Adults, Module 12: Making Housing Decisions, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000Bch04AAB. Public domain (US federal work). Adapted: the key is a single option, so \"Choose all that apply.\" was removed from the stem; cut from 5 options to 4 by removing the wrong option \"None of the above\".",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-007",
+      "area": "Spending",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "You become the owner of the home at which event?",
+      "choices": [
+        "Closing",
+        "When you make an offer",
+        "When your mortgage rate adjusts",
+        "When you refinance your mortgage"
+      ],
+      "answer": 0,
+      "explanation": "Keyed answer from the FDIC answer key for this module's pre- and post-training survey. The answer key gives no written explanation; the topic is covered in Money Smart for Adults Module 13, \"Buying a Home\".",
+      "source": {
+        "title": "Money Smart for Adults, Module 13: Buying a Home, Instructor Guide (September 2018), survey question 6",
+        "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000Bch0JAAR",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Answer Key for Both the Pre- and Post-Training Surveys\" (question 6) in Money Smart for Adults, Module 13: Buying a Home, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000Bch0JAAR. Public domain (US federal work). Adapted: cut from 5 options to 4 by removing the wrong option \"None of the above\".",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-008",
+      "area": "Saving",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "The strategy of setting up regular automatic deductions from your paycheck or bank account into a savings or investment account to keep yourself on track toward your short and long-term financial goals is known as:",
+      "choices": [
+        "Timing the market",
+        "Paying yourself first",
+        "Putting all of your eggs in one basket",
+        "Researching before you invest"
+      ],
+      "answer": 1,
+      "explanation": "Many people get into the habit of saving and investing by following this advice: always pay yourself or your family first. They find it easier to pay themselves first if they allow their bank to automatically remove money from their paycheck and deposit it into a savings or investment account.",
+      "source": {
+        "title": "Investing Quiz – April 2023 (question 1)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/April-2023-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz – April 2023,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/April-2023-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-009",
+      "area": "Saving",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "What does successful investing generally look like?",
+      "choices": [
+        "Trying to time the market",
+        "Creating a saving and investing plan",
+        "Ignoring living and discretionary expenses",
+        "All of these"
+      ],
+      "answer": 1,
+      "explanation": "Create and stick to a budget that considers your monthly expenses, including necessities like living expenses and discretionary expenses like entertainment. It is important to keep your “needs” versus “wants” in check and strive to live within your means.",
+      "source": {
+        "title": "Investing Quiz - April 2025 (question 3)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/april-2025",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - April 2025,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/april-2025. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-010",
+      "area": "Saving",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Aidan started an investment account. If the account earns an average investment return of 7%, Aidan’s initial investment will double in approximately",
+      "choices": [
+        "7 years, assuming no additional contributions",
+        "10 years, assuming no additional contributions",
+        "14 years, assuming additional contributions of 10% of the principal",
+        "20 years, assuming additional contributions of 10% of the principal"
+      ],
+      "answer": 1,
+      "explanation": "The Rule of 72 is a great way to estimate how an investment will grow over time. If you know the rate of return, the Rule of 72 can tell you approximately how long it will take for the investment to double in value. Simply divide the number 72 by the investment’s expected rate of return. Assuming an expected rate of return of 7%, an investment, assuming no additional contributions, will double in value about every 10 years (72 divided by 7 equals 10.3).",
+      "source": {
+        "title": "August (2021) Quiz (question 7)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2021-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"August (2021) Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2021-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-011",
+      "area": "Saving",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "An emergency fund can help pay for which of the following unexpected expenses?",
+      "choices": [
+        "Cracked screen on your phone",
+        "Car repair",
+        "Family crisis",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "Saving three to six months of living expenses in an emergency fund will provide you with peace of mind when life throws unexpected financial emergencies at you. Whether it is a car accident, medical issue, or other unexpected repair or expense, having an emergency fund can help you weather these financial situations and minimize the impact they may have on your future financial and investing plans.",
+      "source": {
+        "title": "Investing Quiz – August 2026 (question 6)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/August-2026-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz – August 2026,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/August-2026-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-012",
+      "area": "Saving",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Which is the best example of “paying yourself first”?",
+      "choices": [
+        "Opening a new investment account to get a free share of stock",
+        "Saving for a 529 plan as the account holder",
+        "Paying the minimum payment on a credit card",
+        "Allowing a bank to automatically remove money from a paycheck and depositing it into a savings or investment account"
+      ],
+      "answer": 3,
+      "explanation": "Many people get into the habit of saving and investing by following this advice: always pay yourself or your family first. They may find it easier to pay themselves first if they allow their bank to automatically remove money from their paycheck and deposit it into a savings or investment account.",
+      "source": {
+        "title": "Back-to-School Investing Quiz (question 4)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/back-to-school-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Back-to-School Investing Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/back-to-school-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-013",
+      "area": "Saving",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "A 529 plan is a tax-advantaged savings plan designed to encourage saving for future ____________ costs.",
+      "choices": [
+        "retirement",
+        "education",
+        "life insurance",
+        "medical"
+      ],
+      "answer": 1,
+      "explanation": "A 529 plan is a tax-advantaged savings plan designed to encourage saving for future education costs. 529 plans are sponsored by states, state agencies, or educational institutions and are authorized by Section 529 of the Internal Revenue Code.",
+      "source": {
+        "title": "Back-to-School Investing Quiz (question 8)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/back-to-school-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Back-to-School Investing Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/back-to-school-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-014",
+      "area": "Saving",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "A federally insured savings account with which of the following annual interest rates will grow most quickly?",
+      "choices": [
+        "2 percent compounding annually",
+        "2 percent compounding quarterly",
+        "3 percent compounding monthly",
+        "3 percent compounding daily"
+      ],
+      "answer": 3,
+      "explanation": "Generally speaking, an account with the highest annual interest rate will grow the fastest. Among accounts with the same annual interest rate, the account earning interest that compounds the most frequently will grow the fastest.",
+      "source": {
+        "title": "Compound Interest Quiz (question 8)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/compound-interest-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Compound Interest Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/compound-interest-quiz. Public domain (US federal work). Adapted: explanation shortened to its first two sentences (the rest of the source explanation describes different rate options from the ones in the question).",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-015",
+      "area": "Saving",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Which of the following is a benefit of using a 529 education savings plan to save for educational expenses:",
+      "choices": [
+        "unlimited investment option changes each year",
+        "guaranteed admission at in-state colleges and universities",
+        "tax-free earnings that grow over a period of time",
+        "all of these"
+      ],
+      "answer": 2,
+      "explanation": "One of the benefits of 529 plans is the tax-free earnings that grow over a period of time. The longer your money is invested, the more time it has to grow and the greater your tax benefits. You will lose some of these potential benefits if you withdraw money from a 529 plan account within a short period of time after it is contributed.",
+      "source": {
+        "title": "Investing Quiz – December 2022 (question 1)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2022-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz – December 2022,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2022-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-016",
+      "area": "Saving",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Why is starting to invest as early as possible such a powerful advantage for financial independence?",
+      "choices": [
+        "You get better at picking stocks",
+        "You get the benefit of compound growth",
+        "You get more access to credit",
+        "All of these"
+      ],
+      "answer": 1,
+      "explanation": "Your first step to financial independence is to create a plan that meets your financial goals. Think about what is important to you as you make your plan. Start early to take advantage of compound growth and consider always paying yourself or your family first by allowing your bank to automatically take money from your checking account or paycheck and deposit it into an investment account.",
+      "source": {
+        "title": "Investing Quiz - Financial Independence (question 2)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/financial-independence-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - Financial Independence,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/financial-independence-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-017",
+      "area": "Saving",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "What does successful investing usually look like?",
+      "choices": [
+        "Identifying your financial goals and creating a plan to achieve those goals",
+        "Paying off high-interest debt",
+        "Establishing an emergency fund",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "Once you start your first job, you have the potential to begin building wealth. There is a roadmap that can improve your chances to achieve financial security. That roadmap starts with controlling credit card debt, having an emergency fund for unexpected expenses, and setting aside a portion of each paycheck to invest in your medium and long-term goals, including a comfortable retirement. Use Investor.gov to check out the free financial planning tools and calculators, investing basics, and much more that can help you create an investment plan that best meets your financial goals.",
+      "source": {
+        "title": "Investing Quiz - January 2025 (question 1)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2025-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - January 2025,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2025-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-018",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "“IRA” stands for individual _________ account.",
+      "choices": [
+        "registered",
+        "retirement",
+        "research",
+        "redemption"
+      ],
+      "answer": 1,
+      "explanation": "“IRA” stands for individual retirement account. IRAs provide tax advantages for retirement savings. You can contribute each year up the maximum amount allowed by the Internal Revenue Service",
+      "source": {
+        "title": "Investing Quiz – April 2023 (question 2)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/April-2023-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz – April 2023,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/April-2023-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-019",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "What is the main advantage that index funds have when compared to actively managed funds?",
+      "choices": [
+        "Index funds are generally less risky in the short term",
+        "Index funds have lower fees and expenses",
+        "Index funds are generally less likely to decline in value",
+        "Index funds often guarantee a specific rate of return"
+      ],
+      "answer": 1,
+      "explanation": "Even small differences in fees can have a significant impact on earnings over time. Compare the fees of mutual funds and ETFs and keep in mind that historical data shows that index funds have, primarily because of their lower fees, enjoyed higher returns than the average actively managed fund.",
+      "source": {
+        "title": "Investing Quiz – April 2023 (question 5)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/April-2023-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz – April 2023,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/April-2023-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-020",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 3,
+      "stem": "Which of the following about target date funds is NOT CORRECT?",
+      "choices": [
+        "They are designed to make investing for a particular goal more convenient by automatically changing your investment mix or asset allocation over time",
+        "They guarantee that you will have sufficient retirement income at the target date",
+        "They are often the default investment choice for employer-sponsored retirement plans",
+        "They typically consist of mutual funds or ETFs"
+      ],
+      "answer": 1,
+      "explanation": "Target date funds are designed to make investing for retirement or another long-term financial goal more convenient by automatically changing your investment mix or asset allocation over time. Once you select a target date fund, the managers of the fund make all the decisions about asset allocation. The name of the fund often refers to its target date. However, they do not guarantee that you will have sufficient retirement income at the target date.",
+      "source": {
+        "title": "Investing Quiz – April 2023 (question 9)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/April-2023-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz – April 2023,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/April-2023-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-021",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "In a _________ individual retirement account (IRA), contributions typically are tax-deductible. You pay no taxes on IRA earnings until retirement, when withdrawals are taxed as income.",
+      "choices": [
+        "Traditional",
+        "Roth",
+        "SEP",
+        "SIMPLE"
+      ],
+      "answer": 0,
+      "explanation": "In a traditional IRA, contributions typically are tax-deductible. You pay no taxes on IRA earnings until retirement, when withdrawals are taxed as income.",
+      "source": {
+        "title": "August (2021) Quiz (question 5)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2021-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"August (2021) Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2021-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-022",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "In a __________ individual retirement account (IRA), contributions are made with after-tax funds and are not tax-deductible, but earnings and withdrawals are tax-free.",
+      "choices": [
+        "Traditional",
+        "Roth",
+        "SEP",
+        "SIMPLE"
+      ],
+      "answer": 1,
+      "explanation": "In a Roth IRA, contributions are made with after-tax funds and are not tax-deductible, but earnings and withdrawals are tax-free.",
+      "source": {
+        "title": "August (2021) Quiz (question 6)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2021-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"August (2021) Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2021-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-023",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Lizzie buys a share of stock for $50 in a cash account and the price rises to $75. Which of the following is true?",
+      "choices": [
+        "Lizzie earned a 100 percent investment return",
+        "Lizzie earned a 50 percent investment return",
+        "Lizzie may pay for less than the full amount for the share of stock purchased",
+        "Lizzie could owe a broker money plus interest"
+      ],
+      "answer": 1,
+      "explanation": "A “cash account” is a type of brokerage account in which you must pay the full amount for securities purchased. In a cash account you cannot borrow funds from your broker-dealer to pay for transactions in the account. If Lizzie buys a share of stock for $50 in a cash account and the price rises to $75, Lizzie will earn a 50 percent investment return (a $25 gain is 50% of the initial investment of $50).",
+      "source": {
+        "title": "August (2021) Quiz (question 9)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2021-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"August (2021) Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2021-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-024",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Which is the best definition of “selling short”?",
+      "choices": [
+        "Selling shares of a stock shortly after buying it",
+        "Selling shares of a stock before it has reached its peak",
+        "Selling shares of a stock at a loss",
+        "Selling borrowed shares of a stock"
+      ],
+      "answer": 3,
+      "explanation": "A short sale generally involves the sale of a stock you do not own (or that you will borrow for delivery). Short sellers believe the price of the stock will fall, or are seeking to hedge against potential price volatility in securities that they own. If the price of the stock drops, short sellers buy the stock at the lower price and make a profit. If the price of the stock rises, short sellers will incur a loss.",
+      "source": {
+        "title": "August (2021) Quiz (question 10)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2021-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"August (2021) Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2021-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-025",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 3,
+      "stem": "Which of the following about holding securities in street name is CORRECT?",
+      "choices": [
+        "your broker-dealer is responsible for maintaining the records of your ownership interest in the security",
+        "you don’t have to worry about your securities certificates being lost or stolen",
+        "you typically will not receive important communications from the issuer directly",
+        "all of these"
+      ],
+      "answer": 3,
+      "explanation": "When you hold securities in street name through a broker-dealer, your broker-dealer is responsible for maintaining the records of your ownership interest in the security, and you do not have to worry about your securities certificates being lost or stolen. In addition, since your name is not on the books of the issuer, the issuer typically will not mail important corporate communications directly to you, but instead requests the broker-dealer to forward the information to you.",
+      "source": {
+        "title": "Investing Quiz - August 2023 (question 6)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/August-2023-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - August 2023,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/August-2023-quiz. Public domain (US federal work). Adapted: typo corrected (\"you don not have to worry\" to \"you do not have to worry\").",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-026",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "A 2% annual fee means that for every $1000 invested, you pay the following each year:",
+      "choices": [
+        "$0.02",
+        "$0.20",
+        "$2",
+        "$20"
+      ],
+      "answer": 3,
+      "explanation": "A 2% annual fee on a $1,000 investment means you would pay $20 each year ($1000 x .02 = $20).",
+      "source": {
+        "title": "Investing Quiz - August 2025 (question 4)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2025-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - August 2025,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2025-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-027",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 3,
+      "stem": "What impact will avoiding 1% in annual fees have on an investment account that earns an average annual return of 7% over 30 years?",
+      "choices": [
+        "The account with lower fees will have approximately 1% more money",
+        "The account with lower fees will have approximately 6% more money",
+        "The account with lower fees will have approximately 7% more money",
+        "The account with lower fees will have approximately 33% more money"
+      ],
+      "answer": 3,
+      "explanation": "According to the Compound Interest Calculator on Investor.gov, a $10,000 investment earning an estimated annual return of 7% compounding annually will grow to approximately $76,000 in 30 years. A $10,000 investment earning an estimated annual return of 6% compounding annually will grow to approximately $57,000 in 30 years.",
+      "source": {
+        "title": "Investing Quiz - August 2025 (question 7)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2025-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - August 2025,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2025-quiz. Public domain (US federal work). Adapted: explanation shortened to its first two sentences (the source's closing percentage calculation divides by the wrong figure).",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-028",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Riley’s investment account has $20,000 in value. If Riley’s investment account earns an average annual investment return of 6% over the next 12 years, the total value of Riley’s investment account will be approximately",
+      "choices": [
+        "$26,000",
+        "$32,000",
+        "$40,000",
+        "$80,000"
+      ],
+      "answer": 2,
+      "explanation": "The Rule of 72 is a great way to estimate how an investment will grow over time. If you know the rate of return, the Rule of 72 can tell you approximately how long it will take for the investment to double in value. Simply divide the number 72 by the investment’s expected rate of return. Assuming an expected rate of return of 6%, an investment will double in value about every 12 years (72 divided by 6 equals 12).",
+      "source": {
+        "title": "Back-to-School Investing Quiz (question 2)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/back-to-school-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Back-to-School Investing Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/back-to-school-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-029",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "If you buy shares of a company’s stock,",
+      "choices": [
+        "you own a part of the company",
+        "you have lent money to the company",
+        "you are liable for the company’s debts",
+        "the company will return your original investment to you with interest"
+      ],
+      "answer": 0,
+      "explanation": "When you own shares of stock, you own a part of the company. There are no guarantees of profits, or even that you will get your original investment back.",
+      "source": {
+        "title": "Back-to-School Investing Quiz (question 7)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/back-to-school-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Back-to-School Investing Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/back-to-school-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-030",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Over the past 20 years, the best average returns have been generated by",
+      "choices": [
+        "stocks",
+        "bonds",
+        "certificates of deposit",
+        "vinyl records"
+      ],
+      "answer": 0,
+      "explanation": "Stocks have historically had the greatest risk and highest returns among the major asset categories.",
+      "source": {
+        "title": "Back-to-School Investing Quiz (question 10)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/back-to-school-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Back-to-School Investing Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/back-to-school-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-031",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 3,
+      "stem": "Which investment will have the highest value after three years?",
+      "choices": [
+        "Investment A: Year 1 return = +40%, Year 2 return = +0%, Year 3 return = -10%",
+        "Investment B: Year 1 return = -10%, Year 2 return = +0%, Year 3 return = +40%",
+        "Investment C: Year 1 return = +10%, Year 2 return = +10%, Year 3 return = +10%",
+        "Each will have the same value after three years"
+      ],
+      "answer": 2,
+      "explanation": "Investment A and Investment B will have the same value, but that value will be lower than Investment C. Let’s assume an initial balance of $10,000 for each investment. If the rate of return for Investment A in Year 1 is 40%, then the value of Investment A will be $14,000 after Year 1. It will also be $14,000 after Year 2 if the rate of return is zero percent for that year. If the rate of return for Investment A in Year 3 is -10%, then the value of the Investment A will be $12,600 after Year 3. If the rate of return for Investment B in Year 1 is -10%, then the value of the Investment B will be $9,000 after Year 1. It will also be $9,000 after Year 2 if the rate of return is zero percent for that year. If the rate of return for Investment B in Year 3 is 40%, then the value of the Investment B will be $12,600 after Year 3. If the rate of return for Investment C in Year 1 is 10%, then the value of the Investment C will be 11,000 after Year 1. If the rate of return for Investment C in Year 2 is (again) 10%, then the value of the Investment A will be 12,100 after Year 2. If the rate of return for Investment C in Year 3 is (yet again) 10%, then the value of Investment C will be $13,310.",
+      "source": {
+        "title": "Compound Interest Quiz (question 5)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/compound-interest-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Compound Interest Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/compound-interest-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-032",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 3,
+      "stem": "The federal securities laws require publicly reporting companies to disclose information on an ongoing basis. Domestic companies must submit annual reports on:",
+      "choices": [
+        "Form 10-K",
+        "Form 10-Q",
+        "Form 8-K",
+        "None of these"
+      ],
+      "answer": 0,
+      "explanation": "The federal securities laws require publicly reporting companies to disclose information on an ongoing basis. For example, domestic companies must submit annual reports on Form 10-K, quarterly reports on Form 10-Q, and current reports on Form 8-K for a number of specified events and must comply with a variety of other disclosure requirements.",
+      "source": {
+        "title": "Investing Quiz – December 2022 (question 4)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2022-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz – December 2022,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2022-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-033",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "The practice of investing money in equal proportions at regular intervals is known as:",
+      "choices": [
+        "decumulation",
+        "diversification",
+        "dollar-cost averaging",
+        "risk tolerance"
+      ],
+      "answer": 2,
+      "explanation": "Dollar-cost averaging means investing your money in equal portions, at regular intervals, regardless of the ups and downs in the market. This investment strategy can help you manage risk by following a consistent pattern of adding new money to your investment over a long period of time.",
+      "source": {
+        "title": "Investing Quiz – December 2022 (question 7)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2022-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz – December 2022,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2022-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-034",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "If you buy a company’s bond,",
+      "choices": [
+        "you own a part of the company",
+        "you have lent money to the company",
+        "you are liable for the company’s debts",
+        "you can help manage the company"
+      ],
+      "answer": 1,
+      "explanation": "A bond is a debt security, similar to an IOU. Borrowers issue bonds to raise money from investors willing to lend them money for a certain amount of time. When you buy a bond, you are lending to the issuer, which may be a government, municipality, or corporation.",
+      "source": {
+        "title": "Investing Quiz – December 2022 (question 8)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2022-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz – December 2022,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2022-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-035",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Many people get started investing using tax-advantaged accounts. Examples include:",
+      "choices": [
+        "401(k) plans and other workplace retirement plans",
+        "Individual retirement accounts (IRAs)",
+        "Roth IRAs",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "Many people get started investing using tax-advantaged accounts, such as 401(k) plans, IRAs, and Roth IRAs. If you are just starting out in your career and you are looking for information to help you get started, check out the Roadmap to Saving and Investing content on Investor.gov.",
+      "source": {
+        "title": "Investing Quiz - December 2024 (question 6)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2024-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - December 2024,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2024-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-036",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "What simple formula represents the primary way most investors build wealth over time?",
+      "choices": [
+        "Low income + low risk = wealth",
+        "Market timing + high risk = wealth",
+        "Regular investments + time = wealth",
+        "High fee + high risk = wealth"
+      ],
+      "answer": 2,
+      "explanation": "Over time, a simple formula has helped many on their financial journey: your regular investments + time = wealth. The earlier you start, the longer you have to build wealth through investing.",
+      "source": {
+        "title": "February (2026) Quiz (question 2)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2026-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"February (2026) Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2026-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-037",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "What is \"asset allocation\" in the context of building wealth through investing?",
+      "choices": [
+        "Choosing the best performing stock",
+        "Paying off your high-interest debt",
+        "Comparison shopping mortgage rates",
+        "Dividing your investments among different assets"
+      ],
+      "answer": 3,
+      "explanation": "Asset allocation involves dividing your investments among different assets, such as stocks, bonds, cash, and alternative investments. Determining your portfolio’s asset allocation is a personal one and what allocation is best for you may change at different times in your life.",
+      "source": {
+        "title": "February (2026) Quiz (question 3)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2026-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"February (2026) Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2026-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-038",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "How does gauging your risk tolerance help you pursue financial independence?",
+      "choices": [
+        "It helps you avoid unnecessary taxes",
+        "It helps align your portfolio with your level of comfort and long-term goals",
+        "It helps you beat the market",
+        "All of these"
+      ],
+      "answer": 1,
+      "explanation": "Risk tolerance is your ability and willingness to lose some or all your original investment in exchange for greater potential returns. An aggressive investor, or one with a high-risk tolerance, is more likely to risk losing money to get better results. A conservative investor, or one with a low-risk tolerance, tends to favor investments that will preserve their original investment.",
+      "source": {
+        "title": "Investing Quiz - Financial Independence (question 6)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/financial-independence-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - Financial Independence,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/financial-independence-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-039",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Why is portfolio rebalancing important for financial independence?",
+      "choices": [
+        "Some investments will grow faster than others",
+        "Your holdings may be out of alignment with your investment goals",
+        "The risk level of your portfolio may change",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "Over time, some investments will grow faster than others. This may push your holdings out of alignment with your investment goals and change the risk level of your portfolio. To bring your portfolio back to its original asset allocation, you may need to rebalance your portfolio.",
+      "source": {
+        "title": "Investing Quiz - Financial Independence (question 10)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/financial-independence-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - Financial Independence,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/financial-independence-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-040",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "“Don’t put all of your eggs in one basket” summarizes which of the following?",
+      "choices": [
+        "Day trading",
+        "Short selling",
+        "Diversification",
+        "Guaranteed returns"
+      ],
+      "answer": 2,
+      "explanation": "Diversification is a strategy where you spread your money among different investments to reduce your overall investment risk. By picking the right mix of investments, you may be able to limit your losses and reduce the fluctuations of your investment returns without sacrificing too much in potential gains.",
+      "source": {
+        "title": "HoweyTrade Investing Quiz (question 4)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/howeytrade",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"HoweyTrade Investing Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/howeytrade. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-041",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "________ trading is using borrowed money to buy securities.",
+      "choices": [
+        "Options",
+        "Margin",
+        "Stock",
+        "Day"
+      ],
+      "answer": 1,
+      "explanation": "Margin trading is using borrowed money to buy securities. It can be very risky and is not appropriate for every investor.",
+      "source": {
+        "title": "Investing Quiz - January 2022 (question 3)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2022-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - January 2022,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2022-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-042",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "What is a dividend?",
+      "choices": [
+        "A portion of a company’s earnings that is paid to shareholders",
+        "A type of insurance policy",
+        "A type of loan",
+        "A type of bank account"
+      ],
+      "answer": 0,
+      "explanation": "A dividend is a portion of a company’s profit paid to shareholders. Public companies that pay dividends usually do so on a fixed schedule although they can issue them at any time.",
+      "source": {
+        "title": "Investing Quiz - January 2026 (question 7)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2026-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - January 2026,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2026-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-043",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "A ____________ market is a time when stock prices are rising and market sentiment is optimistic.",
+      "choices": [
+        "Buffalo",
+        "Bull",
+        "Bear",
+        "Boar"
+      ],
+      "answer": 1,
+      "explanation": "A bull market is a time when stock prices are rising and market sentiment is optimistic. Generally, a bull market occurs when there is a rise of 20% or more in a broad market index over at least a two-month period.",
+      "source": {
+        "title": "Investing Quiz - January 2026 (question 8)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2026-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - January 2026,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2026-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-044",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "A ________ market is a time when stock prices are declining and market sentiment is pessimistic.",
+      "choices": [
+        "Buffalo",
+        "Bull",
+        "Bear",
+        "Boar"
+      ],
+      "answer": 2,
+      "explanation": "A bear market is a time when stock prices are declining and market sentiment is pessimistic. Generally, a bear market occurs when a broad market index falls by 20% or more over at least a two-month period.",
+      "source": {
+        "title": "Investing Quiz - January 2026 (question 9)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2026-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - January 2026,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2026-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-045",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "The profit that comes when an investment is sold for more than the price the investor paid for it is known as:",
+      "choices": [
+        "Principal",
+        "Interest",
+        "Capital Gain",
+        "Depreciation"
+      ],
+      "answer": 2,
+      "explanation": "A capital gain is the profit that comes when an investment is sold for more than the price the investor paid for it.",
+      "source": {
+        "title": "Investing Quiz - January 2026 (question 10)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2026-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - January 2026,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2026-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-046",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Bitcoin _______.",
+      "choices": [
+        "is a digital asset",
+        "relies on blockchain technology",
+        "has been called a “virtual currency” or a “cryptocurrency”",
+        "all of the above"
+      ],
+      "answer": 3,
+      "explanation": "Bitcoin is a digital asset, or an asset that relies on blockchain technology. Bitcoin has also been called a “virtual currency” or a “cryptocurrency.”",
+      "source": {
+        "title": "July (2021) Quiz (question 1)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/july-2021-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"July (2021) Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/july-2021-quiz. Public domain (US federal work). Adapted: a blank was added after \"Bitcoin\" to show that the answer choices complete the sentence.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-047",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "The practice of spreading money among different investments is known as:",
+      "choices": [
+        "decumulation",
+        "diversification",
+        "dollar-cost averaging",
+        "risk tolerance"
+      ],
+      "answer": 1,
+      "explanation": "The practice of spreading money among different investments to reduce risk is known as diversification. Diversification is a strategy that can be neatly summed up as “Don’t put all your eggs in one basket.”",
+      "source": {
+        "title": "July (2022) Quiz (question 10)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/july-2022-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"July (2022) Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/july-2022-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-048",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Which of the following investing behaviors may hurt Julie’s investment performance?",
+      "choices": [
+        "Holding losers too long and selling winners too soon",
+        "Focusing on past performance and ignoring fees",
+        "Buying what you know",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "A Library of Congress report identifies nine investing behaviors that can undermine investment performance. These behaviors include: active trading; the disposition effect (holding losers too long and selling winners too soon); focusing on past performance and ignoring fees; familiarity bias; mania and panic; momentum investing; naïve diversification; noise trading; and inadequate diversification.",
+      "source": {
+        "title": "Investing Quiz – June 2022 (question 4)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/june-2022-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz – June 2022,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/june-2022-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-049",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Which of the following fees might you pay if you invest?",
+      "choices": [
+        "fees for owning an investment",
+        "fees for buying or selling an investment",
+        "fees for advice or help regarding investments you get from an investment professional",
+        "all of these"
+      ],
+      "answer": 3,
+      "explanation": "You may pay fees for owning an investment, buying or selling an investment, and any advice or help regarding investments you get from an investment professional. Pay attention to fees. Even small fees can have a major impact on your investment portfolio over time.",
+      "source": {
+        "title": "Investing Quiz - June 2023 (question 5)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/June-2023-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - June 2023,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/June-2023-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-050",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "A market index that tracks how a particular segment of the market is performing, like the S&P 500, is known as a ____________.",
+      "choices": [
+        "guarantee",
+        "strategy",
+        "benchmark",
+        "performance claim"
+      ],
+      "answer": 2,
+      "explanation": "The performance of an investment strategy may be compared to that of a benchmark (e.g., a market index that tracks how a particular segment of the market is performing, like the S&P 500). The performance of a benchmark may not reflect the deduction of the fees that you pay, which would reduce your returns. The choice of an appropriate benchmark is important in evaluating performance because it is important to compare apples to apples.",
+      "source": {
+        "title": "Investing Quiz - March 2022 (question 3)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/march-2022-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - March 2022,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/march-2022-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-051",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "A mutual fund is a company that pools money from many investors and invests the money in securities such as stocks, bonds, and short-term debt. Which is NOT a reason an individual might invest in a mutual fund?",
+      "choices": [
+        "The fund managers do the research",
+        "Mutual funds typically invest in a range of companies and industries",
+        "Mutual funds have a fixed rate of return with a full guarantee backed by the U.S. government",
+        "Many mutual funds set a relatively low dollar amount for initial investment and subsequent purchases"
+      ],
+      "answer": 2,
+      "explanation": "A mutual fund is a company that pools money from many investors and invests the money in securities such as stocks, bonds, and short-term debt. Mutual funds are a popular choice among many investors because they generally offer professional management, diversification, affordability, and liquidity. Like every other investment, however, mutual funds have some degree of risk, which is reflected in the rate of return you can expect to receive. Mutual funds are not guaranteed by the FDIC or another agency of the Federal Government.",
+      "source": {
+        "title": "Mutual Funds and ETFs – Investing Quiz (question 4)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Mutual Funds and ETFs – Investing Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-052",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 3,
+      "stem": "Most __________ ETFs “reset” daily, meaning that they are designed to achieve their investment objective on a daily basis.",
+      "choices": [
+        "traditional",
+        "leveraged",
+        "dividend",
+        "sector"
+      ],
+      "answer": 1,
+      "explanation": "Leveraged ETFs seek to deliver multiples of the performance of the index or benchmark they track. Like traditional ETFs, some leveraged ETFs track broad indices, some are sector-specific, and others are linked to commodities, currencies, or some other benchmark. Most leveraged ETFs “reset” daily, meaning that they are designed to achieve their investment objective on a daily basis. Their performance over longer periods of time may differ significantly from the performance of the underlying index or benchmark during the same period of time.",
+      "source": {
+        "title": "Mutual Funds and ETFs – Investing Quiz (question 6)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Mutual Funds and ETFs – Investing Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-053",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 3,
+      "stem": "Mutual funds and ETFs are similar in the following ways, EXCEPT:",
+      "choices": [
+        "They are SEC-registered investment companies",
+        "They offer investors a way to pool their money in a professionally-managed fund that invests in stocks, bonds, or other assets",
+        "They can help investors achieve diversification of their investments",
+        "They are priced at the net asset (NAV) per share, minus any applicable fees and charges"
+      ],
+      "answer": 3,
+      "explanation": "Mutual funds and ETFs are priced differently. Investors buy or sell mutual fund shares at the net asset value (NAV) per share, minus any applicable fees and charges. NAV is calculated at the end of each trading day. Retail investors buy and sell ETF shares at market prices, minus any applicable fees and charges. You can buy and sell ETF shares on a national stock exchange at the prevailing market price throughout the trading day, but you will not know the exact price per share of a mutual fund that you will pay or receive until the end of the trading day.",
+      "source": {
+        "title": "Mutual Funds and ETFs – Investing Quiz (question 9)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Mutual Funds and ETFs – Investing Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/mutalfund-etfs-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-054",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Day trading is the rapid buying and selling of stocks in the same day with the hope of making a quick profit. Which of the following is true about day trading?",
+      "choices": [
+        "It can be risky",
+        "It can be time-consuming",
+        "It’s a short-term investment strategy",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Day trading is the rapid buying and selling of stocks in the same day with the hope of making a quick profit. It’s a short-term investment strategy that can be extremely time-consuming, expensive, and risky.",
+      "source": {
+        "title": "Investing Quiz - November 2021 (question 1)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/november-2021-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - November 2021,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/november-2021-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-055",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Individual investors access the markets through accounts at broker-dealers. Broker- dealer customers can open “cash” accounts or “margin” accounts. With a cash account, the customer must pay ________ for securities purchased.",
+      "choices": [
+        "the full amount",
+        "a partial amount",
+        "the loan fees",
+        "none of the above"
+      ],
+      "answer": 0,
+      "explanation": "Individual investors access the markets through accounts at broker-dealers. Broker-dealer customers can open “cash” accounts or “margin” accounts. With a cash account, the customer must pay the full amount for securities purchased.",
+      "source": {
+        "title": "Investing Quiz - November 2021 (question 10)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/november-2021-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - November 2021,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/november-2021-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-056",
+      "area": "Investing",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Asset allocation involves dividing your investments among different assets, such as:",
+      "choices": [
+        "401(k), 403(b), and 457 plans",
+        "options, futures, and derivatives",
+        "stocks, bonds, and cash",
+        "market, limit, and stop orders"
+      ],
+      "answer": 2,
+      "explanation": "Asset allocation involves dividing your investments among different assets, such as stocks, bonds, and cash.",
+      "source": {
+        "title": "World Investor Week Investing Quiz (question 1)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/wiw-2024",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"World Investor Week Investing Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/wiw-2024. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-057",
+      "area": "Managing Credit",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Champ owes $2,000 on a loan and the interest rate on the loan is 24% per year compounded annually. If Champ didn’t pay anything off, at this interest rate, how many years would it take for the amount to double to $4,000?",
+      "choices": [
+        "Approximately 2 years",
+        "Approximately 3 years",
+        "Approximately 4 years",
+        "Approximately 5 years"
+      ],
+      "answer": 1,
+      "explanation": "Compound interest can work for you when you save and invest, but it can also work against you if you have taken out a loan! The Rule of 72 can tell you approximately how long it will take for the principal of a loan to double in value (assuming no payments toward the loan are made). Simply divide the number 72 by the interest rate. A loan with an interest rate of 24% will double in value about every 3 years (72 divided by 24 equals 3).",
+      "source": {
+        "title": "Compound Interest Quiz (question 7)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/compound-interest-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Compound Interest Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/compound-interest-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-058",
+      "area": "Managing Credit",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Suppose you owe $1,000 on a loan and the interest rate you are charged is 20% per year compounded annually. If you didn’t pay anything off, at this interest rate, how many years would it take for the amount you owe to double?",
+      "choices": [
+        "Less than 2 years",
+        "At least 2 years but less than 5 years",
+        "At least 5 years but less than 10 years",
+        "At least 10 years"
+      ],
+      "answer": 1,
+      "explanation": "Compound interest can work for you when you save and invest, but it can also work against you if you have taken out a loan! The Rule of 72 can tell you approximately how long it will take for the principal of a loan to double in value (assuming no payments toward the loan are made). Simply divide the number 72 by the interest rate. The amount you owe on a loan with an interest rate of 20% will double about every 3.6 years (72 divided by 20 equals 3.6).",
+      "source": {
+        "title": "Investing Quiz – February 2024 (question 10)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2024-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz – February 2024,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2024-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-059",
+      "area": "Managing Credit",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "What factors affect your credit scores?",
+      "choices": [
+        "Your income",
+        "Your length of employment",
+        "How much of your credit card limit you use",
+        "The amount of money you have in savings"
+      ],
+      "answer": 2,
+      "explanation": "Keyed answer from the FDIC answer key for this module's pre- and post-training survey. The answer key gives no written explanation; the topic is covered in Money Smart for Adults Module 6, \"Credit Reports and Scores\".",
+      "source": {
+        "title": "Money Smart for Adults, Module 6: Credit Reports and Scores, Instructor Guide (September 2018), survey question 4",
+        "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgyXAAR",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Answer Key for Both the Pre and Post-Training Surveys\" (question 4) in Money Smart for Adults, Module 6: Credit Reports and Scores, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgyXAAR. Public domain (US federal work). Adapted: the key is a single option, so \"Choose all that apply.\" was removed from the stem; cut from 6 options to 4 by removing the wrong options \"All of the above\" and \"None of the above\".",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-060",
+      "area": "Managing Credit",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Which of the following are likely to make your credit scores increase?",
+      "choices": [
+        "Closing old credit accounts",
+        "Applying for new credit",
+        "Getting a better paying job",
+        "Paying your bills on time"
+      ],
+      "answer": 3,
+      "explanation": "Keyed answer from the FDIC answer key for this module's pre- and post-training survey. The answer key gives no written explanation; the topic is covered in Money Smart for Adults Module 6, \"Credit Reports and Scores\".",
+      "source": {
+        "title": "Money Smart for Adults, Module 6: Credit Reports and Scores, Instructor Guide (September 2018), survey question 5",
+        "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgyXAAR",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Answer Key for Both the Pre and Post-Training Surveys\" (question 5) in Money Smart for Adults, Module 6: Credit Reports and Scores, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgyXAAR. Public domain (US federal work). Adapted: the key is a single option, so \"Choose all that apply.\" was removed from the stem; cut from 6 options to 4 by removing the wrong options \"All of the above\" and \"None of the above\".",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-061",
+      "area": "Managing Credit",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Who should regularly look for, identify, and dispute errors on your credit reports?",
+      "choices": [
+        "The credit reporting agency",
+        "The information furnisher",
+        "The individual, business, or organization that uses credit reports to make decisions about you",
+        "You"
+      ],
+      "answer": 3,
+      "explanation": "Keyed answer from the FDIC answer key for this module's pre- and post-training survey. The answer key gives no written explanation; the topic is covered in Money Smart for Adults Module 6, \"Credit Reports and Scores\".",
+      "source": {
+        "title": "Money Smart for Adults, Module 6: Credit Reports and Scores, Instructor Guide (September 2018), survey question 6",
+        "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgyXAAR",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Answer Key for Both the Pre and Post-Training Surveys\" (question 6) in Money Smart for Adults, Module 6: Credit Reports and Scores, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgyXAAR. Public domain (US federal work). Adapted: the key is a single option, so \"Choose all that apply.\" was removed from the stem; cut from 6 options to 4 by removing the wrong options \"All of the above\" and \"None of the above\".",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-062",
+      "area": "Managing Credit",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Which of these is one of your rights in debt collection?",
+      "choices": [
+        "Not to be sued if you tell a debt collector to stop contacting you",
+        "To have the debt cancelled if you don't have the money to repay it",
+        "Not to be called at inconvenient times or places, such as before 8:00 am or after 9:00 pm, unless you agree to it",
+        "All of the above"
+      ],
+      "answer": 2,
+      "explanation": "Keyed answer from the FDIC answer key for this module's pre- and post-training survey. The answer key gives no written explanation; the topic is covered in Money Smart for Adults Module 8, \"Managing Debt\".",
+      "source": {
+        "title": "Money Smart for Adults, Module 8: Managing Debt, Instructor Guide (September 2018), survey question 5",
+        "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000Bcgt9AAB",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Answer Key for Both the Pre- and Post-Training Surveys\" (question 5) in Money Smart for Adults, Module 8: Managing Debt, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000Bcgt9AAB. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-063",
+      "area": "Managing Credit",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "You may be charged a penalty annual percentage rate (APR) if:",
+      "choices": [
+        "You have less than the minimum balance in your account",
+        "You pay your credit card bill late",
+        "You request an increase in your credit limit",
+        "All of the above"
+      ],
+      "answer": 1,
+      "explanation": "Keyed answer from the FDIC answer key for this module's pre- and post-training survey. The answer key gives no written explanation; the topic is covered in Money Smart for Adults Module 9, \"Using Credit Cards\".",
+      "source": {
+        "title": "Money Smart for Adults, Module 9: Using Credit Cards, Instructor Guide (September 2018), survey question 1",
+        "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgzBAAR",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Answer Key for Both the Pre- and Post-Training Surveys\" (question 1) in Money Smart for Adults, Module 9: Using Credit Cards, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgzBAAR. Public domain (US federal work). Adapted: cut from 5 options to 4 by removing the wrong option \"None of the above\".",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-064",
+      "area": "Managing Credit",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Which of these is included in a typical mortgage payment?",
+      "choices": [
+        "Repayment of the real estate agent's salary",
+        "Interest",
+        "Home maintenance costs",
+        "Gross income"
+      ],
+      "answer": 1,
+      "explanation": "Keyed answer from the FDIC answer key for this module's pre- and post-training survey. The answer key gives no written explanation; the topic is covered in Money Smart for Adults Module 13, \"Buying a Home\".",
+      "source": {
+        "title": "Money Smart for Adults, Module 13: Buying a Home, Instructor Guide (September 2018), survey question 4",
+        "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000Bch0JAAR",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Answer Key for Both the Pre- and Post-Training Surveys\" (question 4) in Money Smart for Adults, Module 13: Buying a Home, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000Bch0JAAR. Public domain (US federal work). Adapted: cut from 5 options to 4 by removing the wrong option \"None of the above\".",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-065",
+      "area": "Managing Credit",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Which of these factors affects the amount of your monthly mortgage payment?",
+      "choices": [
+        "The amount of the loan",
+        "The interest rate",
+        "The term of the loan",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Keyed answer from the FDIC answer key for this module's pre- and post-training survey. The answer key gives no written explanation; the topic is covered in Money Smart for Adults Module 13, \"Buying a Home\".",
+      "source": {
+        "title": "Money Smart for Adults, Module 13: Buying a Home, Instructor Guide (September 2018), survey question 5",
+        "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000Bch0JAAR",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Answer Key for Both the Pre- and Post-Training Surveys\" (question 5) in Money Smart for Adults, Module 13: Buying a Home, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000Bch0JAAR. Public domain (US federal work). Adapted: cut from 5 options to 4 by removing one option that is not the key (\"The kind of interest rate\"); \"All of the above\" remains the keyed answer.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-066",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Which is a red flag for investment fraud?",
+      "choices": [
+        "Information available in the SEC’s EDGAR database",
+        "Risk of losing all of your invested funds",
+        "Fees to buy, own, and sell the investment",
+        "Exaggerated credentials"
+      ],
+      "answer": 3,
+      "explanation": "Fraudsters tend to make up or exaggerate their credentials. They may try to build credibility by claiming to be with a reputable firm, have graduated from a prestigious school, or to have a special credential or experience. Don’t invest with someone just because the person claims to have an impressive background or track record.",
+      "source": {
+        "title": "Investing Quiz – April 2023 (question 4)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/April-2023-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz – April 2023,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/April-2023-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-067",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Which is not a red flag for investment fraud?",
+      "choices": [
+        "Pressure to invest immediately",
+        "“Everyone is buying it” pitches",
+        "Promises of guaranteed investment returns",
+        "Multiple licenses and registrations"
+      ],
+      "answer": 3,
+      "explanation": "Research shows that con-artists are experts at the art of persuasion, often using a variety of influence tactics tailored to the vulnerabilities of their victims. Smart investors check the background of anyone promoting an investment opportunity, even before learning about opportunity itself. Use Investor.gov’s free and easy search tool to research an investment professional—including confirming they are registered and whether they’ve had any disciplinary events—before deciding to work with them.",
+      "source": {
+        "title": "August (2021) Quiz (question 1)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2021-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"August (2021) Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2021-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-068",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Which of the following protects you against a decline in the value of your investments?",
+      "choices": [
+        "Securities Investor Protection Corporation (SIPC)",
+        "Federal Deposit Insurance Corporation (FDIC)",
+        "National Credit Union Administration (NCUA)",
+        "none of these"
+      ],
+      "answer": 3,
+      "explanation": "Unlike FDIC and NCUA-insured deposits, the money you invest in securities, funds, and other similar investments is not federally insured. SIPC protection works to restore to customers the cash and securities that were in their brokerage account when the SIPC-member brokerage firm failed. SIPC protection does not protect you against a decline in value of your securities.",
+      "source": {
+        "title": "Investing Quiz - August 2023 (question 1)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/August-2023-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - August 2023,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/August-2023-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-069",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "A trusted contact is a person your brokerage firm will contact if your broker:",
+      "choices": [
+        "believes your account may be exposed to possible financial exploitation or fraud",
+        "is having trouble reaching you",
+        "suspects you are sick or suffering from diminished capacity",
+        "all of these"
+      ],
+      "answer": 3,
+      "explanation": "A trusted contact is a person your brokerage firm will contact if your broker believes your account may be exposed to possible financial exploitation or fraud. Your broker will also contact your trusted contact person if they are having trouble reaching you or if they suspect you are sick or suffering from diminished capacity.",
+      "source": {
+        "title": "Investing Quiz - August 2023 (question 4)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/August-2023-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - August 2023,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/August-2023-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-070",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Which of the following fees should you never pay?",
+      "choices": [
+        "fees for owning an investment",
+        "fees for buying or selling an investment",
+        "upfront fees before your funds will be released from an investment opportunity",
+        "fees for advice or help regarding investments"
+      ],
+      "answer": 2,
+      "explanation": "If someone has asked you to pay money for fees, taxes, or any other reason before your funds will be released from an investment opportunity, you may be experiencing a scam. These scams are often associated with fictitious investment accounts that have quickly increased in value.",
+      "source": {
+        "title": "Investing Quiz - August 2025 (question 1)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2025-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - August 2025,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2025-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-071",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "A member of Brad’s community encourages Brad to invest money in an opportunity guaranteed to pay a risk-free 16% return every year for the next 20 years. Without doing any research, Brad invests $5,000. What likely will be the total value of Brad’s initial investment if he tries to cash out after 8 years?",
+      "choices": [
+        "$0",
+        "$5,000",
+        "$10,000",
+        "$20,000"
+      ],
+      "answer": 0,
+      "explanation": "Given this background, there is a strong likelihood that Brad’s community is involved in an investment fraud and that any money Brad contributes to the opportunity will be stolen. Unfortunately, once an individual hands over any money to a fraudster, it is unlikely to be recouped. Many investment frauds are pitched as high return opportunities with little or no risk. Ignore these so-called opportunities or, better yet, report them to the SEC. Affinity frauds target members of identifiable groups, such as the elderly, or religious or ethnic communities. The fraudsters involved in affinity scams often are – or pretend to be – members of the group.",
+      "source": {
+        "title": "Compound Interest Quiz (question 9)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/compound-interest-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Compound Interest Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/compound-interest-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-072",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Which of the following is a red flag of investment fraud?",
+      "choices": [
+        "Risk of losing money",
+        "Fees to buy, hold, and sell",
+        "Pressure to buy quickly",
+        "Recommendation by a registered investment professional"
+      ],
+      "answer": 2,
+      "explanation": "No reputable investment professional should push you to make an immediate decision about an investment, or tell you that you have to “act now.” If someone pressures you to decide on an investment without giving you time to do your research, walk away.",
+      "source": {
+        "title": "Investing Quiz - December 2021 (question 1)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2021-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - December 2021,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2021-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-073",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "If you receive an unsolicited communication from the SEC asking for payment, you should:",
+      "choices": [
+        "Pay the amount as quickly as possible",
+        "Pay the amount and also provide personal information such as your investment account number and password to ensure that your funds are received",
+        "Call (800) SEC-0330 or email help@SEC.gov to check if the communication is from the SEC",
+        "Assume the request is not from a government impersonator because it is illegal to pretend to be a member of SEC’s staff"
+      ],
+      "answer": 2,
+      "explanation": "If you receive an unsolicited communication from someone claiming to be from the SEC, use the SEC’s personnel locator at (202) 551-6000 to reach the staff member directly and ask the person if the communication was from them. You can also call (800) SEC-0330 or email help@SEC.gov to check if a communication is from the SEC. SEC staff do not make unsolicited communications – including phone calls, voicemail messages, or emails – asking for payments related to enforcement actions, offering to confirm trades, or seeking detailed personal and financial information.",
+      "source": {
+        "title": "Investing Quiz - December 2021 (question 2)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2021-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - December 2021,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2021-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-074",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Which of the following should you look for when reviewing investment account statements?",
+      "choices": [
+        "Any fraud or activity you did not authorize",
+        "What fees you are paying",
+        "Whether you might need to rebalance your investments",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "Review your account statements regularly and check the information in each account statement. Here are some things to look for: (i) any fraud or activity that you did not authorize; (ii) how your investments are doing – are you on track to have enough money to make it through retirement?; (iii) whether you need to rebalance your investments because of market movements or because you are getting closer to retirement; (iv) whether you should consider selling any investments for year-end tax purposes; and (v) what fees you are paying. Review your account statements every month. If there are any issues, take care of them immediately!",
+      "source": {
+        "title": "Investing Quiz - December 2024 (question 7)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2024-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - December 2024,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2024-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-075",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "A member of Jade’s religious community encourages Jade to invest money in an opportunity guaranteed to pay a return of 12% per year. What should Jade do?",
+      "choices": [
+        "Immediately invest",
+        "Research if any celebrities have endorsed the program",
+        "Only invest if other members of Jade’s religious community have already invested",
+        "Ignore the opportunity"
+      ],
+      "answer": 3,
+      "explanation": "Many investment frauds are pitched as high return opportunities with little or no risk. Ignore these so-called opportunities or, better yet, report them to the SEC. Affinity frauds target members of identifiable groups, such as the elderly, or religious or ethnic communities. The fraudsters involved in affinity scams often are – or pretend to be – members of the group.",
+      "source": {
+        "title": "Investing Quiz - February 2022 (question 5)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2022-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - February 2022,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2022-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-076",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "A financial professional who Jade has known for years encourages Jade to invest money in an opportunity guaranteed to pay a return of 12% per year. What should Jade do?",
+      "choices": [
+        "Immediately invest",
+        "Research if any celebrities have endorsed the program",
+        "Only invest if the financial professional has already invested",
+        "Ignore the opportunity"
+      ],
+      "answer": 3,
+      "explanation": "Many investment frauds are pitched as high return opportunities with little or no risk. Ignore these so-called opportunities or, better yet, report them to the SEC. You should check out the registration status and background of any financial professional before becoming a client, even if a close friend or family member recommends a financial professional. An easy way to check out a financial professional is to use the free search tool available on Investor.gov. Through the tool, you can find out if a financial professional is currently registered or licensed, or has been suspended, as well as the individual’s qualifications and employment history.",
+      "source": {
+        "title": "Investing Quiz - February 2022 (question 7)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2022-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - February 2022,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2022-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-077",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "A Ponzi scheme is an investment fraud that pays existing investors with funds collected from new investors. Which of the following is a Ponzi scheme “red flag”?",
+      "choices": [
+        "High returns with little or no risk",
+        "Overly consistent returns",
+        "Secretive, complex strategies",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "A Ponzi scheme is an investment fraud that pays existing investors with funds collected from new investors. Ponzi scheme organizers often promise to invest your money and generate high returns with little or no risk. But in many Ponzi schemes, the fraudsters do not invest the money. Instead, they use it to pay those who invested earlier and may keep some for themselves. Many Ponzi schemes share common characteristics. Look for these warning signs: high returns with little or no risk; overly consistent returns; unregistered investments; unlicensed sellers; secretive, complex strategies; issues with paperwork; and difficulty receiving payments.",
+      "source": {
+        "title": "Investing Quiz – February 2023 (question 3)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2023-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz – February 2023,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2023-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-078",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Which of the following is NOT a Ponzi scheme “red flag”?",
+      "choices": [
+        "Pressure to invest immediately",
+        "Risk of losing money",
+        "Unsolicited offers that seem “too good to be true”",
+        "Promises of guaranteed high investment returns"
+      ],
+      "answer": 1,
+      "explanation": "Every investment has risk, but promises of high investment returns – often accompanied by a guarantee of little or no risk – is a classic sign of fraud. Similarly, unsolicited offers (you didn’t ask for it and don’t know the sender) to earn investment returns that seem “too good to be true” may be part of a scam. Lastly, many fraudsters try to pressure you to invest right away, claiming that only a certain number of individuals can get in on the investment. Or, they may tell you that the offer will disappear in a matter of hours. Don’t let fraudsters play on your fears of missing out!",
+      "source": {
+        "title": "Investing Quiz – February 2023 (question 4)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2023-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz – February 2023,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2023-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-079",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Which of the following are common red flags of investment fraud?",
+      "choices": [
+        "Underperformance, underweight, unleveraged, and unsecured",
+        "Unexpected investment offers, urgency or pressure to invest, unusual payment requests, and unreasonable or guaranteed investment returns",
+        "Upside potential, uncovered option, unhedged exposure, and underwriting risk",
+        "None of these"
+      ],
+      "answer": 1,
+      "explanation": "Unexpected investment offers, urgency or pressure to invest, unusual payment requests, and unreasonable or guaranteed investment returns are red flags of fraud. If you spot any of these “U”s, do not invest your money.",
+      "source": {
+        "title": "February (2026) Quiz (question 8)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2026-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"February (2026) Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2026-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-080",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Caleb is reviewing an investment account statement and notices unauthorized changes to it. Changes to which of the following require follow-up?",
+      "choices": [
+        "phone number",
+        "account number",
+        "bank information",
+        "all of these"
+      ],
+      "answer": 3,
+      "explanation": "Monitor your investment accounts for any suspicious activity. You should confirm that you authorized all the transactions that appear in your account statements and trade confirmations. Also, look out for any changes to your account information that you do not recognize (for example, a change to your address, phone number, e-mail address, account number, or bank information).",
+      "source": {
+        "title": "Investing Quiz – June 2026 (question 6)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/june-2026-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz – June 2026,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/june-2026-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-081",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Advance fee frauds ask investors to make a payment before receiving any proceeds, money, stock, or warrants in order for the “bogus” deal to go through. The advance payment may be described as",
+      "choices": [
+        "a fee that will be repaid later",
+        "a tax that will be repaid later",
+        "an incidental expense that will be repaid later",
+        "all of the above"
+      ],
+      "answer": 3,
+      "explanation": "In an advanced fee fraud, investors must pay a fee before receiving any proceeds, money, stock, or warrants in order for the “bogus” deal to go through. The advance payment may be described as a fee, tax, commission, or incidental expense that will be repaid later. Some advance fee frauds target investors who already purchased underperforming securities and offer to sell those securities if an “advance fee” is paid, or target investors who have already lost money in an investment fraud.",
+      "source": {
+        "title": "Investing Quiz - March 2022 (question 10)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/march-2022-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - March 2022,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/march-2022-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-082",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Which of the following is true about investment fraud?",
+      "choices": [
+        "Scammers are good at elevating emotions to disrupt critical thinking",
+        "Nearly all money stolen is recovered",
+        "A fraudster would never call out other scammers",
+        "All of these"
+      ],
+      "answer": 0,
+      "explanation": "Research shows that con-artists are experts at the art of persuasion, often using a variety of influence tactics tailored to the vulnerabilities of their victims. Smart investors check the background of anyone promoting an investment opportunity, even before learning about the opportunity itself. Moreover, recovering money from the wrongdoers can be very difficult. Lastly, calling out other scammers is a tactic that fraudsters use. Fraudsters try to make you think they are genuine by telling you to watch out for other people trying to take your money.",
+      "source": {
+        "title": "Investing Quiz – May 2024 (question 7)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/may-2024-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz – May 2024,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/may-2024-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-083",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "In a relationship investment scam, scammers typically reach out:",
+      "choices": [
+        "In person",
+        "Online or through text messages",
+        "Via regular mail",
+        "Via certified mail"
+      ],
+      "answer": 1,
+      "explanation": "In a relationship investment scam, scammers reach out online or through text messages, attempting to build trust (for example, through friendship or a romantic connection) to convince you to put money into phony investments.",
+      "source": {
+        "title": "Investing Quiz - Relationship Investment Scams (question 1)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/relationship-investment-scams",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - Relationship Investment Scams,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/relationship-investment-scams. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-084",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "What is an appropriate way to handle messages from someone you do not know?",
+      "choices": [
+        "Ignore them",
+        "Delete them",
+        "Block Them",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "Ignore messages from anyone you do not know and consider deleting or blocking them. Be wary of unsolicited investment opportunities no matter how much you trust the person.",
+      "source": {
+        "title": "Investing Quiz - Relationship Investment Scams (question 5)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/relationship-investment-scams",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - Relationship Investment Scams,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/relationship-investment-scams. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-085",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "If you suspect you may be caught up in a relationship investment scam:",
+      "choices": [
+        "Stop communicating with the individuals immediately",
+        "Do not give them any more money",
+        "Report the scam to the SEC",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "If you suspect you may be caught up in a relationship investment scam, stop communicating with the individuals immediately and do not give them any more money. Report the scam to the SEC.",
+      "source": {
+        "title": "Investing Quiz - Relationship Investment Scams (question 10)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/relationship-investment-scams",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - Relationship Investment Scams,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/relationship-investment-scams. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-086",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "An investment fraud that pays existing investors with funds collected from new investors is called _________.",
+      "choices": [
+        "indexing",
+        "a Ponzi scheme",
+        "compound interest",
+        "an affinity scam"
+      ],
+      "answer": 1,
+      "explanation": "A Ponzi scheme is an investment fraud that pays existing investors with funds collected from new investors. Ponzi schemes are named after Charles Ponzi. In the 1920s, Ponzi promised investors a 50% return within a few months for what he claimed was an investment in international mail coupons. Ponzi used funds from new investors to pay fake “returns” to earlier investors.",
+      "source": {
+        "title": "Investing Quiz - September 2021 (question 9)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/september-2021-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - September 2021,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/september-2021-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-087",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Which of the following is an easy way to protect yourself against fraud?",
+      "choices": [
+        "Monitor your investment accounts",
+        "Conduct a background check on investment professionals",
+        "Avoid unsolicited pitches",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "Monitor your investment accounts regularly for any suspicious activity. You should confirm that you authorized all the transactions that appear in your investment account statements and trade confirmations. Spend some time checking out the person offering the investment before you invest – even if you already know the person socially. You can conduct a background check on anyone selling you an investment for free on Investor.gov. Always find out whether the securities salespeople who contact you are licensed to sell securities in your state and whether they or their firms have had run-ins with regulators or other investors. Avoid unsolicited investment pitches. They could be scams. Be especially careful if you receive an unsolicited pitch to invest in a company, or see it praised online, but can’t find current financial information about it from independent sources.",
+      "source": {
+        "title": "World Investor Week Investing Quiz (question 2)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/wiw-2024",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"World Investor Week Investing Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/wiw-2024. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-088",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Which of the following describes the actions of fraudsters in a relationship investment scam?",
+      "choices": [
+        "They often hide their true identities",
+        "They reach out to unsuspecting targets (often online or through text messages)",
+        "They gain trust over time, and then defraud individuals through fake investments.",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "In a relationship investment scam, fraudsters — including criminals and other bad actors — often hide their true identities, reach out to unsuspecting targets (often online or through text messages), gain their trust over time, and then defraud them through fake investments. Relationship investment scams are sometimes referred to by various terms including romance scams, “cryptocurrency” investment scams, financial grooming scams, and even the distasteful term “pig butchering scams.” These scams also sometimes involve “catfishing,” where fraudsters might set up fake online identities to carry out crimes.",
+      "source": {
+        "title": "World Investor Week Investing Quiz (question 4)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/wiw-2024",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"World Investor Week Investing Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/wiw-2024. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-089",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "It is never a good idea to invest money based on:",
+      "choices": [
+        "Advice solely from someone you met online",
+        "Advice solely from someone famous",
+        "Promises of high returns with little or no risk",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "Do not invest money based on advice from someone you have solely met online or through an app. Do not share with them any information relating to your personal finances or identity. Do not make investment decisions based solely on advice from someone famous. Be skeptical and ask yourself: “Why is this person endorsing this investment, and does it fit in my financial plan?” Do not trust someone who pressures you to invest right away or promises big returns with little or no risk. There is no such thing as high guaranteed returns, and every investment involves risk. If an offer sounds too good to be true, it probably is.",
+      "source": {
+        "title": "World Investor Week Investing Quiz (question 10)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/wiw-2024",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"World Investor Week Investing Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/wiw-2024. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-090",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Why is insurance important?",
+      "choices": [
+        "It can reduce the financial impact of a covered loss.",
+        "It prevents damage from natural disasters.",
+        "It has federally insured deposit protection.",
+        "It allows you to digitally encrypt your information to keep it safe."
+      ],
+      "answer": 0,
+      "explanation": "Keyed answer from the FDIC answer key for this module's pre- and post-training survey. The answer key gives no written explanation; the topic is covered in Money Smart for Adults Module 11, \"Protecting Your Identity and Other Assets\".",
+      "source": {
+        "title": "Money Smart for Adults, Module 11: Protecting Your Identity and Other Assets, Instructor Guide (September 2018), survey question 3",
+        "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgzkAAB",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Answer Key for Both the Pre- and Post-Training Surveys\" (question 3) in Money Smart for Adults, Module 11: Protecting Your Identity and Other Assets, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgzkAAB. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "pfl-091",
+      "area": "Managing Risk",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Which of the following are ways to reduce the risk of identity theft?",
+      "choices": [
+        "Protect your numbers (Social Security number, credit card numbers, bank account numbers, etc.)",
+        "Protect your mail",
+        "Sign up for direct deposit",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Keyed answer from the FDIC answer key for this module's pre- and post-training survey. The answer key gives no written explanation; the topic is covered in Money Smart for Adults Module 11, \"Protecting Your Identity and Other Assets\".",
+      "source": {
+        "title": "Money Smart for Adults, Module 11: Protecting Your Identity and Other Assets, Instructor Guide (September 2018), survey question 4",
+        "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgzkAAB",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Answer Key for Both the Pre- and Post-Training Surveys\" (question 4) in Money Smart for Adults, Module 11: Protecting Your Identity and Other Assets, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgzkAAB. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    }
+  ],
+  "verification": {
+    "verifiedAt": "2026-10-11",
+    "removed": 0,
+    "fixed": 8,
+    "notes": [
+      "All 91 questions were solved independently before the key was read. Every key matched, and each item has exactly one defensible best answer (items whose keyed answer is \"All of the above\"/\"All of these\"/\"Both a and b\" follow the usual one-best-answer convention).",
+      "Investor.gov (76 items): all 33 cited quiz pages were fetched on 2026-10-11 and the quiz data parsed from each page. Every stem, all four choices and the key match the cited question number word for word. The only differences are the dropped \"Qn.\" prefix and one collapsed double space (pfl-031, choice B). Explanations match the source, except the three documented adaptations: pfl-014 and pfl-027 are shortened, and pfl-025 has a typo fixed. Each adaptation is recorded in its attribution line, with adapted=true.",
+      "FDIC Money Smart for Adults (15 items): all 8 Instructor Guide PDFs were downloaded from the cited catalog.fdic.gov links. Each one is linked from https://www.fdic.gov/consumer-resource-center/money-smart-adults, is dated September 2018 and has no copyright notice. Every stem and choice was found verbatim in the \"Answer Key for Both the Pre- and Post-Training Surveys\", and every key matches the printed answer. In the 13 items marked adapted, the only change is that options which are not the key were removed (and, where the key is a single option, \"Choose all that apply.\" was dropped from the stem). Where \"All of the above\" is the key (pfl-002, pfl-065), it stays correct after the cut, and the \"Both a and b\" options in pfl-005 still point at A and B.",
+      "Licences were confirmed on their own pages on 2026-10-11. sec.gov/about/privacy-information says: \"Information presented on sec.gov is considered public information and may be copied or further distributed by users of the web site without the SEC's permission. Please consider appropriate citation to the SEC as the source.\" investor.gov/disclaimer says: \"Paid for by the U.S. Securities and Exchange Commission.\" FDIC FIL-58-2001 says: \"The Money Smart training modules can be easily reproduced and have no copyright restrictions.\" None of the quiz pages shows a copyright notice. Nothing in the file is NC or all-rights-reserved.",
+      "Fixed pfl-001: it cited the rotating quiz index page (the October 2026 quiz), so the URL would later show a different quiz, and the October explanation was a garbled sentence (\"...retirement savings plan generally fall into two categories\"). The identical question (same stem, choices and key) is question 5 of the January 2026 quiz, which has a stable URL. The item now cites that question and uses its complete, verbatim explanation.",
+      "Fixed pfl-042, pfl-043, pfl-044 and pfl-045: their URL \".../January-2026-quiz\" redirects to the canonical \".../january-2026-quiz\". The url and attribution now use the canonical form.",
+      "No duplicates: each item maps to a different source question. Some distinct items cover the same concept: pfl-009/pfl-017, pfl-040/pfl-047, pfl-057/pfl-058, pfl-066/pfl-067/pfl-072, and pfl-075/pfl-076, which are near-twins from the same quiz with different scenarios. All were kept.",
+      "Cueing to watch for if the quiz draws items at random: the stem of pfl-077 defines a Ponzi scheme (the answer to pfl-086), and the stem of pfl-056 states the definition asked for in pfl-037. Both pairs are source wording and were kept.",
+      "Source caveats left as they are: pfl-030 (\"Over the past 20 years...\") is a time-sensitive claim kept as the source states it. pfl-073 cites (800) SEC-0330 and help@SEC.gov, which still match investor.gov/contact-us (1-800-732-0330, Help@sec.gov) on 2026-10-11. The source explanation for pfl-014 mislabels two of the compounding options, which is why it is shortened. The source explanation for pfl-027 divides by $76,000 where it should divide by $57,000. Both were shortened to avoid repeating those errors, and both keys are mathematically correct: (1.07/1.06)^30 is about 1.33, and 3% compounded daily beats 3% compounded monthly.",
+      "Re-check (2026-10-11, second pass, after the usage-limit pause): a script compared all 76 Investor.gov items with the quiz data parsed from the cited pages. Every stem, all four choices and every key match, and every explanation sentence appears on the cited page. A second script matched all 15 FDIC items (stem, choices and keyed letter) against the answer-key blocks of the downloaded Instructor Guides. Licences were re-read on their own pages: sec.gov/about/privacy-information (\"may be copied or further distributed by users of the web site without the SEC's permission\"), investor.gov/disclaimer (\"Paid for by the U.S. Securities and Exchange Commission.\") and FDIC FIL-58-2001 (\"have no copyright restrictions\"). No item was changed.",
+      "Why the file stops at 91: the 54 Investor.gov quiz pages hold 145 unique four-option items. The other 69 were reviewed and left out because they are near-copies of included items (for example the many \"guaranteed 12%/25% return, what should X do?\" and Rule-of-72 variants), time-sensitive (RMD starting age, Trump Accounts), promotion of Investor.gov tools, or SEC trivia (Form numbers, trading suspensions, SPAC, blue sky laws). In FDIC Money Smart for Adults, modules 1, 2, 5, 7 and 14 have only true/false or choose-all items. Module 10 question 4 (net worth) was skipped because its key, \"Both b & c\", treats \"Adding up all of your equity\" as correct; the module defines net worth only as assets minus liabilities, so choice b alone is also defensible. The thin areas (Earning Income, Spending, Managing Credit, insurance) have no further keyed single-answer items in the mapped sources.",
+      "Third pass (2026-10-11, after the second usage-limit pause): all 91 items were solved again without looking at the keys, and all 91 answers matched the key. A new parser, written separately from the earlier scripts, re-fetched all 32 cited Investor.gov quiz pages live (each returned HTTP 200 at the cited URL with no redirect) and read the quiz data on each page. All 76 Investor.gov items match their cited question number: stem, all four choices and key. Every explanation sentence was found on its page, and no page shows a copyright notice. The 8 FDIC Instructor Guide PDFs were downloaded again. Each is byte-identical to the copy checked earlier and is still linked from fdic.gov/consumer-resource-center/money-smart-adults. All 15 FDIC items were checked by hand against the printed answer keys. Licence pages were re-read: sec.gov/about/privacy-information, investor.gov/disclaimer and FDIC FIL-58-2001.",
+      "Fixed pfl-059, pfl-060 and pfl-061 (attribution only). In the Module 6 guide, the answer-key heading is printed as \"Answer Key for Both the Pre and Post-Training Surveys\", without the hyphen the other seven modules use. The three attribution lines now quote the heading exactly. This mismatch is also why the earlier FDIC matching script could not find these three items. A hand check shows their stems, choices and keys match question 4, 5 and 6 of that answer key.",
+      "Count correction: the Investor.gov items now cite 32 distinct quiz pages, not 33. The first pass counted 33 because pfl-001 then cited the rotating quiz index page. pfl-001 has since moved to the January 2026 quiz, which other items already cite. No item was removed in this pass."
+    ],
+    "recheckedAt": "2026-10-11",
+    "thirdPassAt": "2026-10-11"
+  }
+}

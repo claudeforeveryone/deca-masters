@@ -1,0 +1,1714 @@
+{
+  "slug": "entrepreneurship",
+  "title": "Entrepreneurship terms",
+  "status": "sourced",
+  "disclaimer": "Definitions reused from openly licensed and public-domain sources (credited on each term). Not official DECA content.",
+  "builtAt": "2026-10-11",
+  "builtBy": "shared-account agent (Project Omega), scripted extraction (tools/vocab/build-vocab-open.js)",
+  "termCount": 75,
+  "coverage": {
+    "Entrepreneurship": 10,
+    "Operations": 8,
+    "Financial Analysis": 7,
+    "Strategic Management": 5,
+    "Emotional Intelligence": 3,
+    "Promotion": 5,
+    "Market Planning": 4,
+    "Human Resources Management": 3,
+    "Business Law": 4,
+    "Information Management": 2,
+    "Product/Service Management": 3,
+    "Channel Management": 3,
+    "Economics": 3,
+    "Pricing": 3,
+    "Marketing-Information Management": 3,
+    "Risk Management": 2,
+    "Professional Development": 2,
+    "Communications": 1,
+    "Customer Relations": 1,
+    "Quality Management": 1,
+    "Selling": 1,
+    "Marketing": 1
+  },
+  "gaps": null,
+  "notes": [
+    "NC flag: some sources are CC BY-NC 4.0 or CC BY-NC-SA 4.0 (see sources). They are used only because DECA Masters is free and non-commercial (no ads, no paid tier, no sponsorship that makes it commercial). If that changes, these terms must come out.",
+    "ShareAlike: terms from CC BY-NC-SA 4.0 sources, including any adapted versions, must be shared under CC BY-NC-SA 4.0.",
+    "Communication: Fundamentals for the Workplace keeps its glossary as Pressbooks glossary entries. source.url points to the chapter that uses the term (or the book home page when no chapter links it); the definition text itself is in the book's public glossary data (see sources[].glossaryData).",
+    "Public-domain US federal sources (SEC Investor.gov, BLS, USPTO, FDIC, CFPB): credited as the agencies ask; no seals or logos; no endorsement implied. US-specific facts (laws, agencies, figures) are US context, not Canadian.",
+    "Every definition is copied from its source glossary (HTML tags removed). Any trim or correction is marked source.adapted = true and named after \"Adapted:\" in the attribution.",
+    "76 OpenStax glossary terms for this exam are held in _hold-openstax/vocab/entrepreneurship.json until OpenStax grants permission (SOURCES.md section 1.2). They are not in this file."
+  ],
+  "sources": [
+    {
+      "type": "cc",
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition",
+      "publisher": "BCcampus (Capilano University)",
+      "authors": "Wendy Anderson and Morgan Westcott (Editors)",
+      "url": "https://opentextbc.ca/introtourism2e/",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "licenceEvidence": "Book home page (https://opentextbc.ca/introtourism2e/): \"Introduction to Tourism and Hospitality in BC - 2nd Edition Copyright (c) 2015, 2020, 2021 by Morgan Westcott and Wendy Anderson is licensed under a Creative Commons Attribution 4.0 International License, except where otherwise noted.\" Required attribution: \"Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence.\"",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 9
+    },
+    {
+      "type": "cc",
+      "title": "Marketing Principles From The River City",
+      "publisher": "VCU Libraries (Virginia Commonwealth University)",
+      "authors": "Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma, Cesar Zamudio",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/",
+      "licence": "CC BY-NC 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "licenceEvidence": "Book home page (https://pressbooks.library.vcu.edu/marketingprinciples/): \"Marketing Principles From The River City Copyright © 2026 by Jodie Ferguson and Cesar Zamudio is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License, except where otherwise noted.\"",
+      "nonCommercial": true,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 35
+    },
+    {
+      "type": "pd",
+      "title": "Investor.gov Glossary",
+      "publisher": "U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy)",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary",
+      "licence": "Public domain (US federal work)",
+      "licenceUrl": null,
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "licenceEvidence": "US federal work (17 U.S.C. 105). Investor.gov footer: \"Paid for by the U.S. Securities and Exchange Commission.\" SEC privacy page (https://www.sec.gov/about/privacy-information): \"Information presented on sec.gov is considered public information and may be copied or further distributed by users of the web site without the SEC’s permission.\" / \"Please consider appropriate citation to the SEC as the source.\"",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 3
+    },
+    {
+      "type": "cc",
+      "title": "Basic Kitchen and Food Service Management",
+      "publisher": "BCcampus",
+      "authors": "The BC Cook Articulation Committee",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "licenceEvidence": "Book home page (https://opentextbc.ca/basickitchenandfoodservicemanagement/): \"Basic Kitchen and Food Service Management Copyright © 2015 by The BC Cook Articulation Committee is licensed under a Creative Commons Attribution 4.0 International License, except where otherwise noted.\"",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 13
+    },
+    {
+      "type": "cc",
+      "title": "Project Management for Instructional Designers",
+      "publisher": "University of Saskatchewan (SaskOER)",
+      "authors": "ETAD 874",
+      "url": "https://www.saskoer.ca/pm4id/",
+      "licence": "CC BY-NC-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "licenceEvidence": "Book home page (https://www.saskoer.ca/pm4id/): \"Project Management for Instructional Designers Copyright © 2016 by ETAD 874 is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except where otherwise noted.\"",
+      "nonCommercial": true,
+      "shareAlike": true,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 4
+    },
+    {
+      "type": "cc",
+      "title": "Communication: Fundamentals for the Workplace",
+      "publisher": "Nova Scotia Community College (NSCC)",
+      "authors": "Jordan Smith and NSCC",
+      "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College (NSCC), https://pressbooks.atlanticoer-relatlantique.ca/comm1205/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "licenceEvidence": "Book home page (https://pressbooks.atlanticoer-relatlantique.ca/comm1205/): \"Communication: Fundamentals for the Workplace Copyright © 2021 by Jordan Smith is licensed under a Creative Commons Attribution 4.0 International License, except where otherwise noted.\"",
+      "glossaryData": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/wp-json/pressbooks/v2/glossary?per_page=100",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 3
+    },
+    {
+      "type": "cc",
+      "title": "Human Resources in the Food Service and Hospitality Industry",
+      "publisher": "BCcampus",
+      "authors": "The BC Cook Articulation Committee",
+      "url": "https://opentextbc.ca/humanresourcesinfoodservices/",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Human Resources in the Food Service and Hospitality Industry by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/humanresourcesinfoodservices/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "licenceEvidence": "Book home page (https://opentextbc.ca/humanresourcesinfoodservices/): \"Human Resources in the Food Service and Hospitality Industry Copyright © 2015 by The BC Cook Articulation Committee is licensed under a Creative Commons Attribution 4.0 International License, except where otherwise noted.\"",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 3
+    },
+    {
+      "type": "pd",
+      "title": "USPTO Glossary",
+      "publisher": "United States Patent and Trademark Office (USPTO)",
+      "url": "https://www.uspto.gov/learning-and-resources/glossary",
+      "licence": "Public domain (US federal work)",
+      "licenceUrl": null,
+      "attribution": "USPTO Glossary, United States Patent and Trademark Office (USPTO), https://www.uspto.gov/learning-and-resources/glossary. Public domain (US federal work).",
+      "licenceEvidence": "USPTO Terms of use (https://www.uspto.gov/terms-use-uspto-websites): \"Pursuant to federal law, most government-produced materials appearing on this website are not subject to copyright restrictions within the United States and are therefore in the public domain.\" / \"Public domain information may be freely distributed and copied, but it is requested that in any subsequent use the United States Patent and Trademark Office (USPTO) be given appropriate acknowledgement.\"",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 4
+    },
+    {
+      "type": "pd",
+      "title": "BLS Glossary",
+      "publisher": "U.S. Bureau of Labor Statistics (BLS)",
+      "url": "https://www.bls.gov/bls/glossary.htm",
+      "licence": "Public domain (US federal work)",
+      "licenceUrl": null,
+      "attribution": "BLS Glossary, U.S. Bureau of Labor Statistics (BLS), https://www.bls.gov/bls/glossary.htm. Public domain (US federal work).",
+      "licenceEvidence": "BLS Copyright Information (https://www.bls.gov/opub/copyright-information.htm): \"The Bureau of Labor Statistics (BLS) is a Federal government agency and everything that we publish, both in hard copy and electronically, is in the public domain, except for previously copyrighted photographs and illustrations. You are free to use our public domain material without specific permission, although we do ask that you cite the Bureau of Labor Statistics as the source.\" The BLS emblem is a registered trademark; do not use it.",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "aiRestriction": false,
+      "licenceCheckedAt": "2026-10-11",
+      "termsUsed": 1
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-franchise",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-franchisee",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-franchisor",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-pestle",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-conflict-management",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-risk-management",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-commercial-general-liability-insurance",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-networking",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+      "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-customer-orientation",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-opportunity-identification",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-concept-generation",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-new-to-the-world-products",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-addressable-market",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-market-potential",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-variable-costs",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-swot-analysis",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-ansoff-matrix",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-market-penetration",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-market-development",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-advertising",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-public-relations-pr",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-sales-promotion",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-content-marketing",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-social-media-marketing",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-market-segmentation",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-targeting",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-positioning",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-personas",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-big-data",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-product-life-cycle",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-product-line",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-product-mix",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-direct-channel",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-wholesalers",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-retailers",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-demand",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-penetration-pricing",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-price-skimming",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-markup-pricing",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-marketing-research",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-focus-group",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-survey",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-personal-selling",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Marketing Principles From The River City, Glossary",
+      "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-marketing-orientation",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries (Virginia Commonwealth University), https://pressbooks.library.vcu.edu/marketingprinciples/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://pressbooks.library.vcu.edu/marketingprinciples/"
+    },
+    {
+      "title": "Investor.gov Glossary: Regulation Crowdfunding",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/regulation-crowdfunding",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Initial Public Offering (IPO)",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/initial-public-offering-ipo",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Investor.gov Glossary: Net Income",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/net-income",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investor.gov Glossary, U.S. Securities and Exchange Commission (Office of Investor Education and Advocacy), https://www.investor.gov/introduction-investing/investing-basics/glossary. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/introduction-investing/investing-basics/glossary"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-inventory",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-par-stock",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-purchase-order",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-invoice",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-specifications",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-productivity",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-breakeven-point",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-contribution-margin",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-fixed-cost",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-overhead",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-profitability",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-point-of-sale-pos-system",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Basic Kitchen and Food Service Management, Glossary",
+      "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-capital",
+      "licence": "CC BY 4.0",
+      "attribution": "Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/basickitchenandfoodservicemanagement/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-outsourcing",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-procurement",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-emotional-intelligence",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Project Management for Instructional Designers, Glossary",
+      "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-benchmarking",
+      "licence": "CC BY-NC-SA 4.0",
+      "attribution": "Project Management for Instructional Designers by ETAD 874, University of Saskatchewan (SaskOER), https://www.saskoer.ca/pm4id/. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/).",
+      "partOf": "https://www.saskoer.ca/pm4id/"
+    },
+    {
+      "title": "Human Resources in the Food Service and Hospitality Industry, Key Terms",
+      "url": "https://opentextbc.ca/humanresourcesinfoodservices/back-matter/glossary/#dfn-human-resources-management-(hrm)",
+      "licence": "CC BY 4.0",
+      "attribution": "Human Resources in the Food Service and Hospitality Industry by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/humanresourcesinfoodservices/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/humanresourcesinfoodservices/"
+    },
+    {
+      "title": "Human Resources in the Food Service and Hospitality Industry, Key Terms",
+      "url": "https://opentextbc.ca/humanresourcesinfoodservices/back-matter/glossary/#dfn-job-description",
+      "licence": "CC BY 4.0",
+      "attribution": "Human Resources in the Food Service and Hospitality Industry by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/humanresourcesinfoodservices/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/humanresourcesinfoodservices/"
+    },
+    {
+      "title": "Human Resources in the Food Service and Hospitality Industry, Key Terms",
+      "url": "https://opentextbc.ca/humanresourcesinfoodservices/back-matter/glossary/#dfn-orientation",
+      "licence": "CC BY 4.0",
+      "attribution": "Human Resources in the Food Service and Hospitality Industry by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/humanresourcesinfoodservices/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+      "partOf": "https://opentextbc.ca/humanresourcesinfoodservices/"
+    },
+    {
+      "title": "BLS Glossary: Inflation",
+      "url": "https://www.bls.gov/bls/glossary.htm#inflation",
+      "licence": "Public domain (US federal work)",
+      "attribution": "BLS Glossary, U.S. Bureau of Labor Statistics (BLS), https://www.bls.gov/bls/glossary.htm. Public domain (US federal work).",
+      "partOf": "https://www.bls.gov/bls/glossary.htm"
+    }
+  ],
+  "terms": [
+    {
+      "id": "ent-v-001",
+      "term": "Franchise",
+      "definition": "Enables individuals or investment companies to build or purchase a business and then buy or lease a brand name under which to operate; also can include reservation systems and marketing tools.",
+      "area": "Entrepreneurship",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-franchise",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Franchise\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-franchise. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-002",
+      "term": "Franchisee",
+      "definition": "An individual or company buying or leasing a franchise.",
+      "area": "Entrepreneurship",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-franchisee",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Franchisee\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-franchisee. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-003",
+      "term": "Franchisor",
+      "definition": "A company that sells franchises.",
+      "area": "Entrepreneurship",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-franchisor",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Franchisor\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-franchisor. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-004",
+      "term": "Opportunity identification",
+      "definition": "The first stage of the strategy driven product development process. This stage involves identifying potential market opportunities or unmet consumer needs",
+      "area": "Entrepreneurship",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-opportunity-identification",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Opportunity identification\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-opportunity-identification. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-005",
+      "term": "Concept generation",
+      "definition": "The second stage of the strategy driven product development process. In this stage, potential product ideas are brainstormed and gathered",
+      "area": "Entrepreneurship",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-concept-generation",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Concept generation\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-concept-generation. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-006",
+      "term": "New-to-the-world products",
+      "definition": "Products that represent radical innovations are the ones that create entirely new markets",
+      "area": "Entrepreneurship",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-new-to-the-world-products",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"New-to-the-world products\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-new-to-the-world-products. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-007",
+      "term": "Addressable market",
+      "definition": "The total number of consumers that an organization could potentially serve",
+      "area": "Entrepreneurship",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-addressable-market",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Addressable market\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-addressable-market. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-008",
+      "term": "Market potential",
+      "definition": "A measure of the anticipated monetary value of a market segment",
+      "area": "Entrepreneurship",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-market-potential",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Market potential\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-market-potential. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-009",
+      "term": "Crowdfunding",
+      "definition": "Crowdfunding refers to a financing method in which money is raised through soliciting relatively small individual investments or contributions from a large number of people.",
+      "area": "Entrepreneurship",
+      "source": {
+        "title": "Investor.gov Glossary: Regulation Crowdfunding",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/regulation-crowdfunding",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Regulation Crowdfunding,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/regulation-crowdfunding. Public domain (US federal work). Adapted: kept the first paragraph only; term label shortened from \"Regulation Crowdfunding\" to \"Crowdfunding\".",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-010",
+      "term": "Initial Public Offering (IPO)",
+      "definition": "An initial public offering, or IPO, generally refers to when a company first sells its shares to the public.",
+      "area": "Entrepreneurship",
+      "source": {
+        "title": "Investor.gov Glossary: Initial Public Offering (IPO)",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/initial-public-offering-ipo",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Initial Public Offering (IPO),\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/initial-public-offering-ipo. Public domain (US federal work). Adapted: kept the first sentence only.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-011",
+      "term": "inventory",
+      "definition": "Total goods in stock at any one time.",
+      "area": "Operations",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-inventory",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"inventory\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-inventory. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-012",
+      "term": "par stock",
+      "definition": "Maximum amount of an item that should be in stock at any one time.",
+      "area": "Operations",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-par-stock",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"par stock\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-par-stock. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-013",
+      "term": "purchase order",
+      "definition": "A document indicating the approval of a quantity of goods ordered from a supplier.",
+      "area": "Operations",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-purchase-order",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"purchase order\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-purchase-order. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-014",
+      "term": "invoice",
+      "definition": "A document indicating the amount owed for goods or services.",
+      "area": "Operations",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-invoice",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"invoice\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-invoice. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-015",
+      "term": "specifications",
+      "definition": "Purchase criteria such as size, grade, packaging, market form.",
+      "area": "Operations",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-specifications",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"specifications\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-specifications. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-016",
+      "term": "productivity",
+      "definition": "A measure of the amount of work done in a fixed period.",
+      "area": "Operations",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-productivity",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"productivity\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-productivity. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-017",
+      "term": "Outsourcing",
+      "definition": "Procure work from outside companies.",
+      "area": "Operations",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-outsourcing",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Outsourcing\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-outsourcing. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-018",
+      "term": "Procurement",
+      "definition": "The process of obtaining goods and services from providers who are outside of the organization.",
+      "area": "Operations",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-procurement",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Procurement\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-procurement. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-019",
+      "term": "breakeven point",
+      "definition": "The point at which cost and revenue are equal.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-breakeven-point",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"breakeven point\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-breakeven-point. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-020",
+      "term": "contribution margin",
+      "definition": "Portion of sales that can be applied against fixed costs; gross sales minus variable costs.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-contribution-margin",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"contribution margin\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-contribution-margin. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-021",
+      "term": "fixed cost",
+      "definition": "Costs which do not change based on the volume of business.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-fixed-cost",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"fixed cost\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-fixed-cost. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-022",
+      "term": "Variable costs",
+      "definition": "Costs that do change with unit output",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-variable-costs",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Variable costs\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-variable-costs. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-023",
+      "term": "overhead",
+      "definition": "The ongoing expenses required to operate a business that are not direct costs of producing goods or services.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-overhead",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"overhead\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-overhead. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-024",
+      "term": "profitability",
+      "definition": "The amount of profit a business generates compared to sales, usually reflected in a percentage.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-profitability",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"profitability\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-profitability. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-025",
+      "term": "Net Income",
+      "definition": "The profit earned by a company after all expenses and taxes have been deducted from revenue. A simple way to think about net income is it’s the price of a widget multiplied by the number of widgets sold (this result is revenue) minus the cost to make and sell the widgets, other expenses and any interest or taxes.",
+      "area": "Financial Analysis",
+      "source": {
+        "title": "Investor.gov Glossary: Net Income",
+        "url": "https://www.investor.gov/introduction-investing/investing-basics/glossary/net-income",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition from \"Net Income,\" Investor.gov glossary, U.S. Securities and Exchange Commission, https://www.investor.gov/introduction-investing/investing-basics/glossary/net-income. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-026",
+      "term": "SWOT analysis",
+      "definition": "Evaluating the company's strengths (S), weaknesses (W), opportunities (O), and threats (T)",
+      "area": "Strategic Management",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-swot-analysis",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"SWOT analysis\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-swot-analysis. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-027",
+      "term": "PESTLE",
+      "definition": "An acronym for political, economic, social, technological, legal and environmental forces.",
+      "area": "Strategic Management",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-pestle",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"PESTLE\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-pestle. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-028",
+      "term": "Ansoff matrix",
+      "definition": "Provides a framework for analyzing options for growth by considering both existing and new products and markets",
+      "area": "Strategic Management",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-ansoff-matrix",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Ansoff matrix\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-ansoff-matrix. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-029",
+      "term": "Market penetration",
+      "definition": "One of the four quadrants of the Ansoff Matrix. Involves increasing market share for existing products in existing markets",
+      "area": "Strategic Management",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-market-penetration",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Market penetration\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-market-penetration. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-030",
+      "term": "Market development",
+      "definition": "One of the four quadrants of the Ansoff Matrix. Involves entering new markets with existing products",
+      "area": "Strategic Management",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-market-development",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Market development\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-market-development. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-031",
+      "term": "Emotional Intelligence",
+      "definition": "The ability to sense, understand, and effectively apply emotions as human energy.",
+      "area": "Emotional Intelligence",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-emotional-intelligence",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Emotional Intelligence\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-emotional-intelligence. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end; removed the repeated term label at the start.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-032",
+      "term": "Conflict management",
+      "definition": "The practice of being able to identify and handle conflicts sensibly, fairly, and efficiently.",
+      "area": "Emotional Intelligence",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-conflict-management",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Conflict management\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-conflict-management. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-033",
+      "term": "Cognitive restructuring",
+      "definition": "Mentally converting negative aspects into positive ones by looking for the positive elements in a situation.",
+      "area": "Emotional Intelligence",
+      "source": {
+        "title": "Communication: Fundamentals for the Workplace, glossary",
+        "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Cognitive restructuring\" from the glossary of Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College, https://pressbooks.atlanticoer-relatlantique.ca/comm1205/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-034",
+      "term": "Advertising",
+      "definition": "Involves paid, non-personal communication through various media channels such as television, radio, print, and digital platforms",
+      "area": "Promotion",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-advertising",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Advertising\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-advertising. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-035",
+      "term": "Public relations (PR)",
+      "definition": "Involves managing the public image of a brand and fostering positive relationships with various stakeholders, including the media, consumers, and the general public",
+      "area": "Promotion",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-public-relations-pr",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Public relations (PR)\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-public-relations-pr. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-036",
+      "term": "Sales promotion",
+      "definition": "Short-term incentives designed to stimulate immediate sales or encourage trial of a product",
+      "area": "Promotion",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-sales-promotion",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Sales promotion\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-sales-promotion. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-037",
+      "term": "Content marketing",
+      "definition": "Creating valuable, relevant, and consistent content helps attract and retain a clearly defined audience",
+      "area": "Promotion",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-content-marketing",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Content marketing\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-content-marketing. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-038",
+      "term": "Social media marketing",
+      "definition": "Leveraging social media platforms allows marketers to interact with audiences in real-time, build communities, and promote content",
+      "area": "Promotion",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-social-media-marketing",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Social media marketing\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-social-media-marketing. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-039",
+      "term": "Market segmentation",
+      "definition": "A process in which marketers identify the market a company should serve, and then split it into different, unique groups using several criteria",
+      "area": "Market Planning",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-market-segmentation",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Market segmentation\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-market-segmentation. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-040",
+      "term": "Targeting",
+      "definition": "Involves assessing the appeal of each segment and choosing the most promising ones to pursue",
+      "area": "Market Planning",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-targeting",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Targeting\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-targeting. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-041",
+      "term": "Positioning",
+      "definition": "The process of discovering the position of a particular brand in the mind of the consumer, relative to other competitors’ brands",
+      "area": "Market Planning",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-positioning",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Positioning\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-positioning. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-042",
+      "term": "Personas",
+      "definition": "Rich segment descriptions that illustrate a typical segment member’s characteristics (such as demographics), needs, wants, aspirations, and daily life",
+      "area": "Market Planning",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-personas",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Personas\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-personas. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-043",
+      "term": "human resources management (HRM)",
+      "definition": "The management of people within organizations, focusing on policies and systems.",
+      "area": "Human Resources Management",
+      "source": {
+        "title": "Human Resources in the Food Service and Hospitality Industry, Key Terms",
+        "url": "https://opentextbc.ca/humanresourcesinfoodservices/back-matter/glossary/#dfn-human-resources-management-(hrm)",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"human resources management (HRM)\" from the Key Terms of Human Resources in the Food Service and Hospitality Industry by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/humanresourcesinfoodservices/back-matter/glossary/#dfn-human-resources-management-(hrm). Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-044",
+      "term": "job description",
+      "definition": "A detailed list of duties, skills, and qualifications required to perform a job.",
+      "area": "Human Resources Management",
+      "source": {
+        "title": "Human Resources in the Food Service and Hospitality Industry, Key Terms",
+        "url": "https://opentextbc.ca/humanresourcesinfoodservices/back-matter/glossary/#dfn-job-description",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"job description\" from the Key Terms of Human Resources in the Food Service and Hospitality Industry by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/humanresourcesinfoodservices/back-matter/glossary/#dfn-job-description. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-045",
+      "term": "orientation",
+      "definition": "Initial training given to an employee when starting a new or different job.",
+      "area": "Human Resources Management",
+      "source": {
+        "title": "Human Resources in the Food Service and Hospitality Industry, Key Terms",
+        "url": "https://opentextbc.ca/humanresourcesinfoodservices/back-matter/glossary/#dfn-orientation",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"orientation\" from the Key Terms of Human Resources in the Food Service and Hospitality Industry by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/humanresourcesinfoodservices/back-matter/glossary/#dfn-orientation. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-046",
+      "term": "intellectual property",
+      "definition": "Creations of the mind—creative works or ideas embodied in a form that can be shared or can enable others to recreate, emulate, or manufacture them. There are four ways to protect intellectual property: patents, trademarks, copyrights, and/or trade secrets.",
+      "area": "Business Law",
+      "source": {
+        "title": "USPTO Glossary: intellectual property",
+        "url": "https://www.uspto.gov/learning-and-resources/glossary",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition of \"intellectual property\" from the Glossary, United States Patent and Trademark Office (USPTO), https://www.uspto.gov/learning-and-resources/glossary. Public domain (US federal work); use does not imply USPTO endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-047",
+      "term": "trademark",
+      "definition": "Any word, phrase, symbol, design, or a combination of these things that identifies the source of goods or services. Businesses and individuals use trademarks with their goods or services so that customers recognize them in the marketplace and distinguish them from competitors.",
+      "area": "Business Law",
+      "source": {
+        "title": "USPTO Glossary: trademark",
+        "url": "https://www.uspto.gov/learning-and-resources/glossary",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition of \"trademark\" from the Glossary, United States Patent and Trademark Office (USPTO), https://www.uspto.gov/learning-and-resources/glossary. Public domain (US federal work); use does not imply USPTO endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-048",
+      "term": "Patent",
+      "definition": "A property right granted by the government of the United States of America to an inventor \"to exclude others from making, using, offering for sale, or selling the invention throughout the United States or importing the invention into the United States\" for a limited time in exchange for public disclosure of the invention when the patent is granted.",
+      "area": "Business Law",
+      "source": {
+        "title": "USPTO Glossary: Patent",
+        "url": "https://www.uspto.gov/learning-and-resources/glossary",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition of \"Patent\" from the Glossary, United States Patent and Trademark Office (USPTO), https://www.uspto.gov/learning-and-resources/glossary. Public domain (US federal work); use does not imply USPTO endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-049",
+      "term": "trade secret",
+      "definition": "Information that companies keep secret to give them an advantage over their competitors.",
+      "area": "Business Law",
+      "source": {
+        "title": "USPTO Glossary: trade secret",
+        "url": "https://www.uspto.gov/learning-and-resources/glossary",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition of \"trade secret\" from the Glossary, United States Patent and Trademark Office (USPTO), https://www.uspto.gov/learning-and-resources/glossary. Public domain (US federal work); use does not imply USPTO endorsement.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-050",
+      "term": "point-of-sale (POS) system",
+      "definition": "A computerized system that coordinates customer purchases, sales, and costs through various linked terminals in a business.",
+      "area": "Information Management",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-point-of-sale-pos-system",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"point-of-sale (POS) system\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-point-of-sale-pos-system. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-051",
+      "term": "Big data",
+      "definition": "Very large databases of customer information",
+      "area": "Information Management",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-big-data",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Big data\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-big-data. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-052",
+      "term": "Product life cycle",
+      "definition": "Describes a product’s sales progression from launch to withdrawal",
+      "area": "Product/Service Management",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-product-life-cycle",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Product life cycle\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-product-life-cycle. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-053",
+      "term": "Product line",
+      "definition": "Related product items are grouped into product lines based on shared characteristics, or target markets",
+      "area": "Product/Service Management",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-product-line",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Product line\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-product-line. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-054",
+      "term": "Product mix",
+      "definition": "Includes all product families a company offers",
+      "area": "Product/Service Management",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-product-mix",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Product mix\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-product-mix. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-055",
+      "term": "Direct channel",
+      "definition": "One of the three types of distribution channels. Allow buyers to purchase directly from the manufacturer",
+      "area": "Channel Management",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-direct-channel",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Direct channel\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-direct-channel. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-056",
+      "term": "Wholesalers",
+      "definition": "Resellers who buy goods in large quantities and resell them to retailers and other businesses",
+      "area": "Channel Management",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-wholesalers",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Wholesalers\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-wholesalers. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-057",
+      "term": "Retailers",
+      "definition": "Retailers purchase a variety of goods from either producers or wholesalers and then sell those goods, in smaller quantities, directly to the end customer",
+      "area": "Channel Management",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-retailers",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Retailers\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-retailers. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-058",
+      "term": "capital",
+      "definition": "Physical assets or money used in the production of goods and services.",
+      "area": "Economics",
+      "source": {
+        "title": "Basic Kitchen and Food Service Management, Glossary",
+        "url": "https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-capital",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"capital\" from the Glossary of Basic Kitchen and Food Service Management by The BC Cook Articulation Committee, BCcampus, https://opentextbc.ca/basickitchenandfoodservicemanagement/back-matter/key-terms/#dfn-capital. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-059",
+      "term": "Demand",
+      "definition": "The number of units the market will buy at given price points within a time period",
+      "area": "Economics",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-demand",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Demand\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-demand. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-060",
+      "term": "Inflation",
+      "definition": "Rising prices of goods and services over time.",
+      "area": "Economics",
+      "source": {
+        "title": "BLS Glossary: Inflation",
+        "url": "https://www.bls.gov/bls/glossary.htm#inflation",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Definition of \"Inflation\" from the BLS Glossary, U.S. Bureau of Labor Statistics, https://www.bls.gov/bls/glossary.htm#inflation. Public domain (US federal work); source: U.S. Bureau of Labor Statistics.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-061",
+      "term": "Penetration pricing",
+      "definition": "Occurs when the marketer sets the price low when a product is first introduced to get people to try the product before the price is raised to its regular price",
+      "area": "Pricing",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-penetration-pricing",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Penetration pricing\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-penetration-pricing. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-062",
+      "term": "Price skimming",
+      "definition": "Occurs when the marketer sets the price high when a product is first introduced to capitalize on customers who want the product as soon as it hits the market",
+      "area": "Pricing",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-price-skimming",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Price skimming\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-price-skimming. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-063",
+      "term": "Markup pricing",
+      "definition": "When the marketer considers the costs to make the product available to the customer and adds a mark-up value when setting the final price",
+      "area": "Pricing",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-markup-pricing",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Markup pricing\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-markup-pricing. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-064",
+      "term": "Marketing research",
+      "definition": "The process of gathering information to learn about the voice of the consumer",
+      "area": "Marketing-Information Management",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-marketing-research",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Marketing research\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-marketing-research. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-065",
+      "term": "Focus group",
+      "definition": "A method in which a discussion leader guides a group of consumers to discuss a specific topic, such as their opinion on a new product or service",
+      "area": "Marketing-Information Management",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-focus-group",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Focus group\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-focus-group. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-066",
+      "term": "Survey",
+      "definition": "A series of questions, structured in the form of a physical or electronic document (also called instrument), that marketing researchers distribute to consumer respondents",
+      "area": "Marketing-Information Management",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-survey",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Survey\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-survey. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-067",
+      "term": "Risk management",
+      "definition": "Practices, policies, and procedures designed to minimize or eliminate unacceptable risks.",
+      "area": "Risk Management",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-risk-management",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Risk management\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-risk-management. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-068",
+      "term": "Commercial general liability insurance",
+      "definition": "The most common type of liability insurance that provides coverage for litigation; generally legal costs and personal injury settlements arising from a lawsuit are covered.",
+      "area": "Risk Management",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-commercial-general-liability-insurance",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Commercial general liability insurance\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-commercial-general-liability-insurance. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-069",
+      "term": "Networking",
+      "definition": "Creating relationships within a sector for the purpose of enhancing and developing one’s professional identity.",
+      "area": "Professional Development",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-networking",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Networking\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-networking. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-070",
+      "term": "E-portfolio",
+      "definition": "a collection of digital files that can be navigated much like a personal website",
+      "area": "Professional Development",
+      "source": {
+        "title": "Communication: Fundamentals for the Workplace, glossary",
+        "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"E-portfolio\" from the glossary of Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College, https://pressbooks.atlanticoer-relatlantique.ca/comm1205/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-071",
+      "term": "persuade",
+      "definition": "Convince the receiver to take a recommended course of action.",
+      "area": "Communications",
+      "source": {
+        "title": "Communication: Fundamentals for the Workplace, glossary",
+        "url": "https://pressbooks.atlanticoer-relatlantique.ca/comm1205/",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"persuade\" from the glossary of Communication: Fundamentals for the Workplace by Jordan Smith and NSCC, Nova Scotia Community College, https://pressbooks.atlanticoer-relatlantique.ca/comm1205/. Licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-072",
+      "term": "Customer orientation",
+      "definition": "Positioning a business or organization so that customer interests and value are the highest priority.",
+      "area": "Customer Relations",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, Glossary",
+        "url": "https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-customer-orientation",
+        "licence": "CC BY 4.0",
+        "attribution": "Definition of \"Customer orientation\" from the Glossary of Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/back-matter/glossary-new/#dfn-customer-orientation. Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-073",
+      "term": "Benchmarking",
+      "definition": "Comparing your organization’s product or process to a standard of quality or industry best practice.",
+      "area": "Quality Management",
+      "source": {
+        "title": "Project Management for Instructional Designers, Glossary",
+        "url": "https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-benchmarking",
+        "licence": "CC BY-NC-SA 4.0",
+        "attribution": "Definition of \"Benchmarking\" from the Glossary of Project Management for Instructional Designers by ETAD 874, University of Saskatchewan, https://www.saskoer.ca/pm4id/back-matter/glossary/#dfn-benchmarking. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). Adapted: removed the chapter-section reference numbers at the end.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-074",
+      "term": "Personal selling",
+      "definition": "A person-to-person, two-way communication between a buyer and seller, with the objective of making a sale and building a relationship with the buyer",
+      "area": "Selling",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-personal-selling",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Personal selling\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-personal-selling. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "ent-v-075",
+      "term": "Marketing orientation",
+      "definition": "Marketers seek out customer needs and wants and put forth product offerings that meet those needs and wants",
+      "area": "Marketing",
+      "source": {
+        "title": "Marketing Principles From The River City, Glossary",
+        "url": "https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-marketing-orientation",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Definition of \"Marketing orientation\" from the Glossary of Marketing Principles From The River City by Jodie L. Ferguson, Jonathan Ross Gilbert, Katie Gilstrap, Suzanne C. Makarem, Mayoor Mohan, Butch M. Sarma and Cesar Zamudio, VCU Libraries, https://pressbooks.library.vcu.edu/marketingprinciples/back-matter/glossary/#dfn-marketing-orientation. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    }
+  ]
+}

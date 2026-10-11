@@ -1,0 +1,661 @@
+{
+  "cluster": "finance",
+  "status": "placeholder",
+  "placeholderNote": "DECA Masters stores no role-play or case-study text. Each event links to the official sample events DECA Inc. publishes on deca.org (copyright DECA Inc.; linked, never copied). Students open the official PDF, then practise with the trainer's timer, performance-indicator checklist and self-evaluation.",
+  "disclaimer": "Links to official DECA Inc. sample events hosted by DECA. DECA Masters is an independent practice tool, not affiliated with DECA Inc.",
+  "season": "2026-2027",
+  "verifiedAt": "2026-10-11",
+  "verification": "Every url and pageUrl returned HTTP 200 on 2026-10-11; every url is a PDF whose first page names the event code and year shown here.",
+  "sources": [
+    {
+      "title": "DECA high school competitive event pages (Sample Event link and Classroom Resources role-plays)",
+      "url": "https://www.deca.org/compete",
+      "licence": "All rights reserved (DECA Inc.). Linked only, no text reused."
+    },
+    {
+      "title": "DECA Guide 2026-27 event guidelines (prep time, presentation time, judge role)",
+      "url": "https://www.deca.org/compete",
+      "licence": "All rights reserved (DECA Inc.). Facts summarised, no text reused."
+    }
+  ],
+  "events": [
+    {
+      "eventCode": "ACT",
+      "eventName": "Accounting Applications Series",
+      "component": "roleplay",
+      "officialUrl": "https://www.deca.org/compete/accounting-applications-series",
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf",
+      "officialSamples": [
+        {
+          "title": "Official sample event, 2026-27 format (ACT-26 District Event 1)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3dc18932c97e0c766d3245_DECA_ACT_2026_District_Event_1_Sample.pdf",
+          "season": "2026-27",
+          "round": "Sample Event",
+          "instructionalArea": null,
+          "kind": "current-format-sample",
+          "pageUrl": "https://www.deca.org/compete/accounting-applications-series",
+          "formatNote": "The 2025-26 District Event 1 reissued by DECA in the 2026-27 layout (Solution criteria and Career Competencies)."
+        },
+        {
+          "title": "District Event 1: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ef3778038801b5062978_DECA_ACT_2026_District_Event_1.pdf",
+          "season": "2025-26",
+          "round": "District Event 1",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/accounting-applications-2026a"
+        },
+        {
+          "title": "District Event 2: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1fa3359ba6497d932309a_DECA_ACT_2026_District_Event_2.pdf",
+          "season": "2025-26",
+          "round": "District Event 2",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/accounting-applications-2026b"
+        },
+        {
+          "title": "District Event 1: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1db459f0b1146ce562355_DECA_ACT_2025_District_Event_1.pdf",
+          "season": "2024-25",
+          "round": "District Event 1",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/accounting-applications-2025a"
+        },
+        {
+          "title": "District Event 2: Professional Development",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c218d6ddf9d6e9c3f61813_DECA_ACT_2025_District_Event_2.pdf",
+          "season": "2024-25",
+          "round": "District Event 2",
+          "instructionalArea": "Professional Development",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/accounting-applications-2025b"
+        },
+        {
+          "title": "District Event 1: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dce3dce7bd1f052a6a2877_DECA_ACT_2024_District_Event_1.pdf",
+          "season": "2023-24",
+          "round": "District Event 1",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/accounting-applications-2024a"
+        },
+        {
+          "title": "District Event 2: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dce381c54fb417604c9c8a_DECA_ACT_2024_District_Event_2.pdf",
+          "season": "2023-24",
+          "round": "District Event 2",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/accounting-applications-2024b"
+        },
+        {
+          "title": "District Event 1: Professional Development",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fcd8ead8f1c62ff2a6401a_DECA_ACT_2023_District_Event_1_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event 1",
+          "instructionalArea": "Professional Development",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/accounting-applications-2023a"
+        },
+        {
+          "title": "District Event 2: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fce3cf72e9c30b2c6405f3_DECA_ACT_2023_District_Event_2_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event 2",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/accounting-applications-2023b"
+        },
+        {
+          "title": "District Event 1: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399350be0c86960e14e3610_DECA_ACT_2022_District_Event_1.pdf",
+          "season": "2021-22",
+          "round": "District Event 1",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/accounting-applications-2022a"
+        },
+        {
+          "title": "District Event 2: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63993542110b4335cdce1add_DECA_ACT_2022_District_Event_2.pdf",
+          "season": "2021-22",
+          "round": "District Event 2",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/accounting-applications-2022b"
+        },
+        {
+          "title": "District Event 1 (virtual): Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639933cd6e112b1d1251228b_DECA_ACT_2021_District_Event_1_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event 1 (virtual)",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/accounting-applications-2021a"
+        },
+        {
+          "title": "District Event 2 (virtual): Professional Development",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639934d578718880287a72e1_DECA_ACT_2021_District_Event_2_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event 2 (virtual)",
+          "instructionalArea": "Professional Development",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/accounting-applications-2021b"
+        },
+        {
+          "title": "District Event 1: Information Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399330af31db819c6d8456d_DECA_ACT_2020_District_Event_1.pdf",
+          "season": "2019-20",
+          "round": "District Event 1",
+          "instructionalArea": "Information Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/accounting-applications-2020a"
+        },
+        {
+          "title": "District Event 2: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63993350c1ef75d954a16cef_DECA_ACT_2020_District_Event_2.pdf",
+          "season": "2019-20",
+          "round": "District Event 2",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/accounting-applications-2020b"
+        },
+        {
+          "title": "District Event 1: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639932956e112b09ce4fa554_DECA_ACT_2018_District_Event_1.pdf",
+          "season": "2017-18",
+          "round": "District Event 1",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/accounting-applications-2018a"
+        },
+        {
+          "title": "District Event 2: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639932d75cc48ec48c6b069b_DECA_ACT_2018_District_Event_2.pdf",
+          "season": "2017-18",
+          "round": "District Event 2",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/accounting-applications-2018b"
+        },
+        {
+          "title": "District Event 1: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399292d95f5aa4721203104_DECA_ACT_2017_District_Event_1.pdf",
+          "season": "2016-17",
+          "round": "District Event 1",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/accounting-applications-2017a"
+        },
+        {
+          "title": "District Event 2: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399325ef31db8fa9ed7e47e_DECA_ACT_2017_District_Event_2.pdf",
+          "season": "2016-17",
+          "round": "District Event 2",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/accounting-applications-2017b"
+        }
+      ],
+      "format": {
+        "prepMinutes": 10,
+        "presentationMinutes": 10,
+        "judgeRole": "A qualified business executive who takes the business role named in the event situation. After you present your solution, the judge asks the follow-up questions written into the event, then scores you on the event evaluation form.",
+        "performanceIndicators": 5,
+        "participants": "1",
+        "rounds": "2 role-plays, third role-play for finalists"
+      },
+      "placeholder": true,
+      "note": "Open the official sample, then use the trainer's timer, PI checklist and self-evaluation"
+    },
+    {
+      "eventCode": "BFS",
+      "eventName": "Business Finance Series",
+      "component": "roleplay",
+      "officialUrl": "https://www.deca.org/compete/business-finance-series",
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327464898284bb03962f4_HS_Series_Guidelines.pdf",
+      "officialSamples": [
+        {
+          "title": "Official sample event, 2026-27 format (BFS-26 District Event 1)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3dc1b485de0d688e1b7e7c_DECA_BFS_2026_District_Event_1_Sample.pdf",
+          "season": "2026-27",
+          "round": "Sample Event",
+          "instructionalArea": null,
+          "kind": "current-format-sample",
+          "pageUrl": "https://www.deca.org/compete/business-finance-series",
+          "formatNote": "The 2025-26 District Event 1 reissued by DECA in the 2026-27 layout (Solution criteria and Career Competencies)."
+        },
+        {
+          "title": "District Event 1: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ef521ee69c1e4b677aae_DECA_BFS_2026_District_Event_1.pdf",
+          "season": "2025-26",
+          "round": "District Event 1",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-finance-2026a"
+        },
+        {
+          "title": "District Event 2: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1fc326f6b1cec7c513264_DECA_BFS_2026_District_Event_2.pdf",
+          "season": "2025-26",
+          "round": "District Event 2",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-finance-2026b"
+        },
+        {
+          "title": "District Event 1: Professional Development",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1dc22b8b3b7abe239e1ff_DECA_BFS_2025_District_Event_1.pdf",
+          "season": "2024-25",
+          "round": "District Event 1",
+          "instructionalArea": "Professional Development",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-finance-2025a"
+        },
+        {
+          "title": "District Event 2: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c21a0c153f128ea565c080_DECA_BFS_2025_District_Event_2.pdf",
+          "season": "2024-25",
+          "round": "District Event 2",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-finance-2025b"
+        },
+        {
+          "title": "District Event 1: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dce2373cdc6ae12ee1ac29_DECA_BFS_2024_District_Event_1.pdf",
+          "season": "2023-24",
+          "round": "District Event 1",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-finance-2024a"
+        },
+        {
+          "title": "District Event 2: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dce1f09b73715bb850d70a_DECA_BFS_2024_District_Event_2.pdf",
+          "season": "2023-24",
+          "round": "District Event 2",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-finance-2024b"
+        },
+        {
+          "title": "District Event 1: Economics",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fcd8967e511f5a77b956dd_DECA_BFS_2023_District_Event_1_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event 1",
+          "instructionalArea": "Economics",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-finance-2023a"
+        },
+        {
+          "title": "District Event 2: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fce535e515696241a66914_DECA_BFS_2023_District_Event_2_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event 2",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-finance-2023b"
+        },
+        {
+          "title": "District Event 1: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b7778532a8d3698033114_DECA_BFS_2022_District_Event_1.pdf",
+          "season": "2021-22",
+          "round": "District Event 1",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-finance-2022a"
+        },
+        {
+          "title": "District Event 2: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b77a44739117e9aa8e5cd_DECA_BFS_2022_District_Event_2.pdf",
+          "season": "2021-22",
+          "round": "District Event 2",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-finance-2022b"
+        },
+        {
+          "title": "District Event 1 (virtual): Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b77159facd83a607bd422_DECA_BFS_2021_District_Event_1_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event 1 (virtual)",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-finance-2021a"
+        },
+        {
+          "title": "District Event 2 (virtual): Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b774ba61a442074d5ce04_DECA_BFS_2021_District_Event_2_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event 2 (virtual)",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-finance-2021b"
+        },
+        {
+          "title": "District Event 1: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b7699e9be860496e41e4d_DECA_BFS_2020_District_Event_1.pdf",
+          "season": "2019-20",
+          "round": "District Event 1",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-finance-2020a"
+        },
+        {
+          "title": "District Event 2: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b76d9aac61fd9594bbf20_DECA_BFS_2020_District_Event_2.pdf",
+          "season": "2019-20",
+          "round": "District Event 2",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-finance-2020b"
+        },
+        {
+          "title": "District Event 1: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b76253832772e05c9c9ed_DECA_BFS_2019_District_Event_1.pdf",
+          "season": "2018-19",
+          "round": "District Event 1",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-finance-2019a"
+        },
+        {
+          "title": "District Event 2: Economics",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b7665dae42959ab5a525f_DECA_BFS_2019_District_Event_2.pdf",
+          "season": "2018-19",
+          "round": "District Event 2",
+          "instructionalArea": "Economics",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-finance-2019b"
+        },
+        {
+          "title": "District Event 1: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b75655a8079d6910d57a4_DECA_BFS_2018_District_Event_1.pdf",
+          "season": "2017-18",
+          "round": "District Event 1",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-finance-2018a"
+        },
+        {
+          "title": "District Event 2: Professional Development",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b75a06dd5125faf76421c_DECA_BFS_2018_District_Event_2.pdf",
+          "season": "2017-18",
+          "round": "District Event 2",
+          "instructionalArea": "Professional Development",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-finance-2018b"
+        },
+        {
+          "title": "District Event 1: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b74d759b66f7c812a889a_DECA_BFS_2017_District_Event_1.pdf",
+          "season": "2016-17",
+          "round": "District Event 1",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-finance-2017a"
+        },
+        {
+          "title": "District Event 2: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639b752b359dc44da414cc93_DECA_BFS_2017_District_Event_2.pdf",
+          "season": "2016-17",
+          "round": "District Event 2",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/business-finance-2017b"
+        }
+      ],
+      "format": {
+        "prepMinutes": 10,
+        "presentationMinutes": 10,
+        "judgeRole": "A qualified business executive who takes the business role named in the event situation. After you present your solution, the judge asks the follow-up questions written into the event, then scores you on the event evaluation form.",
+        "performanceIndicators": 5,
+        "participants": "1",
+        "rounds": "2 role-plays, third role-play for finalists"
+      },
+      "placeholder": true,
+      "note": "Open the official sample, then use the trainer's timer, PI checklist and self-evaluation"
+    },
+    {
+      "eventCode": "FTDM",
+      "eventName": "Financial Services Team Decision Making",
+      "component": "case-study",
+      "officialUrl": "https://www.deca.org/compete/financial-services-team-decision-making",
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a8327f7f7f637d914a9fc71_HS_TDM_Guidelines.pdf",
+      "officialSamples": [
+        {
+          "title": "Official sample event, 2026-27 format (FTDM-26 District Event)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a45531a1aa3aa3a11e2cb72_DECA_FTDM_2026_District_Event_Sample.pdf",
+          "season": "2026-27",
+          "round": "Sample Event",
+          "instructionalArea": null,
+          "kind": "current-format-sample",
+          "pageUrl": "https://www.deca.org/compete/financial-services-team-decision-making",
+          "formatNote": "The 2025-26 District Event reissued by DECA in the 2026-27 layout (Solution criteria and Career Competencies)."
+        },
+        {
+          "title": "District Event: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1ee4acc15ece18fb2114d_DECA_FTDM_2026_District_Event.pdf",
+          "season": "2025-26",
+          "round": "District Event",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/financial-services-team-decision-making-2026"
+        },
+        {
+          "title": "District Event: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1da2407cd78cbbbad5420_DECA_FTDM_2025_District_Event.pdf",
+          "season": "2024-25",
+          "round": "District Event",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/financial-services-team-decision-making-2025"
+        },
+        {
+          "title": "District Event: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dca63bcb761d412507b2fe_DECA_FTDM_2024_District_Event.pdf",
+          "season": "2023-24",
+          "round": "District Event",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/financial-services-team-decision-making-2024"
+        },
+        {
+          "title": "District Event: Operations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fcd3b8beb0e4db75fe2d6d_DECA_FTDM_2023_District_Event_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event",
+          "instructionalArea": "Operations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/financial-services-team-decision-making-2023"
+        },
+        {
+          "title": "District Event: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399f1c884ffaa0150e2155d_DECA_FTDM_2022_District_Event.pdf",
+          "season": "2021-22",
+          "round": "District Event",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/financial-services-team-decision-making-2022"
+        },
+        {
+          "title": "District Event (virtual): Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399f18cb461310c9d20e641_DECA_FTDM_2021_District_Event_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event (virtual)",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/financial-services-team-decision-making-2021"
+        },
+        {
+          "title": "District Event: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399f12eca2be2bf8b0fa2c0_DECA_FTDM_2020_District_Event.pdf",
+          "season": "2019-20",
+          "round": "District Event",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/financial-services-team-decision-making-2020"
+        },
+        {
+          "title": "District Event: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399f0c35192790c495aa616_DECA_FTDM_2019_District_Event.pdf",
+          "season": "2018-19",
+          "round": "District Event",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/financial-services-team-decision-making-2019"
+        },
+        {
+          "title": "District Event: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399f0443e83307d669c8c09_DECA_FTDM_2018_District_Event.pdf",
+          "season": "2017-18",
+          "round": "District Event",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/financial-services-team-decision-making-2018"
+        },
+        {
+          "title": "District Event: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399ef2c85a3c55f5be41259_DECA_FTDM_2017_District_Event.pdf",
+          "season": "2016-17",
+          "round": "District Event",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/financial-services-team-decision-making-2017"
+        }
+      ],
+      "format": {
+        "prepMinutes": 30,
+        "presentationMinutes": 15,
+        "judgeRole": "A qualified business executive who plays the role named in the case study. The team presents its analysis and decisions without interruption, then the judge asks every team the same standard questions; each member should answer at least one.",
+        "performanceIndicators": 5,
+        "participants": "2",
+        "rounds": "1 case study, second case study for finalists"
+      },
+      "placeholder": true,
+      "note": "Open the official sample, then use the trainer's timer, PI checklist and self-evaluation"
+    },
+    {
+      "eventCode": "PFN",
+      "eventName": "Principles of Finance",
+      "component": "roleplay",
+      "officialUrl": "https://www.deca.org/compete/principles-of-finance",
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c68346ea8c0dba9b854c1_HS_PBA_Guidelines.pdf",
+      "officialSamples": [
+        {
+          "title": "Official sample event, 2026-27 format (PFN-26 District Event)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3dc39f73ff71d525eb391c_DECA_PFN_2026_District_Event_Sample.pdf",
+          "season": "2026-27",
+          "round": "Sample Event",
+          "instructionalArea": null,
+          "kind": "current-format-sample",
+          "pageUrl": "https://www.deca.org/compete/principles-of-finance",
+          "formatNote": "The 2025-26 District Event reissued by DECA in the 2026-27 layout (Solution criteria and Career Competencies)."
+        },
+        {
+          "title": "District Event: Operations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1edb20b6cf11264cfc221_DECA_PFN_2026_District_Event.pdf",
+          "season": "2025-26",
+          "round": "District Event",
+          "instructionalArea": "Operations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-finance-2026"
+        },
+        {
+          "title": "District Event: Financial Analysis",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1d9700d134dc43d1081a7_DECA_PFN_2025_District_Event.pdf",
+          "season": "2024-25",
+          "round": "District Event",
+          "instructionalArea": "Financial Analysis",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-finance-2025"
+        },
+        {
+          "title": "District Event: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dca888517b1fd383e5e6f2_DECA_PFN_2024_District_Event.pdf",
+          "season": "2023-24",
+          "round": "District Event",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-finance-2024"
+        },
+        {
+          "title": "District Event: Economics",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fcd0a2bea10034c5f7f16d_DECA_PFN_2023_District_Event_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event",
+          "instructionalArea": "Economics",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-finance-2023"
+        },
+        {
+          "title": "District Event: Professional Development",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a2d9f0fcf13129e777905_DECA_PFN_2022_District_Event.pdf",
+          "season": "2021-22",
+          "round": "District Event",
+          "instructionalArea": "Professional Development",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-finance-2022"
+        },
+        {
+          "title": "District Event (virtual): Information Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a2d5f7bebaf459bdd90c2_DECA_PFN_2021_District_Event_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event (virtual)",
+          "instructionalArea": "Information Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-finance-2021"
+        },
+        {
+          "title": "District Event: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a2d1f45c69f969bf35a45_DECA_PFN_2020_District_Event.pdf",
+          "season": "2019-20",
+          "round": "District Event",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-finance-2020"
+        },
+        {
+          "title": "District Event: Communications",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a2cc8aa264638f15489b9_DECA_PFN_2019_District_Event.pdf",
+          "season": "2018-19",
+          "round": "District Event",
+          "instructionalArea": "Communications",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-finance-2019"
+        },
+        {
+          "title": "District Event: Information Management",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a2c886d00208204646665_DECA_PFN_2018_District_Event.pdf",
+          "season": "2017-18",
+          "round": "District Event",
+          "instructionalArea": "Information Management",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-finance-2018"
+        },
+        {
+          "title": "District Event: Customer Relations",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/639a2c468e73b36fd3950cb6_DECA_PFN_2017_District_Event.pdf",
+          "season": "2016-17",
+          "round": "District Event",
+          "instructionalArea": "Customer Relations",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/principles-of-finance-2017"
+        }
+      ],
+      "format": {
+        "prepMinutes": 10,
+        "presentationMinutes": 10,
+        "judgeRole": "A qualified business executive who plays the role set out in the business situation. After your response, the judge asks the follow-up questions provided in the event, then scores you on the evaluation form.",
+        "performanceIndicators": 4,
+        "participants": "1",
+        "rounds": "1 role-play, second role-play for finalists"
+      },
+      "placeholder": true,
+      "note": "Open the official sample, then use the trainer's timer, PI checklist and self-evaluation"
+    }
+  ]
+}
