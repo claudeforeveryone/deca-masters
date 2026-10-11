@@ -54,6 +54,12 @@ function renderAt(path: string) {
   );
 }
 
+/** Sign out lives in the account menu: open it, then pick the item. */
+async function signOutFromMenu() {
+  fireEvent.click(screen.getByRole("button", { name: "Account" }));
+  fireEvent.click(await screen.findByRole("menuitem", { name: "Sign out" }));
+}
+
 beforeEach(() => {
   fake.state.session = fake.signedIn();
   fake.state.listener = null;
@@ -64,12 +70,9 @@ describe("sign out", () => {
     renderAt("/me/settings");
     await screen.findByRole("heading", { level: 2, name: "Appearance" });
 
-    fireEvent.click(screen.getByRole("button", { name: "Sign out" }));
+    await signOutFromMenu();
 
-    await screen.findByRole("heading", {
-      level: 1,
-      name: "Practise for DECA exams and roleplays.",
-    });
+    await screen.findByRole("heading", { level: 1, name: "Walk in ready." });
     expect(screen.getByTestId("location").textContent).toBe("/");
   });
 
@@ -77,7 +80,7 @@ describe("sign out", () => {
     renderAt("/terms");
     await screen.findByRole("heading", { level: 1, name: "Terms of Use" });
 
-    fireEvent.click(screen.getByRole("button", { name: "Sign out" }));
+    await signOutFromMenu();
 
     await screen.findByRole("link", { name: "Sign in" });
     expect(screen.getByTestId("location").textContent).toBe("/terms");
@@ -86,11 +89,8 @@ describe("sign out", () => {
   it("then opening a members-only page asks to sign in and remembers the page", async () => {
     renderAt("/me/settings");
     await screen.findByRole("heading", { level: 2, name: "Appearance" });
-    fireEvent.click(screen.getByRole("button", { name: "Sign out" }));
-    await screen.findByRole("heading", {
-      level: 1,
-      name: "Practise for DECA exams and roleplays.",
-    });
+    await signOutFromMenu();
+    await screen.findByRole("heading", { level: 1, name: "Walk in ready." });
 
     fireEvent.click(screen.getAllByRole("link", { name: "Progress" })[0]);
 

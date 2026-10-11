@@ -73,15 +73,23 @@ export function ToastProvider({ children }: { children: ReactNode }) {
         onFocus={() => setPaused(true)}
         onBlur={() => setPaused(false)}
       >
-        {/* Two regions so an error interrupts and a confirmation waits its turn. */}
-        <div role="status" aria-live="polite" className="contents">
+        {/* Two live regions so an error interrupts and a confirmation waits its turn. Plain aria-live, no status or
+            alert role: an empty region with a role would sit in the accessibility tree on every page. Not
+            display: contents either, which drops a live region from the tree in some browsers. */}
+        <div
+          aria-live="polite"
+          className="flex flex-col items-center gap-2 md:items-end"
+        >
           {queue
             .filter((t) => t.tone !== "error")
             .map((t) => (
               <ToastView key={t.id} t={t} paused={paused} onDismiss={dismiss} />
             ))}
         </div>
-        <div role="alert" aria-live="assertive" className="contents">
+        <div
+          aria-live="assertive"
+          className="flex flex-col items-center gap-2 md:items-end"
+        >
           {queue
             .filter((t) => t.tone === "error")
             .map((t) => (
