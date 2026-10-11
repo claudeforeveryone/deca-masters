@@ -109,6 +109,17 @@ export function Board({
     (want ?? fallback)?.focus();
   });
 
+  // Escape cancels a drag. The handle never takes focus (pointerdown is prevented), so listen on the window.
+  const anyDrag = drag !== null;
+  useEffect(() => {
+    if (!anyDrag) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") end(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  });
+
   function announce(id: ModuleId, to: number) {
     const title = views.find((v) => v.id === id)?.title ?? id;
     setAnnouncement(`${title} moved to position ${to + 1} of ${views.length}.`);
@@ -200,7 +211,7 @@ export function Board({
     <>
       <div
         aria-hidden="true"
-        className="hidden border-b border-line pb-2 text-micro font-semibold text-ink-3 lg:grid lg:grid-cols-[12rem_minmax(0,1.15fr)_minmax(0,1fr)_9.5rem_2.75rem] lg:gap-x-6"
+        className={`hidden border-b border-line pb-2 text-micro font-semibold text-ink-3 lg:grid-cols-[12rem_minmax(0,1.15fr)_minmax(0,1fr)_9.5rem_2.75rem] lg:gap-x-6 ${arranging ? "" : "lg:grid"}`}
       >
         <span>Module</span>
         <span>Reading</span>
@@ -242,9 +253,6 @@ export function Board({
                     }}
                     onPointerUp={() => end(true)}
                     onPointerCancel={() => end(false)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Escape") end(false);
-                    }}
                     tabIndex={-1}
                     className={`inline-flex size-11 touch-none items-center justify-center rounded-sm text-ink-3 hover:bg-surface-2 hover:text-ink ${dragging ? "cursor-grabbing" : "cursor-grab"}`}
                   >
