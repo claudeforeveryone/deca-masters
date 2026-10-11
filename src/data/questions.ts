@@ -1,7 +1,10 @@
+import { useEffect, useState } from 'react'
 import type { ExamId } from './events'
+import COUNTS from './questionCounts.json'
 
-// Sample questions written in the style of DECA cluster exams. They are placeholders
-// for the real question bank, which will be loaded from the backend.
+// The question banks for each cluster exam live in public/questions/<exam>.json, built from
+// past DECA exam booklets by scripts/build-questions.mjs. They are a few MB each, so they
+// are fetched on demand rather than bundled.
 export type Question = {
   id: string
   exam: ExamId
@@ -10,64 +13,78 @@ export type Question = {
   choices: string[]
   answer: number
   explanation: string
+  set?: string // source exam booklet, e.g. "1031-BMA"
 }
 
 const q = (id: string, exam: ExamId, area: string, prompt: string, choices: string[], answer: number, explanation: string): Question => ({
   id, exam, area, prompt, choices, answer, explanation,
 })
 
-export const QUESTIONS: Question[] = [
-  // Business Administration Core
-  q('bac1', 'bac', 'Economics', 'When the price of a product rises and the quantity demanded falls, this illustrates the', ['law of supply', 'law of demand', 'law of diminishing returns', 'principle of scarcity'], 1, 'The law of demand: as price increases, quantity demanded decreases, all else equal.'),
-  q('bac2', 'bac', 'Communication Skills', 'Which of the following is an example of nonverbal communication?', ['An email', 'A phone call', 'Eye contact', 'A memo'], 2, 'Eye contact, posture and gestures are nonverbal cues.'),
-  q('bac3', 'bac', 'Economics', 'The value of the next-best alternative you give up when making a choice is called', ['sunk cost', 'opportunity cost', 'marginal cost', 'fixed cost'], 1, 'Opportunity cost is what you give up by choosing one option over the next-best one.'),
-  q('bac4', 'bac', 'Professional Development', 'An employee who arrives on time, meets deadlines and follows through on commitments is demonstrating', ['creativity', 'dependability', 'flexibility', 'assertiveness'], 1, 'Dependability means others can count on you to do what you said you would.'),
-  q('bac5', 'bac', 'Business Law', 'A legally binding agreement between two or more parties is a', ['warranty', 'contract', 'lien', 'tariff'], 1, 'A contract is an agreement the law will enforce.'),
-
-  // Business Management and Administration
-  q('bma1', 'bma', 'Operations', 'Which management function involves setting goals and deciding how to achieve them?', ['Organizing', 'Controlling', 'Planning', 'Staffing'], 2, 'Planning sets objectives and the course of action to reach them.'),
-  q('bma2', 'bma', 'Human Resources Management', 'The number of employees a manager directly supervises is the manager’s', ['chain of command', 'span of control', 'line authority', 'delegation'], 1, 'Span of control is how many people report directly to one manager.'),
-  q('bma3', 'bma', 'Human Resources Management', 'A structured process for measuring how well an employee is doing their job is a', ['performance appraisal', 'job analysis', 'exit interview', 'orientation'], 0, 'A performance appraisal evaluates an employee’s work against expectations.'),
-  q('bma4', 'bma', 'Business Law', 'A business that must follow rules set by OSHA is dealing with regulations about', ['advertising', 'workplace safety', 'product pricing', 'taxes'], 1, 'OSHA sets and enforces workplace safety and health standards.'),
-  q('bma5', 'bma', 'Quality Management', 'Continuously making small improvements to processes is known as', ['kaizen', 'outsourcing', 'downsizing', 'benchmarking'], 0, 'Kaizen is the practice of continuous, incremental improvement.'),
-
-  // Entrepreneurship
-  q('ent1', 'ent', 'Business Planning', 'What section of a business plan describes the company’s target customers and competitors?', ['Executive summary', 'Market analysis', 'Financial plan', 'Appendix'], 1, 'The market analysis covers the industry, target market and competition.'),
-  q('ent2', 'ent', 'Financing', 'Money invested in a startup in exchange for ownership is called', ['debt financing', 'equity financing', 'a grant', 'trade credit'], 1, 'Equity financing trades ownership shares for capital.'),
-  q('ent3', 'ent', 'Financing', 'Starting a business using personal savings and early revenue instead of outside investors is called', ['bootstrapping', 'leveraging', 'crowdfunding', 'franchising'], 0, 'Bootstrapping means funding growth yourself.'),
-  q('ent4', 'ent', 'Business Planning', 'A short summary that appears first in a business plan and highlights its key points is the', ['mission statement', 'executive summary', 'appendix', 'SWOT analysis'], 1, 'The executive summary gives readers the whole plan at a glance.'),
-  q('ent5', 'ent', 'Risk Management', 'An entrepreneur who buys insurance to cover property damage is', ['avoiding risk', 'transferring risk', 'retaining risk', 'ignoring risk'], 1, 'Insurance transfers the financial risk to the insurer.'),
-
-  // Finance
-  q('fin1', 'fin', 'Financial Analysis', 'Which financial statement shows assets, liabilities and owner’s equity at a specific point in time?', ['Income statement', 'Balance sheet', 'Cash flow statement', 'Budget'], 1, 'The balance sheet is a snapshot of assets = liabilities + equity on a given date.'),
-  q('fin2', 'fin', 'Risk Management', 'Spreading investments across many different assets to reduce risk is called', ['leveraging', 'hedging', 'diversification', 'liquidation'], 2, 'Diversification reduces exposure to any single asset.'),
-  q('fin3', 'fin', 'Financial Analysis', 'How quickly an asset can be turned into cash without losing value is its', ['liquidity', 'solvency', 'equity', 'yield'], 0, 'Liquidity measures how easily an asset converts to cash.'),
-  q('fin4', 'fin', 'Accounting', 'Revenue minus cost of goods sold equals', ['net income', 'gross profit', 'operating expenses', 'retained earnings'], 1, 'Gross profit is what remains after subtracting the cost of goods sold.'),
-  q('fin5', 'fin', 'Accounting', 'Every transaction affects at least two accounts under the', ['cash basis', 'double-entry system', 'single-entry system', 'accrual method'], 1, 'Double-entry bookkeeping records a debit and a matching credit.'),
-
-  // Hospitality and Tourism
-  q('ht1', 'ht', 'Customer Relations', 'A hotel employee who anticipates a guest’s needs before they are expressed is demonstrating', ['upselling', 'proactive service', 'yield management', 'cross-training'], 1, 'Proactive service means meeting needs before the guest asks.'),
-  q('ht2', 'ht', 'Operations', 'Revenue per available room (RevPAR) is used to measure a hotel’s', ['guest satisfaction', 'room revenue performance', 'staff turnover', 'food costs'], 1, 'RevPAR combines occupancy and rate into one performance figure.'),
-  q('ht3', 'ht', 'Pricing', 'Changing room rates based on expected demand is called', ['yield management', 'cost-plus pricing', 'price fixing', 'bundling'], 0, 'Yield (revenue) management adjusts prices to demand to maximize revenue.'),
-  q('ht4', 'ht', 'Selling', 'Suggesting a room upgrade to a guest who is already booking is an example of', ['cross-selling', 'upselling', 'prospecting', 'cold calling'], 1, 'Upselling encourages a customer to buy a higher-value version.'),
-  q('ht5', 'ht', 'Operations', 'The front-of-house area of a hotel where guests check in is the', ['back office', 'front desk', 'housekeeping', 'concierge lounge'], 1, 'The front desk handles check-in, check-out and guest requests.'),
-
-  // Marketing
-  q('mkt1', 'mkt', 'Market Planning', 'A company that divides its market into groups based on lifestyle and values is using which type of segmentation?', ['Geographic', 'Demographic', 'Psychographic', 'Behavioral'], 2, 'Psychographic segmentation groups customers by lifestyle, values and attitudes.'),
-  q('mkt2', 'mkt', 'Promotion', 'Paying a well-known athlete to recommend a product is an example of', ['publicity', 'an endorsement', 'personal selling', 'a rebate'], 1, 'An endorsement is a paid statement of support from a recognizable figure.'),
-  q('mkt3', 'mkt', 'Channel Management', 'The path a product takes from producer to final consumer is its', ['supply curve', 'channel of distribution', 'product mix', 'value chain'], 1, 'The channel of distribution moves goods from producer to user.'),
-  q('mkt4', 'mkt', 'Market Planning', 'A company’s sales as a percentage of total industry sales is its', ['market share', 'market potential', 'sales quota', 'profit margin'], 0, 'Market share compares a company’s sales to the whole market.'),
-  q('mkt5', 'mkt', 'Pricing', 'Setting a low initial price to quickly gain market share is called', ['price skimming', 'penetration pricing', 'prestige pricing', 'odd pricing'], 1, 'Penetration pricing starts low to attract buyers fast.'),
-
-  // Personal Financial Literacy
-  q('pfl1', 'pfl', 'Saving', 'Interest earned on both the original deposit and previously earned interest is', ['simple interest', 'compound interest', 'a dividend', 'principal'], 1, 'Compound interest grows on interest already earned.'),
-  q('pfl2', 'pfl', 'Credit', 'Which factor has the largest effect on a FICO credit score?', ['Payment history', 'Length of credit history', 'New credit', 'Types of credit'], 0, 'Payment history makes up the largest share of a FICO score.'),
-  q('pfl3', 'pfl', 'Budgeting', 'Money set aside to cover unexpected expenses like car repairs is a(n)', ['emergency fund', 'retirement account', 'line of credit', 'escrow account'], 0, 'An emergency fund covers surprises without taking on debt.'),
-  q('pfl4', 'pfl', 'Earning Income', 'The amount of pay left after taxes and deductions is', ['gross pay', 'net pay', 'salary', 'overtime'], 1, 'Net pay is your take-home pay.'),
-  q('pfl5', 'pfl', 'Investing', 'Which investment generally carries the highest risk and potential return?', ['Savings account', 'Certificate of deposit', 'Individual stocks', 'Government bonds'], 2, 'Individual stocks can swing widely in value, so risk and potential return are higher.'),
+// Personal Financial Literacy has no booklet bank yet, so it keeps these sample questions.
+const PFL_SAMPLES: Question[] = [
+  q('pfl-1', 'pfl', 'Saving', 'Interest earned on both the original deposit and previously earned interest is', ['simple interest', 'compound interest', 'a dividend', 'principal'], 1, 'Compound interest grows on interest already earned.'),
+  q('pfl-2', 'pfl', 'Credit', 'Which factor has the largest effect on a FICO credit score?', ['Payment history', 'Length of credit history', 'New credit', 'Types of credit'], 0, 'Payment history makes up the largest share of a FICO score.'),
+  q('pfl-3', 'pfl', 'Budgeting', 'Money set aside to cover unexpected expenses like car repairs is a(n)', ['emergency fund', 'retirement account', 'line of credit', 'escrow account'], 0, 'An emergency fund covers surprises without taking on debt.'),
+  q('pfl-4', 'pfl', 'Earning Income', 'The amount of pay left after taxes and deductions is', ['gross pay', 'net pay', 'salary', 'overtime'], 1, 'Net pay is your take-home pay.'),
+  q('pfl-5', 'pfl', 'Investing', 'Which investment generally carries the highest risk and potential return?', ['Savings account', 'Certificate of deposit', 'Individual stocks', 'Government bonds'], 2, 'Individual stocks can swing widely in value, so risk and potential return are higher.'),
 ]
 
-export const questionsFor = (exam: ExamId) => QUESTIONS.filter((x) => x.exam === exam)
+const BANKED = ['bac', 'bma', 'ent', 'fin', 'ht', 'mkt'] as const
+const hasBank = (exam: ExamId): exam is (typeof BANKED)[number] => (BANKED as readonly string[]).includes(exam)
+
+export const questionCount = (exam: ExamId) => (hasBank(exam) ? COUNTS[exam] : PFL_SAMPLES.length)
+
+const cache = new Map<ExamId, Promise<Question[]>>()
+
+export function loadQuestions(exam: ExamId): Promise<Question[]> {
+  if (!hasBank(exam)) return Promise.resolve(PFL_SAMPLES.filter((x) => x.exam === exam))
+  let p = cache.get(exam)
+  if (!p) {
+    p = fetch(`/questions/${exam}.json`)
+      .then((r) => {
+        if (!r.ok) throw new Error(`Could not load the ${exam} questions (${r.status})`)
+        return r.json() as Promise<Omit<Question, 'exam'>[]>
+      })
+      .then((rows) => rows.map((x) => ({ ...x, exam })))
+    p.catch(() => cache.delete(exam))
+    cache.set(exam, p)
+  }
+  return p
+}
+
+/** Loads every exam a list of question ids comes from. Ids start with their exam, e.g. "bma-1x2y3z". */
+export async function loadQuestionsById(ids: string[]): Promise<Question[]> {
+  const exams = [...new Set(ids.map((id) => id.split('-')[0]))].filter((x): x is ExamId => hasBank(x as ExamId) || x === 'pfl')
+  const all = (await Promise.all(exams.map(loadQuestions))).flat()
+  const want = new Set(ids)
+  return all.filter((x) => want.has(x.id))
+}
+
+export function useQuestions(exam: ExamId) {
+  const [state, setState] = useState<{ exam: ExamId; questions: Question[] | null; error: string | null }>({ exam, questions: null, error: null })
+  useEffect(() => {
+    let live = true
+    setState({ exam, questions: null, error: null })
+    loadQuestions(exam).then(
+      (questions) => live && setState({ exam, questions, error: null }),
+      (e: Error) => live && setState({ exam, questions: null, error: e.message }),
+    )
+    return () => { live = false }
+  }, [exam])
+  return state.exam === exam ? state : { exam, questions: null, error: null }
+}
+
+export const shuffle = <T,>(a: T[]) => {
+  const b = [...a]
+  for (let i = b.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[b[i], b[j]] = [b[j], b[i]]
+  }
+  return b
+}
+
+/** n random questions. */
+export const sample = (qs: Question[], n: number) => shuffle(qs).slice(0, n)
 
 export const VOCAB: { term: string; def: string; exam: ExamId }[] = [
   { term: 'Opportunity cost', def: 'The value of the next-best alternative given up when making a choice.', exam: 'bac' },

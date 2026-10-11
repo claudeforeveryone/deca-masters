@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Sword, PaperPlaneTilt, Trophy, MagnifyingGlass, Clock, Users } from '@phosphor-icons/react'
 import { examOf } from '../data/events'
-import { questionsFor } from '../data/questions'
+import { loadQuestions, sample, type Question } from '../data/questions'
 import { useMyEvent, useStore, type PlayerRow } from '../store'
 import QuizRunner, { fmtTime, type QuizResult } from '../components/QuizRunner'
 import { Avatar, EmptyState, PageBand, SectionHeader, Tabs } from '../components/ui'
@@ -13,7 +13,6 @@ const LIST_TABS = ['Online', 'My chapter', 'Everyone'] as const
 type Match = { opponent: PlayerRow; me: QuizResult; them: QuizResult; delta: number }
 
 const didWin = (me: QuizResult, them: QuizResult) => me.correct > them.correct || (me.correct === them.correct && me.seconds < them.seconds)
-const shuffle = <T,>(a: T[]) => [...a].sort(() => Math.random() - 0.5)
 
 export default function Arena() {
   const { players, me, myChapter, record } = useStore()
@@ -23,6 +22,16 @@ export default function Arena() {
   const [sent, setSent] = useState<PlayerRow[]>([])
   const [opponent, setOpponent] = useState<PlayerRow | null>(null)
   const [match, setMatch] = useState<Match | null>(null)
+  const [matchQs, setMatchQs] = useState<Question[] | null>(null)
+  const [loadError, setLoadError] = useState<string | null>(null)
+
+  const startMatch = (p: PlayerRow) => {
+    setLoadError(null)
+    loadQuestions(exam).then(
+      (qs) => { setSent((s) => s.filter((x) => x.id !== p.id)); setMatchQs(sample(qs, 10)); setOpponent(p) },
+      (e: Error) => setLoadError(e.message),
+    )
+  }
 
   const history = me!.progress.history.filter((h) => h.arena).slice(0, 8)
   const list = players
@@ -41,7 +50,7 @@ export default function Arena() {
     setMatch({ opponent: opponent!, me: mine, them, delta })
   }
 
-  if (opponent && !match)
+  if (opponent && !match && matchQs)
     return (
       <div>
         <div className="bleed diamond-pattern bg-navy-midnight text-white">
@@ -51,7 +60,7 @@ export default function Arena() {
             <Versus name={opponent.name} sub={`${opponent.elo.toLocaleString()} ELO`} right />
           </div>
         </div>
-        <QuizRunner title={`Arena, ${examOf(exam).name}`} questions={shuffle(questionsFor(exam)).slice(0, 10)} timeLimitSec={MATCH_SECONDS} showExplanations={false} eloPerCorrect={ELO_PER_CORRECT} onFinish={finish} />
+        <QuizRunner title={`Arena, ${examOf(exam).name}`} questions={matchQs} timeLimitSec={MATCH_SECONDS} showExplanations={false} eloPerCorrect={ELO_PER_CORRECT} onFinish={finish} />
       </div>
     )
 
@@ -80,8 +89,8 @@ export default function Arena() {
         </div>
         <p className={`num mt-5 text-sm font-semibold ${match.delta >= 0 ? 'text-good' : 'text-bad'}`}>{match.delta >= 0 ? '+' : ''}{match.delta} ELO</p>
         <div className="mt-6 flex gap-2">
-          <button className="btn-primary flex-1" onClick={() => { setMatch(null); setOpponent(null) }}>Back to Arena</button>
-          <button className="btn-secondary" onClick={() => setMatch(null)}>Rematch</button>
+          <button className="btn-primary flex-1" onClick={() => { setMatch(null); setOpponent(null); setMatchQs(null) }}>Back to Arena</button>
+          <button className="btn-secondary" onClick={() => { const p = match.opponent; setMatch(null); setOpponent(null); startMatch(p) }}>Rematch</button>
         </div>
       </div>
     )
@@ -132,6 +141,7 @@ export default function Arena() {
         <aside className="space-y-10">
           <section>
             <SectionHeader title="Sent challenges" />
+            {loadError && <p role="alert" className="mb-3 text-sm text-bad">{loadError}. Try again.</p>}
             {sent.length === 0 ? (
               <p className="text-sm text-ink-3">Challenge a player to start a match.</p>
             ) : (
@@ -141,7 +151,7 @@ export default function Arena() {
                     <PaperPlaneTilt size={16} className="text-ink-3" />
                     <span className="flex-1 truncate text-sm text-ink">{p.name}</span>
                     {/* Demo accounts cannot respond, so you can start the match yourself. */}
-                    <button className="btn-primary btn-sm" onClick={() => { setSent(sent.filter((x) => x.id !== p.id)); setOpponent(p) }}>Start</button>
+                    <button className="btn-primary btn-sm" onClick={() => startMatch(p)}>Start</button>
                   </li>
                 ))}
               </ul>

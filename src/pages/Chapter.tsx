@@ -1,8 +1,8 @@
-import { useState, type FormEvent } from 'react'
+import { useEffect, useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
 import { Copy, Check, LinkSimple, Megaphone, Newspaper, UserMinus, Prohibit, EnvelopeSimple, Plus, Shuffle, PencilSimple, ShieldCheck, ArrowSquareOut, UserPlus, UsersThree, ClipboardText, CalendarBlank } from '@phosphor-icons/react'
 import { CLUSTERS, EXAMS, examOf, eventByCode, type ExamId } from '../data/events'
-import { questionsFor } from '../data/questions'
+import { sample, useQuestions, type Question } from '../data/questions'
 import { useStore, type Assignment, type ChapterMeta, type ChapterRow, type Post, type Role } from '../store'
 import { Avatar, EmptyState, Meter, PageBand, RankRow, SectionHeader, Stat, Toggle } from '../components/ui'
 
@@ -492,6 +492,8 @@ function Insights({ chapter, meta }: { chapter: ChapterRow; meta: ChapterMeta })
   )
 }
 
+const BUILDER_SIZE = 20
+
 function Assignments({ meta, update, canEdit }: { meta: ChapterMeta; update: (fn: (m: ChapterMeta) => ChapterMeta) => void; canEdit: boolean }) {
   const { me } = useStore()
   const [title, setTitle] = useState('')
@@ -499,7 +501,10 @@ function Assignments({ meta, update, canEdit }: { meta: ChapterMeta; update: (fn
   const [exam, setExam] = useState<ExamId>('bac')
   const [due, setDue] = useState('')
   const [builderExam, setBuilderExam] = useState<ExamId>('bac')
-  const [questions, setQuestions] = useState(questionsFor('bac'))
+  const bank = useQuestions(builderExam)
+  const [questions, setQuestions] = useState<Question[]>([])
+  // A fresh 20-question draft from the bank whenever the exam changes.
+  useEffect(() => { setQuestions(bank.questions ? sample(bank.questions, BUILDER_SIZE) : []) }, [bank.questions])
   const [editing, setEditing] = useState<string | null>(null)
 
   const add = (e: FormEvent) => {
@@ -559,13 +564,14 @@ function Assignments({ meta, update, canEdit }: { meta: ChapterMeta; update: (fn
       <section>
         <SectionHeader
           title="Test builder"
-          action={canEdit ? <button className="btn-secondary btn-sm" onClick={() => setQuestions([...questions].sort(() => Math.random() - 0.5))}><Shuffle size={15} /> Shuffle</button> : undefined}
+          action={canEdit ? <button className="btn-secondary btn-sm" disabled={!bank.questions} onClick={() => bank.questions && setQuestions(sample(bank.questions, BUILDER_SIZE))}><Shuffle size={15} /> New draw</button> : undefined}
         />
         <label className="sr-only" htmlFor="tb-exam">Exam</label>
-        <select id="tb-exam" className="input mb-4" value={builderExam} onChange={(e) => { const x = e.target.value as ExamId; setBuilderExam(x); setQuestions(questionsFor(x)) }}>
+        <select id="tb-exam" className="input mb-4" value={builderExam} onChange={(e) => setBuilderExam(e.target.value as ExamId)}>
           {EXAMS.map((x) => <option key={x.id} value={x.id}>{x.name}</option>)}
         </select>
-        <ol className="divide-y divide-line border border-line">
+        {!bank.questions && <p className="text-sm text-ink-3">{bank.error ?? 'Loading questions…'}</p>}
+        <ol className="divide-y divide-line border border-line empty:hidden">
           {questions.map((qq, i) => (
             <li key={qq.id} className="flex gap-3 px-5 py-4 text-sm">
               <span className="num pt-px font-semibold text-ink-3">{i + 1}.</span>

@@ -9,6 +9,7 @@ const LINKS = [
   { to: '/', label: 'Home' },
   { to: '/leaderboard', label: 'Leaderboard' },
   { to: '/play', label: 'Play' },
+  { to: '/bank', label: 'Questions' },
   { to: '/vocab', label: 'Vocab' },
   { to: '/arena', label: 'Arena' },
   { to: '/chapter', label: 'Chapter' },

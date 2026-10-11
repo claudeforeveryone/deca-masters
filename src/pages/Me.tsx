@@ -1,8 +1,8 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Trophy, Flame, Crosshair, Sword, Lightning, Target, Medal, UsersThree, ArrowCounterClockwise, CaretUp, CaretDown, CheckCircle, ClockCounterClockwise, Lock } from '@phosphor-icons/react'
 import { EXAMS, examOf, type ExamId } from '../data/events'
-import { QUESTIONS } from '../data/questions'
+import { loadQuestionsById, type Question } from '../data/questions'
 import { eloSeries, useMyEvent, useStore, type Progress } from '../store'
 import { ArrowLink, Avatar, EloChart, EmptyState, EventPicker, Meter, RankRow, SectionHeader, Stat, Tabs } from '../components/ui'
 import QuizRunner, { ResultCard, type QuizResult } from '../components/QuizRunner'
@@ -180,17 +180,27 @@ function Career() {
     return [...p.history].sort((a, b) => (val(a) - val(b)) * dir)
   }, [p.history, sort, dir])
 
+  // Missed questions are stored by id; fetch the banks they come from.
+  const [bank, setBank] = useState<Map<string, Question>>(new Map())
+  const missedIds = useMemo(() => [...new Set(p.history.flatMap((h) => h.wrongIds))], [p.history])
+  useEffect(() => {
+    let live = true
+    loadQuestionsById(missedIds).then((qs) => live && setBank(new Map(qs.map((x) => [x.id, x]))), () => {})
+    return () => { live = false }
+  }, [missedIds])
+
   const wrong = useMemo(() => {
     const seen = new Map<string, string>()
     p.history.forEach((h) => h.wrongIds.forEach((id) => !seen.has(id) && seen.set(id, h.title)))
     return [...seen.entries()]
-      .map(([id, from]) => ({ q: QUESTIONS.find((x) => x.id === id), from }))
-      .filter((w): w is { q: (typeof QUESTIONS)[number]; from: string } => !!w.q && (examFilter === 'all' || w.q.exam === examFilter))
-  }, [p.history, examFilter])
+      .map(([id, from]) => ({ q: bank.get(id), from }))
+      .filter((w): w is { q: Question; from: string } => !!w.q && (examFilter === 'all' || w.q.exam === examFilter))
+  }, [p.history, examFilter, bank])
 
   if (redo && result) return <ResultCard r={result.r} delta={result.delta} title="Review complete" onDone={() => { setRedo(null); setResult(null) }} />
-  if (redo) {
-    const qs = QUESTIONS.filter((x) => redo.includes(x.id))
+  const redoQs = (redo ?? []).map((id) => bank.get(id)).filter((x): x is Question => !!x)
+  if (redo && redoQs.length > 0) {
+    const qs = redoQs
     return (
       <QuizRunner
         title="Missed questions"
@@ -259,7 +269,7 @@ function Career() {
                       <td className={`num py-4 pr-4 font-semibold ${acc < 70 ? 'text-bad' : 'text-ink'}`}>{acc}%</td>
                       <td className="num py-4 pr-4 text-ink-2">{Math.max(1, Math.round(h.seconds / 60))} min</td>
                       <td className={`num hidden py-4 pr-4 font-semibold sm:table-cell ${h.eloDelta >= 0 ? 'text-good' : 'text-bad'}`}>{h.eloDelta >= 0 ? '+' : ''}{h.eloDelta}</td>
-                      <td className="py-4 text-right">{h.wrongIds.length > 0 && <ArrowLink onClick={() => setRedo(h.wrongIds)}>Redo misses</ArrowLink>}</td>
+                      <td className="py-4 text-right">{h.wrongIds.some((id) => bank.has(id)) && <ArrowLink onClick={() => setRedo(h.wrongIds)}>Redo misses</ArrowLink>}</td>
                     </tr>
                   )
                 })}

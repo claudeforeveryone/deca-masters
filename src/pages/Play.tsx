@@ -2,18 +2,24 @@ import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { CalendarCheck, Infinity as InfinityIcon, Crosshair, Timer, FileText, ClipboardText } from '@phosphor-icons/react'
 import { EXAMS, examOf, type ExamId } from '../data/events'
-import { questionsFor, type Question } from '../data/questions'
+import { loadQuestions, questionCount, sample, shuffle, type Question } from '../data/questions'
 import { useMyEvent, useStore } from '../store'
 import QuizRunner, { ResultCard, type QuizResult } from '../components/QuizRunner'
 import { ArrowLink, ClusterIcon, EmptyState, Meter, PageBand, SectionHeader } from '../components/ui'
 
 type Session = { title: string; exam: ExamId; questions: Question[]; timeLimitSec?: number; explanations: boolean }
 
-const shuffle = <T,>(a: T[]) => [...a].sort(() => Math.random() - 0.5)
-/** Same order for everyone on a given day. */
+const EXAM_LENGTH = 100 // DECA cluster exams have 100 questions
+/** The same 10 questions for everyone on a given day. */
 const daily = (qs: Question[]) => {
-  const day = Math.floor(Date.now() / 86400000)
-  return [...qs].sort((a, b) => ((a.id.charCodeAt(a.id.length - 1) * day) % 7) - ((b.id.charCodeAt(b.id.length - 1) * day) % 7)).slice(0, 10)
+  let seed = Math.floor(Date.now() / 86400000)
+  const rand = () => {
+    seed = (seed * 1103515245 + 12345) % 2147483648
+    return seed / 2147483648
+  }
+  const picked = new Set<number>()
+  while (picked.size < Math.min(10, qs.length)) picked.add(Math.floor(rand() * qs.length))
+  return [...picked].map((i) => qs[i])
 }
 
 export default function Play() {
@@ -22,6 +28,8 @@ export default function Play() {
   const [params, setParams] = useSearchParams()
   const [session, setSession] = useState<Session | null>(null)
   const [result, setResult] = useState<{ r: QuizResult; delta: number } | null>(null)
+  const [loading, setLoading] = useState<string | null>(null)
+  const [error, setError] = useState<string | null>(null)
   const highlight = (params.get('cluster') as ExamId | null) ?? null
 
   const progress = me!.progress
@@ -33,34 +41,47 @@ export default function Play() {
   const weakest = [...attempted].sort((a, b) => (accuracyFor(a.id) ?? 0) - (accuracyFor(b.id) ?? 0))[0]
 
   const MODES = [
-    { key: 'daily', icon: CalendarCheck, title: 'Daily', body: `Today’s ${examOf(exam).name} set.`, make: (): Session => ({ title: 'Daily challenge', exam, questions: daily(questionsFor(exam)), explanations: true }) },
-    { key: 'endless', icon: InfinityIcon, title: 'Endless', body: 'Keep going as long as you like.', make: (): Session => ({ title: 'Endless', exam, questions: shuffle([...questionsFor(exam), ...questionsFor(exam), ...questionsFor(exam)]), explanations: true }) },
+    { key: 'daily', icon: CalendarCheck, title: 'Daily', body: `Today’s ${examOf(exam).name} set.`, make: (qs: Question[]): Session => ({ title: 'Daily challenge', exam, questions: daily(qs), explanations: true }) },
+    { key: 'endless', icon: InfinityIcon, title: 'Endless', body: 'Keep going as long as you like.', make: (qs: Question[]): Session => ({ title: 'Endless', exam, questions: sample(qs, 200), explanations: true }) },
     {
       key: 'weak',
       icon: Crosshair,
       title: 'Weak spots',
       body: weakest ? `Your lowest: ${weakest.name}.` : 'Answer some questions first so we can find them.',
-      make: weakest ? (): Session => ({ title: 'Weak spots', exam: weakest.id, questions: shuffle(questionsFor(weakest.id)), explanations: true }) : null,
+      exam: weakest?.id,
+      make: weakest ? (qs: Question[]): Session => ({ title: 'Weak spots', exam: weakest.id, questions: sample(qs, 20), explanations: true }) : null,
     },
-    { key: 'sprint', icon: Timer, title: 'Sprint', body: 'Two minutes, no explanations.', make: (): Session => ({ title: 'Sprint', exam, questions: shuffle(questionsFor(exam)), timeLimitSec: 120, explanations: false }) },
+    { key: 'sprint', icon: Timer, title: 'Sprint', body: 'Two minutes, no explanations.', make: (qs: Question[]): Session => ({ title: 'Sprint', exam, questions: sample(qs, 60), timeLimitSec: 120, explanations: false }) },
   ] as const
 
-  const start = (s: Session) => {
-    setResult(null)
-    setSession(s)
+  /** Loads the exam's question bank, then starts the session built from it. */
+  const start = async (key: string, id: ExamId, make: (qs: Question[]) => Session) => {
+    setError(null)
+    setLoading(key)
+    try {
+      const s = make(await loadQuestions(id))
+      setResult(null)
+      setSession(s)
+    } catch (e) {
+      setError((e as Error).message)
+    } finally {
+      setLoading(null)
+    }
   }
-  const fullExam = (id: ExamId): Session => {
-    const qs = shuffle(questionsFor(id))
-    return { title: `${examOf(id).name} exam`, exam: id, questions: qs, timeLimitSec: qs.length * 60, explanations: false }
+  const fullExam = (qs: Question[]): Session => {
+    const picked = sample(qs, EXAM_LENGTH)
+    return { title: `${examOf(qs[0].exam).name} exam`, exam: qs[0].exam, questions: picked, timeLimitSec: picked.length * 60, explanations: false }
   }
+  const startMode = (m: (typeof MODES)[number]) => m.make && start(m.key, ('exam' in m && m.exam) || exam, m.make)
+  const startExam = (id: ExamId) => start(`exam-${id}`, id, fullExam)
 
   const mode = params.get('mode')
   useEffect(() => {
     if (!mode) return
     setParams({}, { replace: true })
     const m = MODES.find((x) => x.key === mode)
-    if (m?.make) start(m.make())
-    if (mode === 'exam') start(fullExam(exam))
+    if (m) startMode(m)
+    if (mode === 'exam') startExam(exam)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode])
 
@@ -77,7 +98,7 @@ export default function Play() {
         delta={result.delta}
         title={session.title}
         note={isGuest ? 'Guest progress stays on this device. Create an account to save it and join the leaderboard.' : undefined}
-        onAgain={() => start({ ...session, questions: shuffle(session.questions) })}
+        onAgain={() => { setResult(null); setSession({ ...session, questions: shuffle(session.questions) }) }}
         onDone={() => { setSession(null); setResult(null) }}
       />
     )
@@ -93,20 +114,24 @@ export default function Play() {
       <PageBand tag={event.code} title="Play" description={`Practicing for ${event.name}. Your event uses the ${myExam.name} exam.`} />
 
       <section className="grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
-        {MODES.map(({ key, icon: Icon, title, body, make }) => (
+        {MODES.map((m) => {
+          const { key, icon: Icon, title, body, make } = m
+          return (
           <button
             key={key}
-            disabled={!make}
-            onClick={() => make && start(make())}
+            disabled={!make || !!loading}
+            onClick={() => startMode(m)}
             className="group flex flex-col items-start bg-white p-6 text-left transition-colors hover:bg-tint disabled:cursor-not-allowed disabled:hover:bg-white"
           >
             <Icon size={28} className={make ? 'text-brand' : 'text-line-strong'} />
             <span className={`mt-4 text-lg font-semibold tracking-head ${make ? 'text-ink' : 'text-ink-3'}`}>{title}</span>
             <span className="mt-1 text-sm text-ink-3">{body}</span>
-            {make && <span className="mt-5 text-[13px] font-semibold tracking-label text-brand group-hover:underline">Start</span>}
+            {make && <span className="mt-5 text-[13px] font-semibold tracking-label text-brand group-hover:underline">{loading === key ? 'Loading questions…' : 'Start'}</span>}
           </button>
-        ))}
+          )
+        })}
       </section>
+      {error && <p role="alert" className="mt-4 text-sm text-bad">{error}. Check your connection and try again.</p>}
 
       <section className="mt-16">
         <SectionHeader title="Your exam" />
@@ -120,12 +145,14 @@ export default function Play() {
           <div className="flex flex-col justify-between gap-6 border border-line p-8 lg:border-l-0">
             <div>
               <p className="text-sm leading-relaxed text-ink-2">
-                Take the full {myExam.name} practice set under exam conditions: one minute per question, no explanations until the end.
+                Take a {EXAM_LENGTH}-question {myExam.name} exam drawn from past DECA exams, under exam conditions: one minute per question, no explanations until the end.
               </p>
-              <p className="mt-3 text-sm text-ink-3">{questionsFor(exam).length} sample questions available now. The full bank arrives with the next update.</p>
+              <p className="mt-3 text-sm text-ink-3">
+                {questionCount(exam).toLocaleString()} questions in the {myExam.name} bank. <Link to={`/bank?exam=${exam}`} className="link">Browse them</Link>
+              </p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <button className="btn-primary btn-lg" onClick={() => start(fullExam(exam))}>Start exam</button>
+              <button className="btn-primary btn-lg" disabled={!!loading} onClick={() => startExam(exam)}>{loading === `exam-${exam}` ? 'Loading questions…' : 'Start exam'}</button>
               <Link to="/me" className="btn-secondary btn-lg">Change event</Link>
             </div>
           </div>
@@ -155,7 +182,7 @@ export default function Play() {
                     {x.name}
                     {x.id === exam && <span className="badge ml-2">Your exam</span>}
                   </p>
-                  <p className="text-xs text-ink-3">{questionsFor(x.id).length} sample questions</p>
+                  <p className="text-xs text-ink-3">{questionCount(x.id).toLocaleString()} {x.id === 'pfl' ? 'sample ' : ''}questions</p>
                 </div>
                 <div className="hidden w-36 sm:block">
                   {acc === null ? (
@@ -167,7 +194,7 @@ export default function Play() {
                     </>
                   )}
                 </div>
-                <ArrowLink onClick={() => start(fullExam(x.id))}>Take</ArrowLink>
+                <ArrowLink onClick={() => startExam(x.id)}>{loading === `exam-${x.id}` ? 'Loading…' : 'Take'}</ArrowLink>
               </li>
             )
           })}

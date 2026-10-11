@@ -9,12 +9,13 @@ import Home from './pages/Home'
 import Leaderboard from './pages/Leaderboard'
 import Play from './pages/Play'
 import Vocab from './pages/Vocab'
+import Bank from './pages/Bank'
 import Arena from './pages/Arena'
 import Chapter from './pages/Chapter'
 import Me from './pages/Me'
 
 const FOOTER = [
-  { title: 'Practice', links: [['Play', '/play'], ['Vocab', '/vocab'], ['Arena', '/arena']] },
+  { title: 'Practice', links: [['Play', '/play'], ['Questions', '/bank'], ['Vocab', '/vocab'], ['Arena', '/arena']] },
   { title: 'Compete', links: [['Leaderboard', '/leaderboard'], ['Chapter', '/chapter']] },
   { title: 'Account', links: [['Profile', '/me'], ['Create account', '/register']] },
 ]
@@ -33,6 +34,7 @@ export default function App() {
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/play" element={<Play />} />
             <Route path="/vocab" element={<Vocab />} />
+            <Route path="/bank" element={<Bank />} />
             <Route path="/arena" element={<Arena />} />
             <Route path="/chapter" element={<Chapter />} />
             <Route path="/me" element={<Me />} />
