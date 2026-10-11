@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { Tabs } from "./Tabs";
 
 const tabs = [
@@ -46,5 +46,37 @@ describe("Tabs", () => {
     render(<Tabs label="Tools" tabs={tabs} />);
     fireEvent.click(screen.getByRole("tab", { name: "Vocab" }));
     expect(screen.getByRole("tabpanel").textContent).toBe("vocab panel");
+  });
+
+  describe("a tab list wider than the screen", () => {
+    afterEach(() => vi.restoreAllMocks());
+
+    // A 390px list with the Vocab tab past its right edge (jsdom has no layout, so the boxes are given).
+    function layout() {
+      vi.spyOn(HTMLElement.prototype, "getBoundingClientRect").mockImplementation(
+        function (this: HTMLElement) {
+          const box = (left: number, width: number) =>
+            ({ left, right: left + width, width, top: 0, bottom: 44, height: 44 }) as DOMRect;
+          if (this.getAttribute("role") === "tablist") return box(0, 390);
+          const i = tabs.findIndex((t) => this.textContent === t.label);
+          return box(i * 160, 150);
+        },
+      );
+    }
+
+    it("scrolls the list sideways to show the selected tab, never the page", () => {
+      layout();
+      const scrollTo = vi.spyOn(window, "scrollTo").mockImplementation(() => undefined);
+      render(<Tabs label="Tools" tabs={tabs} value="vocab" />);
+      // Vocab spans 320 to 470 in a list that ends at 390: 80px to bring in.
+      expect(screen.getByRole("tablist").scrollLeft).toBe(80);
+      expect(scrollTo).not.toHaveBeenCalled();
+    });
+
+    it("leaves the list alone when the selected tab already shows", () => {
+      layout();
+      render(<Tabs label="Tools" tabs={tabs} value="exam" />);
+      expect(screen.getByRole("tablist").scrollLeft).toBe(0);
+    });
   });
 });

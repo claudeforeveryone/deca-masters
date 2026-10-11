@@ -1,4 +1,5 @@
 import {
+  useEffect,
   useId,
   useRef,
   useState,
@@ -43,6 +44,7 @@ export function Tabs({
   const selected = value ?? inner;
   const base = useId();
   const refs = useRef<(HTMLButtonElement | null)[]>([]);
+  const listRef = useRef<HTMLDivElement>(null);
 
   function select(id: string, focus = false) {
     if (value === undefined) setInner(id);
@@ -73,10 +75,24 @@ export function Tabs({
 
   const stage = tone === "stage";
   const current = tabs.find((t) => t.id === selected) ?? tabs[0];
+  const currentIndex = current ? tabs.indexOf(current) : -1;
+
+  // On a narrow screen the list scrolls sideways; bring the selected tab into it (a deep link to the last tab would
+  // otherwise open with it cut off). Only the list moves, never the page.
+  useEffect(() => {
+    const list = listRef.current;
+    const tab = refs.current[currentIndex];
+    if (!list || !tab) return;
+    const l = list.getBoundingClientRect();
+    const t = tab.getBoundingClientRect();
+    if (t.right > l.right) list.scrollLeft += t.right - l.right;
+    else if (t.left < l.left) list.scrollLeft -= l.left - t.left;
+  }, [currentIndex]);
 
   return (
     <div className={className}>
       <div
+        ref={listRef}
         role="tablist"
         aria-label={label}
         className={`flex gap-1 overflow-x-auto border-b [scrollbar-width:none] ${stage ? "border-stage-line" : "border-line"} ${listClassName}`}
