@@ -11,7 +11,7 @@ import type {
 import { workSources } from "../lib/content";
 import { endOfTorontoDay, nextReview, type ReviewStep } from "../lib/leitner";
 import { supabase } from "../lib/supabase";
-import { must } from "./core";
+import { must, toApiError } from "./core";
 
 /** deca_vocab_review refuses more than this many answers in one call. */
 export const MAX_REVIEWS_PER_CALL = 500;
@@ -116,6 +116,23 @@ export async function listTerms(deck: ExamSlug): Promise<VocabTerm[]> {
       adapted: r.adapted,
     },
   }));
+}
+
+/** Active terms per deck, counted on the server (a head request: no rows are sent). Anyone may call it. */
+export async function countTerms(
+  decks: readonly ExamSlug[],
+): Promise<Partial<Record<ExamSlug, number>>> {
+  const counts = await Promise.all(
+    decks.map(async (deck) => {
+      const res = await supabase
+        .from("deca_vocab_terms")
+        .select("id", { count: "exact", head: true })
+        .eq("deck", deck);
+      if (res.error) throw toApiError(res.error, "Could not count the terms.");
+      return [deck, res.count ?? 0] as const;
+    }),
+  );
+  return Object.fromEntries(counts);
 }
 
 /** The caller's review state (one row per term they have answered), for one deck or all. */

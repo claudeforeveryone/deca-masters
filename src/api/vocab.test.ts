@@ -6,6 +6,7 @@ vi.mock(
 import { db } from "../test/supabaseMock";
 import { contractProblems } from "../test/sqlContract";
 import {
+  countTerms,
   listDecks,
   listTerms,
   myReviews,
@@ -195,5 +196,28 @@ describe("previewReview", () => {
       promoted: false,
     });
     expect(previewReview(null, true, NOW).box).toBe(1);
+  });
+});
+
+describe("countTerms", () => {
+  it("counts each deck's active terms with a head request", async () => {
+    db.reply(null, { count: 80 });
+    db.reply(null, { count: 4 });
+    await expect(countTerms(["marketing", "finance"])).resolves.toEqual({
+      marketing: 80,
+      finance: 4,
+    });
+    expect(db.calls).toHaveLength(2);
+    expect(db.calls[0].table).toBe("deca_vocab_terms");
+    expect(db.calls[0].ops).toContainEqual([
+      "select",
+      ["id", { count: "exact", head: true }],
+    ]);
+    expect(db.calls[0].ops).toContainEqual(["eq", ["deck", "marketing"]]);
+  });
+
+  it("reads a missing count as zero", async () => {
+    db.reply(null);
+    await expect(countTerms(["finance"])).resolves.toEqual({ finance: 0 });
   });
 });

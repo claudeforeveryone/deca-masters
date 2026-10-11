@@ -26,12 +26,27 @@ export type Rating = {
   label?: string | null;
 };
 
+/** One official DECA sample (a PDF on DECA's site), as the content files list it. Optional fields may be absent. */
+export type OfficialSample = {
+  title: string;
+  url: string;
+  season?: string | null;
+  /** "Sample Event", "District Event 1" ... */
+  round?: string | null;
+  instructionalArea?: string | null;
+  /** "current-format-sample" or "past-district-event". */
+  kind?: string | null;
+  /** The deca.org page that links the PDF. */
+  pageUrl?: string | null;
+  formatNote?: string | null;
+};
+
 export type RoleplayEvent = {
   eventCode: string;
   eventName: string;
   cluster: ClusterSlug;
   status: ContentStatus;
-  officialSamples: { title: string; url: string; season?: string | null }[];
+  officialSamples: OfficialSample[];
   format: {
     prepMinutes: number | null;
     presentationMinutes: number | null;
@@ -117,6 +132,21 @@ export async function mySessions(
         .range(offset, offset + limit - 1),
       "Could not load your role-play sessions.",
     ) ?? []
+  );
+}
+
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+/** One of the caller's sessions by id (RLS keeps everyone else's out), or null. */
+export async function getSession(id: string): Promise<RoleplaySession | null> {
+  if (!UUID.test(id)) return null;
+  return must<RoleplaySession | null>(
+    await supabase
+      .from("deca_roleplay_sessions")
+      .select(SESSION_COLUMNS)
+      .eq("id", id)
+      .maybeSingle(),
+    "Could not load that session.",
   );
 }
 

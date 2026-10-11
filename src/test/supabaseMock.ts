@@ -20,6 +20,7 @@ export type Recorded = {
 type Reply = {
   data: unknown;
   error: { message: string; code: string } | null;
+  count?: number | null;
 };
 
 function createDb() {
@@ -82,8 +83,9 @@ function createDb() {
     get uid() {
       return uid;
     },
-    reply(data: unknown) {
-      replies.push({ data, error: null });
+    /** `extra` adds fields such as `count` (a head request with count: "exact" answers with it). */
+    reply(data: unknown, extra: { count?: number | null } = {}) {
+      replies.push({ data, error: null, ...extra });
     },
     fail(message: string, code: string) {
       replies.push({ data: null, error: { message, code } });
