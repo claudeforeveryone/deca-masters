@@ -1,5 +1,5 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import { StrictMode, type ComponentType } from "react";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 // Self-hosted faces (no third-party font requests). Only the weights the tokens use.
 import "@fontsource/saira-semi-condensed/600.css";
@@ -13,14 +13,30 @@ import { AuthProvider } from "./lib/auth";
 const root = document.getElementById("root");
 if (!root) throw new Error("index.html is missing #root");
 
-createRoot(root).render(
+const tree = (home?: ComponentType) => (
   <StrictMode>
     <BrowserRouter
       basename={import.meta.env.BASE_URL.replace(/\/$/, "") || "/"}
     >
       <AuthProvider>
-        <App />
+        <App home={home} />
       </AuthProvider>
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 );
+
+// A production build ships the signed-out landing as HTML (scripts/prerender.mjs). index.html's head script marks the
+// visits it does not fit (another path, or a stored session) before first paint, and those render from scratch.
+const html = document.documentElement;
+if (root.hasAttribute("data-prerendered") && !html.hasAttribute("data-prerender-skip")) {
+  // Load the home page module before hydrating, so hydration never suspends on its chunk (a suspended boundary that
+  // then sees the session resolve would throw the HTML away and flash the loading state).
+  void import("./pages/home/HomePage").then(({ HomePage }) => {
+    hydrateRoot(root, tree(HomePage));
+  });
+} else {
+  root.replaceChildren();
+  root.removeAttribute("data-prerendered");
+  html.removeAttribute("data-prerender-skip");
+  createRoot(root).render(tree());
+}

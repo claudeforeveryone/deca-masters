@@ -7,6 +7,8 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
+    // Read by scripts/prerender.mjs to preload the home page's chunks, then deleted from dist.
+    manifest: true,
     rolldownOptions: {
       output: {
         // Long-lived vendor chunks: an app-only deploy leaves these cached in returning visitors' browsers.

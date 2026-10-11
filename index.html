@@ -21,7 +21,24 @@
         if (t === "light" || t === "dark")
           document.documentElement.dataset.theme = t;
       } catch (e) {}
+      // The build prerenders the signed-out landing into #root (scripts/prerender.mjs). Hide it before first paint for
+      // any other path, or when a session may be stored (src/lib/auth.tsx mayHaveStoredSession, same key); main.tsx
+      // then renders from scratch. The deploy base is "/".
+      try {
+        if (
+          location.pathname !== "/" ||
+          localStorage.getItem("deca-masters-auth") !== null
+        )
+          document.documentElement.setAttribute("data-prerender-skip", "");
+      } catch (e) {
+        document.documentElement.setAttribute("data-prerender-skip", "");
+      }
     </script>
+    <style>
+      html[data-prerender-skip] #root {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>

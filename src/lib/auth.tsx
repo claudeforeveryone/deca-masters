@@ -21,6 +21,8 @@ import { appUrl, SESSION_STORAGE_KEY, supabase } from "./supabase";
  * Errs toward true: when storage cannot be read, assume there may be a session.
  */
 export function mayHaveStoredSession(): boolean {
+  // The build-time prerender (no window) renders for a signed-out visitor; index.html skips it for everyone else.
+  if (typeof window === "undefined") return false;
   try {
     return window.localStorage.getItem(SESSION_STORAGE_KEY) !== null;
   } catch {

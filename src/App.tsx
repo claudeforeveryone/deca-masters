@@ -98,11 +98,16 @@ function ShellLayout() {
  * indexable).
  * Signed in: anything that saves, scores or ranks, plus onboarding and the owner console.
  */
-export function App() {
+export function App({
+  home: Home = HomePage,
+}: {
+  /** The home page component itself instead of its lazy chunk: the prerender and its hydration pass it in. */
+  home?: ComponentType;
+} = {}) {
   return (
     <Routes>
       <Route element={<ShellLayout />}>
-        <Route index element={<HomePage />} />
+        <Route index element={<Home />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="signup" element={<SignupPage />} />
         <Route path="reset" element={<ResetPage />} />
