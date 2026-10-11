@@ -228,7 +228,7 @@ export function ClockPreview({ events }: { events: EventItem[] }) {
             onChange={(e) => setCode(e.target.value)}
             options={timed.map((e) => ({
               value: e.code,
-              label: `${e.name} (${e.code})`,
+              label: `${e.code} · ${e.name}`,
             }))}
           />
           <div className="mt-6">
