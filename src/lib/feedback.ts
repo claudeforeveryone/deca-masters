@@ -107,10 +107,40 @@ export const REPORT_REASONS = [
 ] as const;
 export type ReportReason = (typeof REPORT_REASONS)[number]["value"];
 
+type ItemKind = "question_issue" | "vocab_issue";
+
+/** Terms have no answer key and a definition instead of an explanation, so their reasons say so. */
+const TERM_LABELS: Partial<Record<ReportReason, string>> = {
+  unclear: "The term is unclear",
+  explanation: "The definition is wrong",
+};
+
+/** The reasons that fit the item: a term has no answer key to get wrong. */
+export function reportReasons(
+  kind: ItemKind,
+): { value: ReportReason; label: string }[] {
+  return REPORT_REASONS.filter(
+    (r) => kind === "question_issue" || r.value !== "wrong_key",
+  ).map((r) => ({ value: r.value, label: reportReasonLabel(r.value, kind) }));
+}
+
+export function reportReasonLabel(
+  reason: ReportReason,
+  kind: ItemKind = "question_issue",
+): string {
+  if (kind === "vocab_issue" && TERM_LABELS[reason]) return TERM_LABELS[reason];
+  return (
+    REPORT_REASONS.find((r) => r.value === reason)?.label ?? "Something else"
+  );
+}
+
 /** The report message: the chosen reason, then the member's own words when they added any. */
-export function composeReport(reason: ReportReason, details: string): string {
-  const label =
-    REPORT_REASONS.find((r) => r.value === reason)?.label ?? "Something else";
+export function composeReport(
+  reason: ReportReason,
+  details: string,
+  kind: ItemKind = "question_issue",
+): string {
+  const label = reportReasonLabel(reason, kind);
   const extra = details.trim();
   return extra ? `${label}: ${extra}` : label;
 }

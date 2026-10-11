@@ -78,6 +78,10 @@ const NotFoundPage = page(() => import("./pages/NotFoundPage"), "NotFoundPage");
 const UiGalleryPage = import.meta.env.DEV
   ? page(() => import("./pages/dev/UiGalleryPage"), "UiGalleryPage")
   : null;
+// The owner console on fixture data (and the member feedback flows), same rule: dev builds only.
+const OwnerGalleryPage = import.meta.env.DEV
+  ? page(() => import("./pages/dev/OwnerGalleryPage"), "OwnerGalleryPage")
+  : null;
 
 /** The shell stays put while a page chunk loads; a page that throws is contained and cleared on the next route. */
 function ShellLayout() {
@@ -137,6 +141,9 @@ export function App({
 
         {UiGalleryPage ? (
           <Route path="dev/ui" element={<UiGalleryPage />} />
+        ) : null}
+        {OwnerGalleryPage ? (
+          <Route path="dev/owner" element={<OwnerGalleryPage />} />
         ) : null}
         <Route path="*" element={<NotFoundPage />} />
       </Route>

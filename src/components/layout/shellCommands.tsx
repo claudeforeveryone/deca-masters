@@ -1,13 +1,18 @@
 import {
   BookOpen,
   ClipboardCheck,
+  Download,
   FileText,
+  Gauge,
   House,
+  Layers,
   ListChecks,
   LogIn,
   LogOut,
+  MessageSquare,
   Monitor,
   Moon,
+  Play,
   Settings,
   Sun,
   Timer,
@@ -18,10 +23,24 @@ import {
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { openRuns, type OpenRun } from "../../api/practice";
 import { useAuth } from "../../lib/auth";
-import { CLUSTERS, loadContentIndex, type EventItem } from "../../lib/content";
+import {
+  CLUSTERS,
+  loadContentIndex,
+  type ContentIndex,
+  type EventItem,
+} from "../../lib/content";
+import { install, useCanInstall } from "../../lib/pwa";
 import { useThemePref } from "../../lib/theme";
+import { useIsOwner } from "../../lib/useIsOwner";
+import { useFeedback } from "../feedback/Feedback";
 import type { PaletteCommand } from "../ui/CommandPalette";
+
+/** "3 of 20 answered" for a run the member can pick up again. */
+function runHint(r: OpenRun): string {
+  return `${r.answered} of ${r.planned} answered`;
+}
 
 /**
  * Everything the command palette can do, built from the real route map, the published event list (fetched the first
@@ -31,18 +50,43 @@ export function useShellCommands(open: boolean): PaletteCommand[] {
   const navigate = useNavigate();
   const { user, signOut } = useAuth();
   const [, setTheme] = useThemePref();
+  const { openFeedback } = useFeedback();
+  const owner = useIsOwner() === "owner";
+  const canInstall = useCanInstall();
   const [events, setEvents] = useState<EventItem[]>([]);
+  const [decks, setDecks] = useState<ContentIndex["vocab"]>([]);
   const [asked, setAsked] = useState(false);
+  const [runs, setRuns] = useState<OpenRun[]>([]);
+  const userId = user?.id ?? null;
 
   useEffect(() => {
     if (!open || asked) return;
     setAsked(true);
     loadContentIndex()
-      .then((index) => setEvents(index.events ?? []))
+      .then((index) => {
+        setEvents(index.events ?? []);
+        setDecks(index.vocab ?? []);
+      })
       .catch(() => {
         // No event list: the palette still offers pages and actions.
       });
   }, [open, asked]);
+
+  // Unfinished runs, asked each time the palette opens (a run may have been started or finished since).
+  useEffect(() => {
+    if (!open || !userId) {
+      if (!userId) setRuns([]);
+      return;
+    }
+    let live = true;
+    openRuns().then(
+      (r) => live && setRuns(r.filter((x) => !x.expired)),
+      () => live && setRuns([]),
+    );
+    return () => {
+      live = false;
+    };
+  }, [open, userId]);
 
   return useMemo(() => {
     const go = (to: string) => () => navigate(to);
@@ -153,6 +197,53 @@ export function useShellCommands(open: boolean): PaletteCommand[] {
       },
     ];
 
+    const resume: PaletteCommand[] = runs.slice(0, 3).map((r) => ({
+      id: `resume-${r.attempt_id}`,
+      label: `Continue ${r.label ?? "your practice run"}`,
+      group: "Continue",
+      hint: runHint(r),
+      keywords: ["resume", "unfinished", "practice", r.exam ?? ""],
+      icon: <Play aria-hidden="true" />,
+      // Route contract for the practice squad: RunPage resumes ?attempt=<attempt_id> with resumeRun(id).
+      run: go(`/practice/run?attempt=${encodeURIComponent(r.attempt_id)}`),
+    }));
+
+    const owners: PaletteCommand[] = owner
+      ? [
+          {
+            id: "owner",
+            label: "Owner console",
+            group: "Go to",
+            hint: "/owner",
+            keywords: ["admin", "analytics", "feedback", "audit"],
+            icon: <Gauge aria-hidden="true" />,
+            run: go("/owner"),
+          },
+        ]
+      : [];
+
+    const deckCommands: PaletteCommand[] = decks.map((d) => ({
+      id: `deck-${d.slug}`,
+      label: d.title,
+      group: "Vocab decks",
+      hint: `${d.terms} terms`,
+      keywords: ["vocab", "flashcards", "deck", d.slug],
+      icon: <Layers aria-hidden="true" />,
+      run: go(`/vocab/${encodeURIComponent(d.slug)}`),
+    }));
+
+    const roleplayCommands: PaletteCommand[] = events
+      .filter((e) => e.components.includes("roleplay"))
+      .map((e) => ({
+        id: `roleplay-${e.code}`,
+        label: `${e.name} role play`,
+        group: "Role plays",
+        hint: e.code,
+        keywords: [e.code, "role play", "roleplay", "trainer", "scenario"],
+        icon: <Timer aria-hidden="true" />,
+        run: go(`/roleplay/${encodeURIComponent(e.code)}`),
+      }));
+
     const eventCommands: PaletteCommand[] = events.map((e) => ({
       id: `event-${e.code}`,
       label: e.name,
@@ -188,8 +279,28 @@ export function useShellCommands(open: boolean): PaletteCommand[] {
         icon: <Monitor aria-hidden="true" />,
         run: () => setTheme("system"),
       },
+      ...(canInstall && install
+        ? [
+            {
+              id: "install",
+              label: "Install DECA Masters as an app",
+              group: "Actions",
+              keywords: ["install", "app", "home screen", "pwa"],
+              icon: <Download aria-hidden="true" />,
+              run: () => void install?.prompt("palette"),
+            },
+          ]
+        : []),
       ...(user
         ? [
+            {
+              id: "feedback",
+              label: "Send feedback",
+              group: "Actions",
+              keywords: ["bug", "report", "idea", "contact", "help"],
+              icon: <MessageSquare aria-hidden="true" />,
+              run: openFeedback,
+            },
             {
               id: "signout",
               label: "Sign out",
@@ -217,6 +328,25 @@ export function useShellCommands(open: boolean): PaletteCommand[] {
           ]),
     ];
 
-    return [...pages, ...eventCommands, ...actions];
-  }, [events, navigate, user, signOut, setTheme]);
+    return [
+      ...resume,
+      ...pages,
+      ...owners,
+      ...eventCommands,
+      ...deckCommands,
+      ...roleplayCommands,
+      ...actions,
+    ];
+  }, [
+    events,
+    decks,
+    runs,
+    owner,
+    canInstall,
+    navigate,
+    user,
+    signOut,
+    setTheme,
+    openFeedback,
+  ]);
 }

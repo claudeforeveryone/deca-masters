@@ -1,8 +1,18 @@
-import { LogIn, Search, Settings, UserRound, LogOut } from "lucide-react";
+import {
+  Gauge,
+  LogIn,
+  LogOut,
+  MessageSquare,
+  Search,
+  Settings,
+  UserRound,
+} from "lucide-react";
 import { useCallback, useLayoutEffect, useState, type ReactNode } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useAuth } from "../../lib/auth";
 import { useThemePref, type ThemePref } from "../../lib/theme";
+import { useIsOwner } from "../../lib/useIsOwner";
+import { FeedbackProvider, useFeedback } from "../feedback/Feedback";
 import { buttonClass, IconButton } from "../ui/Button";
 import {
   CommandPalette,
@@ -37,6 +47,16 @@ function useScrollbarWidth() {
 
 /** Top bar (deep navy in both themes), page column, footer, phone tab bar, the command palette and toasts. */
 export function AppShell({ children }: { children: ReactNode }) {
+  return (
+    <ToastProvider>
+      <FeedbackProvider>
+        <Shell>{children}</Shell>
+      </FeedbackProvider>
+    </ToastProvider>
+  );
+}
+
+function Shell({ children }: { children: ReactNode }) {
   useScrollbarWidth();
   const [paletteOpen, setPaletteOpen] = useState(false);
   usePaletteShortcut(setPaletteOpen);
@@ -44,7 +64,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   const closePalette = useCallback(() => setPaletteOpen(false), []);
 
   return (
-    <ToastProvider>
+    <>
       <div className="flex min-h-dvh flex-col">
         <a
           href="#main"
@@ -68,7 +88,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         onClose={closePalette}
         commands={commands}
       />
-    </ToastProvider>
+    </>
   );
 }
 
@@ -170,6 +190,9 @@ const THEME_LABEL: Record<ThemePref, string> = {
 function AccountMenu({ email }: { email: string }) {
   const { signOut } = useAuth();
   const [theme, setTheme] = useThemePref();
+  const { openFeedback } = useFeedback();
+  // Shown only when the server says this account is an owner; /owner and every owner RPC check again.
+  const owner = useIsOwner() === "owner";
   const initial = (email.trim()[0] ?? "?").toUpperCase();
 
   const items: MenuItem[] = [
@@ -193,6 +216,22 @@ function AccountMenu({ email }: { email: string }) {
       label: "Settings",
       to: "/me/settings",
       icon: <Settings aria-hidden="true" />,
+    },
+    ...(owner
+      ? [
+          {
+            kind: "link",
+            label: "Owner console",
+            to: "/owner",
+            icon: <Gauge aria-hidden="true" />,
+          } satisfies MenuItem,
+        ]
+      : []),
+    {
+      kind: "action",
+      label: "Send feedback",
+      icon: <MessageSquare aria-hidden="true" />,
+      onSelect: openFeedback,
     },
     { kind: "separator" },
     { kind: "heading", label: "Theme" },

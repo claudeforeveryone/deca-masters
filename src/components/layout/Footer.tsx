@@ -1,5 +1,7 @@
 import { Heart } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../lib/auth";
+import { useFeedback } from "../feedback/Feedback";
 import { Wordmark } from "./Wordmark";
 
 const LINKS = [
@@ -9,6 +11,8 @@ const LINKS = [
 ] as const;
 
 export function Footer() {
+  const { user } = useAuth();
+  const { openFeedback } = useFeedback();
   return (
     <footer className="stage border-t border-stage-line bg-stage-0!">
       <div className="shell grid gap-10 pt-12 pb-10 md:grid-cols-[minmax(0,1fr)_auto] md:gap-16">
@@ -41,6 +45,17 @@ export function Footer() {
                 </Link>
               </li>
             ))}
+            {user ? (
+              <li>
+                <button
+                  type="button"
+                  onClick={openFeedback}
+                  className="inline-flex min-h-11 cursor-pointer items-center text-on-navy underline-offset-4 hover:underline"
+                >
+                  Send feedback
+                </button>
+              </li>
+            ) : null}
             <li>
               <a
                 href="mailto:josephislockedin@gmail.com"
