@@ -3,7 +3,7 @@
 // server's pick, never from the 100-question format alone.
 import type { RunKind } from "../api/practice";
 import type { BankExam } from "../api/questions";
-import { EXAM_FORMAT, examTimeLimitSec } from "./examTiming";
+import { EXAM_FORMAT, examTimeLimitSec, PACE_SEC } from "./examTiming";
 
 export type ModeId = "exam" | "untimed" | "area" | "weak" | "redo" | "daily";
 
@@ -137,10 +137,21 @@ export function planFor(
       const count = Math.min(EXAM_FORMAT.questions, available);
       const limit = examTimeLimitSec(count, { extended: opts.extended });
       const clock = `${limitLabel(limit)} on the clock`;
+      // a tiny bank hits the server's one-minute floor, which is longer than the real pace
+      const atFloor = limit > count * PACE_SEC * (opts.extended ? 2 : 1);
+      const pace = atFloor
+        ? "the shortest clock allowed"
+        : opts.extended
+          ? "double the real pace"
+          : "the real pace";
+      const which =
+        count === 1
+          ? "The one question this bank has"
+          : `All ${count} questions this bank has`;
       const summary =
         count >= EXAM_FORMAT.questions
           ? `${count} questions, ${clock}${opts.extended ? " (double time)" : ", like the real test"}.`
-          : `All ${plural(count, "question")} this bank has, ${clock} (${opts.extended ? "double the real pace" : "the real pace"}).`;
+          : `${which}, ${clock} (${pace}).`;
       return {
         ...base,
         count,

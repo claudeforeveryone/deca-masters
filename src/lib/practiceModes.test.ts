@@ -63,6 +63,14 @@ describe("planFor", () => {
     );
   });
 
+  it("a one-question bank gets the shortest clock a run allows, and does not call it the real pace", () => {
+    const p = planFor("exam", bank(1), {});
+    expect(p.timeLimitSec).toBe(60);
+    expect(p.summary).toBe(
+      "The one question this bank has, 1 min on the clock (the shortest clock allowed).",
+    );
+  });
+
   it("extended time doubles the clock", () => {
     expect(planFor("exam", bank(20), { extended: true }).timeLimitSec).toBe(
       1680,
