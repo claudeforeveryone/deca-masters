@@ -22,6 +22,12 @@ export const CAMERA: { start: Orbit; end: Orbit } = {
   end: { radius: 8.6, elevation: 15, azimuth: 0 },
 };
 
+/** The fixed views: the explorer looks down on the crown; the closing scene looks up from below, as the hero's echo. */
+export const ORBITS: { explore: Orbit; close: Orbit } = {
+  explore: { radius: 7.4, elevation: 27, azimuth: 0 },
+  close: { radius: 8.2, elevation: -13, azimuth: 26 },
+};
+
 const clamp01 = (x: number) => Math.min(1, Math.max(0, x));
 export const easeOutQuint = (x: number) => 1 - (1 - x) ** 5;
 export const easeOutQuart = (x: number) => 1 - (1 - x) ** 4;
