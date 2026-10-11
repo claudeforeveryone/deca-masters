@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom'
-import { Bell, List, X, SignOut, UserCircle } from '@phosphor-icons/react'
+import { Bell, List, X, SignOut, UserCircle, GearSix } from '@phosphor-icons/react'
 import { useMyEvent, useStore } from '../store'
 import { Avatar } from './ui'
 import Logo from './Logo'
@@ -18,12 +18,36 @@ const LINKS = [
 
 type Note = { id: string; text: string; to?: string }
 
+// Notifications you have read, saved per user so a reload doesn't mark them unread again.
+const readKey = (userId: string) => `deca-masters:read:${userId}`
+function loadRead(userId: string): Set<string> {
+  try {
+    return new Set(JSON.parse(localStorage.getItem(readKey(userId)) ?? '[]') as string[])
+  } catch {
+    return new Set()
+  }
+}
+
 export default function TopNav() {
   const { signedIn, isGuest, me, myChapter, logout } = useStore()
   const { event } = useMyEvent()
   const [menu, setMenu] = useState(false)
   const [open, setOpen] = useState<'bell' | 'account' | null>(null)
-  const [read, setRead] = useState<Set<string>>(new Set())
+  const userId = me?.id ?? ''
+  const [read, setReadIds] = useState(() => loadRead(userId))
+  const [readFor, setReadFor] = useState(userId)
+  if (readFor !== userId) {
+    setReadFor(userId)
+    setReadIds(loadRead(userId))
+  }
+  const setRead = (ids: Set<string>) => {
+    setReadIds(ids)
+    try {
+      localStorage.setItem(readKey(userId), JSON.stringify([...ids]))
+    } catch {
+      /* storage unavailable: read state lasts until reload */
+    }
+  }
   const { pathname } = useLocation()
   const navigate = useNavigate()
   const popRef = useRef<HTMLDivElement>(null)
@@ -137,6 +161,7 @@ export default function TopNav() {
                       <p className="truncate text-xs text-ink-3">{event.code}, {event.name}</p>
                     </div>
                     <Link to="/me" className="flex items-center gap-2 px-4 py-2.5 text-sm text-ink-2 hover:bg-canvas"><UserCircle size={18} /> Profile</Link>
+                    <Link to="/settings" className="flex items-center gap-2 px-4 py-2.5 text-sm text-ink-2 hover:bg-canvas"><GearSix size={18} /> Settings</Link>
                     <button onClick={signOut} className="flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm text-ink-2 hover:bg-canvas">
                       <SignOut size={18} /> {isGuest ? 'End guest session' : 'Log out'}
                     </button>
@@ -164,6 +189,7 @@ export default function TopNav() {
               {label}
             </NavLink>
           ))}
+          <NavLink to="/settings" className={({ isActive }) => `block border-b border-line px-4 py-4 text-sm font-medium ${isActive ? 'border-l-4 border-l-brand text-brand' : 'text-ink'}`}>Settings</NavLink>
           {isGuest && <Link to="/register" className="block border-b border-line px-4 py-4 text-sm font-semibold text-brand">Create account</Link>}
           <button onClick={signOut} className="block w-full px-4 py-4 text-left text-sm font-medium text-ink">{isGuest ? 'End guest session' : 'Log out'}</button>
         </nav>

@@ -123,7 +123,7 @@ type Store = {
   ready: boolean
   isGuest: boolean
   signedIn: boolean
-  me: { id: string; name: string; school: string; grade: number; eventCode: string; chapterId: string | null; progress: Progress } | null
+  me: { id: string; email: string; name: string; school: string; grade: number; eventCode: string; chapterId: string | null; progress: Progress } | null
   players: PlayerRow[]
   chapters: ChapterRow[]
   myChapter: ChapterRow | null
@@ -134,6 +134,11 @@ type Store = {
   login: (email: string, password: string) => Promise<string | null>
   logout: () => void
   setEvent: (code: string) => void
+  updateProfile: (p: { name: string; school: string; grade: number }) => string | null
+  changePassword: (current: string, next: string) => Promise<string | null>
+  /** Clears ELO, history and stats for whoever is signed in. The account itself stays. */
+  resetProgress: () => void
+  deleteAccount: (password: string) => Promise<string | null>
   record: (a: Omit<Attempt, 'id' | 'date' | 'eloDelta'>, perCorrect?: number) => number
   createChapter: (name: string, school: string) => void
   joinChapter: (code: string) => string | null
@@ -158,9 +163,9 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const isGuest = state.session?.kind === 'guest'
 
   const me: Store['me'] = account
-    ? { id: account.id, name: account.name, school: account.school, grade: account.grade, eventCode: account.eventCode, chapterId: account.chapterId, progress: account.progress }
+    ? { id: account.id, email: account.email, name: account.name, school: account.school, grade: account.grade, eventCode: account.eventCode, chapterId: account.chapterId, progress: account.progress }
     : isGuest
-      ? { id: 'guest', name: 'Guest', school: '', grade: 0, eventCode: (state.session as { eventCode: string }).eventCode, chapterId: null, progress: state.guest }
+      ? { id: 'guest', email: '', name: 'Guest', school: '', grade: 0, eventCode: (state.session as { eventCode: string }).eventCode, chapterId: null, progress: state.guest }
       : null
 
   const players = useMemo<PlayerRow[]>(() => {
@@ -262,6 +267,36 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     setEvent: (code) => {
       if (isGuest) setState((s) => ({ ...s, session: { kind: 'guest', eventCode: code } }))
       else updateAccount((a) => ({ ...a, eventCode: code }))
+    },
+
+    updateProfile: ({ name, school, grade }) => {
+      if (!account) return 'Create an account to set your name and school.'
+      if (!name.trim() || !school.trim()) return 'Fill in your name and school.'
+      if (![9, 10, 11, 12].includes(grade)) return 'Pick your grade.'
+      updateAccount((a) => ({ ...a, name: name.trim(), school: school.trim(), grade }))
+      return null
+    },
+
+    changePassword: async (current, next) => {
+      if (!account) return 'Guests have no password.'
+      if (account.passHash !== (await hash(current))) return 'Your current password is incorrect.'
+      if (next.length < 6) return 'Use a new password with at least 6 characters.'
+      const passHash = await hash(next)
+      updateAccount((a) => ({ ...a, passHash }))
+      return null
+    },
+
+    resetProgress: () => {
+      if (isGuest) setState((s) => ({ ...s, guest: emptyProgress() }))
+      else updateAccount((a) => ({ ...a, progress: emptyProgress() }))
+    },
+
+    deleteAccount: async (password) => {
+      if (!account) return 'There is no account to delete.'
+      if (account.passHash !== (await hash(password))) return 'Your password is incorrect.'
+      // Chapters you created stay, so other members keep them.
+      setState((s) => ({ ...s, session: null, accounts: s.accounts.filter((a) => a.id !== account.id) }))
+      return null
     },
 
     record: (a, perCorrect = 8) => {
