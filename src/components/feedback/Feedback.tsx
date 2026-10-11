@@ -117,11 +117,12 @@ export function ReportItemButton({
       variant="quiet"
       size="sm"
       className={className}
+      // Starts with the visible words, so speech control still finds it by what it says.
+      aria-label={subject ? `Report this ${noun}, ${subject}` : undefined}
       onClick={() => reportItem({ id: itemId })}
     >
       <Flag aria-hidden="true" className="size-4" />
       Report this {noun}
-      {subject ? <span className="sr-only">, {subject}</span> : null}
     </Button>
   );
 }
