@@ -148,8 +148,9 @@ const sections: LegalSection[] = [
     title: "Stopping",
     body: (
       <p>
-        You can stop using DECA Masters at any time, and email <Mail /> to
-        delete your data, as the <Link to="/privacy">Privacy Policy</Link>{" "}
+        You can stop using DECA Masters at any time and delete your data,
+        yourself in <Link to="/me/settings#delete">Settings</Link> or by
+        emailing <Mail />, as the <Link to="/privacy">Privacy Policy</Link>{" "}
         explains. We may change or close the site; if we close it, we will try
         to give members notice on the site first.
       </p>

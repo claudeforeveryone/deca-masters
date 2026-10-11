@@ -224,15 +224,17 @@ const sections: LegalSection[] = [
           [
             "Delete your DECA data",
             <>
-              Email <Mail /> from the address on your account. We delete your
-              profile, practice history, vocab progress, role-play sessions,
-              bookmarks, goals, feedback and usage events, and email you when it
-              is done.
+              Do it yourself under{" "}
+              <Link to="/me/settings#delete">Settings, Delete my account</Link>:
+              type the confirmation phrase and your profile, practice history,
+              vocab progress, role-play sessions, bookmarks, goals, feedback and
+              usage events are deleted at once. It cannot be undone. Or email{" "}
+              <Mail /> from the address on your account and we do it for you.
             </>,
           ],
           [
             "Delete your whole account",
-            "Say so in the same email and we also delete the shared login. That ends your access to the FBLA site too, so we will check with you first.",
+            "The login is shared with the FBLA site, so we delete it by hand: tick the box to ask for it when you delete your DECA data, or say so in an email. That ends your access to the FBLA site too, so we will check with you first.",
           ],
         ]}
       />
@@ -244,7 +246,8 @@ const sections: LegalSection[] = [
     body: (
       <Bullets>
         <li>
-          Your account, profile and study data: until you ask us to delete them.
+          Your account, profile and study data: until you delete them or ask
+          us to.
         </li>
         <li>Usage events: 13 months, then they are deleted automatically.</li>
         <li>Feedback: until you delete your DECA data.</li>
@@ -292,7 +295,9 @@ export function PrivacyPage() {
         "Your login is shared with our FBLA practice site. Your study data on each site stays separate.",
         "Profiles are private until you make them public. We never sell your information or show ads.",
         <>
-          Email <Mail /> to delete your DECA data or your whole account.
+          Delete your DECA data yourself in{" "}
+          <Link to="/me/settings#delete">Settings</Link>, or email <Mail /> to
+          have it or your whole account deleted.
         </>,
         <>
           This policy has not been reviewed by a lawyer. DECA Masters is not

@@ -64,4 +64,18 @@ describe("privacy specifics", () => {
     expect(text).toMatch(/PIPEDA/);
     expect(text).toMatch(/under 13/i);
   });
+
+  it("points to the delete control in settings, which works at once, as well as email", () => {
+    render(
+      <MemoryRouter>
+        <PrivacyPage />
+      </MemoryRouter>,
+    );
+    const links = [...document.querySelectorAll("a")].map((a) =>
+      a.getAttribute("href"),
+    );
+    expect(links).toContain("/me/settings#delete");
+    expect(links).toContain("mailto:josephislockedin@gmail.com");
+    expect(document.body.textContent).not.toMatch(/until you ask us to delete/);
+  });
 });
