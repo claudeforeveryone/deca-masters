@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   clearStash,
   readPref,
+  readPrefText,
   readStash,
   writePref,
   writeStash,
@@ -68,5 +69,17 @@ describe("stash (unsent work kept on this device)", () => {
     expect(readStash("run:a1")).toBeNull();
     expect(() => writeStash("run:a1", { a: 1 })).not.toThrow();
     expect(() => clearStash("run:a1")).not.toThrow();
+  });
+});
+
+describe("free-form preferences", () => {
+  it("reads back stored text and gives null when unset or blocked", () => {
+    expect(readPrefText("bests:u1")).toBeNull();
+    writePref("bests:u1", '{"peak-elo":12}');
+    expect(readPrefText("bests:u1")).toBe('{"peak-elo":12}');
+    vi.spyOn(Storage.prototype, "getItem").mockImplementation(() => {
+      throw new Error("blocked");
+    });
+    expect(readPrefText("bests:u1")).toBeNull();
   });
 });

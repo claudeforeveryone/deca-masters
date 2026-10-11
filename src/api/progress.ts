@@ -123,3 +123,40 @@ export async function runHistory(
     nextBefore: more ? page[page.length - 1].submitted_at : null,
   };
 }
+
+/** One graded answer, as the coverage and map views need it (no choice, no key). */
+export type LoggedAnswer = {
+  question_id: string;
+  exam: ExamSlug;
+  area: string;
+  correct: boolean | null;
+  saved_at: string;
+};
+
+/** PostgREST returns at most 1,000 rows a request on this project. */
+export const ANSWER_LOG_PAGE = 1000;
+
+/**
+ * The caller's graded answers, newest first (RLS: own rows only), read a page at a time up to `cap`. Used for the
+ * distinct questions seen per exam and area and for accuracy over the latest answers.
+ */
+export async function answerLog(cap = 5000): Promise<LoggedAnswer[]> {
+  const out: LoggedAnswer[] = [];
+  while (out.length < cap) {
+    const from = out.length;
+    const to = Math.min(cap, from + ANSWER_LOG_PAGE) - 1;
+    const page =
+      must<LoggedAnswer[] | null>(
+        await supabase
+          .from("deca_attempt_answers")
+          .select("question_id,exam,area,correct,saved_at")
+          .eq("graded", true)
+          .order("saved_at", { ascending: false })
+          .range(from, to),
+        "Could not load your answers.",
+      ) ?? [];
+    out.push(...page);
+    if (page.length < to - from + 1) break;
+  }
+  return out;
+}

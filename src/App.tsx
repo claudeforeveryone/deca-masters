@@ -3,6 +3,7 @@ import { Outlet, Route, Routes, useLocation } from "react-router-dom";
 import { AppShell } from "./components/layout/AppShell";
 import { ErrorBoundary } from "./components/layout/ErrorBoundary";
 import { RequireAuth } from "./components/layout/RequireAuth";
+import { RequireProfile } from "./components/layout/RequireProfile";
 import { RouteFallback } from "./components/layout/RouteFallback";
 
 /** A route-level code-split page. Every page module exports a named component; this picks it. */
@@ -128,10 +129,13 @@ export function App({
           <Route path="practice" element={<PracticePage />} />
           <Route path="practice/run" element={<RunPage />} />
           <Route path="practice/review/:attemptId" element={<ReviewPage />} />
-          <Route path="progress" element={<ProgressPage />} />
           <Route path="leaderboard" element={<LeaderboardPage />} />
-          <Route path="me" element={<ProfilePage />} />
           <Route path="me/settings" element={<SettingsPage />} />
+          {/* Pages built on the member's DECA profile: no profile yet goes to onboarding first. */}
+          <Route element={<RequireProfile />}>
+            <Route path="progress" element={<ProgressPage />} />
+            <Route path="me" element={<ProfilePage />} />
+          </Route>
           <Route path="owner" element={<OwnerPage />} />
         </Route>
 

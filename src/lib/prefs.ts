@@ -27,6 +27,15 @@ export function writePref(key: string, value: string): void {
   }
 }
 
+/** A free-form preference (for example a small JSON snapshot), or null when unset or unreadable. */
+export function readPrefText(key: string): string | null {
+  try {
+    return window.localStorage.getItem(PREF_PREFIX + key);
+  } catch {
+    return null;
+  }
+}
+
 // Stash: unsent work kept on this device until the server confirms it (a practice run's answers made while offline).
 // The server is always the record; a stash only lets a reload send what never reached it, and is cleared as soon as
 // the server has it. Kept apart from preferences under its own prefix, JSON, and guarded the same way.

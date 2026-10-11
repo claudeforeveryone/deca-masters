@@ -1,0 +1,109 @@
+// The signed-in member's DECA profile, loaded once per account and shared by every page (the command centre, the
+// profile and settings pages, the RequireProfile guard). A save or a delete updates it in place, so the next page
+// already sees the change. null means signed in but not onboarded yet.
+import { useCallback, useEffect, useSyncExternalStore } from "react";
+import { getMyProfile, type Profile } from "../api/profile";
+import { useAuth } from "./auth";
+
+type Snapshot = {
+  uid: string | null;
+  status: "idle" | "loading" | "ready" | "error";
+  profile: Profile | null;
+  error: string | null;
+};
+
+const IDLE: Snapshot = {
+  uid: null,
+  status: "idle",
+  profile: null,
+  error: null,
+};
+let snap: Snapshot = IDLE;
+const listeners = new Set<() => void>();
+
+function publish(next: Snapshot) {
+  snap = next;
+  for (const l of listeners) l();
+}
+
+function subscribe(l: () => void) {
+  listeners.add(l);
+  return () => listeners.delete(l);
+}
+const read = () => snap;
+
+function load(uid: string, force = false) {
+  if (
+    !force &&
+    snap.uid === uid &&
+    snap.status !== "idle" &&
+    snap.status !== "error"
+  )
+    return;
+  publish({
+    uid,
+    status: "loading",
+    profile: snap.uid === uid ? snap.profile : null,
+    error: null,
+  });
+  getMyProfile().then(
+    (profile) => {
+      if (snap.uid === uid)
+        publish({ uid, status: "ready", profile, error: null });
+    },
+    (e: unknown) => {
+      if (snap.uid === uid)
+        publish({
+          ...snap,
+          status: "error",
+          error:
+            e instanceof Error && e.message
+              ? e.message
+              : "Could not load your profile.",
+        });
+    },
+  );
+}
+
+/** Puts a freshly saved profile (or null after deleting DECA data) in place for every page. */
+export function setMyProfile(profile: Profile | null): void {
+  if (snap.uid) publish({ ...snap, status: "ready", profile, error: null });
+}
+
+/** Tests only: forget the cached profile. */
+export function resetProfileStore(): void {
+  publish(IDLE);
+}
+
+export type MyProfile = {
+  status: Snapshot["status"];
+  profile: Profile | null;
+  error: string | null;
+  reload: () => void;
+};
+
+export function useMyProfile(): MyProfile {
+  const { user, loading } = useAuth();
+  const s = useSyncExternalStore(subscribe, read, read);
+  const uid = user?.id ?? null;
+
+  useEffect(() => {
+    if (uid) load(uid);
+    else if (!loading && snap.uid !== null) publish(IDLE);
+  }, [uid, loading]);
+
+  const reload = useCallback(() => {
+    if (uid) load(uid, true);
+  }, [uid]);
+
+  if (!uid)
+    return {
+      status: loading ? "loading" : "idle",
+      profile: null,
+      error: null,
+      reload,
+    };
+  if (s.uid !== uid)
+    return { status: "loading", profile: null, error: null, reload };
+  return { status: s.status, profile: s.profile, error: s.error, reload };
+}
