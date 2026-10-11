@@ -5,6 +5,10 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DECA Masters</title>
+    <!-- Applies Settings > Appearance before first paint (mirrors applyPrefs in src/prefs.ts). -->
+    <script>
+      (function(){try{var p=JSON.parse(localStorage.getItem('deca-masters:prefs')||'{}')||{},d=document.documentElement,t=p.theme;if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.setAttribute('data-theme',t);if(p.text==='large'||p.text==='larger')d.setAttribute('data-text',p.text);if(p.motion==='reduce')d.setAttribute('data-motion','reduce')}catch(e){}})()
+    </script>
   </head>
   <body>
     <div id="root"></div>

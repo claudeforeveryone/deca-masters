@@ -3,9 +3,35 @@
 @tailwind utilities;
 
 @layer base {
+  /* Theme colours as RGB channels (see tailwind.config.js). Dark mode comes from Settings > Appearance. */
+  :root {
+    --ink: 20 20 20; --ink-2: 51 51 51; --ink-3: 102 102 102;
+    --line: 228 228 228; --line-strong: 177 177 177;
+    --canvas: 242 244 247; --surface: 255 255 255;
+    --brand: 0 114 206; --brand-hover: 5 92 168; --brand-press: 23 71 131;
+    --tint: 239 246 252; --tint-2: 161 206 239; --tint-3: 112 176 224;
+    --navy: 0 45 107;
+    --good: 0 155 70; --good-bg: 230 245 236;
+    --bad: 204 29 54; --bad-bg: 251 232 235;
+  }
+  :root[data-theme='dark'] {
+    color-scheme: dark;
+    --ink: 237 241 246; --ink-2: 203 210 219; --ink-3: 150 160 173;
+    --line: 45 55 69; --line-strong: 88 101 118;
+    --canvas: 25 32 42; --surface: 15 20 27;
+    --brand: 31 134 218; --brand-hover: 64 152 228; --brand-press: 110 176 234;
+    --tint: 16 35 58; --tint-2: 36 78 122; --tint-3: 112 176 224;
+    --navy: 161 206 239;
+    --good: 64 199 122; --good-bg: 15 46 30;
+    --bad: 255 112 130; --bad-bg: 62 21 30;
+  }
+  /* Settings > Appearance > Text size scales the whole page. */
+  :root[data-text='large'] body { zoom: 1.1; }
+  :root[data-text='larger'] body { zoom: 1.2; }
+
   html { -webkit-text-size-adjust: 100%; }
   html, body { overflow-x: clip; }
-  body { @apply bg-white font-sans text-[15px] leading-normal text-ink-2 antialiased; }
+  body { @apply bg-surface font-sans text-[15px] leading-normal text-ink-2 antialiased; }
   h1, h2, h3, h4 { @apply font-semibold tracking-head text-ink; line-height: 1.1; }
   :focus-visible { @apply outline outline-2 outline-offset-2 outline-brand; }
   ::selection { @apply bg-tint-2; }
@@ -23,7 +49,7 @@
   }
 
   /* Surfaces */
-  .surface { @apply border border-line bg-white; }
+  .surface { @apply border border-line bg-surface; }
   .panel { @apply bg-canvas; }
   /* Cards, panels and any fully bordered box get softly rounded corners. Utilities such as
      rounded-soft or rounded-none still win because they sit in a later layer. */
@@ -44,11 +70,11 @@
   /* Labels */
   .tag { @apply inline-flex items-center rounded-soft bg-tag px-2 py-1 text-[10px] font-bold uppercase leading-none tracking-label text-white; }
   .badge { @apply inline-flex items-center gap-1 rounded-soft border border-brand/30 bg-tint px-2 py-0.5 text-xs font-semibold text-brand; }
-  .badge-neutral { @apply inline-flex items-center gap-1 rounded-soft border border-line bg-white px-2 py-0.5 text-xs font-medium text-ink-2; }
+  .badge-neutral { @apply inline-flex items-center gap-1 rounded-soft border border-line bg-surface px-2 py-0.5 text-xs font-medium text-ink-2; }
 
   /* Forms */
   .field-label { @apply mb-1.5 block text-xs font-semibold text-ink; }
-  .input { @apply h-10 w-full rounded-soft border border-line-strong bg-white px-3 text-sm text-ink placeholder:text-ink-3 transition-colors hover:border-ink-3 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand; }
+  .input { @apply h-10 w-full rounded-soft border border-line-strong bg-surface px-3 text-sm text-ink placeholder:text-ink-3 transition-colors hover:border-ink-3 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand; }
   textarea.input { @apply h-auto py-2.5; }
 
   /* Type */
@@ -63,9 +89,17 @@
   .enter { animation: enter .3s cubic-bezier(.16,1,.3,1) both; }
   @keyframes enter { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 }
+/* Pages paint cards with bg-white; in dark mode those turn into the dark surface. This sits outside the layers
+   on purpose: inside one, `@apply bg-white` (btn-white on the blue bands) would copy it and go dark too. */
+:where(:root[data-theme='dark']) .bg-white { background-color: rgb(var(--surface)); }
 
-/* Infinite cluster ticker on Home. Pauses on hover; static for reduced motion. */
-.marquee-track { animation: marquee 114s linear infinite; will-change: transform; }
-.marquee:hover .marquee-track { animation-play-state: paused; }
-@keyframes marquee { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
-@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+/* Settings > Appearance > Reduce motion, for people whose device doesn't ask for it. */
+:root[data-motion='reduce'] *, :root[data-motion='reduce'] *::before, :root[data-motion='reduce'] *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+/* Rows that scroll sideways (tab strips) without showing a scrollbar. */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }

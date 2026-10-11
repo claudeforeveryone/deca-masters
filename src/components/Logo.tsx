@@ -3,7 +3,14 @@
 export default function Logo({ inverse }: { inverse?: boolean }) {
   return (
     <span className="flex items-center gap-2.5">
-      <img src={inverse ? '/deca-logo-white.svg' : '/deca-logo-blue.svg'} alt="DECA" className="h-[22px] w-auto" />
+      {inverse ? (
+        <img src="/deca-logo-white.svg" alt="DECA" className="h-[22px] w-auto" />
+      ) : (
+        <>
+          <img src="/deca-logo-blue.svg" alt="DECA" className="h-[22px] w-auto dark:hidden" />
+          <img src="/deca-logo-white.svg" alt="DECA" className="hidden h-[22px] w-auto dark:block" />
+        </>
+      )}
       <span className={`h-5 w-px ${inverse ? 'bg-white/30' : 'bg-line-strong'}`} aria-hidden />
       <span className={`text-[13px] font-bold uppercase tracking-[0.14em] ${inverse ? 'text-white' : 'text-navy'}`}>Masters</span>
     </span>
