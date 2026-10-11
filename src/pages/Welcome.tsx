@@ -45,7 +45,7 @@ export default function Welcome() {
           </div>
         </div>
 
-        <aside className="h-fit bg-navy-midnight p-8 text-white">
+        <aside className="h-fit rounded-box bg-navy-midnight p-8 text-white">
           <h2 className="text-2xl text-white">Make it count with an account</h2>
           <ul className="mt-5 space-y-3 text-sm text-white/85">
             {['Save your ELO, streaks and exam history', 'Appear on the player leaderboard', 'Join your chapter with a code, or start one', 'Challenge other players in the Arena'].map((t) => (

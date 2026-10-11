@@ -18,6 +18,8 @@ export type Attempt = {
   eloDelta: number
   wrongIds: string[]
   arena?: { opponent: string; won: boolean }
+  /** Practice on questions you have already seen (retries, redos, bank quizzes, a repeat daily). No ELO or accuracy change. */
+  unranked?: boolean
 }
 
 export type Progress = {
@@ -263,12 +265,14 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     },
 
     record: (a, perCorrect = 8) => {
-      const delta = eloDelta(a.correct, a.total, perCorrect)
+      const delta = a.unranked || a.total === 0 ? 0 : eloDelta(a.correct, a.total, perCorrect)
       const apply = (p: Progress): Progress => {
         const today = dayKey()
         const yesterday = dayKey(new Date(Date.now() - 86400000))
         const streak = p.lastDay === today ? p.streak : p.lastDay === yesterday ? p.streak + 1 : 1
         const ex = p.byExam[a.exam] ?? { answered: 0, correct: 0 }
+        const entry = { ...a, id: uid(), date: new Date().toISOString(), eloDelta: delta }
+        if (a.unranked) return { ...p, seconds: p.seconds + a.seconds, streak, bestStreak: Math.max(p.bestStreak, streak), lastDay: today, history: [entry, ...p.history].slice(0, 200) }
         return {
           ...p,
           elo: Math.max(0, p.elo + delta),
@@ -279,7 +283,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
           bestStreak: Math.max(p.bestStreak, streak),
           lastDay: today,
           byExam: { ...p.byExam, [a.exam]: { answered: ex.answered + a.total, correct: ex.correct + a.correct } },
-          history: [{ ...a, id: uid(), date: new Date().toISOString(), eloDelta: delta }, ...p.history].slice(0, 200),
+          history: [entry, ...p.history].slice(0, 200),
           arena: a.arena ? { w: p.arena.w + (a.arena.won ? 1 : 0), l: p.arena.l + (a.arena.won ? 0 : 1) } : p.arena,
         }
       }

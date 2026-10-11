@@ -11,29 +11,49 @@ type Props = {
   timeLimitSec?: number // overall timer; omitted = count up
   eloPerCorrect?: number
   showExplanations?: boolean
+  /** When the session began (epoch ms). The clock runs on real time, so leaving the tab or the page does not pause it. */
+  startedAt?: number
+  /** Answers already given, for resuming a session. Answered questions stay locked. */
+  initialAnswers?: (number | null)[]
+  /** Called after every answer so the session can be saved and resumed. */
+  onAnswer?: (answers: (number | null)[]) => void
+  /** Count unanswered questions as wrong (Arena). Otherwise only answered questions are scored. */
+  countUnanswered?: boolean
   onFinish: (r: QuizResult) => void
+  /** Shows an exit button. Exiting scores what you have answered so far; with no answers it just leaves. */
   onExit?: () => void
 }
 
 export const fmtTime = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`
 
-export default function QuizRunner({ title, questions, timeLimitSec, eloPerCorrect = 8, showExplanations = true, onFinish, onExit }: Props) {
-  const [i, setI] = useState(0)
-  const [picked, setPicked] = useState<number | null>(null)
-  const [results, setResults] = useState<(boolean | null)[]>(() => questions.map(() => null))
-  const [elapsed, setElapsed] = useState(0)
-  const score = useRef({ correct: 0, wrong: [] as string[], done: false })
-  const elapsedRef = useRef(0)
-  elapsedRef.current = elapsed
+export default function QuizRunner({ title, questions, timeLimitSec, eloPerCorrect = 8, showExplanations = true, startedAt, initialAnswers, onAnswer, countUnanswered = false, onFinish, onExit }: Props) {
+  const [start] = useState(() => startedAt ?? Date.now())
+  const [answers, setAnswers] = useState<(number | null)[]>(() => questions.map((_, k) => initialAnswers?.[k] ?? null))
+  const [i, setI] = useState(() => {
+    const k = answers.findIndex((a) => a === null)
+    return k < 0 ? questions.length - 1 : k
+  })
+  const [now, setNow] = useState(Date.now)
+  const done = useRef(false)
+  const answersRef = useRef(answers)
+  answersRef.current = answers
+
+  const elapsed = Math.max(0, Math.floor((now - start) / 1000))
+  const picked = answers[i]
 
   const finish = () => {
-    if (score.current.done) return
-    score.current.done = true
-    onFinish({ correct: score.current.correct, total: questions.length, seconds: elapsedRef.current, wrongIds: score.current.wrong })
+    if (done.current) return
+    done.current = true
+    const a = answersRef.current
+    const answered = questions.filter((_, k) => a[k] !== null)
+    const scored = countUnanswered ? questions : answered
+    const wrong = scored.filter((q) => a[questions.indexOf(q)] !== q.answer)
+    const seconds = Math.floor((Date.now() - start) / 1000)
+    onFinish({ correct: scored.length - wrong.length, total: scored.length, seconds: timeLimitSec ? Math.min(seconds, timeLimitSec) : seconds, wrongIds: wrong.map((q) => q.id) })
   }
 
   useEffect(() => {
-    const t = setInterval(() => setElapsed((e) => e + 1), 1000)
+    const t = setInterval(() => setNow(Date.now()), 250)
     return () => clearInterval(t)
   }, [])
 
@@ -43,29 +63,41 @@ export default function QuizRunner({ title, questions, timeLimitSec, eloPerCorre
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [remaining])
 
+  // A resumed session whose questions are all answered is already over.
+  useEffect(() => {
+    if (answers.every((a) => a !== null) && !showExplanations) finish()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   const q = questions[i]
   const last = i + 1 >= questions.length
 
   const next = () => {
+    if (done.current) return
     if (last) return finish()
-    setI(i + 1)
-    setPicked(null)
+    setI((k) => Math.min(k + 1, questions.length - 1))
   }
 
   const choose = (idx: number) => {
-    if (picked !== null) return
-    setPicked(idx)
-    const ok = idx === q.answer
-    if (ok) score.current.correct++
-    else score.current.wrong.push(q.id)
-    setResults((r) => r.map((v, k) => (k === i ? ok : v)))
+    if (done.current || answersRef.current[i] !== null || remaining === 0) return
+    const updated = answersRef.current.map((v, k) => (k === i ? idx : v))
+    answersRef.current = updated
+    setAnswers(updated)
+    onAnswer?.(updated)
     if (!showExplanations) setTimeout(next, 550)
+  }
+
+  const exit = () => {
+    if (!onExit) return
+    if (answersRef.current.some((a) => a !== null)) finish()
+    else onExit()
   }
 
   // Keyboard: A-D or 1-4 to answer, Enter to continue.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
+      if (e.repeat) return
       const k = e.key.toLowerCase()
       const idx = 'abcd'.indexOf(k) >= 0 ? 'abcd'.indexOf(k) : '1234'.indexOf(k)
       if (idx >= 0 && idx < q.choices.length) choose(idx)
@@ -75,6 +107,7 @@ export default function QuizRunner({ title, questions, timeLimitSec, eloPerCorre
     return () => window.removeEventListener('keydown', onKey)
   })
 
+  const results = questions.map((qq, k) => (answers[k] === null ? null : answers[k] === qq.answer))
   const correctSoFar = results.filter(Boolean).length
   const lowTime = remaining !== null && remaining <= 15
 
@@ -93,7 +126,7 @@ export default function QuizRunner({ title, questions, timeLimitSec, eloPerCorre
           </span>
           <span className="num rounded-soft border border-line px-2 py-1 text-sm text-ink-2">+{correctSoFar * eloPerCorrect}</span>
           {onExit && (
-            <button onClick={onExit} className="btn-ghost w-9 px-0" aria-label="Exit">
+            <button onClick={exit} className="btn-ghost w-9 px-0" aria-label="End session" title="End session. Questions you answered still count.">
               <X size={18} />
             </button>
           )}
@@ -146,7 +179,7 @@ export default function QuizRunner({ title, questions, timeLimitSec, eloPerCorre
       </div>
 
       {picked !== null && showExplanations && (
-        <div className="enter mt-6 flex flex-col gap-4 border-l-4 border-brand bg-canvas p-5 sm:flex-row sm:items-end sm:justify-between">
+        <div className="enter mt-6 flex flex-col gap-4 rounded-r-box border-l-4 border-brand bg-canvas p-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className={`text-sm font-semibold ${picked === q.answer ? 'text-good' : 'text-bad'}`}>{picked === q.answer ? 'Correct' : 'Incorrect'}</p>
             <p className="mt-1 max-w-[52ch] text-sm text-ink-2">{q.explanation}</p>
@@ -162,7 +195,7 @@ export default function QuizRunner({ title, questions, timeLimitSec, eloPerCorre
 }
 
 export function ResultCard({ r, delta, title = 'Session complete', onAgain, onDone, note }: { r: QuizResult; delta: number; title?: string; onAgain?: () => void; onDone: () => void; note?: string }) {
-  const pct = Math.round((r.correct / r.total) * 100)
+  const pct = r.total ? Math.round((r.correct / r.total) * 100) : 0
   return (
     <div className="surface enter mx-auto mt-12 max-w-md border-t-4 border-t-brand p-8">
       <p className="text-[11px] font-bold uppercase tracking-label text-brand">{title}</p>

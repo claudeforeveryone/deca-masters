@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { CalendarCheck, Infinity as InfinityIcon, Crosshair, Timer, FileText, ClipboardText } from '@phosphor-icons/react'
 import { EXAMS, examOf, type ExamId } from '../data/events'
-import { loadQuestions, questionCount, sample, shuffle, type Question } from '../data/questions'
+import { loadQuestions, loadQuestionsById, questionCount, sample, shuffle, type Question } from '../data/questions'
+import { clearActive, loadActive, saveActive } from '../data/activeSession'
 import { useMyEvent, useStore } from '../store'
 import QuizRunner, { ResultCard, type QuizResult } from '../components/QuizRunner'
 import { ArrowLink, ClusterIcon, EmptyState, Meter, PageBand, SectionHeader } from '../components/ui'
 
-type Session = { title: string; exam: ExamId; questions: Question[]; timeLimitSec?: number; explanations: boolean }
+type Session = { title: string; exam: ExamId; questions: Question[]; timeLimitSec?: number; explanations: boolean; unranked?: boolean; startedAt?: number; answers?: (number | null)[] }
 
 const EXAM_LENGTH = 100 // DECA cluster exams have 100 questions
 /** The same 10 questions for everyone on a given day. */
@@ -31,6 +32,32 @@ export default function Play() {
   const [loading, setLoading] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const highlight = (params.get('cluster') as ExamId | null) ?? null
+  const userId = me!.id
+
+  /** Starts a session and saves it, so leaving the page resumes it instead of re-rolling. */
+  const begin = (s: Session) => {
+    const started = { ...s, startedAt: Date.now(), answers: s.questions.map(() => null) }
+    saveActive(userId, { kind: 'play', title: s.title, exam: s.exam, questionIds: s.questions.map((q) => q.id), answers: started.answers, startedAt: started.startedAt, timeLimitSec: s.timeLimitSec, explanations: s.explanations, unranked: s.unranked })
+    setResult(null)
+    setSession(started)
+  }
+
+  // Resume a session left in progress.
+  const [resuming, setResuming] = useState(() => !!loadActive(userId, 'play'))
+  useEffect(() => {
+    const a = loadActive(userId, 'play')
+    if (!a) return
+    loadQuestionsById(a.questionIds).then(
+      (qs) => {
+        const byId = new Map(qs.map((q) => [q.id, q]))
+        const questions = a.questionIds.map((id) => byId.get(id)).filter((q): q is Question => !!q)
+        if (questions.length !== a.questionIds.length) clearActive(userId, 'play')
+        else setSession({ title: a.title, exam: a.exam, questions, timeLimitSec: a.timeLimitSec, explanations: a.explanations, unranked: a.unranked, startedAt: a.startedAt, answers: a.answers })
+        setResuming(false)
+      },
+      () => setResuming(false),
+    )
+  }, [userId])
 
   const progress = me!.progress
   const accuracyFor = (id: ExamId) => {
@@ -40,8 +67,11 @@ export default function Play() {
   const attempted = EXAMS.filter((x) => (progress.byExam[x.id]?.answered ?? 0) > 0)
   const weakest = [...attempted].sort((a, b) => (accuracyFor(a.id) ?? 0) - (accuracyFor(b.id) ?? 0))[0]
 
+  // Only the first daily of the day on each exam is ranked; replays already know the answers.
+  const today = new Date().toISOString().slice(0, 10)
+  const dailyDone = progress.history.some((h) => h.title === 'Daily challenge' && h.exam === exam && !h.unranked && h.date.slice(0, 10) === today)
   const MODES = [
-    { key: 'daily', icon: CalendarCheck, title: 'Daily', body: `Today’s ${examOf(exam).name} set.`, make: (qs: Question[]): Session => ({ title: 'Daily challenge', exam, questions: daily(qs), explanations: true }) },
+    { key: 'daily', icon: CalendarCheck, title: 'Daily', body: dailyDone ? 'Done for today. Replays are practice only.' : `Today’s ${examOf(exam).name} set.`, make: (qs: Question[]): Session => ({ title: 'Daily challenge', exam, questions: daily(qs), explanations: true, unranked: dailyDone }) },
     { key: 'endless', icon: InfinityIcon, title: 'Endless', body: 'Keep going as long as you like.', make: (qs: Question[]): Session => ({ title: 'Endless', exam, questions: sample(qs, 200), explanations: true }) },
     {
       key: 'weak',
@@ -59,9 +89,7 @@ export default function Play() {
     setError(null)
     setLoading(key)
     try {
-      const s = make(await loadQuestions(id))
-      setResult(null)
-      setSession(s)
+      begin(make(await loadQuestions(id)))
     } catch (e) {
       setError((e as Error).message)
     } finally {
@@ -79,6 +107,7 @@ export default function Play() {
   useEffect(() => {
     if (!mode) return
     setParams({}, { replace: true })
+    if (loadActive(userId, 'play')) return // finish the session in progress first
     const m = MODES.find((x) => x.key === mode)
     if (m) startMode(m)
     if (mode === 'exam') startExam(exam)
@@ -87,7 +116,8 @@ export default function Play() {
 
   const finish = (r: QuizResult) => {
     if (!session) return
-    const delta = record({ title: session.title, exam: session.exam, total: r.total, correct: r.correct, seconds: r.seconds, wrongIds: r.wrongIds })
+    clearActive(userId, 'play')
+    const delta = record({ title: session.title, exam: session.exam, total: r.total, correct: r.correct, seconds: r.seconds, wrongIds: r.wrongIds, unranked: session.unranked })
     setResult({ r, delta })
   }
 
@@ -96,14 +126,28 @@ export default function Play() {
       <ResultCard
         r={result.r}
         delta={result.delta}
-        title={session.title}
-        note={isGuest ? 'Guest progress stays on this device. Create an account to save it and join the leaderboard.' : undefined}
-        onAgain={() => { setResult(null); setSession({ ...session, questions: shuffle(session.questions) }) }}
+        title={session.unranked ? `${session.title} (practice)` : session.title}
+        note={session.unranked ? 'Practice on questions you have already seen does not change your ELO.' : isGuest ? 'Guest progress stays on this device. Create an account to save it and join the leaderboard.' : undefined}
+        onAgain={() => begin({ ...session, questions: shuffle(session.questions), unranked: true })}
         onDone={() => { setSession(null); setResult(null) }}
       />
     )
   if (session)
-    return <QuizRunner title={session.title} questions={session.questions} timeLimitSec={session.timeLimitSec} showExplanations={session.explanations} onFinish={finish} onExit={() => setSession(null)} />
+    return (
+      <QuizRunner
+        key={session.startedAt}
+        title={session.unranked ? `${session.title} (practice)` : session.title}
+        questions={session.questions}
+        timeLimitSec={session.timeLimitSec}
+        showExplanations={session.explanations}
+        startedAt={session.startedAt}
+        initialAnswers={session.answers}
+        onAnswer={(answers) => { const a = loadActive(userId, 'play'); if (a) saveActive(userId, { ...a, answers }) }}
+        onFinish={finish}
+        onExit={() => { clearActive(userId, 'play'); setSession(null) }}
+      />
+    )
+  if (resuming) return <p className="pt-16 text-center text-sm text-ink-3">Resuming your session…</p>
 
   const myExam = examOf(exam)
   const myAcc = accuracyFor(exam)
@@ -136,13 +180,13 @@ export default function Play() {
       <section className="mt-16">
         <SectionHeader title="Your exam" />
         <div className="grid lg:grid-cols-[1fr_1.4fr]">
-          <div className="p-8" style={{ background: myExam.color, color: myExam.fg }}>
+          <div className="rounded-t-box p-8 lg:rounded-tr-none lg:rounded-bl-box" style={{ background: myExam.color, color: myExam.fg }}>
             <p className="text-[11px] font-bold uppercase tracking-label opacity-90">{event.code}, {event.type}</p>
             <h3 className="mt-3 text-3xl" style={{ color: myExam.fg }}>{myExam.name}</h3>
             <p className="num mt-6 text-5xl font-extrabold">{myAcc ?? 0}%</p>
             <p className="mt-1 text-sm opacity-90">accuracy over {progress.byExam[exam]?.answered ?? 0} questions</p>
           </div>
-          <div className="flex flex-col justify-between gap-6 border border-line p-8 lg:border-l-0">
+          <div className="flex flex-col justify-between gap-6 rounded-none rounded-b-box border border-line p-8 lg:rounded-r-box lg:rounded-bl-none lg:border-l-0">
             <div>
               <p className="text-sm leading-relaxed text-ink-2">
                 Take a {EXAM_LENGTH}-question {myExam.name} exam drawn from past DECA exams, under exam conditions: one minute per question, no explanations until the end.

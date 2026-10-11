@@ -1,29 +1,15 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Trophy, Flame, Crosshair, Sword, Lightning, Target, Medal, UsersThree, ArrowCounterClockwise, CaretUp, CaretDown, CheckCircle, ClockCounterClockwise, Lock } from '@phosphor-icons/react'
+import { Target, ArrowCounterClockwise, CaretUp, CaretDown, CheckCircle, ClockCounterClockwise } from '@phosphor-icons/react'
 import { EXAMS, examOf, type ExamId } from '../data/events'
 import { loadQuestionsById, type Question } from '../data/questions'
-import { eloSeries, useMyEvent, useStore, type Progress } from '../store'
+import { eloSeries, useMyEvent, useStore } from '../store'
 import { ArrowLink, Avatar, EloChart, EmptyState, EventPicker, Meter, RankRow, SectionHeader, Stat, Tabs } from '../components/ui'
 import QuizRunner, { ResultCard, type QuizResult } from '../components/QuizRunner'
 
 const TABS = ['Overview', 'Career'] as const
 
 const fmtHours = (s: number) => (s < 3600 ? `${Math.round(s / 60)}m` : `${(s / 3600).toFixed(1)}h`)
-
-function achievements(p: Progress, inChapter: boolean) {
-  const bestSession = p.history.filter((h) => h.total >= 5).reduce((m, h) => Math.max(m, h.correct / h.total), 0)
-  return [
-    { icon: Target, title: 'First answer', desc: 'Answer your first question.', done: p.answered >= 1 },
-    { icon: Medal, title: 'Century', desc: 'Answer 100 questions.', done: p.answered >= 100, progress: `${Math.min(p.answered, 100)}/100` },
-    { icon: Flame, title: 'On a roll', desc: 'Practice 3 days in a row.', done: p.bestStreak >= 3, progress: `${Math.min(p.bestStreak, 3)}/3` },
-    { icon: Lightning, title: 'Week warrior', desc: 'Practice 7 days in a row.', done: p.bestStreak >= 7, progress: `${Math.min(p.bestStreak, 7)}/7` },
-    { icon: Crosshair, title: 'Sharpshooter', desc: 'Score 90% or better on a session of 5 or more questions.', done: bestSession >= 0.9 },
-    { icon: Sword, title: 'First win', desc: 'Win an Arena match.', done: p.arena.w >= 1 },
-    { icon: Trophy, title: 'Arena veteran', desc: 'Win 10 Arena matches.', done: p.arena.w >= 10, progress: `${Math.min(p.arena.w, 10)}/10` },
-    { icon: UsersThree, title: 'Team player', desc: 'Join or create a chapter.', done: inChapter },
-  ]
-}
 
 export default function Me() {
   const [tab, setTab] = useState<(typeof TABS)[number]>('Overview')
@@ -70,7 +56,7 @@ function ProfileBand() {
           {isGuest && <Link to="/register" className="btn-outline-white">Create account</Link>}
         </div>
         {editing && (
-          <div className="mt-6 max-w-2xl bg-white p-4 text-ink">
+          <div className="mt-6 max-w-2xl rounded-box bg-white p-4 text-ink">
             <EventPicker value={event.code} onChange={(c) => setEvent(c)} />
             <p className="mt-3 text-sm text-ink-2">Your practice uses the <span className="font-semibold text-ink">{examOf(exam).name}</span> exam.</p>
           </div>
@@ -81,13 +67,12 @@ function ProfileBand() {
 }
 
 function Overview() {
-  const { me, isGuest, players, myRank, myChapter } = useStore()
+  const { me, isGuest, players, myRank } = useStore()
   const p = me!.progress
   const accuracy = p.answered ? Math.round((p.correct / p.answered) * 100) : 0
   const attempted = EXAMS.filter((x) => (p.byExam[x.id]?.answered ?? 0) > 0)
   const myIdx = players.findIndex((x) => x.isMe)
   const near = myRank > 0 ? players.slice(Math.max(0, myIdx - 2), myIdx + 3) : players.slice(0, 5)
-  const ach = achievements(p, !!myChapter)
 
   return (
     <div className="space-y-16">
@@ -143,21 +128,6 @@ function Overview() {
         </aside>
       </div>
 
-      <section>
-        <SectionHeader title="Achievements" action={<span className="num text-sm font-semibold text-brand">{ach.filter((a) => a.done).length}/{ach.length}</span>} />
-        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {ach.map((a) => (
-            <li key={a.title} className={`flex items-start gap-4 p-6 ${a.done ? 'bg-navy-midnight text-white' : 'panel'}`}>
-              {a.done ? <a.icon size={30} weight="duotone" className="shrink-0 text-tint-2" /> : <Lock size={30} className="shrink-0 text-line-strong" />}
-              <div className="min-w-0">
-                <p className={`font-semibold ${a.done ? 'text-white' : 'text-ink'}`}>{a.title}</p>
-                <p className={`mt-1 text-sm ${a.done ? 'text-white/80' : 'text-ink-3'}`}>{a.desc}</p>
-                <p className={`mt-3 text-xs font-semibold ${a.done ? 'text-tint-2' : 'text-ink-3'}`}>{a.done ? 'Earned' : a.progress ?? 'Locked'}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </section>
     </div>
   )
 }
@@ -197,7 +167,7 @@ function Career() {
       .filter((w): w is { q: Question; from: string } => !!w.q && (examFilter === 'all' || w.q.exam === examFilter))
   }, [p.history, examFilter, bank])
 
-  if (redo && result) return <ResultCard r={result.r} delta={result.delta} title="Review complete" onDone={() => { setRedo(null); setResult(null) }} />
+  if (redo && result) return <ResultCard r={result.r} delta={result.delta} title="Review complete" note={'Practice on questions you have already seen does not change your ELO.'} onDone={() => { setRedo(null); setResult(null) }} />
   const redoQs = (redo ?? []).map((id) => bank.get(id)).filter((x): x is Question => !!x)
   if (redo && redoQs.length > 0) {
     const qs = redoQs
@@ -205,7 +175,7 @@ function Career() {
       <QuizRunner
         title="Missed questions"
         questions={qs}
-        onFinish={(r) => setResult({ r, delta: record({ title: 'Missed questions review', exam: qs[0].exam, total: r.total, correct: r.correct, seconds: r.seconds, wrongIds: r.wrongIds }) })}
+        onFinish={(r) => setResult({ r, delta: record({ title: 'Missed questions review', exam: qs[0].exam, total: r.total, correct: r.correct, seconds: r.seconds, wrongIds: r.wrongIds, unranked: true }) })}
         onExit={() => setRedo(null)}
       />
     )
@@ -268,7 +238,7 @@ function Career() {
                       <td className="num hidden py-4 pr-4 text-ink-2 sm:table-cell">{new Date(h.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</td>
                       <td className={`num py-4 pr-4 font-semibold ${acc < 70 ? 'text-bad' : 'text-ink'}`}>{acc}%</td>
                       <td className="num py-4 pr-4 text-ink-2">{Math.max(1, Math.round(h.seconds / 60))} min</td>
-                      <td className={`num hidden py-4 pr-4 font-semibold sm:table-cell ${h.eloDelta >= 0 ? 'text-good' : 'text-bad'}`}>{h.eloDelta >= 0 ? '+' : ''}{h.eloDelta}</td>
+                      <td className={`num hidden py-4 pr-4 font-semibold sm:table-cell ${h.eloDelta >= 0 ? 'text-good' : 'text-bad'}`}>{h.unranked ? <span className="font-normal text-ink-3">Practice</span> : `${h.eloDelta >= 0 ? '+' : ''}${h.eloDelta}`}</td>
                       <td className="py-4 text-right">{h.wrongIds.some((id) => bank.has(id)) && <ArrowLink onClick={() => setRedo(h.wrongIds)}>Redo misses</ArrowLink>}</td>
                     </tr>
                   )

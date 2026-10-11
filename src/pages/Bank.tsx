@@ -13,7 +13,7 @@ const QUIZ_SIZE = 20
 /** Every question in each cluster's bank, browsable and searchable. */
 export default function Bank() {
   const { exam: myExam } = useMyEvent()
-  const { isGuest, record } = useStore()
+  const { record } = useStore()
   const [params, setParams] = useSearchParams()
   const exam = (EXAMS.some((x) => x.id === params.get('exam')) ? params.get('exam') : myExam) as ExamId
   const { questions, error } = useQuestions(exam)
@@ -57,13 +57,13 @@ export default function Bank() {
   const info = examOf(exam)
 
   if (quiz && result)
-    return <ResultCard r={result.r} delta={result.delta} title={`${info.name} quiz`} note={isGuest ? 'Guest progress stays on this device.' : undefined} onAgain={() => { setResult(null); setQuiz(sample(filtered, QUIZ_SIZE)) }} onDone={() => { setQuiz(null); setResult(null) }} />
+    return <ResultCard r={result.r} delta={result.delta} title={`${info.name} quiz`} note={'Bank quizzes are practice, since the answers are on this page. They do not change your ELO.'} onAgain={() => { setResult(null); setQuiz(sample(filtered, QUIZ_SIZE)) }} onDone={() => { setQuiz(null); setResult(null) }} />
   if (quiz)
     return (
       <QuizRunner
         title={`${info.name} quiz`}
         questions={quiz}
-        onFinish={(r) => setResult({ r, delta: record({ title: `${info.name} quiz`, exam, total: r.total, correct: r.correct, seconds: r.seconds, wrongIds: r.wrongIds }) })}
+        onFinish={(r) => setResult({ r, delta: record({ title: `${info.name} quiz`, exam, total: r.total, correct: r.correct, seconds: r.seconds, wrongIds: r.wrongIds, unranked: true }) })}
         onExit={() => setQuiz(null)}
       />
     )
@@ -139,7 +139,7 @@ export default function Bank() {
                         )
                       })}
                     </ul>
-                    {isOpen && q.explanation && <p className="mt-3 border-l-4 border-brand bg-canvas p-4 text-sm leading-relaxed text-ink-2">{q.explanation}</p>}
+                    {isOpen && q.explanation && <p className="mt-3 rounded-r-box border-l-4 border-brand bg-canvas p-4 text-sm leading-relaxed text-ink-2">{q.explanation}</p>}
                     <button className="link mt-3 text-[13px]" onClick={() => toggle(q.id)} aria-expanded={isOpen}>{isOpen ? 'Hide answer' : 'Show answer'}</button>
                   </div>
                 </div>

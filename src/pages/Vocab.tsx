@@ -59,7 +59,7 @@ export default function Vocab() {
             <button
               onClick={() => setFlipped((f) => !f)}
               aria-label={flipped ? 'Show term' : 'Show definition'}
-              className={`flex min-h-[320px] w-full flex-col p-8 text-left sm:p-10 ${flipped ? 'border-2 border-brand bg-white' : 'diamond-pattern bg-brand text-white'}`}
+              className={`flex min-h-[320px] w-full flex-col rounded-box p-8 text-left sm:p-10 ${flipped ? 'border-2 border-brand bg-white' : 'diamond-pattern bg-brand text-white'}`}
             >
               <div className="flex w-full items-center justify-between">
                 <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-label">

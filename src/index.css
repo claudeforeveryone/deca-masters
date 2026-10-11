@@ -25,6 +25,11 @@
   /* Surfaces */
   .surface { @apply border border-line bg-white; }
   .panel { @apply bg-canvas; }
+  /* Cards, panels and any fully bordered box get softly rounded corners. Utilities such as
+     rounded-soft or rounded-none still win because they sit in a later layer. */
+  .surface, .panel, [class~="border"], [class~="border-2"] { @apply rounded-box; }
+  /* Bordered lists and tile grids clip their rows so hover fills follow the corners. */
+  [class~="divide-y"][class~="border"], [class~="gap-px"][class~="bg-line"] { overflow: hidden; }
 
   /* Buttons: square, 2px border, DECA blue */
   .btn { @apply inline-flex h-10 select-none rounded-soft items-center justify-center gap-2 whitespace-nowrap border-2 px-4 text-[13px] font-semibold tracking-label transition-colors duration-150 disabled:pointer-events-none disabled:opacity-40; }

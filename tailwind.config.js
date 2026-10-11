@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 // Design tokens taken from deca.org (webflow CSS variables + career cluster colours).
-// Shape rule: square by default. `rounded-soft` (4px) is only for buttons, inputs, avatars and the notification UI.
-const square = { ...Object.fromEntries(['none', 'sm', 'DEFAULT', 'md', 'lg', 'xl', '2xl', '3xl', 'full'].map((k) => [k, '0px'])), soft: '4px' }
+// Shape rule: `rounded-soft` (4px) for buttons, inputs, avatars and the notification UI; `rounded-box` (10px)
+// for cards, panels and bordered boxes (applied automatically in index.css). Everything else is square.
+const square = { ...Object.fromEntries(['none', 'sm', 'DEFAULT', 'md', 'lg', 'xl', '2xl', '3xl', 'full'].map((k) => [k, '0px'])), soft: '4px', box: '10px' }
 
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],

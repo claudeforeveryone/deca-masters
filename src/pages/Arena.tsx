@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Sword, PaperPlaneTilt, Trophy, MagnifyingGlass, Clock, Users } from '@phosphor-icons/react'
-import { examOf } from '../data/events'
-import { loadQuestions, sample, type Question } from '../data/questions'
+import { examOf, type ExamId } from '../data/events'
+import { loadQuestions, loadQuestionsById, sample, type Question } from '../data/questions'
+import { clearActive, loadActive, saveActive } from '../data/activeSession'
 import { useMyEvent, useStore, type PlayerRow } from '../store'
 import QuizRunner, { fmtTime, type QuizResult } from '../components/QuizRunner'
 import { Avatar, EmptyState, PageBand, SectionHeader, Tabs } from '../components/ui'
@@ -11,6 +12,8 @@ const ELO_PER_CORRECT = 12
 const LIST_TABS = ['Online', 'My chapter', 'Everyone'] as const
 
 type Match = { opponent: PlayerRow; me: QuizResult; them: QuizResult; delta: number }
+/** A match in progress. Its questions are drawn once and saved, so nothing can re-roll them. */
+type Live = { opponent: PlayerRow; exam: ExamId; questions: Question[]; startedAt: number; answers: (number | null)[] }
 
 const didWin = (me: QuizResult, them: QuizResult) => me.correct > them.correct || (me.correct === them.correct && me.seconds < them.seconds)
 
@@ -20,18 +23,48 @@ export default function Arena() {
   const [tab, setTab] = useState<(typeof LIST_TABS)[number]>('Online')
   const [q, setQ] = useState('')
   const [sent, setSent] = useState<PlayerRow[]>([])
-  const [opponent, setOpponent] = useState<PlayerRow | null>(null)
+  const [live, setLive] = useState<Live | null>(null)
   const [match, setMatch] = useState<Match | null>(null)
-  const [matchQs, setMatchQs] = useState<Question[] | null>(null)
+  const [starting, setStarting] = useState(false)
   const [loadError, setLoadError] = useState<string | null>(null)
+  const userId = me!.id
 
   const startMatch = (p: PlayerRow) => {
+    if (starting || live) return
     setLoadError(null)
+    setStarting(true)
     loadQuestions(exam).then(
-      (qs) => { setSent((s) => s.filter((x) => x.id !== p.id)); setMatchQs(sample(qs, 10)); setOpponent(p) },
+      (qs) => {
+        const questions = sample(qs, 10)
+        const l: Live = { opponent: p, exam, questions, startedAt: Date.now(), answers: questions.map(() => null) }
+        saveActive(userId, { kind: 'arena', title: `Arena vs ${p.name}`, exam, questionIds: questions.map((x) => x.id), answers: l.answers, startedAt: l.startedAt, timeLimitSec: MATCH_SECONDS, explanations: false, opponentId: p.id })
+        setSent((s) => s.filter((x) => x.id !== p.id))
+        setMatch(null)
+        setLive(l)
+      },
       (e: Error) => setLoadError(e.message),
-    )
+    ).finally(() => setStarting(false))
   }
+
+  // Coming back to the Arena (nav click, reload, another page) resumes the match in progress
+  // with the clock still running. Leaving never re-rolls the questions or cancels the match.
+  const [resuming, setResuming] = useState(() => !!loadActive(userId, 'arena'))
+  useEffect(() => {
+    const a = loadActive(userId, 'arena')
+    if (!a) return
+    const opp = players.find((p) => p.id === a.opponentId)
+    loadQuestionsById(a.questionIds).then(
+      (qs) => {
+        const byId = new Map(qs.map((x) => [x.id, x]))
+        const questions = a.questionIds.map((id) => byId.get(id)).filter((x): x is Question => !!x)
+        if (!opp || questions.length !== a.questionIds.length) clearActive(userId, 'arena')
+        else setLive({ opponent: opp, exam: a.exam, questions, startedAt: a.startedAt, answers: a.answers })
+        setResuming(false)
+      },
+      () => setResuming(false),
+    )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userId])
 
   const history = me!.progress.history.filter((h) => h.arena).slice(0, 8)
   const list = players
@@ -41,16 +74,23 @@ export default function Arena() {
     .slice(0, 40)
 
   const finish = (mine: QuizResult) => {
+    if (!live) return
+    const opponent = live.opponent
+    clearActive(userId, 'arena')
     // The opponent is simulated until realtime matches are wired to the backend.
-    const skill = Math.min(0.95, Math.max(0.3, opponent!.accuracy / 100))
+    const skill = Math.min(0.95, Math.max(0.3, opponent.accuracy / 100))
     const theirCorrect = Array.from({ length: mine.total }).filter(() => Math.random() < skill).length
     const them = { correct: theirCorrect, total: mine.total, seconds: Math.round(50 + Math.random() * 90), wrongIds: [] }
     const won = didWin(mine, them)
-    const delta = record({ title: `Arena vs ${opponent!.name}`, exam, total: mine.total, correct: mine.correct, seconds: mine.seconds, wrongIds: mine.wrongIds, arena: { opponent: opponent!.name, won } }, ELO_PER_CORRECT)
-    setMatch({ opponent: opponent!, me: mine, them, delta })
+    const delta = record({ title: `Arena vs ${opponent.name}`, exam: live.exam, total: mine.total, correct: mine.correct, seconds: mine.seconds, wrongIds: mine.wrongIds, arena: { opponent: opponent.name, won } }, ELO_PER_CORRECT)
+    setMatch({ opponent, me: mine, them, delta })
+    setLive(null)
   }
 
-  if (opponent && !match && matchQs)
+  if (resuming) return <p className="pt-16 text-center text-sm text-ink-3">Resuming your match…</p>
+
+  if (live) {
+    const opponent = live.opponent
     return (
       <div>
         <div className="bleed diamond-pattern bg-navy-midnight text-white">
@@ -60,9 +100,22 @@ export default function Arena() {
             <Versus name={opponent.name} sub={`${opponent.elo.toLocaleString()} ELO`} right />
           </div>
         </div>
-        <QuizRunner title={`Arena, ${examOf(exam).name}`} questions={matchQs} timeLimitSec={MATCH_SECONDS} showExplanations={false} eloPerCorrect={ELO_PER_CORRECT} onFinish={finish} />
+        <QuizRunner
+          key={live.startedAt}
+          title={`Arena, ${examOf(live.exam).name}`}
+          questions={live.questions}
+          timeLimitSec={MATCH_SECONDS}
+          showExplanations={false}
+          eloPerCorrect={ELO_PER_CORRECT}
+          startedAt={live.startedAt}
+          initialAnswers={live.answers}
+          onAnswer={(answers) => { const a = loadActive(userId, 'arena'); if (a) saveActive(userId, { ...a, answers }) }}
+          countUnanswered
+          onFinish={finish}
+        />
       </div>
     )
+  }
 
   if (match) {
     const won = didWin(match.me, match.them)
@@ -89,8 +142,8 @@ export default function Arena() {
         </div>
         <p className={`num mt-5 text-sm font-semibold ${match.delta >= 0 ? 'text-good' : 'text-bad'}`}>{match.delta >= 0 ? '+' : ''}{match.delta} ELO</p>
         <div className="mt-6 flex gap-2">
-          <button className="btn-primary flex-1" onClick={() => { setMatch(null); setOpponent(null); setMatchQs(null) }}>Back to Arena</button>
-          <button className="btn-secondary" onClick={() => { const p = match.opponent; setMatch(null); setOpponent(null); startMatch(p) }}>Rematch</button>
+          <button className="btn-primary flex-1" onClick={() => setMatch(null)}>Back to Arena</button>
+          <button className="btn-secondary" disabled={starting} onClick={() => startMatch(match.opponent)}>Rematch</button>
         </div>
       </div>
     )
@@ -151,7 +204,7 @@ export default function Arena() {
                     <PaperPlaneTilt size={16} className="text-ink-3" />
                     <span className="flex-1 truncate text-sm text-ink">{p.name}</span>
                     {/* Demo accounts cannot respond, so you can start the match yourself. */}
-                    <button className="btn-primary btn-sm" onClick={() => startMatch(p)}>Start</button>
+                    <button className="btn-primary btn-sm" disabled={starting} onClick={() => startMatch(p)}>Start</button>
                   </li>
                 ))}
               </ul>
