@@ -79,3 +79,19 @@ export function sameLayout(a: BoardLayout, b: BoardLayout): boolean {
     [...a.open].sort().join() === [...b.open].sort().join()
   );
 }
+
+/**
+ * Where a dragged row lands: after every other row whose middle is above the dragged row's middle. `slots` are the
+ * rows' page positions in the current order, measured when the drag started.
+ */
+export function dropIndex(
+  slots: { top: number; height: number }[],
+  from: number,
+  draggedMiddle: number,
+): number {
+  let target = 0;
+  slots.forEach((s, j) => {
+    if (j !== from && s.top + s.height / 2 < draggedMiddle) target++;
+  });
+  return target;
+}

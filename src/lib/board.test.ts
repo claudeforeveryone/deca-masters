@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   DEFAULT_LAYOUT,
+  dropIndex,
   moveModule,
   normalizeLayout,
   toggleOpen,
@@ -53,5 +54,26 @@ describe("toggleOpen", () => {
     );
     expect(opened.open).toEqual(["streak"]);
     expect(toggleOpen(opened, "streak").open).toEqual([]);
+  });
+});
+
+describe("dropIndex", () => {
+  // three 100px rows stacked from y=0
+  const slots = [
+    { top: 0, height: 100 },
+    { top: 100, height: 100 },
+    { top: 200, height: 100 },
+  ];
+
+  it("places the dragged row after every other row whose middle it has passed", () => {
+    expect(dropIndex(slots, 0, 140)).toBe(0);
+    expect(dropIndex(slots, 0, 160)).toBe(1);
+    expect(dropIndex(slots, 0, 260)).toBe(2);
+    expect(dropIndex(slots, 2, 40)).toBe(0);
+    expect(dropIndex(slots, 2, 120)).toBe(1);
+  });
+
+  it("stays in place when the row has not moved", () => {
+    expect(dropIndex(slots, 1, 150)).toBe(1);
   });
 });

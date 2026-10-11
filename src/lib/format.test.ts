@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { duration, pct, plural, whenLabel } from "./format";
+import {
+  componentsLine,
+  duration,
+  pct,
+  plural,
+  teamLine,
+  whenLabel,
+} from "./format";
 
 describe("pct", () => {
   it("rounds a ratio to a whole percent", () => {
@@ -44,5 +51,16 @@ describe("whenLabel", () => {
 
   it("takes a plain date as that calendar day", () => {
     expect(whenLabel("2026-10-14", now)).toBe("Yesterday");
+  });
+});
+
+
+describe("event lines", () => {
+  it("names an event's parts and team size in words", () => {
+    expect(componentsLine(["exam", "roleplay"])).toBe("Exam + role play");
+    expect(componentsLine(["written", "presentation"])).toBe("Written entry + presentation");
+    expect(teamLine("1")).toBe("Solo");
+    expect(teamLine("2")).toBe("Team of 2");
+    expect(teamLine("1-3")).toBe("1 to 3 people");
   });
 });

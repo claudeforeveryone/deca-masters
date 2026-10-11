@@ -25,3 +25,12 @@ export function writePref(key: string, value: string): void {
     // Storage unavailable. The preference just does not stick on this device.
   }
 }
+
+/** A free-form preference (for example a small JSON snapshot), or null when unset or unreadable. */
+export function readPrefText(key: string): string | null {
+  try {
+    return window.localStorage.getItem(PREF_PREFIX + key);
+  } catch {
+    return null;
+  }
+}

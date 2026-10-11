@@ -45,3 +45,29 @@ export function whenLabel(when: string, now: Date = new Date()): string {
   const short = `${MONTHS[m - 1]} ${d}`;
   return String(y) === today.slice(0, 4) ? short : `${short}, ${y}`;
 }
+
+const COMPONENT_LABELS: Record<string, string> = {
+  exam: "exam",
+  roleplay: "role play",
+  "case-study": "case study",
+  written: "written entry",
+  presentation: "presentation",
+  simulation: "simulation",
+  portfolio: "portfolio",
+  online: "online round",
+};
+
+/** "Exam + role play", "Written entry + presentation". */
+export function componentsLine(components: readonly string[]): string {
+  const words = components.map((c) => COMPONENT_LABELS[c] ?? c);
+  const line = words.join(" + ");
+  return line.charAt(0).toUpperCase() + line.slice(1);
+}
+
+/** "Solo", "Team of 2", "1 to 3 people". */
+export function teamLine(teamSize: string): string {
+  if (teamSize === "1") return "Solo";
+  const range = /^(\d+)-(\d+)$/.exec(teamSize);
+  if (range) return `${range[1]} to ${range[2]} people`;
+  return /^\d+$/.test(teamSize) ? `Team of ${teamSize}` : teamSize;
+}

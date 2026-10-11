@@ -1,12 +1,15 @@
 import { describe, expect, it } from "vitest";
 import {
   accuracySeries,
+  activityCalendar,
   addDays,
+  consistency,
   dailyRunToday,
   recentAccuracy,
   splitAreas,
   streakTicks,
   weekActivity,
+  weeklyAccuracy,
   weeklyPace,
 } from "./dashboard";
 
@@ -156,5 +159,57 @@ describe("weeklyPace", () => {
     expect(weeklyPace({ target: 120, current: 80 }, "2026-10-15")).toEqual({ left: 40, daysLeft: 4, today: 10 });
     expect(weeklyPace({ target: 100, current: 99 }, "2026-10-18")).toEqual({ left: 1, daysLeft: 1, today: 1 });
     expect(weeklyPace({ target: 50, current: 60 }, "2026-10-12")).toEqual({ left: 0, daysLeft: 7, today: 0 });
+  });
+});
+
+describe("weeklyAccuracy", () => {
+  it("buckets runs into Toronto weeks starting Monday, oldest first, with empty weeks as null", () => {
+    const weeks = weeklyAccuracy(
+      [
+        run(8, 10, "2026-10-14T15:00:00Z"), // Wed this week
+        run(2, 10, "2026-10-12T15:00:00Z"), // Mon this week
+        run(5, 5, "2026-10-05T03:00:00Z"), // Sun Oct 4, 23:00 in Toronto: the week of Sep 28
+      ],
+      "2026-10-15",
+      3,
+    );
+    expect(weeks).toEqual([
+      { weekStart: "2026-09-28", correct: 5, total: 5, accuracy: 1 },
+      { weekStart: "2026-10-05", correct: 0, total: 0, accuracy: null },
+      { weekStart: "2026-10-12", correct: 10, total: 20, accuracy: 0.5 },
+    ]);
+  });
+});
+
+describe("activityCalendar", () => {
+  it("lays out whole weeks ending this week, levels by fixed question counts", () => {
+    const cal = activityCalendar(
+      [
+        { date: "2026-10-13", answered: 9, roleplays: 0 },
+        { date: "2026-10-14", answered: 60, roleplays: 0 },
+        { date: "2026-10-06", answered: 0, roleplays: 1 },
+      ],
+      "2026-10-15",
+      2,
+    );
+    expect(cal).toHaveLength(2);
+    expect(cal[0][0].date).toBe("2026-10-05");
+    expect(cal[1].map((d) => d.level)).toEqual([0, 1, 4, 0, 0, 0, 0]);
+    expect(cal[0][1]).toMatchObject({ date: "2026-10-06", level: 1, roleplays: 1 });
+    expect(cal[1][4].future).toBe(true);
+  });
+});
+
+describe("consistency", () => {
+  it("counts active days in the last 30 and weeks with any activity in the last 8", () => {
+    const out = consistency(
+      [
+        { date: "2026-10-15", answered: 5, roleplays: 0 },
+        { date: "2026-10-01", answered: 5, roleplays: 0 },
+        { date: "2026-09-10", answered: 5, roleplays: 0 }, // 35 days back: outside 30, inside 8 weeks
+      ],
+      "2026-10-15",
+    );
+    expect(out).toEqual({ activeDays30: 2, activeWeeks8: 3 });
   });
 });

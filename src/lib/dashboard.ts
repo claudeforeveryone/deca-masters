@@ -174,3 +174,76 @@ export function weeklyPace(
   const daysLeft = 7 - weekdayIndex(today);
   return { left, daysLeft, today: Math.ceil(left / daysLeft) };
 }
+
+/** The Monday that starts the week holding `day`. */
+export function mondayOf(day: string): string {
+  return addDays(day, -weekdayIndex(day));
+}
+
+/** Accuracy per Toronto week (Monday start) over the last `weeks` weeks, oldest first; null for a week with no runs. */
+export function weeklyAccuracy(
+  runs: { correct: number; total: number; submitted_at: string }[],
+  today: string,
+  weeks = 12,
+): { weekStart: string; correct: number; total: number; accuracy: number | null }[] {
+  const thisWeek = mondayOf(today);
+  const out = Array.from({ length: weeks }, (_, i) => ({
+    weekStart: addDays(thisWeek, -7 * (weeks - 1 - i)),
+    correct: 0,
+    total: 0,
+    accuracy: null as number | null,
+  }));
+  const byWeek = new Map(out.map((w) => [w.weekStart, w]));
+  for (const r of runs) {
+    const w = byWeek.get(mondayOf(torontoDateOf(r.submitted_at)));
+    if (!w) continue;
+    w.correct += r.correct;
+    w.total += r.total;
+  }
+  for (const w of out) w.accuracy = w.total > 0 ? w.correct / w.total : null;
+  return out;
+}
+
+export type CalendarDay = DayActivity & {
+  /** 0 nothing, 1 under 10 questions (or a role play only), 2 under 25, 3 under 50, 4 fifty or more. */
+  level: 0 | 1 | 2 | 3 | 4;
+  future: boolean;
+};
+
+function levelOf(a: { answered: number; roleplays: number }): CalendarDay["level"] {
+  if (a.answered >= 50) return 4;
+  if (a.answered >= 25) return 3;
+  if (a.answered >= 10) return 2;
+  return a.answered > 0 || a.roleplays > 0 ? 1 : 0;
+}
+
+/** Whole weeks (Monday to Sunday) ending with this week, oldest first: the consistency calendar. */
+export function activityCalendar(
+  activity: DayActivity[],
+  today: string,
+  weeks = 26,
+): CalendarDay[][] {
+  const byDay = new Map(activity.map((a) => [a.date, a]));
+  const first = addDays(mondayOf(today), -7 * (weeks - 1));
+  return Array.from({ length: weeks }, (_, w) =>
+    Array.from({ length: 7 }, (_, d) => {
+      const date = addDays(first, w * 7 + d);
+      const a = byDay.get(date) ?? { date, answered: 0, roleplays: 0 };
+      return { date, answered: a.answered, roleplays: a.roleplays, level: levelOf(a), future: date > today };
+    }),
+  );
+}
+
+/** Active days in the last 30 and weeks with any activity in the last 8 (this week included). */
+export function consistency(
+  activity: DayActivity[],
+  today: string,
+): { activeDays30: number; activeWeeks8: number } {
+  const active = activity.filter((a) => a.answered > 0 || a.roleplays > 0).map((a) => a.date);
+  const from30 = addDays(today, -29);
+  const from8 = addDays(mondayOf(today), -7 * 7);
+  return {
+    activeDays30: active.filter((d) => d >= from30 && d <= today).length,
+    activeWeeks8: new Set(active.filter((d) => d >= from8 && d <= today).map(mondayOf)).size,
+  };
+}
