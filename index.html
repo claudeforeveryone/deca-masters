@@ -25,13 +25,15 @@
           document.documentElement.dataset.theme = t;
       } catch (e) {}
       // The build prerenders public pages for a signed-out visitor (scripts/prerender.mjs) and marks <html> with the
-      // path each one is for. Hide that HTML before first paint on any other path, or when a session may be stored
+      // path each one is for. Hide that HTML before first paint on any other path, with a query string (/events and
+      // /roleplay keep their filters there, and the HTML was built with none), or when a session may be stored
       // (src/lib/auth.tsx mayHaveStoredSession, same key); main.tsx then renders from scratch. The deploy base is "/".
       try {
         var built = document.documentElement.getAttribute("data-prerender-path");
         var here = location.pathname.replace(/\/+$/, "") || "/";
         if (
           built !== here ||
+          location.search !== "" ||
           localStorage.getItem("deca-masters-auth") !== null
         )
           document.documentElement.setAttribute("data-prerender-skip", "");

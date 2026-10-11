@@ -171,6 +171,42 @@ describe("index.html head script", () => {
   it("reads the same theme key as the app", () => {
     expect(head).toContain(`localStorage.getItem("${PREF_PREFIX}theme")`);
   });
+
+  // Runs the inline script against a stand-in document: true when it marks the visit to render from scratch.
+  const script = /<script>([\s\S]*?)<\/script>/.exec(head)?.[1] ?? "";
+  function skips(at: { path: string; search?: string; built: string; session?: boolean }) {
+    const attrs = new Map<string, string>([["data-prerender-path", at.built]]);
+    const documentElement = {
+      dataset: {},
+      getAttribute: (k: string) => attrs.get(k) ?? null,
+      setAttribute: (k: string, v: string) => void attrs.set(k, v),
+    };
+    const storage = {
+      getItem: (k: string) => (k === SESSION_STORAGE_KEY && at.session ? "{}" : null),
+    };
+    new Function("document", "location", "localStorage", script)(
+      { documentElement },
+      { pathname: at.path, search: at.search ?? "" },
+      storage,
+    );
+    return attrs.has("data-prerender-skip");
+  }
+
+  it("hydrates the HTML built for this exact path, trailing slash or not", () => {
+    expect(skips({ path: "/events", built: "/events" })).toBe(false);
+    expect(skips({ path: "/events/", built: "/events" })).toBe(false);
+  });
+
+  it("renders from scratch on another path or with a stored session", () => {
+    expect(skips({ path: "/practice", built: "/" })).toBe(true);
+    expect(skips({ path: "/events", built: "/events", session: true })).toBe(true);
+  });
+
+  it("renders from scratch when a query string can change what the page shows", () => {
+    // /events and /roleplay keep their filters in the URL; the HTML was built with none.
+    expect(skips({ path: "/events", search: "?cluster=finance", built: "/events" })).toBe(true);
+    expect(skips({ path: "/roleplay", search: "?cluster=marketing", built: "/roleplay" })).toBe(true);
+  });
 });
 
 describe("vercel.json", () => {
