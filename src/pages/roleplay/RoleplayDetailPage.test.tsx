@@ -36,6 +36,7 @@ vi.mock("../../api/roleplay", async (orig) => ({
 
 import { getEvent } from "../../api/events";
 import {
+  deleteSession,
   getRoleplayEvent,
   getSession,
   mySessions,
@@ -272,6 +273,41 @@ describe("role-play trainer", () => {
       ).value,
     ).toBe("");
     expect(screen.getByRole("timer").textContent).toBe("10:00");
+  });
+
+  it("deleting the open session starts a fresh one and never saves the deleted one again", async () => {
+    member.state = ready();
+    const open = session({
+      notes: "## Prep notes\nThree options.",
+      scenario_title: "Sample",
+    });
+    vi.mocked(getSession).mockResolvedValue(open);
+    vi.mocked(mySessions).mockResolvedValue([open]);
+    vi.mocked(deleteSession).mockResolvedValue(true);
+    renderAt(`/roleplay/PMK?session=${SAVED_ID}`);
+    await screen.findByRole("heading", {
+      level: 1,
+      name: "Principles of Marketing",
+    });
+    // An edit not yet sent (the autosave waits 1.2 s), then delete straight away.
+    fireEvent.change(screen.getByRole("textbox", { name: "Prep notes" }), {
+      target: { value: "Three options, and a fourth." },
+    });
+    fireEvent.click(
+      await screen.findByRole("button", { name: /^Delete the session from/ }),
+    );
+    fireEvent.click(screen.getByRole("button", { name: "Delete" }));
+    await advance(3000);
+    expect(deleteSession).toHaveBeenCalledWith(SAVED_ID);
+    expect(saveSession).not.toHaveBeenCalled();
+    expect(screen.getByTestId("loc").textContent).toBe("/roleplay/PMK");
+    expect(
+      (
+        screen.getByRole("textbox", {
+          name: "Prep notes",
+        }) as HTMLTextAreaElement
+      ).value,
+    ).toBe("");
   });
 
   it("says when an event has no role play", async () => {

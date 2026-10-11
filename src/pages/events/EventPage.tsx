@@ -207,7 +207,8 @@ export function EventPage() {
             {e.code}
           </span>
           <span>{CLUSTERS[e.cluster] ?? e.cluster}</span>
-          <span aria-hidden="true" className="text-ink-3">
+          {/* On phones the category wraps to its own line; a dot left at the end of a line reads as a typo. */}
+          <span aria-hidden="true" className="hidden text-ink-3 sm:inline">
             ·
           </span>
           <span>{e.category}</span>
@@ -272,6 +273,7 @@ export function EventPage() {
           state={member.state}
           purpose="add this event to your list and bookmark it"
           onRetry={member.reload}
+          framed={false}
           className="mt-6"
         />
         {!saves.canSave ? (
@@ -550,7 +552,7 @@ function PrepRow({
     <li className="grid gap-x-8 gap-y-3 border-b border-line py-5 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
       <div className="min-w-0">
         <p className="text-sm text-ink-3">{kind}</p>
-        <h3 className="mt-0.5 text-[1.375rem] leading-tight">{title}</h3>
+        <h3 className="mt-0.5 text-xl leading-tight">{title}</h3>
         <p className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-2">
           {facts}
         </p>

@@ -1,4 +1,5 @@
 import {
+  ChevronRight,
   MonitorPlay,
   Pause,
   Play,
@@ -159,8 +160,12 @@ export function Trainer({
   const canSaveRef = useRef(canSave);
   canSaveRef.current = canSave;
 
+  // Set when this session is deleted from the history below: nothing may save it again (saves are upserts on
+  // client_id, so a late save would bring it back).
+  const discarded = useRef(false);
+
   const runSave = useCallback(async () => {
-    if (!canSaveRef.current) return;
+    if (!canSaveRef.current || discarded.current) return;
     if (inflight.current) {
       again.current = true;
       return;
@@ -213,6 +218,7 @@ export function Trainer({
     if (
       armed &&
       canSave &&
+      !discarded.current &&
       latest.current.saveKey !== lastSaved.current &&
       !inflight.current
     )
@@ -305,8 +311,12 @@ export function Trainer({
           </div>
         </dl>
         {roleplay.format.judgeRole ? (
-          <details className="mt-5 max-w-(--measure) text-ink-2">
-            <summary className="inline-flex min-h-11 cursor-pointer items-center font-semibold text-ink">
+          <details className="group mt-5 max-w-(--measure) text-ink-2">
+            <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 font-semibold text-ink [&::-webkit-details-marker]:hidden">
+              <ChevronRight
+                aria-hidden="true"
+                className="size-4.5 text-ink-3 transition-transform duration-(--dur-1) group-open:rotate-90"
+              />
               Who the judge is
             </summary>
             <p className="mt-1">{roleplay.format.judgeRole}</p>
@@ -573,7 +583,7 @@ export function Trainer({
 
           <div className="grid content-start gap-10">
             <section aria-labelledby="pis-heading">
-              <h3 id="pis-heading" className="text-[1.375rem] leading-tight">
+              <h3 id="pis-heading" className="text-xl leading-tight">
                 Performance indicators
               </h3>
               <p className="mt-1.5 max-w-(--measure) text-sm text-ink-2">
@@ -598,7 +608,7 @@ export function Trainer({
                       id={`pi-${i}`}
                       value={p.text}
                       maxLength={PI_TEXT_MAX}
-                      placeholder="Indicator text from the sample"
+                      placeholder="From the sample"
                       onChange={(e) => setPi(i, { text: e.target.value })}
                       className="min-h-11 w-full min-w-0 rounded-sm border border-line-strong bg-surface px-3 text-ink placeholder:text-ink-3 hover:border-ink-3 focus-visible:border-accent"
                     />
@@ -720,7 +730,7 @@ export function Trainer({
           <section aria-labelledby="questions-heading">
             <h3
               id="questions-heading"
-              className="text-[1.375rem] leading-tight"
+              className="text-xl leading-tight"
             >
               Judge questions
             </h3>
@@ -866,7 +876,10 @@ export function Trainer({
               piCount={() => piCount}
               refreshKey={historyKey}
               activeId={sessionId}
-              onDeleted={onHistoryDeleted}
+              onDeleted={(id) => {
+                if (id === sessionId) discarded.current = true;
+                onHistoryDeleted(id);
+              }}
             />
           </div>
         </section>

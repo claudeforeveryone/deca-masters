@@ -197,7 +197,7 @@ export function RoleplayPage() {
                       <div className="col-span-2 min-w-0 sm:col-span-1">
                         <Link
                           to={`/roleplay/${e.eventCode}`}
-                          className="font-display text-[1.375rem] leading-tight font-bold text-ink no-underline hover:text-link hover:underline hover:underline-offset-4"
+                          className="font-display text-xl leading-tight font-bold text-ink no-underline hover:text-link hover:underline hover:underline-offset-4"
                         >
                           {e.eventName}
                         </Link>

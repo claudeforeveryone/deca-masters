@@ -122,12 +122,13 @@ export function VocabPage() {
         state={member.state}
         purpose="save your progress and get each term back when it's due. Every study mode works without an account"
         onRetry={member.reload}
+        framed={false}
         className="mt-6"
       />
 
       <div className="mt-6">
         {load.status === "loading" ? (
-          <ul aria-hidden="true" className="border-t border-line">
+          <ul aria-hidden="true">
             {Array.from({ length: 7 }, (_, i) => (
               <li key={i} className="grid gap-2 border-b border-line py-5">
                 <Skeleton className="h-6 w-2/3 max-w-md" />
@@ -150,7 +151,8 @@ export function VocabPage() {
           />
         ) : null}
         {rows.length ? (
-          <ul className="border-t border-line">
+          // No top rule: the page header's rule already sits above the first deck.
+          <ul>
             {rows.map((r) => {
               const cluster = EXAM_CLUSTER[r.slug];
               const p = r.progress;
@@ -172,7 +174,7 @@ export function VocabPage() {
                     </p>
                     <Link
                       to={`/vocab/${r.slug}`}
-                      className="mt-1 inline-block font-display text-[1.375rem] leading-tight font-bold text-ink no-underline hover:text-link hover:underline hover:underline-offset-4"
+                      className="mt-1 inline-block font-display text-xl leading-tight font-bold text-ink no-underline hover:text-link hover:underline hover:underline-offset-4"
                     >
                       {r.title}
                     </Link>

@@ -12,12 +12,15 @@ export function MemberNotice({
   state,
   purpose,
   onRetry,
+  framed = true,
   className = "",
 }: {
   state: MemberState;
   /** What signing in unlocks, finishing "Sign in to ...": "bookmark events and keep your own list". */
   purpose: string;
   onRetry?: () => void;
+  /** Rules above and below. Turn off where the notice already sits against a section rule, so rules don't double. */
+  framed?: boolean;
   className?: string;
 }) {
   const location = useLocation();
@@ -25,7 +28,7 @@ export function MemberNotice({
   if (state.status === "ready" || state.status === "loading") return null;
   return (
     <p
-      className={`flex flex-wrap items-center gap-x-3 gap-y-1 border-y border-line py-3 text-sm text-ink-2 ${className}`}
+      className={`flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-2 ${framed ? "border-y border-line py-3" : ""} ${className}`}
     >
       {state.status === "signed-out" ? (
         <>

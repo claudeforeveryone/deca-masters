@@ -6,7 +6,7 @@ import {
   X,
 } from "lucide-react";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { MemberNotice } from "../../components/prep/MemberNotice";
 import { useDocumentTitle } from "../../components/prep/useDocumentTitle";
 import { Button, buttonClass, IconButton } from "../../components/ui/Button";
@@ -44,6 +44,7 @@ import {
   type FacetCounts,
 } from "./explorer";
 import { useEventSaves } from "./useEventSaves";
+import { useLiveSearchParams } from "./useLiveSearchParams";
 
 type Load =
   | { status: "loading" }
@@ -73,7 +74,7 @@ const CLUSTER_ORDER = (Object.keys(CLUSTERS) as ClusterSlug[]).filter(
 );
 
 export function EventsPage() {
-  const [params, setParams] = useSearchParams();
+  const { params, read, write } = useLiveSearchParams();
   const filters = useMemo(() => readFilters(params), [params]);
   const [load, retry] = useEvents();
   const member = useMember();
@@ -107,10 +108,13 @@ export function EventsPage() {
     [events, filters, saved],
   );
 
-  function apply(next: Partial<EventFilters>, compareCodes = compare) {
-    const p = writeFilters({ ...filters, ...next });
+  // Handlers build on the URL as last written (read), not as last rendered, so quick clicks don't undo each other.
+  const liveCompare = () =>
+    readCompare(new URLSearchParams({ codes: read().get("compare") ?? "" }), known);
+  function apply(next: Partial<EventFilters>, compareCodes = liveCompare()) {
+    const p = writeFilters({ ...readFilters(read()), ...next });
     if (compareCodes.length) p.set("compare", compareCodes.join(","));
-    setParams(p, { replace: true, preventScrollReset: true });
+    write(p);
   }
 
   // The search box answers at once; the URL follows it (and a back or forward move updates the box).
@@ -123,7 +127,7 @@ export function EventsPage() {
   }, [query]);
 
   function onCompare(code: string) {
-    const { codes, full } = toggleCompare(compare, code);
+    const { codes, full } = toggleCompare(liveCompare(), code);
     if (full) {
       toast({
         message: `You can compare ${MAX_COMPARE} events at a time. Remove one first.`,
@@ -157,7 +161,7 @@ export function EventsPage() {
   const filterCount = activeFilterCount(filters);
   const clearAll = () => {
     setQuery("");
-    apply({ ...DEFAULT_FILTERS, sort: filters.sort });
+    apply({ ...DEFAULT_FILTERS, sort: readFilters(read()).sort });
   };
 
   const filtersPanel = (
@@ -597,7 +601,7 @@ function EventRow({
       <div className="col-span-2 row-start-2 min-w-0 md:col-span-1 md:row-start-auto">
         <Link
           to={`/events/${encodeURIComponent(e.code)}`}
-          className="font-display text-[1.375rem] leading-tight font-bold text-ink no-underline hover:text-link hover:underline hover:decoration-1 hover:underline-offset-4"
+          className="font-display text-xl leading-tight font-bold text-ink no-underline hover:text-link hover:underline hover:decoration-1 hover:underline-offset-4"
         >
           {e.name}
         </Link>

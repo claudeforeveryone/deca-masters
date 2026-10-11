@@ -1,4 +1,5 @@
 import "./vocab.css";
+import { ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { getDeck, listTerms, type DeckInfo } from "../../api/vocab";
@@ -151,7 +152,10 @@ export function DeckPage() {
       <Breadcrumbs
         items={[{ label: "Vocab", to: "/vocab" }, { label: deck.title }]}
       />
-      <header className="mt-5 border-b border-line pb-7">
+      <header
+        // The stat row's own bottom rule closes the header when it shows; a second rule under it would double up.
+        className={`mt-5 ${showProgress ? "" : "border-b border-line pb-7"}`}
+      >
         <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-2">
           <FacetMarker cluster={cluster} />
           <span>{CLUSTERS[cluster]}</span>
@@ -175,12 +179,18 @@ export function DeckPage() {
           </p>
         ) : null}
         {deck.sources.length ? (
-          <div className="mt-4 max-w-(--measure) text-sm text-ink-2">
-            <p>
-              Definitions reused from openly licensed works, credited on every
-              term:
-            </p>
-            <ul className="mt-1.5 grid gap-1">
+          // Folded: every term carries its own credit, and a long list of works would push the study modes off the screen.
+          <details className="group mt-3 max-w-(--measure) text-sm text-ink-2">
+            <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 [&::-webkit-details-marker]:hidden">
+              <ChevronRight
+                aria-hidden="true"
+                className="size-4 text-ink-3 transition-transform duration-(--dur-1) group-open:rotate-90"
+              />
+              Definitions reused from{" "}
+              {plural(deck.sources.length, "openly licensed work")}, credited
+              on every term
+            </summary>
+            <ul className="mt-1 grid gap-1 pl-5.5">
               {deck.sources.map((s) => (
                 <li key={s.url}>
                   <ExternalAnchor
@@ -194,7 +204,7 @@ export function DeckPage() {
                 </li>
               ))}
             </ul>
-          </div>
+          </details>
         ) : null}
         {showProgress ? (
           <StatRow className="mt-6">
@@ -209,6 +219,7 @@ export function DeckPage() {
           state={member.state}
           purpose="save your progress and get terms back on schedule. Every mode works without an account"
           onRetry={member.reload}
+          framed={false}
           className="mt-6"
         />
       </header>

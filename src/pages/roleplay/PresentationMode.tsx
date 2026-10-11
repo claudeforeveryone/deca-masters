@@ -291,7 +291,11 @@ export function PresentationMode({
                             PI {i + 1}
                           </span>
                           <span className="min-w-0">
-                            {p.text || "Indicator from the sample"}
+                            {p.text || (
+                              <span className="text-on-stage-3">
+                                Not copied in yet
+                              </span>
+                            )}
                           </span>
                         </button>
                       </li>

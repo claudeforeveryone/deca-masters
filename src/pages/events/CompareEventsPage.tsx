@@ -1,6 +1,6 @@
 import { X } from "lucide-react";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { formatDay, plural } from "../../components/prep/format";
 import { useDocumentTitle } from "../../components/prep/useDocumentTitle";
 import { RouteFallback } from "../../components/layout/RouteFallback";
@@ -22,6 +22,7 @@ import {
   readCompare,
   teamSizeLabel,
 } from "./explorer";
+import { useLiveSearchParams } from "./useLiveSearchParams";
 
 type Load =
   | { status: "loading" }
@@ -131,7 +132,7 @@ function rowsFor(index: ContentIndex): Row[] {
 }
 
 export function CompareEventsPage() {
-  const [params, setParams] = useSearchParams();
+  const { params, read, write } = useLiveSearchParams();
   const [load, setLoad] = useState<Load>({ status: "loading" });
   const [attempt, setAttempt] = useState(0);
   const [diffOnly, setDiffOnly] = useState(false);
@@ -157,8 +158,11 @@ export function CompareEventsPage() {
     .map((c) => index!.events.find((e) => e.code === c)!)
     .filter(Boolean);
 
-  const setCodes = (next: string[]) =>
-    setParams(next.length ? { codes: next.join(",") } : {}, { replace: true });
+  // Built on the URL as last written, so removing two events in quick succession removes both.
+  const updateCodes = (change: (current: string[]) => string[]) => {
+    const next = change(readCompare(read(), known));
+    write(new URLSearchParams(next.length ? { codes: next.join(",") } : {}));
+  };
 
   if (load.status === "loading")
     return <RouteFallback label="Loading events" />;
@@ -225,7 +229,7 @@ export function CompareEventsPage() {
               label="Add an event"
               value=""
               onChange={(e) =>
-                e.target.value && setCodes([...codes, e.target.value])
+                e.target.value && updateCodes((c) => [...c, e.target.value])
               }
               options={[
                 { value: "", label: "Pick an event" },
@@ -256,13 +260,13 @@ export function CompareEventsPage() {
             ))}
           </colgroup>
           <thead>
-            <tr className="border-b border-line-strong align-bottom">
+            <tr className="border-b border-line-strong align-top">
               <td />
               {events.map((e) => (
                 <th key={e.code} scope="col" className="px-4 pb-4 font-normal">
                   <EventHead
                     event={e}
-                    onRemove={() => setCodes(codes.filter((c) => c !== e.code))}
+                    onRemove={() => updateCodes((c) => c.filter((x) => x !== e.code))}
                   />
                 </th>
               ))}
@@ -298,7 +302,7 @@ export function CompareEventsPage() {
             <li key={e.code}>
               <EventHead
                 event={e}
-                onRemove={() => setCodes(codes.filter((c) => c !== e.code))}
+                onRemove={() => updateCodes((c) => c.filter((x) => x !== e.code))}
               />
             </li>
           ))}
@@ -360,7 +364,7 @@ function EventHead({
         type="button"
         onClick={onRemove}
         aria-label={`Remove ${e.code} from the comparison`}
-        className="inline-flex size-11 shrink-0 items-center justify-center rounded-sm text-ink-3 transition-colors duration-(--dur-1) hover:bg-surface-2 hover:text-ink"
+        className="-mt-3 -mr-3 inline-flex size-11 shrink-0 items-center justify-center rounded-sm text-ink-3 transition-colors duration-(--dur-1) hover:bg-surface-2 hover:text-ink"
       >
         <X aria-hidden="true" className="size-4.5" />
       </button>
