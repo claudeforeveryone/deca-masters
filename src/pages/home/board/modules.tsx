@@ -17,7 +17,7 @@ import { ProgressBar } from "../../../components/ui/Progress";
 import { SkeletonText } from "../../../components/ui/Skeleton";
 import { FacetMarker } from "../../../components/ui/Tag";
 import type { ModuleId } from "../../../lib/board";
-import { EXAM_SLUGS, type EventItem } from "../../../lib/content";
+import type { EventItem } from "../../../lib/content";
 import {
   accuracySeries,
   dailyRunToday,
@@ -29,6 +29,7 @@ import {
 import {
   componentsLine,
   duration,
+  examTitles,
   pct,
   plural,
   teamLine,
@@ -61,17 +62,6 @@ const action = (to: string, label: string) => (
     {label}
   </Link>
 );
-
-/** Readable exam names: the bank's titles, or the slug in words when the bank has not loaded. */
-export function examTitles(bank: BankExam[] | undefined): Record<string, string> {
-  const out: Record<string, string> = {};
-  for (const slug of EXAM_SLUGS) {
-    const words = slug.replace(/-/g, " ");
-    out[slug] = words.charAt(0).toUpperCase() + words.slice(1);
-  }
-  for (const b of bank ?? []) out[b.exam] = b.title;
-  return out;
-}
 
 /** Status of a module that needs several loads: loading until all are in, error when any failed. */
 type LoadLike = Pick<Load<unknown>, "status" | "data" | "reload">;

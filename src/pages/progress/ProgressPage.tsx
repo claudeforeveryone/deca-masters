@@ -27,14 +27,13 @@ import {
   weeklyAccuracy,
   type CalendarDay,
 } from "../../lib/dashboard";
-import { duration, pct, plural, whenLabel } from "../../lib/format";
+import { duration, examTitles, pct, plural, whenLabel } from "../../lib/format";
 import { torontoToday } from "../../lib/leitner";
 import { useMyProfile } from "../../lib/profile";
 import { readinessFor, type ReadinessInput } from "../../lib/readiness";
 import { runName } from "../../lib/recommend";
 import { buildStrategyMap } from "../../lib/strategyMap";
 import { useLoad, type Load } from "../../lib/useLoad";
-import { examTitles } from "../home/board/modules";
 import { StrategyMap } from "./StrategyMap";
 
 function Section({
@@ -150,12 +149,26 @@ function RunHistory() {
   const bank = useLoad(bankSummary, []);
   const titles = examTitles(bank.data);
   if (first.status === "error")
-    return <ErrorState headingLevel={3} title="Your runs did not load" body={first.error} onRetry={first.reload} />;
-  if (first.data === undefined) return <SkeletonText lines={4} label="Loading your runs" className="max-w-2xl" />;
+    return (
+      <ErrorState
+        headingLevel={3}
+        title="Your runs did not load"
+        body={first.error}
+        onRetry={first.reload}
+      />
+    );
+  if (first.data === undefined)
+    return (
+      <SkeletonText lines={4} label="Loading your runs" className="max-w-2xl" />
+    );
   const rows = [...first.data.rows, ...older];
   const next = cursor === undefined ? first.data.nextBefore : cursor;
   if (rows.length === 0)
-    return <p className="text-ink-2">No submitted runs yet. Each graded run is listed here with its review.</p>;
+    return (
+      <p className="text-ink-2">
+        No submitted runs yet. Each graded run is listed here with its review.
+      </p>
+    );
   async function loadMore() {
     if (!next) return;
     setMore("loading");
@@ -557,7 +570,9 @@ export function ProgressPage() {
                         </p>
                       )}
                       {p.max !== null && p.value !== null ? (
-                        p.note ? <p className="text-sm text-ink-2">{p.note}.</p> : null
+                        p.note ? (
+                          <p className="text-sm text-ink-2">{p.note}.</p>
+                        ) : null
                       ) : (
                         <p className="text-sm text-ink-2">
                           {p.text}

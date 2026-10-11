@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   componentsLine,
   duration,
+  examTitles,
   pct,
   plural,
   teamLine,
@@ -62,5 +63,16 @@ describe("event lines", () => {
     expect(teamLine("1")).toBe("Solo");
     expect(teamLine("2")).toBe("Team of 2");
     expect(teamLine("1-3")).toBe("1 to 3 people");
+  });
+});
+
+describe("examTitles", () => {
+  it("uses the bank's titles and words for slugs the bank has not named", () => {
+    const t = examTitles([{ exam: "finance", title: "Finance Cluster Exam" }]);
+    expect(t.finance).toBe("Finance Cluster Exam");
+    expect(t["business-admin-core"]).toBe("Business admin core");
+    expect(examTitles(undefined)["hospitality-tourism"]).toBe(
+      "Hospitality tourism",
+    );
   });
 });

@@ -14,10 +14,9 @@ import { Notice } from "../../components/ui/Notice";
 import { PageHeader } from "../../components/ui/PageHeader";
 import { SkeletonText } from "../../components/ui/Skeleton";
 import type { ExamSlug } from "../../lib/content";
-import { pct, plural } from "../../lib/format";
+import { examTitles, pct, plural } from "../../lib/format";
 import { setMyProfile, useMyProfile } from "../../lib/profile";
 import { useLoad } from "../../lib/useLoad";
-import { examTitles } from "../home/board/modules";
 
 /** Below this many listed players the board stays closed: a ranking of two or three people is not a ranking. */
 export const MIN_BOARD = 5;

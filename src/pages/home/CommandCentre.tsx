@@ -28,12 +28,13 @@ import {
   type ModuleId,
 } from "../../lib/board";
 import { dailyRunToday, splitAreas } from "../../lib/dashboard";
+import { examTitles } from "../../lib/format";
 import { torontoToday } from "../../lib/leitner";
 import { useMyProfile } from "../../lib/profile";
 import { recommendNext, type NextAction } from "../../lib/recommend";
 import { useLoad } from "../../lib/useLoad";
 import { Board } from "./board/Board";
-import { buildViews, examTitles, type BoardData } from "./board/modules";
+import { buildViews, type BoardData } from "./board/modules";
 
 /** The signed-in home: the next action, then the member's board of modules in their own order. */
 export function CommandCentre() {

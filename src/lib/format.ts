@@ -1,5 +1,6 @@
 // Small formatting rules shared by the dashboard, progress, leaderboard and profile pages. Days are Toronto days,
 // the same calendar the server uses for streaks and weeks.
+import { EXAM_SLUGS } from "./content";
 import { addDays, torontoDateOf } from "./dashboard";
 import { torontoToday } from "./leitner";
 
@@ -70,4 +71,17 @@ export function teamLine(teamSize: string): string {
   const range = /^(\d+)-(\d+)$/.exec(teamSize);
   if (range) return `${range[1]} to ${range[2]} people`;
   return /^\d+$/.test(teamSize) ? `Team of ${teamSize}` : teamSize;
+}
+
+/** Readable exam names: the bank's titles, or the slug in words when the bank has not loaded. */
+export function examTitles(
+  bank: { exam: string; title: string }[] | undefined,
+): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (const slug of EXAM_SLUGS) {
+    const words = slug.replace(/-/g, " ");
+    out[slug] = words.charAt(0).toUpperCase() + words.slice(1);
+  }
+  for (const b of bank ?? []) out[b.exam] = b.title;
+  return out;
 }
