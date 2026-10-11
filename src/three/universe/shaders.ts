@@ -4,6 +4,7 @@ import {
   AdditiveBlending,
   Color,
   DoubleSide,
+  FrontSide,
   MeshStandardMaterial,
   ShaderMaterial,
   Vector3,
@@ -12,6 +13,8 @@ import {
 
 export const ELECTRIC = new Color("#4dabff");
 export const ELECTRIC_HOT = new Color("#cfe6ff");
+/** The light shell's colour at the culet: a deep blue that rises to electric at the table. */
+export const SHELL_DEEP = new Color("#0b3f8f");
 
 /** Shared vertex logic: the per-panel flight in (quart out), plus each sector's lift and selection. */
 const ASSEMBLY = /* glsl */ `
@@ -63,6 +66,8 @@ export type PanelUniforms = {
   uSweepDir: IUniform<Vector3>;
   uElectric: IUniform<Color>;
   uRim: IUniform<number>;
+  /** The light inside: 0 dark (adds nothing) to 1 full. Drives the shell and the seams. */
+  uCore: IUniform<number>;
 };
 
 export function makeSharedUniforms(): PanelUniforms {
@@ -74,38 +79,66 @@ export function makeSharedUniforms(): PanelUniforms {
     uSweepDir: { value: new Vector3(0.32, -1, 0.18).normalize() },
     uElectric: { value: ELECTRIC.clone() },
     uRim: { value: 0.38 },
+    uCore: { value: 0 },
   };
 }
 
-/** Cut metal: dark navy, high metalness, flat facets, an electric fresnel rim and the moving light sweep. */
+/**
+ * Cut metal: steel navy, high metalness, flat facets, an electric fresnel rim and the moving light sweep. Each panel's
+ * seed nudges its roughness and tone a little, so neighbouring facets catch the studio light differently, the way
+ * machined plates do.
+ */
 export function makePanelMaterial(u: PanelUniforms): MeshStandardMaterial {
   const m = new MeshStandardMaterial({
-    color: "#0f2142",
-    metalness: 0.86,
-    roughness: 0.3,
+    color: "#355487",
+    metalness: 0.9,
+    roughness: 0.32,
     flatShading: true,
     side: DoubleSide,
-    envMapIntensity: 1.25,
+    envMapIntensity: 1,
   });
   m.onBeforeCompile = (shader) => {
     Object.assign(shader.uniforms, u);
     shader.vertexShader = shader.vertexShader
       .replace(
         "#include <common>",
-        `#include <common>\n${ASSEMBLY}\nvarying vec3 vWorld;`,
+        `#include <common>
+${ASSEMBLY}
+attribute float aSeed;
+varying float vSeed;
+varying vec3 vWorld;`,
       )
       .replace(
         "#include <begin_vertex>",
-        "vec3 transformed = assemble(vec3(position));",
+        `vec3 transformed = assemble(vec3(position));
+vSeed = aSeed;`,
       )
       .replace(
         "#include <project_vertex>",
-        "#include <project_vertex>\nvWorld = (modelMatrix * vec4(transformed, 1.0)).xyz;",
+        `#include <project_vertex>
+vWorld = (modelMatrix * vec4(transformed, 1.0)).xyz;`,
       );
     shader.fragmentShader = shader.fragmentShader
       .replace(
         "#include <common>",
-        `#include <common>\n${SWEEP}\nuniform vec3 uElectric;\nuniform float uRim;\nvarying float vSel;\nvarying float vArrive;\nvarying vec3 vWorld;`,
+        `#include <common>
+${SWEEP}
+uniform vec3 uElectric;
+uniform float uRim;
+varying float vSel;
+varying float vArrive;
+varying float vSeed;
+varying vec3 vWorld;`,
+      )
+      .replace(
+        "#include <color_fragment>",
+        `#include <color_fragment>
+diffuseColor.rgb *= 0.78 + 0.44 * vSeed;`,
+      )
+      .replace(
+        "#include <roughnessmap_fragment>",
+        `#include <roughnessmap_fragment>
+roughnessFactor = clamp(roughnessFactor + (vSeed - 0.5) * 0.24, 0.1, 1.0);`,
       )
       .replace(
         "#include <emissivemap_fragment>",
@@ -113,12 +146,130 @@ export function makePanelMaterial(u: PanelUniforms): MeshStandardMaterial {
         float band = sweepBand(vWorld);
         float facing = abs(dot(normalize(normal), normalize(vViewPosition)));
         float fres = pow(1.0 - clamp(facing, 0.0, 1.0), 3.0);
-        totalEmissiveRadiance += uElectric * (fres * uRim + band * 0.75 + vSel * 0.16);`,
+        totalEmissiveRadiance += uElectric * (fres * uRim + band * 0.6 + vSel * 0.14);`,
       );
   };
   // One program for every instance of this patched material.
-  m.customProgramCacheKey = () => "deca-universe-panel";
+  m.customProgramCacheKey = () => "deca-universe-panel-2";
   return m;
+}
+
+/**
+ * The light inside: drawn after the opaque panels, additive and depth-tested, so it shows only through the seams and
+ * wherever the explorer lifts a sector away. Deep blue at the culet rising to electric at the table, brighter on faces
+ * turned to the viewer, white-hot where the sweep crosses. uCore 0 is fully dark (adds nothing).
+ */
+export function makeShellMaterial(u: PanelUniforms): ShaderMaterial {
+  return new ShaderMaterial({
+    uniforms: {
+      uSweep: u.uSweep,
+      uSweepDir: u.uSweepDir,
+      uSel: u.uSel,
+      uElectric: u.uElectric,
+      uCore: u.uCore,
+      uDeep: { value: SHELL_DEEP.clone() },
+      uHot: { value: ELECTRIC_HOT.clone() },
+    },
+    transparent: true,
+    depthWrite: false,
+    blending: AdditiveBlending,
+    side: FrontSide,
+    vertexShader: /* glsl */ `
+      uniform float uSel[7];
+      attribute float aSector;
+      varying vec3 vWorld;
+      varying vec3 vNormalW;
+      varying float vSel;
+      void main() {
+        vec4 world = modelMatrix * vec4(position, 1.0);
+        vWorld = world.xyz;
+        vNormalW = normalize(mat3(modelMatrix) * normal);
+        vSel = uSel[int(aSector + 0.5)];
+        gl_Position = projectionMatrix * viewMatrix * world;
+      }`,
+    fragmentShader: /* glsl */ `
+      ${SWEEP}
+      uniform vec3 uElectric;
+      uniform vec3 uDeep;
+      uniform vec3 uHot;
+      uniform float uCore;
+      varying vec3 vWorld;
+      varying vec3 vNormalW;
+      varying float vSel;
+      void main() {
+        float up = smoothstep(-1.7, 0.7, vWorld.y);
+        vec3 base = mix(uDeep, uElectric, up);
+        float facing = abs(dot(vNormalW, normalize(cameraPosition - vWorld)));
+        float band = sweepBand(vWorld);
+        vec3 col = base * (0.45 + 0.75 * facing) + uHot * band * 1.1 + uElectric * vSel * 0.35;
+        gl_FragColor = vec4(col * uCore, 1.0);
+      }`,
+  });
+}
+
+/**
+ * The seams' light: the same deep-to-electric ramp as the shell, brightest along the middle of each ribbon, white-hot
+ * in the sweep. Interior seams lift with their sector in the explorer, like the panels around them.
+ */
+export function makeSeamMaterial(u: PanelUniforms): ShaderMaterial {
+  return new ShaderMaterial({
+    uniforms: {
+      uSweep: u.uSweep,
+      uSweepDir: u.uSweepDir,
+      uSel: u.uSel,
+      uLift: u.uLift,
+      uElectric: u.uElectric,
+      uCore: u.uCore,
+      uDeep: { value: SHELL_DEEP.clone() },
+      uHot: { value: ELECTRIC_HOT.clone() },
+    },
+    transparent: true,
+    depthWrite: false,
+    blending: AdditiveBlending,
+    side: DoubleSide,
+    vertexShader: /* glsl */ `
+      uniform float uSel[7];
+      uniform float uLift[7];
+      attribute float aAcross;
+      attribute float aSector;
+      attribute vec3 aMid;
+      varying vec3 vWorld;
+      varying float vAcross;
+      varying float vSel;
+      void main() {
+        vec3 p = position;
+        float sel = 0.0;
+        if (aSector > -0.5) {
+          int si = int(aSector + 0.5);
+          float lift = uLift[si];
+          vec3 outward = normalize(vec3(aMid.x, 0.0, aMid.z) + vec3(1e-4, 0.0, 0.0));
+          p += outward * lift + vec3(0.0, lift * 0.22, 0.0);
+          sel = uSel[si];
+        }
+        vec4 world = modelMatrix * vec4(p, 1.0);
+        vWorld = world.xyz;
+        vAcross = aAcross;
+        vSel = sel;
+        gl_Position = projectionMatrix * viewMatrix * world;
+      }`,
+    fragmentShader: /* glsl */ `
+      ${SWEEP}
+      uniform vec3 uElectric;
+      uniform vec3 uDeep;
+      uniform vec3 uHot;
+      uniform float uCore;
+      varying vec3 vWorld;
+      varying float vAcross;
+      varying float vSel;
+      void main() {
+        float profile = 1.0 - vAcross * vAcross;
+        float up = smoothstep(-1.7, 0.7, vWorld.y);
+        vec3 base = mix(uDeep, uElectric, up) * 1.15;
+        float band = sweepBand(vWorld);
+        vec3 col = (base + uHot * band * 1.4 + uElectric * vSel * 0.5) * profile;
+        gl_FragColor = vec4(col * uCore, 1.0);
+      }`,
+  });
 }
 
 /** 1px electric outlines: brighter in the sweep and on the selected sector, fading in as each panel lands. */
@@ -148,7 +299,7 @@ export function makeEdgeMaterial(
       varying vec3 vWorld;
       void main() {
         float band = sweepBand(vWorld);
-        float glow = 0.2 + band * 1.3 + vSel * 0.6;
+        float glow = 0.16 + band * 1.2 + vSel * 0.6;
         gl_FragColor = vec4(uElectric * glow, vArrive * uOpacity);
       }`,
   });

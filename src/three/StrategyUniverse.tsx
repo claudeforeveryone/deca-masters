@@ -3,13 +3,7 @@
 // Art direction and timings: Omega hq/design/DECA_TERMINAL.md section 6.
 import { useFrame, useThree, type ThreeEvent } from "@react-three/fiber";
 import { useEffect, useLayoutEffect, useMemo, useRef } from "react";
-import {
-  Color,
-  IcosahedronGeometry,
-  MeshBasicMaterial,
-  type Group,
-  type PerspectiveCamera,
-} from "three";
+import { type Group, type PerspectiveCamera } from "three";
 import {
   buildGem,
   CORE,
@@ -28,6 +22,8 @@ import {
   buildEdgeGeometry,
   buildPanelGeometry,
   buildRingGeometry,
+  buildSeamGeometry,
+  buildShellGeometry,
   buildStreamGeometry,
   panelOfFace,
 } from "./universe/buffers";
@@ -37,6 +33,8 @@ import {
   makePanelMaterial,
   makeRingMaterial,
   makeSharedUniforms,
+  makeSeamMaterial,
+  makeShellMaterial,
   makeStreamMaterial,
 } from "./universe/shaders";
 
@@ -69,8 +67,9 @@ const SWEEP_FROM = -1.8;
 const SWEEP_TO = 2.4;
 const SWEEP_EVERY = 7;
 const SWEEP_TIME = 1.1;
-const CORE_COLOUR = new Color("#cfe6ff");
-const CORE_EXPLORE = new Color("#4dabff").multiplyScalar(0.34);
+/** How bright the light shell burns at rest: full in the closing scene, lower in the explorer, where lifted sectors
+ *  open whole windows onto it rather than seams. */
+const CORE_LEVEL = { hero: 1, explore: 0.42, close: 1 } as const;
 const DEG = Math.PI / 180;
 
 const damp = (x: number, to: number, lambda: number, dt: number) =>
@@ -106,7 +105,7 @@ function Universe({
   const edgeGeo = useMemo(() => buildEdgeGeometry(panels), [panels]);
   const ringGeo = useMemo(() => buildRingGeometry(ticks), [ticks]);
   const streamGeo = useMemo(() => buildStreamGeometry(), []);
-  const coreGeo = useMemo(() => new IcosahedronGeometry(0.66, 0), []);
+  const shellGeo = useMemo(() => buildShellGeometry(panels), [panels]);
   const panelMat = useMemo(() => makePanelMaterial(uniforms), [uniforms]);
   const edgeMat = useMemo(() => makeEdgeMaterial(edgeUniforms), [edgeUniforms]);
   const ringMat = useMemo(makeRingMaterial, []);
@@ -114,11 +113,9 @@ function Universe({
     () => makeStreamMaterial(Math.min(2, gl.getPixelRatio())),
     [gl],
   );
-  const coreMat = useMemo(
-    () =>
-      new MeshBasicMaterial({ color: CORE_COLOUR.clone(), toneMapped: false }),
-    [],
-  );
+  const shellMat = useMemo(() => makeShellMaterial(uniforms), [uniforms]);
+  const seamGeo = useMemo(() => buildSeamGeometry(panels), [panels]);
+  const seamMat = useMemo(() => makeSeamMaterial(uniforms), [uniforms]);
 
   // Studio reflections, rendered once.
   useEffect(() => {
@@ -133,20 +130,23 @@ function Universe({
   // Release everything this scene made when it unmounts (R3F then releases the renderer itself).
   useEffect(
     () => () => {
-      for (const g of [panelGeo, edgeGeo, streamGeo, coreGeo]) g.dispose();
-      for (const m of [panelMat, edgeMat, ringMat, streamMat, coreMat])
+      for (const g of [panelGeo, edgeGeo, streamGeo, shellGeo, seamGeo])
+        g.dispose();
+      for (const m of [panelMat, edgeMat, ringMat, streamMat, shellMat, seamMat])
         m.dispose();
     },
     [
       panelGeo,
       edgeGeo,
       streamGeo,
-      coreGeo,
+      shellGeo,
+      seamGeo,
       panelMat,
       edgeMat,
       ringMat,
       streamMat,
-      coreMat,
+      shellMat,
+      seamMat,
     ],
   );
   useEffect(() => () => ringGeo.dispose(), [ringGeo]);
@@ -241,10 +241,8 @@ function Universe({
     }
     uniforms.uSweep.value = sweep;
 
-    // In the explorer a lifted sector opens a window onto the core; at full strength it reads as a white hole, so
-    // there it glows at a third, in the electric hue.
-    if (variant === "explore") coreMat.color.copy(CORE_EXPLORE);
-    else coreMat.color.copy(CORE_COLOUR).multiplyScalar(hero ? s.lock : 1);
+    // The light inside comes up as the structure locks, and stays.
+    uniforms.uCore.value = CORE_LEVEL[variant] * (hero ? s.lock : 1);
     ringMat.uniforms.uReveal.value = hero ? s.ring : 1;
     streamMat.uniforms.uTime.value = c.t;
     streamMat.uniforms.uOpacity.value =
@@ -334,7 +332,8 @@ function Universe({
           material={edgeMat}
           frustumCulled={false}
         />
-        <mesh geometry={coreGeo} material={coreMat} position={[0, -0.12, 0]} />
+        <mesh geometry={shellGeo} material={shellMat} frustumCulled={false} />
+        <mesh geometry={seamGeo} material={seamMat} frustumCulled={false} />
         <group rotation={[0.21, 0, 0]} position={[0, -0.04, 0]}>
           <lineSegments
             geometry={ringGeo}

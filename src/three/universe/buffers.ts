@@ -5,13 +5,16 @@ import { BufferAttribute, BufferGeometry } from "three";
 import {
   buildGem,
   CORE,
+  gemEdges,
   panelDelay,
   type Panel,
   type Vec3,
 } from "../../pages/landing/universe/geometry";
 
-const SHRINK = 0.93; // seams between panels: the core's light shows through them
-const THICKNESS = 0.045;
+const SHRINK = 0.93; // seams between panels: the light shell inside shows through them
+export const THICKNESS = 0.045;
+/** The light shell sits inside the panels' back faces (0.9 of the gem keeps it clear of every slab). */
+export const SHELL_SCALE = 0.9;
 
 const add = (a: Vec3, b: Vec3): Vec3 => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
 const scale = (a: Vec3, k: number): Vec3 => [a[0] * k, a[1] * k, a[2] * k];
@@ -75,6 +78,7 @@ export function buildPanelGeometry(
     aSpin: { name: "aSpin", size: 1, data: [] },
     aDelay: { name: "aDelay", size: 1, data: [] },
     aSector: { name: "aSector", size: 1, data: [] },
+    aSeed: { name: "aSeed", size: 1, data: [] },
   };
   for (const p of panels) {
     const f = flight(p);
@@ -108,10 +112,89 @@ export function buildPanelGeometry(
         A.aSpin.data.push(f.spin);
         A.aDelay.data.push(f.delay);
         A.aSector.data.push(p.sector);
+        A.aSeed.data.push(p.seed);
       }
     }
   }
   return geometryFrom(Object.values(A));
+}
+
+/**
+ * The light shell: the whole gem, unshrunk and scaled to SHELL_SCALE, inside the panels. Drawn additively behind
+ * them, it shows only through the seams (and through a sector the explorer lifts out), so every seam carries the same
+ * line of light. Flat normals per face.
+ */
+export function buildShellGeometry(
+  panels: Panel[] = buildGem(),
+): BufferGeometry {
+  const position: number[] = [];
+  const normal: number[] = [];
+  const sector: number[] = [];
+  for (const p of panels) {
+    for (const v of p.verts) {
+      position.push(...scale(v, SHELL_SCALE));
+      normal.push(...p.normal);
+      sector.push(p.sector);
+    }
+  }
+  return geometryFrom([
+    { name: "position", size: 3, data: position },
+    { name: "normal", size: 3, data: normal },
+    { name: "aSector", size: 1, data: sector },
+  ]);
+}
+
+/** Seam ribbons sit this far under the ridge, inside the channel between two slabs, and are this wide each side. The
+ *  part wider than the gap lies under the panels' faces, so only the gap shows light. */
+const SEAM_DEPTH = 0.016;
+const SEAM_HALF = 0.013;
+
+/**
+ * Light in the seams: one thin ribbon along every edge of the gem, tucked into the channel between the two panels
+ * that meet there. A seam inside one sector carries that sector (it lifts with it in the explorer); a boundary seam
+ * carries -1 and stays.
+ */
+export function buildSeamGeometry(panels: Panel[] = buildGem()): BufferGeometry {
+  const position: number[] = [];
+  const across: number[] = [];
+  const sector: number[] = [];
+  const mid: number[] = [];
+  for (const e of gemEdges(panels)) {
+    const off = scale(e.normal, -SEAM_DEPTH);
+    const along: Vec3 = [e.b[0] - e.a[0], e.b[1] - e.a[1], e.b[2] - e.a[2]];
+    const n = e.normal;
+    const side = scale(
+      norm([
+        along[1] * n[2] - along[2] * n[1],
+        along[2] * n[0] - along[0] * n[2],
+        along[0] * n[1] - along[1] * n[0],
+      ]),
+      SEAM_HALF,
+    );
+    const a = add(e.a, off);
+    const b = add(e.b, off);
+    const m: Vec3 = scale(add(e.a, e.b), 0.5);
+    const corners: [Vec3, number][] = [
+      [add(a, side), 1],
+      [add(a, scale(side, -1)), -1],
+      [add(b, side), 1],
+      [add(b, side), 1],
+      [add(a, scale(side, -1)), -1],
+      [add(b, scale(side, -1)), -1],
+    ];
+    for (const [v, k] of corners) {
+      position.push(...v);
+      across.push(k);
+      sector.push(e.sector);
+      mid.push(...m);
+    }
+  }
+  return geometryFrom([
+    { name: "position", size: 3, data: position },
+    { name: "aAcross", size: 1, data: across },
+    { name: "aSector", size: 1, data: sector },
+    { name: "aMid", size: 3, data: mid },
+  ]);
 }
 
 /** The panel of a raycast hit on the panel mesh: 8 triangles per panel, in panel order. */
