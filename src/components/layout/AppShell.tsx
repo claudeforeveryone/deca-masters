@@ -24,6 +24,7 @@ import { Kbd } from "../ui/Tag";
 import { ToastProvider } from "../ui/Toast";
 import { Footer } from "./Footer";
 import { DESKTOP_NAV, PHONE_NAV } from "./nav";
+import { RouteMeta } from "./RouteMeta";
 import { useShellCommands } from "./shellCommands";
 import { Wordmark } from "./Wordmark";
 
@@ -65,6 +66,7 @@ function Shell({ children }: { children: ReactNode }) {
 
   return (
     <>
+      <RouteMeta />
       <div className="flex min-h-dvh flex-col">
         <a
           href="#main"

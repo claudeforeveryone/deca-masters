@@ -2,7 +2,14 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 // Plain ESM shared with the build (scripts/prerender.mjs).
-import { chunkFiles, injectPrerender } from "../scripts/prerender-lib.mjs";
+import {
+  buildPage,
+  chunkFiles,
+  injectPrerender,
+  outFile,
+  pageModuleFor,
+  shellPage,
+} from "../scripts/prerender-lib.mjs";
 import { PREF_PREFIX } from "../src/lib/prefs";
 import { SESSION_STORAGE_KEY } from "../src/lib/supabase";
 
@@ -79,6 +86,81 @@ describe("injectPrerender", () => {
   });
 });
 
+const SHELL = [
+  '<!doctype html><html lang="en-CA"><head>',
+  "<title>Default</title>",
+  // As Vite writes it: the source's line breaks inside the tag are kept.
+  `<meta
+      name="description"
+      content="Default words"
+    />`,
+  '</head><body><div id="root"></div></body></html>',
+].join("");
+
+describe("buildPage", () => {
+  const page = buildPage(SHELL, {
+    path: "/events/PMK",
+    markup: "<h1>PMK</h1>",
+    head: '<title>PMK | DECA Masters</title><meta name="description" content="About PMK">',
+    data: { "index.json": { note: "</script><b>" } },
+    preloads: ["assets/EventPage-e.js"],
+  });
+
+  it("swaps the shell's default title and description for the page's own", () => {
+    expect(page).not.toContain("Default words");
+    expect(page).not.toContain("<title>Default</title>");
+    expect(page.match(/<title>/g)).toHaveLength(1);
+    expect(page).toContain("<title>PMK | DECA Masters</title>");
+  });
+
+  it("marks which path the HTML is for, so another path never shows it", () => {
+    expect(page).toContain(
+      '<html lang="en-CA" data-prerender-path="/events/PMK">',
+    );
+    expect(page).toContain(
+      '<div id="root" data-prerendered><h1>PMK</h1></div>',
+    );
+  });
+
+  it("embeds the content the page used without letting it close the script", () => {
+    const json =
+      /<script type="application\/json" id="prerender-content">([\s\S]*?)<\/script>/.exec(
+        page,
+      );
+    expect(json).not.toBeNull();
+    expect(JSON.parse(json![1])).toEqual({
+      "index.json": { note: "</script><b>" },
+    });
+  });
+
+  it("preloads the page's chunks", () => {
+    expect(page).toContain('href="/assets/EventPage-e.js"');
+  });
+});
+
+describe("shellPage", () => {
+  it("keeps the plain shell out of search results", () => {
+    expect(shellPage(SHELL)).toContain(
+      '<meta name="robots" content="noindex">',
+    );
+  });
+});
+
+describe("outFile and pageModuleFor", () => {
+  it("writes each path where clean URLs serve it", () => {
+    expect(outFile("/")).toBe("index.html");
+    expect(outFile("/events")).toBe("events.html");
+    expect(outFile("/events/PMK")).toBe("events/PMK.html");
+  });
+
+  it("knows the page module behind every prerendered path, and refuses others", () => {
+    expect(pageModuleFor("/")).toBe("src/pages/home/HomePage.tsx");
+    expect(pageModuleFor("/events/PMK")).toBe("src/pages/events/EventPage.tsx");
+    expect(pageModuleFor("/privacy")).toBe("src/pages/legal/PrivacyPage.tsx");
+    expect(() => pageModuleFor("/owner")).toThrow(/owner/);
+  });
+});
+
 describe("index.html head script", () => {
   const head = readFileSync(new URL("../index.html", import.meta.url), "utf8");
 
@@ -94,10 +176,16 @@ describe("index.html head script", () => {
 describe("vercel.json", () => {
   const config = JSON.parse(
     readFileSync(new URL("../vercel.json", import.meta.url), "utf8"),
-  ) as { rewrites: { source: string; destination: string }[] };
-  const shell = config.rewrites.find((r) => r.destination === "/app.html");
-  const matches = (path: string) =>
-    new RegExp(`^${shell!.source}$`).test(path);
+  ) as {
+    cleanUrls?: boolean;
+    rewrites: { source: string; destination: string }[];
+  };
+  const shell = config.rewrites.find((r) => r.destination === "/app");
+  const matches = (path: string) => new RegExp(`^${shell!.source}$`).test(path);
+
+  it("serves prerendered pages at clean URLs (events.html at /events)", () => {
+    expect(config.cleanUrls).toBe(true);
+  });
 
   it("sends deep links to the plain shell", () => {
     expect(matches("/practice")).toBe(true);

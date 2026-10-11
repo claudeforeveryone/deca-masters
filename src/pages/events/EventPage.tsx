@@ -9,6 +9,7 @@ import { PageHeader } from "../../components/ui/PageHeader";
 import {
   CLUSTERS,
   loadContentIndex,
+  peekContentIndex,
   type ContentIndex,
   type EventItem,
 } from "../../lib/content";
@@ -34,22 +35,28 @@ function examTitle(index: ContentIndex, slug: string | null): string | null {
   return index.exams.find((x) => x.slug === slug)?.title ?? null;
 }
 
+function readyState(index: ContentIndex, code: string): State {
+  const event = index.events.find((e) => e.code === code.toUpperCase()) ?? null;
+  return {
+    status: "ready",
+    event,
+    examTitle: examTitle(index, event?.exam ?? null),
+  };
+}
+
 export function EventPage() {
   const { code = "" } = useParams();
-  const [state, setState] = useState<State>({ status: "loading" });
+  // Starts from data already here (prerendered page, or a revisit), so there is no loading flash to hydrate past.
+  const [state, setState] = useState<State>(() => {
+    const index = peekContentIndex();
+    return index ? readyState(index, code) : { status: "loading" };
+  });
 
   useEffect(() => {
     let active = true;
     loadContentIndex()
       .then((index) => {
-        const event =
-          index.events.find((e) => e.code === code.toUpperCase()) ?? null;
-        if (active)
-          setState({
-            status: "ready",
-            event,
-            examTitle: examTitle(index, event?.exam ?? null),
-          });
+        if (active) setState(readyState(index, code));
       })
       .catch(() => {
         if (active) setState({ status: "error" });

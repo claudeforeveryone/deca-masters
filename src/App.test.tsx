@@ -82,8 +82,6 @@ describe("route map, signed out", () => {
     ["/roleplay/PMK", "Roleplay trainer"],
     ["/vocab", "Vocab"],
     ["/vocab/marketing", "Vocab deck"],
-    ["/terms", "Terms of Use"],
-    ["/privacy", "Privacy Policy"],
   ])(
     "renders the public placeholder %s honestly, with no buttons",
     async (path, title) => {
@@ -94,6 +92,17 @@ describe("route map, signed out", () => {
       expect(within(main).queryByRole("button")).toBeNull();
     },
   );
+
+  it.each([
+    ["/terms", "Terms of Use"],
+    ["/privacy", "Privacy Policy"],
+  ])("renders the full legal page %s", async (path, title) => {
+    renderAt(path);
+    await screen.findByRole("heading", { level: 1, name: title });
+    const main = screen.getByRole("main");
+    expect(within(main).getByText("October 11, 2026")).toBeTruthy();
+    expect(within(main).queryByText("Not live yet")).toBeNull();
+  });
 
   it.each(["/login", "/signup", "/reset"])(
     "renders the auth page %s",

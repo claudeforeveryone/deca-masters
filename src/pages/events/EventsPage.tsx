@@ -4,7 +4,12 @@ import { RouteFallback } from "../../components/layout/RouteFallback";
 import { EmptyState } from "../../components/ui/EmptyState";
 import { Notice } from "../../components/ui/Notice";
 import { PageHeader } from "../../components/ui/PageHeader";
-import { CLUSTERS, loadContentIndex, type EventItem } from "../../lib/content";
+import {
+  CLUSTERS,
+  loadContentIndex,
+  peekContentIndex,
+  type EventItem,
+} from "../../lib/content";
 
 type State =
   | { status: "loading" }
@@ -12,7 +17,13 @@ type State =
   | { status: "ready"; events: EventItem[] };
 
 export function EventsPage() {
-  const [state, setState] = useState<State>({ status: "loading" });
+  // Starts from data already here (prerendered page, or a revisit), so there is no loading flash to hydrate past.
+  const [state, setState] = useState<State>(() => {
+    const index = peekContentIndex();
+    return index
+      ? { status: "ready", events: index.events }
+      : { status: "loading" };
+  });
 
   useEffect(() => {
     let active = true;
