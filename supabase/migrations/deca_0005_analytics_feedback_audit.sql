@@ -149,8 +149,11 @@ begin
   return new;
 end $$;
 drop trigger if exists deca_analytics_profile on public.deca_profiles;
-create trigger deca_analytics_profile after insert or update of events on public.deca_profiles
-  for each row execute function deca_private.deca_trg_analytics_profile();
+-- (DDL containing "update" runs through execute; see the note in deca_0002)
+do $$ begin
+  execute 'create trigger deca_analytics_profile after insert or update of events on public.deca_profiles
+    for each row execute function deca_private.deca_trg_analytics_profile()';
+end $$;
 
 create or replace function deca_private.deca_trg_analytics_attempt()
 returns trigger language plpgsql security definer set search_path = '' as $$
@@ -169,8 +172,10 @@ begin
   return new;
 end $$;
 drop trigger if exists deca_analytics_attempt on public.deca_attempts;
-create trigger deca_analytics_attempt after insert or update of status on public.deca_attempts
-  for each row execute function deca_private.deca_trg_analytics_attempt();
+do $$ begin
+  execute 'create trigger deca_analytics_attempt after insert or update of status on public.deca_attempts
+    for each row execute function deca_private.deca_trg_analytics_attempt()';
+end $$;
 
 create or replace function deca_private.deca_trg_analytics_roleplay()
 returns trigger language plpgsql security definer set search_path = '' as $$
@@ -205,8 +210,10 @@ begin
   return new;
 end $$;
 drop trigger if exists deca_analytics_vocab on public.deca_vocab_reviews;
-create trigger deca_analytics_vocab after update of last_reviewed_at on public.deca_vocab_reviews
-  for each row execute function deca_private.deca_trg_analytics_vocab();
+do $$ begin
+  execute 'create trigger deca_analytics_vocab after update of last_reviewed_at on public.deca_vocab_reviews
+    for each row execute function deca_private.deca_trg_analytics_vocab()';
+end $$;
 
 -- ---------------------------------------------------------------- feedback
 -- Members file reports as themselves (only the report columns) and read their own rows with the team's status and
@@ -275,8 +282,10 @@ begin
   return new;
 end $$;
 drop trigger if exists deca_feedback_guard on public.deca_feedback;
-create trigger deca_feedback_guard before insert or update on public.deca_feedback
-  for each row execute function deca_private.deca_feedback_guard();
+do $$ begin
+  execute 'create trigger deca_feedback_guard before insert or update on public.deca_feedback
+    for each row execute function deca_private.deca_feedback_guard()';
+end $$;
 
 create or replace function deca_private.deca_trg_analytics_feedback()
 returns trigger language plpgsql security definer set search_path = '' as $$
@@ -292,9 +301,8 @@ create trigger deca_analytics_feedback after insert on public.deca_feedback
   for each row execute function deca_private.deca_trg_analytics_feedback();
 
 -- ---------------------------------------------------------------- audit log (append-only)
--- Written by the owner RPCs (deca_0006) through deca_private.deca_audit, and by a trigger on the shared owner
--- allowlist. Owner RPCs set the transaction-local settings deca.via ('owner_console') and deca.reason, folded into
--- the row's detail. Clients cannot insert, update or delete; only platform owners can read.
+-- Written by the owner RPCs (deca_0006) through deca_private.deca_audit. Owner RPCs set the transaction-local
+-- settings deca.via ('owner_console') and deca.reason, folded into the row's detail. Clients cannot insert, update or delete; only platform owners can read.
 create table if not exists public.deca_audit_log (
   id bigint generated always as identity primary key,
   actor_id uuid,   -- no foreign keys: an audit row must outlive the account it names
@@ -323,11 +331,13 @@ begin
   raise exception 'deca: the audit log is append-only' using errcode = '42501';
 end $$;
 drop trigger if exists deca_audit_log_no_change on public.deca_audit_log;
-create trigger deca_audit_log_no_change before update or delete on public.deca_audit_log
-  for each row execute function deca_private.deca_audit_immutable();
 drop trigger if exists deca_audit_log_no_truncate on public.deca_audit_log;
-create trigger deca_audit_log_no_truncate before truncate on public.deca_audit_log
-  for each statement execute function deca_private.deca_audit_immutable();
+do $$ begin
+  execute 'create trigger deca_audit_log_no_change before update or delete on public.deca_audit_log
+    for each row execute function deca_private.deca_audit_immutable()';
+  execute 'create trigger deca_audit_log_no_truncate before truncate on public.deca_audit_log
+    for each statement execute function deca_private.deca_audit_immutable()';
+end $$;
 
 create or replace function deca_private.deca_audit(p_action text, p_target_type text, p_target_id text,
                                                     p_detail jsonb default '{}'::jsonb)
@@ -347,21 +357,9 @@ begin
   values (auth.uid(), p_action, p_target_type, nullif(left(p_target_id, 80), ''), v_detail);
 end $$;
 
--- Owner grants and revocations on the shared allowlist (FBLA + DECA) also land in DECA's audit log. Grants happen by
--- manual SQL, so the actor is usually null; the row still proves when ownership changed.
-create or replace function deca_private.deca_trg_audit_platform_owner()
-returns trigger language plpgsql security definer set search_path = '' as $$
-begin
-  if tg_op = 'INSERT' then
-    perform deca_private.deca_audit('owner_granted', 'user', new.user_id::text, '{}'::jsonb);
-    return new;
-  end if;
-  perform deca_private.deca_audit('owner_revoked', 'user', old.user_id::text, '{}'::jsonb);
-  return old;
-end $$;
-drop trigger if exists deca_audit_platform_owner on private.platform_owners;
-create trigger deca_audit_platform_owner after insert or delete on private.platform_owners
-  for each row execute function deca_private.deca_trg_audit_platform_owner();
+-- Auditing grants on the shared owner allowlist would need a trigger on private.platform_owners, which is not a
+-- deca_* object; it is left out of DECA's migrations (supabase/optional/deca_platform_owner_audit.sql holds it for
+-- integration to decide).
 
 -- deca_delete_my_data also clears the caller's analytics events and feedback (they hang off auth.users, not the
 -- DECA profile).

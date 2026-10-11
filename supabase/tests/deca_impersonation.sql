@@ -140,9 +140,9 @@ select pg_temp.omega_check('grants: the deca_private schema is closed to anon an
 select pg_temp.omega_check('rls: every deca_* table has row level security',
   not exists (select 1 from pg_class c join pg_namespace n on n.oid = c.relnamespace
                where n.nspname = 'public' and c.relkind = 'r' and c.relname like 'deca\_%' and not c.relrowsecurity));
-select pg_temp.omega_check('scope: the only DECA trigger on a non-DECA table is the owner-allowlist audit',
-  (select array_agg(c.relname::text order by c.relname) from pg_trigger t join pg_class c on c.oid = t.tgrelid
-    where t.tgname like 'deca\_%' and not t.tgisinternal and c.relname not like 'deca\_%') = array['platform_owners']);
+select pg_temp.omega_check('scope: no DECA trigger sits on a non-DECA table',
+  not exists (select 1 from pg_trigger t join pg_class c on c.oid = t.tgrelid
+               where t.tgname like 'deca\_%' and not t.tgisinternal and c.relname not like 'deca\_%'));
 
 -- ------------------------------------------------------------------------------------------------ anon
 select pg_temp.omega_try('anon: read the event catalogue', 'anon', null, $q$select count(*) from public.deca_events$q$, 'ok');
@@ -575,8 +575,8 @@ select pg_temp.omega_try('audit (qa): insert', 'authenticated', pg_temp.uid('qa'
 
 -- ------------------------------------------------------------------------------------------------ owner: allowed
 insert into private.platform_owners (user_id, note) values (pg_temp.uid('owner'), 'dry-run fake owner (rolled back)');
-select pg_temp.omega_check('audit: granting ownership is logged',
-  exists (select 1 from public.deca_audit_log a where a.action = 'owner_granted' and a.target_id = pg_temp.uid('owner')::text));
+-- one server-written row (rolled back), so the row-level append-only trigger has something to refuse
+select deca_private.deca_audit('dry_run_probe', 'user', null, '{}'::jsonb);
 select pg_temp.omega_check('audit: members see no audit rows', pg_temp.omega_as(pg_temp.uid('qa'),
   $q$(select to_jsonb(count(*)) from public.deca_audit_log)$q$) = '0'::jsonb);
 select pg_temp.omega_try('audit: append-only even for the table owner (update)', 'postgres', null,

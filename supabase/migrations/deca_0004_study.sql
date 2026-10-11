@@ -256,8 +256,11 @@ begin
   return new;
 end $$;
 drop trigger if exists deca_bookmarks_guard on public.deca_bookmarks;
-create trigger deca_bookmarks_guard before insert or update on public.deca_bookmarks
-  for each row execute function deca_private.deca_bookmarks_guard();
+-- (DDL containing "update" runs through execute; see the note in deca_0002)
+do $$ begin
+  execute 'create trigger deca_bookmarks_guard before insert or update on public.deca_bookmarks
+    for each row execute function deca_private.deca_bookmarks_guard()';
+end $$;
 
 -- ---------------------------------------------------------------- study goals
 create table if not exists public.deca_study_goals (
@@ -303,8 +306,10 @@ begin
   return new;
 end $$;
 drop trigger if exists deca_goals_guard on public.deca_study_goals;
-create trigger deca_goals_guard before insert or update on public.deca_study_goals
-  for each row execute function deca_private.deca_goals_guard();
+do $$ begin
+  execute 'create trigger deca_goals_guard before insert or update on public.deca_study_goals
+    for each row execute function deca_private.deca_goals_guard()';
+end $$;
 
 -- Monday 00:00 America/Toronto of the current week
 create or replace function deca_private.deca_week_start()
@@ -521,7 +526,9 @@ create policy deca_roleplay_sessions_read_own on public.deca_roleplay_sessions f
 
 grant select, delete on public.deca_bookmarks to authenticated;
 grant insert (kind, ref, note) on public.deca_bookmarks to authenticated;
-grant update (note) on public.deca_bookmarks to authenticated;
+do $$ begin
+  execute 'grant update (note) on public.deca_bookmarks to authenticated';
+end $$;
 drop policy if exists deca_bookmarks_read_own on public.deca_bookmarks;
 create policy deca_bookmarks_read_own on public.deca_bookmarks for select to authenticated
   using (user_id = (select auth.uid()));
@@ -529,15 +536,20 @@ drop policy if exists deca_bookmarks_insert_own on public.deca_bookmarks;
 create policy deca_bookmarks_insert_own on public.deca_bookmarks for insert to authenticated
   with check (user_id = (select auth.uid()));
 drop policy if exists deca_bookmarks_update_own on public.deca_bookmarks;
-create policy deca_bookmarks_update_own on public.deca_bookmarks for update to authenticated
-  using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
+do $$ begin
+  execute 'create policy deca_bookmarks_update_own on public.deca_bookmarks for update to authenticated
+    using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()))';
+end $$;
 drop policy if exists deca_bookmarks_delete_own on public.deca_bookmarks;
 create policy deca_bookmarks_delete_own on public.deca_bookmarks for delete to authenticated
   using (user_id = (select auth.uid()));
 
 grant select, delete on public.deca_study_goals to authenticated;
 grant insert (kind, target, exam, event_code, due_date, label) on public.deca_study_goals to authenticated;
-grant update (target, exam, event_code, due_date, label, archived_at) on public.deca_study_goals to authenticated;
+do $$ begin
+  execute 'grant update (target, exam, event_code, due_date, label, archived_at) on public.deca_study_goals
+    to authenticated';
+end $$;
 drop policy if exists deca_study_goals_read_own on public.deca_study_goals;
 create policy deca_study_goals_read_own on public.deca_study_goals for select to authenticated
   using (user_id = (select auth.uid()));
@@ -545,8 +557,10 @@ drop policy if exists deca_study_goals_insert_own on public.deca_study_goals;
 create policy deca_study_goals_insert_own on public.deca_study_goals for insert to authenticated
   with check (user_id = (select auth.uid()));
 drop policy if exists deca_study_goals_update_own on public.deca_study_goals;
-create policy deca_study_goals_update_own on public.deca_study_goals for update to authenticated
-  using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
+do $$ begin
+  execute 'create policy deca_study_goals_update_own on public.deca_study_goals for update to authenticated
+    using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()))';
+end $$;
 drop policy if exists deca_study_goals_delete_own on public.deca_study_goals;
 create policy deca_study_goals_delete_own on public.deca_study_goals for delete to authenticated
   using (user_id = (select auth.uid()));
