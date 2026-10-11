@@ -8,7 +8,6 @@ import {
 } from "../../api/vocab";
 import { plural } from "../../components/prep/format";
 import { MemberNotice } from "../../components/prep/MemberNotice";
-import { useDocumentTitle } from "../../components/prep/useDocumentTitle";
 import { buttonClass } from "../../components/ui/Button";
 import { EmptyState, ErrorState } from "../../components/ui/EmptyState";
 import { PageHeader } from "../../components/ui/PageHeader";
@@ -37,7 +36,6 @@ type Load =
   | { status: "ready"; rows: Row[] };
 
 export function VocabPage() {
-  useDocumentTitle("Vocab");
   const member = useMember();
   const [load, setLoad] = useState<Load>({ status: "loading" });
   const [attempt, setAttempt] = useState(0);

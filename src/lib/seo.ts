@@ -88,6 +88,13 @@ const PAGES: Record<string, Page> = {
       "Create a free DECA Masters account to save practice runs, vocab progress and role-play sessions.",
     robots: "index,follow",
   },
+  // Which events it shows lives in the query string, so there is no one page to index.
+  "/events/compare": {
+    title: titled("Compare events"),
+    description:
+      "Compare up to three DECA events side by side: format, prep and judge time, team size and cluster exam.",
+    robots: "noindex,follow",
+  },
   "/login": {
     title: titled("Sign in"),
     description: "Sign in to DECA Masters.",
@@ -108,6 +115,14 @@ const PAGES: Record<string, Page> = {
   "/me/settings": members("Settings"),
   "/owner": members("Owner console"),
 };
+
+const NAMED_BY_CONTENT = /^\/(events|roleplay|vocab)\/[^/]+\/?$/;
+
+/** True when a path's head names an event or a deck, so it has to wait for the content index (static pages never do). */
+export function metaNeedsIndex(pathname: string): boolean {
+  const path = pathname.length > 1 ? pathname.replace(/\/+$/, "") || "/" : "/";
+  return NAMED_BY_CONTENT.test(path) && !(path in PAGES);
+}
 
 /** Paths a crawler may fetch and the sitemap lists: the static public pages plus one page per published event. */
 export function publicPaths(index: ContentIndex | null | undefined): string[] {

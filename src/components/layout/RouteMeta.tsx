@@ -8,16 +8,14 @@ import {
   peekContentIndex,
   type ContentIndex,
 } from "../../lib/content";
-import { routeMeta } from "../../lib/seo";
-
-const NEEDS_INDEX = /^\/(events|roleplay|vocab)\/[^/]+\/?$/;
+import { metaNeedsIndex, routeMeta } from "../../lib/seo";
 
 export function RouteMeta() {
   const { pathname } = useLocation();
   // Starts empty and reads the cache in an effect: a peek during the prerender would make every page embed the index.
   const [index, setIndex] = useState<ContentIndex | null>(null);
   const [failed, setFailed] = useState(false);
-  const needsIndex = NEEDS_INDEX.test(pathname);
+  const needsIndex = metaNeedsIndex(pathname);
 
   useEffect(() => {
     if (!needsIndex || index) return;

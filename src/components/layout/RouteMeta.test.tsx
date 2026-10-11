@@ -52,6 +52,15 @@ describe("RouteMeta", () => {
     );
   });
 
+  it("names the compare page at once instead of waiting to call it a missing event", () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(() => new Promise(() => {})),
+    );
+    at("/events/compare");
+    expect(document.title).toBe("Compare events | DECA Masters");
+  });
+
   it("never flashes 'not found' or noindex while the index loads", () => {
     vi.stubGlobal(
       "fetch",

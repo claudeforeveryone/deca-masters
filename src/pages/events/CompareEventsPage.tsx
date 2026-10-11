@@ -2,7 +2,6 @@ import { X } from "lucide-react";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { formatDay, plural } from "../../components/prep/format";
-import { useDocumentTitle } from "../../components/prep/useDocumentTitle";
 import { RouteFallback } from "../../components/layout/RouteFallback";
 import { buttonClass } from "../../components/ui/Button";
 import { EmptyState, ErrorState } from "../../components/ui/EmptyState";
@@ -136,7 +135,6 @@ export function CompareEventsPage() {
   const [load, setLoad] = useState<Load>({ status: "loading" });
   const [attempt, setAttempt] = useState(0);
   const [diffOnly, setDiffOnly] = useState(false);
-  useDocumentTitle("Compare events");
 
   useEffect(() => {
     let live = true;

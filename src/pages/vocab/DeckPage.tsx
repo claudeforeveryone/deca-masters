@@ -6,7 +6,6 @@ import { getDeck, listTerms, type DeckInfo } from "../../api/vocab";
 import { ExternalAnchor } from "../../components/prep/ExternalAnchor";
 import { plural } from "../../components/prep/format";
 import { MemberNotice } from "../../components/prep/MemberNotice";
-import { useDocumentTitle } from "../../components/prep/useDocumentTitle";
 import { RouteFallback } from "../../components/layout/RouteFallback";
 import { buttonClass } from "../../components/ui/Button";
 import { EmptyState, ErrorState } from "../../components/ui/EmptyState";
@@ -56,10 +55,6 @@ export function DeckPage() {
   const member = useMember();
   const canSave = member.state.status === "ready";
   const progress = useDeckProgress(slug, canSave);
-
-  useDocumentTitle(
-    load.status === "ready" ? `${load.deck.title} vocab` : "Vocab",
-  );
 
   useEffect(() => {
     if (!known) return setLoad({ status: "missing" });

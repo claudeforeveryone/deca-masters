@@ -7,7 +7,6 @@ import {
   type RoleplayEvent,
   type RoleplaySession,
 } from "../../api/roleplay";
-import { useDocumentTitle } from "../../components/prep/useDocumentTitle";
 import { RouteFallback } from "../../components/layout/RouteFallback";
 import { buttonClass } from "../../components/ui/Button";
 import { EmptyState, ErrorState } from "../../components/ui/EmptyState";
@@ -52,10 +51,6 @@ export function RoleplayDetailPage() {
   const activeRef = useRef(active);
   activeRef.current = active;
   const [historyKey, setHistoryKey] = useState(0);
-
-  useDocumentTitle(
-    load.status === "ready" ? `${code} role-play trainer` : "Role-play trainer",
-  );
 
   useEffect(() => {
     let live = true;

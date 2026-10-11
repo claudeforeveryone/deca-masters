@@ -8,7 +8,6 @@ import {
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { MemberNotice } from "../../components/prep/MemberNotice";
-import { useDocumentTitle } from "../../components/prep/useDocumentTitle";
 import { Button, buttonClass, IconButton } from "../../components/ui/Button";
 import { Drawer } from "../../components/ui/Dialog";
 import { EmptyState, ErrorState } from "../../components/ui/EmptyState";
@@ -89,7 +88,6 @@ export function EventsPage() {
   const { toast } = useToast();
   const [drawer, setDrawer] = useState(false);
   const [query, setQuery] = useState(filters.q);
-  useDocumentTitle("Events");
 
   const events = load.status === "ready" ? load.events : [];
   const known = useMemo(() => new Set(events.map((e) => e.code)), [events]);

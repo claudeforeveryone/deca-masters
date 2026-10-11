@@ -6,7 +6,6 @@ import { track } from "../../api/track";
 import { ExternalAnchor } from "../../components/prep/ExternalAnchor";
 import { formatDay, plural } from "../../components/prep/format";
 import { MemberNotice } from "../../components/prep/MemberNotice";
-import { useDocumentTitle } from "../../components/prep/useDocumentTitle";
 import { RouteFallback } from "../../components/layout/RouteFallback";
 import { Button, buttonClass } from "../../components/ui/Button";
 import { EmptyState, ErrorState } from "../../components/ui/EmptyState";
@@ -105,8 +104,6 @@ export function EventPage() {
       live = false;
     };
   }, [event]);
-
-  useDocumentTitle(event ? `${event.code} ${event.name}` : null);
 
   if (load.status === "loading")
     return <RouteFallback label="Loading the event" />;

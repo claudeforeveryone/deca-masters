@@ -3,7 +3,6 @@ import { Link, useSearchParams } from "react-router-dom";
 import { listRoleplayEvents, type RoleplayEvent } from "../../api/roleplay";
 import { plural } from "../../components/prep/format";
 import { MemberNotice } from "../../components/prep/MemberNotice";
-import { useDocumentTitle } from "../../components/prep/useDocumentTitle";
 import { buttonClass } from "../../components/ui/Button";
 import { EmptyState, ErrorState } from "../../components/ui/EmptyState";
 import { SearchField } from "../../components/ui/Inputs";
@@ -45,7 +44,6 @@ function matchesQuery(e: RoleplayEvent, q: string): boolean {
 }
 
 export function RoleplayPage() {
-  useDocumentTitle("Role-play trainer");
   const [params, setParams] = useSearchParams();
   const cluster = (params.get("cluster") ?? "all") as ClusterSlug | "all";
   const [query, setQuery] = useState(params.get("q") ?? "");

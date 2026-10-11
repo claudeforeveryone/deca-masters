@@ -3,6 +3,7 @@ import type { ContentIndex, EventItem } from "./content";
 import {
   SITE_URL,
   headTags,
+  metaNeedsIndex,
   publicPaths,
   robotsTxt,
   routeMeta,
@@ -68,6 +69,25 @@ describe("routeMeta", () => {
 
   it("drops a trailing slash so one page has one address", () => {
     expect(routeMeta("/terms/", index).canonical).toBe(`${SITE_URL}/terms`);
+  });
+
+  it("names the compare page as itself, not as a missing event, and keeps it out of the index", () => {
+    expect(routeMeta("/events/compare", index)).toMatchObject({
+      title: "Compare events | DECA Masters",
+      robots: "noindex,follow",
+    });
+    expect(publicPaths(index)).not.toContain("/events/compare");
+  });
+});
+
+describe("metaNeedsIndex", () => {
+  it("waits for the content index only on pages named after an event or a deck", () => {
+    expect(metaNeedsIndex("/events/PMK")).toBe(true);
+    expect(metaNeedsIndex("/roleplay/PMK")).toBe(true);
+    expect(metaNeedsIndex("/vocab/marketing")).toBe(true);
+    expect(metaNeedsIndex("/events/compare")).toBe(false);
+    expect(metaNeedsIndex("/events")).toBe(false);
+    expect(metaNeedsIndex("/practice/review/abc")).toBe(false);
   });
 });
 
