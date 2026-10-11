@@ -6,6 +6,9 @@ vi.mock(
 import { db } from "../test/supabaseMock";
 import { contractProblems } from "../test/sqlContract";
 import {
+  countTerms,
+  getDeck,
+  listDeckMeta,
   listDecks,
   listTerms,
   myReviews,
@@ -195,5 +198,83 @@ describe("previewReview", () => {
       promoted: false,
     });
     expect(previewReview(null, true, NOW).box).toBe(1);
+  });
+});
+
+describe("countTerms", () => {
+  it("counts each deck's active terms with a head request", async () => {
+    db.reply(null, { count: 80 });
+    db.reply(null, { count: 4 });
+    await expect(countTerms(["marketing", "finance"])).resolves.toEqual({
+      marketing: 80,
+      finance: 4,
+    });
+    expect(db.calls).toHaveLength(2);
+    expect(db.calls[0].table).toBe("deca_vocab_terms");
+    expect(db.calls[0].ops).toContainEqual([
+      "select",
+      ["id", { count: "exact", head: true }],
+    ]);
+    expect(db.calls[0].ops).toContainEqual(["eq", ["deck", "marketing"]]);
+  });
+
+  it("reads a missing count as zero", async () => {
+    db.reply(null);
+    await expect(countTerms(["finance"])).resolves.toEqual({ finance: 0 });
+  });
+});
+
+describe("listDeckMeta and getDeck", () => {
+  it("lists decks without their source lists", async () => {
+    db.reply([
+      {
+        slug: "marketing",
+        title: "Marketing",
+        status: "sourced",
+        placeholder_note: null,
+        updated_at: "2026-10-11T00:00:00Z",
+      },
+    ]);
+    const [d] = await listDeckMeta();
+    expect(db.last.table).toBe("deca_vocab_decks");
+    expect(db.last.ops).toContainEqual([
+      "select",
+      ["slug,title,status,placeholder_note,updated_at"],
+    ]);
+    expect(d).toEqual({
+      slug: "marketing",
+      title: "Marketing",
+      status: "sourced",
+      placeholderNote: null,
+      updatedAt: "2026-10-11T00:00:00Z",
+    });
+  });
+
+  it("reads one deck with its works (page entries left out), or null", async () => {
+    db.reply({
+      slug: "marketing",
+      title: "Marketing",
+      status: "sourced",
+      placeholder_note: null,
+      updated_at: "2026-10-11T00:00:00Z",
+      sources: [
+        { title: "Book", url: "https://example.org/book", licence: "CC BY 4.0", attribution: "Book by A" },
+        {
+          title: "Book, glossary",
+          url: "https://example.org/book/glossary",
+          licence: "CC BY 4.0",
+          attribution: "Glossary of Book by A",
+          partOf: "https://example.org/book",
+        },
+      ],
+    });
+    const d = await getDeck("marketing");
+    expect(db.last.ops).toContainEqual(["eq", ["slug", "marketing"]]);
+    expect(db.last.ops).toContainEqual(["maybeSingle", []]);
+    expect(d?.sources).toEqual([
+      { title: "Book", url: "https://example.org/book", licence: "CC BY 4.0", attribution: "Book by A" },
+    ]);
+    db.reply(null);
+    await expect(getDeck("finance")).resolves.toBeNull();
   });
 });

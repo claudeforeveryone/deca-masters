@@ -26,12 +26,27 @@ export type Rating = {
   label?: string | null;
 };
 
+/** One official DECA sample (a PDF on DECA's site), as the content files list it. Optional fields may be absent. */
+export type OfficialSample = {
+  title: string;
+  url: string;
+  season?: string | null;
+  /** "Sample Event", "District Event 1" ... */
+  round?: string | null;
+  instructionalArea?: string | null;
+  /** "current-format-sample" or "past-district-event". */
+  kind?: string | null;
+  /** The deca.org page that links the PDF. */
+  pageUrl?: string | null;
+  formatNote?: string | null;
+};
+
 export type RoleplayEvent = {
   eventCode: string;
   eventName: string;
   cluster: ClusterSlug;
   status: ContentStatus;
-  officialSamples: { title: string; url: string; season?: string | null }[];
+  officialSamples: OfficialSample[];
   format: {
     prepMinutes: number | null;
     presentationMinutes: number | null;
@@ -72,21 +87,11 @@ export type RoleplaySession = {
 const SESSION_COLUMNS =
   "id,client_id,event_code,scenario_ref,scenario_title,prep_seconds,present_seconds,ratings,notes,completed_at,created_at,updated_at";
 
-/** Role-play events with their official sample links, for one cluster or all. */
-export async function listRoleplayEvents(
-  cluster?: ClusterSlug,
-): Promise<RoleplayEvent[]> {
-  let q = supabase
-    .from("deca_roleplay_events")
-    .select(
-      "event_code,cluster,event_name,official_samples,prep_minutes,presentation_minutes,judge_role,placeholder,note,status",
-    );
-  if (cluster) q = q.eq("cluster", cluster);
-  const rows = must<RoleplayEventRow[] | null>(
-    await q.order("event_code"),
-    "Could not load the role plays.",
-  );
-  return (rows ?? []).map((r) => ({
+const ROLEPLAY_EVENT_COLUMNS =
+  "event_code,cluster,event_name,official_samples,prep_minutes,presentation_minutes,judge_role,placeholder,note,status";
+
+function toRoleplayEvent(r: RoleplayEventRow): RoleplayEvent {
+  return {
     eventCode: r.event_code,
     eventName: r.event_name,
     cluster: r.cluster,
@@ -99,7 +104,33 @@ export async function listRoleplayEvents(
     },
     placeholder: r.placeholder,
     note: r.note,
-  }));
+  };
+}
+
+/** One event's role-play links by code (case does not matter), or null when the event has no role play. */
+export async function getRoleplayEvent(code: string): Promise<RoleplayEvent | null> {
+  const row = must<RoleplayEventRow | null>(
+    await supabase
+      .from("deca_roleplay_events")
+      .select(ROLEPLAY_EVENT_COLUMNS)
+      .eq("event_code", code.toUpperCase())
+      .maybeSingle(),
+    "Could not load the role play.",
+  );
+  return row ? toRoleplayEvent(row) : null;
+}
+
+/** Role-play events with their official sample links, for one cluster or all. */
+export async function listRoleplayEvents(
+  cluster?: ClusterSlug,
+): Promise<RoleplayEvent[]> {
+  let q = supabase.from("deca_roleplay_events").select(ROLEPLAY_EVENT_COLUMNS);
+  if (cluster) q = q.eq("cluster", cluster);
+  const rows = must<RoleplayEventRow[] | null>(
+    await q.order("event_code"),
+    "Could not load the role plays.",
+  );
+  return (rows ?? []).map(toRoleplayEvent);
 }
 
 /** The caller's sessions, newest first. */
@@ -117,6 +148,21 @@ export async function mySessions(
         .range(offset, offset + limit - 1),
       "Could not load your role-play sessions.",
     ) ?? []
+  );
+}
+
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+/** One of the caller's sessions by id (RLS keeps everyone else's out), or null. */
+export async function getSession(id: string): Promise<RoleplaySession | null> {
+  if (!UUID.test(id)) return null;
+  return must<RoleplaySession | null>(
+    await supabase
+      .from("deca_roleplay_sessions")
+      .select(SESSION_COLUMNS)
+      .eq("id", id)
+      .maybeSingle(),
+    "Could not load that session.",
   );
 }
 

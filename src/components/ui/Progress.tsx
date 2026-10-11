@@ -25,6 +25,7 @@ export function ProgressBar({
   labelHidden = false,
   valueText,
   tone = "accent",
+  track = "line",
   className = "",
 }: {
   value: number;
@@ -33,6 +34,8 @@ export function ProgressBar({
   labelHidden?: boolean;
   valueText?: string;
   tone?: Tone;
+  /** "stage" for a bar on the navy stage (same choice as ProgressRing). */
+  track?: "line" | "stage";
   className?: string;
 }) {
   const ratio = max > 0 ? Math.min(1, Math.max(0, value / max)) : 0;
@@ -53,7 +56,7 @@ export function ProgressBar({
         aria-valuemax={max}
         aria-valuenow={value}
         aria-valuetext={valueText}
-        className="h-1.5 overflow-hidden rounded-xs bg-line"
+        className={`h-1.5 overflow-hidden rounded-xs ${track === "stage" ? "bg-stage-line" : "bg-line"}`}
       >
         <div
           className={`h-full origin-left transition-transform duration-(--dur-4) ease-out ${FILL[tone]}`}

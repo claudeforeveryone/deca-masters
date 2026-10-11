@@ -31,6 +31,10 @@ const EventsPage = page(
   "EventsPage",
 );
 const EventPage = page(() => import("./pages/events/EventPage"), "EventPage");
+const CompareEventsPage = page(
+  () => import("./pages/events/CompareEventsPage"),
+  "CompareEventsPage",
+);
 const PracticePage = page(
   () => import("./pages/practice/PracticePage"),
   "PracticePage",
@@ -115,6 +119,7 @@ export function App({
         <Route path="reset/update" element={<ResetUpdatePage />} />
 
         <Route path="events" element={<EventsPage />} />
+        <Route path="events/compare" element={<CompareEventsPage />} />
         <Route path="events/:code" element={<EventPage />} />
         <Route path="roleplay" element={<RoleplayPage />} />
         <Route path="roleplay/:id" element={<RoleplayDetailPage />} />

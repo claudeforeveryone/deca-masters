@@ -77,11 +77,8 @@ describe("route map, signed out", () => {
     },
   );
 
+  // /roleplay and /vocab are live tools now (src/pages/roleplay/*.test.tsx, src/pages/vocab/*.test.tsx).
   it.each([
-    ["/roleplay", "Roleplay"],
-    ["/roleplay/PMK", "Roleplay trainer"],
-    ["/vocab", "Vocab"],
-    ["/vocab/marketing", "Vocab deck"],
     ["/terms", "Terms of Use"],
     ["/privacy", "Privacy Policy"],
   ])(
@@ -191,7 +188,7 @@ describe("events page", () => {
     );
     renderAt("/events");
     const alert = await screen.findByRole("alert");
-    expect(alert.textContent).toContain("The event list did not load");
+    expect(alert.textContent).toContain("The events did not load");
   });
 });
 
@@ -303,8 +300,8 @@ describe("event page", () => {
     renderAt("/events/pmk");
     await screen.findByRole("heading", { level: 1, name: "Principles of Marketing" });
     const facts = screen.getByRole("main");
-    expect(within(facts).getByText("Prep time").nextSibling?.textContent).toBe("10 min");
-    expect(within(facts).getByText("Time with the judge").nextSibling?.textContent).toBe("10 min");
+    expect(within(facts).getByText("Prep").nextSibling?.textContent).toBe("10 min");
+    expect(within(facts).getByText("With the judge").nextSibling?.textContent).toBe("10 min");
     expect(within(facts).getByText("Performance indicators").nextSibling?.textContent).toBe("4");
     expect(within(facts).getByText("1 role-play, a second for finalists")).toBeTruthy();
     // Unknown facts are left out, not guessed.
