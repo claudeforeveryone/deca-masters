@@ -1,7 +1,7 @@
 // Session state for the whole app (Supabase Auth on the shared project; DECA and FBLA share one user pool).
 // Pages call these actions and show `error.message`: every action throws AuthFlowError with copy fit for a person
-// and a `kind` to branch on (authErrorKind). Profiles are not here yet: deca-backend adds the deca_profiles lookup
-// (mirror FBLA's fbla_my_profile pattern) plus a RequireProfile guard that sends new users to /onboarding.
+// and a `kind` to branch on (authErrorKind). Profiles live in src/api/profile.ts (getMyProfile, null before
+// onboarding); a RequireProfile guard should send a signed-in member with no profile to /onboarding.
 import {
   createContext,
   useCallback,
@@ -85,7 +85,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const { data, error } = await supabase.auth.signUp({
         email: email.trim(),
         password,
-        options: { emailRedirectTo: appUrl("onboarding") },
+        // app: "deca" scopes the account to DECA in the owner console (deca_private.deca_accounts). FBLA counts every
+        // unmarked account as its own, so leaving this out would put DECA sign-ups in FBLA's numbers until onboarding.
+        options: {
+          emailRedirectTo: appUrl("onboarding"),
+          data: { app: "deca" },
+        },
       });
       if (error) throw toAuthError(error, "signup");
       // With confirmations on, Supabase answers an already-registered email with a user that has no identities
