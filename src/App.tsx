@@ -1,5 +1,18 @@
-import { lazy, Suspense, type ComponentType } from "react";
-import { matchPath, Outlet, Route, Routes, useLocation } from "react-router-dom";
+import {
+  lazy,
+  Suspense,
+  useLayoutEffect,
+  useRef,
+  type ComponentType,
+} from "react";
+import {
+  matchPath,
+  Outlet,
+  Route,
+  Routes,
+  useLocation,
+  useNavigationType,
+} from "react-router-dom";
 import { AppShell } from "./components/layout/AppShell";
 import { ErrorBoundary } from "./components/layout/ErrorBoundary";
 import { RequireAuth } from "./components/layout/RequireAuth";
@@ -107,8 +120,28 @@ const OwnerGalleryPage = import.meta.env.DEV
   : null;
 
 /** The shell stays put while a page chunk loads; a page that throws is contained and cleared on the next route. */
+/**
+ * A new page opens at its top. The shell outlives every route, so without this a page opened from the bottom of another
+ * starts part way down. Left alone: the first load and back or forward (the browser keeps its place), a #hash link (its
+ * page scrolls to the section), and a change of query string alone (filters on the same page).
+ */
+function useTopOnNewPage(pathname: string, hash: string) {
+  const how = useNavigationType();
+  const first = useRef(true);
+  useLayoutEffect(() => {
+    if (first.current) {
+      first.current = false;
+      return;
+    }
+    if (how !== "POP" && !hash) window.scrollTo(0, 0);
+    // Only a new path counts; how and hash are read as they are at that moment.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
+}
+
 function ShellLayout() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
+  useTopOnNewPage(pathname, hash);
   return (
     <AppShell>
       <ErrorBoundary resetKey={pathname}>

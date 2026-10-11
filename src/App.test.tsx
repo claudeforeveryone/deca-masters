@@ -1,5 +1,5 @@
-import { render, screen, within } from "@testing-library/react";
-import { MemoryRouter, useLocation } from "react-router-dom";
+import { fireEvent, render, screen, within } from "@testing-library/react";
+import { MemoryRouter, useLocation, useNavigate } from "react-router-dom";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { App } from "./App";
 import { AuthProvider } from "./lib/auth";
@@ -306,5 +306,48 @@ describe("event page", () => {
     expect(
       screen.getByRole("link", { name: /Event guidelines/ }).getAttribute("href"),
     ).toBe(event.guidelinesUrl);
+  });
+});
+
+describe("scroll on navigation", () => {
+  function Driver() {
+    const nav = useNavigate();
+    return (
+      <div>
+        <button onClick={() => nav("/privacy")}>go privacy</button>
+        <button onClick={() => nav(-1)}>go back</button>
+        <button onClick={() => nav("/terms?from=footer")}>go query</button>
+        <button onClick={() => nav("/privacy#choices")}>go hash</button>
+      </div>
+    );
+  }
+
+  it("opens a new page at its top, and leaves back, #hash and query-only moves alone", async () => {
+    const scrollTo = vi
+      .spyOn(window, "scrollTo")
+      .mockImplementation(() => undefined);
+    render(
+      <MemoryRouter initialEntries={["/terms"]}>
+        <AuthProvider>
+          <App />
+          <Driver />
+        </AuthProvider>
+      </MemoryRouter>,
+    );
+    await screen.findByRole("heading", { level: 1, name: "Terms of Use" });
+    expect(scrollTo).not.toHaveBeenCalled(); // a first load is the browser's call
+
+    fireEvent.click(screen.getByText("go privacy"));
+    await screen.findByRole("heading", { level: 1, name: "Privacy Policy" });
+    expect(scrollTo).toHaveBeenCalledWith(0, 0);
+
+    scrollTo.mockClear();
+    fireEvent.click(screen.getByText("go back"));
+    await screen.findByRole("heading", { level: 1, name: "Terms of Use" });
+    fireEvent.click(screen.getByText("go query"));
+    fireEvent.click(screen.getByText("go hash"));
+    await screen.findByRole("heading", { level: 1, name: "Privacy Policy" });
+    expect(scrollTo).not.toHaveBeenCalled();
+    scrollTo.mockRestore();
   });
 });
