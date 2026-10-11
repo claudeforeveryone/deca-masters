@@ -170,7 +170,16 @@ describe("landing, with a published event list", () => {
       target: { value: "FTDM" },
     });
     expect(screen.getByRole("timer").textContent).toBe("30:00");
-    expect(screen.getByText("7 performance indicators")).toBeTruthy();
+    // Its performance indicators are a checklist you tick as you cover them, not seven lines of filler.
+    const pis = screen.getByRole("group", { name: "7 performance indicators" });
+    const ticks = within(pis).getAllByRole("button");
+    expect(ticks.map((b) => b.textContent)).toEqual(
+      Array.from({ length: 7 }, (_, i) => `PI ${i + 1}`),
+    );
+    expect(screen.queryByText(/Placeholder: indicator/)).toBeNull();
+    fireEvent.click(ticks[0]);
+    expect(ticks[0].getAttribute("aria-pressed")).toBe("true");
+    expect(within(pis).getByText("1 of 7 covered")).toBeTruthy();
     expect(
       screen.getByText("Demo clock: runs here, saves nothing"),
     ).toBeTruthy();

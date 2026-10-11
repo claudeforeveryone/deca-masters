@@ -64,9 +64,9 @@ export function ToolsShowcase({ state }: { state: IndexState }) {
           The tools, working.
         </h2>
         <p className="mt-4 max-w-[58ch] text-lead text-on-navy-2">
-          Each window is the real interface. The clock runs, the cards flip and
-          the events are real. Where a page needs your own history, it shows
-          made-up numbers and says so.
+          Each window is built from the same parts as the app. The clock runs,
+          the cards flip and the events are real. Where a page needs your own
+          history, it shows made-up numbers and says so.
         </p>
 
         <Tabs

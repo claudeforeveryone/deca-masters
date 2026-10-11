@@ -1,4 +1,5 @@
 import {
+  Check,
   ExternalLink,
   Pause,
   Play,
@@ -161,6 +162,54 @@ function Clock({ event }: { event: Timed }) {
   );
 }
 
+/**
+ * The event's performance indicators as a checklist: the official packet names them, the trainer counts them off.
+ * One toggle per indicator, a live count, nothing saved.
+ */
+function PiChecklist({ count }: { count: number }) {
+  const [done, setDone] = useState<boolean[]>(() => Array(count).fill(false));
+  const covered = done.filter(Boolean).length;
+  const id = `pi-${count}`;
+  return (
+    <div role="group" aria-labelledby={id}>
+      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+        <p id={id} className="text-sm font-semibold">
+          {count} performance indicators
+        </p>
+        <p aria-live="polite" className="font-mono text-xs text-ink-3">
+          {covered} of {count} covered
+        </p>
+      </div>
+      <p className="mt-1 max-w-[52ch] text-sm text-ink-2">
+        Your event's official packet lists them. Tick each one as you cover it
+        with the judge.
+      </p>
+      <div className="mt-3 flex flex-wrap gap-2">
+        {done.map((on, i) => (
+          <button
+            key={i}
+            type="button"
+            aria-pressed={on}
+            onClick={() =>
+              setDone((d) => d.map((v, j) => (j === i ? !v : v)))
+            }
+            className={`inline-flex min-h-11 items-center gap-1.5 rounded-xs border px-3 font-mono text-sm transition-colors duration-(--dur-1) ${
+              on
+                ? "border-accent bg-accent text-on-accent hover:bg-accent-hover"
+                : "border-line-strong bg-surface text-ink-2 hover:border-accent hover:text-ink"
+            }`}
+          >
+            {on ? (
+              <Check aria-hidden="true" className="-ml-0.5 size-3.5" />
+            ) : null}
+            PI {i + 1}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function ClockPreview({ events }: { events: EventItem[] }) {
   const timed = useMemo(() => timedEvents(events), [events]);
   const [code, setCode] = useState<string | null>(null);
@@ -184,24 +233,10 @@ export function ClockPreview({ events }: { events: EventItem[] }) {
           </div>
           {event.format.performanceIndicators ? (
             <div className="mt-6 border-t border-line pt-5">
-              <p className="text-sm font-semibold">
-                {event.format.performanceIndicators} performance indicators
-              </p>
-              <ul className="mt-2 grid gap-1.5 text-sm text-ink-3">
-                {Array.from(
-                  { length: event.format.performanceIndicators },
-                  (_, i) => (
-                    <li key={i} className="flex items-center gap-2.5">
-                      <span
-                        aria-hidden="true"
-                        className="facet size-1.5! border border-line-strong bg-transparent!"
-                      />
-                      Placeholder: indicator {i + 1} comes from the official
-                      packet
-                    </li>
-                  ),
-                )}
-              </ul>
+              <PiChecklist
+                key={event.code}
+                count={event.format.performanceIndicators}
+              />
               <a
                 href={event.officialUrl}
                 target="_blank"
