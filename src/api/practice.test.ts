@@ -150,6 +150,19 @@ describe("saveProgress", () => {
     });
   });
 
+  it("passes an abort signal through, so a save stuck on a dead connection can be given up and retried", async () => {
+    db.reply({ attempt_id: RUN, saved: 0, remaining_ms: null });
+    const ctrl = new AbortController();
+    await saveProgress(RUN, [], { signal: ctrl.signal });
+    expect(db.last.ops).toEqual([["abortSignal", [ctrl.signal]]]);
+    expect(db.last.args).toEqual({
+      p_attempt: RUN,
+      p_answers: [],
+      p_position: null,
+      p_elapsed_ms: null,
+    });
+  });
+
   it("says plainly when the time is up", async () => {
     db.fail("deca: time is up. Submit the run to see your score", "22023");
     await expect(saveProgress(RUN, [])).rejects.toThrow(

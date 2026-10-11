@@ -255,19 +255,23 @@ export async function startRun(plan: RunPlan): Promise<RunState> {
   return pinDeadline(res);
 }
 
-/** Autosave. Checked answers keep their choice (only the flag can change). */
+/**
+ * Autosave. Checked answers keep their choice (only the flag can change). `signal` lets the caller give up on a request
+ * stuck on a dead connection (saves are idempotent upserts, so it is safe to send the same answers again).
+ */
 export async function saveProgress(
   attemptId: string,
   answers: AnswerInput[],
-  opts: { position?: number; elapsedMs?: number } = {},
+  opts: { position?: number; elapsedMs?: number; signal?: AbortSignal } = {},
 ): Promise<SaveResult> {
+  const call = supabase.rpc("deca_save_progress", {
+    p_attempt: attemptId,
+    p_answers: answers,
+    p_position: opts.position ?? null,
+    p_elapsed_ms: opts.elapsedMs ?? null,
+  });
   const res = must<Omit<SaveResult, "deadline_local_ms">>(
-    await supabase.rpc("deca_save_progress", {
-      p_attempt: attemptId,
-      p_answers: answers,
-      p_position: opts.position ?? null,
-      p_elapsed_ms: opts.elapsedMs ?? null,
-    }),
+    await (opts.signal ? call.abortSignal(opts.signal) : call),
     "Could not save your answers.",
   );
   return pinDeadline(res);

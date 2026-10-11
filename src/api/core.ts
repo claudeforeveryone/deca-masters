@@ -14,6 +14,17 @@ export class ApiError extends Error {
   }
 }
 
+/** The code toApiError gives a request that never reached the server (offline, dropped connection). */
+export const NETWORK_CODE = "network";
+
+const NETWORK_TEXT = /failed to fetch|networkerror|network request failed|load failed/i;
+
+/** True for a failure worth retrying as is: the request did not reach the server or its answer was lost. */
+export function isNetworkError(e: unknown): boolean {
+  if (e instanceof ApiError) return e.code === NETWORK_CODE;
+  return e instanceof Error && NETWORK_TEXT.test(e.message);
+}
+
 const FRIENDLY: Record<string, string> = {
   "42501": "You don't have permission to do that.",
   "23505": "That already exists.",
@@ -29,10 +40,10 @@ export function toApiError(
   if (e instanceof ApiError) return e;
   const code = "code" in e && typeof e.code === "string" ? e.code : null;
   const raw = e.message || "";
-  if (/failed to fetch|networkerror|network request failed/i.test(raw))
+  if (NETWORK_TEXT.test(raw))
     return new ApiError(
       "Network error. Check your connection and try again.",
-      code,
+      NETWORK_CODE,
     );
   // Our SQL raises readable messages as `raise exception 'deca: that username is taken'`.
   const own = /^deca:\s*(.+)$/is.exec(raw);

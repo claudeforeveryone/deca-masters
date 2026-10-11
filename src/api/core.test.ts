@@ -1,6 +1,6 @@
 import type { PostgrestError } from "@supabase/supabase-js";
 import { describe, expect, it } from "vitest";
-import { ApiError, must, toApiError } from "./core";
+import { ApiError, NETWORK_CODE, isNetworkError, must, toApiError } from "./core";
 
 // PostgrestError shape: message, code, details, hint.
 const pg = (message: string, code: string) =>
@@ -44,6 +44,17 @@ describe("toApiError", () => {
     expect(toApiError(new TypeError("Failed to fetch")).message).toMatch(
       /Network error/,
     );
+  });
+
+  it("marks network failures with their own code, so callers can retry them and nothing else", () => {
+    // supabase-js reports a dropped connection as an error object whose message wraps the fetch TypeError
+    const e = toApiError(pg("TypeError: Failed to fetch", ""));
+    expect(e.code).toBe(NETWORK_CODE);
+    expect(isNetworkError(e)).toBe(true);
+    expect(isNetworkError(new TypeError("NetworkError when attempting to fetch resource."))).toBe(true);
+    expect(isNetworkError(toApiError(pg("deca: run not found", "P0002")))).toBe(false);
+    expect(isNetworkError(new Error("boom"))).toBe(false);
+    expect(isNetworkError(null)).toBe(false);
   });
 });
 
