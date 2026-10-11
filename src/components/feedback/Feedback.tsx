@@ -102,9 +102,12 @@ export function FeedbackProvider({
 /** "Report this question" (or term) for any page that shows one; opens the report dialog. */
 export function ReportItemButton({
   itemId,
+  subject,
   className = "",
 }: {
   itemId: string;
+  /** What is being reported (the term, or "question 4"), read out after the label where many sit on one page. */
+  subject?: string;
   className?: string;
 }) {
   const { reportItem } = useFeedback();
@@ -118,6 +121,7 @@ export function ReportItemButton({
     >
       <Flag aria-hidden="true" className="size-4" />
       Report this {noun}
+      {subject ? <span className="sr-only">, {subject}</span> : null}
     </Button>
   );
 }

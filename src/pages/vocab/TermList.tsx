@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { Select, SearchField } from "../../components/ui/Inputs";
 import { Tag } from "../../components/ui/Tag";
 import type { VocabTerm } from "../../lib/content";
-import { Credit } from "./parts";
+import { CreditRow } from "./parts";
 import { STATUS_LABEL, termStatus } from "./study";
 import type { DeckProgress } from "./useDeckProgress";
 
@@ -80,7 +80,7 @@ export function TermList({
                 <dd className="max-w-(--measure) text-ink">{t.definition}</dd>
                 <dd className="text-sm text-ink-3">{t.area}</dd>
                 <dd>
-                  <Credit source={t.source} />
+                  <CreditRow term={t} />
                 </dd>
               </div>
             );

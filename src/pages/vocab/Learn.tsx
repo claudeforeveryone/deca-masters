@@ -8,7 +8,7 @@ import { StatRow, StatTile } from "../../components/ui/Navigation";
 import type { ExamSlug, VocabTerm } from "../../lib/content";
 import { LEITNER_DAYS, MASTERED_BOX } from "../../lib/leitner";
 import { formatDay } from "../../components/prep/format";
-import { Credit, SessionPanel, useHotkeys } from "./parts";
+import { CreditRow, SessionPanel, useHotkeys } from "./parts";
 import {
   deckStats,
   distractors,
@@ -418,7 +418,7 @@ function Session({
             >
               {right ? "Right." : `Not quite. It's ${item.term.term}.`}
             </p>
-            <Credit source={item.term.source} />
+            <CreditRow term={item.term} />
             <div>
               <Button ref={next} onClick={advance}>
                 Next
@@ -428,7 +428,7 @@ function Session({
           </div>
         ) : null}
         {!card.mc && revealed ? (
-          <Credit source={item.term.source} className="mt-4" />
+          <CreditRow term={item.term} className="mt-4" />
         ) : null}
       </div>
     </div>

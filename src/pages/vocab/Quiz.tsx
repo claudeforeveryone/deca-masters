@@ -6,7 +6,7 @@ import { FilterChips, StatRow, StatTile } from "../../components/ui/Navigation";
 import { ProgressBar } from "../../components/ui/Progress";
 import { Kbd } from "../../components/ui/Tag";
 import type { ExamSlug, VocabTerm } from "../../lib/content";
-import { Credit, SessionPanel, useHotkeys } from "./parts";
+import { CreditRow, SessionPanel, useHotkeys } from "./parts";
 import { buildQuiz, shuffled, type QuizDirection } from "./study";
 import type { DeckProgress } from "./useDeckProgress";
 
@@ -297,7 +297,7 @@ function Run({
                 ? "Right."
                 : "Not this time. The right answer is marked."}
             </p>
-            <Credit source={q.term.source} />
+            <CreditRow term={q.term} />
             <div>
               <Button ref={nextRef} onClick={next}>
                 {pos + 1 === questions.length ? "See your score" : "Next"}

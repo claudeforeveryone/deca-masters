@@ -7,7 +7,7 @@ import { FilterChips, StatRow, StatTile } from "../../components/ui/Navigation";
 import { ProgressBar } from "../../components/ui/Progress";
 import { Kbd } from "../../components/ui/Tag";
 import type { ExamSlug, VocabTerm } from "../../lib/content";
-import { Credit, SessionPanel, useHotkeys } from "./parts";
+import { CreditRow, SessionPanel, useHotkeys } from "./parts";
 import { shuffled, termStatus } from "./study";
 import type { DeckProgress } from "./useDeckProgress";
 
@@ -255,7 +255,7 @@ function Pile({
           Skip
         </Button>
       </div>
-      {flipped ? <Credit source={card.source} /> : null}
+      {flipped ? <CreditRow term={card} /> : null}
     </div>
   );
 }

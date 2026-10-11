@@ -1,5 +1,6 @@
 import { useEffect, useRef, type ReactNode } from "react";
-import type { ItemCredit } from "../../lib/content";
+import type { ItemCredit, VocabTerm } from "../../lib/content";
+import { ReportItemButton } from "../../components/feedback/Feedback";
 import { ExternalAnchor } from "../../components/prep/ExternalAnchor";
 
 /** Keyboard shortcuts for a study mode. Ignored while typing in a field or with a modifier held. */
@@ -49,6 +50,24 @@ export function Credit({
       {source.licence}
       {source.adapted ? " · adapted" : ""}
     </p>
+  );
+}
+
+/** A term's credit with "Report this term" beside it, wherever one term is shown on its own. */
+export function CreditRow({
+  term,
+  className = "",
+}: {
+  term: VocabTerm;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`flex flex-wrap items-center justify-between gap-x-4 gap-y-1 ${className}`}
+    >
+      <Credit source={term.source} />
+      <ReportItemButton itemId={term.id} subject={term.term} className="-mx-2" />
+    </div>
   );
 }
 

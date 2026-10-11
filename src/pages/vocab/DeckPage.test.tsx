@@ -17,6 +17,10 @@ vi.mock("../../lib/member", async (orig) => ({
   }),
 }));
 vi.mock("../../api/track", () => ({ track: vi.fn(async () => {}) }));
+// The report dialog asks who is signed in; reports go to the sink the provider is given.
+vi.mock("../../lib/auth", () => ({
+  useAuth: () => ({ loading: false, user: { id: "u1" } }),
+}));
 vi.mock("../../api/vocab", async (orig) => ({
   ...(await orig<typeof import("../../api/vocab")>()),
   getDeck: vi.fn(),
@@ -26,6 +30,11 @@ vi.mock("../../api/vocab", async (orig) => ({
 }));
 
 import { getDeck, listTerms, myReviews, submitReviews } from "../../api/vocab";
+import {
+  FeedbackProvider,
+  type FeedbackSink,
+} from "../../components/feedback/Feedback";
+import { ToastProvider } from "../../components/ui/Toast";
 import { DeckPage } from "./DeckPage";
 
 // Synthetic fixtures: the page is under test, not the content.
@@ -37,7 +46,7 @@ const SOURCE = {
   adapted: false,
 };
 const TERMS: VocabTerm[] = ["A", "B", "C", "D", "E"].map((x) => ({
-  id: `00000000-0000-4000-8000-00000000000${x.toLowerCase()}`,
+  id: `mkt-v-00${"ABCDE".indexOf(x) + 1}`,
   term: `Term ${x}`,
   definition: `Definition of term ${x}.`,
   area: x < "C" ? "Area one" : "Area two",
@@ -57,12 +66,21 @@ function Probe() {
   return <output data-testid="loc">{loc.pathname + loc.search}</output>;
 }
 
+const sink = {
+  send: vi.fn(async () => {}),
+  listMine: vi.fn(async () => []),
+} satisfies FeedbackSink;
+
 function renderAt(path: string) {
   return render(
     <MemoryRouter initialEntries={[path]}>
-      <Routes>
-        <Route path="/vocab/:deck" element={<DeckPage />} />
-      </Routes>
+      <ToastProvider>
+        <FeedbackProvider sink={sink}>
+          <Routes>
+            <Route path="/vocab/:deck" element={<DeckPage />} />
+          </Routes>
+        </FeedbackProvider>
+      </ToastProvider>
       <Probe />
     </MemoryRouter>,
   );
@@ -224,6 +242,35 @@ describe("vocab deck", () => {
     );
     expect(screen.queryByText("Term C")).toBeNull();
     expect(screen.getByText("Term B")).toBeTruthy();
+  });
+
+  it("reports a term from the list with the term's id attached", async () => {
+    renderAt("/vocab/marketing?mode=terms");
+    await screen.findByText("Term A");
+    const buttons = screen.getAllByRole("button", { name: /^Report this term/ });
+    expect(buttons).toHaveLength(TERMS.length);
+    fireEvent.click(screen.getByRole("button", { name: "Report this term, Term B" }));
+    await screen.findByRole("dialog", { name: "Report this term" });
+    fireEvent.click(screen.getByRole("button", { name: "Send report" }));
+    await vi.waitFor(() =>
+      expect(sink.send).toHaveBeenCalledWith(
+        expect.objectContaining({
+          kind: "vocab_issue",
+          questionId: "mkt-v-002",
+          pagePath: "/vocab/marketing",
+        }),
+      ),
+    );
+  });
+
+  it("offers the report with the feedback on a quiz answer", async () => {
+    renderAt("/vocab/marketing?mode=quiz");
+    fireEvent.click(await screen.findByRole("button", { name: "Start the quiz" }));
+    expect(screen.queryByRole("button", { name: /^Report this term/ })).toBeNull();
+    const asked = answer(false);
+    expect(
+      screen.getByRole("button", { name: `Report this term, ${asked.term}` }),
+    ).toBeTruthy();
   });
 
   it("says when there is no such deck", async () => {
