@@ -118,7 +118,7 @@ export function CreditsPage() {
                     <ExternalLink aria-hidden="true" className="size-4" />
                     <span className="sr-only">(opens in a new tab)</span>
                   </a>
-                  <p className="text-ink-2">{s.attribution}</p>
+                  <p className="break-words text-ink-2">{s.attribution}</p>
                   <p className="text-sm text-ink-3">
                     <span className="font-mono">{s.licence}</span>
                     {" · used in "}
