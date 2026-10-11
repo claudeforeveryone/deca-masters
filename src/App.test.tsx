@@ -29,24 +29,21 @@ afterEach(() => {
 describe("route map, signed out", () => {
   it("shows the landing with sign-up, sign-in, the credits and the non-affiliation line", async () => {
     renderAt("/");
-    await screen.findByRole("heading", {
-      level: 1,
-      name: "Practise for DECA exams and roleplays.",
-    });
+    await screen.findByRole("heading", { level: 1, name: "Walk in ready." });
     const main = screen.getByRole("main");
-    expect(
-      within(main)
-        .getByRole("link", { name: "Create an account" })
-        .getAttribute("href"),
-    ).toBe("/signup");
-    expect(
-      within(main).getByRole("link", { name: "Sign in" }).getAttribute("href"),
-    ).toBe("/login");
+    // The hero and the closing scene both offer the same two actions.
+    const create = within(main).getAllByRole("link", {
+      name: "Create an account",
+    });
+    expect(create.length).toBe(2);
+    for (const link of create) expect(link.getAttribute("href")).toBe("/signup");
+    const signIn = within(main).getAllByRole("link", { name: "Sign in" });
+    expect(signIn.length).toBe(2);
+    for (const link of signIn) expect(link.getAttribute("href")).toBe("/login");
     const footer = screen.getByRole("contentinfo");
     expect(footer.textContent).toMatch(/Built with.*by Joseph & Kaden/);
-    expect(footer.textContent).toMatch(
-      /not affiliated with, endorsed by, or sponsored by DECA Inc/,
-    );
+    expect(footer.textContent).toMatch(/not affiliated with DECA Inc/);
+    expect(footer.textContent).toMatch(/not endorsed or sponsored by DECA Inc/);
     expect(
       within(footer)
         .getByRole("link", { name: "Terms of Use" })

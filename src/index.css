@@ -3,6 +3,9 @@
 
 @layer base {
   html {
+    /* Reserve the scrollbar's room from the first paint, so centred content does not jump sideways when a page
+     * grows past the viewport (measured: that one jump was a CLS of 0.99 on desktop). */
+    scrollbar-gutter: stable;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
     accent-color: var(--accent);
@@ -21,6 +24,7 @@
   @media (min-width: 1024px) {
     :root {
       --gutter: 2rem;
+      --section-y: 6rem;
     }
   }
 
@@ -104,6 +108,74 @@
 }
 
 @layer components {
+  /* The navy stage (landing, closing scene, auth side panel): text, focus and selection tuned for dark navy in both
+   * colour schemes. */
+  .stage {
+    --focus: var(--focus-on-dark);
+    color: var(--on-navy);
+    background: var(--stage-1);
+    color-scheme: dark;
+  }
+  .stage ::selection {
+    background: rgb(77 171 255 / 0.36);
+  }
+
+  /* Panels that float over the 3D canvas: the one place glass is allowed. Solid when transparency is reduced. */
+  .glass {
+    background: var(--glass);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    backdrop-filter: blur(14px) saturate(140%);
+    box-shadow: var(--edge-highlight);
+  }
+  @media (prefers-reduced-transparency: reduce) {
+    .glass {
+      background: var(--stage-2);
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+  }
+
+  /* The facet: a 45 degree square, the repeated unit of the system (list marker, tick, selected marker, cluster key). */
+  .facet {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    flex: none;
+    transform: rotate(45deg);
+    background: currentColor;
+  }
+
+  /* The shell's <main>: one vertical rhythm for every page. A page that runs edge to edge (the landing) cancels it
+   * with .full-bleed instead of guessing the numbers. */
+  .page-main {
+    --main-pt: 2rem;
+    --main-pb: 4rem;
+    padding-top: var(--main-pt);
+    padding-bottom: var(--main-pb);
+  }
+  @media (min-width: 640px) {
+    .page-main {
+      --main-pt: 2.5rem;
+    }
+  }
+  /* Edge to edge from inside the page column (the landing). Main keeps its box, so nothing shifts when a full-bleed
+   * page replaces a placeholder; the block reaches out to the viewport edges minus the scrollbar (--sbw, measured by
+   * the shell, since 100vw counts it). Put a .shell inside. The first block tucks under the top bar, the last meets
+   * the footer, and stacked ones sit flush. */
+  .full-bleed {
+    margin-inline: calc(50% - 50vw + var(--sbw, 0px) / 2);
+  }
+  .full-bleed:first-child {
+    margin-top: calc(-1 * var(--main-pt, 0px));
+  }
+  .full-bleed:last-child {
+    margin-bottom: calc(-1 * var(--main-pb, 0px));
+  }
+  /* While a route placeholder shows, the footer waits out of sight (it would otherwise move when the page lands). */
+  html[data-route-loading] #root footer {
+    visibility: hidden;
+  }
+
   /* The page column inside the shell: one max width, one gutter, used by every page. */
   .shell {
     width: 100%;
@@ -119,6 +191,45 @@
   }
 }
 
+/* Skeleton shimmer (off under reduced motion via the base layer). */
+@keyframes skeleton-sweep {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* Overlays: dialog, drawer, popover, toast. Entrances use --ease-out; exits run faster on --ease-in. */
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+@keyframes scrim-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes drawer-in-right {
+  from {
+    transform: translateX(100%);
+  }
+}
+@keyframes drawer-in-bottom {
+  from {
+    transform: translateY(100%);
+  }
+}
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+}
+
 /* RouteFallback's indeterminate bar. Reduced motion stops it (see the base layer). */
 @keyframes route-load {
   from {
@@ -126,5 +237,77 @@
   }
   to {
     transform: translateX(300%);
+  }
+}
+
+/* ---- Landing: the one authored entrance (headline lines rise inside their masks, then the lead and actions) ---- */
+@keyframes line-rise {
+  from {
+    transform: translateY(0.42em);
+  }
+}
+@keyframes settle {
+  from {
+    transform: translateY(10px);
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+@keyframes facet-in {
+  from {
+    opacity: 0;
+    transform: translate(var(--fx, 0), var(--fy, 0)) scale(0.96);
+  }
+}
+@keyframes rule-draw {
+  from {
+    transform: scaleX(0);
+  }
+}
+@keyframes seams-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@layer components {
+  .hero-line {
+    display: block;
+    animation: line-rise var(--dur-5) var(--ease-out) both;
+    animation-delay: calc(var(--i, 0) * 90ms + 60ms);
+  }
+  /* The lead and the actions settle into place without fading: they are the first viewport's largest text, and an
+   * opacity fade would hold back the page's largest contentful paint by the length of the fade. */
+  .hero-fade {
+    animation: settle 600ms var(--ease-out) both;
+    animation-delay: var(--d, 0ms);
+  }
+  .poster-facet {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: facet-in 1.1s var(--ease-out) both;
+    animation-delay: var(--d, 0s);
+  }
+  /* The light between the plates comes up once the last facets land, like the live scene's lock. */
+  .poster-seams {
+    animation: seams-in 700ms var(--ease-in-out) 1.7s both;
+  }
+  .rule-draw {
+    transform-origin: left center;
+    animation: rule-draw 900ms var(--ease-out) both;
+    animation-delay: var(--d, 0ms);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-line,
+    .hero-fade,
+    .poster-facet,
+    .poster-seams,
+    .rule-draw {
+      animation: none;
+    }
   }
 }
