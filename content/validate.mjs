@@ -110,9 +110,26 @@ function checkSourcing(doc, w, itemCount, noun) {
   if (!Array.isArray(doc.sources)) {
     e.push(`${w}: sources must be a list`);
   } else {
+    // A "work" is a whole book, glossary or site; a page entry (one chapter, quiz or glossary entry an item cites)
+    // names its work with partOf, so the credits page can credit the work once instead of every page.
+    const works = new Map();
+    for (const s of doc.sources)
+      if (isObj(s) && typeof s.url === "string" && s.partOf === undefined)
+        works.set(s.url, s);
     doc.sources.forEach((s, i) => {
-      e.push(...checkCredit(s, `${w} sources[${i}]`, { item: false }));
+      const tag = `${w} sources[${i}]`;
+      e.push(...checkCredit(s, tag, { item: false }));
       if (isObj(s) && typeof s.url === "string") urls.add(s.url);
+      if (!isObj(s) || s.partOf === undefined) return;
+      const work = works.get(s.partOf);
+      if (!work)
+        e.push(
+          `${tag}: partOf must be the url of a work listed in this file's sources`,
+        );
+      else if (s.licence !== work.licence)
+        e.push(
+          `${tag}: licence must match the work it is part of (${work.licence})`,
+        );
     });
     if (doc.status === "sourced" && doc.sources.length === 0)
       e.push(`${w}: a sourced file must list its sources`);

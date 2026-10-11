@@ -7,7 +7,7 @@
 //   vocab/<slug>.json        terms with definitions and per-term credits (nothing to hide in a glossary)
 //   roleplays/<cluster>.json links to DECA's official samples plus timing (links only, by schema)
 //   official-samples.json    DECA's official sample-exam links, copied as is
-//   credits.json             every source once, with where it is used (the credits page reads it)
+//   credits.json             every source (whole work) once, with where it is used (the credits page reads it)
 //
 // Answer keys and explanations stay server-side: the deca-backend track loads content/ into deca_questions, where
 // grading and reveals happen in SECURITY DEFINER RPCs (FBLA migration 0014 pattern). Shipping them here would let
@@ -38,6 +38,23 @@ const publicCredit = ({ title, url, licence, attribution, adapted }) => ({
   attribution,
   adapted,
 });
+
+/**
+ * A file's sources as the browser sees them: whole works only, each as its credit (title, url, licence,
+ * attribution). Page entries (`partOf`, one per chapter, quiz or glossary entry an item cites) exist so every item URL
+ * is listed for the validator and the database loader; each item already carries its own page link. The content
+ * track's notes on a work (flags, licence evidence, how keys were checked) stay here: they can name the answer an
+ * item is keyed to.
+ */
+const works = (sources) =>
+  sources
+    .filter((s) => s.partOf === undefined)
+    .map(({ title, url, licence, attribution }) => ({
+      title,
+      url,
+      licence,
+      attribution,
+    }));
 
 const EXAM_ORDER = Object.keys(EXAMS);
 const bySlug = (a, b) =>
@@ -118,7 +135,7 @@ export function buildContent({
         disclaimer: doc.disclaimer,
         status: doc.status,
         placeholderNote: doc.placeholderNote ?? null,
-        sources: doc.sources,
+        sources: works(doc.sources),
         questions,
       });
       const areas = new Map();
@@ -133,7 +150,7 @@ export function buildContent({
         questions: questions.length,
         areas: [...areas].map(([name, count]) => ({ name, count })),
       });
-      for (const s of doc.sources) credit(s, doc.title);
+      for (const s of works(doc.sources)) credit(s, doc.title);
       counts.questions += questions.length;
     } else if (kind === "vocab") {
       const terms = doc.terms.map(({ id, term, definition, area, source }) => ({
@@ -148,7 +165,7 @@ export function buildContent({
         title: doc.title,
         status: doc.status,
         placeholderNote: doc.placeholderNote ?? null,
-        sources: doc.sources,
+        sources: works(doc.sources),
         terms,
       });
       index.vocab.push({
@@ -158,7 +175,7 @@ export function buildContent({
         placeholderNote: doc.placeholderNote ?? null,
         terms: terms.length,
       });
-      for (const s of doc.sources) credit(s, doc.title);
+      for (const s of works(doc.sources)) credit(s, doc.title);
       counts.vocab += terms.length;
     } else if (kind === "roleplay") {
       write(join(outDir, "roleplays", `${doc.cluster}.json`), doc);

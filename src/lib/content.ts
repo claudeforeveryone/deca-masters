@@ -74,6 +74,22 @@ export type Source = {
   licence: string;
   attribution: string;
 };
+/**
+ * A file's `sources` list can also hold page entries: one chapter, quiz or glossary entry that an item cites, naming
+ * its whole work with `partOf` (content/SCHEMA.md). They exist so every item URL is listed for the validator and the
+ * database loader. People are shown whole works only, as their credit; each item already links its own page.
+ */
+export type SourceEntry = Source & { partOf?: string };
+export const workSources = (sources: SourceEntry[]): Source[] =>
+  sources
+    .filter((s) => s.partOf === undefined)
+    .map(({ title, url, licence, attribution }) => ({
+      title,
+      url,
+      licence,
+      attribution,
+    }));
+
 /** The credit shown next to one question or term. `adapted` means the item was reworded or reformatted. */
 export type ItemCredit = Source & { adapted: boolean };
 

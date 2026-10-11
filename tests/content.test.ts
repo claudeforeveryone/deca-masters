@@ -1,6 +1,7 @@
 // @vitest-environment node
 import { describe, expect, it } from "vitest";
 import {
+  cpSync,
   existsSync,
   mkdirSync,
   mkdtempSync,
@@ -118,6 +119,35 @@ describe("exam questions", () => {
     );
   });
 
+  it("may cite one page of a listed work: the page entry names its work with partOf and shares its licence", () => {
+    const exam = fixture(P);
+    const work = exam.sources[0];
+    const page = "https://example.org/fixture-open-textbook/chapter-2";
+    exam.sources.push({
+      title: "Fixture Open Textbook, Chapter 2",
+      url: page,
+      licence: work.licence,
+      attribution: work.attribution,
+      partOf: work.url,
+    });
+    exam.questions[0].source.url = page;
+    expect(errorsOf(exam, P)).toBe("");
+
+    exam.sources[1].partOf = "https://example.org/not-listed";
+    expect(errorsOf(exam, P)).toMatch(
+      /sources\[1\]: partOf must be the url of a work listed in this file's sources/,
+    );
+    exam.sources[1].partOf = page; // a page is not a work
+    expect(errorsOf(exam, P)).toMatch(
+      /sources\[1\]: partOf must be the url of a work listed in this file's sources/,
+    );
+    exam.sources[1].partOf = work.url;
+    exam.sources[1].licence = "CC BY-NC 4.0";
+    expect(errorsOf(exam, P)).toMatch(
+      /sources\[1\]: licence must match the work it is part of \(CC BY 4\.0\)/,
+    );
+  });
+
   it("accept a null explanation and difficulty, but not a malformed PI code", () => {
     const exam = fixture(P);
     expect(errorsOf(exam, P)).toBe("");
@@ -194,11 +224,16 @@ describe("events, role plays and official samples", () => {
 
   it("role-play files hold links to DECA's own samples, never copied scenario text", () => {
     const rp = fixture("roleplays/marketing.json");
-    rp.events[0].officialSamples[0].url = "https://example.com/leaked-roleplay.pdf";
+    rp.events[0].officialSamples[0].url =
+      "https://example.com/leaked-roleplay.pdf";
     rp.events[0].situation = "Copied scenario text";
     const text = errorsOf(rp, "roleplays/marketing.json");
-    expect(text).toMatch(/officialSamples\[0\]: url must be an official DECA link/);
-    expect(text).toMatch(/situation is not allowed; role-play files hold links only/);
+    expect(text).toMatch(
+      /officialSamples\[0\]: url must be an official DECA link/,
+    );
+    expect(text).toMatch(
+      /situation is not allowed; role-play files hold links only/,
+    );
   });
 
   it("role-play events must exist in events.json with the same timing", () => {
@@ -220,7 +255,15 @@ describe("events, role plays and official samples", () => {
   });
 
   it("accepts the real 2026-27 events list compiled in hq (when present on this machine)", () => {
-    const hq = join(CONTENT, "..", "..", "..", "hq", "deca-content", "events.json");
+    const hq = join(
+      CONTENT,
+      "..",
+      "..",
+      "..",
+      "hq",
+      "deca-content",
+      "events.json",
+    );
     let doc: unknown;
     try {
       doc = JSON.parse(readFileSync(hq, "utf8"));
@@ -249,7 +292,10 @@ describe("the archive guard", () => {
 describe("buildContent", () => {
   // Imported lazily so the validator tests above run even while the build script is broken.
   const build = async (srcDir: string, outDir: string) =>
-    (await import("../scripts/build-content.mjs")).buildContent({ srcDir, outDir });
+    (await import("../scripts/build-content.mjs")).buildContent({
+      srcDir,
+      outDir,
+    });
   const read = (dir: string, rel: string) =>
     JSON.parse(readFileSync(join(dir, rel), "utf8"));
 
@@ -279,7 +325,9 @@ describe("buildContent", () => {
         adapted: q.id === "mkt-002",
       });
     }
-    expect(JSON.stringify(exam)).not.toMatch(/"answer"|"explanation"|Fixture explanation/);
+    expect(JSON.stringify(exam)).not.toMatch(
+      /"answer"|"explanation"|Fixture explanation/,
+    );
   });
 
   it("ships a placeholder exam as an honest, empty state", async () => {
@@ -288,7 +336,8 @@ describe("buildContent", () => {
     expect(read(out, "exams/finance.json")).toMatchObject({
       slug: "finance",
       status: "placeholder",
-      placeholderNote: "Fixture placeholder: no openly licensed finance questions found yet.",
+      placeholderNote:
+        "Fixture placeholder: no openly licensed finance questions found yet.",
       questions: [],
     });
     const index = read(out, "index.json");
@@ -298,7 +347,8 @@ describe("buildContent", () => {
         title: "Finance Cluster Exam",
         cluster: "finance",
         status: "placeholder",
-        placeholderNote: "Fixture placeholder: no openly licensed finance questions found yet.",
+        placeholderNote:
+          "Fixture placeholder: no openly licensed finance questions found yet.",
         questions: 0,
         areas: [],
       },
@@ -315,12 +365,23 @@ describe("buildContent", () => {
         ],
       },
     ]);
-    expect(index.events.map((e: { code: string }) => e.code)).toEqual(["PMK", "EIP"]);
+    expect(index.events.map((e: { code: string }) => e.code)).toEqual([
+      "PMK",
+      "EIP",
+    ]);
     expect(index.events[0].format.prepMinutes).toBe(10);
     expect(index.vocab).toEqual([
-      { slug: "marketing", title: "Marketing terms", status: "sourced", placeholderNote: null, terms: 2 },
+      {
+        slug: "marketing",
+        title: "Marketing terms",
+        status: "sourced",
+        placeholderNote: null,
+        terms: 2,
+      },
     ]);
-    expect(index.roleplays).toEqual([{ cluster: "marketing", status: "placeholder", events: 1 }]);
+    expect(index.roleplays).toEqual([
+      { cluster: "marketing", status: "placeholder", events: 1 },
+    ]);
     expect(index.officialSamples).toBe(true);
   });
 
@@ -348,8 +409,61 @@ describe("buildContent", () => {
       ],
     });
     expect(read(out, "official-samples.json").exams[0].exam).toBe("marketing");
-    expect(read(out, "roleplays/marketing.json").events[0].eventCode).toBe("PMK");
+    expect(read(out, "roleplays/marketing.json").events[0].eventCode).toBe(
+      "PMK",
+    );
     expect(existsSync(join(out, "events.json"))).toBe(false);
+  });
+
+  it("credits each work once and keeps page entries out of the public files", async () => {
+    const src = mkdtempSync(join(tmpdir(), "deca-content-"));
+    cpSync(FIXTURES, src, { recursive: true });
+    const exam = fixture("exams/marketing.json");
+    const work = exam.sources[0];
+    const page = "https://example.org/fixture-open-textbook/chapter-2";
+    exam.sources.push({
+      title: "Fixture Open Textbook, Chapter 2",
+      url: page,
+      licence: work.licence,
+      attribution: work.attribution,
+      partOf: work.url,
+    });
+    exam.questions[0].source.url = page;
+    writeFileSync(join(src, "exams", "marketing.json"), JSON.stringify(exam));
+    const out = join(src, "out");
+
+    expect((await build(src, out)).sources).toBe(2);
+    expect(
+      read(out, "credits.json").sources.map((s: { url: string }) => s.url),
+    ).toEqual(["https://example.org/fixture-open-glossary", work.url]);
+    const shipped = read(out, "exams/marketing.json");
+    expect(shipped.sources.map((s: { url: string }) => s.url)).toEqual([
+      work.url,
+    ]);
+    expect(shipped.questions[0].source.url).toBe(page);
+  });
+
+  it("ships only each work's credit, never the content track's internal notes", async () => {
+    const src = mkdtempSync(join(tmpdir(), "deca-content-"));
+    cpSync(FIXTURES, src, { recursive: true });
+    const exam = fixture("exams/marketing.json");
+    exam.sources[0].flags = ["mkt-001 is keyed Fixture choice A."];
+    exam.sources[0].licenceEvidence = "Book home page, checked 2026-10-11.";
+    writeFileSync(join(src, "exams", "marketing.json"), JSON.stringify(exam));
+    const out = join(src, "out");
+    await build(src, out);
+
+    const shipped = read(out, "exams/marketing.json");
+    expect(shipped.sources).toEqual([
+      {
+        title: "Fixture Open Textbook",
+        url: "https://example.org/fixture-open-textbook",
+        licence: "CC BY 4.0",
+        attribution:
+          '"Fixture Open Textbook" by Test Author, licensed under CC BY 4.0. Validator fixture.',
+      },
+    ]);
+    expect(JSON.stringify(shipped)).not.toMatch(/mkt-001 is keyed|checked 2026-10-11/);
   });
 
   it("refuses to write anything when content is invalid or archived", async () => {
@@ -360,7 +474,9 @@ describe("buildContent", () => {
       JSON.stringify(fixture("exams/marketing.json")),
     );
     const out = join(src, "out");
-    await expect(build(src, out)).rejects.toThrow(/content is invalid, nothing written/);
+    await expect(build(src, out)).rejects.toThrow(
+      /content is invalid, nothing written/,
+    );
     expect(existsSync(out)).toBe(false);
   });
 

@@ -105,4 +105,31 @@ describe("listExams", () => {
       updatedAt: "2026-10-01T00:00:00Z",
     });
   });
+
+  it("lists whole works as sources, not the page entries kept for the loader", async () => {
+    const work = {
+      title: "Open Book",
+      url: "https://example.org/book/",
+      licence: "CC BY 4.0",
+      attribution: "Open Book by A. Author, CC BY 4.0.",
+    };
+    db.reply([
+      {
+        slug: "marketing",
+        title: "Marketing Cluster Exam",
+        cluster: "marketing",
+        blurb: "Practice questions.",
+        disclaimer: "Not an official DECA exam.",
+        status: "sourced",
+        placeholder_note: null,
+        sources: [
+          work,
+          { ...work, title: "Open Book, Chapter 2", url: "https://example.org/book/ch-2/", partOf: work.url },
+        ],
+        updated_at: "2026-10-01T00:00:00Z",
+      },
+    ]);
+    const [x] = await listExams();
+    expect(x.sources).toEqual([work]);
+  });
 });

@@ -5,8 +5,10 @@ import type {
   ContentStatus,
   ExamSlug,
   Source,
+  SourceEntry,
   VocabTerm,
 } from "../lib/content";
+import { workSources } from "../lib/content";
 import { endOfTorontoDay, nextReview, type ReviewStep } from "../lib/leitner";
 import { supabase } from "../lib/supabase";
 import { must } from "./core";
@@ -55,7 +57,7 @@ export async function listDecks(): Promise<DeckInfo[]> {
         title: string;
         status: ContentStatus;
         placeholder_note: string | null;
-        sources: Source[];
+        sources: SourceEntry[];
         updated_at: string;
       }[]
     | null
@@ -71,7 +73,7 @@ export async function listDecks(): Promise<DeckInfo[]> {
     title: r.title,
     status: r.status,
     placeholderNote: r.placeholder_note,
-    sources: r.sources ?? [],
+    sources: workSources(r.sources ?? []),
     updatedAt: r.updated_at,
   }));
 }

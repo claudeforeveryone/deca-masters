@@ -40,6 +40,27 @@ describe("listDecks and listTerms", () => {
     expect(db.last.ops).toContainEqual(["order", ["slug"]]);
   });
 
+  it("lists a deck's whole works as sources, not its page entries", async () => {
+    const work = {
+      title: "Open Glossary",
+      url: "https://example.org/glossary",
+      licence: "CC0",
+      attribution: "Open Glossary, CC0.",
+    };
+    db.reply([
+      {
+        slug: "marketing",
+        title: "Marketing terms",
+        status: "sourced",
+        placeholder_note: null,
+        sources: [work, { ...work, title: "Open Glossary, Price", url: "https://example.org/glossary#price", partOf: work.url }],
+        updated_at: "2026-10-01T00:00:00Z",
+      },
+    ]);
+    const [deck] = await listDecks();
+    expect(deck.sources).toEqual([work]);
+  });
+
   it("reads one deck's terms with their credit", async () => {
     db.reply([
       {

@@ -9,7 +9,9 @@ import type {
   EventItem,
   ExamSlug,
   Source,
+  SourceEntry,
 } from "../lib/content";
+import { workSources } from "../lib/content";
 import { supabase } from "../lib/supabase";
 import { must } from "./core";
 
@@ -98,7 +100,7 @@ type ExamRow = {
   disclaimer: string;
   status: ContentStatus;
   placeholder_note: string | null;
-  sources: Source[];
+  sources: SourceEntry[];
   updated_at: string;
 };
 
@@ -121,7 +123,7 @@ export async function listExams(): Promise<ExamInfo[]> {
     disclaimer: r.disclaimer,
     status: r.status,
     placeholderNote: r.placeholder_note,
-    sources: r.sources ?? [],
+    sources: workSources(r.sources ?? []),
     updatedAt: r.updated_at,
   }));
 }

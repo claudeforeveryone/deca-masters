@@ -83,31 +83,48 @@ Slugs: `business-admin-core`, `business-management`, `entrepreneurship`, `financ
 ## content/vocab/<slug>.json
 
 ```json
-{ "slug": "marketing", "title": "Marketing terms", "terms": [
-  { "id": "mkt-v-001", "term": "Market segmentation", "definition": "Original plain-language definition.", "area": "Market Planning" }
-] }
+{
+  "slug": "marketing",
+  "title": "Marketing terms",
+  "terms": [
+    {
+      "id": "mkt-v-001",
+      "term": "Market segmentation",
+      "definition": "Original plain-language definition.",
+      "area": "Market Planning"
+    }
+  ]
+}
 ```
 
 ## content/roleplays/<cluster>.json
 
 ```json
-{ "cluster": "marketing", "disclaimer": "Original practice scenarios written for DECA Masters. Not official DECA role plays.",
+{
+  "cluster": "marketing",
+  "disclaimer": "Original practice scenarios written for DECA Masters. Not official DECA role plays.",
   "scenarios": [
-  {
-    "id": "rp-mkt-01",
-    "eventCodes": ["PMK", "AAM"],
-    "title": "Short title",
-    "participantRole": "You are the assistant manager of ...",
-    "judgeRole": "The judge plays the store owner who ...",
-    "situation": "Original scenario text, 150-250 words.",
-    "task": "What the participant must present or recommend.",
-    "performanceIndicators": [ { "area": "Promotion", "text": "Explain the role of promotion as a marketing function." } ],
-    "prepMinutes": 10,
-    "presentMinutes": 10,
-    "judgeQuestions": ["A follow-up question the judge may ask."],
-    "rubricNotes": "What a strong answer covers."
-  }
-] }
+    {
+      "id": "rp-mkt-01",
+      "eventCodes": ["PMK", "AAM"],
+      "title": "Short title",
+      "participantRole": "You are the assistant manager of ...",
+      "judgeRole": "The judge plays the store owner who ...",
+      "situation": "Original scenario text, 150-250 words.",
+      "task": "What the participant must present or recommend.",
+      "performanceIndicators": [
+        {
+          "area": "Promotion",
+          "text": "Explain the role of promotion as a marketing function."
+        }
+      ],
+      "prepMinutes": 10,
+      "presentMinutes": 10,
+      "judgeQuestions": ["A follow-up question the judge may ask."],
+      "rubricNotes": "What a strong answer covers."
+    }
+  ]
+}
 ```
 
 - Performance indicator `text` should paraphrase the public PI wording style; mark nothing as official unless it is.
@@ -120,7 +137,12 @@ Every item is either openly licensed material reused under its licence, or a cle
 - Every question and vocab term has `source` as an object, replacing the old `"original"` string:
   `{ "title": "...", "url": "...", "licence": "CC BY 4.0 | CC BY-SA 4.0 | CC BY-NC 4.0 | CC BY-NC-SA 4.0 | CC0 | Public domain (US federal work)", "attribution": "exact TASL line", "adapted": true, "keyFrom": "source | verified" }`.
 - Every exam/vocab/roleplay file has a top-level `"status": "sourced" | "placeholder"`, `"sources": [...]` and, for
-  placeholders, a `"placeholderNote"`. The exam `disclaimer` becomes: "Questions reused from openly licensed sources
+  placeholders, a `"placeholderNote"`. Each `sources` entry needs `title`, `url`, `licence` and `attribution`, and
+  every item's `source.url` must be listed there exactly (the database loader checks the same rule). A whole work
+  (book, glossary, site) is one entry. When items cite a page inside it (a chapter, a quiz, a glossary entry), list
+  that page too as `{ "title", "url", "licence", "attribution", "partOf": "<url of the whole work's entry>" }`: same
+  licence as the work, and its attribution is the work's line. The credits page and the public files show whole
+  works only; each item already links its own page. (Repo addition, 2026-10-11, deca-integrate-core.) The exam `disclaimer` becomes: "Questions reused from openly licensed sources
   (credited on each question). Not official DECA exam content."
 - Role-play files hold links to DECA's official public samples, never copied text: `{ "cluster", "status": "placeholder", "events": [ { "eventCode", "eventName", "officialSamples": [{ "title", "url", "season" }], "format": { "prepMinutes", "presentationMinutes", "judgeRole" }, "placeholder": true, "note" } ] }`.
 - `official-samples.json` lists DECA's official sample exam links per cluster (links only).
