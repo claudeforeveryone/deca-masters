@@ -30,14 +30,14 @@ describe("loadPages", () => {
       asked.push(offset);
       return { total: 7, rows: all.slice(offset, offset + 3) };
     };
-    const out = await loadPages(fetchPage, 5, (r) => r.id);
+    const out = await loadPages(fetchPage, 5, (r: { id: number }) => r.id);
     expect(asked).toEqual([0, 3]);
     expect(out.rows.map((r) => r.id)).toEqual([0, 1, 2, 3, 4, 5]);
     expect(out.done).toBe(false);
   });
 
   it("stops when a page brings nothing new, so a shrinking list cannot loop", async () => {
-    const out = await loadPages(async () => ({ total: 10, rows: [{ id: 1 }] }), 5, (r) => r.id);
+    const out = await loadPages(async () => ({ total: 10, rows: [{ id: 1 }] }), 5, (r: { id: number }) => r.id);
     expect(out.rows).toEqual([{ id: 1 }]);
     expect(out.done).toBe(true);
   });

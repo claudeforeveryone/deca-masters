@@ -8,7 +8,9 @@ import { contractProblems } from "../test/sqlContract";
 import {
   isPlatformOwner,
   ownerAuditSearch,
+  existingItemIds,
   ownerContent,
+  ownerContentDetails,
   ownerEngagement,
   ownerFeedbackList,
   ownerFeedbackUpdate,
@@ -158,5 +160,46 @@ describe("audit, users and content", () => {
     db.reply({ id: "mkt-001", answer: 2 });
     await ownerQuestion("mkt-001");
     expect(db.last.args).toEqual({ p_id: "mkt-001" });
+  });
+});
+
+describe("import helpers", () => {
+  it("read an exam's current details with every credit entry, page entries included", async () => {
+    db.reply({
+      slug: "marketing",
+      title: "Marketing Cluster Exam",
+      blurb: "b",
+      disclaimer: "d",
+      status: "placeholder",
+      placeholder_note: "Only one question.",
+      sources: [{ title: "W", url: "https://example.org/", licence: "CC BY 4.0", attribution: "a" }],
+    });
+    await expect(ownerContentDetails("exam", "marketing")).resolves.toEqual({
+      title: "Marketing Cluster Exam",
+      blurb: "b",
+      disclaimer: "d",
+      status: "placeholder",
+      placeholderNote: "Only one question.",
+      sources: [{ title: "W", url: "https://example.org/", licence: "CC BY 4.0", attribution: "a" }],
+    });
+    expect(db.last.table).toBe("deca_exams");
+    expect(db.last.ops).toContainEqual(["eq", ["slug", "marketing"]]);
+  });
+
+  it("read a deck's details, and say plainly when the deck does not exist", async () => {
+    db.reply(null);
+    await expect(ownerContentDetails("vocab", "marketing")).resolves.toBeNull();
+    expect(db.last.table).toBe("deca_vocab_decks");
+  });
+
+  it("list the ids already in a bank, so the preview can say what an import replaces", async () => {
+    db.reply([{ id: "mkt-001" }, { id: "mkt-002" }]);
+    await expect(existingItemIds("exam", "marketing")).resolves.toEqual(["mkt-001", "mkt-002"]);
+    expect(db.last.table).toBe("deca_questions");
+    expect(db.last.ops).toContainEqual(["eq", ["exam", "marketing"]]);
+    db.reply([{ id: "mkt-v-001" }]);
+    await expect(existingItemIds("vocab", "marketing")).resolves.toEqual(["mkt-v-001"]);
+    expect(db.last.table).toBe("deca_vocab_terms");
+    expect(db.last.ops).toContainEqual(["eq", ["deck", "marketing"]]);
   });
 });

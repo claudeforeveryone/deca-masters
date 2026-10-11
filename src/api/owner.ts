@@ -10,6 +10,7 @@ import type {
   FeedbackPriority,
   FeedbackStatus,
 } from "../lib/feedback";
+import type { CurrentDetails } from "../lib/contentImport";
 import type { Bucket, Count } from "../lib/owner";
 import { supabase } from "../lib/supabase";
 import { must, toApiError } from "./core";
@@ -438,4 +439,58 @@ export async function ownerSetRetired(
     }),
     "Could not change those items.",
   );
+}
+
+/**
+ * An exam's or deck's details as the bank holds them now, with every credit entry (page entries included), so an
+ * import can keep them: deca_load_exam / deca_load_vocab replace the details and the credit list with the
+ * document's. Null when there is no such exam or deck. Public columns (anon can read them too).
+ */
+export async function ownerContentDetails(
+  kind: "exam" | "vocab",
+  slug: string,
+): Promise<CurrentDetails | null> {
+  const row = must<{
+    title: string;
+    blurb?: string;
+    disclaimer?: string;
+    status: ContentStatus;
+    placeholder_note: string | null;
+    sources: CurrentDetails["sources"] | null;
+  } | null>(
+    kind === "exam"
+      ? await supabase
+          .from("deca_exams")
+          .select("slug,title,blurb,disclaimer,status,placeholder_note,sources")
+          .eq("slug", slug)
+          .maybeSingle()
+      : await supabase
+          .from("deca_vocab_decks")
+          .select("slug,title,status,placeholder_note,sources")
+          .eq("slug", slug)
+          .maybeSingle(),
+    "Could not read the current details.",
+  );
+  if (!row) return null;
+  return {
+    title: row.title,
+    ...(kind === "exam" ? { blurb: row.blurb, disclaimer: row.disclaimer } : {}),
+    status: row.status,
+    placeholderNote: row.placeholder_note,
+    sources: row.sources ?? [],
+  };
+}
+
+/** Ids of the active questions or terms in one bank. Retired items are not readable, so they are not listed. */
+export async function existingItemIds(
+  kind: "exam" | "vocab",
+  slug: string,
+): Promise<string[]> {
+  const rows = must<{ id: string }[] | null>(
+    kind === "exam"
+      ? await supabase.from("deca_questions").select("id").eq("exam", slug)
+      : await supabase.from("deca_vocab_terms").select("id").eq("deck", slug),
+    "Could not read the current items.",
+  );
+  return (rows ?? []).map((r) => r.id);
 }
