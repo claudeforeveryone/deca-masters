@@ -5,14 +5,39 @@ import {
   useState,
   type CSSProperties,
 } from "react";
-import { buildGem, CORE, sectorCentreAngle, type Vec3 } from "./geometry";
-import { orbitEye, planView, projectPanels, projectPoint } from "./poster";
+import {
+  buildGem,
+  CORE,
+  gemEdges,
+  sectorCentreAngle,
+  type Vec3,
+} from "./geometry";
+import {
+  orbitEye,
+  planView,
+  projectPanels,
+  projectPoint,
+  projectSeams,
+} from "./poster";
 import { CAMERA, type Orbit } from "./timeline";
 
-const METAL_DARK = [11, 26, 54];
-const METAL_LIT = [104, 132, 182];
-const mix = (k: number) =>
-  `rgb(${METAL_DARK.map((d, i) => Math.round(d + (METAL_LIT[i] - d) * k)).join(" ")})`;
+// Steel navy, matched to the live scene: unlit plates near the stage colour, mid plates a deep blue, plates facing the
+// key light a cool steel. Seams ramp from a deep blue at the culet to electric at the table, like the light inside.
+const METAL = [
+  [9, 21, 46],
+  [22, 54, 112],
+  [86, 128, 196],
+];
+const mix = (k: number) => {
+  const t = Math.min(1, Math.max(0, k)) * 2;
+  const [lo, hi] = t < 1 ? [METAL[0], METAL[1]] : [METAL[1], METAL[2]];
+  const f = t < 1 ? t : t - 1;
+  return `rgb(${lo.map((d, i) => Math.round(d + (hi[i] - d) * f)).join(" ")})`;
+};
+const SEAM_DEEP = [11, 63, 143];
+const SEAM_TOP = [77, 171, 255];
+const seamColour = (rise: number) =>
+  `rgb(${SEAM_DEEP.map((d, i) => Math.round(d + (SEAM_TOP[i] - d) * rise)).join(" ")})`;
 
 function useBoxSize(fallback: { w: number; h: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -57,6 +82,7 @@ export function StructurePoster({
 }) {
   const [ref, { w, h }] = useBoxSize({ w: 1200, h: 800 });
   const panels = useMemo(buildGem, []);
+  const seams = useMemo(() => gemEdges(panels), [panels]);
   const camera = useMemo(
     () => ({
       eye: orbitEye(orbit),
@@ -69,6 +95,10 @@ export function StructurePoster({
   const polys = useMemo(
     () => projectPanels(panels, camera, w, h, rotation),
     [panels, camera, w, h, rotation],
+  );
+  const seamLines = useMemo(
+    () => projectSeams(seams, camera, w, h, rotation),
+    [seams, camera, w, h, rotation],
   );
   // The orbit ring (tilted 12 degrees like the scene) and its event ticks.
   const ring = useMemo(() => {
@@ -98,14 +128,6 @@ export function StructurePoster({
     ];
     return { circle, marks };
   }, [ticks, camera, w, h, rotation]);
-  const core = useMemo(
-    () => projectPoint([0, -0.12, 0], camera, w, h),
-    [camera, w, h],
-  );
-  const coreR = useMemo(
-    () => Math.abs(projectPoint([0.6, -0.12, 0], camera, w, h).x - core.x),
-    [camera, w, h, core],
-  );
 
   return (
     <div ref={ref} className={`absolute inset-0 ${className}`}>
@@ -135,7 +157,21 @@ export function StructurePoster({
             strokeWidth={1}
           />
         ))}
-        <circle cx={core.x} cy={core.y} r={coreR} fill="#cfe6ff" />
+        {/* The light between the plates, drawn under them so only the seams show it. */}
+        <g className={assemble ? "poster-seams" : undefined}>
+          {seamLines.map((s) => (
+            <line
+              key={s.id}
+              x1={s.a.x}
+              y1={s.a.y}
+              x2={s.b.x}
+              y2={s.b.y}
+              stroke={seamColour(s.rise)}
+              strokeWidth={2.5}
+              strokeLinecap="round"
+            />
+          ))}
+        </g>
         {polys.map((p) => {
           const style = assemble
             ? ({

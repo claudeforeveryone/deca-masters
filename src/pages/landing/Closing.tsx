@@ -14,7 +14,7 @@ export function Closing({
   ticks: { angle: number; sector: number }[];
 }) {
   const sceneProps = useMemo(
-    () => ({ variant: "close" as const, ticks, shift: 0.2 }),
+    () => ({ variant: "close" as const, ticks, shift: 0.26 }),
     [ticks],
   );
   return (
@@ -32,7 +32,7 @@ export function Closing({
         props={sceneProps}
         className="absolute! inset-0 -z-10 hidden md:block"
         poster={
-          <StructurePoster orbit={ORBITS.close} shift={0.2} ticks={ticks} />
+          <StructurePoster orbit={ORBITS.close} shift={0.26} ticks={ticks} />
         }
       />
 

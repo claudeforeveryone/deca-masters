@@ -1,6 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { buildGem, type Panel } from "./geometry";
-import { orbitEye, planView, projectPanels, projectPoint } from "./poster";
+import { buildGem, gemEdges, type Panel } from "./geometry";
+import {
+  orbitEye,
+  planView,
+  projectPanels,
+  projectPoint,
+  projectSeams,
+} from "./poster";
 
 const camera = {
   eye: [0, 0, 10] as const,
@@ -74,5 +80,36 @@ describe("planView", () => {
         expect(y).toBeGreaterThanOrEqual(0);
         expect(y).toBeLessThanOrEqual(300);
       }
+  });
+});
+
+describe("projectSeams", () => {
+  const seams = gemEdges(buildGem());
+  const above = {
+    eye: orbitEye({ radius: 8.6, elevation: 15, azimuth: 0 }),
+    target: [0, -0.12, 0] as const,
+    fov: 32,
+  };
+
+  it("draws only the seams on the side facing the camera", () => {
+    const front = projectSeams(seams, above, 800, 600);
+    expect(front.length).toBeGreaterThan(40);
+    expect(front.length).toBeLessThan(144);
+    // From above, every one of the table's 12 spokes faces the camera.
+    const spokes = seams
+      .map((s, id) => ({ s, id }))
+      .filter(({ s }) => s.a[1] === 0.62 && s.b[1] === 0.62 && (s.a[0] === 0 || s.b[0] === 0));
+    expect(spokes).toHaveLength(12);
+    const drawn = new Set(front.map((f) => f.id));
+    for (const { id } of spokes) expect(drawn.has(id)).toBe(true);
+  });
+
+  it("ramps the light from the culet (0) to the table (1)", () => {
+    const front = projectSeams(seams, above, 800, 600);
+    for (const f of front) {
+      expect(f.rise).toBeGreaterThanOrEqual(0);
+      expect(f.rise).toBeLessThanOrEqual(1);
+    }
+    expect(Math.max(...front.map((f) => f.rise))).toBe(1);
   });
 });

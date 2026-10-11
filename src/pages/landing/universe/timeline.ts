@@ -22,6 +22,9 @@ export const CAMERA: { start: Orbit; end: Orbit } = {
   end: { radius: 8.6, elevation: 15, azimuth: 0 },
 };
 
+/** Phones frame the structure closer: the gem fills most of the width and the ring runs off both edges. */
+export const PHONE_ORBIT: Orbit = { radius: 6.9, elevation: 15, azimuth: 0 };
+
 /** The fixed views: the explorer looks down on the crown; the closing scene looks up from below, as the hero's echo. */
 export const ORBITS: { explore: Orbit; close: Orbit } = {
   explore: { radius: 7.4, elevation: 27, azimuth: 0 },

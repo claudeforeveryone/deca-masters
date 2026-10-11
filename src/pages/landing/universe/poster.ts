@@ -1,6 +1,6 @@
 // The posters are computed, not drawn: the same 96 panels the 3D scene uses, projected with the same camera into SVG
 // polygons and shaded by facet normal against the key light. Pure (no three.js), so it ships in the landing chunk.
-import type { Panel, Vec3 } from "./geometry";
+import type { Panel, Seam, Vec3 } from "./geometry";
 import type { Orbit } from "./timeline";
 
 type Camera = {
@@ -128,6 +128,40 @@ export function projectPanels(
     });
   }
   return out.sort((a, b) => b.depth - a.depth);
+}
+
+export type PosterSeam = {
+  id: number;
+  a: { x: number; y: number };
+  b: { x: number; y: number };
+  /** Height of the seam's midpoint, 0 at the culet to 1 at the table: the light ramps deep blue to electric. */
+  rise: number;
+};
+
+/** The seams on the side facing the camera, projected like the panels: the light between the plates. */
+export function projectSeams(
+  seams: Seam[],
+  camera: Camera,
+  width: number,
+  height: number,
+  rotation = 0,
+): PosterSeam[] {
+  const out: PosterSeam[] = [];
+  seams.forEach((s, id) => {
+    const a = yaw(s.a, rotation);
+    const b = yaw(s.b, rotation);
+    const mid: Vec3 = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2, (a[2] + b[2]) / 2];
+    if (dot(yaw(s.normal, rotation), norm(sub(camera.eye, mid))) <= 0) return;
+    const pa = projectPoint(a, camera, width, height);
+    const pb = projectPoint(b, camera, width, height);
+    out.push({
+      id,
+      a: { x: Math.round(pa.x * 10) / 10, y: Math.round(pa.y * 10) / 10 },
+      b: { x: Math.round(pb.x * 10) / 10, y: Math.round(pb.y * 10) / 10 },
+      rise: Math.min(1, Math.max(0, (mid[1] + 1.78) / 2.4)),
+    });
+  });
+  return out;
 }
 
 /** The crown seen from straight above (the gemologist's plan view), scaled into a size x size box. */

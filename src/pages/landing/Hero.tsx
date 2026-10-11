@@ -8,7 +8,7 @@ import {
 import { Link } from "react-router-dom";
 import { buttonClass } from "../../components/ui/Button";
 import { Mount3D } from "../../three/Mount3D";
-import { CAMERA, INTRO } from "./universe/timeline";
+import { CAMERA, INTRO, PHONE_ORBIT } from "./universe/timeline";
 import { StructurePoster } from "./universe/Posters";
 
 const loadUniverse = () => import("../../three/StrategyUniverse");
@@ -83,7 +83,7 @@ export function Hero({
       <div className="shell relative grid min-h-[calc(100dvh-var(--bar-h)-var(--tabbar-h)-env(safe-area-inset-bottom))] grid-rows-[minmax(12rem,1fr)_auto] pt-4 pb-10 md:grid-rows-none md:min-h-[min(calc(100dvh-var(--bar-h)),58rem)] md:content-center md:pt-16 md:pb-24">
         {/* Phones: the computed poster fills the space above the text, flying together once. */}
         <div className="relative -mx-(--gutter) mb-1 min-h-48 md:hidden">
-          <StructurePoster orbit={CAMERA.end} ticks={ticks} assemble />
+          <StructurePoster orbit={PHONE_ORBIT} ticks={ticks} assemble />
         </div>
 
         <div className="max-w-[36rem]">
