@@ -157,7 +157,7 @@ export function FeedbackTriage({ refreshKey }: { refreshKey: number }) {
   };
 
   return (
-    <div className="grid gap-4">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-4">
       <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
         <FilterChips
           label="Status"
@@ -260,7 +260,7 @@ export function FeedbackTriage({ refreshKey }: { refreshKey: number }) {
                     }}
                   />
                 ) : (
-                  <div className="grid min-h-48 place-items-center rounded border border-dashed border-line-strong p-6 text-center text-sm text-ink-3">
+                  <div className="grid grid-cols-[minmax(0,1fr)] min-h-48 place-items-center rounded border border-dashed border-line-strong p-6 text-center text-sm text-ink-3">
                     Pick a report to read it and set its status.
                   </div>
                 )}
@@ -371,7 +371,7 @@ export function FeedbackDetail({
         <Tag>{KIND_LABELS[row.kind]}</Tag>
         <StatusTag status={row.status} />
       </div>
-      <div className="grid gap-5 px-4 py-4 sm:px-5">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-5 px-4 py-4 sm:px-5">
         <p className="text-[0.95rem] leading-relaxed break-words whitespace-pre-wrap text-ink">
           {row.message}
         </p>
@@ -435,7 +435,7 @@ export function FeedbackDetail({
             onChange={(e) => setStatus(e.target.value as FeedbackStatus)}
             options={STATUS_OPTIONS}
           />
-          <div className="grid gap-1.5">
+          <div className="grid grid-cols-[minmax(0,1fr)] gap-1.5">
             <span
               className="text-sm font-semibold text-ink"
               id={`prio-${row.id}`}

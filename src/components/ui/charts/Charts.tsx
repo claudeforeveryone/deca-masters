@@ -108,7 +108,8 @@ export function LineChart({
           </g>
         ))}
         {data.map((d, i) =>
-          i % every === 0 || i === data.length - 1 ? (
+          i === data.length - 1 ||
+          (i % every === 0 && data.length - 1 - i >= every) ? (
             <text
               key={d.x}
               x={x(i)}

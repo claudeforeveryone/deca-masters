@@ -256,7 +256,7 @@ export function ContentImport({ onImported }: { onImported: () => void }) {
       title="Add content"
       lede="A JSON file in the content/ format, or a CSV of questions or terms. Every item needs its source, licence and attribution."
     >
-      <div className="grid gap-4">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-4">
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-[14rem_18rem_1fr] lg:items-end">
           <Select
             label="A CSV holds"
@@ -354,7 +354,7 @@ export function ContentImport({ onImported }: { onImported: () => void }) {
         {plan ? (
           <section
             aria-label="Import preview"
-            className="grid gap-3 rounded border border-line bg-surface-2/50 p-4"
+            className="grid grid-cols-[minmax(0,1fr)] gap-3 rounded border border-line bg-surface-2/50 p-4"
           >
             <div className="flex flex-wrap items-center gap-2">
               <span className="font-mono text-sm">{plan.fileName}</span>
@@ -374,7 +374,7 @@ export function ContentImport({ onImported }: { onImported: () => void }) {
                   : "."}
             </p>
             {plan.changes.length ? (
-              <ul className="grid gap-1 text-sm">
+              <ul className="grid grid-cols-[minmax(0,1fr)] gap-1 text-sm">
                 {plan.changes.map((c) => (
                   <li key={c}>{c}</li>
                 ))}
@@ -386,13 +386,13 @@ export function ContentImport({ onImported }: { onImported: () => void }) {
               </p>
             ) : null}
             {plan.errors.length ? (
-              <div role="alert" className="grid gap-1 text-sm text-bad">
+              <div role="alert" className="grid grid-cols-[minmax(0,1fr)] gap-1 text-sm text-bad">
                 <p className="font-semibold">
                   {plan.errors.length === 1
                     ? "1 problem"
                     : `${plan.errors.length} problems`}
                 </p>
-                <ul className="grid gap-0.5">
+                <ul className="grid grid-cols-[minmax(0,1fr)] gap-0.5">
                   {shownErrors.map((e, i) => (
                     <li key={i} className="break-words">
                       {e}

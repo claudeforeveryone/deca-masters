@@ -440,8 +440,10 @@ function MyReports({
             {r.message}
           </p>
           {r.resolution_note ? (
-            <div className="mt-2.5 border-l-2 border-accent pl-3 text-sm">
-              <span className="font-semibold">Reply from the team: </span>
+            <div className="mt-2.5 rounded-xs bg-surface-2 px-3 py-2 text-sm">
+              <span className="block text-micro font-semibold text-ink-2">
+                Reply from the team
+              </span>
               <span className="break-words">{r.resolution_note}</span>
             </div>
           ) : null}

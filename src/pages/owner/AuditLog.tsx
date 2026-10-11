@@ -78,7 +78,7 @@ export function AuditLog({ refreshKey }: { refreshKey: number }) {
   ];
 
   return (
-    <div className="grid gap-4">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-4">
       <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_14rem_12rem] sm:items-end">
         <SearchField
           label="Search the log"
@@ -131,7 +131,7 @@ export function AuditLog({ refreshKey }: { refreshKey: number }) {
                   const reason = reasonOf(r);
                   const affected = target(r);
                   return (
-                    <li key={r.id} className="grid gap-1 py-3 text-sm">
+                    <li key={r.id} className="grid grid-cols-[minmax(0,1fr)] gap-1 py-3 text-sm">
                       <span className="flex items-baseline justify-between gap-3">
                         <span className="font-semibold">
                           {auditActionLabel(r.action)}

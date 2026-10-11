@@ -71,7 +71,7 @@ export function UsersAdmin({ refreshKey }: { refreshKey: number }) {
           };
 
   return (
-    <div className="grid gap-4">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-4">
       <div className="max-w-xl">
         <SearchField
           label="Find a member"
@@ -102,7 +102,7 @@ export function UsersAdmin({ refreshKey }: { refreshKey: number }) {
                 body={`Nothing for "${query}". Check the spelling or paste a user id.`}
               />
             ) : (
-              <ul aria-label="Members" className="grid gap-3">
+              <ul aria-label="Members" className="grid grid-cols-[minmax(0,1fr)] gap-3">
                 {rows.map((m) => (
                   <MemberCard key={m.user_id} user={m} onAction={setAction} />
                 ))}

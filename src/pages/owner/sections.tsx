@@ -154,7 +154,7 @@ export function OverviewView({ data: d }: { data: OwnerOverview }) {
   const month = signupFigure(d.onboarding.month, "new account");
   const all = signupFigure(d.onboarding.all_time, "account");
   return (
-    <div className="grid gap-6">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-6">
       <StatRow>
         <StatTile
           label="DECA accounts"
@@ -256,7 +256,7 @@ export function OverviewView({ data: d }: { data: OwnerOverview }) {
         </dl>
       </Block>
 
-      <div className="grid gap-1.5 text-sm text-ink-3 sm:flex sm:justify-between sm:gap-6">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-1.5 text-sm text-ink-3 sm:flex sm:justify-between sm:gap-6">
         <PrivacyNote />
         <p>
           {d.tracking_since
@@ -302,7 +302,7 @@ export function GrowthSection({
     `growth:${days}:${bucket}:${refreshKey}`,
   );
   return (
-    <div className="grid gap-4">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-sm text-ink-3">
           One column per {bucket}, Toronto time. A dashed stub is a number
@@ -405,7 +405,7 @@ export function GrowthView({
     coarser,
   );
   return (
-    <div className="grid gap-4">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-4">
       <div className="grid gap-4 xl:grid-cols-2">
         {GROWTH_CHARTS.map((c) => {
           const note = quietNote(
@@ -499,7 +499,7 @@ export function EngagementView({ data: d }: { data: OwnerEngagement }) {
   );
   const popular = d.popular_events.slice(0, 10);
   return (
-    <div className="grid gap-4">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-4">
       <div className="grid gap-4 lg:grid-cols-2">
         <Block
           title="Practice runs"
@@ -691,12 +691,12 @@ export function PreparationView({ data }: { data: OwnerPreparation }) {
         (e.roleplay_users.value ?? 0) > 0,
     );
   return (
-    <div className="grid gap-6">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-6">
       <Block
         title="Cluster exams"
         lede="Graded runs by exam. Accuracy and not finished show only when 5 or more members took part. Redo runs are left out."
       >
-        <ul className="grid gap-3 sm:hidden" aria-label="Exams">
+        <ul className="grid grid-cols-[minmax(0,1fr)] gap-3 sm:hidden" aria-label="Exams">
           {exams.map((r) => (
             <ExamCard key={r.exam} r={r} />
           ))}
@@ -742,11 +742,11 @@ export function PreparationView({ data }: { data: OwnerPreparation }) {
         {events.length ? (
           <>
             <ul
-              className="grid gap-0 divide-y divide-line border-y border-line sm:hidden"
+              className="grid grid-cols-[minmax(0,1fr)] gap-0 divide-y divide-line border-y border-line sm:hidden"
               aria-label="Events"
             >
               {events.map((e) => (
-                <li key={e.event_code} className="grid gap-1 py-3">
+                <li key={e.event_code} className="grid grid-cols-[minmax(0,1fr)] gap-1 py-3">
                   <span className="flex items-baseline gap-2">
                     <FacetMarker cluster={e.cluster as ClusterSlug} size="sm" />
                     <span className="font-mono text-sm font-semibold">
@@ -816,7 +816,7 @@ export function PreparationView({ data }: { data: OwnerPreparation }) {
 
 function ExamCard({ r }: { r: PrepExamRow }) {
   return (
-    <li className="grid gap-2 border-b border-line pb-3">
+    <li className="grid grid-cols-[minmax(0,1fr)] gap-2 border-b border-line pb-3">
       <span className="flex items-baseline justify-between gap-3">
         <span className="min-w-0 font-medium">{examName(r.exam)}</span>
         <span className="shrink-0 text-sm text-ink-3">
@@ -889,7 +889,7 @@ export function ContentView({
   const totalQuestions = d.exams.reduce((t, e) => t + e.questions, 0);
   const totalTerms = d.decks.reduce((t, e) => t + e.terms, 0);
   return (
-    <div className="grid gap-6">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-6">
       <nav
         aria-label="Feedback by status"
         className="flex flex-wrap items-center gap-2"
@@ -927,7 +927,7 @@ export function ContentView({
                   }}
                   className="group flex items-start gap-3 py-3 text-ink no-underline hover:bg-surface-2/60"
                 >
-                  <span className="grid min-w-0 flex-1 gap-1">
+                  <span className="grid grid-cols-[minmax(0,1fr)] min-w-0 flex-1 gap-1">
                     <span className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-3">
                       <span className="font-mono font-semibold text-ink">
                         {q.item_id}
@@ -1108,7 +1108,7 @@ export function ContentView({
             </Table>
           </TableFrame>
         </Block>
-        <div className="grid content-start gap-4">
+        <div className="grid grid-cols-[minmax(0,1fr)] content-start gap-4">
           <Block
             title="Role plays"
             lede="Links to DECA's own samples; no role-play text is copied"
@@ -1125,7 +1125,7 @@ export function ContentView({
           </Block>
           <Block title="Licences" lede="Active questions and terms per licence">
             {licences.length ? (
-              <dl className="grid gap-2">
+              <dl className="grid grid-cols-[minmax(0,1fr)] gap-2">
                 {licences.map(([l, n]) => (
                   <div
                     key={l}

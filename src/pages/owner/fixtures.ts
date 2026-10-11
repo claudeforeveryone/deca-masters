@@ -49,37 +49,36 @@ export function growthFixture(days: number, bucket: Bucket): OwnerGrowth {
   const today = "2026-10-11";
   const first = addDays(today, -(days - 1));
   const step = bucket === "day" ? 1 : bucket === "week" ? 7 : 30;
-  const series = [];
-  let total = 214 - Math.round(days * 0.9);
-  for (
-    let start = first, i = 0;
-    start <= today;
-    start = addDays(start, step), i++
-  ) {
-    const end =
-      addDays(start, step - 1) > today ? today : addDays(start, step - 1);
-    const len =
-      Math.round((Date.parse(end) - Date.parse(start)) / 86_400_000) + 1;
-    const signups = Math.round(
-      len * (0.6 + 0.35 * Math.sin(i / 2.3) + i * 0.02),
-    );
-    total += signups;
-    const small = (v: number) => (v >= 1 && v <= 4 ? hidden : n(v));
-    series.push({
+  const small = (v: number) => (v >= 1 && v <= 4 ? hidden : n(v));
+  const buckets: { start: string; end: string; len: number; i: number }[] = [];
+  for (let start = first, i = 0; start <= today; start = addDays(start, step), i++) {
+    const end = addDays(start, step - 1) > today ? today : addDays(start, step - 1);
+    const len = Math.round((Date.parse(end) - Date.parse(start)) / 86_400_000) + 1;
+    buckets.push({ start, end, len, i });
+  }
+  // Sign-ups pick up through September (the school year), so the running total ends at the overview's 214.
+  const signups = buckets.map(({ len, i }) =>
+    Math.round(len * (0.7 + 0.45 * Math.sin(i / 2.1) + (i / buckets.length) * 0.9)),
+  );
+  let total = 214 - signups.reduce((a, b) => a + b, 0);
+  const baseline = total;
+  const series = buckets.map(({ start, end, len, i }, k) => {
+    total += signups[k];
+    return {
       start,
       end,
-      signups: small(signups),
+      signups: small(signups[k]),
       total: n(total),
-      onboarded: small(Math.round(signups * 0.78)),
+      onboarded: small(Math.round(signups[k] * 0.78)),
       practising: small(Math.round(len * 3.1 + i)),
       active: small(Math.round(len * 4.4 + i * 1.5)),
-    });
-  }
+    };
+  });
   return {
     days,
     bucket,
     timezone: "America/Toronto",
-    baseline: n(214 - Math.round(days * 0.9)),
+    baseline: n(baseline),
     series,
   };
 }

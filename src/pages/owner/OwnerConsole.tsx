@@ -125,7 +125,7 @@ export function OwnerConsole({ source }: { source: OwnerSource }) {
   }
 
   const panel = (s: (typeof SECTIONS)[number]) => (
-    <div className="grid gap-5 pt-6">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-5 pt-6">
       {/* The section's own heading for screen readers; the selected tab shows its name on screen. */}
       <h2 className="sr-only">{s.label}</h2>
       <div className="flex flex-wrap items-center justify-between gap-3">

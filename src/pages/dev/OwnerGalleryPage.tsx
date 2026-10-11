@@ -83,8 +83,8 @@ export function OwnerGalleryPage() {
   );
   const sink = useMemo(gallerySink, []);
   return (
-    <div className="grid gap-8">
-      <div className="grid gap-4">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-8">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-4">
         <Notice tone="warn">
           Development gallery. Every number and name below is made up
           (src/pages/owner/fixtures.ts). This page does not exist in production.
@@ -119,7 +119,7 @@ function FeedbackDemos() {
   return (
     <section
       aria-labelledby="fb-demo-h"
-      className="grid gap-4 border-t border-line pt-8"
+      className="grid grid-cols-[minmax(0,1fr)] gap-4 border-t border-line pt-8"
     >
       <h2 id="fb-demo-h" className="text-title">
         Member feedback

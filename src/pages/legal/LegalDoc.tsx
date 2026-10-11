@@ -77,7 +77,7 @@ export function LegalDoc({
         <div className="min-w-0 max-w-(--measure)">
           <section
             aria-labelledby="short-version"
-            className="border-l-2 border-accent pl-5"
+            className="rounded border border-line bg-surface p-5 sm:p-6"
           >
             <h2 id="short-version" className="text-title">
               The short version

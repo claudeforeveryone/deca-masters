@@ -354,11 +354,11 @@ export function LoadState<T>({
 
 function SectionSkeleton({ kind }: { kind: "tiles" | "chart" | "table" }) {
   return (
-    <div role="status" aria-label="Loading" className="grid gap-4">
+    <div role="status" aria-label="Loading" className="grid grid-cols-[minmax(0,1fr)] gap-4">
       {kind === "tiles" ? (
         <div className="grid grid-cols-2 gap-6 border-y border-line py-5 lg:grid-cols-4">
           {Array.from({ length: 4 }, (_, i) => (
-            <span key={i} className="grid gap-2">
+            <span key={i} className="grid grid-cols-[minmax(0,1fr)] gap-2">
               <Skeleton className="h-3.5 w-24" />
               <Skeleton className="h-10 w-20" />
             </span>
@@ -422,7 +422,12 @@ export function CountText({
 
 /** "12 members", or "members hidden" when the count is withheld. */
 export function Members({ c }: { c: Count }) {
-  if (c.suppressed) return <span className="text-ink-3">members hidden</span>;
+  if (c.suppressed)
+    return (
+      <span className="text-ink-3" title={HIDDEN_WHY}>
+        a hidden number of members
+      </span>
+    );
   if (c.value == null) return <EmptyValue />;
   return (
     <>
@@ -462,14 +467,14 @@ export function Block({
       aria-labelledby={id}
       className={`min-w-0 rounded border border-line bg-surface p-4 sm:p-5 ${className}`}
     >
-      <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
-        <div className="min-w-0">
+      <div className="flex items-start justify-between gap-4">
+        <div className="min-w-0 flex-1">
           <h3 id={id} className="text-base font-semibold text-ink">
             {title}
           </h3>
           {lede ? <p className="mt-0.5 text-sm text-ink-3">{lede}</p> : null}
         </div>
-        {actions}
+        {actions ? <div className="shrink-0">{actions}</div> : null}
       </div>
       <div className="mt-4">{children}</div>
     </section>
