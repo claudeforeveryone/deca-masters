@@ -21,6 +21,7 @@
   @media (min-width: 1024px) {
     :root {
       --gutter: 2rem;
+      --section-y: 6rem;
     }
   }
 
@@ -104,6 +105,43 @@
 }
 
 @layer components {
+  /* The navy stage (landing, closing scene, auth side panel): text, focus and selection tuned for dark navy in both
+   * colour schemes. */
+  .stage {
+    --focus: var(--focus-on-dark);
+    color: var(--on-navy);
+    background: var(--stage-1);
+    color-scheme: dark;
+  }
+  .stage ::selection {
+    background: rgb(77 171 255 / 0.36);
+  }
+
+  /* Panels that float over the 3D canvas: the one place glass is allowed. Solid when transparency is reduced. */
+  .glass {
+    background: var(--glass);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    backdrop-filter: blur(14px) saturate(140%);
+    box-shadow: var(--edge-highlight);
+  }
+  @media (prefers-reduced-transparency: reduce) {
+    .glass {
+      background: var(--stage-2);
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+  }
+
+  /* The facet: a 45 degree square, the repeated unit of the system (list marker, tick, selected marker, cluster key). */
+  .facet {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    flex: none;
+    transform: rotate(45deg);
+    background: currentColor;
+  }
+
   /* The page column inside the shell: one max width, one gutter, used by every page. */
   .shell {
     width: 100%;
@@ -116,6 +154,45 @@
    * lines up with the page. 100vw counts a desktop scrollbar; body's overflow-x: clip hides that sliver. */
   .bleed {
     margin-inline: calc(50% - 50vw);
+  }
+}
+
+/* Skeleton shimmer (off under reduced motion via the base layer). */
+@keyframes skeleton-sweep {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* Overlays: dialog, drawer, popover, toast. Entrances use --ease-out; exits run faster on --ease-in. */
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+@keyframes scrim-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes drawer-in-right {
+  from {
+    transform: translateX(100%);
+  }
+}
+@keyframes drawer-in-bottom {
+  from {
+    transform: translateY(100%);
+  }
+}
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
   }
 }
 

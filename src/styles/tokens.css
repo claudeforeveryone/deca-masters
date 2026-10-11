@@ -1,23 +1,26 @@
 /*
- * Competition Terminal: starter tokens for DECA Masters v2. The deca-universe track refines these values; every
- * component reads them through the variables (or the Tailwind names bridged at the bottom), never raw hex.
+ * The Competition Terminal: DECA Masters design tokens. Every component reads these variables (or the Tailwind names
+ * bridged at the bottom), never raw hex. Design contract: Omega hq/design/DECA_TERMINAL.md.
  *
  * Blues. #0072CE is the DECA blue: it is the fill in deca.org's own logo file, and PANTONE 285 C (the spot colour in
  * DECA's Brand Guidelines PDF, Lab 45.1 / -5 / -59) converts to #0071CE. #002D6B (navy), #071634 (deep navy) and
  * #008DFF (electric) are deca.org's own site colours. DECA publishes no official hex values, so treat all four as
- * reference values, not a brand spec. Neutrals, state colours and the dark theme are ours.
+ * reference values, not a brand spec. Neutrals, the stage, state colours and the dark theme are ours.
  *
- * Contrast (WCAG 2.2, recomputed 2026-10-11 by deca-foundation): ink, ink-2, ink-3 and link are 4.5:1 or better on
- * canvas, surface and surface-2 in both themes (ink-3 on surface-2, the lowest, is 5.2:1 light / 5.5:1 dark);
- * white on the accent is 4.9:1; state colours on their own surfaces are 4.7:1 or better. UI boundaries
- * (line-strong, focus) are 3:1 or better against canvas and surface. On navy: on-navy 16.5:1, on-navy-2 9.6:1,
- * electric-text 7.3:1.
+ * Contrast (WCAG 2.2, recomputed 2026-10-11): ink, ink-2, ink-3 and link are 4.5:1 or better on canvas, surface and
+ * surface-2 in both themes (ink-3 on surface-2, the lowest, is 5.2:1 light / 5.5:1 dark); white on the accent is
+ * 4.9:1; state colours on their own surfaces are 4.7:1 or better. UI boundaries (line-strong, focus) are 3:1 or better
+ * against canvas and surface. On navy and the stage: on-navy 16.5:1, on-navy-2 9.6:1 (8.6:1 on stage-2), on-stage-3
+ * 7.0:1 (6.3:1 on stage-2), electric-text 7.3:1 (6.6:1 on stage-2), stage-line-strong 3.8:1 (3.4:1 on stage-2),
+ * focus-on-dark 10.1:1. Cluster colours as markers on navy: 3.2:1 or better (graphics need 3:1).
  */
 
-:root {
+/* Light ("refined white") is the default and also the forced scope for app windows shown on the dark stage. */
+:root,
+.theme-light {
   color-scheme: light;
 
-  /* ---- fixed in both themes: the navy chrome (top bar, footer, hero bands) ---- */
+  /* ---- fixed in both themes: the navy chrome (top bar, footer) and the landing stage ---- */
   --navy-deep: #071634;
   --navy: #002d6b;
   --deca-blue: #0072ce;
@@ -27,7 +30,18 @@
   --on-navy-2: #afbeda;
   --on-navy-line: #1e3360;
 
-  /* ---- themed: light ("refined white") ---- */
+  --stage-0: #040a18; /* deepest: hero foot, closing scene */
+  --stage-1: #071634; /* the stage */
+  --stage-2: #0c1f45; /* a raised panel on the stage */
+  --stage-line: #1b2f57; /* hairline on the stage (decorative separation only) */
+  --stage-line-strong: #5a74a2; /* control boundaries on the stage: 3:1+ */
+  --on-stage-3: #8fa3c6; /* tertiary text on the stage */
+  --focus-on-dark: #8fc8ff;
+  --glass: rgb(
+    12 31 69 / 0.78
+  ); /* stage-2 at 78%: only for panels floating over the 3D canvas */
+
+  /* ---- themed ---- */
   --canvas: #f3f6fb;
   --surface: #ffffff;
   --surface-2: #e9f0f9; /* a quiet blue-tinted step for selected rows, code, wells */
@@ -52,8 +66,9 @@
   --warn-surface: #fdf1d3;
 
   --selection: rgb(0 114 206 / 0.22);
+  --scrim: rgb(4 10 24 / 0.62);
 
-  /* DECA's career clusters (deca.org colours) plus Business Administration Core. Use for tags and markers only. */
+  /* DECA's career clusters (deca.org colours) plus Business Administration Core. Facet markers and tags only. */
   --cluster-core: #002d6b;
   --cluster-business-management: #f7bc00;
   --cluster-entrepreneurship: #7c8689;
@@ -63,9 +78,9 @@
   --cluster-personal-finance: #91c659;
 
   /* ---- type ----
-   * Display: Saira Semi Condensed, a squared, slightly condensed grotesque with scoreboard energy. Headings only.
+   * Display: Saira Semi Condensed, squared and slightly condensed, with timetable and scoreboard energy. Headings only.
    * Body: Instrument Sans, a sturdy reading face for long question stems and forms.
-   * Data: JetBrains Mono, only for numbers that are measured: timers, scores, counts, codes. Always tabular.
+   * Data: JetBrains Mono, only for measured things: event codes, timers, scores, counts. Always tabular.
    * The @fontsource-variable packages register the family as "<name> Variable"; the stacks must say so. */
   --f-display: "Saira Semi Condensed", "Arial Narrow", system-ui, sans-serif;
   --f-body:
@@ -75,7 +90,7 @@
     monospace;
 
   --track-display: -0.015em;
-  --track-caps: 0.06em; /* the rare uppercase micro label in a table header */
+  --track-hero: -0.02em;
   --measure: 68ch;
 
   /* ---- spacing: 4px base (Tailwind's --spacing matches), plus layout rhythm ---- */
@@ -91,30 +106,38 @@
   --space-16: 4rem;
   --space-24: 6rem;
   --gutter: 1rem; /* side gutter on phones; 1.5rem from 640px, 2rem from 1024px (see index.css) */
-  --shell-max: 72rem;
+  --shell-max: 76rem;
   --bar-h: 3.5rem; /* top bar */
   --tabbar-h: 3.75rem; /* phone bottom bar, before the safe-area inset */
+  --section-y: 4rem; /* landing section padding; 6rem from 1024px */
 
   /* ---- shape: 2px controls, 4px cards, 6px is the ceiling ---- */
   --r-control: 2px;
   --r-card: 4px;
   --r-max: 6px;
 
-  /* ---- elevation: declared once. Surfaces separate by hairline and background step; only overlays
-   * (menus, toasts, dialogs) cast a shadow. ---- */
+  /* ---- elevation: declared once. e0 = hairline + surface step (cards, panels). e1 = overlays (menus, popovers,
+   * toasts). e2 = dialogs and drawers, over the scrim. Never a hairline under a wide soft shadow. ---- */
   --shadow-overlay:
     0 16px 40px -16px rgb(3 10 26 / 0.45), 0 2px 6px rgb(3 10 26 / 0.12);
+  --shadow-dialog:
+    0 32px 80px -24px rgb(3 10 26 / 0.6), 0 4px 12px rgb(3 10 26 / 0.18);
+  --edge-highlight: inset 0 1px 0 rgb(255 255 255 / 0.07); /* the cut-metal top edge on navy panels */
 
-  /* ---- motion: exponential ease-out, short. Animate transform, opacity, clip-path, filter; never layout. ---- */
+  /* ---- motion: exponential ease-out arrivals, faster exits. Animate transform, opacity, clip-path, filter. ---- */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
   --dur-1: 120ms; /* hover, press */
-  --dur-2: 180ms; /* small reveals, tab underline */
-  --dur-3: 240ms; /* panels, route content */
-  --dur-4: 400ms; /* the one authored moment per surface */
+  --dur-2: 180ms; /* small reveals, tab marker */
+  --dur-3: 240ms; /* panels, popovers, toasts */
+  --dur-4: 400ms; /* dialogs, drawers, section state */
+  --dur-5: 700ms; /* the one authored moment: the hero headline */
 
   --z-bar: 30;
+  --z-popover: 40;
   --z-overlay: 50;
+  --z-toast: 60;
 }
 
 /* ---- themed: dark ("deep navy"). Follows the system unless the visitor picked a theme on this device. ---- */
@@ -140,12 +163,16 @@
     --warn: #f2b640;
     --warn-surface: #2b2108;
     --selection: rgb(61 162 255 / 0.32);
+    --scrim: rgb(2 6 16 / 0.72);
     --shadow-overlay:
       0 18px 44px -14px rgb(0 0 0 / 0.7), 0 2px 6px rgb(0 0 0 / 0.4);
+    --shadow-dialog:
+      0 36px 90px -24px rgb(0 0 0 / 0.8), 0 4px 12px rgb(0 0 0 / 0.45);
   }
 }
 
-:root[data-theme="dark"] {
+:root[data-theme="dark"],
+.theme-dark {
   color-scheme: dark;
   --canvas: #050c1c;
   --surface: #0b1629;
@@ -166,8 +193,11 @@
   --warn: #f2b640;
   --warn-surface: #2b2108;
   --selection: rgb(61 162 255 / 0.32);
+  --scrim: rgb(2 6 16 / 0.72);
   --shadow-overlay:
     0 18px 44px -14px rgb(0 0 0 / 0.7), 0 2px 6px rgb(0 0 0 / 0.4);
+  --shadow-dialog:
+    0 36px 90px -24px rgb(0 0 0 / 0.8), 0 4px 12px rgb(0 0 0 / 0.45);
 }
 
 /* ---- Tailwind bridge: bg-surface, text-ink, border-line, font-display, ease-out ... read the tokens above ---- */
@@ -188,6 +218,14 @@
   --color-on-navy: var(--on-navy);
   --color-on-navy-2: var(--on-navy-2);
   --color-on-navy-line: var(--on-navy-line);
+  --color-stage-0: var(--stage-0);
+  --color-stage-1: var(--stage-1);
+  --color-stage-2: var(--stage-2);
+  --color-stage-line: var(--stage-line);
+  --color-stage-line-strong: var(--stage-line-strong);
+  --color-on-stage-3: var(--on-stage-3);
+  --color-focus-on-dark: var(--focus-on-dark);
+  --color-glass: var(--glass);
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
   --color-accent-press: var(--accent-press);
@@ -200,6 +238,7 @@
   --color-bad-surface: var(--bad-surface);
   --color-warn: var(--warn);
   --color-warn-surface: var(--warn-surface);
+  --color-scrim: var(--scrim);
   --color-cluster-core: var(--cluster-core);
   --color-cluster-business-management: var(--cluster-business-management);
   --color-cluster-entrepreneurship: var(--cluster-entrepreneurship);
@@ -213,17 +252,28 @@
   --font-mono: var(--f-mono);
 
   --shadow-overlay: var(--shadow-overlay);
+  --shadow-dialog: var(--shadow-dialog);
   --ease-out: var(--ease-out);
   --ease-in-out: var(--ease-in-out);
+  --ease-in: var(--ease-in);
 }
 
-/* Display sizes (text-hero, text-display) and the radius ceiling. Every Tailwind radius step is capped at 6px, so
- * rounded-xl and friends cannot sneak big corners back in. rounded-full stays for avatars and dots only. */
+/* Type scale (text-hero, text-display, text-title, text-lead, text-micro, text-data) and the radius ceiling. Every
+ * Tailwind radius step is capped at 6px, so rounded-xl and friends cannot sneak big corners back in. rounded-full
+ * stays for the avatar initial and dots only. */
 @theme {
-  --text-hero: clamp(2.5rem, 1.35rem + 4.9vw, 5.25rem);
-  --text-hero--line-height: 0.98;
-  --text-display: clamp(2rem, 1.55rem + 1.9vw, 3.25rem);
-  --text-display--line-height: 1.02;
+  --text-hero: clamp(3rem, 1.5rem + 6.2vw, 6rem);
+  --text-hero--line-height: 0.92;
+  --text-display: clamp(2.125rem, 1.45rem + 2.6vw, 3.75rem);
+  --text-display--line-height: 1;
+  --text-title: clamp(1.375rem, 1.2rem + 0.6vw, 1.75rem);
+  --text-title--line-height: 1.12;
+  --text-lead: 1.1875rem;
+  --text-lead--line-height: 1.5;
+  --text-micro: 0.8125rem;
+  --text-micro--line-height: 1.35;
+  --text-data: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --text-data--line-height: 1;
 
   --radius-xs: 2px;
   --radius-sm: 2px;
