@@ -1,9 +1,8 @@
 import type { User } from "@supabase/supabase-js";
 import { Check, LayoutList, RotateCcw } from "lucide-react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { listBookmarks } from "../../api/bookmarks";
-import { boardLayoutOf, saveBoardLayout } from "../../api/dashboard";
 import { listEvents } from "../../api/events";
 import { goalProgress } from "../../api/goals";
 import { openRuns, weakSpots } from "../../api/practice";
@@ -24,7 +23,6 @@ import {
   moveModule,
   sameLayout,
   toggleOpen,
-  type BoardLayout,
   type ModuleId,
 } from "../../lib/board";
 import { dailyRunToday, splitAreas } from "../../lib/dashboard";
@@ -34,6 +32,7 @@ import { useMyProfile } from "../../lib/profile";
 import { recommendNext, type NextAction } from "../../lib/recommend";
 import { useLoad } from "../../lib/useLoad";
 import { Board } from "./board/Board";
+import { useSavedLayout, type SaveState } from "./useSavedLayout";
 import { buildViews, type BoardData } from "./board/modules";
 
 /** The signed-in home: the next action, then the member's board of modules in their own order. */
@@ -53,37 +52,6 @@ export function CommandCentre() {
     return <RouteFallback label="Loading your board" />;
   if (!me.profile) return <Navigate to="/onboarding" replace />;
   return <Centre profile={me.profile} user={user} />;
-}
-
-type SaveState = "idle" | "saving" | "saved" | "error";
-
-function useSavedLayout(user: User) {
-  const [layout, setLayout] = useState<BoardLayout>(() => boardLayoutOf(user));
-  const [save, setSave] = useState<SaveState>("idle");
-  const saved = useRef(layout);
-  const [retry, setRetry] = useState(0);
-
-  useEffect(() => {
-    if (sameLayout(layout, saved.current)) return;
-    const t = window.setTimeout(() => {
-      setSave("saving");
-      saveBoardLayout(layout).then(
-        () => {
-          saved.current = layout;
-          setSave("saved");
-        },
-        () => setSave("error"),
-      );
-    }, 700);
-    return () => window.clearTimeout(t);
-  }, [layout, retry]);
-
-  return {
-    layout,
-    setLayout,
-    save,
-    retrySave: () => setRetry((n) => n + 1),
-  };
 }
 
 function Centre({ profile, user }: { profile: Profile; user: User }) {
