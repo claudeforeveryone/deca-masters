@@ -4,6 +4,7 @@ vi.mock(
   async () => (await import("../test/supabaseMock")).supabaseModule,
 );
 import { db } from "../test/supabaseMock";
+import { contractProblems } from "../test/sqlContract";
 import {
   GRACE_MS,
   canStillSave,
@@ -30,6 +31,8 @@ beforeEach(() => {
   vi.setSystemTime(new Date("2026-10-11T12:00:00Z"));
 });
 afterEach(() => vi.useRealTimers());
+// every call above must match a real function or granted column in supabase/migrations
+afterEach(() => expect(contractProblems(db.calls)).toEqual([]));
 
 const t0 = new Date("2026-10-11T12:00:00Z").getTime();
 

@@ -1,9 +1,10 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 vi.mock(
   "../lib/supabase",
   async () => (await import("../test/supabaseMock")).supabaseModule,
 );
 import { db } from "../test/supabaseMock";
+import { contractProblems } from "../test/sqlContract";
 import {
   DELETE_PHRASE,
   deleteMyDecaData,
@@ -14,6 +15,8 @@ import {
 } from "./profile";
 
 beforeEach(() => db.reset());
+// every call above must match a real function or granted column in supabase/migrations
+afterEach(() => expect(contractProblems(db.calls)).toEqual([]));
 
 describe("getMyProfile", () => {
   it("returns null before onboarding (deca_my_profile answers null)", async () => {
