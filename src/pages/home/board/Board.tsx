@@ -321,7 +321,7 @@ export function Board({
                     <div className="justify-self-end self-center [grid-area:action] lg:justify-self-start">
                       {v.status === "ready" ? v.action : null}
                     </div>
-                    <div className="self-center [grid-area:toggle]">
+                    <div className="self-center justify-self-end [grid-area:toggle]">
                       {v.status === "ready" && v.detail ? (
                         <IconButton
                           label={`${isOpen ? "Hide" : "Show"} ${v.title} details`}

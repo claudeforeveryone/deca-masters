@@ -85,3 +85,11 @@ export function examTitles(
   for (const b of bank ?? []) out[b.exam] = b.title;
   return out;
 }
+
+/** Practice time as a number and a unit for a stat tile: minutes, then hours from two hours up. */
+export function practiceTime(ms: number): { value: string; unit: string } {
+  const min = ms / 60_000;
+  if (min > 0 && min < 1) return { value: "<1", unit: "min" };
+  if (min < 120) return { value: String(Math.round(min)), unit: "min" };
+  return { value: (min / 60).toFixed(1), unit: "h" };
+}

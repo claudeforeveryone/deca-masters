@@ -707,16 +707,17 @@ function recentView(d: BoardData, titles: Record<string, string>): ModuleView {
         {whenLabel(first.at)}
       </>
     ),
-    trace: (
-      <span
-        className="flex flex-wrap gap-x-3 font-mono text-sm text-ink-2"
-        aria-label="Earlier results"
-      >
-        {items.slice(1, 4).map((i) => (
-          <span key={i.key}>{i.result}</span>
-        ))}
-      </span>
-    ),
+    trace:
+      items.length > 1 ? (
+        <p className="flex flex-wrap items-baseline gap-x-3 text-sm text-ink-2">
+          <span className="text-ink-3">Before that</span>
+          {items.slice(1, 4).map((i) => (
+            <span key={i.key} className="font-mono">
+              {i.result}
+            </span>
+          ))}
+        </p>
+      ) : undefined,
     detail: (
       <ul className="grid max-w-3xl divide-y divide-line border-y border-line">
         {items.map((i) => (

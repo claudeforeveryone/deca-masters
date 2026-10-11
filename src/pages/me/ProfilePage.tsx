@@ -25,6 +25,26 @@ function readSeen(uid: string): Partial<Record<BestId, number>> | null {
   }
 }
 
+/** "Today" reads as "today" mid-sentence; dates keep their capitals. */
+function sentenceCase(label: string): string {
+  return /^(Today|Yesterday)$/.test(label) ? label.toLowerCase() : label;
+}
+
+/** The number in mono, its unit ("day", "in a row") in the body face so the words do not space out. */
+function BestValue({ display }: { display: string }) {
+  const [num, ...unit] = display.split(" ");
+  return (
+    <>
+      {num}
+      {unit.length > 0 ? (
+        <span className="ml-1.5 font-sans text-base font-semibold text-ink-2">
+          {unit.join(" ")}
+        </span>
+      ) : null}
+    </>
+  );
+}
+
 export function ProfilePage() {
   const { user } = useAuth();
   const { profile } = useMyProfile();
@@ -57,7 +77,7 @@ export function ProfilePage() {
     `@${profile.username}`,
     profile.grade ? `Grade ${profile.grade}` : null,
     profile.school,
-    `Joined ${whenLabel(profile.created_at)}`,
+    `Joined ${sentenceCase(whenLabel(profile.created_at))}`,
   ].filter(Boolean);
 
   return (
@@ -72,10 +92,11 @@ export function ProfilePage() {
         }
       />
 
-      <p className="mt-4 flex items-center gap-2 text-sm text-ink-2">
+      <p className="mt-4 flex items-start gap-2 text-sm text-ink-2">
         <FacetMarker
           tone={profile.is_public ? "electric" : "muted"}
           size="sm"
+          className="mt-1.5"
         />
         {profile.is_public
           ? profile.leaderboard_hidden
@@ -232,7 +253,7 @@ export function ProfilePage() {
                       isNew ? { animationDelay: `${order * 60}ms` } : undefined
                     }
                   >
-                    {b.display}
+                    {b.earned ? <BestValue display={b.display} /> : b.display}
                   </span>
                   <span className="col-span-2 text-sm text-ink-2 sm:col-span-1">
                     {b.detail}

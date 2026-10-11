@@ -9,6 +9,7 @@ import { saveProfile } from "../../api/profile";
 import { bankSummary } from "../../api/questions";
 import { Button, buttonClass } from "../../components/ui/Button";
 import { EmptyState, ErrorState } from "../../components/ui/EmptyState";
+import { Select } from "../../components/ui/Inputs";
 import { FilterChips } from "../../components/ui/Navigation";
 import { Notice } from "../../components/ui/Notice";
 import { PageHeader } from "../../components/ui/PageHeader";
@@ -102,7 +103,7 @@ function Standing({
   return (
     <section
       aria-label="Your standing"
-      className="grid gap-3 border-y border-line py-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"
+      className="grid gap-3 border-b border-line pt-6 pb-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"
     >
       <div className="grid gap-3 sm:contents [&>p]:max-w-(--measure) [&>p]:text-ink-2">
         {body}
@@ -176,6 +177,10 @@ export function LeaderboardPage() {
     }
   }
 
+  function pickBoard(id: string | undefined) {
+    setExam(!id || id === "all" ? null : (id as ExamSlug));
+  }
+
   const chips = [
     { id: "all", label: "Overall" },
     ...(bank.data ?? []).map((b) => ({ id: b.exam, label: b.title })),
@@ -187,19 +192,30 @@ export function LeaderboardPage() {
         title="Leaderboard"
         lede="Only members who chose to be listed, ranked by rating from their first answer to each question. No sample players, ever."
       />
-      <div className="mt-8 grid gap-6">
+      <div className="grid gap-6">
         {board.data ? (
           <Standing board={board.data} onChanged={board.reload} />
         ) : null}
         {bank.data && bank.data.length > 0 ? (
-          <FilterChips
-            label="Board"
-            chips={chips}
-            value={[exam ?? "all"]}
-            onChange={([id]) =>
-              setExam(!id || id === "all" ? null : (id as ExamSlug))
-            }
-          />
+          <>
+            {/* Eight long exam names wrap into a wall of chips on a phone, so phones get a select. */}
+            <div className="max-w-sm sm:hidden">
+              <Select
+                label="Board"
+                options={chips.map((c) => ({ value: c.id, label: c.label }))}
+                value={exam ?? "all"}
+                onChange={(e) => pickBoard(e.target.value)}
+              />
+            </div>
+            <div className="hidden sm:block">
+              <FilterChips
+                label="Board"
+                chips={chips}
+                value={[exam ?? "all"]}
+                onChange={([id]) => pickBoard(id)}
+              />
+            </div>
+          </>
         ) : null}
         {board.status === "error" ? (
           <ErrorState

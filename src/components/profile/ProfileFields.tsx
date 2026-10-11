@@ -153,11 +153,11 @@ export function PrivacyChoice({
     },
   ];
   return (
-    <fieldset className="grid gap-2">
+    <fieldset className="@container grid gap-2">
       <legend className="mb-1.5 text-sm font-semibold text-ink">
         Leaderboard
       </legend>
-      <div className="grid gap-2 sm:grid-cols-2">
+      <div className="grid gap-2 @lg:grid-cols-2">
         {options.map(({ on, title, body, Icon }) => (
           <label
             key={title}
@@ -174,7 +174,7 @@ export function PrivacyChoice({
               aria-hidden="true"
               className="mt-0.5 size-5 shrink-0 text-ink-2"
             />
-            <span className="grid gap-0.5">
+            <span className="grid content-start gap-0.5">
               <span className="font-semibold">{title}</span>
               <span className="text-sm text-ink-2">{body}</span>
             </span>

@@ -5,6 +5,7 @@ import {
   examTitles,
   pct,
   plural,
+  practiceTime,
   teamLine,
   whenLabel,
 } from "./format";
@@ -55,11 +56,12 @@ describe("whenLabel", () => {
   });
 });
 
-
 describe("event lines", () => {
   it("names an event's parts and team size in words", () => {
     expect(componentsLine(["exam", "roleplay"])).toBe("Exam + role play");
-    expect(componentsLine(["written", "presentation"])).toBe("Written entry + presentation");
+    expect(componentsLine(["written", "presentation"])).toBe(
+      "Written entry + presentation",
+    );
     expect(teamLine("1")).toBe("Solo");
     expect(teamLine("2")).toBe("Team of 2");
     expect(teamLine("1-3")).toBe("1 to 3 people");
@@ -74,5 +76,15 @@ describe("examTitles", () => {
     expect(examTitles(undefined)["hospitality-tourism"]).toBe(
       "Hospitality tourism",
     );
+  });
+});
+
+describe("practiceTime", () => {
+  it("gives minutes, a floor under one minute, then hours from two hours up", () => {
+    expect(practiceTime(0)).toEqual({ value: "0", unit: "min" });
+    expect(practiceTime(20_000)).toEqual({ value: "<1", unit: "min" });
+    expect(practiceTime(90_000)).toEqual({ value: "2", unit: "min" });
+    expect(practiceTime(119 * 60_000)).toEqual({ value: "119", unit: "min" });
+    expect(practiceTime(150 * 60_000)).toEqual({ value: "2.5", unit: "h" });
   });
 });

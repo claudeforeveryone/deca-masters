@@ -27,7 +27,14 @@ import {
   weeklyAccuracy,
   type CalendarDay,
 } from "../../lib/dashboard";
-import { duration, examTitles, pct, plural, whenLabel } from "../../lib/format";
+import {
+  duration,
+  examTitles,
+  pct,
+  plural,
+  practiceTime,
+  whenLabel,
+} from "../../lib/format";
 import { torontoToday } from "../../lib/leitner";
 import { useMyProfile } from "../../lib/profile";
 import { readinessFor, type ReadinessInput } from "../../lib/readiness";
@@ -306,7 +313,7 @@ export function ProgressPage() {
       <Loading load={stats} label="Your numbers">
         {(s) =>
           s ? (
-            <StatRow className="mt-8">
+            <StatRow className="border-t-0!">
               <StatTile
                 label="Rating"
                 value={s.elo}
@@ -324,7 +331,7 @@ export function ProgressPage() {
               />
               <StatTile
                 label="Practice time"
-                value={duration(s.time_spent_ms)}
+                {...practiceTime(s.time_spent_ms)}
                 caption="In graded runs"
               />
               <StatTile
@@ -369,7 +376,7 @@ export function ProgressPage() {
                         The rating line starts once you have graded runs on two
                         different days.
                         {s && s.elo_history.length === 1
-                          ? ` So far: ${s.elo_history[0].elo}.`
+                          ? ` One day so far, ending at ${s.elo_history[0].elo}.`
                           : ""}
                       </p>
                     ),
@@ -553,7 +560,7 @@ export function ProgressPage() {
                           label={p.label}
                           value={p.value}
                           max={Math.max(1, p.max)}
-                          valueText={p.text}
+                          valueText={`${p.value}/${p.max}`}
                         />
                       ) : (
                         <p className="flex items-baseline justify-between gap-4 text-sm">
@@ -570,9 +577,10 @@ export function ProgressPage() {
                         </p>
                       )}
                       {p.max !== null && p.value !== null ? (
-                        p.note ? (
-                          <p className="text-sm text-ink-2">{p.note}.</p>
-                        ) : null
+                        <p className="text-sm text-ink-2">
+                          {p.text}
+                          {p.note ? `. ${p.note}.` : "."}
+                        </p>
                       ) : (
                         <p className="text-sm text-ink-2">
                           {p.text}

@@ -107,7 +107,7 @@ export function EventPicker({
                     {code}
                   </span>
                   <span className="min-w-0">
-                    <span className="block truncate">{e?.name ?? code}</span>
+                    <span className="block text-pretty">{e?.name ?? code}</span>
                     {i === 0 ? (
                       <span className="text-sm font-semibold text-link">
                         Main event

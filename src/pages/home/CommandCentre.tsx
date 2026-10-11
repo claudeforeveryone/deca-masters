@@ -236,7 +236,6 @@ function Centre({ profile, user }: { profile: Profile; user: User }) {
             ) : null}
             <Button
               variant={arranging ? "primary" : "secondary"}
-              aria-pressed={arranging}
               onClick={() => setArranging((a) => !a)}
             >
               {arranging ? (
@@ -286,7 +285,11 @@ function SaveStatus({
       </p>
     );
   return (
-    <p aria-live="polite" className="text-sm text-ink-3">
+    // Kept in the tree for screen readers even when empty, but out of the flex row so it adds no gap.
+    <p
+      aria-live="polite"
+      className={state === "idle" ? "sr-only" : "text-sm text-ink-3"}
+    >
       {state === "saving"
         ? "Saving layout"
         : state === "saved"
@@ -319,7 +322,7 @@ function NextUp({
   return (
     <section
       aria-labelledby="next-heading"
-      className="mt-8 grid gap-x-10 gap-y-4 border-y border-line-strong py-6 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"
+      className="grid gap-x-10 gap-y-4 border-b border-line-strong pt-7 pb-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"
     >
       <div className="min-w-0">
         <h2
