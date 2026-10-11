@@ -230,8 +230,8 @@ export function RoleplayPage() {
                           to={`/roleplay/${e.eventCode}`}
                           className={buttonClass("secondary")}
                         >
-                          Train
-                          <span className="sr-only"> for {e.eventCode}</span>
+                          Train{" "}
+                          <span className="sr-only">for {e.eventCode}</span>
                         </Link>
                       </div>
                     </li>

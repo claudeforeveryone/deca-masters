@@ -26,7 +26,10 @@ export function Match({ deck, terms }: { deck: ExamSlug; terms: VocabTerm[] }) {
   const [playing, setPlaying] = useState(false);
   const [best, setBest] = useState<Record<number, number>>({});
   // One draw of terms per round: the end-of-round list must show the pairs that were on the board.
-  const boardTerms = useMemo(() => shuffled(terms).slice(0, pairs), [terms, pairs, round]);
+  const boardTerms = useMemo(
+    () => shuffled(terms).slice(0, pairs),
+    [terms, pairs, round],
+  );
 
   if (terms.length < 2)
     return (
@@ -227,8 +230,8 @@ function Board({
                 } ${tile.kind === "term" ? "font-semibold" : "text-sm leading-snug"}`}
               >
                 <span className="sr-only">
-                  {tile.kind === "term" ? "Term: " : "Definition: "}
-                </span>
+                  {tile.kind === "term" ? "Term:" : "Definition:"}
+                </span>{" "}
                 {tile.text}
               </button>
             </li>

@@ -698,8 +698,8 @@ export function Trainer({
                       size="sm"
                       onClick={() => setPi(i, { level: null })}
                     >
-                      Clear
-                      <span className="sr-only"> rating for PI {i + 1}</span>
+                      Clear{" "}
+                      <span className="sr-only">rating for PI {i + 1}</span>
                     </Button>
                   ) : null}
                 </div>

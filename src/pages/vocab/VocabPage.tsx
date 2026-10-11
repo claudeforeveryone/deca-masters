@@ -217,8 +217,8 @@ export function VocabPage() {
                     to={`/vocab/${r.slug}`}
                     className={buttonClass("secondary")}
                   >
-                    {p?.due ? "Review" : "Study"}
-                    <span className="sr-only"> {r.title}</span>
+                    {p?.due ? "Review" : "Study"}{" "}
+                    <span className="sr-only">{r.title}</span>
                   </Link>
                 </li>
               );
