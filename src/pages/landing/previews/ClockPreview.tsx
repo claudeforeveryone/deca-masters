@@ -100,7 +100,7 @@ function Clock({ event }: { event: Timed }) {
               aria-current={
                 i === state.index && !state.done ? "step" : undefined
               }
-              className={`rounded-xs border px-2.5 py-1 font-mono ${
+              className={`rounded-xs border px-2.5 py-1 ${
                 i === state.index && !state.done
                   ? "border-accent bg-accent/10 text-link"
                   : i < state.index || state.done

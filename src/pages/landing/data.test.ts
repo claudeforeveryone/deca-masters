@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { EventItem } from "../../lib/content";
-import { eventsByCluster, formatGroups, ringTicks } from "./data";
+import { eventsByCluster, formatGroups, ringTicks, timeSummary } from "./data";
 
 function ev(
   code: string,
@@ -114,6 +114,28 @@ describe("formatGroups", () => {
 
   it("returns empty groups (count 0) when there are no events", () => {
     expect(formatGroups([]).map((g) => g.count)).toEqual([0, 0, 0, 0]);
+  });
+});
+
+describe("timeSummary", () => {
+  it("states one time when every event in the group shares it", () => {
+    expect(timeSummary([10, 10, 10])).toBe("10 min");
+    expect(timeSummary([15], "up to ")).toBe("up to 15 min");
+  });
+
+  it("gives the range when the times differ", () => {
+    expect(timeSummary([15, 10, 20])).toBe("10 to 20 min");
+  });
+
+  it("says how many events have a time when only some do, instead of passing one off as the group's", () => {
+    expect(timeSummary([null, 15, null, undefined], "up to ")).toBe(
+      "1 of 4: up to 15 min",
+    );
+  });
+
+  it("says None when no event has a time", () => {
+    expect(timeSummary([null, null])).toBe("None");
+    expect(timeSummary([])).toBe("None");
   });
 });
 

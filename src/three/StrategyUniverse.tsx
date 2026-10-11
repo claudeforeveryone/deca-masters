@@ -49,6 +49,8 @@ export type UniverseProps = {
   /** Explorer: the selected cluster sector (0 to 5). */
   selected?: number | null;
   onHover?: (sector: number | null) => void;
+  /** Explorer: a sector pointed at from outside the canvas (the cluster list); it lifts part way, like a 3D hover. */
+  highlight?: number | null;
   onPick?: (sector: number) => void;
   /** Hero: bump this number to jump to the settled state ("Skip intro"). */
   skip?: number;
@@ -68,6 +70,7 @@ const SWEEP_TO = 2.4;
 const SWEEP_EVERY = 7;
 const SWEEP_TIME = 1.1;
 const CORE_COLOUR = new Color("#cfe6ff");
+const CORE_EXPLORE = new Color("#4dabff").multiplyScalar(0.34);
 const DEG = Math.PI / 180;
 
 const damp = (x: number, to: number, lambda: number, dt: number) =>
@@ -84,6 +87,7 @@ function Universe({
   ticks,
   selected = null,
   onHover,
+  highlight = null,
   onPick,
   onStarted,
   skip = 0,
@@ -237,7 +241,10 @@ function Universe({
     }
     uniforms.uSweep.value = sweep;
 
-    coreMat.color.copy(CORE_COLOUR).multiplyScalar(hero ? s.lock : 1);
+    // In the explorer a lifted sector opens a window onto the core; at full strength it reads as a white hole, so
+    // there it glows at a third, in the electric hue.
+    if (variant === "explore") coreMat.color.copy(CORE_EXPLORE);
+    else coreMat.color.copy(CORE_COLOUR).multiplyScalar(hero ? s.lock : 1);
     ringMat.uniforms.uReveal.value = hero ? s.ring : 1;
     streamMat.uniforms.uTime.value = c.t;
     streamMat.uniforms.uOpacity.value =
@@ -246,9 +253,12 @@ function Universe({
     // Selection: the chosen sector lifts out and its edges and ticks light; the explorer opens every seam a little.
     for (let i = 0; i < 7; i++) {
       const explore = variant === "explore";
+      const pointed = highlight ?? hovered.current;
       const wantLift =
-        explore && i !== CORE ? 0.14 + (selected === i ? 0.48 : 0) : 0;
-      const wantSel = selected === i ? 1 : hovered.current === i ? 0.45 : 0;
+        explore && i !== CORE
+          ? 0.14 + (selected === i ? 0.48 : pointed === i ? 0.24 : 0)
+          : 0;
+      const wantSel = selected === i ? 1 : pointed === i ? 0.45 : 0;
       lifts.current[i] = damp(lifts.current[i], wantLift, 7, dt);
       sels.current[i] = damp(sels.current[i], wantSel, 9, dt);
       uniforms.uLift.value[i] = lifts.current[i];

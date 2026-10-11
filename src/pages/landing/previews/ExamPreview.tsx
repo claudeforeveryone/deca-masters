@@ -38,13 +38,12 @@ export function ExamPreview({ index }: { index: ContentIndex | null }) {
           </span>
         </ProgressRing>
         <div>
-          <p className="text-sm text-ink-2">Timed run, finished</p>
-          <p className="mt-1 font-display text-title font-bold">
+          <p className="font-display text-title font-bold">
             {exam?.title ?? "Marketing cluster exam"}
           </p>
           <p className="mt-2 max-w-[44ch] text-sm text-ink-2">
-            Every question you missed is waiting in review, with the right
-            answer and the source it came from.
+            Timed run, finished. Every question you missed is waiting in
+            review, with the right answer and the source it came from.
           </p>
         </div>
       </div>

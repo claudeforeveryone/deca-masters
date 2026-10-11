@@ -80,9 +80,9 @@ export function Hero({
         }
       />
 
-      <div className="shell relative grid min-h-[calc(100dvh-var(--bar-h))] content-end pt-6 pb-12 md:min-h-[min(calc(100dvh-var(--bar-h)),58rem)] md:content-center md:pt-16 md:pb-24">
-        {/* Phones: the computed poster on top, flying together once. */}
-        <div className="relative -mx-(--gutter) mb-2 h-[min(42dvh,22rem)] md:hidden">
+      <div className="shell relative grid min-h-[calc(100dvh-var(--bar-h)-var(--tabbar-h)-env(safe-area-inset-bottom))] grid-rows-[minmax(12rem,1fr)_auto] pt-4 pb-10 md:grid-rows-none md:min-h-[min(calc(100dvh-var(--bar-h)),58rem)] md:content-center md:pt-16 md:pb-24">
+        {/* Phones: the computed poster fills the space above the text, flying together once. */}
+        <div className="relative -mx-(--gutter) mb-1 min-h-48 md:hidden">
           <StructurePoster orbit={CAMERA.end} ticks={ticks} assemble />
         </div>
 

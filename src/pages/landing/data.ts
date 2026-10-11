@@ -50,12 +50,33 @@ function mode(values: (number | null | undefined)[]): number | null {
   return best;
 }
 
+/**
+ * A group's times, honestly: one value when all share it, a range when they differ, and "n of m" when only some
+ * events have a time at all (so one event's time is never shown as the whole group's).
+ */
+export function timeSummary(
+  values: (number | null | undefined)[],
+  prefix = "",
+): string {
+  const known = values.filter((v): v is number => typeof v === "number");
+  if (!known.length) return "None";
+  const lo = Math.min(...known);
+  const hi = Math.max(...known);
+  const time = lo === hi ? `${prefix}${lo} min` : `${lo} to ${hi} min`;
+  return known.length === values.length
+    ? time
+    : `${known.length} of ${values.length}: ${time}`;
+}
+
 export type FormatGroup = {
   id: FormatId;
   count: number;
   withExam: number;
   prepMinutes: number | null;
   judgeMinutes: number | null;
+  /** Display lines from timeSummary: prep time, and the most time with the judge. */
+  prep: string;
+  judge: string;
   performanceIndicators: number | null;
   teamSizes: string[];
 };
@@ -71,6 +92,11 @@ export function formatGroups(events: EventItem[]): FormatGroup[] {
       ).length,
       prepMinutes: mode(group.map((e) => e.format?.prepMinutes)),
       judgeMinutes: mode(group.map((e) => e.format?.presentMinutes)),
+      prep: timeSummary(group.map((e) => e.format?.prepMinutes)),
+      judge: timeSummary(
+        group.map((e) => e.format?.presentMinutes),
+        "up to ",
+      ),
       performanceIndicators: mode(
         group.map((e) => e.format?.performanceIndicators),
       ),

@@ -4,8 +4,6 @@ import type { ContentIndex } from "../../lib/content";
 import { FORMAT_LABEL, formatGroups, type FormatGroup } from "./data";
 import type { IndexState } from "./useContentIndex";
 
-const minutes = (m: number | null) => (m === null ? "None" : `${m} min`);
-
 function examLine(g: FormatGroup) {
   if (g.count === 0) return "None";
   if (g.withExam === g.count) return "Every event";
@@ -65,18 +63,16 @@ function Board({ index }: { index: ContentIndex }) {
               <td className="py-6 pr-6 text-right font-mono text-data font-semibold text-on-navy tabular-nums">
                 {g.count}
               </td>
-              <td className="py-7 pr-6 font-mono text-on-navy-2">
+              <td className="py-7 pr-6 text-on-navy-2">
                 {examLine(g)}
               </td>
               <td className="py-7 pr-6 font-mono text-electric-text">
-                {minutes(g.prepMinutes)}
+                {g.prep}
               </td>
               <td className="py-7 pr-6 font-mono text-electric-text">
-                {g.judgeMinutes === null
-                  ? "None"
-                  : `up to ${g.judgeMinutes} min`}
+                {g.judge}
               </td>
-              <td className="py-7 font-mono text-on-navy-2">{teamLine(g)}</td>
+              <td className="py-7 text-on-navy-2">{teamLine(g)}</td>
             </tr>
           ))}
         </tbody>
@@ -101,24 +97,22 @@ function Board({ index }: { index: ContentIndex }) {
             <dl className="mt-4 grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
               <div>
                 <dt className="text-on-stage-3">Cluster exam</dt>
-                <dd className="font-mono text-on-navy">{examLine(g)}</dd>
+                <dd className="text-on-navy">{examLine(g)}</dd>
               </div>
               <div>
                 <dt className="text-on-stage-3">Team</dt>
-                <dd className="font-mono text-on-navy">{teamLine(g)}</dd>
+                <dd className="text-on-navy">{teamLine(g)}</dd>
               </div>
               <div>
                 <dt className="text-on-stage-3">Prep</dt>
                 <dd className="font-mono text-electric-text">
-                  {minutes(g.prepMinutes)}
+                  {g.prep}
                 </dd>
               </div>
               <div>
                 <dt className="text-on-stage-3">With the judge</dt>
                 <dd className="font-mono text-electric-text">
-                  {g.judgeMinutes === null
-                    ? "None"
-                    : `up to ${g.judgeMinutes} min`}
+                  {g.judge}
                 </dd>
               </div>
             </dl>

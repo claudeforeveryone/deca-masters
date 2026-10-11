@@ -42,10 +42,11 @@ export function ClusterExplorer({
       variant: "explore" as const,
       ticks,
       selected,
+      highlight: hovered,
       onHover: setHovered,
       onPick: setSelected,
     }),
-    [ticks, selected],
+    [ticks, selected, hovered],
   );
 
   return (
@@ -92,12 +93,17 @@ export function ClusterExplorer({
             </legend>
             <div className="mt-3 grid gap-px overflow-hidden rounded border border-stage-line bg-stage-line sm:grid-cols-2">
               {SECTORS.map((s, i) => {
-                const count = byCluster?.[s].length;
+                // No counts until there is a list to count: a row of zeros would read as "no events exist".
+                const count = total > 0 ? byCluster?.[s].length : undefined;
                 return (
                   <label
                     key={s}
                     data-hover={hovered === i || undefined}
-                    className="group relative flex min-h-13 cursor-pointer items-center gap-3 bg-stage-1 px-4 transition-colors duration-(--dur-1) hover:bg-stage-2 has-checked:bg-stage-2 has-focus-visible:outline-2 has-focus-visible:-outline-offset-2 has-focus-visible:outline-(--focus-on-dark) data-hover:bg-stage-2"
+                    onPointerEnter={() => setHovered(i)}
+                    onPointerLeave={() =>
+                      setHovered((h) => (h === i ? null : h))
+                    }
+                    className="group relative flex min-h-13 cursor-pointer items-center gap-3 bg-stage-1 px-4 transition-colors duration-(--dur-1) hover:bg-stage-2 has-checked:bg-stage-2 has-checked:shadow-[inset_0_0_0_1px_var(--electric)] has-focus-visible:outline-2 has-focus-visible:-outline-offset-2 has-focus-visible:outline-(--focus-on-dark) data-hover:bg-stage-2"
                   >
                     <input
                       type="radio"
@@ -123,11 +129,6 @@ export function ClusterExplorer({
                         <span className="sr-only"> events</span>
                       </span>
                     ) : null}
-                    {/* The selected row's electric edge, the same mark the structure lights. */}
-                    <span
-                      aria-hidden="true"
-                      className="absolute inset-y-0 left-0 w-0.5 scale-y-0 bg-electric transition-transform duration-(--dur-2) ease-out peer-checked:scale-y-100"
-                    />
                   </label>
                 );
               })}
@@ -148,7 +149,7 @@ export function ClusterExplorer({
             ) : total > 0 ? (
               <>
                 <h3
-                  className="flex items-baseline gap-3 text-title text-on-navy"
+                  className="flex flex-wrap items-baseline gap-x-3 gap-y-1 text-title text-on-navy"
                   aria-live="polite"
                 >
                   {CLUSTERS[slug]}
