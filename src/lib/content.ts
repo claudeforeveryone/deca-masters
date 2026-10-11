@@ -180,6 +180,29 @@ export type RoleplaySet = {
 
 export type Credits = { sources: (Source & { usedIn: string[] })[] };
 
+/** DECA's own sample exams (PDFs on deca.org), per cluster exam. Linked only, never copied. */
+export type OfficialExamSample = {
+  title: string;
+  url: string;
+  season: string | null;
+  posted?: string | null;
+  pageUrl?: string | null;
+  /** The sample linked from the current deca.org event pages. */
+  current?: boolean;
+};
+export type OfficialExamSamples = {
+  disclaimer: string;
+  howToUse?: string | null;
+  blueprint?: { title: string; url: string; pageUrl?: string | null } | null;
+  clusters: {
+    exam: ExamSlug;
+    cluster: ClusterSlug;
+    title: string;
+    usedBy: string[];
+    samples: OfficialExamSample[];
+  }[];
+};
+
 const cache = new Map<string, Promise<unknown>>();
 
 function getJson<T>(path: string): Promise<T> {
@@ -214,3 +237,16 @@ export const loadVocabDeck = (slug: ExamSlug) =>
   getJson<VocabDeck>(`vocab/${slug}.json`);
 export const loadRoleplays = (cluster: ClusterSlug) =>
   getJson<RoleplaySet>(`roleplays/${cluster}.json`);
+export const loadOfficialSamples = () =>
+  getJson<OfficialExamSamples>("official-samples.json");
+
+/** The cluster each exam belongs to (fixed by content/SCHEMA.md). */
+export const EXAM_CLUSTER: Record<ExamSlug, ClusterSlug> = {
+  "business-admin-core": "core",
+  "business-management": "business-management",
+  entrepreneurship: "entrepreneurship",
+  finance: "finance",
+  "hospitality-tourism": "hospitality-tourism",
+  marketing: "marketing",
+  "personal-financial-literacy": "personal-finance",
+};
