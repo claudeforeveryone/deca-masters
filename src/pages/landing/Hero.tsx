@@ -13,7 +13,10 @@ import { StructurePoster } from "./universe/Posters";
 
 const loadUniverse = () => import("../../three/StrategyUniverse");
 
-/** Wide screens get the lens shift (structure right of the headline); narrower ones frame it centred. */
+/**
+ * The live scene's lens shift (structure right of the headline). The poster takes the same values from CSS
+ * (POSTER_SHIFT), so the prerendered page has it before any script runs: keep the two in step.
+ */
 function useHeroShift() {
   const read = () =>
     typeof window === "undefined"
@@ -31,6 +34,8 @@ function useHeroShift() {
   }, []);
   return shift;
 }
+
+const POSTER_SHIFT = "md:translate-x-[18%] lg:translate-x-[22%] xl:translate-x-[20%]";
 
 export function Hero({
   ticks,
@@ -76,7 +81,11 @@ export function Hero({
         props={sceneProps}
         className="absolute! inset-0 -z-10 hidden md:block"
         poster={
-          <StructurePoster orbit={CAMERA.end} shift={shift} ticks={ticks} />
+          <StructurePoster
+            orbit={CAMERA.end}
+            ticks={ticks}
+            className={POSTER_SHIFT}
+          />
         }
       />
 

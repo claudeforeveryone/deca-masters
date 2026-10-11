@@ -34,11 +34,21 @@ const mix = (k: number) => {
   const f = t < 1 ? t : t - 1;
   return `rgb(${lo.map((d, i) => Math.round(d + (hi[i] - d) * f)).join(" ")})`;
 };
+/** A tenth of a pixel is finer than any screen draws; full float precision only made the prerendered HTML heavier. */
+const px = (v: number) => Math.round(v * 10) / 10;
+const pts = (points: readonly (readonly [number, number])[]) =>
+  points.map(([x, y]) => `${px(x)},${px(y)}`).join(" ");
+
 const SEAM_DEEP = [11, 63, 143];
 const SEAM_TOP = [77, 171, 255];
 const seamColour = (rise: number) =>
   `rgb(${SEAM_DEEP.map((d, i) => Math.round(d + (SEAM_TOP[i] - d) * rise)).join(" ")})`;
 
+/**
+ * The box's size in CSS pixels, measured after mount. Until then (and in the prerendered HTML) `fallback` is drawn
+ * scaled to cover the box: a wide fallback scales by height, which is exact, because the projection's vertical field of
+ * view fixes the subject's size to the height whatever the width.
+ */
 function useBoxSize(fallback: { w: number; h: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState(fallback);
@@ -80,7 +90,7 @@ export function StructurePoster({
   assemble?: boolean;
   className?: string;
 }) {
-  const [ref, { w, h }] = useBoxSize({ w: 1200, h: 800 });
+  const [ref, { w, h }] = useBoxSize({ w: 2400, h: 800 });
   const panels = useMemo(buildGem, []);
   const seams = useMemo(() => gemEdges(panels), [panels]);
   const camera = useMemo(
@@ -88,9 +98,8 @@ export function StructurePoster({
       eye: orbitEye(orbit),
       target: [0, -0.12, 0] as const,
       fov: 32,
-      shift,
     }),
-    [orbit, shift],
+    [orbit],
   );
   const polys = useMemo(
     () => projectPanels(panels, camera, w, h, rotation),
@@ -130,31 +139,40 @@ export function StructurePoster({
   }, [ticks, camera, w, h, rotation]);
 
   return (
-    <div ref={ref} className={`absolute inset-0 ${className}`}>
+    <div
+      ref={ref}
+      className={`absolute inset-0 ${className}`}
+      // The lens shift is a sideways move of the whole picture (poster.ts adds shift x width), so CSS can do it before
+      // the box is measured; the live scene applies the same shift.
+      style={shift ? { translate: `${shift * 100}% 0` } : undefined}
+    >
       <svg
         aria-hidden="true"
-        width={w}
-        height={h}
+        width="100%"
+        height="100%"
         viewBox={`0 0 ${w} ${h}`}
+        preserveAspectRatio="xMidYMid slice"
         className="block"
       >
         <polyline
-          points={ring.circle.map((p) => `${p.x},${p.y}`).join(" ")}
+          points={ring.circle.map((p) => `${px(p.x)},${px(p.y)}`).join(" ")}
           fill="none"
           stroke="var(--electric)"
           strokeOpacity={0.3}
           strokeWidth={1}
+          vectorEffect="non-scaling-stroke"
         />
         {ring.marks.map(([a, b], i) => (
           <line
             key={i}
-            x1={a.x}
-            y1={a.y}
-            x2={b.x}
-            y2={b.y}
+            x1={px(a.x)}
+            y1={px(a.y)}
+            x2={px(b.x)}
+            y2={px(b.y)}
             stroke="var(--electric)"
             strokeOpacity={0.5}
             strokeWidth={1}
+            vectorEffect="non-scaling-stroke"
           />
         ))}
         {/* The light between the plates, drawn under them so only the seams show it. */}
@@ -162,12 +180,13 @@ export function StructurePoster({
           {seamLines.map((s) => (
             <line
               key={s.id}
-              x1={s.a.x}
-              y1={s.a.y}
-              x2={s.b.x}
-              y2={s.b.y}
+              x1={px(s.a.x)}
+              y1={px(s.a.y)}
+              x2={px(s.b.x)}
+              y2={px(s.b.y)}
               stroke={seamColour(s.rise)}
               strokeWidth={2.5}
+              vectorEffect="non-scaling-stroke"
               strokeLinecap="round"
             />
           ))}
@@ -183,11 +202,12 @@ export function StructurePoster({
           return (
             <polygon
               key={p.id}
-              points={p.points.map(([x, y]) => `${x},${y}`).join(" ")}
+              points={pts(p.points)}
               fill={mix(p.shade)}
               stroke="var(--electric-text)"
               strokeOpacity={0.18 + p.rim * 0.5}
               strokeWidth={1}
+              vectorEffect="non-scaling-stroke"
               strokeLinejoin="round"
               style={style}
               className={assemble ? "poster-facet" : undefined}
@@ -226,7 +246,7 @@ export function PlanDiagram({
         return (
           <polygon
             key={p.id}
-            points={p.points.map(([x, y]) => `${x},${y}`).join(" ")}
+            points={pts(p.points)}
             fill={
               on
                 ? "var(--electric)"
