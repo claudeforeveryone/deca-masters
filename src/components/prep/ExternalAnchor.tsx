@@ -11,13 +11,33 @@ export function ExternalAnchor({
   onOpen,
   className = "",
   iconClassName = "size-4",
+  inline = false,
 }: {
   href: string;
   children: ReactNode;
   onOpen?: () => void;
   className?: string;
   iconClassName?: string;
+  /** Inside a sentence: the words wrap with the text around them and the icon follows the last one. */
+  inline?: boolean;
 }) {
+  if (inline)
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={onOpen}
+        className={`font-semibold underline-offset-4 hover:underline ${className}`}
+      >
+        {children}
+        <ExternalLink
+          aria-hidden="true"
+          className={`ml-1 inline-block align-[-0.125em] ${iconClassName}`}
+        />
+        <span className="sr-only">(opens in a new tab)</span>
+      </a>
+    );
   return (
     <a
       href={href}

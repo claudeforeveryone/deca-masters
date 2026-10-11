@@ -41,6 +41,7 @@ export function Credit({
       Source:{" "}
       <ExternalAnchor
         href={source.url}
+        inline
         className="font-normal text-ink-2"
         iconClassName="size-3.5"
       >
