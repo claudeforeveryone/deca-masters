@@ -3,6 +3,9 @@
 
 @layer base {
   html {
+    /* Reserve the scrollbar's room from the first paint, so centred content does not jump sideways when a page
+     * grows past the viewport (measured: that one jump was a CLS of 0.99 on desktop). */
+    scrollbar-gutter: stable;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
     accent-color: var(--accent);
@@ -155,19 +158,22 @@
       --main-pt: 2.5rem;
     }
   }
-  /* Edge to edge: the first full-bleed block tucks under the top bar, the last one meets the footer, and stacked ones
-   * sit flush. 50vw counts the scrollbar, so main clips the sliver it would add (clip, not hidden: sticky still works). */
-  .page-main:has(> .full-bleed) {
-    overflow-x: clip;
-  }
+  /* Edge to edge from inside the page column (the landing). Main keeps its box, so nothing shifts when a full-bleed
+   * page replaces a placeholder; the block reaches out to the viewport edges minus the scrollbar (--sbw, measured by
+   * the shell, since 100vw counts it). Put a .shell inside. The first block tucks under the top bar, the last meets
+   * the footer, and stacked ones sit flush. */
   .full-bleed {
-    margin-inline: calc(50% - 50vw);
+    margin-inline: calc(50% - 50vw + var(--sbw, 0px) / 2);
   }
   .full-bleed:first-child {
     margin-top: calc(-1 * var(--main-pt, 0px));
   }
   .full-bleed:last-child {
     margin-bottom: calc(-1 * var(--main-pb, 0px));
+  }
+  /* While a route placeholder shows, the footer waits out of sight (it would otherwise move when the page lands). */
+  html[data-route-loading] #root footer {
+    visibility: hidden;
   }
 
   /* The page column inside the shell: one max width, one gutter, used by every page. */
@@ -240,6 +246,11 @@
     transform: translateY(0.42em);
   }
 }
+@keyframes settle {
+  from {
+    transform: translateY(10px);
+  }
+}
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -264,8 +275,10 @@
     animation: line-rise var(--dur-5) var(--ease-out) both;
     animation-delay: calc(var(--i, 0) * 90ms + 60ms);
   }
+  /* The lead and the actions settle into place without fading: they are the first viewport's largest text, and an
+   * opacity fade would hold back the page's largest contentful paint by the length of the fade. */
   .hero-fade {
-    animation: fade-up 600ms var(--ease-out) both;
+    animation: settle 600ms var(--ease-out) both;
     animation-delay: var(--d, 0ms);
   }
   .poster-facet {

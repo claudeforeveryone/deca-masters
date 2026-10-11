@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { RouteFallback } from "../../components/layout/RouteFallback";
 import { PageHeader } from "../../components/ui/PageHeader";
-import { useAuth } from "../../lib/auth";
+import { mayHaveStoredSession, useAuth } from "../../lib/auth";
 import { LandingPage } from "../landing/LandingPage";
 
 // What each area will do. None of them has data yet, and the page says so.
@@ -84,7 +84,8 @@ function Dashboard({ email }: { email: string }) {
 
 export function HomePage() {
   const { user, loading } = useAuth();
-  if (loading) return <RouteFallback />;
+  // A visitor with no stored session is signed out for certain: show the landing at once (it is the LCP page).
+  if (loading) return mayHaveStoredSession() ? <RouteFallback /> : <LandingPage />;
   if (user) return <Dashboard email={user.email ?? "your account"} />;
   return <LandingPage />;
 }

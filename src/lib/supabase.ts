@@ -11,13 +11,16 @@ export const SUPABASE_URL =
 export const SUPABASE_KEY =
   (import.meta.env.VITE_SUPABASE_KEY as string | undefined) || DEFAULT_KEY;
 
+/** Where supabase-js keeps the session in localStorage (read by auth.tsx before Supabase answers). */
+export const SESSION_STORAGE_KEY = "deca-masters-auth";
+
 export const supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
   auth: {
     persistSession: true,
     autoRefreshToken: true,
     detectSessionInUrl: true,
     // FBLA uses "kcbfbla-auth-v2". Different origins already keep them apart; a distinct key keeps it obvious.
-    storageKey: "deca-masters-auth",
+    storageKey: SESSION_STORAGE_KEY,
   },
 });
 

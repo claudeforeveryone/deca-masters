@@ -1,5 +1,5 @@
 import { LogIn, Search, Settings, UserRound, LogOut } from "lucide-react";
-import { useCallback, useState, type ReactNode } from "react";
+import { useCallback, useLayoutEffect, useState, type ReactNode } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useAuth } from "../../lib/auth";
 import { useThemePref, type ThemePref } from "../../lib/theme";
@@ -17,8 +17,27 @@ import { DESKTOP_NAV, PHONE_NAV } from "./nav";
 import { useShellCommands } from "./shellCommands";
 import { Wordmark } from "./Wordmark";
 
+/**
+ * The scrollbar's width as --sbw on <html>, so .full-bleed can run edge to edge from inside the page column without
+ * reaching under the scrollbar (100vw counts it; the gutter is reserved, so it does not change as pages grow).
+ */
+function useScrollbarWidth() {
+  useLayoutEffect(() => {
+    const root = document.documentElement;
+    const measure = () =>
+      root.style.setProperty(
+        "--sbw",
+        `${Math.max(0, window.innerWidth - root.clientWidth)}px`,
+      );
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+}
+
 /** Top bar (deep navy in both themes), page column, footer, phone tab bar, the command palette and toasts. */
 export function AppShell({ children }: { children: ReactNode }) {
+  useScrollbarWidth();
   const [paletteOpen, setPaletteOpen] = useState(false);
   usePaletteShortcut(setPaletteOpen);
   const commands = useShellCommands(paletteOpen);
@@ -96,7 +115,7 @@ function TopBar({ onSearch }: { onSearch: () => void }) {
           >
             <Search aria-hidden="true" className="size-4.5" />
             <span className="hidden xl:inline">Search</span>
-            <Kbd className="border-stage-line bg-stage-2 text-on-navy-2">
+            <Kbd className="border-stage-line! bg-stage-2! text-on-navy-2!">
               {paletteShortcutLabel()}
             </Kbd>
           </button>

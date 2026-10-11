@@ -1,5 +1,18 @@
-/** Shown while a page's code chunk or the session loads. Says what is happening; the shell stays in place. */
+import { useLayoutEffect } from "react";
+
+/**
+ * Shown while a page's code chunk or the session loads. Says what is happening; the shell stays in place.
+ * While it shows, the footer is hidden (html[data-route-loading], see index.css): otherwise the footer sits under
+ * this short placeholder and jumps down when the page arrives, which is most of the page's layout shift.
+ */
 export function RouteFallback({ label = "Loading" }: { label?: string }) {
+  useLayoutEffect(() => {
+    const root = document.documentElement;
+    root.dataset.routeLoading = "";
+    return () => {
+      delete root.dataset.routeLoading;
+    };
+  }, []);
   return (
     <div
       role="status"

@@ -20,6 +20,7 @@ const fake = vi.hoisted(() => {
 });
 
 vi.mock("../../lib/supabase", () => ({
+  SESSION_STORAGE_KEY: "deca-masters-auth",
   appUrl: (path = "") => `http://localhost/${path.replace(/^\//, "")}`,
   supabase: {
     auth: {
