@@ -31,6 +31,7 @@ const index = {
   events: [
     event("PMK", "Principles of Marketing", "You play a marketing employee & answer a manager's <questions>."),
     event("ACT", "Accounting Applications Series", "Solo role-plays with financial statements."),
+    { ...event("EBG", "Business Growth Plan", "A written plan and a presentation."), components: ["written", "presentation"] },
   ],
   exams: [],
   vocab: [
@@ -65,6 +66,19 @@ describe("routeMeta", () => {
     });
     expect(routeMeta("/practice/run", index).robots).toBe("noindex,nofollow");
     expect(routeMeta("/login", index).robots).toBe("noindex,follow");
+  });
+
+  it("names a trainer page only for an event that has a role play, and keeps the others out of the index", () => {
+    expect(routeMeta("/roleplay/PMK", index)).toMatchObject({
+      title: "Principles of Marketing (PMK) role-play trainer | DECA Masters",
+      robots: "index,follow",
+    });
+    expect(routeMeta("/roleplay/EBG", index)).toMatchObject({
+      title: "EBG has no role play | DECA Masters",
+      robots: "noindex,follow",
+      jsonLd: [],
+    });
+    expect(routeMeta("/events/EBG", index).robots).toBe("index,follow");
   });
 
   it("drops a trailing slash so one page has one address", () => {

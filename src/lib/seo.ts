@@ -202,6 +202,20 @@ export function routeMeta(
     const [, area, code] = byCode;
     const e = index?.events.find((x) => x.code === code);
     const trainer = area === "roleplay";
+    // The trainer exists only for events judged on a role play or case study (the page says so for the rest).
+    if (
+      e &&
+      trainer &&
+      !e.components.includes("roleplay") &&
+      !e.components.includes("case-study")
+    )
+      return {
+        ...base,
+        title: titled(`${e.code} has no role play`),
+        description: DEFAULT_DESCRIPTION,
+        robots: "noindex,follow",
+        jsonLd: [],
+      };
     if (e) {
       const title = titled(
         trainer
