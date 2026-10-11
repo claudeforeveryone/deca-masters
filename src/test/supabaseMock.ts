@@ -26,6 +26,15 @@ function createDb() {
   let calls: Recorded[] = [];
   let replies: Reply[] = [];
   let uid: string | null = "00000000-0000-4000-8000-0000000000aa";
+  // Auth calls other than getSession (updateUser, signInWithPassword, signOut) are kept apart from rpc()/from(), so
+  // the SQL contract check never sees them. Each answers with the next queued authReply, else { data: {}, error: null }.
+  let authCalls: { method: string; args: unknown[] }[] = [];
+  let authReplies: { data: unknown; error: { message: string; code?: string } | null }[] = [];
+  const authMethod = (method: string) =>
+    vi.fn(async (...args: unknown[]) => {
+      authCalls.push({ method, args });
+      return authReplies.shift() ?? { data: {}, error: null };
+    });
 
   const next = (): Reply => replies.shift() ?? { data: null, error: null };
 
@@ -62,9 +71,16 @@ function createDb() {
     }),
     auth: {
       getSession: vi.fn(async () => ({
-        data: { session: uid ? { user: { id: uid } } : null },
+        data: {
+          session: uid
+            ? { user: { id: uid, email: "member@example.org" } }
+            : null,
+        },
         error: null,
       })),
+      updateUser: authMethod("updateUser"),
+      signInWithPassword: authMethod("signInWithPassword"),
+      signOut: authMethod("signOut"),
     },
   };
 
@@ -82,6 +98,17 @@ function createDb() {
     get uid() {
       return uid;
     },
+    /** updateUser / signInWithPassword / signOut calls, in order. */
+    get authCalls() {
+      return authCalls;
+    },
+    /** Queues the next auth method's result. */
+    authReply(
+      data: unknown,
+      error: { message: string; code?: string } | null = null,
+    ) {
+      authReplies.push({ data, error });
+    },
     reply(data: unknown) {
       replies.push({ data, error: null });
     },
@@ -94,6 +121,8 @@ function createDb() {
     reset() {
       calls = [];
       replies = [];
+      authCalls = [];
+      authReplies = [];
       uid = "00000000-0000-4000-8000-0000000000aa";
       supabase.rpc.mockClear();
       supabase.from.mockClear();
