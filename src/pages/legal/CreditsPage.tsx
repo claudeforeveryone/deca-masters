@@ -106,7 +106,7 @@ export function CreditsPage() {
               {state.sources.map((s) => (
                 <li
                   key={s.url}
-                  className="grid gap-1 border-b border-line py-4"
+                  className="grid grid-cols-[minmax(0,1fr)] gap-1 border-b border-line py-4"
                 >
                   <a
                     href={s.url}
