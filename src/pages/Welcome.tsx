@@ -1,14 +1,21 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { CheckCircle } from '@phosphor-icons/react'
-import { eventByCode, examOf } from '../data/events'
+import { clusterOf, eventByCode, examOf } from '../data/events'
 import { useStore } from '../store'
 import { ClusterMarquee, EventPicker } from '../components/ui'
 
 export default function Welcome() {
   const { startGuest } = useStore()
+  const navigate = useNavigate()
   const [code, setCode] = useState('')
+  // A cluster tile fills the event search with that cluster and jumps down to it.
+  const [seed, setSeed] = useState('')
   const ev = eventByCode(code)
+  const start = () => {
+    startGuest(code)
+    navigate('/play')
+  }
 
   return (
     <div>
@@ -24,17 +31,22 @@ export default function Welcome() {
           </div>
         </div>
       </section>
-      <ClusterMarquee />
+      <ClusterMarquee
+        onPick={(id) => {
+          setSeed(clusterOf(id).name)
+          document.getElementById('start')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }}
+      />
 
       <section id="start" className="grid gap-10 pt-16 lg:grid-cols-[1.3fr_1fr]">
         <div>
           <h2 className="text-2xl">Continue as a guest</h2>
           <p className="mt-2 text-sm text-ink-3">Choose the event you compete in. Your home page and practice will be built around its exam.</p>
           <div className="mt-6">
-            <EventPicker value={code} onChange={setCode} />
+            <EventPicker key={seed} initialQuery={seed} value={code} onChange={setCode} />
           </div>
           <div className="mt-5 flex flex-wrap items-center gap-4">
-            <button className="btn-primary btn-lg" disabled={!ev} onClick={() => startGuest(code)}>
+            <button className="btn-primary btn-lg" disabled={!ev} onClick={start}>
               Start practicing
             </button>
             {ev && (

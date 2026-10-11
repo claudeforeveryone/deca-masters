@@ -23,7 +23,7 @@ export default function Home() {
     { title: 'Daily challenge', body: `Today’s set from the ${myExam.name} exam. Same questions for everyone.`, to: '/play?mode=daily', cta: 'Play daily' },
     weakest
       ? { title: 'Weak spots', body: `Your lowest exam so far is ${weakest.name}. Drill it until it is not.`, to: '/play?mode=weak', cta: 'Fix weak spots' }
-      : { title: 'Weak spots', body: 'Answer a few sessions of questions and we will point you at the exam you miss most.', to: '/play?mode=daily', cta: 'Start practicing' },
+      : { title: 'Weak spots', body: 'Answer a few sessions of questions and we will point you at the exam you miss most.', to: '/play', cta: 'Start practicing' },
     { title: 'Endless', body: `Keep answering ${myExam.name} questions until you decide to stop.`, to: '/play?mode=endless', cta: 'Start endless' },
     { title: 'Full practice exam', body: 'Timed, no explanations until the end. Just like competition day.', to: '/play?mode=exam', cta: 'Take the exam' },
   ]
@@ -124,7 +124,7 @@ export default function Home() {
 
       {/* Big number moment */}
       <section className="relative overflow-hidden py-24 text-center sm:py-36">
-        <span aria-hidden className="num pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none text-[40vw] font-extrabold leading-none tracking-tighter text-[#DCEBF8] sm:text-[360px]">
+        <span aria-hidden className="num pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none text-[40vw] font-extrabold leading-none tracking-tighter text-tint-2/40 sm:text-[360px]">
           #{isGuest ? 0 : myRank}
         </span>
         <div className="relative mx-auto max-w-2xl">

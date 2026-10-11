@@ -81,8 +81,8 @@ export default function Bank() {
               role="tab"
               aria-selected={on}
               onClick={() => pick(x.id)}
-              className="rounded-soft border-2 px-3 py-1.5 text-[13px] font-semibold transition-colors"
-              style={on ? { background: x.color, borderColor: x.color, color: x.fg } : { borderColor: '#E4E4E4', color: '#333333' }}
+              className={`rounded-soft border-2 px-3 py-1.5 text-[13px] font-semibold transition-colors ${on ? '' : 'border-line text-ink-2 hover:border-line-strong'}`}
+              style={on ? { background: x.color, borderColor: x.color, color: x.fg } : undefined}
             >
               {x.name} <span className="num ml-1 opacity-75">{questionCount(x.id).toLocaleString()}</span>
             </button>

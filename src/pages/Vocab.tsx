@@ -2,32 +2,55 @@ import { useState } from 'react'
 import { ArrowLeft, ArrowRight, Check, ArrowsClockwise, CheckSquare, Square } from '@phosphor-icons/react'
 import { EXAMS, examOf, type ExamId } from '../data/events'
 import { VOCAB } from '../data/questions'
-import { useMyEvent } from '../store'
+import { useMyEvent, useStore } from '../store'
+import { cue } from '../sound'
 import { EmptyState, Meter, PageBand, SectionHeader } from '../components/ui'
 
 type Filter = ExamId | 'all'
 
+// Terms marked "Got it", saved per user so they survive a reload.
+const knownKey = (userId: string) => `deca-masters:vocab:${userId}`
+function loadKnown(userId: string): Set<string> {
+  try {
+    return new Set(JSON.parse(localStorage.getItem(knownKey(userId)) ?? '[]') as string[])
+  } catch {
+    return new Set()
+  }
+}
+
 export default function Vocab() {
+  const { me } = useStore()
   const { exam } = useMyEvent()
   const [filter, setFilter] = useState<Filter>(exam)
   const [i, setI] = useState(0)
   const [flipped, setFlipped] = useState(false)
-  const [known, setKnown] = useState<Set<string>>(new Set())
+  const [known, setKnownState] = useState(() => loadKnown(me!.id))
   const deck = VOCAB.filter((v) => filter === 'all' || v.exam === filter)
   const card = deck[i % Math.max(deck.length, 1)]
+  // Progress counts the section you are looking at, so one exam reads 1/2, not 1/14.
+  const knownHere = deck.filter((v) => known.has(v.term)).length
+  const section = filter === 'all' ? 'All terms' : examOf(filter).name
 
   const go = (d: number) => {
     setFlipped(false)
     setI((i + d + deck.length) % deck.length)
   }
   const mark = (got: boolean) => {
-    setKnown((k) => {
-      const n = new Set(k)
-      if (got) n.add(card.term)
-      else n.delete(card.term)
-      return n
-    })
+    const n = new Set(known)
+    if (got) n.add(card.term)
+    else n.delete(card.term)
+    setKnownState(n)
+    try {
+      localStorage.setItem(knownKey(me!.id), JSON.stringify([...n]))
+    } catch {
+      /* storage unavailable: progress lasts until reload */
+    }
+    if (got) cue('known')
     go(1)
+  }
+  const flip = () => {
+    cue('flip')
+    setFlipped((f) => !f)
   }
   const chips = [{ id: 'all' as Filter, name: 'All terms', color: '#0072CE', fg: '#FFFFFF' }, ...EXAMS.map((x) => ({ ...x, id: x.id as Filter }))]
 
@@ -42,10 +65,11 @@ export default function Vocab() {
             <button
               key={e.id}
               onClick={() => { setFilter(e.id); setI(0); setFlipped(false) }}
-              className="rounded-soft border-2 px-3 py-1.5 text-[13px] font-semibold transition-colors"
-              style={on ? { background: e.color, borderColor: e.color, color: e.fg } : { borderColor: '#E4E4E4', color: '#333333' }}
+              className={`rounded-soft border-2 px-3 py-1.5 text-[13px] font-semibold transition-colors ${on ? '' : 'border-line text-ink-2 hover:border-line-strong'}`}
+              style={on ? { background: e.color, borderColor: e.color, color: e.fg } : undefined}
             >
               {e.name}
+              <span className="num ml-1.5 opacity-75">{e.id === 'all' ? VOCAB.length : VOCAB.filter((v) => v.exam === e.id).length}</span>
             </button>
           )
         })}
@@ -57,7 +81,7 @@ export default function Vocab() {
         <div className="grid gap-10 lg:grid-cols-[1fr_320px]">
           <div>
             <button
-              onClick={() => setFlipped((f) => !f)}
+              onClick={flip}
               aria-label={flipped ? 'Show term' : 'Show definition'}
               className={`flex min-h-[320px] w-full flex-col rounded-box p-8 text-left sm:p-10 ${flipped ? 'border-2 border-brand bg-white' : 'diamond-pattern bg-brand text-white'}`}
             >
@@ -87,8 +111,12 @@ export default function Vocab() {
           </div>
 
           <aside>
-            <SectionHeader title="Your progress" action={<span className="num text-sm font-semibold text-brand">{known.size}/{VOCAB.length}</span>} />
-            <Meter value={(known.size / VOCAB.length) * 100} />
+            <SectionHeader title="Your progress" action={<span className="num text-sm font-semibold text-brand" aria-label={`${knownHere} of ${deck.length} known`}>{knownHere}/{deck.length}</span>} />
+            <Meter value={(knownHere / deck.length) * 100} />
+            <p className="mt-2 text-xs text-ink-3">
+              <span className="font-semibold text-ink-2">{section}</span>: {knownHere} of {deck.length} {deck.length === 1 ? 'term' : 'terms'} known
+              {filter !== 'all' && `, ${known.size} of ${VOCAB.length} across all exams`}
+            </p>
             <ul className="mt-6 divide-y divide-line border-y border-line">
               {deck.map((v, k) => (
                 <li key={v.term}>

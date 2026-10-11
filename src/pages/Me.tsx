@@ -56,9 +56,12 @@ function ProfileBand() {
           {isGuest && <Link to="/register" className="btn-outline-white">Create account</Link>}
         </div>
         {editing && (
-          <div className="mt-6 max-w-2xl rounded-box bg-white p-4 text-ink">
-            <EventPicker value={event.code} onChange={(c) => setEvent(c)} />
-            <p className="mt-3 text-sm text-ink-2">Your practice uses the <span className="font-semibold text-ink">{examOf(exam).name}</span> exam.</p>
+          <div className="mt-6 rounded-box bg-white p-4 text-ink sm:p-6">
+            <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
+              <p className="text-sm text-ink-2">Your practice uses the <span className="font-semibold text-ink">{examOf(exam).name}</span> exam.</p>
+              <Link to="/settings?tab=events" className="link text-sm">More in Settings</Link>
+            </div>
+            <EventPicker wide value={event.code} onChange={(c) => setEvent(c)} />
           </div>
         )}
       </div>
@@ -159,13 +162,17 @@ function Career() {
     return () => { live = false }
   }, [missedIds])
 
-  const wrong = useMemo(() => {
+  const allWrong = useMemo(() => {
     const seen = new Map<string, string>()
     p.history.forEach((h) => h.wrongIds.forEach((id) => !seen.has(id) && seen.set(id, h.title)))
-    return [...seen.entries()]
-      .map(([id, from]) => ({ q: bank.get(id), from }))
-      .filter((w): w is { q: Question; from: string } => !!w.q && (examFilter === 'all' || w.q.exam === examFilter))
-  }, [p.history, examFilter, bank])
+    return [...seen.entries()].map(([id, from]) => ({ q: bank.get(id), from })).filter((w): w is { q: Question; from: string } => !!w.q)
+  }, [p.history, bank])
+  const wrong = examFilter === 'all' ? allWrong : allWrong.filter((w) => w.q.exam === examFilter)
+  const missedByExam = useMemo(() => {
+    const n: Partial<Record<ExamId | 'all', number>> = { all: allWrong.length }
+    allWrong.forEach(({ q }) => (n[q.exam] = (n[q.exam] ?? 0) + 1))
+    return n
+  }, [allWrong])
 
   if (redo && result) return <ResultCard r={result.r} delta={result.delta} title="Review complete" note={'Practice on questions you have already seen does not change your ELO.'} onDone={() => { setRedo(null); setResult(null) }} />
   const redoQs = (redo ?? []).map((id) => bank.get(id)).filter((x): x is Question => !!x)
@@ -198,14 +205,15 @@ function Career() {
             <button key={t} onClick={() => setTab(t)} className={tab === t ? 'btn-primary btn-sm' : 'btn-secondary btn-sm'}>{t}</button>
           ))}
         </div>
-        {tab === 'Missed questions' && wrong.length > 0 && (
-          <div className="flex gap-2">
+        {/* The filter stays put even when an exam has nothing missed, so you can always switch back. */}
+        {tab === 'Missed questions' && missedIds.length > 0 && (
+          <div className="flex flex-wrap gap-2">
             <label className="sr-only" htmlFor="missed-exam">Exam</label>
-            <select id="missed-exam" className="input w-auto" value={examFilter} onChange={(e) => setExamFilter(e.target.value as ExamId | 'all')}>
-              <option value="all">All exams</option>
-              {EXAMS.map((x) => <option key={x.id} value={x.id}>{x.name}</option>)}
+            <select id="missed-exam" className="input w-auto max-w-full" value={examFilter} onChange={(e) => setExamFilter(e.target.value as ExamId | 'all')}>
+              <option value="all">All exams ({missedByExam.all})</option>
+              {EXAMS.map((x) => <option key={x.id} value={x.id}>{x.name} ({missedByExam[x.id] ?? 0})</option>)}
             </select>
-            <button className="btn-primary" onClick={() => setRedo(wrong.map((w) => w.q.id))}><ArrowCounterClockwise size={16} /> Redo all {wrong.length}</button>
+            {wrong.length > 0 && <button className="btn-primary" onClick={() => setRedo(wrong.map((w) => w.q.id))}><ArrowCounterClockwise size={16} /> Redo all {wrong.length}</button>}
           </div>
         )}
       </div>
@@ -247,6 +255,15 @@ function Career() {
             </table>
           </div>
         )
+      ) : wrong.length === 0 && examFilter !== 'all' ? (
+        <div className="panel">
+          <EmptyState
+            icon={<CheckCircle size={20} />}
+            title={`Nothing missed on ${examOf(examFilter).name}`}
+            body="You have not missed any questions from this exam. Pick another exam or show them all."
+            action={<button className="btn-secondary" onClick={() => setExamFilter('all')}>Show all exams</button>}
+          />
+        </div>
       ) : wrong.length === 0 ? (
         <div className="panel"><EmptyState icon={<CheckCircle size={20} />} title="Nothing missed" body="Questions you get wrong are saved here so you can retry them." /></div>
       ) : (
