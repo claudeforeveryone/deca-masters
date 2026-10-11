@@ -1,79 +1,134 @@
-import { Link, Navigate, Route, Routes, useLocation } from 'react-router-dom'
-import TopNav from './components/TopNav'
-import Logo from './components/Logo'
-import { useStore } from './store'
-import Welcome from './pages/Welcome'
-import Register from './pages/Register'
-import Login from './pages/Login'
-import Home from './pages/Home'
-import Leaderboard from './pages/Leaderboard'
-import Play from './pages/Play'
-import Vocab from './pages/Vocab'
-import Bank from './pages/Bank'
-import Arena from './pages/Arena'
-import Chapter from './pages/Chapter'
-import Me from './pages/Me'
+import { lazy, Suspense, type ComponentType } from "react";
+import { Outlet, Route, Routes, useLocation } from "react-router-dom";
+import { AppShell } from "./components/layout/AppShell";
+import { ErrorBoundary } from "./components/layout/ErrorBoundary";
+import { RequireAuth } from "./components/layout/RequireAuth";
+import { RouteFallback } from "./components/layout/RouteFallback";
 
-const FOOTER = [
-  { title: 'Practice', links: [['Play', '/play'], ['Questions', '/bank'], ['Vocab', '/vocab'], ['Arena', '/arena']] },
-  { title: 'Compete', links: [['Leaderboard', '/leaderboard'], ['Chapter', '/chapter']] },
-  { title: 'Account', links: [['Profile', '/me'], ['Create account', '/register']] },
-]
-
-export default function App() {
-  const { pathname } = useLocation()
-  const { signedIn } = useStore()
-
-  return (
-    <div className="flex min-h-[100dvh] flex-col">
-      <TopNav />
-      <main key={pathname} className="enter container-page flex-1 pb-20">
-        {signedIn ? (
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/leaderboard" element={<Leaderboard />} />
-            <Route path="/play" element={<Play />} />
-            <Route path="/vocab" element={<Vocab />} />
-            <Route path="/bank" element={<Bank />} />
-            <Route path="/arena" element={<Arena />} />
-            <Route path="/chapter" element={<Chapter />} />
-            <Route path="/me" element={<Me />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
-        ) : (
-          <Routes>
-            <Route path="/" element={<Welcome />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
-        )}
-      </main>
-      <footer className="bg-navy-footer text-[#8F8F8F]">
-        <div className="container-page grid gap-10 py-14 md:grid-cols-[1.4fr_repeat(3,1fr)]">
-          <div>
-            <Logo inverse />
-            <p className="mt-5 max-w-[34ch] text-[13px] leading-relaxed">
-              Practice cluster exams, climb the leaderboard and train with your chapter.
-            </p>
-          </div>
-          {FOOTER.map((col) => (
-            <div key={col.title}>
-              <p className="text-[11px] font-bold uppercase tracking-label text-white">{col.title}</p>
-              <ul className="mt-4 space-y-3 text-[13px]">
-                {col.links.map(([label, to]) => (
-                  <li key={label}><Link to={to} className="hover:text-white">{label}</Link></li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        <div className="border-t border-white/10">
-          <p className="container-page py-5 text-xs">A student-built practice tool. Not affiliated with or endorsed by DECA Inc.</p>
-        </div>
-      </footer>
-    </div>
-  )
+/** A route-level code-split page. Every page module exports a named component; this picks it. */
+function page<K extends string>(
+  loader: () => Promise<Record<K, ComponentType>>,
+  name: K,
+) {
+  return lazy(async () => ({ default: (await loader())[name] }));
 }
+
+const HomePage = page(() => import("./pages/home/HomePage"), "HomePage");
+const LoginPage = page(() => import("./pages/auth/LoginPage"), "LoginPage");
+const SignupPage = page(() => import("./pages/auth/SignupPage"), "SignupPage");
+const ResetPage = page(() => import("./pages/auth/ResetPage"), "ResetPage");
+const ResetUpdatePage = page(
+  () => import("./pages/auth/ResetUpdatePage"),
+  "ResetUpdatePage",
+);
+const OnboardingPage = page(
+  () => import("./pages/onboarding/OnboardingPage"),
+  "OnboardingPage",
+);
+const EventsPage = page(
+  () => import("./pages/events/EventsPage"),
+  "EventsPage",
+);
+const EventPage = page(() => import("./pages/events/EventPage"), "EventPage");
+const PracticePage = page(
+  () => import("./pages/practice/PracticePage"),
+  "PracticePage",
+);
+const RunPage = page(() => import("./pages/practice/RunPage"), "RunPage");
+const ReviewPage = page(
+  () => import("./pages/practice/ReviewPage"),
+  "ReviewPage",
+);
+const RoleplayPage = page(
+  () => import("./pages/roleplay/RoleplayPage"),
+  "RoleplayPage",
+);
+const RoleplayDetailPage = page(
+  () => import("./pages/roleplay/RoleplayDetailPage"),
+  "RoleplayDetailPage",
+);
+const VocabPage = page(() => import("./pages/vocab/VocabPage"), "VocabPage");
+const DeckPage = page(() => import("./pages/vocab/DeckPage"), "DeckPage");
+const ProgressPage = page(
+  () => import("./pages/progress/ProgressPage"),
+  "ProgressPage",
+);
+const LeaderboardPage = page(
+  () => import("./pages/leaderboard/LeaderboardPage"),
+  "LeaderboardPage",
+);
+const ProfilePage = page(() => import("./pages/me/ProfilePage"), "ProfilePage");
+const SettingsPage = page(
+  () => import("./pages/me/SettingsPage"),
+  "SettingsPage",
+);
+const OwnerPage = page(() => import("./pages/owner/OwnerPage"), "OwnerPage");
+const TermsPage = page(() => import("./pages/legal/TermsPage"), "TermsPage");
+const PrivacyPage = page(
+  () => import("./pages/legal/PrivacyPage"),
+  "PrivacyPage",
+);
+const CreditsPage = page(
+  () => import("./pages/legal/CreditsPage"),
+  "CreditsPage",
+);
+const NotFoundPage = page(() => import("./pages/NotFoundPage"), "NotFoundPage");
+
+/** The shell stays put while a page chunk loads; a page that throws is contained and cleared on the next route. */
+function ShellLayout() {
+  const { pathname } = useLocation();
+  return (
+    <AppShell>
+      <ErrorBoundary resetKey={pathname}>
+        <Suspense fallback={<RouteFallback />}>
+          <Outlet />
+        </Suspense>
+      </ErrorBoundary>
+    </AppShell>
+  );
+}
+
+/**
+ * The route map. Public: landing, auth, events, roleplay and vocab browsing, legal and credits (reference content,
+ * indexable).
+ * Signed in: anything that saves, scores or ranks, plus onboarding and the owner console.
+ */
+export function App() {
+  return (
+    <Routes>
+      <Route element={<ShellLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="signup" element={<SignupPage />} />
+        <Route path="reset" element={<ResetPage />} />
+        <Route path="reset/update" element={<ResetUpdatePage />} />
+
+        <Route path="events" element={<EventsPage />} />
+        <Route path="events/:code" element={<EventPage />} />
+        <Route path="roleplay" element={<RoleplayPage />} />
+        <Route path="roleplay/:id" element={<RoleplayDetailPage />} />
+        <Route path="vocab" element={<VocabPage />} />
+        <Route path="vocab/:deck" element={<DeckPage />} />
+        <Route path="terms" element={<TermsPage />} />
+        <Route path="privacy" element={<PrivacyPage />} />
+        <Route path="credits" element={<CreditsPage />} />
+
+        <Route element={<RequireAuth />}>
+          <Route path="onboarding" element={<OnboardingPage />} />
+          <Route path="practice" element={<PracticePage />} />
+          <Route path="practice/run" element={<RunPage />} />
+          <Route path="practice/review/:attemptId" element={<ReviewPage />} />
+          <Route path="progress" element={<ProgressPage />} />
+          <Route path="leaderboard" element={<LeaderboardPage />} />
+          <Route path="me" element={<ProfilePage />} />
+          <Route path="me/settings" element={<SettingsPage />} />
+          <Route path="owner" element={<OwnerPage />} />
+        </Route>
+
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
+  );
+}
+
+export default App;
