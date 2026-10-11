@@ -144,7 +144,8 @@ export function SignupPage() {
           <Link to="/privacy" className="font-semibold">
             Privacy Policy
           </Link>
-          .
+          . The same login works on our FBLA practice site. Under 13? Ask a
+          parent or guardian first.
         </p>
         <div>
           <Button type="submit" busy={busy}>
