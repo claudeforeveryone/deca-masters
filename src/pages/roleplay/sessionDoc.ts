@@ -197,3 +197,29 @@ export function fromSession(
     rubric: parsed.rubric,
   };
 }
+
+export type SessionSummary = {
+  /** Indicators in the session (at least the event's count). */
+  total: number;
+  covered: number;
+  rated: number;
+  /** Mean self-rating 0-3 over the rated indicators, or null. */
+  average: number | null;
+  questions: number;
+};
+
+/** What a saved session amounts to, for history lists. */
+export function sessionSummary(
+  session: Parameters<typeof fromSession>[0],
+  piCount: number,
+): SessionSummary {
+  const doc = fromSession(session, piCount);
+  const levels: number[] = doc.pis.flatMap((p) => (p.level === null ? [] : [p.level]));
+  return {
+    total: doc.pis.length,
+    covered: doc.pis.filter((p) => p.covered).length,
+    rated: levels.length,
+    average: levels.length ? levels.reduce((a, b) => a + b, 0) / levels.length : null,
+    questions: doc.judgeQuestions.length,
+  };
+}

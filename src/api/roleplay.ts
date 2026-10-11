@@ -87,21 +87,11 @@ export type RoleplaySession = {
 const SESSION_COLUMNS =
   "id,client_id,event_code,scenario_ref,scenario_title,prep_seconds,present_seconds,ratings,notes,completed_at,created_at,updated_at";
 
-/** Role-play events with their official sample links, for one cluster or all. */
-export async function listRoleplayEvents(
-  cluster?: ClusterSlug,
-): Promise<RoleplayEvent[]> {
-  let q = supabase
-    .from("deca_roleplay_events")
-    .select(
-      "event_code,cluster,event_name,official_samples,prep_minutes,presentation_minutes,judge_role,placeholder,note,status",
-    );
-  if (cluster) q = q.eq("cluster", cluster);
-  const rows = must<RoleplayEventRow[] | null>(
-    await q.order("event_code"),
-    "Could not load the role plays.",
-  );
-  return (rows ?? []).map((r) => ({
+const ROLEPLAY_EVENT_COLUMNS =
+  "event_code,cluster,event_name,official_samples,prep_minutes,presentation_minutes,judge_role,placeholder,note,status";
+
+function toRoleplayEvent(r: RoleplayEventRow): RoleplayEvent {
+  return {
     eventCode: r.event_code,
     eventName: r.event_name,
     cluster: r.cluster,
@@ -114,7 +104,33 @@ export async function listRoleplayEvents(
     },
     placeholder: r.placeholder,
     note: r.note,
-  }));
+  };
+}
+
+/** One event's role-play links by code (case does not matter), or null when the event has no role play. */
+export async function getRoleplayEvent(code: string): Promise<RoleplayEvent | null> {
+  const row = must<RoleplayEventRow | null>(
+    await supabase
+      .from("deca_roleplay_events")
+      .select(ROLEPLAY_EVENT_COLUMNS)
+      .eq("event_code", code.toUpperCase())
+      .maybeSingle(),
+    "Could not load the role play.",
+  );
+  return row ? toRoleplayEvent(row) : null;
+}
+
+/** Role-play events with their official sample links, for one cluster or all. */
+export async function listRoleplayEvents(
+  cluster?: ClusterSlug,
+): Promise<RoleplayEvent[]> {
+  let q = supabase.from("deca_roleplay_events").select(ROLEPLAY_EVENT_COLUMNS);
+  if (cluster) q = q.eq("cluster", cluster);
+  const rows = must<RoleplayEventRow[] | null>(
+    await q.order("event_code"),
+    "Could not load the role plays.",
+  );
+  return (rows ?? []).map(toRoleplayEvent);
 }
 
 /** The caller's sessions, newest first. */

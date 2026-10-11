@@ -8,6 +8,7 @@ import { contractProblems } from "../test/sqlContract";
 import {
   RATING_LEVELS,
   deleteSession,
+  getRoleplayEvent,
   getSession,
   listRoleplayEvents,
   mySessions,
@@ -148,5 +149,30 @@ describe("getSession", () => {
   it("does not ask the server about an id that is not a uuid", async () => {
     await expect(getSession("not-a-uuid")).resolves.toBeNull();
     expect(db.calls).toHaveLength(0);
+  });
+});
+
+describe("getRoleplayEvent", () => {
+  it("reads one event's links by code, or null", async () => {
+    db.reply({
+      event_code: "PMK",
+      cluster: "marketing",
+      event_name: "Principles of Marketing",
+      official_samples: [],
+      prep_minutes: 10,
+      presentation_minutes: 10,
+      judge_role: null,
+      placeholder: true,
+      note: null,
+      status: "placeholder",
+    });
+    const e = await getRoleplayEvent("pmk");
+    expect(db.last.table).toBe("deca_roleplay_events");
+    expect(db.last.ops).toContainEqual(["eq", ["event_code", "PMK"]]);
+    expect(db.last.ops).toContainEqual(["maybeSingle", []]);
+    expect(e?.eventCode).toBe("PMK");
+    expect(e?.format.prepMinutes).toBe(10);
+    db.reply(null);
+    await expect(getRoleplayEvent("ZZZ")).resolves.toBeNull();
   });
 });

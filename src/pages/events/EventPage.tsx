@@ -1,7 +1,7 @@
 import { Bookmark, BookmarkCheck, Check, Plus } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 import { Link, useParams } from "react-router-dom";
-import { listRoleplayEvents, type RoleplayEvent } from "../../api/roleplay";
+import { getRoleplayEvent, type RoleplayEvent } from "../../api/roleplay";
 import { track } from "../../api/track";
 import { ExternalAnchor } from "../../components/prep/ExternalAnchor";
 import { formatDay, plural } from "../../components/prep/format";
@@ -89,15 +89,8 @@ export function EventPage() {
     if (!event || !hasRoleplay(event)) return;
     let live = true;
     setLinks({ status: "loading" });
-    listRoleplayEvents(event.cluster)
-      .then(
-        (rows) =>
-          live &&
-          setLinks({
-            status: "ready",
-            event: rows.find((r) => r.eventCode === event.code) ?? null,
-          }),
-      )
+    getRoleplayEvent(event.code)
+      .then((row) => live && setLinks({ status: "ready", event: row }))
       .catch(() => live && setLinks({ status: "error" }));
     return () => {
       live = false;

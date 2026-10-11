@@ -5,6 +5,7 @@ import {
   emptyDoc,
   fromSession,
   notesLength,
+  sessionSummary,
   toSessionFields,
   type TrainerDoc,
 } from "./sessionDoc";
@@ -118,5 +119,27 @@ describe("notesLength", () => {
     expect(NOTES_MAX).toBe(4000);
     expect(notesLength(emptyDoc(5))).toBe(0);
     expect(notesLength(FULL)).toBe(composeNotes(FULL)!.length);
+  });
+});
+
+describe("sessionSummary", () => {
+  it("counts what a saved session covered and how it was rated", () => {
+    expect(sessionSummary(toSessionFields(FULL), 3)).toEqual({
+      total: 3,
+      covered: 2,
+      rated: 2,
+      average: 2.5,
+      questions: 2,
+    });
+  });
+
+  it("has no average when nothing was rated", () => {
+    expect(sessionSummary({ ratings: [], notes: null }, 5)).toEqual({
+      total: 5,
+      covered: 0,
+      rated: 0,
+      average: null,
+      questions: 0,
+    });
   });
 });
