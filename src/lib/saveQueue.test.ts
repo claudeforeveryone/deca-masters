@@ -9,14 +9,14 @@ import {
   type TerminalKind,
 } from "./saveQueue";
 
-type Call = { answers: AnswerInput[]; meta: SaveMeta };
+type Call = { answers: AnswerInput[]; meta: SaveMeta | null };
 
 /** A send() whose replies the test controls, one deferred promise per call. */
 function fakeServer() {
   const calls: Call[] = [];
   const pending: { resolve: () => void; reject: (e: unknown) => void }[] = [];
   const send = vi.fn(
-    (answers: AnswerInput[], meta: SaveMeta) =>
+    (answers: AnswerInput[], meta: SaveMeta | null) =>
       new Promise<void>((resolve, reject) => {
         calls.push({ answers, meta });
         pending.push({ resolve, reject });
@@ -121,6 +121,13 @@ describe("autosave", () => {
     q.push(ans("q5", 1));
     await vi.advanceTimersByTimeAsync(0);
     expect(server.calls[0].meta).toEqual({ position: 4, elapsedMs: 61_000 });
+  });
+
+  it("never sends a place or time it was not given (a fresh tab must not reset the saved ones)", async () => {
+    const q = makeQueue();
+    q.push(ans("q2", 1));
+    await vi.advanceTimersByTimeAsync(0);
+    expect(server.calls[0].meta).toBeNull();
   });
 
   it("saves a position change on its own after a short pause, not on every keypress", async () => {

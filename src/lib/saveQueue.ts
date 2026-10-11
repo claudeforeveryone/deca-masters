@@ -52,7 +52,8 @@ const OTHER_RETRIES = 3;
 const META_DEBOUNCE_MS = 2000;
 
 export function createSaveQueue(opts: {
-  send: (answers: AnswerInput[], meta: SaveMeta) => Promise<unknown>;
+  /** meta is null until setMeta() is called, so a fresh tab never resets the saved place or time. */
+  send: (answers: AnswerInput[], meta: SaveMeta | null) => Promise<unknown>;
   onChange?: (s: QueueSnapshot) => void;
   /** A save was confirmed; gets send()'s result (the run page re-pins its clock from it). */
   onSaved?: (result: unknown) => void;
@@ -119,7 +120,7 @@ export function createSaveQueue(opts: {
     }
     const batch = [...pending.entries()].map(([id, p]) => [id, p.ver] as const);
     const answers = unsent();
-    const sentMeta = meta ?? { position: 0, elapsedMs: 0 };
+    const sentMeta = meta;
     metaDirty = false;
     emit({ status: "saving", retryInMs: null });
 
