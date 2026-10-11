@@ -273,6 +273,14 @@
     opacity: 0;
   }
 }
+/* Practice review: the run's record fills tick by tick, once, right after a submit (src/pages/practice/review). The
+ * facet's own rotation is part of the transform, so the keyframe carries it. Reduced motion: the base layer cuts it. */
+@keyframes tick-fill {
+  from {
+    opacity: 0;
+    transform: rotate(45deg) scale(0.9);
+  }
+}
 
 @layer components {
   .hero-line {
