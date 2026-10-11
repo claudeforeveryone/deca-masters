@@ -19,7 +19,7 @@ Stack: Vite, React 18, TypeScript, Tailwind CSS, React Router, lucide-react.
 | **Home** | Hero, ELO/streak/accuracy cards, Daily / Endless / Weak Spots shortcuts, ELO chart, chapter feed, top players |
 | **Leaderboard** | Players (podium + searchable list) and Chapters (ranked by total member ELO) |
 | **Play** | Daily, Endless, Weak Spots, Timed Sprint, trainer assignments, practice exams per event |
-| **Vocab** | Flashcards filtered by event with mastery tracking |
+| **Vocab** | Flashcards filtered by event with mastery tracking. Add your own terms one at a time or paste a list (term - definition, term: definition or tab-separated), optionally shared with your chapter |
 | **Arena** | Challenge online players, friends or anyone; incoming/sent requests; 10-question timed 1v1 (most correct wins, ties go to faster time) |
 | **Chapter** | Join by code or register a chapter. Classroom (announcements, links, president newsletters, weekly email + inactivity nudge toggles), chapter leaderboard, members (roles, remove, ban), event trainers (1–2 per event), attendance, insights (scores, weaknesses, activity), assignments and test builder (create, shuffle, edit) |
 | **Me** | Profile (photo, school, grade, ELO), stats, accuracy by section, mini leaderboard, achievements; **Career** tab with sortable past exams and a wrong-answer bank you can filter and redo |

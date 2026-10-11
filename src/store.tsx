@@ -4,6 +4,7 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
 import { CLUSTERS, eventByCode, type ClusterId, type ExamId } from './data/events'
 import { DEMO_CHAPTERS, DEMO_PLAYERS, makeChapterCode } from './data/demo'
+import { VOCAB } from './data/questions'
 
 export type Role = 'President' | 'Executive' | 'Trainer' | 'Member'
 
@@ -49,7 +50,34 @@ export type Account = {
 }
 
 export type Post = { id: string; type: 'Announcement' | 'Link' | 'Newsletter'; authorId: string; author: string; role: string; title: string; body: string; url?: string; date: string }
-export type Assignment = { id: string; title: string; type: 'Test' | 'Flashcards' | 'Shuffled exam'; exam: ExamId; due: string; by: string }
+/** A flashcard: a built-in term (id "v-...") or one a user added (id "cv-..."). */
+export type Card = { id: string; term: string; def: string; exam: ExamId }
+/** A term a user added. Personal unless chapterId is set, then every member of that chapter sees it. */
+export type VocabTerm = Card & { authorId: string; author: string; chapterId: string | null; created: string }
+export type DeckCard = Card & { custom?: VocabTerm }
+
+export type AssignmentResult = { date: string; correct?: number; total?: number }
+export type Assignment = {
+  id: string
+  title: string
+  /** Test: the same drawn questions for everyone. Shuffled exam: a fresh draw per member. Flashcards: a vocab set. */
+  type: 'Test' | 'Flashcards' | 'Shuffled exam'
+  exam: ExamId
+  due: string // YYYY-MM-DD, or '' for no due date
+  by: string
+  byId?: string
+  /** Member ids. Missing means the whole chapter. */
+  assignees?: string[]
+  /** Test and Shuffled exam: number of questions. */
+  count?: number
+  /** Test: the question ids everyone gets, plus any prompt rewrites from the test builder. */
+  questionIds?: string[]
+  edits?: Record<string, string>
+  /** Flashcards: a copy of the terms, so later edits or deletes of a custom term do not break the set. */
+  cards?: Card[]
+  /** member id -> when they finished, and their score for tests. */
+  results?: Record<string, AssignmentResult>
+}
 export type ChapterMeta = {
   roles: Record<string, Role>
   posts: Post[]
@@ -71,6 +99,7 @@ type Persisted = {
   guest: Progress
   chapters: LocalChapter[]
   meta: Record<string, ChapterMeta>
+  vocab: VocabTerm[]
 }
 
 /** A row in any leaderboard: a demo account or a real local account. */
@@ -95,15 +124,27 @@ export type ChapterRow = { id: string; name: string; school: string; code: strin
 export const emptyProgress = (): Progress => ({ elo: 0, answered: 0, correct: 0, seconds: 0, streak: 0, bestStreak: 0, lastDay: null, byExam: {}, history: [], arena: { w: 0, l: 0 } })
 const emptyMeta = (): ChapterMeta => ({ roles: {}, posts: [], trainers: {}, digest: true, nudge: true, removed: [], banned: [], attendance: {}, assignments: [] })
 
+const slug = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+export const BUILT_IN_DECK: DeckCard[] = VOCAB.map((v) => ({ ...v, id: `v-${v.exam}-${slug(v.term)}` }))
+
+/** The assignment is for this member: the whole chapter, or they were picked. */
+export const isAssignedTo = (a: Assignment, userId: string) => !a.assignees || a.assignees.includes(userId)
+
+/** Officers (President, Executive), members given the Trainer role, and cluster trainers can assign work. */
+export const canAssign = (meta: ChapterMeta, userId: string) =>
+  (meta.roles[userId] ?? 'Member') !== 'Member' || Object.values(meta.trainers).some((ids) => ids?.includes(userId))
+
 const KEY = 'deca-masters:v1'
 const load = (): Persisted => {
+  const fresh: Persisted = { session: null, accounts: [], guest: emptyProgress(), chapters: [], meta: {}, vocab: [] }
   try {
     const raw = localStorage.getItem(KEY)
-    if (raw) return JSON.parse(raw)
+    // Older saves have no vocab list, so fill in anything missing.
+    if (raw) return { ...fresh, ...JSON.parse(raw) }
   } catch {
     /* storage unavailable: start fresh */
   }
-  return { session: null, accounts: [], guest: emptyProgress(), chapters: [], meta: {} }
+  return fresh
 }
 
 async function hash(text: string) {
@@ -128,6 +169,10 @@ type Store = {
   chapters: ChapterRow[]
   myChapter: ChapterRow | null
   myRank: number
+  /** Built-in terms, your own terms and terms shared to your chapter. */
+  deck: DeckCard[]
+  /** Assignments in your chapter that are for you. */
+  myAssignments: Assignment[]
   chapterMeta: (id: string) => ChapterMeta
   startGuest: (eventCode: string) => void
   register: (input: RegisterInput) => Promise<string | null>
@@ -144,6 +189,11 @@ type Store = {
   joinChapter: (code: string) => string | null
   leaveChapter: () => void
   updateMeta: (chapterId: string, fn: (m: ChapterMeta) => ChapterMeta) => void
+  addVocab: (terms: Omit<Card, 'id'>[], share: boolean) => void
+  editVocab: (id: string, patch: Partial<Pick<VocabTerm, 'term' | 'def' | 'exam' | 'chapterId'>>) => void
+  deleteVocab: (id: string) => void
+  /** Marks one of your assignments finished, with the score for tests. */
+  completeAssignment: (id: string, r?: { correct: number; total: number }) => void
 }
 
 const Ctx = createContext<Store | null>(null)
@@ -204,6 +254,14 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   // Rank is 0 until you have earned ELO; no made-up placement.
   const myRank = account && account.progress.elo > 0 ? players.findIndex((p) => p.id === account.id) + 1 : 0
 
+  const deck = useMemo<DeckCard[]>(() => {
+    if (!me) return BUILT_IN_DECK
+    const mine = state.vocab.filter((v) => v.authorId === me.id || (!!me.chapterId && v.chapterId === me.chapterId))
+    return [...BUILT_IN_DECK, ...mine.map((v) => ({ id: v.id, term: v.term, def: v.def, exam: v.exam, custom: v }))]
+  }, [state.vocab, me?.id, me?.chapterId])
+
+  const myAssignments = me?.chapterId ? (state.meta[me.chapterId]?.assignments ?? []).filter((a) => isAssignedTo(a, me.id)) : []
+
   const updateAccount = (fn: (a: Account) => Account) =>
     setState((s) => (s.session?.kind === 'user' ? { ...s, accounts: s.accounts.map((a) => (a.id === (s.session as { userId: string }).userId ? fn(a) : a)) } : s))
 
@@ -221,6 +279,8 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     chapters,
     myChapter,
     myRank,
+    deck,
+    myAssignments,
     chapterMeta: (id) => ({ ...emptyMeta(), ...state.meta[id] }),
 
     startGuest: (eventCode) => setState((s) => ({ ...s, session: { kind: 'guest', eventCode } })),
@@ -251,7 +311,15 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         progress: state.session?.kind === 'guest' ? state.guest : emptyProgress(),
         createdAt: new Date().toISOString(),
       }
-      setState((s) => ({ ...s, accounts: [...s.accounts, acct], session: { kind: 'user', userId: acct.id }, guest: emptyProgress() }))
+      // Terms a guest added move to the new account too.
+      const wasGuest = state.session?.kind === 'guest'
+      setState((s) => ({
+        ...s,
+        accounts: [...s.accounts, acct],
+        session: { kind: 'user', userId: acct.id },
+        guest: emptyProgress(),
+        vocab: wasGuest ? s.vocab.map((v) => (v.authorId === 'guest' ? { ...v, authorId: acct.id, author: acct.name } : v)) : s.vocab,
+      }))
       return null
     },
 
@@ -350,6 +418,28 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     leaveChapter: () => updateAccount((a) => ({ ...a, chapterId: null })),
 
     updateMeta: (chapterId, fn) => setState((s) => ({ ...s, meta: { ...s.meta, [chapterId]: fn({ ...emptyMeta(), ...s.meta[chapterId] }) } })),
+
+    addVocab: (terms, share) => {
+      if (!me) return
+      const created = new Date().toISOString()
+      const rows: VocabTerm[] = terms.map((t) => ({ ...t, id: `cv-${uid()}`, authorId: me.id, author: me.name, chapterId: share ? me.chapterId : null, created }))
+      setState((s) => ({ ...s, vocab: [...s.vocab, ...rows] }))
+    },
+
+    // Only the author can change or delete a term.
+    editVocab: (id, patch) => setState((s) => ({ ...s, vocab: s.vocab.map((v) => (v.id === id && v.authorId === me?.id ? { ...v, ...patch } : v)) })),
+    deleteVocab: (id) => setState((s) => ({ ...s, vocab: s.vocab.filter((v) => !(v.id === id && v.authorId === me?.id)) })),
+
+    completeAssignment: (id, r) => {
+      const chapterId = me?.chapterId
+      if (!chapterId || !me) return
+      const entry: AssignmentResult = { date: new Date().toISOString(), ...r }
+      setState((s) => {
+        const m = { ...emptyMeta(), ...s.meta[chapterId] }
+        const assignments = m.assignments.map((a) => (a.id === id ? { ...a, results: { ...a.results, [me.id]: entry } } : a))
+        return { ...s, meta: { ...s.meta, [chapterId]: { ...m, assignments } } }
+      })
+    },
   }
 
   return <Ctx.Provider value={store}>{children}</Ctx.Provider>

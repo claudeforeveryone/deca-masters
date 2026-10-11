@@ -169,11 +169,11 @@ export default function Arena() {
               <EmptyState icon={<Users size={20} />} title="No players here" body={tab === 'My chapter' ? 'Join a chapter to see your chapter mates here.' : 'Try another tab or search.'} />
             </div>
           ) : (
-            <ul className="mt-5 divide-y divide-line border-y border-line">
+            <ul className="mt-5 divide-y divide-line border border-line">
               {list.map((p) => {
                 const isSent = sent.some((s) => s.id === p.id)
                 return (
-                  <li key={p.id} className="flex items-center gap-4 px-2 py-4">
+                  <li key={p.id} className="flex items-center gap-4 px-4 py-4">
                     <span className="relative">
                       <Avatar name={p.name} size={36} />
                       {p.online && <span className="absolute -bottom-1 -right-1 h-3 w-3 rounded-soft border-2 border-white bg-good" aria-label="Online" />}

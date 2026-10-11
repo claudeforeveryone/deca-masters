@@ -4,11 +4,15 @@ import { ArrowCircleRight, CalendarCheck, Infinity as InfinityIcon, Timer } from
 import { EXAMS, examOf, type ExamId } from '../data/events'
 import { loadQuestions, loadQuestionsById, questionCount, sample, shuffle, type Question } from '../data/questions'
 import { clearActive, loadActive, saveActive } from '../data/activeSession'
-import { useMyEvent, useStore } from '../store'
+import { useMyEvent, useStore, type Assignment } from '../store'
 import QuizRunner, { ResultCard, type QuizResult } from '../components/QuizRunner'
 import { ArrowLink, Meter, PageBand, SectionHeader } from '../components/ui'
+import AssignedToYou from '../components/Assigned'
 
-type Session = { title: string; exam: ExamId; questions: Question[]; timeLimitSec?: number; explanations: boolean; unranked?: boolean; startedAt?: number; answers?: (number | null)[] }
+type Session = { title: string; exam: ExamId; questions: Question[]; timeLimitSec?: number; explanations: boolean; unranked?: boolean; startedAt?: number; answers?: (number | null)[]; assignmentId?: string }
+
+/** Swaps in any question text the trainer rewrote in the test builder. */
+const withEdits = (qs: Question[], a?: Assignment) => (a?.edits ? qs.map((q) => (a.edits![q.id] ? { ...q, prompt: a.edits![q.id] } : q)) : qs)
 
 const EXAM_LENGTH = 100 // DECA cluster exams have 100 questions
 /** The same 10 questions for everyone on a given day. */
@@ -24,7 +28,7 @@ const daily = (qs: Question[]) => {
 }
 
 export default function Play() {
-  const { me, isGuest, record, myChapter, chapterMeta } = useStore()
+  const { me, isGuest, record, myAssignments, completeAssignment } = useStore()
   const { event, exam } = useMyEvent()
   const [params, setParams] = useSearchParams()
   const [session, setSession] = useState<Session | null>(null)
@@ -37,7 +41,7 @@ export default function Play() {
   /** Starts a session and saves it, so leaving the page resumes it instead of re-rolling. */
   const begin = (s: Session) => {
     const started = { ...s, startedAt: Date.now(), answers: s.questions.map(() => null) }
-    saveActive(userId, { kind: 'play', title: s.title, exam: s.exam, questionIds: s.questions.map((q) => q.id), answers: started.answers, startedAt: started.startedAt, timeLimitSec: s.timeLimitSec, explanations: s.explanations, unranked: s.unranked })
+    saveActive(userId, { kind: 'play', title: s.title, exam: s.exam, questionIds: s.questions.map((q) => q.id), answers: started.answers, startedAt: started.startedAt, timeLimitSec: s.timeLimitSec, explanations: s.explanations, unranked: s.unranked, assignmentId: s.assignmentId })
     setResult(null)
     setSession(started)
   }
@@ -50,9 +54,10 @@ export default function Play() {
     loadQuestionsById(a.questionIds).then(
       (qs) => {
         const byId = new Map(qs.map((q) => [q.id, q]))
-        const questions = a.questionIds.map((id) => byId.get(id)).filter((q): q is Question => !!q)
+        const ordered = a.questionIds.map((id) => byId.get(id)).filter((q): q is Question => !!q)
+        const questions = withEdits(ordered, myAssignments.find((x) => x.id === a.assignmentId))
         if (questions.length !== a.questionIds.length) clearActive(userId, 'play')
-        else setSession({ title: a.title, exam: a.exam, questions, timeLimitSec: a.timeLimitSec, explanations: a.explanations, unranked: a.unranked, startedAt: a.startedAt, answers: a.answers })
+        else setSession({ title: a.title, exam: a.exam, questions, timeLimitSec: a.timeLimitSec, explanations: a.explanations, unranked: a.unranked, startedAt: a.startedAt, answers: a.answers, assignmentId: a.assignmentId })
         setResuming(false)
       },
       () => setResuming(false),
@@ -100,19 +105,37 @@ export default function Play() {
     const picked = sample(qs, EXAM_LENGTH)
     return { title: `${examOf(qs[0].exam).name} exam`, exam: qs[0].exam, questions: picked, timeLimitSec: picked.length * 60, explanations: false }
   }
+  /** Chapter tests run under exam conditions: one minute a question, no explanations, scored out of every question. */
+  const startAssignment = async (a: Assignment) => {
+    setError(null)
+    setLoading(`assignment-${a.id}`)
+    try {
+      const n = a.count ?? 20
+      const ids = a.type === 'Test' ? a.questionIds : undefined
+      const picked = ids?.length ? withEdits(await loadQuestionsById(ids).then((qs) => ids.map((id) => qs.find((q) => q.id === id)).filter((q): q is Question => !!q)), a) : sample(await loadQuestions(a.exam), n)
+      begin({ title: a.title, exam: a.exam, questions: picked, timeLimitSec: picked.length * 60, explanations: false, assignmentId: a.id })
+    } catch (e) {
+      setError((e as Error).message)
+    } finally {
+      setLoading(null)
+    }
+  }
   const startMode = (m: (typeof MODES)[number]) => m.make && start(m.key, ('exam' in m && m.exam) || exam, m.make)
   const startExam = (id: ExamId) => start(`exam-${id}`, id, fullExam)
 
   const mode = params.get('mode')
+  const assignmentParam = params.get('assignment')
   useEffect(() => {
-    if (!mode) return
+    if (!mode && !assignmentParam) return
     setParams({}, { replace: true })
     if (loadActive(userId, 'play')) return // finish the session in progress first
     const m = MODES.find((x) => x.key === mode)
     if (m) startMode(m)
     if (mode === 'exam') startExam(exam)
+    const a = myAssignments.find((x) => x.id === assignmentParam && x.type !== 'Flashcards')
+    if (a && !a.results?.[userId]) startAssignment(a)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mode])
+  }, [mode, assignmentParam])
 
   // A cluster tile on Home opens Play scrolled to that exam's row.
   const listed = !session && !resuming
@@ -124,6 +147,7 @@ export default function Play() {
     if (!session) return
     clearActive(userId, 'play')
     const delta = record({ title: session.title, exam: session.exam, total: r.total, correct: r.correct, seconds: r.seconds, wrongIds: r.wrongIds, unranked: session.unranked })
+    if (session.assignmentId) completeAssignment(session.assignmentId, { correct: r.correct, total: r.total })
     setResult({ r, delta })
   }
 
@@ -133,8 +157,8 @@ export default function Play() {
         r={result.r}
         delta={result.delta}
         title={session.unranked ? `${session.title} (practice)` : session.title}
-        note={session.unranked ? 'Practice on questions you have already seen does not change your ELO.' : isGuest ? 'Guest progress stays on this device. Create an account to save it and join the leaderboard.' : undefined}
-        onAgain={() => begin({ ...session, questions: shuffle(session.questions), unranked: true })}
+        note={session.assignmentId ? 'Your score was saved to the assignment, so your trainer can see it.' : session.unranked ? 'Practice on questions you have already seen does not change your ELO.' : isGuest ? 'Guest progress stays on this device. Create an account to save it and join the leaderboard.' : undefined}
+        onAgain={() => begin({ ...session, questions: shuffle(session.questions), unranked: true, assignmentId: undefined })}
         onDone={() => { setSession(null); setResult(null) }}
       />
     )
@@ -146,6 +170,7 @@ export default function Play() {
         questions={session.questions}
         timeLimitSec={session.timeLimitSec}
         showExplanations={session.explanations}
+        countUnanswered={!!session.assignmentId}
         startedAt={session.startedAt}
         initialAnswers={session.answers}
         onAnswer={(answers) => { const a = loadActive(userId, 'play'); if (a) saveActive(userId, { ...a, answers }) }}
@@ -162,8 +187,15 @@ export default function Play() {
   // The daily set changes at midnight UTC (see `daily`).
   const left = 86400000 - (Date.now() % 86400000)
   const nextDaily = `${Math.floor(left / 3600000)}h ${Math.floor((left % 3600000) / 60000)}m`
-  const assigned = myChapter ? chapterMeta(myChapter.id).assignments : []
-  const fmtDue = (d: string) => new Date(`${d}T00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+  // Open chapter work goes near the top of the page so it is hard to miss.
+  const hasOpen = myAssignments.some((a) => !a.results?.[userId])
+  const assignedSection = (
+    <section className="mt-16">
+      <SectionHeader title="Assigned to you" action={myAssignments.length ? <ArrowLink to="/chapter">Chapter</ArrowLink> : undefined} />
+      {loading?.startsWith('assignment-') && <p className="mb-3 text-sm text-ink-3">Loading questions…</p>}
+      <AssignedToYou />
+    </section>
+  )
 
   return (
     <div>
@@ -231,6 +263,8 @@ export default function Play() {
       </section>
       {error && <p role="alert" className="mt-4 text-sm text-bad">{error}. Check your connection and try again.</p>}
 
+      {hasOpen && assignedSection}
+
       <section className="mt-16">
         <SectionHeader title="Your exam" action={<Link to="/settings?tab=events" className="link text-sm">Change event</Link>} />
         <div className="grid overflow-hidden rounded-box border border-line md:grid-cols-[18rem_minmax(0,1fr)]">
@@ -265,23 +299,7 @@ export default function Play() {
         </div>
       </section>
 
-      {assigned.length > 0 && (
-        <section className="mt-16">
-          <SectionHeader title="Assigned by your chapter" action={<ArrowLink to="/chapter">Chapter</ArrowLink>} />
-          <ul className="divide-y divide-line border border-line">
-            {assigned.map((a) => (
-              <li key={a.id} className="flex items-center gap-4 px-5 py-4">
-                <span className="h-10 w-1.5 shrink-0" style={{ background: examOf(a.exam).color }} aria-hidden />
-                <div className="min-w-0 flex-1">
-                  <p className="truncate font-semibold text-ink">{a.title}</p>
-                  <p className="text-xs text-ink-3">{a.type}, {examOf(a.exam).name}. Due {fmtDue(a.due)}, from {a.by}</p>
-                </div>
-                {a.type === 'Flashcards' ? <ArrowLink to="/vocab">Study</ArrowLink> : <ArrowLink onClick={() => startExam(a.exam)}>{loading === `exam-${a.exam}` ? 'Loading…' : 'Take'}</ArrowLink>}
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+      {!hasOpen && assignedSection}
 
       <section className="mt-16">
         <SectionHeader title="Every DECA exam" />
