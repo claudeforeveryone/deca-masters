@@ -124,7 +124,9 @@ const counts = {
 }
 const mkt = fromMktText(mktText)
 counts.mkt = write('mkt', mkt.out)
-fs.writeFileSync('src/data/questionCounts.json', JSON.stringify(counts) + '\n')
+// Keep the pfl count, which scripts/build-exams.mjs adds.
+const prevCounts = fs.existsSync('src/data/questionCounts.json') ? JSON.parse(fs.readFileSync('src/data/questionCounts.json', 'utf8')) : {}
+fs.writeFileSync('src/data/questionCounts.json', JSON.stringify({ ...prevCounts, ...counts }) + '\n')
 console.log('mkt parse issues:', mkt.misses.length)
 console.log(mkt.misses.slice(0, 40).join('\n'))
 console.log('unknown area codes:', [...unknownAreas].join(' '))

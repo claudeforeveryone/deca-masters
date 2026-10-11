@@ -21,6 +21,8 @@ export type Attempt = {
   arena?: { opponent: string; won: boolean }
   /** Practice on questions you have already seen (retries, redos, bank quizzes, a repeat daily). No ELO or accuracy change. */
   unranked?: boolean
+  /** The past exam this attempt was, e.g. "fin-2013-icdc-1088". Only the first attempt at an exam is ranked. */
+  pastExam?: string
 }
 
 export type Progress = {

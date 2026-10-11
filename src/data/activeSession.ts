@@ -4,7 +4,7 @@ import type { ExamId } from './events'
 // clicking a nav link or reloading resumes the same questions with the clock still
 // running, so a bad session cannot be dodged or re-rolled.
 export type ActiveSession = {
-  kind: 'play' | 'arena'
+  kind: 'play' | 'arena' | 'exam'
   title: string
   exam: ExamId
   questionIds: string[]
@@ -16,6 +16,8 @@ export type ActiveSession = {
   opponentId?: string
   /** A chapter assignment: the score is saved to it at the end. */
   assignmentId?: string
+  /** A past exam from the library (src/data/exams.ts). */
+  pastExam?: string
 }
 
 const key = (userId: string, kind: ActiveSession['kind']) => `deca-masters:active:${kind}:${userId}`

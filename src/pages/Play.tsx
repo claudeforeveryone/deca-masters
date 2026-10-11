@@ -315,7 +315,7 @@ export default function Play() {
                     {x.name}
                     {x.id === exam && <span className="badge ml-2">Your exam</span>}
                   </p>
-                  <p className="text-xs text-ink-3">{questionCount(x.id).toLocaleString()} {x.id === 'pfl' ? 'sample ' : ''}questions</p>
+                  <p className="text-xs text-ink-3">{questionCount(x.id).toLocaleString()} questions</p>
                 </div>
                 <div className="hidden w-36 sm:block">
                   {acc === null ? (

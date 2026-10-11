@@ -10,7 +10,7 @@ const LINKS = [
   { to: '/', label: 'Home' },
   { to: '/leaderboard', label: 'Leaderboard' },
   { to: '/play', label: 'Play' },
-  { to: '/bank', label: 'Questions' },
+  { to: '/exams', label: 'Exams' },
   { to: '/vocab', label: 'Vocab' },
   { to: '/arena', label: 'Arena' },
   { to: '/chapter', label: 'Chapter' },
@@ -84,13 +84,13 @@ export default function TopNav() {
 
   return (
     <header className="sticky top-0 z-30 border-b border-line bg-white">
-      <div className="container-page flex h-16 items-stretch gap-8">
+      <div className="container-page flex h-16 items-stretch gap-8 2xl:gap-12">
         <Link to="/" className="flex shrink-0 items-center" aria-label="DECA Masters home">
           <Logo />
         </Link>
 
         {signedIn && (
-          <nav className="hidden items-stretch gap-6 lg:flex">
+          <nav className="hidden items-stretch gap-7 xl:flex 2xl:gap-10">
             {LINKS.map(({ to, label }) => (
               <NavLink
                 key={to}
@@ -114,7 +114,7 @@ export default function TopNav() {
             </>
           ) : (
             <>
-              <span className="num mr-2 hidden text-[13px] font-semibold text-brand sm:inline">{me!.progress.elo.toLocaleString()} ELO</span>
+              <span className="num mr-2 hidden whitespace-nowrap text-[13px] font-semibold text-brand sm:inline">{me!.progress.elo.toLocaleString()} ELO</span>
               {isGuest && <Link to="/register" className="btn-primary btn-sm mr-1 hidden md:inline-flex">Create account</Link>}
 
               <div className="relative">
@@ -171,7 +171,7 @@ export default function TopNav() {
                 )}
               </div>
 
-              <button className="grid h-10 w-10 place-items-center rounded-soft text-ink lg:hidden" onClick={() => setMenu((m) => !m)} aria-label="Menu" aria-expanded={menu}>
+              <button className="grid h-10 w-10 place-items-center rounded-soft text-ink xl:hidden" onClick={() => setMenu((m) => !m)} aria-label="Menu" aria-expanded={menu}>
                 {menu ? <X size={22} /> : <List size={22} />}
               </button>
             </>
@@ -180,7 +180,7 @@ export default function TopNav() {
       </div>
 
       {signedIn && menu && (
-        <nav className="border-t border-line bg-white lg:hidden">
+        <nav className="border-t border-line bg-white xl:hidden">
           {LINKS.map(({ to, label }) => (
             <NavLink
               key={to}

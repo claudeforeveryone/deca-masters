@@ -10,13 +10,15 @@ import Leaderboard from './pages/Leaderboard'
 import Play from './pages/Play'
 import Vocab from './pages/Vocab'
 import Bank from './pages/Bank'
+import Exams from './pages/Exams'
+import ExamTake from './pages/ExamTake'
 import Arena from './pages/Arena'
 import Chapter from './pages/Chapter'
 import Me from './pages/Me'
 import Settings from './pages/Settings'
 
 const FOOTER = [
-  { title: 'Practice', links: [['Play', '/play'], ['Questions', '/bank'], ['Vocab', '/vocab'], ['Arena', '/arena']] },
+  { title: 'Practice', links: [['Play', '/play'], ['Exams', '/exams'], ['Questions', '/bank'], ['Vocab', '/vocab'], ['Arena', '/arena']] },
   { title: 'Compete', links: [['Leaderboard', '/leaderboard'], ['Chapter', '/chapter']] },
   { title: 'Account', links: [['Profile', '/me'], ['Settings', '/settings'], ['Create account', '/register']] },
 ]
@@ -36,6 +38,8 @@ export default function App() {
             <Route path="/play" element={<Play />} />
             <Route path="/vocab" element={<Vocab />} />
             <Route path="/bank" element={<Bank />} />
+            <Route path="/exams" element={<Exams />} />
+            <Route path="/exams/:id" element={<ExamTake />} />
             <Route path="/arena" element={<Arena />} />
             <Route path="/chapter" element={<Chapter />} />
             <Route path="/me" element={<Me />} />

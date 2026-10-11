@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import type { ExamId } from './events'
 import COUNTS from './questionCounts.json'
+import { PAST_EXAMS, loadExam } from './exams'
 
 // The question banks for each cluster exam live in public/questions/<exam>.json, built from
-// past DECA exam booklets by scripts/build-questions.mjs. They are a few MB each, so they
-// are fetched on demand rather than bundled.
+// past DECA exam booklets by scripts/build-questions.mjs (pfl.json by scripts/build-exams.mjs).
+// They are a few MB each, so they are fetched on demand rather than bundled.
 export type Question = {
   id: string
   exam: ExamId
@@ -16,28 +17,14 @@ export type Question = {
   set?: string // source exam booklet, e.g. "1031-BMA"
 }
 
-const q = (id: string, exam: ExamId, area: string, prompt: string, choices: string[], answer: number, explanation: string): Question => ({
-  id, exam, area, prompt, choices, answer, explanation,
-})
+const BANKED = ['bac', 'bma', 'ent', 'fin', 'ht', 'mkt', 'pfl'] as const
+const hasBank = (exam: string): exam is (typeof BANKED)[number] => (BANKED as readonly string[]).includes(exam)
 
-// Personal Financial Literacy has no booklet bank yet, so it keeps these sample questions.
-const PFL_SAMPLES: Question[] = [
-  q('pfl-1', 'pfl', 'Saving', 'Interest earned on both the original deposit and previously earned interest is', ['simple interest', 'compound interest', 'a dividend', 'principal'], 1, 'Compound interest grows on interest already earned.'),
-  q('pfl-2', 'pfl', 'Credit', 'Which factor has the largest effect on a FICO credit score?', ['Payment history', 'Length of credit history', 'New credit', 'Types of credit'], 0, 'Payment history makes up the largest share of a FICO score.'),
-  q('pfl-3', 'pfl', 'Budgeting', 'Money set aside to cover unexpected expenses like car repairs is a(n)', ['emergency fund', 'retirement account', 'line of credit', 'escrow account'], 0, 'An emergency fund covers surprises without taking on debt.'),
-  q('pfl-4', 'pfl', 'Earning Income', 'The amount of pay left after taxes and deductions is', ['gross pay', 'net pay', 'salary', 'overtime'], 1, 'Net pay is your take-home pay.'),
-  q('pfl-5', 'pfl', 'Investing', 'Which investment generally carries the highest risk and potential return?', ['Savings account', 'Certificate of deposit', 'Individual stocks', 'Government bonds'], 2, 'Individual stocks can swing widely in value, so risk and potential return are higher.'),
-]
-
-const BANKED = ['bac', 'bma', 'ent', 'fin', 'ht', 'mkt'] as const
-const hasBank = (exam: ExamId): exam is (typeof BANKED)[number] => (BANKED as readonly string[]).includes(exam)
-
-export const questionCount = (exam: ExamId) => (hasBank(exam) ? COUNTS[exam] : PFL_SAMPLES.length)
+export const questionCount = (exam: ExamId) => COUNTS[exam]
 
 const cache = new Map<ExamId, Promise<Question[]>>()
 
 export function loadQuestions(exam: ExamId): Promise<Question[]> {
-  if (!hasBank(exam)) return Promise.resolve(PFL_SAMPLES.filter((x) => x.exam === exam))
   let p = cache.get(exam)
   if (!p) {
     p = fetch(`/questions/${exam}.json`)
@@ -52,10 +39,14 @@ export function loadQuestions(exam: ExamId): Promise<Question[]> {
   return p
 }
 
-/** Loads every exam a list of question ids comes from. Ids start with their exam, e.g. "bma-1x2y3z". */
+/**
+ * Loads the questions behind a list of ids. Bank ids look like "bma-1x2y3z"; past-exam ids
+ * are "<exam id>-<n>", e.g. "fin-2013-icdc-1088-12" (see src/data/exams.ts).
+ */
 export async function loadQuestionsById(ids: string[]): Promise<Question[]> {
-  const exams = [...new Set(ids.map((id) => id.split('-')[0]))].filter((x): x is ExamId => hasBank(x as ExamId) || x === 'pfl')
-  const all = (await Promise.all(exams.map(loadQuestions))).flat()
+  const pastIds = [...new Set(ids.map((id) => PAST_EXAMS.find((x) => id.startsWith(`${x.id}-`))).filter((x) => !!x))]
+  const banks = [...new Set(ids.map((id) => id.split('-')[0]))].filter(hasBank)
+  const all = (await Promise.all([...banks.map(loadQuestions), ...pastIds.map(loadExam)])).flat()
   const want = new Set(ids)
   return all.filter((x) => want.has(x.id))
 }
