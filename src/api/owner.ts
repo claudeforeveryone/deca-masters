@@ -5,6 +5,7 @@
 // of 1-4 and numbers that would reveal them come back hidden; see src/lib/owner.ts). Every write is audited.
 import type { ContentStatus, ExamSlug } from "../lib/content";
 import type {
+  FeedbackFilter,
   FeedbackKind,
   FeedbackPriority,
   FeedbackStatus,
@@ -241,7 +242,7 @@ export type OwnerFeedbackRow = {
   username: string | null;
   display_name: string | null;
 };
-export type FeedbackFilter = "open" | "all" | FeedbackStatus;
+export type { FeedbackFilter };
 export type OwnerFeedbackList = {
   total: number;
   rows: OwnerFeedbackRow[];

@@ -114,3 +114,84 @@ export function composeReport(reason: ReportReason, details: string): string {
   const extra = details.trim();
   return extra ? `${label}: ${extra}` : label;
 }
+
+// ------------------------------------------------------------------------------------------------ owner triage
+
+/** The owner console's status filter: open (new, triaged, in progress), every report, or one status. */
+export type FeedbackFilter = "open" | "all" | FeedbackStatus;
+
+const FILTERS: readonly string[] = [
+  "open",
+  "all",
+  "new",
+  "triaged",
+  "in_progress",
+  "resolved",
+  "wontfix",
+];
+/** Question ids look like mkt-001, term ids like mkt-v-001 (the deca_feedback check). */
+const ITEM_ID = /^[a-z]{2,4}-(v-)?\d{3,}$/;
+
+/**
+ * Triage filters from the owner console URL (?status=&kind=&item=), so Content health can open Feedback already
+ * filtered to one reported item. Anything unknown falls back to open reports of any kind.
+ */
+export function triageFilters(params: URLSearchParams): {
+  status: FeedbackFilter;
+  kind: FeedbackKind | "";
+  item: string | null;
+} {
+  const status = params.get("status") ?? "";
+  const kind = params.get("kind") ?? "";
+  const item = params.get("item") ?? "";
+  return {
+    status: FILTERS.includes(status) ? (status as FeedbackFilter) : "open",
+    kind: Object.hasOwn(KIND_LABELS, kind) ? (kind as FeedbackKind) : "",
+    item: ITEM_ID.test(item) ? item : null,
+  };
+}
+
+/** A link into Feedback triage: keeps the rest of the console URL (the range), replaces earlier filters. */
+export function triageLink(
+  current: URLSearchParams | string,
+  f: { status?: FeedbackFilter; kind?: FeedbackKind; item?: string },
+): string {
+  const p = new URLSearchParams(current);
+  p.set("tab", "feedback");
+  for (const key of ["status", "kind", "item"]) p.delete(key);
+  if (f.status) p.set("status", f.status);
+  if (f.kind) p.set("kind", f.kind);
+  if (f.item) p.set("item", f.item);
+  return `?${p.toString()}`;
+}
+
+/**
+ * The toast after an owner saves a report: what changed and who sees it. Status and the note are shown to the member
+ * who sent it; priority is owners only. `note` is the new note ('' when removed).
+ */
+export function triageSaved(changed: {
+  status?: FeedbackStatus;
+  priority?: FeedbackPriority;
+  note?: string;
+}): { title: string; body: string } {
+  const note = changed.note;
+  if (changed.status)
+    return {
+      title: `Marked ${STATUS_LABELS[changed.status]}`,
+      body: note
+        ? "The member sees the new status and your note."
+        : "The member sees the new status.",
+    };
+  if (note !== undefined)
+    return note
+      ? { title: "Note saved", body: "The member sees it with the status." }
+      : { title: "Note removed", body: "The member no longer sees a note." };
+  if (changed.priority) {
+    const p = changed.priority;
+    return {
+      title: `Priority set to ${p.charAt(0).toUpperCase()}${p.slice(1)}`,
+      body: "Only owners see priority.",
+    };
+  }
+  return { title: "Saved", body: "Nothing changed." };
+}
