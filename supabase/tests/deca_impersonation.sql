@@ -537,6 +537,8 @@ select pg_temp.omega_try('feedback: setting the status on insert refused', 'auth
   $q$insert into public.deca_feedback (kind, message, status) values ('bug', 'status smuggling attempt', 'resolved')$q$, '42501');
 select pg_temp.omega_try('feedback: reading reviewed_by refused', 'authenticated', pg_temp.uid('qa'),
   $q$select reviewed_by from public.deca_feedback$q$, '42501');
+select pg_temp.omega_try('feedback: reading the priority refused (owners only, as FBLA)', 'authenticated', pg_temp.uid('qa'),
+  $q$select priority from public.deca_feedback$q$, '42501');
 select pg_temp.omega_try('feedback: members cannot update', 'authenticated', pg_temp.uid('qa'),
   $q$update public.deca_feedback set status = 'resolved'$q$, '42501');
 select pg_temp.omega_try('feedback: members cannot delete', 'authenticated', pg_temp.uid('qa'),
@@ -729,6 +731,10 @@ select pg_temp.omega_try('owner: triage a report', 'authenticated', pg_temp.uid(
 select pg_temp.omega_check('feedback: the reporter sees the status and the note',
   (select r->>'status' = 'resolved' and r->>'resolution_note' = 'Fixed in the next release.'
      from (select pg_temp.omega_as(pg_temp.uid('qa'), format($q$(select jsonb_build_object('status', f.status, 'resolution_note', f.resolution_note) from public.deca_feedback f where f.id = %L)$q$, current_setting('omega.bug'))) r) x));
+select pg_temp.omega_check('owner: the inbox still shows the priority the owner set',
+  (select exists (select 1 from jsonb_array_elements(l->'rows') r
+                   where r->>'id' = current_setting('omega.bug') and r->>'priority' = 'high')
+     from (select pg_temp.omega_as(pg_temp.uid('owner'), $q$public.deca_owner_feedback_list(null, null, 50, 0)$q$) l) x));
 select pg_temp.omega_check('owner: user search finds members without emails',
   (select jsonb_array_length(s) >= 2 and not jsonb_path_exists(s, 'lax $[*].email')
      from (select pg_temp.omega_as(pg_temp.uid('owner'), $q$public.deca_owner_user_search('omega_dry', 20)$q$) s) x));
