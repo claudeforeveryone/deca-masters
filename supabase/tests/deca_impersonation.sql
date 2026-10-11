@@ -546,6 +546,81 @@ select pg_temp.omega_check('isolation: feedback is private',
 select pg_temp.omega_try('feedback: rate limit after 10 an hour', 'authenticated', pg_temp.uid('b'),
   $q$insert into public.deca_feedback (kind, message) select 'general', 'Dry run flood ' || n from generate_series(1, 11) n$q$, '53400');
 
+-- ------------------------------------------------------------------------------------------------ picker (deca_0008)
+select pg_temp.omega_try('picker: anon cannot pick', 'anon', null,
+  $q$select public.deca_pick_questions('{"mode":"practice"}'::jsonb)$q$, '42501');
+select pg_temp.omega_try('picker: picking needs a profile', 'authenticated', pg_temp.uid('owner'),
+  $q$select public.deca_pick_questions('{"mode":"practice"}'::jsonb)$q$, '42501');
+select pg_temp.omega_try('picker: unknown mode refused', 'authenticated', pg_temp.uid('qa'),
+  $q$select public.deca_pick_questions('{"mode":"cram"}'::jsonb)$q$, '22023');
+select pg_temp.omega_try('picker: a mock exam needs an exam', 'authenticated', pg_temp.uid('qa'),
+  $q$select public.deca_pick_questions('{"mode":"exam"}'::jsonb)$q$, '22023');
+select pg_temp.omega_try('picker: more than 300 questions refused', 'authenticated', pg_temp.uid('qa'),
+  $q$select public.deca_pick_questions('{"mode":"practice","count":301}'::jsonb)$q$, '22023');
+select set_config('omega.pick', pg_temp.omega_as(pg_temp.uid('qa'),
+  $q$public.deca_pick_questions('{"mode":"practice","exam":"marketing","count":5}'::jsonb)$q$)::text, true);
+select pg_temp.omega_check('picker: practice returns what was asked, unseen first, public fields and credit only',
+  (select jsonb_array_length(r->'questions') = 5
+          and (r->>'available')::int = (select count(*) from public.deca_questions where exam = 'marketing' and retired_at is null)
+          and not jsonb_path_exists(r, 'lax $.questions[*].answer')
+          and not jsonb_path_exists(r, 'lax $.questions[*].explanation')
+          and not jsonb_path_exists(r, 'lax $.questions[*] ? (@.seen == true)')
+          and not jsonb_path_exists(r, 'lax $.questions[*] ? (@.exam != "marketing")')
+          and (select bool_and(q->'source'->>'licence' is not null and q->'source'->>'url' like 'https://%')
+                 from jsonb_array_elements(r->'questions') q)
+     from (select current_setting('omega.pick')::jsonb r) x), current_setting('omega.pick'));
+select pg_temp.omega_check('picker: seen flags match the member''s graded or checked answers',
+  (select count(*) filter (where (q->>'seen')::boolean)
+          = (select count(distinct o.question_id) from public.deca_attempt_answers o
+              where o.user_id = pg_temp.uid('qa') and o.exam = 'marketing' and (o.graded or o.locked))
+          and count(*) filter (where (q->>'seen')::boolean) > 0
+     from jsonb_array_elements(pg_temp.omega_as(pg_temp.uid('qa'),
+            $q$public.deca_pick_questions('{"mode":"practice","exam":"marketing","count":300,"fresh_first":false}'::jsonb)$q$)->'questions') q));
+select pg_temp.omega_check('picker: a mock exam asks for 100 and adapts to a smaller bank',
+  (select (r->>'requested')::int = 100 and jsonb_array_length(r->'questions') = (r->>'available')::int
+          and (r->>'available')::int between 1 and 99
+     from (select pg_temp.omega_as(pg_temp.uid('qa'), $q$public.deca_pick_questions('{"mode":"exam","exam":"marketing"}'::jsonb)$q$) r) x));
+select pg_temp.omega_check('picker: area mode stays in the area',
+  (select jsonb_array_length(r->'questions') > 0 and not jsonb_path_exists(r, 'lax $.questions[*] ? (@.area != "Pricing")')
+     from (select pg_temp.omega_as(pg_temp.uid('qa'),
+             $q$public.deca_pick_questions('{"mode":"area","exam":"marketing","area":"Pricing","count":50}'::jsonb)$q$) r) x));
+select pg_temp.omega_check('picker: an area with no questions is an honest empty pick',
+  (select jsonb_array_length(r->'questions') = 0 and r->>'empty_reason' = 'no_questions' and (r->>'available')::int = 0
+     from (select pg_temp.omega_as(pg_temp.uid('qa'),
+             $q$public.deca_pick_questions('{"mode":"area","exam":"marketing","area":"Nowhere"}'::jsonb)$q$) r) x));
+select pg_temp.omega_check('picker: redo picks exactly the questions deca_mistakes lists',
+  (select array_agg(q->>'id' order by q->>'id') from jsonb_array_elements(pg_temp.omega_as(pg_temp.uid('qa'),
+     $q$public.deca_pick_questions('{"mode":"redo","count":300}'::jsonb)$q$)->'questions') q)
+  = (select array_agg(m->>'question_id' order by m->>'question_id')
+       from jsonb_array_elements(pg_temp.omega_as(pg_temp.uid('qa'), 'public.deca_mistakes(null, 300)')) m)
+  and jsonb_array_length(pg_temp.omega_as(pg_temp.uid('qa'), 'public.deca_mistakes(null, 300)')) > 0);
+select pg_temp.omega_check('picker: the daily set is the same for every member, 10 by default',
+  (select array_agg(q->>'id' order by n) from jsonb_array_elements(pg_temp.omega_as(pg_temp.uid('qa'),
+     $q$public.deca_pick_questions('{"mode":"daily"}'::jsonb)$q$)->'questions') with ordinality t(q, n))
+  = (select array_agg(q->>'id' order by n) from jsonb_array_elements(pg_temp.omega_as(pg_temp.uid('b'),
+     $q$public.deca_pick_questions('{"mode":"daily"}'::jsonb)$q$)->'questions') with ordinality t(q, n))
+  and jsonb_array_length(pg_temp.omega_as(pg_temp.uid('b'), $q$public.deca_pick_questions('{"mode":"daily"}'::jsonb)$q$)->'questions')
+      = least(10, (select count(*) from public.deca_questions where retired_at is null)));
+select pg_temp.omega_check('picker: weak spots with too little history say so',
+  (select jsonb_array_length(r->'questions') = 0 and r->>'empty_reason' = 'no_history'
+     from (select pg_temp.omega_as(pg_temp.uid('b'), $q$public.deca_pick_questions('{"mode":"weak"}'::jsonb)$q$) r) x));
+select set_config('omega.weak', pg_temp.omega_as(pg_temp.uid('qa'),
+  $q$public.deca_pick_questions('{"mode":"weak","count":10}'::jsonb)$q$)::text, true);
+select pg_temp.omega_check('picker: weak spots come from areas the member has answered and missed',
+  (select jsonb_array_length(r->'questions') > 0 and r->'empty_reason' = 'null'::jsonb
+          and not exists (select 1 from jsonb_array_elements(r->'questions') q
+                           where not exists (select 1 from public.deca_attempt_answers x
+                                              where x.user_id = pg_temp.uid('qa') and x.graded and not x.correct
+                                                and x.exam = q->>'exam' and x.area = q->>'area'))
+     from (select current_setting('omega.weak')::jsonb r) x), current_setting('omega.weak'));
+select pg_temp.omega_check('picker: the bank summary counts active questions per exam, area and difficulty',
+  (select (e->>'questions')::int = (select count(*) from public.deca_questions where exam = 'marketing' and retired_at is null)
+          and (select sum((a->>'questions')::int) from jsonb_array_elements(e->'areas') a) = (e->>'questions')::int
+          and (e->'difficulty'->>'easy')::int + (e->'difficulty'->>'medium')::int + (e->'difficulty'->>'hard')::int
+              + (e->'difficulty'->>'unrated')::int = (e->>'questions')::int
+     from jsonb_array_elements(pg_temp.omega_as(pg_temp.uid('qa'), 'public.deca_bank_summary()')) e
+    where e->>'exam' = 'marketing'));
+
 -- ------------------------------------------------------------------------------------------------ owner: denied
 select pg_temp.omega_check('owner: QA is not an owner',
   pg_temp.omega_as(pg_temp.uid('qa'), 'to_jsonb(public.is_platform_owner())') = 'false'::jsonb);
@@ -601,7 +676,8 @@ select pg_temp.omega_check('owner: the fake owner is an owner',
   pg_temp.omega_as(pg_temp.uid('owner'), 'to_jsonb(public.is_platform_owner())') = 'true'::jsonb);
 select set_config('omega.overview', pg_temp.omega_as(pg_temp.uid('owner'), 'public.deca_owner_overview()')::text, true);
 select pg_temp.omega_check('owner: overview counts DECA members only, exact at 5+',
-  (select (o->'profiles'->>'value')::int = 7 and (o->'active'->'dau'->>'value')::int >= 5
+  (select (o->'accounts'->>'value')::int = 7 and (o->'active'->'dau'->>'value')::int >= 5 and not o ? 'profiles'
+          and coalesce((o->'onboarding'->'all_time'->'onboarded'->>'value')::int, 7) = 7
      from (select current_setting('omega.overview')::jsonb o) x), current_setting('omega.overview'));
 select pg_temp.omega_check('owner: overview hides a count of 2 (public profiles)',
   (select o->'public_profiles'->>'suppressed' = 'true' and o->'public_profiles'->'value' = 'null'::jsonb
@@ -613,8 +689,28 @@ select pg_temp.omega_check('owner: no metric shows a count from 1 to 4',
   and pg_temp.omega_no_small(pg_temp.omega_as(pg_temp.uid('owner'), 'public.deca_owner_engagement(30)'))
   and pg_temp.omega_no_small(pg_temp.omega_as(pg_temp.uid('owner'), 'public.deca_owner_preparation(30)'))
   and pg_temp.omega_no_small(pg_temp.omega_as(pg_temp.uid('owner'), 'public.deca_owner_content()')));
+select pg_temp.omega_check('owner rules: a group 1-4 bigger than a shown group inside it is hidden (rule 3)',
+  deca_private.deca_count_over(7, array[5::bigint])->>'suppressed' = 'true'
+  and deca_private.deca_count_over(10, array[5::bigint])->>'value' = '10'
+  and deca_private.deca_count_over(7, array[null::bigint])->>'value' = '7'
+  and deca_private.deca_count_over(3, '{}'::bigint[])->>'suppressed' = 'true'
+  and deca_private.deca_count_over(0, array[0::bigint])->>'value' = '0');
+select pg_temp.omega_check('owner rules: any two shown account totals differ by 0 or 5+ (rule 5)',
+  not exists (select 1 from deca_private.deca_account_totals(deca_private.deca_today() - 400) a
+                join deca_private.deca_account_totals(deca_private.deca_today() - 400) b on a.shown and b.shown
+               where abs(a.total - b.total) between 1 and 4)
+  and not exists (select 1 from deca_private.deca_account_totals(deca_private.deca_today() - 400) t
+                   where t.shown and t.total between 1 and 4)
+  and (select t.shown and t.total = 7 from deca_private.deca_account_totals(deca_private.deca_today()) t
+        where t.day = deca_private.deca_today()));
+select pg_temp.omega_check('owner: growth has a baseline and the shared bucket fields',
+  (select g ? 'baseline' and jsonb_array_length(g->'series') = 30
+          and (g->'series'->-1) ?& array['start', 'end', 'signups', 'total', 'onboarded', 'active', 'practising']
+          and (g->'series'->-1->'total') = (current_setting('omega.overview')::jsonb->'accounts')
+     from (select pg_temp.omega_as(pg_temp.uid('owner'), $q$public.deca_owner_growth(30, 'day')$q$) g) x));
 select pg_temp.omega_check('owner: engagement and preparation return their sections',
-  (select e ? 'features' and e ? 'modes' and e ? 'runs' and e ? 'popular_events'
+  (select e ? 'features' and e ? 'modes' and e ? 'practice' and e ? 'roleplays' and e ? 'popular_events'
+          and not jsonb_path_exists(e, 'lax $.modes[*].runs')
      from (select pg_temp.omega_as(pg_temp.uid('owner'), 'public.deca_owner_engagement(30)') e) x)
   and (select jsonb_array_length(p->'exams') >= 2 and jsonb_array_length(p->'events') >= 1
          from (select pg_temp.omega_as(pg_temp.uid('owner'), 'public.deca_owner_preparation(30)') p) x));
@@ -699,5 +795,22 @@ begin
   perform pg_temp.omega_check('retention: the daily purge job is scheduled (skipped where pg_cron is missing)', v_ok,
     case when to_regclass('cron.job') is null then 'pg_cron not installed here' end);
 end $$;
+
+-- ------------------------------------------------------------------------------------------------ quotas (deca_0008)
+insert into public.deca_attempts (client_id, user_id, kind, question_ids, status)
+select gen_random_uuid(), pg_temp.uid('crowd5'), 'practice', array['mkt-901'], 'abandoned'
+  from generate_series(1, 300 - (select count(*)::int from public.deca_attempts
+                                  where user_id = pg_temp.uid('crowd5') and created_at > now() - interval '1 day'));
+select pg_temp.omega_try('quota: the 301st run in a day is refused', 'authenticated', pg_temp.uid('crowd5'),
+  $q$select public.deca_start_attempt('{"client_id":"00000000-0000-4000-8000-0000000000f1","kind":"practice","question_ids":["mkt-902"]}'::jsonb)$q$, '53400');
+select pg_temp.omega_try('quota: a retried run id still resolves at the limit', 'authenticated', pg_temp.uid('crowd5'),
+  $q$select public.deca_start_attempt('{"client_id":"00000000-0000-4000-8000-0000000c0005","kind":"practice","question_ids":["mkt-917"]}'::jsonb)$q$, 'ok');
+insert into public.deca_roleplay_sessions (client_id, user_id, event_code)
+select case when n = 1 then '00000000-0000-4000-8000-0000000000f2'::uuid else gen_random_uuid() end, pg_temp.uid('crowd5'), 'PMK'
+  from generate_series(1, 100) n;
+select pg_temp.omega_try('quota: the 101st role-play session in a day is refused', 'authenticated', pg_temp.uid('crowd5'),
+  $q$select public.deca_save_roleplay('{"client_id":"00000000-0000-4000-8000-0000000000f3","event_code":"PMK"}'::jsonb)$q$, '53400');
+select pg_temp.omega_try('quota: editing a saved session still works at the limit', 'authenticated', pg_temp.uid('crowd5'),
+  $q$select public.deca_save_roleplay('{"client_id":"00000000-0000-4000-8000-0000000000f2","event_code":"PMK","notes":"edited"}'::jsonb)$q$, 'ok');
 
 select name, ok, detail from omega_results order by ok, name;
