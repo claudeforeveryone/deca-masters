@@ -313,7 +313,7 @@ export function ProgressPage() {
       <Loading load={stats} label="Your numbers">
         {(s) =>
           s ? (
-            <StatRow className="border-t-0!">
+            <StatRow className="border-y-0!">
               <StatTile
                 label="Rating"
                 value={s.elo}

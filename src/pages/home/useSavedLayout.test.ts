@@ -1,10 +1,15 @@
 import type { User } from "@supabase/supabase-js";
 import { act, renderHook } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { DEFAULT_LAYOUT, moveModule, toggleOpen } from "../../lib/board";
+import {
+  DEFAULT_LAYOUT,
+  moveModule,
+  toggleOpen,
+  type BoardLayout,
+} from "../../lib/board";
 import { useSavedLayout } from "./useSavedLayout";
 
-const save = vi.hoisted(() => vi.fn(async () => {}));
+const save = vi.hoisted(() => vi.fn(async (_layout: BoardLayout) => {}));
 vi.mock("../../api/dashboard", async (orig) => ({
   ...(await orig<typeof import("../../api/dashboard")>()),
   saveBoardLayout: save,
@@ -42,7 +47,7 @@ describe("saving the board layout", () => {
     );
     await act(async () => vi.advanceTimersByTime(800));
     expect(save).toHaveBeenCalledTimes(1);
-    expect(save.mock.calls[0][0].order.indexOf("continue")).toBe(2);
+    expect(save.mock.calls[0]![0].order.indexOf("continue")).toBe(2);
     expect(result.current.save).toBe("saved");
   });
 
@@ -53,6 +58,6 @@ describe("saving the board layout", () => {
     expect(save).not.toHaveBeenCalled();
     unmount();
     expect(save).toHaveBeenCalledTimes(1);
-    expect(save.mock.calls[0][0].open).toEqual(["streak"]);
+    expect(save.mock.calls[0]![0].open).toEqual(["streak"]);
   });
 });

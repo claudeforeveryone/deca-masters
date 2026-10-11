@@ -480,7 +480,7 @@ function MapList({ map }: { map: Graph }) {
                 {a.questions > 0 ? (
                   <Link
                     to={areaLink(a)}
-                    className="text-sm font-semibold"
+                    className="inline-flex min-h-6 items-center text-sm font-semibold"
                     aria-label={`Drill ${a.area}`}
                   >
                     Drill
