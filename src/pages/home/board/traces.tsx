@@ -39,7 +39,7 @@ export function WeekBars({ days, today }: { days: WeekDay[]; today: string }) {
             ) : null}
           </span>
           <span
-            className={`font-mono text-[11px] leading-none ${d.date === today ? "font-semibold text-ink" : "text-ink-3"}`}
+            className={`font-mono text-xs leading-none ${d.date === today ? "font-semibold text-ink" : "text-ink-3"}`}
           >
             {d.label.charAt(0)}
           </span>
@@ -101,10 +101,10 @@ export function AreaStrip({
           />
         );
       })}
-      <span className="absolute -bottom-0.5 left-0 font-mono text-[11px] leading-none text-ink-3">
+      <span className="absolute -bottom-0.5 left-0 font-mono text-xs leading-none text-ink-3">
         0
       </span>
-      <span className="absolute right-0 -bottom-0.5 font-mono text-[11px] leading-none text-ink-3">
+      <span className="absolute right-0 -bottom-0.5 font-mono text-xs leading-none text-ink-3">
         100
       </span>
     </div>
