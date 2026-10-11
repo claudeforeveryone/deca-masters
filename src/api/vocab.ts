@@ -78,6 +78,49 @@ export async function listDecks(): Promise<DeckInfo[]> {
   }));
 }
 
+export type DeckMeta = Omit<DeckInfo, "sources">;
+
+type DeckRow = {
+  slug: ExamSlug;
+  title: string;
+  status: ContentStatus;
+  placeholder_note: string | null;
+  updated_at: string;
+};
+
+const toMeta = (r: DeckRow): DeckMeta => ({
+  slug: r.slug,
+  title: r.title,
+  status: r.status,
+  placeholderNote: r.placeholder_note,
+  updatedAt: r.updated_at,
+});
+
+/** Every deck without its source list (those are long: one entry per cited glossary page). */
+export async function listDeckMeta(): Promise<DeckMeta[]> {
+  const rows = must<DeckRow[] | null>(
+    await supabase
+      .from("deca_vocab_decks")
+      .select("slug,title,status,placeholder_note,updated_at")
+      .order("slug"),
+    "Could not load the vocab decks.",
+  );
+  return (rows ?? []).map(toMeta);
+}
+
+/** One deck with its works credited (page entries left out), or null. */
+export async function getDeck(slug: ExamSlug): Promise<DeckInfo | null> {
+  const row = must<(DeckRow & { sources: SourceEntry[] }) | null>(
+    await supabase
+      .from("deca_vocab_decks")
+      .select("slug,title,status,placeholder_note,sources,updated_at")
+      .eq("slug", slug)
+      .maybeSingle(),
+    "Could not load the deck.",
+  );
+  return row ? { ...toMeta(row), sources: workSources(row.sources ?? []) } : null;
+}
+
 /** One deck's active terms, each with its credit. */
 export async function listTerms(deck: ExamSlug): Promise<VocabTerm[]> {
   const rows = must<
