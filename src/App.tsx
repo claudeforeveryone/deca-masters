@@ -1,17 +1,35 @@
 import { lazy, Suspense, type ComponentType } from "react";
-import { Outlet, Route, Routes, useLocation } from "react-router-dom";
+import { matchPath, Outlet, Route, Routes, useLocation } from "react-router-dom";
 import { AppShell } from "./components/layout/AppShell";
 import { ErrorBoundary } from "./components/layout/ErrorBoundary";
 import { RequireAuth } from "./components/layout/RequireAuth";
 import { RequireProfile } from "./components/layout/RequireProfile";
 import { RouteFallback } from "./components/layout/RouteFallback";
 
-/** A route-level code-split page. Every page module exports a named component; this picks it. */
+type PageComponent = ComponentType & { preload: () => Promise<void> };
+
+/**
+ * A route-level code-split page. Every page module exports a named component; this picks it. Once its chunk has
+ * loaded (preload(), or a first visit), the page renders directly instead of through lazy(), so a prerendered page
+ * hydrates without suspending: a suspended boundary that sees the session resolve would throw the HTML away.
+ */
 function page<K extends string>(
   loader: () => Promise<Record<K, ComponentType>>,
   name: K,
-) {
-  return lazy(async () => ({ default: (await loader())[name] }));
+): PageComponent {
+  let loaded: ComponentType | null = null;
+  const load = () =>
+    loader().then((m) => {
+      loaded = m[name];
+      return loaded;
+    });
+  const Lazy = lazy(async () => ({ default: await load() }));
+  const Page = () => {
+    const Loaded = loaded;
+    return Loaded ? <Loaded /> : <Lazy />;
+  };
+  Page.preload = () => load().then(() => undefined);
+  return Page;
 }
 
 const HomePage = page(() => import("./pages/home/HomePage"), "HomePage");
@@ -83,6 +101,10 @@ const NotFoundPage = page(() => import("./pages/NotFoundPage"), "NotFoundPage");
 const UiGalleryPage = import.meta.env.DEV
   ? page(() => import("./pages/dev/UiGalleryPage"), "UiGalleryPage")
   : null;
+// The owner console on fixture data (and the member feedback flows), same rule: dev builds only.
+const OwnerGalleryPage = import.meta.env.DEV
+  ? page(() => import("./pages/dev/OwnerGalleryPage"), "OwnerGalleryPage")
+  : null;
 
 /** The shell stays put while a page chunk loads; a page that throws is contained and cleared on the next route. */
 function ShellLayout() {
@@ -98,21 +120,35 @@ function ShellLayout() {
   );
 }
 
+/** The public pages the build prerenders, and the chunk each needs before it can hydrate. */
+const PRERENDERED: [path: string, page: PageComponent][] = [
+  ["/", HomePage],
+  ["/signup", SignupPage],
+  ["/events", EventsPage],
+  ["/events/:code", EventPage],
+  ["/roleplay", RoleplayPage],
+  ["/vocab", VocabPage],
+  ["/terms", TermsPage],
+  ["/privacy", PrivacyPage],
+  ["/credits", CreditsPage],
+];
+
+/** Loads the page chunk for `pathname` so it renders without suspending (prerender and hydration). */
+export async function preloadRoute(pathname: string): Promise<void> {
+  const hit = PRERENDERED.find(([path]) => matchPath(path, pathname));
+  if (hit) await hit[1].preload();
+}
+
 /**
  * The route map. Public: landing, auth, events, roleplay and vocab browsing, legal and credits (reference content,
  * indexable).
  * Signed in: anything that saves, scores or ranks, plus onboarding and the owner console.
  */
-export function App({
-  home: Home = HomePage,
-}: {
-  /** The home page component itself instead of its lazy chunk: the prerender and its hydration pass it in. */
-  home?: ComponentType;
-} = {}) {
+export function App() {
   return (
     <Routes>
       <Route element={<ShellLayout />}>
-        <Route index element={<Home />} />
+        <Route index element={<HomePage />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="signup" element={<SignupPage />} />
         <Route path="reset" element={<ResetPage />} />
@@ -146,6 +182,9 @@ export function App({
 
         {UiGalleryPage ? (
           <Route path="dev/ui" element={<UiGalleryPage />} />
+        ) : null}
+        {OwnerGalleryPage ? (
+          <Route path="dev/owner" element={<OwnerGalleryPage />} />
         ) : null}
         <Route path="*" element={<NotFoundPage />} />
       </Route>

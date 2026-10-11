@@ -17,6 +17,7 @@ import {
   CLUSTERS,
   loadContentIndex,
   loadOfficialSamples,
+  peekContentIndex,
   type ContentIndex,
   type EventItem,
   type OfficialExamSample,
@@ -38,10 +39,20 @@ type Links =
 const hasRoleplay = (e: EventItem) =>
   e.components.includes("roleplay") || e.components.includes("case-study");
 
+const readyLoad = (index: ContentIndex, code: string): Load => ({
+  status: "ready",
+  index,
+  event: index.events.find((e) => e.code === code) ?? null,
+});
+
 export function EventPage() {
   const { code: raw = "" } = useParams();
   const code = raw.toUpperCase();
-  const [load, setLoad] = useState<Load>({ status: "loading" });
+  // Starts from data already here (prerendered page, or a revisit), so there is no loading flash to hydrate past.
+  const [load, setLoad] = useState<Load>(() => {
+    const index = peekContentIndex();
+    return index ? readyLoad(index, code) : { status: "loading" };
+  });
   const [attempt, setAttempt] = useState(0);
   const [samples, setSamples] = useState<OfficialExamSample[] | null>(null);
   const [links, setLinks] = useState<Links>({ status: "loading" });
@@ -52,16 +63,14 @@ export function EventPage() {
 
   useEffect(() => {
     let live = true;
+    const cached = peekContentIndex();
+    if (cached) {
+      setLoad(readyLoad(cached, code));
+      return;
+    }
     setLoad({ status: "loading" });
     loadContentIndex()
-      .then((index) => {
-        if (!live) return;
-        setLoad({
-          status: "ready",
-          index,
-          event: index.events.find((e) => e.code === code) ?? null,
-        });
-      })
+      .then((index) => live && setLoad(readyLoad(index, code)))
       .catch(() => live && setLoad({ status: "error" }));
     return () => {
       live = false;

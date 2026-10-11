@@ -23,3 +23,57 @@ describe("renderPage", () => {
     expect(html).not.toContain("<script");
   });
 });
+
+describe("renderPage for other public pages", () => {
+  it("renders the legal text itself, not a loading state", async () => {
+    const html = await renderPage("/privacy");
+    expect(html).toContain("Privacy Policy");
+    expect(html).toContain("One login for two sites");
+    expect(html).not.toContain('<div hidden id="S:');
+  });
+
+  it("renders an event page from primed content and reports what it read", async () => {
+    const { primeContent, resetContentCache, contentReads } = await import(
+      "./entry-server"
+    );
+    // A one-event index in the published shape (the real one is built, not committed).
+    const index = {
+      season: null,
+      source: null,
+      disclaimer: null,
+      officialSamples: true,
+      exams: [],
+      vocab: [],
+      roleplays: [],
+      events: [
+        {
+          code: "PMK",
+          name: "Principles of Marketing",
+          category: "Principles of Business Administration Events",
+          cluster: "marketing",
+          exam: null,
+          components: ["exam", "roleplay"],
+          teamSize: "1",
+          summary: "Fixture summary for the render test.",
+          officialUrl: "https://www.deca.org/",
+          verifiedAt: "2026-10-01",
+          notes: null,
+        },
+      ],
+    };
+    resetContentCache();
+    primeContent("index.json", index);
+    const first = index.events[0];
+    const html = await renderPage(`/events/${first.code}`);
+    expect(html).toContain(first.name.replace(/&/g, "&amp;"));
+    expect(contentReads()).toContain("index.json");
+    resetContentCache();
+  });
+
+  it("renders the sign-up form for a signed-out visitor", async () => {
+    const html = await renderPage("/signup");
+    expect(html).toMatch(/type="password"/);
+    expect(html).toContain("Create an account");
+    expect(html).not.toContain("Checking your session");
+  });
+});

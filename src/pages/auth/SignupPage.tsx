@@ -4,7 +4,7 @@ import { RouteFallback } from "../../components/layout/RouteFallback";
 import { Button } from "../../components/ui/Button";
 import { Field } from "../../components/ui/Field";
 import { Notice } from "../../components/ui/Notice";
-import { useAuth } from "../../lib/auth";
+import { mayHaveStoredSession, useAuth } from "../../lib/auth";
 import { authErrorKind, type AuthErrorKind } from "../../lib/authErrors";
 import { AuthFrame, MIN_PASSWORD } from "./AuthFrame";
 
@@ -21,7 +21,9 @@ export function SignupPage() {
   const [busy, setBusy] = useState(false);
   const [resent, setResent] = useState<"idle" | "sending" | "sent">("idle");
 
-  if (loading) return <RouteFallback label="Checking your session" />;
+  // Signed out for certain (nothing stored): show the form at once, which is also what the prerender ships.
+  if (loading && mayHaveStoredSession())
+    return <RouteFallback label="Checking your session" />;
   if (user && !sentTo) return <Navigate to="/onboarding" replace />;
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -144,7 +146,8 @@ export function SignupPage() {
           <Link to="/privacy" className="font-semibold">
             Privacy Policy
           </Link>
-          .
+          . The same login works on our FBLA practice site. Under 13? Ask a
+          parent or guardian first.
         </p>
         <div>
           <Button type="submit" busy={busy}>

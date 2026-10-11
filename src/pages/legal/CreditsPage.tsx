@@ -3,7 +3,13 @@ import { useEffect, useState } from "react";
 import { RouteFallback } from "../../components/layout/RouteFallback";
 import { Notice } from "../../components/ui/Notice";
 import { PageHeader } from "../../components/ui/PageHeader";
-import { loadContentIndex, loadCredits, type Credits } from "../../lib/content";
+import {
+  loadContentIndex,
+  loadCredits,
+  peekContentIndex,
+  peekCredits,
+  type Credits,
+} from "../../lib/content";
 
 type State =
   | { status: "loading" }
@@ -40,7 +46,14 @@ const SOFTWARE = [
  * from the same source fields shown on each question and term, so this list cannot drift from the content.
  */
 export function CreditsPage() {
-  const [state, setState] = useState<State>({ status: "loading" });
+  // Starts from data already here (prerendered page, or a revisit), so there is no loading flash to hydrate past.
+  const [state, setState] = useState<State>(() => {
+    const credits = peekCredits();
+    const index = peekContentIndex();
+    return credits && index
+      ? { status: "ready", sources: credits.sources, eventSource: index.source }
+      : { status: "loading" };
+  });
 
   useEffect(() => {
     let active = true;

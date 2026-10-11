@@ -6,6 +6,8 @@ import {
   composeReport,
   feedbackProblem,
   reportKindFor,
+  reportReasonLabel,
+  reportReasons,
 } from "./feedback";
 
 describe("feedbackProblem", () => {
@@ -35,6 +37,29 @@ describe("reports about a question or a term", () => {
       "Wrong answer marked correct: B is right",
     );
     expect(composeReport("typo", "")).toBe("Typo or formatting problem");
+  });
+
+  it("words a term report about the term, not a question", () => {
+    expect(reportReasonLabel("unclear", "vocab_issue")).toBe(
+      "The term is unclear",
+    );
+    expect(reportReasonLabel("explanation", "vocab_issue")).toBe(
+      "The definition is wrong",
+    );
+    expect(reportReasonLabel("unclear", "question_issue")).toBe(
+      "The question is unclear",
+    );
+    expect(composeReport("unclear", "two meanings", "vocab_issue")).toBe(
+      "The term is unclear: two meanings",
+    );
+  });
+
+  it("offers only the reasons that fit a term", () => {
+    const forTerm = reportReasons("vocab_issue").map((r) => r.value);
+    expect(forTerm).not.toContain("wrong_key");
+    expect(reportReasons("question_issue").map((r) => r.value)).toContain(
+      "wrong_key",
+    );
   });
 
   it("keeps item reports out of the general feedback menu", () => {

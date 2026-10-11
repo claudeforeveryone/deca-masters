@@ -204,9 +204,15 @@ export type OfficialExamSamples = {
 };
 
 const cache = new Map<string, Promise<unknown>>();
+/** Files already loaded (or primed), by path under content/, readable without waiting. */
+const ready = new Map<string, unknown>();
+/** Files peeked at since the last reset: the prerender embeds exactly these so hydration sees the same data. */
+const peeked = new Set<string>();
+
+const urlFor = (path: string) => `${import.meta.env.BASE_URL}content/${path}`;
 
 function getJson<T>(path: string): Promise<T> {
-  const url = `${import.meta.env.BASE_URL}content/${path}`;
+  const url = urlFor(path);
   if (!cache.has(url)) {
     cache.set(
       url,
@@ -214,6 +220,10 @@ function getJson<T>(path: string): Promise<T> {
         .then((r) => {
           if (!r.ok) throw new Error(`${url}: ${r.status}`);
           return r.json() as Promise<T>;
+        })
+        .then((data) => {
+          ready.set(path, data);
+          return data;
         })
         .catch((err: unknown) => {
           cache.delete(url); // a failed load can be retried
@@ -224,11 +234,35 @@ function getJson<T>(path: string): Promise<T> {
   return cache.get(url) as Promise<T>;
 }
 
+/**
+ * Supplies a content file without fetching it: the build-time prerender reads it from disk, and the browser gets the
+ * same data embedded in the page before it hydrates.
+ */
+export function primeContent(path: string, data: unknown): void {
+  ready.set(path, data);
+  cache.set(urlFor(path), Promise.resolve(data));
+}
+
+/** A content file that has already arrived, or null. Pages start from it so a revisit or a hydration has no gap. */
+function peek<T>(path: string): T | null {
+  peeked.add(path);
+  return ready.has(path) ? (ready.get(path) as T) : null;
+}
+
+/** The content files read with a peek since the last reset, sorted. */
+export function contentReads(): string[] {
+  return [...peeked].sort();
+}
+
 /** Forgets cached loads. Tests use it so one case's response does not leak into the next. */
 export function resetContentCache(): void {
   cache.clear();
+  ready.clear();
+  peeked.clear();
 }
 
+export const peekContentIndex = () => peek<ContentIndex>("index.json");
+export const peekCredits = () => peek<Credits>("credits.json");
 export const loadContentIndex = () => getJson<ContentIndex>("index.json");
 export const loadCredits = () => getJson<Credits>("credits.json");
 export const loadExam = (slug: ExamSlug) =>

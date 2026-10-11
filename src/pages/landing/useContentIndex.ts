@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
-import { loadContentIndex, type ContentIndex } from "../../lib/content";
+import {
+  loadContentIndex,
+  peekContentIndex,
+  type ContentIndex,
+} from "../../lib/content";
 
 export type IndexState =
   | { status: "loading"; index: null }
@@ -8,9 +12,9 @@ export type IndexState =
 
 /** The published content index (cached by lib/content). Sections show honest loading, empty and error states. */
 export function useContentIndex(): IndexState {
-  const [state, setState] = useState<IndexState>({
-    status: "loading",
-    index: null,
+  const [state, setState] = useState<IndexState>(() => {
+    const index = peekContentIndex();
+    return index ? { status: "ready", index } : { status: "loading", index: null };
   });
   useEffect(() => {
     let live = true;

@@ -4,7 +4,7 @@ import { RouteFallback } from "../../components/layout/RouteFallback";
 import { Button } from "../../components/ui/Button";
 import { Field } from "../../components/ui/Field";
 import { Notice } from "../../components/ui/Notice";
-import { useAuth } from "../../lib/auth";
+import { mayHaveStoredSession, useAuth } from "../../lib/auth";
 import { authErrorKind, type AuthErrorKind } from "../../lib/authErrors";
 import { safeNext } from "../../lib/safeNext";
 import { AuthFrame } from "./AuthFrame";
@@ -23,7 +23,9 @@ export function LoginPage() {
   const [busy, setBusy] = useState(false);
   const [resent, setResent] = useState<"idle" | "sending" | "sent">("idle");
 
-  if (loading) return <RouteFallback label="Checking your session" />;
+  // Signed out for certain (nothing stored): show the form at once, which is also what the prerender ships.
+  if (loading && mayHaveStoredSession())
+    return <RouteFallback label="Checking your session" />;
   if (user) return <Navigate to={next} replace />;
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {

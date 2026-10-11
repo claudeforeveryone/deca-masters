@@ -108,7 +108,8 @@ export function LineChart({
           </g>
         ))}
         {data.map((d, i) =>
-          i % every === 0 || i === data.length - 1 ? (
+          i === data.length - 1 ||
+          (i % every === 0 && data.length - 1 - i >= every) ? (
             <text
               key={d.x}
               x={x(i)}
@@ -192,12 +193,14 @@ export function BarList({
   tone = "surface",
 }: {
   label: string;
-  data: { label: string; value: number; note?: string }[];
+  /** `hidden` rows (a number withheld for privacy) show "Hidden" and a dashed stub instead of a bar. */
+  data: { label: string; value: number; note?: string; hidden?: boolean }[];
   max?: number;
   format?: (n: number) => string;
   tone?: "surface" | "stage";
 }) {
-  const top = max ?? Math.max(1, ...data.map((d) => d.value));
+  const top =
+    max ?? Math.max(1, ...data.filter((d) => !d.hidden).map((d) => d.value));
   const stage = tone === "stage";
   return (
     <ul aria-label={label} className="grid gap-3">
@@ -214,19 +217,32 @@ export function BarList({
               {d.label}
             </span>
             <span
-              className={`font-mono text-sm font-semibold tabular-nums ${stage ? "text-on-navy" : "text-ink"}`}
+              className={`font-mono text-sm tabular-nums ${d.hidden ? (stage ? "text-on-stage-3" : "text-ink-3") : `font-semibold ${stage ? "text-on-navy" : "text-ink"}`}`}
             >
-              {format(d.value)}
+              {d.hidden ? "Hidden" : format(d.value)}
             </span>
             <span aria-hidden="true" className="relative col-span-2 h-2">
               <span
                 className={`absolute inset-x-0 top-1/2 h-px ${stage ? "bg-stage-line" : "bg-line"}`}
               />
-              <span
-                className="absolute inset-y-0 left-0 w-full origin-left bg-electric transition-transform duration-(--dur-4) ease-out"
-                style={{ transform: `scaleX(${ratio})` }}
-              />
+              {d.hidden ? (
+                <span
+                  className={`absolute inset-y-0 left-0 w-6 rounded-xs border border-dashed ${stage ? "border-stage-line-strong bg-stage-1" : "border-line-strong bg-surface"}`}
+                />
+              ) : (
+                <span
+                  className="absolute inset-y-0 left-0 w-full origin-left bg-electric transition-transform duration-(--dur-4) ease-out"
+                  style={{ transform: `scaleX(${ratio})` }}
+                />
+              )}
             </span>
+            {d.note ? (
+              <span
+                className={`col-span-2 text-micro ${stage ? "text-on-stage-3" : "text-ink-3"}`}
+              >
+                {d.note}
+              </span>
+            ) : null}
           </li>
         );
       })}
@@ -278,5 +294,159 @@ export function Sparkline({
         fill="var(--electric)"
       />
     </svg>
+  );
+}
+
+export type Column = {
+  /** Short axis label ("Oct 5"). */
+  label: string;
+  /** Full name for the tooltip and the table ("Oct 5 to Oct 11, 2026"). */
+  title: string;
+  value: number;
+  /** A number withheld for privacy: drawn as a dashed stub at the baseline and read as "Hidden", never as 0. */
+  hidden?: boolean;
+};
+
+/** The top edge of a column with 2px corners and a square baseline. */
+function columnPath(x: number, y: number, w: number, h: number): string {
+  const r = Math.min(2, w / 2, h);
+  return `M${x},${y + h}V${y + r}Q${x},${y} ${x + r},${y}H${x + w - r}Q${x + w},${y} ${x + w},${y + r}V${y + h}Z`;
+}
+
+/**
+ * One measure per period (sign-ups per week). Columns at most 24px wide with air between them, one baseline, a
+ * hairline grid, the last value labelled on its cap. Each column has a tooltip; the same numbers are in a visually
+ * hidden table (and ChartFigure can show it). Hidden buckets keep their slot as a dashed stub.
+ */
+export function ColumnChart({
+  label,
+  description,
+  data,
+  height = 200,
+  format = (n) => String(n),
+}: {
+  label: string;
+  description: string;
+  data: Column[];
+  height?: number;
+  format?: (n: number) => string;
+}) {
+  const [box, width] = useWidth<HTMLDivElement>(560);
+  const titleId = useId();
+  const descId = useId();
+  const m = { top: 18, right: 8, bottom: 28, left: 36 };
+  const shownMax = Math.max(0, ...data.filter((d) => !d.hidden).map((d) => d.value));
+  const ticks = niceTicks(0, Math.max(shownMax, 4), 4);
+  const top = ticks[ticks.length - 1] || 1;
+  const y = linearScale([0, top], [height - m.bottom, m.top]);
+  const plotW = Math.max(1, width - m.left - m.right);
+  const slot = plotW / Math.max(1, data.length);
+  const colW = Math.max(2, Math.min(24, slot - 2));
+  const every = Math.max(1, Math.ceil(data.length / Math.max(2, Math.floor(plotW / 56))));
+  const lastShown = data.map((d, i) => (d.hidden ? -1 : i)).filter((i) => i >= 0).at(-1);
+
+  return (
+    <figure ref={box} className="m-0 w-full">
+      <svg
+        role="img"
+        aria-labelledby={`${titleId} ${descId}`}
+        width={width}
+        height={height}
+        viewBox={`0 0 ${width} ${height}`}
+        className="block overflow-visible"
+      >
+        <title id={titleId}>{label}</title>
+        <desc id={descId}>{description}</desc>
+        {ticks.map((t) => (
+          <g key={t}>
+            <line
+              x1={m.left}
+              x2={width - m.right}
+              y1={y(t)}
+              y2={y(t)}
+              stroke="var(--line)"
+              strokeWidth={1}
+            />
+            <text
+              x={m.left - 8}
+              y={y(t)}
+              dy="0.32em"
+              textAnchor="end"
+              fill="var(--ink-3)"
+              className="font-mono text-[12px] tabular-nums"
+            >
+              {format(t)}
+            </text>
+          </g>
+        ))}
+        {data.map((d, i) => {
+          const cx = m.left + slot * i + slot / 2;
+          const x = cx - colW / 2;
+          const base = y(0);
+          const h = d.hidden ? 0 : Math.max(0, base - y(d.value));
+          return (
+            <g key={`${d.title}-${i}`}>
+              <title>{`${d.title}: ${d.hidden ? "hidden for privacy" : format(d.value)}`}</title>
+              {/* hit target: the whole slot, so a short or empty column still has a tooltip */}
+              <rect x={m.left + slot * i} y={m.top} width={slot} height={base - m.top} fill="transparent" />
+              {d.hidden ? (
+                <rect
+                  x={x + 0.5}
+                  y={base - 10.5}
+                  width={colW - 1}
+                  height={10}
+                  rx={1}
+                  fill="var(--surface)"
+                  stroke="var(--line-strong)"
+                  strokeDasharray="3 2"
+                />
+              ) : h > 0 ? (
+                <path d={columnPath(x, base - h, colW, h)} fill="var(--electric)" />
+              ) : null}
+              {i === lastShown && !d.hidden ? (
+                <text
+                  x={cx}
+                  y={base - h - 6}
+                  textAnchor="middle"
+                  fill="var(--ink)"
+                  className="font-mono text-[12px] font-semibold tabular-nums"
+                >
+                  {format(d.value)}
+                </text>
+              ) : null}
+              {i === data.length - 1 ||
+              (i % every === 0 && data.length - 1 - i >= every / 2) ? (
+                <text
+                  x={cx}
+                  y={height - 8}
+                  textAnchor="middle"
+                  fill="var(--ink-3)"
+                  className="font-mono text-[12px]"
+                >
+                  {d.label}
+                </text>
+              ) : null}
+            </g>
+          );
+        })}
+      </svg>
+      <table className="sr-only">
+        <caption>{label}</caption>
+        <thead>
+          <tr>
+            <th scope="col">Period</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((d, i) => (
+            <tr key={`${d.title}-${i}`}>
+              <th scope="row">{d.title}</th>
+              <td>{d.hidden ? "Hidden" : format(d.value)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </figure>
   );
 }

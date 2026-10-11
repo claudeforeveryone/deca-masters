@@ -199,3 +199,179 @@ export function reasonProblem(reason: string): string | null {
   if (n > 200) return "Keep the reason under 200 characters.";
   return null;
 }
+
+// ------------------------------------------------------------------------------------------------ console helpers
+// Ported from FBLA's owner console (src/lib/owner.ts there) and adapted to DECA's audit actions and date fields.
+
+export type SeriesBar = {
+  /** Short, for the chart axis ("Oct 5"). */
+  label: string;
+  /** Full, for the table and the tooltip ("Oct 5 to Oct 11, 2026"). */
+  title: string;
+  value: number;
+  hidden: boolean;
+};
+
+/** One bar per growth bucket for a key. A hidden bucket keeps its place (drawn as a dashed stub, never as 0). */
+export function seriesBars<K extends string>(
+  rows: ({ start: string; end: string } & Record<K, Count>)[],
+  key: K,
+  bucket: Bucket,
+): SeriesBar[] {
+  return rows.map((r) => ({
+    label: bucketLabel(r.start, r.end, bucket, true),
+    title: bucketLabel(r.start, r.end, bucket),
+    value: r[key].suppressed ? 0 : (r[key].value ?? 0),
+    hidden: r[key].suppressed,
+  }));
+}
+
+/** Rows from a new page that are not on screen yet (ids can repeat when rows shift between page reads). */
+export function mergePage<T>(
+  rows: T[],
+  page: T[],
+  idOf: (row: T) => string | number,
+): { rows: T[]; added: number } {
+  const seen = new Set(rows.map(idOf));
+  const fresh = page.filter((r) => {
+    const id = idOf(r);
+    if (seen.has(id)) return false;
+    seen.add(id);
+    return true;
+  });
+  return { rows: fresh.length ? [...rows, ...fresh] : rows, added: fresh.length };
+}
+
+/**
+ * Reads an offset-paged list again up to `want` rows (the rows already on screen), so a reload after a save keeps
+ * what the owner had scrolled to. Stops at the end, or when a page brings nothing new.
+ */
+export async function loadPages<T, P extends { total: number; rows: T[] }>(
+  fetchPage: (offset: number) => Promise<P>,
+  want: number,
+  idOf: (row: T) => string | number,
+): Promise<{ head: P; rows: T[]; total: number; done: boolean }> {
+  const head = await fetchPage(0);
+  let m = mergePage<T>([], head.rows, idOf);
+  let total = head.total;
+  let done = m.added === 0 || m.rows.length >= total;
+  while (!done && m.rows.length < want) {
+    const page = await fetchPage(m.rows.length);
+    total = page.total;
+    m = mergePage(m.rows, page.rows, idOf);
+    done = m.added === 0 || m.rows.length >= total;
+  }
+  return { head, rows: m.rows, total, done };
+}
+
+/** "75%" with "30 of 40" under it, or "Hidden" when the finished count is withheld. */
+export function signupFigure(
+  w: { created: Count; onboarded: Count; rate: number | null },
+  noun: string,
+): { value: string; hidden: boolean; sub: string } {
+  const created = w.created.suppressed ? null : w.created.value;
+  if (w.onboarded.suppressed)
+    return {
+      value: "Hidden",
+      hidden: true,
+      sub:
+        created == null
+          ? "hidden for privacy"
+          : `${intFmt.format(created)} ${noun}${created === 1 ? "" : "s"}`,
+    };
+  if (created === 0)
+    return { value: NO_DATA, hidden: false, sub: `No ${noun}s yet` };
+  return {
+    value: fmtPercent(w.rate),
+    hidden: false,
+    sub: `${countLabel(w.onboarded)} of ${countLabel(w.created)}`,
+  };
+}
+
+type Detail = Record<string, unknown>;
+const str = (v: unknown) => (typeof v === "string" ? v : "");
+const plural = (n: number, one: string) => `${n} ${one}${n === 1 ? "" : "s"}`;
+
+/** A short "what changed" line for an audit row. Empty when there is nothing to add to the action's name. */
+export function auditChange(
+  action: string,
+  detail: Detail | null | undefined,
+  targetType?: string,
+): string {
+  const d = detail ?? {};
+  switch (action) {
+    case "feedback_updated": {
+      const parts = [
+        str(d.from) && str(d.to) && d.from !== d.to
+          ? `${words(str(d.from))} to ${words(str(d.to))}`
+          : "",
+        str(d.priority) && d.priority !== "normal" ? `${d.priority} priority` : "",
+        d.note_changed === true ? "note changed" : "",
+      ];
+      return parts.filter(Boolean).join(", ");
+    }
+    case "content_imported": {
+      const ins = typeof d.inserted === "number" ? d.inserted : null;
+      const upd = typeof d.updated === "number" ? d.updated : null;
+      return [
+        ins != null ? `${ins} added` : "",
+        upd ? `${upd} replaced` : "",
+      ]
+        .filter(Boolean)
+        .join(", ");
+    }
+    case "content_retired":
+    case "content_restored":
+      return typeof d.count === "number"
+        ? plural(d.count, targetType === "term" ? "term" : "question")
+        : "";
+    default:
+      return "";
+  }
+}
+
+/** Who made an audited change. Only owner functions write the log; a row with no actor came from SQL run by hand. */
+export function auditActor(r: {
+  actor_id: string | null;
+  actor_username: string | null;
+}): string {
+  if (r.actor_username) return `@${r.actor_username}`;
+  return r.actor_id
+    ? "An owner without a DECA profile"
+    : "Database (no signed-in user)";
+}
+
+const torontoDay = new Intl.DateTimeFormat("en-CA", {
+  timeZone: "America/Toronto",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+});
+const DAY_ONLY = /^\d{4}-\d{2}-\d{2}$/;
+
+/** A Toronto calendar day from a 'YYYY-MM-DD' date (taken as is) or a timestamp. */
+function torontoDate(v: string | Date): string | null {
+  if (typeof v === "string" && DAY_ONLY.test(v)) return v;
+  const d = typeof v === "string" ? new Date(v) : v;
+  return Number.isNaN(d.getTime()) ? null : torontoDay.format(d);
+}
+
+/** "Today", "Yesterday", "3 days ago", or the date past 30 days; "Never" for no date. Toronto days. */
+export function dayLabel(
+  value: string | null | undefined,
+  now: Date = new Date(),
+): string {
+  if (!value) return "Never";
+  const day = torontoDate(value);
+  const today = torontoDate(now);
+  if (!day || !today) return NO_DATA;
+  const n = Math.round(
+    (Date.parse(`${today}T00:00:00Z`) - Date.parse(`${day}T00:00:00Z`)) /
+      86_400_000,
+  );
+  if (n <= 0) return "Today";
+  if (n === 1) return "Yesterday";
+  if (n <= 30) return `${n} days ago`;
+  const p = parts(day);
+  return `${MONTHS_SHORT[p.m]} ${p.d}, ${p.y}`;
+}

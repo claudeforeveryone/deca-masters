@@ -77,20 +77,17 @@ describe("route map, signed out", () => {
     },
   );
 
-  // /roleplay and /vocab are live tools now (src/pages/roleplay/*.test.tsx, src/pages/vocab/*.test.tsx).
+  // Every public page is live now: /roleplay and /vocab (src/pages/roleplay, src/pages/vocab) and the legal pages below.
   it.each([
     ["/terms", "Terms of Use"],
     ["/privacy", "Privacy Policy"],
-  ])(
-    "renders the public placeholder %s honestly, with no buttons",
-    async (path, title) => {
-      renderAt(path);
-      await screen.findByRole("heading", { level: 1, name: title });
-      const main = screen.getByRole("main");
-      expect(within(main).getByText("Not live yet")).toBeTruthy();
-      expect(within(main).queryByRole("button")).toBeNull();
-    },
-  );
+  ])("renders the full legal page %s", async (path, title) => {
+    renderAt(path);
+    await screen.findByRole("heading", { level: 1, name: title });
+    const main = screen.getByRole("main");
+    expect(within(main).getByText("October 11, 2026")).toBeTruthy();
+    expect(within(main).queryByText("Not live yet")).toBeNull();
+  });
 
   it.each(["/login", "/signup", "/reset"])(
     "renders the auth page %s",

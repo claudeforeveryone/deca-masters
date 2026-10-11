@@ -22,6 +22,7 @@ import { Tooltip } from "../../components/ui/Tooltip";
 import {
   CLUSTERS,
   loadContentIndex,
+  peekContentIndex,
   type ClusterSlug,
   type EventItem,
 } from "../../lib/content";
@@ -52,11 +53,17 @@ type Load =
   | { status: "ready"; events: EventItem[] };
 
 function useEvents(): [Load, () => void] {
-  const [state, setState] = useState<Load>({ status: "loading" });
+  // Starts from data already here (prerendered page, or a revisit), so there is no loading flash to hydrate past.
+  const [state, setState] = useState<Load>(() => {
+    const index = peekContentIndex();
+    return index
+      ? { status: "ready", events: index.events }
+      : { status: "loading" };
+  });
   const [attempt, setAttempt] = useState(0);
   useEffect(() => {
     let live = true;
-    setState({ status: "loading" });
+    if (attempt > 0) setState({ status: "loading" });
     loadContentIndex()
       .then(
         (index) => live && setState({ status: "ready", events: index.events }),
