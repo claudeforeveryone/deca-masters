@@ -5,6 +5,7 @@ import {
   useMemo,
   useRef,
   useState,
+  useSyncExternalStore,
   type KeyboardEvent,
   type ReactNode,
 } from "react";
@@ -49,6 +50,16 @@ export function paletteShortcutLabel(): string {
   return /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent)
     ? "⌘ K"
     : "Ctrl K";
+}
+
+const staysPut = () => () => {};
+
+/**
+ * The hint as a hook. Prerendered HTML has no device to ask, so it says "Ctrl K"; hydration renders that too and then
+ * switches on an Apple device, instead of mismatching the server markup.
+ */
+export function usePaletteShortcutLabel(): string {
+  return useSyncExternalStore(staysPut, paletteShortcutLabel, () => "Ctrl K");
 }
 
 /**

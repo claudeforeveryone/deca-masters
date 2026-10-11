@@ -6,8 +6,8 @@ import { useThemePref, type ThemePref } from "../../lib/theme";
 import { buttonClass, IconButton } from "../ui/Button";
 import {
   CommandPalette,
-  paletteShortcutLabel,
   usePaletteShortcut,
+  usePaletteShortcutLabel,
 } from "../ui/CommandPalette";
 import { Menu, type MenuItem } from "../ui/Popover";
 import { Kbd } from "../ui/Tag";
@@ -74,6 +74,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
 function TopBar({ onSearch }: { onSearch: () => void }) {
   const { user } = useAuth();
+  const shortcut = usePaletteShortcutLabel();
   return (
     <header className="sticky top-0 z-(--z-bar) border-b border-stage-line bg-navy-deep text-on-navy shadow-(--edge-highlight)">
       <div className="shell flex h-(--bar-h) items-stretch gap-6 lg:gap-8">
@@ -116,7 +117,7 @@ function TopBar({ onSearch }: { onSearch: () => void }) {
             <Search aria-hidden="true" className="size-4.5" />
             <span className="hidden xl:inline">Search</span>
             <Kbd className="border-stage-line! bg-stage-2! text-on-navy-2!">
-              {paletteShortcutLabel()}
+              {shortcut}
             </Kbd>
           </button>
           <span className="md:hidden">
