@@ -1,0 +1,795 @@
+{
+  "slug": "business-admin-core",
+  "title": "Business Administration Core Exam",
+  "cluster": "core",
+  "status": "sourced",
+  "blurb": "Practice questions for the Business Administration Core exam, reused from public domain U.S. federal quizzes and an openly licensed BCcampus textbook, credited on each question.",
+  "disclaimer": "Questions reused from openly licensed sources (credited on each question). Not official DECA exam content.",
+  "builtAt": "2026-10-11",
+  "sources": [
+    {
+      "id": "investor-gov-quizzes",
+      "title": "Investing Quizzes (Investor.gov Spotlight)",
+      "publisher": "U.S. Securities and Exchange Commission, Office of Investor Education and Assistance",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "nonCommercial": false,
+      "licenceEvidence": [
+        {
+          "url": "https://www.sec.gov/about/privacy-information",
+          "quote": "Information presented on sec.gov is considered public information and may be copied or further distributed by users of the web site without the SEC’s permission. Please consider appropriate citation to the SEC as the source."
+        },
+        {
+          "url": "https://www.investor.gov/disclaimer",
+          "quote": "The Office of Investor Education and Assistance has provided this information as a service to investors. ... Paid for by the U.S. Securities and Exchange Commission."
+        }
+      ],
+      "notes": "US federal work (17 U.S.C. 105). None of the 55 quiz pages fetched on 2026-10-11 carries a copyright notice. Credit the SEC; never use the SEC seal or logos and never imply endorsement. The SEC page also asks users not to use its seal, logos or artwork.",
+      "attributionTemplate": "Question from \"<quiz heading>,\" Investor.gov, U.S. Securities and Exchange Commission, <quiz URL>. Public domain (US federal work).",
+      "questions": 13
+    },
+    {
+      "id": "fdic-msa-module-4",
+      "title": "Money Smart for Adults, Module 4: Your Spending and Saving Plan, Instructor Guide (September 2018)",
+      "publisher": "Federal Deposit Insurance Corporation",
+      "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgyIAAR",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Money Smart for Adults, Module 4: Your Spending and Saving Plan, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgyIAAR. Public domain (US federal work).",
+      "nonCommercial": false,
+      "licenceEvidence": "See fdic-msa-module-11.",
+      "catalogPage": "https://www.fdic.gov/consumer-resource-center/money-smart-adults",
+      "questions": 1
+    },
+    {
+      "id": "fdic-msa-module-9",
+      "title": "Money Smart for Adults, Module 9: Using Credit Cards, Instructor Guide (September 2018)",
+      "publisher": "Federal Deposit Insurance Corporation",
+      "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgzBAAR",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Money Smart for Adults, Module 9: Using Credit Cards, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgzBAAR. Public domain (US federal work).",
+      "nonCommercial": false,
+      "licenceEvidence": "See fdic-msa-module-11.",
+      "catalogPage": "https://www.fdic.gov/consumer-resource-center/money-smart-adults",
+      "questions": 1
+    },
+    {
+      "id": "fdic-msa-module-11",
+      "title": "Money Smart for Adults, Module 11: Protecting Your Identity and Other Assets, Instructor Guide (September 2018)",
+      "publisher": "Federal Deposit Insurance Corporation",
+      "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgzkAAB",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Money Smart for Adults, Module 11: Protecting Your Identity and Other Assets, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgzkAAB. Public domain (US federal work).",
+      "nonCommercial": false,
+      "licenceEvidence": [
+        {
+          "url": "https://www.fdic.gov/news/financial-institution-letters/2001/fil0158.html",
+          "quote": "You may also make your own copies of the material. ... The Money Smart training modules can be easily reproduced and have no copyright restrictions."
+        },
+        {
+          "url": "https://www.fdic.gov/consumer-resource-center/money-smart-adults",
+          "quote": "The Federal Deposit Insurance Corporation is an independent agency created by the Congress to maintain stability and public confidence in the nation's financial system. One way we do that is by providing free, non-biased financial education materials, including this Instructor Guide. (front matter of each Instructor Guide PDF linked from this page)"
+        }
+      ],
+      "notes": "US federal agency work. The four 2018 Instructor Guides used here (Modules 4, 9, 10, 11) contain no copyright notice (checked 2026-10-11). FIL-58-2001's \"no copyright restrictions\" statement was written about the 2001 edition, so confidence is medium to high. Credit the FDIC; do not use the FDIC name or logo to imply endorsement.",
+      "catalogPage": "https://www.fdic.gov/consumer-resource-center/money-smart-adults",
+      "attributionTemplate": "Question from \"Answer Key for Both the Pre- and Post-Training Surveys\" (question <n>) in Money Smart for Adults, Module <n>: <name>, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, <PDF URL>. Public domain (US federal work).",
+      "questions": 1
+    },
+    {
+      "id": "bccampus-intro-tourism-2e",
+      "title": "Introduction to Tourism and Hospitality in BC – 2nd Edition",
+      "publisher": "BCcampus",
+      "authors": "Wendy Anderson and Morgan Westcott (Editors); H5P activities by Blake Rowsell (Tort Law, Waivers) and an unnamed author (Conflict Resolution)",
+      "url": "https://opentextbc.ca/introtourism2e/",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "nonCommercial": false,
+      "shareAlike": false,
+      "licenceEvidence": [
+        {
+          "url": "https://opentextbc.ca/introtourism2e/",
+          "quote": "Introduction to Tourism and Hospitality in BC - 2nd Edition Copyright © 2015, 2020, 2021 by Morgan Westcott and Wendy Anderson is licensed under a Creative Commons Attribution 4.0 International License, except where otherwise noted."
+        },
+        {
+          "url": "https://opentextbc.ca/introtourism2e/",
+          "quote": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence."
+        }
+      ],
+      "requiredAttribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "flags": [
+        "H5P activity 54 (Conflict Resolution) has licence metadata \"U\" (undisclosed) and no author. It is embedded in the book's own page 13.3 (data-content-id 54), so the book's \"except where otherwise noted\" CC BY 4.0 statement covers it; nothing on the page notes otherwise.",
+        "H5P activities 41 and 42 carry their own CC BY 4.0 metadata, author Blake Rowsell.",
+        "Canadian content (tort law and waivers are described under Canadian law). Source typos are kept as published (\"injuried\" in a choice, \"ulitimate\" in the activity feedback).",
+        "Verifier 2026-10-11: the Pressbooks REST API (wp-json/pressbooks/v2/chapters) reports pb_section_license \"cc-by\" for both cited chapters, 11.3 and 13.3, and the rendered 13.3 content embeds <div id=\"h5p-54\"> (iframe data-content-id=\"54\"). So H5P 54 sits inside a chapter explicitly licensed CC BY 4.0, with no other notice."
+      ],
+      "questions": 4
+    },
+    {
+      "title": "Back-to-School Investing Quiz",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/back-to-school-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz – December 2022",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2022-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz - January 2026",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2026-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz - July",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/july-2022-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Compound Interest Quiz",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/compound-interest-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz - September 2021",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/september-2021-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz – February 2024",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2024-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz – June 2022",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/june-2022-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Investing Quiz - August",
+      "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2021-quiz",
+      "licence": "Public domain (US federal work)",
+      "attribution": "Investing Quizzes (Investor.gov Spotlight), U.S. Securities and Exchange Commission, Office of Investor Education and Assistance, https://www.investor.gov/additional-resources/spotlight/investing-quizzes. Public domain (US federal work).",
+      "partOf": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC – 2nd Edition, 11.3 Laws and Regulations",
+      "url": "https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC – 2nd Edition, 13.3 Integrating Planning with Education and Experience, H5P activity \"Conflict Resolution\"",
+      "url": "https://opentextbc.ca/introtourism2e/chapter/integrating-planning-with-education-and-experience/",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    }
+  ],
+  "coverage": {
+    "blueprint": "DECA Guide 2026-27 exam blueprint (SOURCES.md section 5.1), items out of 100 as District / Association / ICDC.",
+    "targets": {
+      "Emotional Intelligence": "22/22/19",
+      "Financial Analysis": "16/16/13",
+      "Communications": "15/15/11",
+      "Operations": "11/11/13",
+      "Professional Development": "11/11/9",
+      "Information Management": "10/10/11",
+      "Economics": "7/7/12",
+      "Customer Relations": "5/5/4",
+      "Business Law": "1/1/4",
+      "Human Resources Management": "1/1/1",
+      "Marketing": "1/1/1",
+      "Entrepreneurship": "0/0/1",
+      "Strategic Management": "0/0/1"
+    },
+    "actual": {
+      "Business Law": 3,
+      "Emotional Intelligence": 1,
+      "Financial Analysis": 16
+    },
+    "note": "This set is skewed toward Financial Analysis (personal finance and investing basics) because that is where public domain keyed questions exist. It is not a balanced mock exam. A practice mode should weight by area or label the set as partial."
+  },
+  "gaps": [
+    {
+      "area": "Emotional Intelligence",
+      "note": "One item (conflict resolution). The business ethics items mapped in SOURCES.md 5.1 are OpenStax and are on hold. Teamwork, leadership and self-management have no open keyed source."
+    },
+    {
+      "area": "Communications",
+      "note": "No item. The mapped keyed sources are OpenStax (on hold); the only other one (Business Writing For Everyone H5P 42) was dropped because its licence could not be traced."
+    },
+    {
+      "area": "Operations",
+      "note": "No item. The mapped keyed sources are OpenStax (on hold). The BCcampus occupational health and safety item was not used: it asks for a BC agency name, which does not fit the core exam."
+    },
+    {
+      "area": "Professional Development",
+      "note": "No item. No openly licensed, publicly keyed source was found (SOURCES.md 5.1)."
+    },
+    {
+      "area": "Information Management",
+      "note": "No item. All mapped keyed sources are OpenStax (on hold)."
+    },
+    {
+      "area": "Economics",
+      "note": "No item. All mapped keyed sources are OpenStax (on hold); no public domain item fits."
+    },
+    {
+      "area": "Customer Relations",
+      "note": "No item. All mapped keyed sources are OpenStax (on hold)."
+    },
+    {
+      "area": "Human Resources Management, Marketing, Entrepreneurship, Strategic Management",
+      "note": "No item (1 or fewer per exam). All mapped keyed sources are OpenStax (on hold)."
+    }
+  ],
+  "heldOpenStax": {
+    "file": "_hold-openstax/exams/business-admin-core.json",
+    "items": 90,
+    "ids": "core-001 to core-092",
+    "note": "SOURCES.md 5.1 maps this exam almost entirely to OpenStax books (CC BY-NC-SA 4.0). OpenStax says its books may not be ingested into large language models or generative AI offerings without its written permission, so the owner put those 90 items on hold until OpenStax answers. This file was rebuilt without reading them. The questions here start at core-101 so that the two sets can be merged later without an id clash. If the held file is restored, merge rather than overwrite, or these items are lost."
+  },
+  "selectionNote": "Because the OpenStax pool is on hold, this file uses the other sources in the SOURCES.md register whose topics match core instructional areas: Investor.gov investing quizzes and FDIC Money Smart for Adults (both public domain, register section 2.2) and the BCcampus tourism book (CC BY 4.0, section 2.3). SOURCES.md maps these to the personal finance, business management and hospitality exams rather than to core, so most items here also appear in those files (see verification). Only items with exactly one keyed answer and 4 choices (or 5-6 choices trimmed to 4 by removing incorrect options) were used. Area tags are by topic and approximate; DECA's performance indicator list was not checked, so pi is null.",
+  "formatNote": "Wording is the source's own. Only formatting was dropped: Investor.gov question numbers (\"Q7.\"), FDIC option letters, and HTML. Choice order is the source's order, except where options were removed (adapted: true). Items with keepChoiceOrder: true have an \"All of the above\" or \"Each will have the same value\" option or ordered numeric ranges, so do not shuffle them. Elsewhere, shuffling is safe.",
+  "difficultyNote": "difficulty is an estimate by the builder: 1 = recall of a definition, 2 = applying a concept or a one-step calculation, 3 = a multi-step calculation or comparison.",
+  "explanationNote": "explanationFrom \"source\" = the source's own answer text (Investor.gov quiz results text) or a quotation from the section the item tests (BCcampus chapter page, FDIC Instructor Guide), with the location named first. \"source-excerpt\" = part of the Investor.gov answer text, cut because the rest of it has slips (compound-interest-quiz question 8 swaps the compounding periods in its worked numbers; question 5 says \"Investment A\" where it means Investment C). The key is not affected in either case.",
+  "verification": {
+    "verifiedAt": "2026-10-11",
+    "verifier": "Independent answer-key and licence verifier (cold re-check of the built file, sources re-downloaded)",
+    "checked": 21,
+    "removed": 1,
+    "fixed": 0,
+    "notes": [
+      "Method: each stem was solved before its key was read. Every source was then downloaded fresh on 2026-10-11: the 9 Investor.gov quiz pages (stems, choices and keys parsed from their new Question(...) calls, answer text from \"Answers Explained\"), the 4 FDIC Instructor Guide PDFs (pdftotext, layout and raw), the BCcampus H5P embeds 41, 42 and 54 (H5PIntegration JSON), and chapters 11.3 and 13.3 through the Pressbooks REST API (the chapter HTML pages sit behind a Cloudflare challenge for scripted fetches).",
+      "Investor.gov (13 items, core-105 to core-117): stem, all 4 choices and the key match the page data exactly for every item. Every explanation is the page's own answer text, and each attribution heading equals the page's h1, dashes included. No quiz page carries a copyright notice. Licence confirmed on sec.gov/about/privacy-information (\"may be copied or further distributed by users of the web site without the SEC's permission\"; credit the SEC; do not use the SEC seal or logos) and investor.gov/disclaimer (provided by the SEC Office of Investor Education and Assistance).",
+      "FDIC Money Smart for Adults (core-119, core-120, core-121): the \"Answer Key for Both the Pre- and Post-Training Surveys\" blocks match (Module 4 Q2 key c, Module 9 Q1 key b, Module 11 Q4 key d). The options removed in the 4-choice trims (Module 4: e. All of the above, f. None of the above; Module 9: e. None of the above) are incorrect under the key, so the trims are safe. The FDIC's Money Smart for Adults page links each PDF as \"Module N: Instructor Guide\". None of the four PDFs has a copyright, \"used with permission\" or third-party credit line. FIL-58-2001 (\"have no copyright restrictions\") was re-confirmed.",
+      "BCcampus (core-101 to core-104): H5P 41 (MultiChoice, correct flag on the first choice), H5P 42 (SingleChoiceSet, first answer correct, both questions) and H5P 54 question 1 (correct flag on \"Find a solution\"; the dropped fifth option \"Figure out who to blame\" is flagged incorrect) match the file. The book home page licence (\"licensed under a Creative Commons Attribution 4.0 International License, except where otherwise noted\"), the recommended attribution line, publisher BCcampus and the chapter titles \"11.3 Laws and Regulations\" and \"13.3 Integrating Planning with Education and Experience\" are all confirmed. H5P 41 and 42 metadata: CC BY 4.0, author Blake Rowsell. H5P 54 metadata is \"U\" (undisclosed) with no author, but it is embedded in chapter 13.3, whose Pressbooks section licence is \"cc-by\", with no other notice, so it stays. The business-management.json note saying H5P 54 is \"not embedded in any book page\" is wrong.",
+      "Every quotation in the FDIC and BCcampus explanations was found verbatim in its source. The Module 4 quote (\"A spending and saving plan helps you compare your income and expenses...\") is interleaved with the slide column in pdftotext output, but reads continuously in layout mode.",
+      "REMOVED core-118 (FDIC Module 10, survey question 4, \"You can find your net worth by:\", keyed \"d. Both b & c\"). Module 10 defines equity as \"the value of an asset minus the liability related to that asset\", and its own liabilities worksheet lists credit card balances, bills for medical and other services, student loans and cash loans from friends, none of which relates to an asset. Adding up all your equity therefore misses those debts, so choice c is not net worth whenever such debts exist, and choice b alone is defensible. The key is ambiguous and cannot be fixed from the source: the source key is d, and dropping d would leave 3 choices. The Module 10 source entry was removed with it, and coverage.actual is now Financial Analysis 16. personal-financial-literacy.json also leaves this item out, but its stated reason (\"the module defines net worth only as assets minus liabilities\") is inaccurate: the module also says net worth is \"the equity from all of your assets added together\". The ambiguity comes from the module's own equity definition.",
+      "Close calls kept: core-102, where D \"Transfers the acceptance of negligence\" is wrong because the waiver transfers acceptance of risk and the participant waives claims (A is the H5P's own feedback wording). core-103, where only A matches the four components in 11.3 (C swaps risks for activity; D has the friend signature that the book advises against). core-119, where B (which bills to pay first) is Module 4 Section 2 \"When Money Is Short\", a separate objective from the plan itself in Section 1, so key c stands.",
+      "Re-solved calculations: core-112 (3% compounding daily gives the highest effective rate), core-113 (A and B both 1.4 x 0.9 = 1.26, C 1.1^3 = 1.331, so C), core-114 (ln 2 / ln 1.07 = 10.2 years, Rule of 72 gives 10.3, so B), core-115 (1.2^3 = 1.73, 1.2^4 = 2.07, so B), core-117 ($25 / $50 = 50%, so B).",
+      "Duplicates: no two stems in this file match. core-109 and core-110 share a choice set but test different terms (diversification vs dollar-cost averaging) and come from different quizzes. Cross-file: 14 of the 16 remaining Investor.gov and FDIC items are also in personal-financial-literacy.json (all except core-111 and core-114), and all 4 BCcampus items are in business-management.json and hospitality-tourism.json. They are kept because core items recur across DECA exams, but a pooled practice mode should de-duplicate by source URL and stem.",
+      "Fixed 0: no stem, choice, key, explanation, attribution or licence error was found in the 20 remaining items."
+    ],
+    "buildCheck": {
+      "verifiedAt": "2026-10-11",
+      "checked": 21,
+      "notes": [
+        "Licences were confirmed on each source's own page on 2026-10-11: the SEC Website Dissemination statement and the Investor.gov disclaimer; FDIC FIL-58-2001 and the Instructor Guide front matter (no copyright notice in the four guides); the BCcampus book's home page licence and recommended attribution.",
+        "Extraction was scripted from fresh downloads: Investor.gov quiz pages (new Question(...) calls and the results text), the BCcampus H5P embed JSON (MultiChoice correct flags; SingleChoiceSet first answer is correct), and the FDIC answer key blocks (pdftotext). Stems, choices and keys were taken from that data, not retyped. Every quotation used in an explanation was matched against the downloaded page or PDF text by the build script.",
+        "Every key was re-solved and checked against the source text (the section quoted in the explanation); all agree with the published key and each item has exactly one defensible answer. Notes on the closer calls: core-103 (waiver components) matches the four components listed in 11.3; core-102 choice D (\"Transfers the acceptance of negligence\") is wrong because the waiver transfers acceptance of risk and the participant waives claims; core-118 (net worth) is keyed \"Both b & c\" because the guide gives both definitions; core-115 (loan at 20%) doubles in about 3.8 years (1.2^4 = 2.07), inside \"at least 2 but less than 5\".",
+        "US context: the FDIC and SEC items use US terms (Social Security number, federally insured savings account). They still test general concepts (net worth, penalty APR, compound interest, identity theft), but Canadian students may notice.",
+        "Cross-file duplicates (checked 2026-10-11 by stem): 14 of the 17 Investor.gov and FDIC items are also in personal-financial-literacy.json (all except core-111, core-114 and core-118), and all four BCcampus items are also in business-management.json and hospitality-tourism.json. That is expected, since core items recur across DECA exams, but a pooled practice mode should de-duplicate by source URL and stem."
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "core-101",
+      "area": "Business Law",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Which best describes tort law?",
+      "choices": [
+        "body of the law which will allow an injured person to obtain compensation from the person who caused the injury",
+        "body of the law which will allow an injured person to obtain compensation from anyone involved with the incident",
+        "The same as criminal law",
+        "body of the law which will allow companies to obtain compensation from an injuried person"
+      ],
+      "answer": 0,
+      "explanation": "Section 11.3 Laws and Regulations: \"Tort law in Canada refers to the “body of the law which will allow an injured person to obtain compensation from the person who caused the injury” (Tort Law, n.d.).\"",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC – 2nd Edition, 11.3 Laws and Regulations, H5P activity \"Chapter 11: Tort Law\"",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 11: Tort Law\" by Blake Rowsell in \"11.3 Laws and Regulations,\" Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/. Used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source",
+        "itemRef": "H5P id 41",
+        "h5pLicenceMetadata": "CC BY 4.0"
+      }
+    },
+    {
+      "id": "core-102",
+      "area": "Business Law",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "What is the purpose of the waiver?",
+      "choices": [
+        "Transfers acceptance of risk",
+        "Allows the operator to do what ever they like",
+        "Transfers the pain of an injury",
+        "Transfers the acceptance of negligence"
+      ],
+      "answer": 0,
+      "explanation": "Section 11.3 Laws and Regulations: \"A waiver is a form of contract that transfers acceptance of the risk to the participants by requiring them to acknowledge the risks present in the activity. It also requires participants to waive their right to take legal action if an accident occurs.\"",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC – 2nd Edition, 11.3 Laws and Regulations, H5P activity \"Chapter 11: Waivers\"",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 11: Waivers\" by Blake Rowsell in \"11.3 Laws and Regulations,\" Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/. Used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source",
+        "itemRef": "H5P id 42, question 1",
+        "h5pLicenceMetadata": "CC BY 4.0"
+      }
+    },
+    {
+      "id": "core-103",
+      "area": "Business Law",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "To be effective, a waiver should include:",
+      "choices": [
+        "1. Outline the risks 2. Waive the participants right to pursue legal action 3. Be short and easy to read 4. Signed",
+        "1. Outline the risks 2. Waive the participants right to a fair trial 3. Be short and easy to read 4. Signed",
+        "1. Outline the activity 2. Waive the participants right to pursue legal action 3. Be short and easy to read 4. Signed",
+        "1. Outline the risks 2. Waive the participants right to pursue legal action 3. Be signed by a friend 4. Be short and easy to read"
+      ],
+      "answer": 0,
+      "explanation": "Section 11.3 Laws and Regulations: \"To be effective, a waiver should include the following four components: It should clearly outline the risks in the activity; … It should waive the participant’s right to pursue legal action against the tourism operation in case of negligence; … It should be relatively short and easy to read, be easily recognized as a legal document, and include a place for signature that can be witnessed by a company employee. Current best practices indicate a waiver should not be signed by a friend of the signee or another guest.\"",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC – 2nd Edition, 11.3 Laws and Regulations, H5P activity \"Chapter 11: Waivers\"",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 11: Waivers\" by Blake Rowsell in \"11.3 Laws and Regulations,\" Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/laws-and-regulations/. Used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source",
+        "itemRef": "H5P id 42, question 2",
+        "h5pLicenceMetadata": "CC BY 4.0"
+      }
+    },
+    {
+      "id": "core-104",
+      "area": "Emotional Intelligence",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "In workplace conflicts the ultimate goal is to:",
+      "choices": [
+        "Jump to conclusions",
+        "Play favourites",
+        "Find a solution",
+        "Give away something at no charge"
+      ],
+      "answer": 2,
+      "explanation": "Activity feedback: \"Correct! The ulitimate goal is to find a solution.\" Section 13.3: \"In most conflicts, the ultimate goal must be to find a resolution. Avoiding or ignoring conflict is not an effective strategy.\"",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC – 2nd Edition, 13.3 Integrating Planning with Education and Experience, H5P activity \"Conflict Resolution\"",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/integrating-planning-with-education-and-experience/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Conflict Resolution\" in \"13.3 Integrating Planning with Education and Experience,\" Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/integrating-planning-with-education-and-experience/. Used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Introduction to Tourism and Hospitality in BC – 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection. Adapted: cut from 5 to 4 choices by removing one incorrect option (Figure out who to blame).",
+        "adapted": true,
+        "keyFrom": "source",
+        "itemRef": "H5P id 54, question 1",
+        "h5pLicenceMetadata": "U"
+      }
+    },
+    {
+      "id": "core-105",
+      "area": "Financial Analysis",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "If you buy shares of a company’s stock,",
+      "choices": [
+        "you own a part of the company",
+        "you have lent money to the company",
+        "you are liable for the company’s debts",
+        "the company will return your original investment to you with interest"
+      ],
+      "answer": 0,
+      "explanation": "When you own shares of stock, you own a part of the company. There are no guarantees of profits, or even that you will get your original investment back.",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Back-to-School Investing Quiz (question 7)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/back-to-school-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Back-to-School Investing Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/back-to-school-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source",
+        "itemRef": "question 7"
+      }
+    },
+    {
+      "id": "core-106",
+      "area": "Financial Analysis",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "If you buy a company’s bond,",
+      "choices": [
+        "you own a part of the company",
+        "you have lent money to the company",
+        "you are liable for the company’s debts",
+        "you can help manage the company"
+      ],
+      "answer": 1,
+      "explanation": "A bond is a debt security, similar to an IOU. Borrowers issue bonds to raise money from investors willing to lend them money for a certain amount of time. When you buy a bond, you are lending to the issuer, which may be a government, municipality, or corporation.",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Investing Quiz – December 2022 (question 8)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2022-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz – December 2022,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2022-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source",
+        "itemRef": "question 8"
+      }
+    },
+    {
+      "id": "core-107",
+      "area": "Financial Analysis",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "What is a dividend?",
+      "choices": [
+        "A portion of a company’s earnings that is paid to shareholders",
+        "A type of insurance policy",
+        "A type of loan",
+        "A type of bank account"
+      ],
+      "answer": 0,
+      "explanation": "A dividend is a portion of a company’s profit paid to shareholders. Public companies that pay dividends usually do so on a fixed schedule although they can issue them at any time.",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Investing Quiz - January 2026 (question 7)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2026-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - January 2026,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2026-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source",
+        "itemRef": "question 7"
+      }
+    },
+    {
+      "id": "core-108",
+      "area": "Financial Analysis",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "The profit that comes when an investment is sold for more than the price the investor paid for it is known as:",
+      "choices": [
+        "Principal",
+        "Interest",
+        "Capital Gain",
+        "Depreciation"
+      ],
+      "answer": 2,
+      "explanation": "A capital gain is the profit that comes when an investment is sold for more than the price the investor paid for it.",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Investing Quiz - January 2026 (question 10)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2026-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - January 2026,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/january-2026-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source",
+        "itemRef": "question 10"
+      }
+    },
+    {
+      "id": "core-109",
+      "area": "Financial Analysis",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "The practice of spreading money among different investments is known as:",
+      "choices": [
+        "decumulation",
+        "diversification",
+        "dollar-cost averaging",
+        "risk tolerance"
+      ],
+      "answer": 1,
+      "explanation": "The practice of spreading money among different investments to reduce risk is known as diversification. Diversification is a strategy that can be neatly summed up as “Don’t put all your eggs in one basket.”",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Investing Quiz - July (question 10)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/july-2022-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - July,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/july-2022-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source",
+        "itemRef": "question 10"
+      }
+    },
+    {
+      "id": "core-110",
+      "area": "Financial Analysis",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "The practice of investing money in equal proportions at regular intervals is known as:",
+      "choices": [
+        "decumulation",
+        "diversification",
+        "dollar-cost averaging",
+        "risk tolerance"
+      ],
+      "answer": 2,
+      "explanation": "Dollar-cost averaging means investing your money in equal portions, at regular intervals, regardless of the ups and downs in the market. This investment strategy can help you manage risk by following a consistent pattern of adding new money to your investment over a long period of time.",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Investing Quiz – December 2022 (question 7)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2022-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz – December 2022,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/december-2022-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source",
+        "itemRef": "question 7"
+      }
+    },
+    {
+      "id": "core-111",
+      "area": "Financial Analysis",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Beginning to save while you are young is recommended by financial experts because ___________.",
+      "choices": [
+        "you can lock in higher interest rates when you buy on credit.",
+        "the younger years tend to be the highest earning years of one’s life.",
+        "banks pay higher rates of interest to younger people than they pay to those who are older.",
+        "money saved early in life can increase through compound interest over a long period of time."
+      ],
+      "answer": 3,
+      "explanation": "One of the best ways to build wealth is by saving and investing over a long period of time. The earlier you start, the easier it is for your money to grow using the power of compound interest.",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Compound Interest Quiz (question 6)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/compound-interest-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Compound Interest Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/compound-interest-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source",
+        "itemRef": "question 6"
+      }
+    },
+    {
+      "id": "core-112",
+      "area": "Financial Analysis",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "A federally insured savings account with which of the following annual interest rates will grow most quickly?",
+      "choices": [
+        "2 percent compounding annually",
+        "2 percent compounding quarterly",
+        "3 percent compounding monthly",
+        "3 percent compounding daily"
+      ],
+      "answer": 3,
+      "explanation": "Generally speaking, an account with the highest annual interest rate will grow the fastest. Among accounts with the same annual interest rate, the account earning interest that compounds the most frequently will grow the fastest.",
+      "explanationFrom": "source-excerpt",
+      "source": {
+        "title": "Compound Interest Quiz (question 8)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/compound-interest-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Compound Interest Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/compound-interest-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source",
+        "itemRef": "question 8"
+      }
+    },
+    {
+      "id": "core-113",
+      "area": "Financial Analysis",
+      "pi": null,
+      "difficulty": 3,
+      "stem": "Which investment will have the highest value after three years?",
+      "choices": [
+        "Investment A: Year 1 return = +40%, Year 2 return = +0%, Year 3 return = -10%",
+        "Investment B: Year 1 return = -10%, Year 2 return = +0%, Year 3 return = +40%",
+        "Investment C: Year 1 return = +10%, Year 2 return = +10%, Year 3 return = +10%",
+        "Each will have the same value after three years"
+      ],
+      "answer": 2,
+      "explanation": "Investment A and Investment B will have the same value, but that value will be lower than Investment C. Let’s assume an initial balance of $10,000 for each investment. … then the value of the Investment A will be $12,600 after Year 3. … then the value of the Investment B will be $12,600 after Year 3. … then the value of Investment C will be $13,310.",
+      "explanationFrom": "source-excerpt",
+      "source": {
+        "title": "Compound Interest Quiz (question 5)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/compound-interest-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Compound Interest Quiz,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/compound-interest-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source",
+        "itemRef": "question 5"
+      },
+      "keepChoiceOrder": true
+    },
+    {
+      "id": "core-114",
+      "area": "Financial Analysis",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Dom has $10,000 and has set a financial goal of $20,000. If Dom’s investment account earns an average annual return of 7%, Dom will reach the goal in approximately:",
+      "choices": [
+        "7 years, assuming no additional contributions",
+        "10 years, assuming no additional contributions",
+        "12 years, assuming no additional contributions",
+        "12 years, assuming additional contributions of 10% of the principal"
+      ],
+      "answer": 1,
+      "explanation": "The Rule of 72 is a great way to estimate how an investment will grow over time. If you know the rate of return, the Rule of 72 can tell you approximately how long it will take for the investment to double in value. Simply divide the number 72 by the investment’s expected rate of return. Assuming an expected rate of return of 7%, an investment, assuming no additional contributions, will double in value about every 10 years (72 divided by 7 equals 10.3).",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Investing Quiz - September 2021 (question 5)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/september-2021-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - September 2021,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/september-2021-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source",
+        "itemRef": "question 5"
+      }
+    },
+    {
+      "id": "core-115",
+      "area": "Financial Analysis",
+      "pi": null,
+      "difficulty": 3,
+      "stem": "Suppose you owe $1,000 on a loan and the interest rate you are charged is 20% per year compounded annually. If you didn’t pay anything off, at this interest rate, how many years would it take for the amount you owe to double?",
+      "choices": [
+        "Less than 2 years",
+        "At least 2 years but less than 5 years",
+        "At least 5 years but less than 10 years",
+        "At least 10 years"
+      ],
+      "answer": 1,
+      "explanation": "Compound interest can work for you when you save and invest, but it can also work against you if you have taken out a loan! The Rule of 72 can tell you approximately how long it will take for the principal of a loan to double in value (assuming no payments toward the loan are made). Simply divide the number 72 by the interest rate. The amount you owe on a loan with an interest rate of 20% will double about every 3.6 years (72 divided by 20 equals 3.6).",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Investing Quiz – February 2024 (question 10)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2024-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz – February 2024,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/february-2024-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source",
+        "itemRef": "question 10"
+      },
+      "keepChoiceOrder": true
+    },
+    {
+      "id": "core-116",
+      "area": "Financial Analysis",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "The strategy of setting up regular automatic deductions from your paycheck or bank account into a savings or investment account to keep yourself on track toward your short and long-term financial goals is known as:",
+      "choices": [
+        "Timing the market",
+        "Paying yourself first",
+        "Putting your eggs in one basket",
+        "Researching before you invest"
+      ],
+      "answer": 1,
+      "explanation": "Many people get into the habit of saving and investing by paying themselves first. An easy way to do this is to have your bank automatically deposit money from your paycheck into a savings or investment account.",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Investing Quiz – June 2022 (question 8)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/june-2022-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz – June 2022,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/june-2022-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source",
+        "itemRef": "question 8"
+      }
+    },
+    {
+      "id": "core-117",
+      "area": "Financial Analysis",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Lizzie buys a share of stock for $50 in a cash account and the price rises to $75. Which of the following is true?",
+      "choices": [
+        "Lizzie earned a 100 percent investment return",
+        "Lizzie earned a 50 percent investment return",
+        "Lizzie may pay for less than the full amount for the share of stock purchased",
+        "Lizzie could owe a broker money plus interest"
+      ],
+      "answer": 1,
+      "explanation": "A “cash account” is a type of brokerage account in which you must pay the full amount for securities purchased. In a cash account you cannot borrow funds from your broker-dealer to pay for transactions in the account. If Lizzie buys a share of stock for $50 in a cash account and the price rises to $75, Lizzie will earn a 50 percent investment return (a $25 gain is 50% of the initial investment of $50).",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Investing Quiz - August (question 9)",
+        "url": "https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2021-quiz",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Investing Quiz - August,\" Investor.gov, U.S. Securities and Exchange Commission, https://www.investor.gov/additional-resources/spotlight/investing-quizzes/august-2021-quiz. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source",
+        "itemRef": "question 9"
+      }
+    },
+    {
+      "id": "core-119",
+      "area": "Financial Analysis",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "A spending and saving plan:",
+      "choices": [
+        "Records the value of your assets",
+        "Tells you which bills to pay first if you can't afford to pay them all",
+        "Lists your income and expenses",
+        "Should not include gifts that you receive or give to others"
+      ],
+      "answer": 2,
+      "explanation": "Instructor Guide, Module 4: Your Spending and Saving Plan (Building Blocks of a Spending and Saving Plan): \"A spending and saving plan helps you compare your income and expenses, understand where your money is going, and make adjustments to guide how you use your money so you can meet your goals.\" \"Some people may call this a budget.\"",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Money Smart for Adults, Module 4: Your Spending and Saving Plan, Instructor Guide (September 2018), Answer Key for Both the Pre- and Post-Training Surveys (question 2)",
+        "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgyIAAR",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Answer Key for Both the Pre- and Post-Training Surveys\" (question 2) in Money Smart for Adults, Module 4: Your Spending and Saving Plan, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgyIAAR. Public domain (US federal work). Adapted: cut from 6 to 4 choices by removing 2 incorrect options (e. All of the above; f. None of the above).",
+        "adapted": true,
+        "keyFrom": "source",
+        "itemRef": "Module 4, survey question 2"
+      }
+    },
+    {
+      "id": "core-120",
+      "area": "Financial Analysis",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "You may be charged a penalty annual percentage rate (APR) if:",
+      "choices": [
+        "You have less than the minimum balance in your account",
+        "You pay your credit card bill late",
+        "You request an increase in your credit limit",
+        "All of the above"
+      ],
+      "answer": 1,
+      "explanation": "Instructor Guide, Module 9: Using Credit Cards, Section 1: How Credit Cards Work: \"Another important term is the Penalty APR. The creditor will likely increase the rate on your credit card by a large amount if it does not receive at least the minimum payment due by the due date. This is the penalty APR.\"",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Money Smart for Adults, Module 9: Using Credit Cards, Instructor Guide (September 2018), Answer Key for Both the Pre- and Post-Training Surveys (question 1)",
+        "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgzBAAR",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Answer Key for Both the Pre- and Post-Training Surveys\" (question 1) in Money Smart for Adults, Module 9: Using Credit Cards, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgzBAAR. Public domain (US federal work). Adapted: cut from 5 to 4 choices by removing one incorrect option (e. None of the above).",
+        "adapted": true,
+        "keyFrom": "source",
+        "itemRef": "Module 9, survey question 1"
+      },
+      "keepChoiceOrder": true
+    },
+    {
+      "id": "core-121",
+      "area": "Financial Analysis",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Which of the following are ways to reduce the risk of identity theft?",
+      "choices": [
+        "Protect your numbers (Social Security number, credit card numbers, bank account numbers, etc.)",
+        "Protect your mail",
+        "Sign up for direct deposit",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Instructor Guide, Module 11, Section 2: Identity Theft and Fraud (Steps to Minimize Identity Theft): \"Be extremely careful about sharing your Social Security number, credit card and debit card numbers, personal identification numbers (PINs), passwords, and other personal information.\" \"Your mail is often an easy target for an identity thief because you likely receive and send personal information in the mail.\" \"Signing up for direct deposit gives thieves less access to your banking information because payments of salary, pensions and annuities, and public benefits do not arrive by mail.\"",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Money Smart for Adults, Module 11: Protecting Your Identity and Other Assets, Instructor Guide (September 2018), Answer Key for Both the Pre- and Post-Training Surveys (question 4)",
+        "url": "https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgzkAAB",
+        "licence": "Public domain (US federal work)",
+        "attribution": "Question from \"Answer Key for Both the Pre- and Post-Training Surveys\" (question 4) in Money Smart for Adults, Module 11: Protecting Your Identity and Other Assets, Instructor Guide (September 2018), Federal Deposit Insurance Corporation, https://catalog.fdic.gov/catalog/sfc/servlet.shepherd/document/download/069t000000BcgzkAAB. Public domain (US federal work).",
+        "adapted": false,
+        "keyFrom": "source",
+        "itemRef": "Module 11, survey question 4"
+      },
+      "keepChoiceOrder": true
+    }
+  ]
+}

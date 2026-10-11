@@ -1,0 +1,186 @@
+{
+  "slug": "finance",
+  "title": "Finance Cluster Exam",
+  "cluster": "finance",
+  "status": "placeholder",
+  "blurb": "Practice questions reused from openly licensed sources for the Finance exam. Most of this exam is waiting on OpenStax permission, so only one question is cleared for now.",
+  "disclaimer": "Questions reused from openly licensed sources (credited on each question). Not official DECA exam content.",
+  "builtAt": "2026-10-11",
+  "placeholderNote": "Only 1 openly licensed item is cleared for this exam (Communications, from Business Writing For Everyone, CC BY-NC 4.0). Every other source SOURCES.md 5.4 maps to Finance is an OpenStax book. Those 79 checked items sit in _hold-openstax/exams/finance.json until OpenStax grants written permission or the owner says to ship them anyway. OpenStax Principles of Finance (216 items, the only source for time value of money and valuation) has no public key and needs a person to verify. Professional Development has no open keyed source at all. Show this exam as a placeholder, not as a practice test.",
+  "licenceNotes": [
+    "fin-086 is from Business Writing For Everyone (Arley Cruthers, Kwantlen Polytechnic University), CC BY-NC 4.0. NC flag: usable only while DECA Masters stays free and non-commercial (no ads, paid tier or sponsor deal). Show its attribution line wherever the question appears.",
+    "BWFE has no AI-use condition, so fin-086 may go to AI features. The held OpenStax items may not (see _hold-openstax/exams/finance.json licenceNotes)."
+  ],
+  "held": {
+    "file": "_hold-openstax/exams/finance.json",
+    "questions": 79,
+    "reason": "OpenStax books say they \"may not be used in the training of large language models or otherwise be ingested into large language models or generative AI offerings without OpenStax's prior written permission.\" Held until OpenStax permits it or the owner decides to ship them anyway.",
+    "idsReserved": "fin-001 to fin-085 belong to the held file (fin-004, fin-024, fin-054, fin-055, fin-060 and fin-084 were removed there for key problems). New cleared items start at fin-086 so a later merge cannot collide."
+  },
+  "coverage": {
+    "blueprint": "DECA Finance exam, Association column (SOURCES.md section 5.4, from the DECA Guide 2026-27 blueprint). Counts out of 100.",
+    "areaCounts": {
+      "Communications": 1
+    },
+    "gaps": [
+      {
+        "area": "Financial Analysis",
+        "blueprintItems": 28,
+        "cleared": 0,
+        "held": 26,
+        "note": "Held: 26 OpenStax Accounting items. Time value of money and valuation would come from OpenStax Principles of Finance, which has no public key and needs a person to verify."
+      },
+      {
+        "area": "Professional Development",
+        "blueprintItems": 14,
+        "cleared": 0,
+        "held": 0,
+        "note": "No openly licensed, publicly keyed multiple-choice source found (SOURCES.md 5.4). Placeholder."
+      },
+      {
+        "area": "Financial-Information Management",
+        "blueprintItems": 10,
+        "cleared": 0,
+        "held": 10,
+        "note": "Held: 10 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Emotional Intelligence",
+        "blueprintItems": 8,
+        "cleared": 0,
+        "held": 8,
+        "note": "Held: 8 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Business Law",
+        "blueprintItems": 8,
+        "cleared": 0,
+        "held": 7,
+        "note": "Held: 7 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Risk Management",
+        "blueprintItems": 7,
+        "cleared": 0,
+        "held": 5,
+        "note": "Held: 5 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Economics",
+        "blueprintItems": 5,
+        "cleared": 0,
+        "held": 5,
+        "note": "Held: 5 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Information Management",
+        "blueprintItems": 5,
+        "cleared": 0,
+        "held": 5,
+        "note": "Held: 5 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Operations",
+        "blueprintItems": 5,
+        "cleared": 0,
+        "held": 5,
+        "note": "Held: 5 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Customer Relations",
+        "blueprintItems": 5,
+        "cleared": 0,
+        "held": 4,
+        "note": "Held: 4 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Communications",
+        "blueprintItems": 4,
+        "cleared": 1,
+        "held": 4,
+        "note": "1 cleared (Business Writing For Everyone). Held: 4 OpenStax items (Principles of Marketing, Principles of Data Science). SOURCES.md expected 2 usable items in BWFE activity 42; a full re-count of the book's 45 H5P activities found only 1 four-option single-answer item."
+      }
+    ]
+  },
+  "formatNote": "Wording, choice order and key are the source's own; only HTML markup was dropped. fin-086 has fixedOrder: true because its key is \"All of the above.\", so the app must not shuffle its choices.",
+  "difficultyNote": "difficulty is an estimate (1 easy, 2 medium, 3 hard), not an expert rating.",
+  "sources": [
+    {
+      "title": "Business Writing For Everyone",
+      "authors": [
+        "Arley Cruthers"
+      ],
+      "publisher": "Kwantlen Polytechnic University",
+      "year": "2021",
+      "url": "https://kpu.pressbooks.pub/businesswriting/",
+      "licence": "CC BY-NC 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "licenceEvidence": "Book home page (https://kpu.pressbooks.pub/businesswriting/), checked 2026-10-11: \"Business Writing For Everyone Copyright © 2021 by Arley Cruthers is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License, except where otherwise noted.\" The book metadata (https://kpu.pressbooks.pub/businesswriting/wp-json/pressbooks/v2/metadata) gives license https://creativecommons.org/licenses/by-nc/4.0/. The \"Reviewing CMAPP\" section sets no section licence of its own.",
+      "attribution": "Business Writing For Everyone by Arley Cruthers, Kwantlen Polytechnic University, https://kpu.pressbooks.pub/businesswriting/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "nonCommercial": true,
+      "questions": 1,
+      "keyFrom": "H5P activity data (MultiChoice \"correct\" flag)",
+      "flags": [
+        "NC: allowed only because DECA Masters is free and non-commercial.",
+        "H5P activity 42 carries licence metadata \"U\" (undisclosed). It falls under the book's \"except where otherwise noted\" CC BY-NC 4.0 statement.",
+        "Activity 42 is in the book's public H5P library but not embedded in any chapter (Chapter 6 \"Test Your Knowledge\" embeds activity 10), so source.url is the activity's embed URL and sectionUrl points to the \"Reviewing CMAPP\" section that backs the explanation.",
+        "Re-count 2026-10-11: the book's 45 H5P activities hold 1 four-option single-answer item, 11 three-option, 6 two-option and 1 unkeyed two-option MC, plus true/false, drag-and-drop, hotspot and essay activities. SOURCES.md said 2 four-option items."
+      ]
+    },
+    {
+      "title": "Business Writing For Everyone, H5P activity \"Genre Knowledge Test\"",
+      "url": "https://kpu.pressbooks.pub/businesswriting/wp-admin/admin-ajax.php?action=h5p_embed&id=42",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Business Writing For Everyone by Arley Cruthers, Kwantlen Polytechnic University, https://kpu.pressbooks.pub/businesswriting/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://kpu.pressbooks.pub/businesswriting/"
+    }
+  ],
+  "questions": [
+    {
+      "id": "fin-086",
+      "area": "Communications",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "When choosing a genre, which of the following questions should you ask yourself?",
+      "choices": [
+        "How quickly does my audience need this information?",
+        "How does my audience expect to receive this information?",
+        "What way is this information normally sent in my organization?",
+        "All of the above."
+      ],
+      "answer": 3,
+      "explanation": "The book's section \"Reviewing CMAPP\" gives a list of \"questions you can ask yourself before you choose a genre\". The questions in the other three choices are all on that list, word for word, so \"All of the above.\" is correct.",
+      "explanationFrom": "note",
+      "fixedOrder": true,
+      "source": {
+        "title": "Business Writing For Everyone, H5P activity \"Genre Knowledge Test\"",
+        "url": "https://kpu.pressbooks.pub/businesswriting/wp-admin/admin-ajax.php?action=h5p_embed&id=42",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Question from the H5P activity \"Genre Knowledge Test\" in Business Writing For Everyone by Arley Cruthers, Kwantlen Polytechnic University, https://kpu.pressbooks.pub/businesswriting/wp-admin/admin-ajax.php?action=h5p_embed&id=42. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source",
+        "publisher": "Kwantlen Polytechnic University",
+        "itemRef": "h5p id 42, slide 1, question 2",
+        "sectionUrl": "https://kpu.pressbooks.pub/businesswriting/chapter/reviewing-cmapp/",
+        "noAI": false
+      }
+    }
+  ],
+  "explanationNote": "explanationFrom \"note\" = a short neutral pointer written for DECA Masters that names the source section backing the key, because the source activity has no feedback or rationale of its own.",
+  "verification": {
+    "verifiedAt": "2026-10-11",
+    "removed": 0,
+    "fixed": 1,
+    "notes": [
+      "Checked 1 of 1 question (fin-086). Kept 1, removed 0. No duplicates (one item; its stem appears in no other deca-content file).",
+      "fin-086 solved before reading the key: choices A to C each name a question the CMAPP section tells you to ask before choosing a genre, so \"All of the above.\" is the single best answer. Matches the key (index 3). fixedOrder true is required and set.",
+      "Source trace: the live H5P data for activity 42 (https://kpu.pressbooks.pub/businesswriting/wp-admin/admin-ajax.php?action=h5p_embed&id=42, \"Genre Knowledge Test\", H5P.CoursePresentation, slide 1 element 2) gives the same stem and the same four answers in the same order with HTML stripped, and flags only \"All of the above.\" as correct. Checked by script: stem and all 4 choices equal, correct flag equals answer index. itemRef is right. adapted=false is right (only <p>/<div> markup dropped; the live player shuffles answers, but the stored order is the file order).",
+      "Explanation check: \"Reviewing CMAPP\" (https://kpu.pressbooks.pub/businesswriting/chapter/reviewing-cmapp/) says \"Here are some questions you can ask yourself before you choose a genre:\" and lists choices A, B and C word for word. The quoted phrase is exact.",
+      "Fixed: explanationFrom was \"source\", but the H5P activity has no feedback text (tip, chosenFeedback and notChosenFeedback are all empty), so the explanation is a DECA Masters pointer to the section, not source wording. Changed to \"note\" (same convention as business-management.json) and added a top-level explanationNote.",
+      "Licence: book home page and every page footer say \"Business Writing For Everyone Copyright (c) 2021 by Arley Cruthers is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License, except where otherwise noted.\" Pressbooks metadata API gives https://creativecommons.org/licenses/by-nc/4.0/. Chapter 447 (Reviewing CMAPP) has no section licence. H5P metadata licence is \"U\" (undisclosed), so the book licence applies. Attribution line has title, author, source URL and licence with link: correct.",
+      "Licence flag for the owner: the book's Adaptation Statement (https://kpu.pressbooks.pub/businesswriting/front-matter/introduction/) still carries an old line, \"Unless stated otherwise, Business Communication For Everyone (c) 2019 by Arley Cruthers and is licensed under a Creative Commons-Attribution-NonCommercial-ShareAlike 4.0 International license\". The same statement says that for Chapter 6 the author \"Added reference to CMAPP\" and \"Created H5P content\", so this item is the author's own work, not text from the chapter's third-party sources (Ashman, CC BY-NC-SA 4.0; Writing Commons \"Memos\", CC BY-NC-ND 3.0). Kept \"CC BY-NC 4.0\" as the current book licence. Verbatim, attributed, non-commercial reuse is allowed under either BY-NC or BY-NC-SA, so the item stays either way.",
+      "source.url check: activity 42 is embedded in no chapter (scan of all 169 chapters through the Pressbooks REST API; Chapter 6 \"Test Your Knowledge\" embeds activity 10), so the H5P embed URL is the deepest stable URL. The site sits behind an AWS WAF JavaScript challenge, so plain curl and WebFetch get 403 or 202; open it in a browser.",
+      "NC flag stands: allowed only while DECA Masters stays free and non-commercial."
+    ]
+  }
+}

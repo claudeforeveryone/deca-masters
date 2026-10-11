@@ -1,0 +1,142 @@
+{
+  "cluster": "personal-finance",
+  "status": "placeholder",
+  "placeholderNote": "DECA Masters stores no role-play or case-study text. Each event links to the official sample events DECA Inc. publishes on deca.org (copyright DECA Inc.; linked, never copied). Students open the official PDF, then practise with the trainer's timer, performance-indicator checklist and self-evaluation.",
+  "disclaimer": "Links to official DECA Inc. sample events hosted by DECA. DECA Masters is an independent practice tool, not affiliated with DECA Inc.",
+  "season": "2026-2027",
+  "verifiedAt": "2026-10-11",
+  "verification": "Every url and pageUrl returned HTTP 200 on 2026-10-11; every url is a PDF whose first page names the event code and year shown here.",
+  "sources": [
+    {
+      "title": "DECA high school competitive event pages (Sample Event link and Classroom Resources role-plays)",
+      "url": "https://www.deca.org/compete",
+      "licence": "All rights reserved (DECA Inc.). Linked only, no text reused."
+    },
+    {
+      "title": "DECA Guide 2026-27 event guidelines (prep time, presentation time, judge role)",
+      "url": "https://www.deca.org/compete",
+      "licence": "All rights reserved (DECA Inc.). Facts summarised, no text reused."
+    }
+  ],
+  "events": [
+    {
+      "eventCode": "PFL",
+      "eventName": "Personal Financial Literacy",
+      "component": "roleplay",
+      "officialUrl": "https://www.deca.org/compete/personal-financial-literacy",
+      "guidelinesUrl": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3c75038e4955853e3fbb2e_HS_PFL_Guidelines.pdf",
+      "officialSamples": [
+        {
+          "title": "Official sample event, 2026-27 format (PFL-26 District Event)",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6a3dc390852bc4be54e3b382_DECA_PFL_District_Event_Sample.pdf",
+          "season": "2026-27",
+          "round": "Sample Event",
+          "instructionalArea": null,
+          "kind": "current-format-sample",
+          "pageUrl": "https://www.deca.org/compete/personal-financial-literacy",
+          "formatNote": "The 2025-26 District Event reissued by DECA in the 2026-27 layout (Solution criteria and Career Competencies)."
+        },
+        {
+          "title": "District Event: Managing Credit",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/69a1edcee8570c0096cf7073_DECA_PFL_2026_District_Event.pdf",
+          "season": "2025-26",
+          "round": "District Event",
+          "instructionalArea": "Managing Credit",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/personal-financial-literacy-2026"
+        },
+        {
+          "title": "District Event: Saving",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/67c1deaafeed4bec0070e645_DECA_PFL_2025_District_Event.pdf",
+          "season": "2024-25",
+          "round": "District Event",
+          "instructionalArea": "Saving",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/personal-financial-literacy-2025"
+        },
+        {
+          "title": "District Event: Spending",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/65dca78f3bd9ae1d3a3fd612_DECA_PFL_2024_District_Event.pdf",
+          "season": "2023-24",
+          "round": "District Event",
+          "instructionalArea": "Spending",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/personal-financial-literacy-2024"
+        },
+        {
+          "title": "District Event: Earning Income",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/63fcd9cdd057abf4a08f4cc5_DECA_PFL_2023_District_Event_CR.pdf",
+          "season": "2022-23",
+          "round": "District Event",
+          "instructionalArea": "Earning Income",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/personal-financial-literacy-2023"
+        },
+        {
+          "title": "District Event: Investing",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399ea6da1dff9d33d84dbb4_DECA_PFL_2022_District_Event.pdf",
+          "season": "2021-22",
+          "round": "District Event",
+          "instructionalArea": "Investing",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/personal-financial-literacy-2022"
+        },
+        {
+          "title": "District Event (virtual): Managing Credit",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399ea14ca2be2713508e12f_DECA_PFL_2021_District_Event_Virtual.pdf",
+          "season": "2020-21",
+          "round": "District Event (virtual)",
+          "instructionalArea": "Managing Credit",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/personal-financial-literacy-2021"
+        },
+        {
+          "title": "District Event: Managing Risk",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399e977e220eed03a6d11d7_DECA_PFL_2020_District_Event.pdf",
+          "season": "2019-20",
+          "round": "District Event",
+          "instructionalArea": "Managing Risk",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/personal-financial-literacy-2020"
+        },
+        {
+          "title": "District Event: Spending",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399e91cdf80ce10d730ec79_DECA_PFL_2019_District_Event.pdf",
+          "season": "2018-19",
+          "round": "District Event",
+          "instructionalArea": "Spending",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/personal-financial-literacy-2019"
+        },
+        {
+          "title": "District Event: Earning Income",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399e8a111c31fc62a71db08_DECA_PFL_2018_District_Event.pdf",
+          "season": "2017-18",
+          "round": "District Event",
+          "instructionalArea": "Earning Income",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/personal-financial-literacy-2018"
+        },
+        {
+          "title": "District Event: Managing Credit",
+          "url": "https://cdn.prod.website-files.com/635c470cc81318fc3e9c1e0e/6399e7d085a3c5981cdf2b35_DECA_PFL_2017_District_Event.pdf",
+          "season": "2016-17",
+          "round": "District Event",
+          "instructionalArea": "Managing Credit",
+          "kind": "past-district-event",
+          "pageUrl": "https://www.deca.org/advisor-resources/personal-financial-literacy-2017"
+        }
+      ],
+      "format": {
+        "prepMinutes": 10,
+        "presentationMinutes": 10,
+        "judgeRole": "A qualified business executive who plays the role set out in the written scenario. After your response, the judge asks the follow-up questions provided in the event, then scores you on the evaluation form.",
+        "performanceIndicators": 3,
+        "participants": "1",
+        "rounds": "1 role-play, second role-play for finalists"
+      },
+      "placeholder": true,
+      "note": "Open the official sample, then use the trainer's timer, PI checklist and self-evaluation"
+    }
+  ]
+}

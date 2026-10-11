@@ -1,0 +1,244 @@
+{
+  "slug": "marketing",
+  "title": "Marketing Cluster Exam",
+  "cluster": "marketing",
+  "status": "placeholder",
+  "blurb": "Practice questions reused from openly licensed sources for the Marketing exam. Most of this exam is still a placeholder: see the note below.",
+  "disclaimer": "Questions reused from openly licensed sources (credited on each question). Not official DECA exam content.",
+  "placeholderNote": "Only 1 openly licensed item is cleared for the Marketing exam right now. Almost every source that SOURCES.md maps to this exam is an OpenStax book, and OpenStax forbids ingestion into large language models or generative AI without its written permission, so the 94 OpenStax items built for this exam are held in _hold-openstax/exams/marketing.json until the owner gets that permission. The only other mapped source, Business Writing For Everyone (KPU, CC BY-NC 4.0), has 45 H5P activities but just one four-option, single-answer multiple-choice item (SOURCES.md estimated 2; a scan of all 45 found 1). Of its other 18 multiple-choice items, 11 are single-answer with 3 options (usable only if the owner allows 3-choice items, SOURCES.md 7.2) and 7 have just 2 options (not usable). None were padded to 4 choices. Every area without items is a labelled placeholder (see placeholders).",
+  "licenceNote": "Business Writing For Everyone is \"licensed under a Creative Commons Attribution-NonCommercial 4.0 International License, except where otherwise noted\" (book home page and the Reviewing CMAPP page, checked 2026-10-11). NonCommercial: DECA Masters must stay free and non-commercial to use it. Show each item's attribution line wherever the item appears; credit Kwantlen Polytechnic University by name only, no logo, no implied endorsement.",
+  "areaNote": "Areas follow the DECA 2026-27 Marketing exam blueprint, association-level counts (SOURCES.md 3 and 5.6). targetCount is that count; haveCount is what this file holds; heldOpenStaxCount is what waits in _hold-openstax.",
+  "difficultyNote": "Difficulty is an estimate by the building agent after reading the item (1 = recall, the answer is one of the question list given in the section). Not rated by a person.",
+  "placeholders": [
+    {
+      "area": "Marketing-Information Management",
+      "targetCount": 14,
+      "haveCount": 0,
+      "heldOpenStaxCount": 14,
+      "placeholder": true,
+      "note": "14 OpenStax item(s) mapped to this area are held until OpenStax grants permission (SOURCES.md 1.2). No other mapped source has keyed four-option multiple choice for this area. Placeholder."
+    },
+    {
+      "area": "Product/Service Management",
+      "targetCount": 13,
+      "haveCount": 0,
+      "heldOpenStaxCount": 13,
+      "placeholder": true,
+      "note": "13 OpenStax item(s) mapped to this area are held until OpenStax grants permission (SOURCES.md 1.2). No other mapped source has keyed four-option multiple choice for this area. Placeholder."
+    },
+    {
+      "area": "Promotion",
+      "targetCount": 11,
+      "haveCount": 0,
+      "heldOpenStaxCount": 11,
+      "placeholder": true,
+      "note": "11 OpenStax item(s) mapped to this area are held until OpenStax grants permission (SOURCES.md 1.2). No other mapped source has keyed four-option multiple choice for this area. Placeholder."
+    },
+    {
+      "area": "Emotional Intelligence",
+      "targetCount": 8,
+      "haveCount": 0,
+      "heldOpenStaxCount": 8,
+      "placeholder": true,
+      "note": "8 OpenStax item(s) mapped to this area are held until OpenStax grants permission (SOURCES.md 1.2). No other mapped source has keyed four-option multiple choice for this area. Placeholder."
+    },
+    {
+      "area": "Selling",
+      "targetCount": 7,
+      "haveCount": 0,
+      "heldOpenStaxCount": 7,
+      "placeholder": true,
+      "note": "7 OpenStax item(s) mapped to this area are held until OpenStax grants permission (SOURCES.md 1.2). No other mapped source has keyed four-option multiple choice for this area. Placeholder."
+    },
+    {
+      "area": "Channel Management",
+      "targetCount": 6,
+      "haveCount": 0,
+      "heldOpenStaxCount": 6,
+      "placeholder": true,
+      "note": "6 OpenStax item(s) mapped to this area are held until OpenStax grants permission (SOURCES.md 1.2). No other mapped source has keyed four-option multiple choice for this area. Placeholder."
+    },
+    {
+      "area": "Market Planning",
+      "targetCount": 4,
+      "haveCount": 0,
+      "heldOpenStaxCount": 4,
+      "placeholder": true,
+      "note": "4 OpenStax item(s) mapped to this area are held until OpenStax grants permission (SOURCES.md 1.2). No other mapped source has keyed four-option multiple choice for this area. Placeholder."
+    },
+    {
+      "area": "Pricing",
+      "targetCount": 4,
+      "haveCount": 0,
+      "heldOpenStaxCount": 4,
+      "placeholder": true,
+      "note": "4 OpenStax item(s) mapped to this area are held until OpenStax grants permission (SOURCES.md 1.2). No other mapped source has keyed four-option multiple choice for this area. Placeholder."
+    },
+    {
+      "area": "Economics",
+      "targetCount": 5,
+      "haveCount": 0,
+      "heldOpenStaxCount": 5,
+      "placeholder": true,
+      "note": "5 OpenStax item(s) mapped to this area are held until OpenStax grants permission (SOURCES.md 1.2). No other mapped source has keyed four-option multiple choice for this area. Placeholder."
+    },
+    {
+      "area": "Financial Analysis",
+      "targetCount": 5,
+      "haveCount": 0,
+      "heldOpenStaxCount": 5,
+      "placeholder": true,
+      "note": "5 OpenStax item(s) mapped to this area are held until OpenStax grants permission (SOURCES.md 1.2). No other mapped source has keyed four-option multiple choice for this area. Placeholder."
+    },
+    {
+      "area": "Operations",
+      "targetCount": 5,
+      "haveCount": 0,
+      "heldOpenStaxCount": 5,
+      "placeholder": true,
+      "note": "5 OpenStax item(s) mapped to this area are held until OpenStax grants permission (SOURCES.md 1.2). No other mapped source has keyed four-option multiple choice for this area. Placeholder."
+    },
+    {
+      "area": "Information Management",
+      "targetCount": 4,
+      "haveCount": 0,
+      "heldOpenStaxCount": 4,
+      "placeholder": true,
+      "note": "4 OpenStax item(s) mapped to this area are held until OpenStax grants permission (SOURCES.md 1.2). No other mapped source has keyed four-option multiple choice for this area. Placeholder."
+    },
+    {
+      "area": "Professional Development",
+      "targetCount": 5,
+      "haveCount": 0,
+      "heldOpenStaxCount": 0,
+      "placeholder": true,
+      "note": "No openly licensed, publicly keyed four-option multiple choice found for Professional Development in any mapped source (SOURCES.md 5.6 and 6). Placeholder."
+    },
+    {
+      "area": "Communications",
+      "targetCount": 4,
+      "haveCount": 1,
+      "heldOpenStaxCount": 4,
+      "placeholder": true,
+      "note": "1 item from Business Writing For Everyone (CC BY-NC 4.0) is in this file (mkt-001). 4 OpenStax item(s) mapped to this area are held until OpenStax grants permission (SOURCES.md 1.2). No other mapped source has keyed four-option multiple choice for this area. Partly a placeholder."
+    },
+    {
+      "area": "Business Law",
+      "targetCount": 2,
+      "haveCount": 0,
+      "heldOpenStaxCount": 2,
+      "placeholder": true,
+      "note": "2 OpenStax item(s) mapped to this area are held until OpenStax grants permission (SOURCES.md 1.2). No other mapped source has keyed four-option multiple choice for this area. Placeholder."
+    },
+    {
+      "area": "Customer Relations",
+      "targetCount": 2,
+      "haveCount": 0,
+      "heldOpenStaxCount": 2,
+      "placeholder": true,
+      "note": "2 OpenStax item(s) mapped to this area are held until OpenStax grants permission (SOURCES.md 1.2). No other mapped source has keyed four-option multiple choice for this area. Placeholder."
+    }
+  ],
+  "heldOpenStax": {
+    "file": "_hold-openstax/exams/marketing.json",
+    "questions": 94,
+    "reason": "OpenStax book pages say: \"This book may not be used in the training of large language models or otherwise be ingested into large language models or generative AI offerings without OpenStax's prior written permission.\" Held by the orchestrator on 2026-10-11; not read or rebuilt in this pass.",
+    "restore": "After written permission from OpenStax: copy the questions from _hold-openstax/exams/marketing.json into this file (renumber ids after the items here), add their sources entries, and set status from the new count."
+  },
+  "extraction": {
+    "method": "script: parsed H5PIntegration JSON from each H5P embed page of Business Writing For Everyone (ids 1-45); kept H5P.MultiChoice items with exactly 4 answers and exactly 1 marked correct; HTML tags stripped, wording and order unchanged",
+    "script": "tools/build_marketing_open.js (validate with tools/validate_exam.js)",
+    "scanned": {
+      "activities": 45,
+      "multipleChoiceItems": 19,
+      "fourOptionSingleAnswer": 1,
+      "threeOptionSingleAnswer": 11,
+      "twoOption": 7
+    },
+    "checkedAt": "2026-10-11"
+  },
+  "areaCounts": {
+    "Communications": 1
+  },
+  "sources": [
+    {
+      "title": "Business Writing For Everyone",
+      "authors": "Arley Cruthers",
+      "publisher": "Kwantlen Polytechnic University",
+      "url": "https://kpu.pressbooks.pub/businesswriting/",
+      "licence": "CC BY-NC 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "attribution": "Business Writing For Everyone by Arley Cruthers (Kwantlen Polytechnic University) is used under a CC BY-NC 4.0 licence (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "nonCommercial": true,
+      "shareAlike": false,
+      "licenceEvidence": "Book home page and section page footer, checked 2026-10-11: \"Business Writing For Everyone Copyright (c) 2021 by Arley Cruthers is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License, except where otherwise noted.\" The section's own licence field (pb_section_license) is empty, so the book licence applies.",
+      "requiredAttribution": "Business Writing For Everyone by Arley Cruthers (Kwantlen Polytechnic University) is used under a CC BY-NC 4.0 licence (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "questions": 1,
+      "keyFrom": "H5P activity data (MultiChoice \"correct\": true)",
+      "flags": [
+        "H5P activity 42 \"Genre Knowledge Test\" carries H5P licence metadata \"U\" (undisclosed), so it falls under the book's \"except where otherwise noted\" CC BY-NC 4.0 statement. It is listed on the book's public H5P activities page (https://kpu.pressbooks.pub/businesswriting/h5p-listing/?hpage=3) but is not embedded in any public chapter, so source.url is the activity's own embed URL.",
+        "The book's Adaptation Statement (front matter, written under the earlier title \"Business Communication For Everyone\") says the book \"is licensed under a Creative Commons-Attribution-NonCommercial-ShareAlike 4.0 International license\". The current licence statement on every page says CC BY-NC 4.0. The item is used verbatim (adapted=false), so ShareAlike would not change anything here; if items from this book are ever adapted, share the adaptation under CC BY-NC-SA 4.0 to satisfy both readings.",
+        "The item's last choice is \"All of the above.\", so the app must not shuffle its choices (keepChoiceOrder: true).",
+        "No AI-use restriction found on the book or section pages (checked for \"language model\", \"artificial intelligence\", \"generative AI\")."
+      ]
+    },
+    {
+      "title": "Business Writing For Everyone, H5P activity \"Genre Knowledge Test\"",
+      "url": "https://kpu.pressbooks.pub/businesswriting/wp-admin/admin-ajax.php?action=h5p_embed&id=42",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Business Writing For Everyone by Arley Cruthers (Kwantlen Polytechnic University) is used under a CC BY-NC 4.0 licence (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://kpu.pressbooks.pub/businesswriting/"
+    }
+  ],
+  "questions": [
+    {
+      "id": "mkt-001",
+      "area": "Communications",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "When choosing a genre, which of the following questions should you ask yourself?",
+      "choices": [
+        "How quickly does my audience need this information?",
+        "How does my audience expect to receive this information?",
+        "What way is this information normally sent in my organization?",
+        "All of the above."
+      ],
+      "answer": 3,
+      "explanation": "From \"Reviewing CMAPP\" (Chapter 6: Writing Emails, Memos, Letters and Instant Messages): \"Here are some questions you can ask yourself before you choose a genre: How quickly does my audience need this information? How does my audience expect to receive this information? How will my audience use this information? ... What way is this information normally sent in my organization?\" Each of the first three choices is on that list, so the keyed answer is \"All of the above.\"",
+      "explanationFrom": "source text (section quote); the H5P activity gives no feedback for this item",
+      "keepChoiceOrder": true,
+      "source": {
+        "title": "Business Writing For Everyone, H5P activity \"Genre Knowledge Test\"",
+        "url": "https://kpu.pressbooks.pub/businesswriting/wp-admin/admin-ajax.php?action=h5p_embed&id=42",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Question from the H5P activity \"Genre Knowledge Test\" in Business Writing For Everyone by Arley Cruthers, Kwantlen Polytechnic University, https://kpu.pressbooks.pub/businesswriting/wp-admin/admin-ajax.php?action=h5p_embed&id=42. Explanation quotes \"Reviewing CMAPP,\" https://kpu.pressbooks.pub/businesswriting/chapter/reviewing-cmapp/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source",
+        "publisher": "Kwantlen Polytechnic University",
+        "itemRef": "h5p id 42, slide 1, element 2 (H5P.MultiChoice; key = \"correct\": true)",
+        "sectionUrl": "https://kpu.pressbooks.pub/businesswriting/chapter/reviewing-cmapp/",
+        "nonCommercial": true,
+        "noAI": false
+      }
+    }
+  ],
+  "verification": {
+    "verifiedAt": "2026-10-11",
+    "removed": 0,
+    "fixed": 0,
+    "notes": [
+      "Independent verifier pass (answer key and licence), 2026-10-11. 1 question checked, 1 kept, 0 removed, 0 question fixes. No duplicates (only one item).",
+      "mkt-001: solved before reading the key. A, B and C are each sensible questions to ask before choosing a genre and none excludes the others, so D \"All of the above.\" is the only defensible single best answer; agrees with the key (answer index 3).",
+      "mkt-001 source trace: fetched https://kpu.pressbooks.pub/businesswriting/wp-admin/admin-ajax.php?action=h5p_embed&id=42 on 2026-10-11. H5PIntegration cid-42 \"Genre Knowledge Test\" (H5P.CoursePresentation 1.22), slide 1, element 2 is H5P.MultiChoice 1.14 with question \"When choosing a genre, which of the following questions should you ask yourself?\" and the four answers in the same order and wording as this file (after stripping <p>/<div>); only \"All of the above.\" has correct: true. itemRef is accurate.",
+      "mkt-001 activity 42 is listed on the public H5P listing page https://kpu.pressbooks.pub/businesswriting/h5p-listing/?hpage=3 (ID 42, Genre Knowledge Test, Course Presentation). The Reviewing CMAPP page embeds activity 6, not 42, so the embed URL is the deepest stable URL for the item.",
+      "Licence confirmed on the book home page and the Reviewing CMAPP page footer: \"Business Writing For Everyone Copyright (c) 2021 by Arley Cruthers is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License, except where otherwise noted.\" Both link creativecommons.org/licenses/by-nc/4.0; the section schema.org licence is CC BY-NC, author Arley Cruthers. H5P metadata licence is \"U\" (undisclosed), not a different licence, so the book licence applies. Flagged NonCommercial: usable only while DECA Masters stays free and non-commercial.",
+      "Adaptation Statement (https://kpu.pressbooks.pub/businesswriting/front-matter/introduction/) still says the earlier edition \"Business Communication For Everyone\" is CC BY-NC-SA 4.0; confirmed. Item is verbatim (adapted=false), so no effect now; the existing source flag covers it. No third-party attribution on the Reviewing CMAPP page. No AI or language-model restriction found on the home or section page.",
+      "Attribution line checked against TASL: title, author (Arley Cruthers), publisher (KPU), item URL, licence name and licence URL all present and correct.",
+      "Explanation quote checked word for word against the Reviewing CMAPP page (\"Here are some questions you can ask yourself before you choose a genre: ...\"); the \"...\" elides the source's fitness-class example and two later questions, which is fair. The closing sentence of the explanation (\"Each of the first three choices is on that list...\") is a short editorial link, not source text.",
+      "Metadata only (not a question fix): the Communications placeholder note said no other mapped source had items for the area while haveCount was 1; corrected to name mkt-001.",
+      "Builder note kept: Key comes from the H5P data (the only answer with \"correct\": true). Checked against the book: the Reviewing CMAPP section lists all three other choices word for word as questions to ask before choosing a genre, so \"All of the above.\" is the one defensible answer and agrees with the key.",
+      "Builder note kept: Stem and choices match the H5P data after stripping <p>/<div> tags; source order kept (H5P shuffles on display, which is a display setting only).",
+      "Builder note kept: Licence confirmed on the book home page and on the section page cited in the explanation (both link creativecommons.org/licenses/by-nc/4.0)."
+    ]
+  }
+}

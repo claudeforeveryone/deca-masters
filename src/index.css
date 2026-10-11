@@ -1,105 +1,321 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "./styles/tokens.css";
 
 @layer base {
-  /* Theme colours as RGB channels (see tailwind.config.js). Dark mode comes from Settings > Appearance. */
-  :root {
-    --ink: 20 20 20; --ink-2: 51 51 51; --ink-3: 102 102 102;
-    --line: 228 228 228; --line-strong: 177 177 177;
-    --canvas: 242 244 247; --surface: 255 255 255;
-    --brand: 0 114 206; --brand-hover: 5 92 168; --brand-press: 23 71 131;
-    --tint: 239 246 252; --tint-2: 161 206 239; --tint-3: 112 176 224;
-    --navy: 0 45 107;
-    --good: 0 155 70; --good-bg: 230 245 236;
-    --bad: 204 29 54; --bad-bg: 251 232 235;
+  html {
+    /* Reserve the scrollbar's room from the first paint, so centred content does not jump sideways when a page
+     * grows past the viewport (measured: that one jump was a CLS of 0.99 on desktop). */
+    scrollbar-gutter: stable;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    accent-color: var(--accent);
+    caret-color: var(--accent);
+    scrollbar-color: var(--line-strong) var(--canvas);
+    scrollbar-width: thin;
+    /* the sticky top bar should never cover an anchored heading */
+    scroll-padding-top: calc(var(--bar-h) + var(--space-4));
   }
-  :root[data-theme='dark'] {
-    color-scheme: dark;
-    --ink: 237 241 246; --ink-2: 203 210 219; --ink-3: 150 160 173;
-    --line: 45 55 69; --line-strong: 88 101 118;
-    --canvas: 25 32 42; --surface: 15 20 27;
-    --brand: 31 134 218; --brand-hover: 64 152 228; --brand-press: 110 176 234;
-    --tint: 16 35 58; --tint-2: 36 78 122; --tint-3: 112 176 224;
-    --navy: 161 206 239;
-    --good: 64 199 122; --good-bg: 15 46 30;
-    --bad: 255 112 130; --bad-bg: 62 21 30;
-  }
-  /* Settings > Appearance > Text size scales the whole page. */
-  :root[data-text='large'] body { zoom: 1.1; }
-  :root[data-text='larger'] body { zoom: 1.2; }
 
-  html { -webkit-text-size-adjust: 100%; }
-  html, body { overflow-x: clip; }
-  body { @apply bg-surface font-sans text-[15px] leading-normal text-ink-2 antialiased; }
-  h1, h2, h3, h4 { @apply font-semibold tracking-head text-ink; line-height: 1.1; }
-  :focus-visible { @apply outline outline-2 outline-offset-2 outline-brand; }
-  ::selection { @apply bg-tint-2; }
-  /* Let grid tracks shrink below their content's min-content width (prevents mobile overflow). */
-  .grid > * { min-width: 0; }
+  @media (min-width: 640px) {
+    :root {
+      --gutter: 1.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    :root {
+      --gutter: 2rem;
+      --section-y: 6rem;
+    }
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background: var(--canvas);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 1rem;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "ss01" 0;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    letter-spacing: var(--track-display);
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a {
+    color: var(--link);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+  }
+
+  /* measured numbers line up: timers, scores, counts */
+  code,
+  kbd,
+  samp,
+  .font-mono,
+  .tabular {
+    font-variant-numeric: tabular-nums slashed-zero;
+  }
+
+  ::selection {
+    background: var(--selection);
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+    color: inherit;
+  }
+
+  ::placeholder {
+    color: var(--ink-3);
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
 @layer components {
-  /* Layout */
-  .container-page { @apply mx-auto w-full max-w-[1300px] px-4 sm:px-6 lg:px-10; }
-  /* Full-bleed band inside a centered container (used by page headers). */
-  .bleed { margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); }
-  .diamond-pattern {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cpath d='M36 22 50 36 36 50 22 36Z' fill='none' stroke='%23ffffff' stroke-opacity='.09' stroke-width='3'/%3E%3C/svg%3E");
+  /* The navy stage (landing, closing scene, auth side panel): text, focus and selection tuned for dark navy in both
+   * colour schemes. */
+  .stage {
+    --focus: var(--focus-on-dark);
+    color: var(--on-navy);
+    background: var(--stage-1);
+    color-scheme: dark;
+  }
+  .stage ::selection {
+    background: rgb(77 171 255 / 0.36);
   }
 
-  /* Surfaces */
-  .surface { @apply border border-line bg-surface; }
-  .panel { @apply bg-canvas; }
-  /* Cards, panels and any fully bordered box get softly rounded corners. Utilities such as
-     rounded-soft or rounded-none still win because they sit in a later layer. */
-  .surface, .panel, [class~="border"], [class~="border-2"] { @apply rounded-box; }
-  /* Bordered lists and tile grids clip their rows so hover fills follow the corners. */
-  [class~="divide-y"][class~="border"], [class~="gap-px"][class~="bg-line"] { overflow: hidden; }
+  /* Panels that float over the 3D canvas: the one place glass is allowed. Solid when transparency is reduced. */
+  .glass {
+    background: var(--glass);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    backdrop-filter: blur(14px) saturate(140%);
+    box-shadow: var(--edge-highlight);
+  }
+  @media (prefers-reduced-transparency: reduce) {
+    .glass {
+      background: var(--stage-2);
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+  }
 
-  /* Buttons: square, 2px border, DECA blue */
-  .btn { @apply inline-flex h-10 select-none rounded-soft items-center justify-center gap-2 whitespace-nowrap border-2 px-4 text-[13px] font-semibold tracking-label transition-colors duration-150 disabled:pointer-events-none disabled:opacity-40; }
-  .btn-primary { @apply btn border-brand bg-brand text-white hover:border-brand-hover hover:bg-brand-hover; }
-  .btn-secondary { @apply btn border-brand bg-transparent text-brand hover:bg-brand hover:text-white; }
-  .btn-ghost { @apply btn border-transparent text-ink-2 hover:bg-canvas hover:text-ink; }
-  .btn-white { @apply btn border-white bg-white text-brand hover:bg-transparent hover:text-white; }
-  .btn-outline-white { @apply btn border-white bg-transparent text-white hover:bg-white hover:text-brand; }
-  .btn-sm { @apply h-8 px-3 text-xs; }
-  .btn-lg { @apply h-12 px-6 text-sm; }
+  /* The facet: a 45 degree square, the repeated unit of the system (list marker, tick, selected marker, cluster key). */
+  .facet {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    flex: none;
+    transform: rotate(45deg);
+    background: currentColor;
+  }
 
-  /* Labels */
-  .tag { @apply inline-flex items-center rounded-soft bg-tag px-2 py-1 text-[10px] font-bold uppercase leading-none tracking-label text-white; }
-  .badge { @apply inline-flex items-center gap-1 rounded-soft border border-brand/30 bg-tint px-2 py-0.5 text-xs font-semibold text-brand; }
-  .badge-neutral { @apply inline-flex items-center gap-1 rounded-soft border border-line bg-surface px-2 py-0.5 text-xs font-medium text-ink-2; }
+  /* The shell's <main>: one vertical rhythm for every page. A page that runs edge to edge (the landing) cancels it
+   * with .full-bleed instead of guessing the numbers. */
+  .page-main {
+    --main-pt: 2rem;
+    --main-pb: 4rem;
+    padding-top: var(--main-pt);
+    padding-bottom: var(--main-pb);
+  }
+  @media (min-width: 640px) {
+    .page-main {
+      --main-pt: 2.5rem;
+    }
+  }
+  /* Edge to edge from inside the page column (the landing). Main keeps its box, so nothing shifts when a full-bleed
+   * page replaces a placeholder; the block reaches out to the viewport edges minus the scrollbar (--sbw, measured by
+   * the shell, since 100vw counts it). Put a .shell inside. The first block tucks under the top bar, the last meets
+   * the footer, and stacked ones sit flush. */
+  .full-bleed {
+    margin-inline: calc(50% - 50vw + var(--sbw, 0px) / 2);
+  }
+  .full-bleed:first-child {
+    margin-top: calc(-1 * var(--main-pt, 0px));
+  }
+  .full-bleed:last-child {
+    margin-bottom: calc(-1 * var(--main-pb, 0px));
+  }
+  /* While a route placeholder shows, the footer waits out of sight (it would otherwise move when the page lands). */
+  html[data-route-loading] #root footer {
+    visibility: hidden;
+  }
 
-  /* Forms */
-  .field-label { @apply mb-1.5 block text-xs font-semibold text-ink; }
-  .input { @apply h-10 w-full rounded-soft border border-line-strong bg-surface px-3 text-sm text-ink placeholder:text-ink-3 transition-colors hover:border-ink-3 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand; }
-  textarea.input { @apply h-auto py-2.5; }
+  /* The page column inside the shell: one max width, one gutter, used by every page. */
+  .shell {
+    width: 100%;
+    max-width: var(--shell-max);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
 
-  /* Type */
-  .display { @apply font-extrabold uppercase text-white; letter-spacing: -0.02em; line-height: 0.98; }
-  .h-section { @apply text-lg font-semibold tracking-head text-ink; }
-  .num { @apply tabular-nums; }
-  .table-head { @apply border-b-2 border-ink text-left text-[11px] font-bold uppercase tracking-label text-ink; }
-  .link { @apply font-semibold text-brand hover:text-brand-hover hover:underline underline-offset-4; }
+  /* A band that runs edge to edge from inside the page column (hero strips). Put a .shell inside it so its content
+   * lines up with the page. 100vw counts a desktop scrollbar; body's overflow-x: clip hides that sliver. */
+  .bleed {
+    margin-inline: calc(50% - 50vw);
+  }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .enter { animation: enter .3s cubic-bezier(.16,1,.3,1) both; }
-  @keyframes enter { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-}
-/* Pages paint cards with bg-white; in dark mode those turn into the dark surface. This sits outside the layers
-   on purpose: inside one, `@apply bg-white` (btn-white on the blue bands) would copy it and go dark too. */
-:where(:root[data-theme='dark']) .bg-white { background-color: rgb(var(--surface)); }
-
-/* Settings > Appearance > Reduce motion, for people whose device doesn't ask for it. */
-:root[data-motion='reduce'] *, :root[data-motion='reduce'] *::before, :root[data-motion='reduce'] *::after {
-  animation: none !important;
-  transition: none !important;
-  scroll-behavior: auto !important;
+/* Skeleton shimmer (off under reduced motion via the base layer). */
+@keyframes skeleton-sweep {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
 }
 
-/* Rows that scroll sideways (tab strips) without showing a scrollbar. */
-.no-scrollbar { scrollbar-width: none; }
-.no-scrollbar::-webkit-scrollbar { display: none; }
+/* Overlays: dialog, drawer, popover, toast. Entrances use --ease-out; exits run faster on --ease-in. */
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+@keyframes scrim-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes drawer-in-right {
+  from {
+    transform: translateX(100%);
+  }
+}
+@keyframes drawer-in-bottom {
+  from {
+    transform: translateY(100%);
+  }
+}
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+}
+
+/* RouteFallback's indeterminate bar. Reduced motion stops it (see the base layer). */
+@keyframes route-load {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(300%);
+  }
+}
+
+/* ---- Landing: the one authored entrance (headline lines rise inside their masks, then the lead and actions) ---- */
+@keyframes line-rise {
+  from {
+    transform: translateY(0.42em);
+  }
+}
+@keyframes settle {
+  from {
+    transform: translateY(10px);
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+@keyframes facet-in {
+  from {
+    opacity: 0;
+    transform: translate(var(--fx, 0), var(--fy, 0)) scale(0.96);
+  }
+}
+@keyframes rule-draw {
+  from {
+    transform: scaleX(0);
+  }
+}
+@keyframes seams-in {
+  from {
+    opacity: 0;
+  }
+}
+/* Practice review: the run's record fills tick by tick, once, right after a submit (src/pages/practice/review). The
+ * facet's own rotation is part of the transform, so the keyframe carries it. Reduced motion: the base layer cuts it. */
+@keyframes tick-fill {
+  from {
+    opacity: 0;
+    transform: rotate(45deg) scale(0.9);
+  }
+}
+
+@layer components {
+  .hero-line {
+    display: block;
+    animation: line-rise var(--dur-5) var(--ease-out) both;
+    animation-delay: calc(var(--i, 0) * 90ms + 60ms);
+  }
+  /* The lead and the actions settle into place without fading: they are the first viewport's largest text, and an
+   * opacity fade would hold back the page's largest contentful paint by the length of the fade. */
+  .hero-fade {
+    animation: settle 600ms var(--ease-out) both;
+    animation-delay: var(--d, 0ms);
+  }
+  .poster-facet {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: facet-in 1.1s var(--ease-out) both;
+    animation-delay: var(--d, 0s);
+  }
+  /* The light between the plates comes up once the last facets land, like the live scene's lock. */
+  .poster-seams {
+    animation: seams-in 700ms var(--ease-in-out) 1.7s both;
+  }
+  .rule-draw {
+    transform-origin: left center;
+    animation: rule-draw 900ms var(--ease-out) both;
+    animation-delay: var(--d, 0ms);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-line,
+    .hero-fade,
+    .poster-facet,
+    .poster-seams,
+    .rule-draw {
+      animation: none;
+    }
+  }
+}

@@ -1,0 +1,397 @@
+{
+  "slug": "entrepreneurship",
+  "title": "Entrepreneurship Cluster Exam",
+  "cluster": "entrepreneurship",
+  "status": "placeholder",
+  "blurb": "Practice questions reused from openly licensed sources for the Entrepreneurship exam. Most of this exam is waiting on OpenStax permission, so only four questions are cleared for now.",
+  "disclaimer": "Questions reused from openly licensed sources (credited on each question). Not official DECA exam content.",
+  "builtAt": "2026-10-11",
+  "placeholderNote": "Only 4 openly licensed items are cleared for this exam: 3 from Introduction to Tourism and Hospitality in BC - 2nd Edition (CC BY 4.0; Operations 1, Risk Management 2) and 1 from Business Writing For Everyone (CC BY-NC 4.0; Communications). Every other source SOURCES.md 5.3 maps to Entrepreneurship is an OpenStax book. Those 95 checked items sit in _hold-openstax/exams/entrepreneurship.json until OpenStax grants written permission or the owner says to ship them anyway. The Entrepreneurship area itself (13 blueprint items) and Professional Development (5) have no open keyed source at all. Show this exam as a placeholder, not as a practice test.",
+  "licenceNotes": [
+    "ent-096, ent-097 and ent-098 are from Introduction to Tourism and Hospitality in BC - 2nd Edition (BCcampus), CC BY 4.0. Show each item's attribution line wherever it appears.",
+    "ent-099 is from Business Writing For Everyone (Arley Cruthers, Kwantlen Polytechnic University), CC BY-NC 4.0. NC flag: usable only while DECA Masters stays free and non-commercial (no ads, paid tier or sponsor deal).",
+    "Neither book has an AI-use condition, so these four items may go to AI features. The held OpenStax items may not (SOURCES.md 1.2)."
+  ],
+  "held": {
+    "file": "_hold-openstax/exams/entrepreneurship.json",
+    "questions": 95,
+    "reason": "OpenStax books say they \"may not be used in the training of large language models or otherwise be ingested into large language models or generative AI offerings without OpenStax's prior written permission.\" Held until OpenStax permits it or the owner decides to ship them anyway.",
+    "idsReserved": "ent-001 to ent-095 belong to the held file. Cleared items start at ent-096 so a later merge cannot collide."
+  },
+  "coverage": {
+    "blueprint": "DECA Entrepreneurship exam, Association column (SOURCES.md section 5.3, from the DECA Guide 2026-27 blueprint). Counts out of 100; null means the guide gives 1 or 0.",
+    "areaCounts": {
+      "Operations": 1,
+      "Risk Management": 2,
+      "Communications": 1
+    },
+    "gaps": [
+      {
+        "area": "Entrepreneurship",
+        "blueprintItems": 13,
+        "cleared": 0,
+        "held": 14,
+        "note": "No openly licensed, publicly keyed multiple choice on core entrepreneurship ideas (opportunity recognition, new ventures, business plans) was found. OpenStax Entrepreneurship has only open-ended questions with instructor-only answers, and the SBA Business Guide has no quiz items (SOURCES.md 2.1, 2.2). Placeholder. Held: 14 OpenStax items in the hold file."
+      },
+      {
+        "area": "Operations",
+        "blueprintItems": 13,
+        "cleared": 1,
+        "held": 13,
+        "note": "1 cleared (BC tourism book, workplace safety). SOURCES.md 5.3 maps Operations \"as BMA\", which lists BC tourism H5P activities 40 and 44. Held: 13 OpenStax items in the hold file."
+      },
+      {
+        "area": "Financial Analysis",
+        "blueprintItems": 9,
+        "cleared": 0,
+        "held": 10,
+        "note": "Held: 10 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Strategic Management",
+        "blueprintItems": 7,
+        "cleared": 0,
+        "held": 7,
+        "note": "Held: 7 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Promotion",
+        "blueprintItems": 7,
+        "cleared": 0,
+        "held": 6,
+        "note": "Held: 6 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Emotional Intelligence",
+        "blueprintItems": 6,
+        "cleared": 0,
+        "held": 6,
+        "note": "Held: 6 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Market Planning",
+        "blueprintItems": 6,
+        "cleared": 0,
+        "held": 5,
+        "note": "Held: 5 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Professional Development",
+        "blueprintItems": 5,
+        "cleared": 0,
+        "held": 0,
+        "note": "No openly licensed, publicly keyed multiple-choice source found (SOURCES.md 5.3). Placeholder."
+      },
+      {
+        "area": "Human Resources Management",
+        "blueprintItems": 4,
+        "cleared": 0,
+        "held": 5,
+        "note": "Held: 5 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Business Law",
+        "blueprintItems": 4,
+        "cleared": 0,
+        "held": 4,
+        "note": "Held: 4 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Product/Service Management",
+        "blueprintItems": 4,
+        "cleared": 0,
+        "held": 4,
+        "note": "Held: 4 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Information Management",
+        "blueprintItems": 3,
+        "cleared": 0,
+        "held": 4,
+        "note": "Held: 4 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Channel Management",
+        "blueprintItems": 3,
+        "cleared": 0,
+        "held": 3,
+        "note": "Held: 3 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Economics",
+        "blueprintItems": 3,
+        "cleared": 0,
+        "held": 3,
+        "note": "Held: 3 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Pricing",
+        "blueprintItems": 3,
+        "cleared": 0,
+        "held": 2,
+        "note": "Held: 2 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Marketing-Information Management",
+        "blueprintItems": 3,
+        "cleared": 0,
+        "held": 2,
+        "note": "Held: 2 OpenStax items in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Risk Management",
+        "blueprintItems": 3,
+        "cleared": 2,
+        "held": 2,
+        "note": "2 cleared (BC tourism book, H5P activity 40, risk management process steps one and two). Activity 40 comes in through the Operations mapping (\"as BMA\", SOURCES.md 5.2-5.3); its topic is risk management, so it is tagged here. Held: 2 OpenStax items in the hold file."
+      },
+      {
+        "area": "Communications",
+        "blueprintItems": null,
+        "cleared": 1,
+        "held": 1,
+        "note": "1 cleared (Business Writing For Everyone, H5P activity 42, mapped through \"as Core\"). The book's other H5P multiple choice has 2 or 3 options and cannot be used without writing a distractor. Held: 1 OpenStax item in the hold file."
+      },
+      {
+        "area": "Customer Relations",
+        "blueprintItems": null,
+        "cleared": 0,
+        "held": 1,
+        "note": "Held: 1 OpenStax item in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Quality Management",
+        "blueprintItems": null,
+        "cleared": 0,
+        "held": 1,
+        "note": "Held: 1 OpenStax item in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Selling",
+        "blueprintItems": null,
+        "cleared": 0,
+        "held": 1,
+        "note": "Held: 1 OpenStax item in the hold file. No non-OpenStax source is mapped to this area."
+      },
+      {
+        "area": "Marketing",
+        "blueprintItems": null,
+        "cleared": 0,
+        "held": 1,
+        "note": "Held: 1 OpenStax item in the hold file. No non-OpenStax source is mapped to this area."
+      }
+    ]
+  },
+  "formatNote": "Wording, choice order and key are the source's own; only HTML markup and stray spaces were dropped. Source typos are kept as published (\"worplace\", \"Step one the\"). ent-099 has fixedOrder: true because its key is \"All of the above.\", so the app must not shuffle its choices. ent-097 and ent-098 store the SingleChoiceSet source order, where the first answer is the correct one; the app may shuffle them.",
+  "difficultyNote": "difficulty is an estimate (1 easy, 2 medium, 3 hard), not an expert rating.",
+  "sources": [
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition",
+      "authors": [
+        "Wendy Anderson (Editor)",
+        "Morgan Westcott (Editor)"
+      ],
+      "activityAuthor": "Blake Rowsell (H5P activities 40 and 44)",
+      "publisher": "BCcampus",
+      "year": "2021",
+      "url": "https://opentextbc.ca/introtourism2e/",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "licenceEvidence": "Book home page (https://opentextbc.ca/introtourism2e/) and the footers of the cited chapter pages (11.2, 11.5), checked 2026-10-11: \"Introduction to Tourism and Hospitality in BC - 2nd Edition Copyright (c) 2015, 2020, 2021 by Morgan Westcott and Wendy Anderson is licensed under a Creative Commons Attribution 4.0 International License, except where otherwise noted.\" H5P metadata for activities 40 and 44: licence CC BY 4.0, author Blake Rowsell.",
+      "attribution": "Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "nonCommercial": false,
+      "questions": 3,
+      "keyFrom": "H5P activity data (MultiChoice \"correct\" flag; SingleChoiceSet first answer)",
+      "flags": [
+        "Canadian/BC-specific content: ent-096 asks about a British Columbia agency.",
+        "Activity 40 has four questions; only questions 1 and 2 are used. Questions 3 and 4 reuse the same four choices and test the order of \"risk control\" and \"risk treatment\" in one specific model, so in the same exam each would give the others away.",
+        "Activities 41 and 42 (tort law, waivers) are mapped to Business Management and Hospitality, not Entrepreneurship (SOURCES.md 5.3 maps Business Law to OpenStax only), so they are not used here."
+      ]
+    },
+    {
+      "title": "Business Writing For Everyone",
+      "authors": [
+        "Arley Cruthers"
+      ],
+      "publisher": "Kwantlen Polytechnic University",
+      "year": "2021",
+      "url": "https://kpu.pressbooks.pub/businesswriting/",
+      "licence": "CC BY-NC 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "licenceEvidence": "Book home page (https://kpu.pressbooks.pub/businesswriting/) and the \"Reviewing CMAPP\" page footer, checked 2026-10-11: \"Business Writing For Everyone Copyright (c) 2021 by Arley Cruthers is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License, except where otherwise noted.\" Publisher on the home page: Kwantlen Polytechnic University.",
+      "attribution": "Business Writing For Everyone by Arley Cruthers, Kwantlen Polytechnic University, https://kpu.pressbooks.pub/businesswriting/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "nonCommercial": true,
+      "questions": 1,
+      "keyFrom": "H5P activity data (MultiChoice \"correct\" flag)",
+      "flags": [
+        "NC: allowed only because DECA Masters is free and non-commercial.",
+        "H5P activity 42 carries licence metadata \"U\" (undisclosed). It falls under the book's \"except where otherwise noted\" CC BY-NC 4.0 statement.",
+        "Activity 42 is in the book's public H5P library but is not embedded in any chapter (a scan of all 169 chapter pages on 2026-10-11 found no embedded activity above id 36), so source.url is the activity's embed URL and sectionUrl points to the \"Reviewing CMAPP\" section that backs the explanation.",
+        "Activity 42 holds six multiple-choice questions; only slide 1, question 2 has four options and one keyed answer. The other five have two or three options."
+      ]
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, 11.5 Occupational Health and Safety in Tourism (H5P activity \"Chapter 11: Occupational Health and Safety\")",
+      "url": "https://opentextbc.ca/introtourism2e/chapter/occupational-health-and-safety-in-tourism/",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, 11.2 Risk Management Process (H5P activity \"Chapter 11: Risk Management Process\")",
+      "url": "https://opentextbc.ca/introtourism2e/chapter/risk-management-process/",
+      "licence": "CC BY 4.0",
+      "attribution": "Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence. Download for free from the B.C. Open Collection.",
+      "partOf": "https://opentextbc.ca/introtourism2e/"
+    },
+    {
+      "title": "Business Writing For Everyone, H5P activity \"Genre Knowledge Test\"",
+      "url": "https://kpu.pressbooks.pub/businesswriting/wp-admin/admin-ajax.php?action=h5p_embed&id=42",
+      "licence": "CC BY-NC 4.0",
+      "attribution": "Business Writing For Everyone by Arley Cruthers, Kwantlen Polytechnic University, https://kpu.pressbooks.pub/businesswriting/. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+      "partOf": "https://kpu.pressbooks.pub/businesswriting/"
+    }
+  ],
+  "questions": [
+    {
+      "id": "ent-096",
+      "area": "Operations",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "This organization promotes the prevention of worplace injury, rehabilitates those who are injured at work and provides compensation to replace workers loss of wages while recovering from injury.",
+      "choices": [
+        "Go2HR",
+        "TIABC",
+        "WorkSafeBC",
+        "Tourism Vancouver"
+      ],
+      "answer": 2,
+      "explanation": "Section 11.5 Occupational Health and Safety in Tourism: \"WorkSafeBC is the provincial organization for occupational health and safety in BC.\" Its mandate is to \"Promote the prevention of workplace injury, illness, and disease\", \"Rehabilitate those who are injured and provide timely return to work\" and \"Provide fair compensation to replace workers’ loss of wages while recovering from injuries\".",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, 11.5 Occupational Health and Safety in Tourism (H5P activity \"Chapter 11: Occupational Health and Safety\")",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/occupational-health-and-safety-in-tourism/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 11: Occupational Health and Safety\" by Blake Rowsell in Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/occupational-health-and-safety-in-tourism/. Used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source",
+        "publisher": "BCcampus",
+        "itemRef": "h5p id 44",
+        "sectionUrl": "https://opentextbc.ca/introtourism2e/chapter/occupational-health-and-safety-in-tourism/",
+        "noAI": false
+      }
+    },
+    {
+      "id": "ent-097",
+      "area": "Risk Management",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "Step one the risk management process is:",
+      "choices": [
+        "Risk Identification",
+        "Risk Analysis",
+        "Risk Control",
+        "Risk Treatment"
+      ],
+      "answer": 0,
+      "explanation": "Section 11.2 Risk Management Process: the Destination Canada model for small and medium enterprises \"has four stages: risk identification, risk analysis, risk control, and risk treatment (DC, 2003a).\" \"The initial stage of the risk management process is systematically identifying risks facing the organization.\"",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, 11.2 Risk Management Process (H5P activity \"Chapter 11: Risk Management Process\")",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/risk-management-process/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 11: Risk Management Process\" by Blake Rowsell in Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/risk-management-process/. Used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source",
+        "publisher": "BCcampus",
+        "itemRef": "h5p id 40, question 1 of 4",
+        "sectionUrl": "https://opentextbc.ca/introtourism2e/chapter/risk-management-process/",
+        "noAI": false
+      }
+    },
+    {
+      "id": "ent-098",
+      "area": "Risk Management",
+      "pi": null,
+      "difficulty": 2,
+      "stem": "Step two the risk management process is:",
+      "choices": [
+        "Risk Analysis",
+        "Risk Identification",
+        "Risk Control",
+        "Risk Treatment"
+      ],
+      "answer": 0,
+      "explanation": "Section 11.2 Risk Management Process: the model \"has four stages: risk identification, risk analysis, risk control, and risk treatment (DC, 2003a).\" \"Once an exhaustive list of the risks is compiled, the next step is to ensure a thorough analysis occurs.\" \"A typical risk analysis compares the probability (frequency) of any risks occurring by the consequence (severity) if they do occur.\"",
+      "explanationFrom": "source",
+      "source": {
+        "title": "Introduction to Tourism and Hospitality in BC - 2nd Edition, 11.2 Risk Management Process (H5P activity \"Chapter 11: Risk Management Process\")",
+        "url": "https://opentextbc.ca/introtourism2e/chapter/risk-management-process/",
+        "licence": "CC BY 4.0",
+        "attribution": "Question from the H5P activity \"Chapter 11: Risk Management Process\" by Blake Rowsell in Introduction to Tourism and Hospitality in BC - 2nd Edition by Wendy Anderson and Morgan Westcott (Editors), BCcampus, https://opentextbc.ca/introtourism2e/chapter/risk-management-process/. Used under a CC BY 4.0 Licence (https://creativecommons.org/licenses/by/4.0/). Download for free from the B.C. Open Collection.",
+        "adapted": false,
+        "keyFrom": "source",
+        "publisher": "BCcampus",
+        "itemRef": "h5p id 40, question 2 of 4",
+        "sectionUrl": "https://opentextbc.ca/introtourism2e/chapter/risk-management-process/",
+        "noAI": false
+      }
+    },
+    {
+      "id": "ent-099",
+      "area": "Communications",
+      "pi": null,
+      "difficulty": 1,
+      "stem": "When choosing a genre, which of the following questions should you ask yourself?",
+      "choices": [
+        "How quickly does my audience need this information?",
+        "How does my audience expect to receive this information?",
+        "What way is this information normally sent in my organization?",
+        "All of the above."
+      ],
+      "answer": 3,
+      "explanation": "Section \"Reviewing CMAPP\": \"Here are some questions you can ask yourself before you choose a genre: How quickly does my audience need this information? How does my audience expect to receive this information? How will my audience use this information? ... What way is this information normally sent in my organization?\"",
+      "explanationFrom": "source",
+      "fixedOrder": true,
+      "source": {
+        "title": "Business Writing For Everyone, H5P activity \"Genre Knowledge Test\"",
+        "url": "https://kpu.pressbooks.pub/businesswriting/wp-admin/admin-ajax.php?action=h5p_embed&id=42",
+        "licence": "CC BY-NC 4.0",
+        "attribution": "Question from the H5P activity \"Genre Knowledge Test\" in Business Writing For Everyone by Arley Cruthers, Kwantlen Polytechnic University, https://kpu.pressbooks.pub/businesswriting/wp-admin/admin-ajax.php?action=h5p_embed&id=42. Licensed under CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
+        "adapted": false,
+        "keyFrom": "source",
+        "publisher": "Kwantlen Polytechnic University",
+        "itemRef": "h5p id 42, slide 1, question 2",
+        "sectionUrl": "https://kpu.pressbooks.pub/businesswriting/chapter/reviewing-cmapp/",
+        "noAI": false
+      }
+    }
+  ],
+  "verification": {
+    "verifiedAt": "2026-10-11",
+    "removed": 0,
+    "fixed": 1,
+    "notes": [
+      "Independent re-check of all 4 items. Each cited page was downloaded on 2026-10-11 and its live H5P data parsed: opentextbc.ca 11.5 (H5P id 44, H5P.MultiChoice) and 11.2 (H5P id 40, H5P.SingleChoiceSet), and the kpu.pressbooks.pub h5p_embed id 42 (H5P.CoursePresentation).",
+      "Solved before checking the key: ent-096 C WorkSafeBC (the only choice that does prevention, rehabilitation and wage-loss compensation; go2HR is the tourism HR body that partners with WorkSafeBC on safety awareness, it pays no compensation), ent-097 A Risk Identification, ent-098 A Risk Analysis, ent-099 D All of the above. All four match the source key (MultiChoice \"correct\": true; SingleChoiceSet first answer is the correct one). One defensibly correct answer each.",
+      "Stems and choices match the H5P data word for word once markup, &nbsp; and trailing spaces are dropped. Source typos (\"worplace\", \"Step one the\", \"Step two the\") are kept as published, so adapted=false is right.",
+      "Licences confirmed on the pages themselves: both BC tourism chapter footers and the book home page read \"Introduction to Tourism and Hospitality in BC - 2nd Edition Copyright (c) 2015, 2020, 2021 by Morgan Westcott and Wendy Anderson is licensed under a Creative Commons Attribution 4.0 International License, except where otherwise noted.\"; H5P metadata for ids 40 and 44 is CC BY 4.0, author Blake Rowsell. The book home page asks for exactly the attribution used (\"... by Wendy Anderson and Morgan Westcott (Editors) is used under a CC BY 4.0 Licence.\" plus \"Download for free from the B.C. Open Collection\").",
+      "Business Writing For Everyone home page and the Reviewing CMAPP footer read \"Copyright (c) 2021 by Arley Cruthers is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License, except where otherwise noted.\"; publisher Kwantlen Polytechnic University. Activity 42 metadata licence is \"U\" (undisclosed) with no named author, so it rests on the book-wide statement. NC flag stands: keep only while DECA Masters is free and non-commercial.",
+      "Confirmed activity 42 is not embedded in the chapter 6 \"Test Your Knowledge\" page (that page embeds id 10), so the h5p_embed URL is the deepest stable URL for ent-099; sectionUrl backs the explanation.",
+      "Every quote in the ent-096, ent-097 and ent-098 explanations appears verbatim on the cited section page.",
+      "Fixed 1: ent-099 explanation was the builder's own paraphrase but was labelled explanationFrom \"source\". Replaced it with a direct quote of the Reviewing CMAPP list (with the in-between example elided) so the label is true. Stem, choices and key unchanged.",
+      "No duplicates inside this file. ent-096 to ent-098 repeat ht-016, ht-094, ht-095 (hospitality-tourism) and bma-100, bma-084, bma-098 (business-management); ent-099 repeats fin-086 (finance) and mkt-001 (marketing). Kept: each exam is a separate practice set, but the app should not mix exams in one session without de-duplicating by source.itemRef.",
+      "Minor, left as is: sources[1].year is \"2021\" (copyright year); the book home page gives publication date May 7, 2020."
+    ],
+    "buildCheck": {
+      "verifiedAt": "2026-10-11",
+      "method": "Items extracted by script from the live H5P data on the cited pages (BC tourism chapter pages 11.2 and 11.5; Business Writing For Everyone activity 42 embed). No OpenStax text was read: the hold file was opened only to count its items by area and confirm its id range.",
+      "notes": [
+        "Solved before reading the key: ent-096 C (WorkSafeBC, per section 11.5), ent-097 A (risk identification), ent-098 A (risk analysis), ent-099 D (all three listed questions appear in \"Reviewing CMAPP\"). All four match the source key, and each has exactly one best answer.",
+        "Stems and choices match the H5P data word for word after dropping markup; ent-096 to ent-098 also match the already-verified ht-016, ht-094 and ht-095 in hospitality-tourism.json, and ent-099 matches fin-086 in finance.json.",
+        "Every quote in the explanations appears on the cited section page.",
+        "ent-099 is an \"All of the above.\" item; the other three choices are each true on their own, so the item relies on the usual one-best-answer convention. It keeps fixedOrder: true."
+      ]
+    }
+  }
+}

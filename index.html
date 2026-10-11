@@ -1,14 +1,51 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-CA">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>DECA Masters: practise for DECA exams and roleplays</title>
+    <meta
+      name="description"
+      content="Cluster-exam drills, roleplay prep and vocab for DECA members. An independent study tool made by students, not affiliated with DECA Inc."
+    />
+    <meta name="theme-color" content="#071634" />
+    <meta name="color-scheme" content="light dark" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DECA Masters</title>
-    <!-- Applies Settings > Appearance before first paint (mirrors applyPrefs in src/prefs.ts). -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <script>
-      (function(){try{var p=JSON.parse(localStorage.getItem('deca-masters:prefs')||'{}')||{},d=document.documentElement,t=p.theme;if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.setAttribute('data-theme',t);if(p.text==='large'||p.text==='larger')d.setAttribute('data-text',p.text);if(p.motion==='reduce')d.setAttribute('data-motion','reduce')}catch(e){}})()
+      // Apply this device's theme choice before first paint. src/lib/theme.ts owns the key; keep them in step.
+      try {
+        var t = localStorage.getItem("deca-masters:pref:theme");
+        if (t === "light" || t === "dark")
+          document.documentElement.dataset.theme = t;
+      } catch (e) {}
+      // The build prerenders public pages for a signed-out visitor (scripts/prerender.mjs) and marks <html> with the
+      // path each one is for. Hide that HTML before first paint on any other path, with a query string (/events and
+      // /roleplay keep their filters there, and the HTML was built with none), or when a session may be stored
+      // (src/lib/auth.tsx mayHaveStoredSession, same key); main.tsx then renders from scratch. The deploy base is "/".
+      try {
+        var built = document.documentElement.getAttribute("data-prerender-path");
+        var here = location.pathname.replace(/\/+$/, "") || "/";
+        if (
+          built !== here ||
+          location.search !== "" ||
+          localStorage.getItem("deca-masters-auth") !== null
+        )
+          document.documentElement.setAttribute("data-prerender-skip", "");
+      } catch (e) {
+        document.documentElement.setAttribute("data-prerender-skip", "");
+      }
     </script>
+    <style>
+      html[data-prerender-skip] #root {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>

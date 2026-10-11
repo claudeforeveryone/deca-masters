@@ -1,0 +1,65 @@
+{
+  "slug": "marketing",
+  "title": "Marketing Cluster Exam",
+  "cluster": "marketing",
+  "blurb": "Test fixture for content/check.mjs. Not study content; never shipped.",
+  "disclaimer": "Questions reused from openly licensed sources (credited on each question). Not official DECA exam content.",
+  "status": "sourced",
+  "sources": [
+    {
+      "title": "Fixture Open Textbook",
+      "url": "https://example.org/fixture-open-textbook",
+      "licence": "CC BY 4.0",
+      "attribution": "\"Fixture Open Textbook\" by Test Author, licensed under CC BY 4.0. Validator fixture."
+    }
+  ],
+  "placeholderNote": null,
+  "questions": [
+    {
+      "id": "mkt-001",
+      "area": "Market Planning",
+      "pi": null,
+      "difficulty": null,
+      "stem": "Fixture question one: which choice is keyed as correct?",
+      "choices": [
+        "Fixture choice A",
+        "Fixture choice B",
+        "Fixture choice C",
+        "Fixture choice D"
+      ],
+      "answer": 0,
+      "explanation": "Fixture explanation for question one.",
+      "source": {
+        "title": "Fixture Open Textbook",
+        "url": "https://example.org/fixture-open-textbook",
+        "licence": "CC BY 4.0",
+        "attribution": "\"Fixture Open Textbook\" by Test Author, licensed under CC BY 4.0. Validator fixture.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "mkt-002",
+      "area": "Pricing",
+      "pi": "MK:001",
+      "difficulty": 2,
+      "stem": "Fixture question two: which choice is keyed as correct?",
+      "choices": [
+        "Fixture choice A",
+        "Fixture choice B",
+        "Fixture choice C",
+        "Fixture choice D"
+      ],
+      "answer": 3,
+      "explanation": null,
+      "source": {
+        "title": "Fixture Open Textbook",
+        "url": "https://example.org/fixture-open-textbook",
+        "licence": "CC BY 4.0",
+        "attribution": "\"Fixture Open Textbook\" by Test Author, licensed under CC BY 4.0. Validator fixture.",
+        "adapted": true,
+        "keyFrom": "verified"
+      }
+    }
+  ]
+}

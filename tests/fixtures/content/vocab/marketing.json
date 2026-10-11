@@ -1,0 +1,44 @@
+{
+  "slug": "marketing",
+  "title": "Marketing terms",
+  "status": "sourced",
+  "sources": [
+    {
+      "title": "Fixture Open Glossary",
+      "url": "https://example.org/fixture-open-glossary",
+      "licence": "CC0",
+      "attribution": "\"Fixture Open Glossary\", dedicated to the public domain under CC0. Validator fixture."
+    }
+  ],
+  "placeholderNote": null,
+  "terms": [
+    {
+      "id": "mkt-v-001",
+      "term": "Fixture term one",
+      "definition": "Fixture definition for term one. Not study content.",
+      "area": "Market Planning",
+      "source": {
+        "title": "Fixture Open Glossary",
+        "url": "https://example.org/fixture-open-glossary",
+        "licence": "CC0",
+        "attribution": "\"Fixture Open Glossary\", dedicated to the public domain under CC0. Validator fixture.",
+        "adapted": false,
+        "keyFrom": "source"
+      }
+    },
+    {
+      "id": "mkt-v-002",
+      "term": "Fixture term two",
+      "definition": "Fixture definition for term two. Not study content.",
+      "area": "Pricing",
+      "source": {
+        "title": "Fixture Open Glossary",
+        "url": "https://example.org/fixture-open-glossary",
+        "licence": "CC0",
+        "attribution": "\"Fixture Open Glossary\", dedicated to the public domain under CC0. Validator fixture.",
+        "adapted": true,
+        "keyFrom": "source"
+      }
+    }
+  ]
+}

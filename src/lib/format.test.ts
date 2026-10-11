@@ -1,0 +1,90 @@
+import { describe, expect, it } from "vitest";
+import {
+  componentsLine,
+  duration,
+  examTitles,
+  pct,
+  plural,
+  practiceTime,
+  teamLine,
+  whenLabel,
+} from "./format";
+
+describe("pct", () => {
+  it("rounds a ratio to a whole percent", () => {
+    expect(pct(0.734)).toBe("73%");
+    expect(pct(1)).toBe("100%");
+    expect(pct(0)).toBe("0%");
+  });
+});
+
+describe("plural", () => {
+  it("picks the word by count", () => {
+    expect(plural(1, "question")).toBe("1 question");
+    expect(plural(3, "question")).toBe("3 questions");
+    expect(plural(0, "day")).toBe("0 days");
+    expect(plural(2, "entry", "entries")).toBe("2 entries");
+  });
+});
+
+describe("duration", () => {
+  it("reads as minutes, then hours and minutes", () => {
+    expect(duration(30_000)).toBe("under 1 min");
+    expect(duration(12 * 60_000 + 20_000)).toBe("12 min");
+    expect(duration(65 * 60_000)).toBe("1 h 5 min");
+    expect(duration(120 * 60_000)).toBe("2 h");
+  });
+});
+
+describe("whenLabel", () => {
+  const now = new Date("2026-10-15T16:00:00Z"); // noon in Toronto
+
+  it("names today and yesterday by the Toronto calendar", () => {
+    expect(whenLabel("2026-10-15T13:00:00Z", now)).toBe("Today");
+    // 23:30 on the 14th in Toronto, already the 15th in UTC
+    expect(whenLabel("2026-10-15T03:30:00Z", now)).toBe("Yesterday");
+  });
+
+  it("counts days back within a week, then shows the date", () => {
+    expect(whenLabel("2026-10-12T16:00:00Z", now)).toBe("3 days ago");
+    expect(whenLabel("2026-10-01T16:00:00Z", now)).toBe("Oct 1");
+    expect(whenLabel("2025-12-30T16:00:00Z", now)).toBe("Dec 30, 2025");
+  });
+
+  it("takes a plain date as that calendar day", () => {
+    expect(whenLabel("2026-10-14", now)).toBe("Yesterday");
+  });
+});
+
+describe("event lines", () => {
+  it("names an event's parts and team size in words", () => {
+    expect(componentsLine(["exam", "roleplay"])).toBe("Exam + role play");
+    expect(componentsLine(["written", "presentation"])).toBe(
+      "Written entry + presentation",
+    );
+    expect(teamLine("1")).toBe("Solo");
+    expect(teamLine("2")).toBe("Team of 2");
+    expect(teamLine("1-3")).toBe("1 to 3 people");
+  });
+});
+
+describe("examTitles", () => {
+  it("uses the bank's titles and words for slugs the bank has not named", () => {
+    const t = examTitles([{ exam: "finance", title: "Finance Cluster Exam" }]);
+    expect(t.finance).toBe("Finance Cluster Exam");
+    expect(t["business-admin-core"]).toBe("Business admin core");
+    expect(examTitles(undefined)["hospitality-tourism"]).toBe(
+      "Hospitality tourism",
+    );
+  });
+});
+
+describe("practiceTime", () => {
+  it("gives minutes, a floor under one minute, then hours from two hours up", () => {
+    expect(practiceTime(0)).toEqual({ value: "0", unit: "min" });
+    expect(practiceTime(20_000)).toEqual({ value: "<1", unit: "min" });
+    expect(practiceTime(90_000)).toEqual({ value: "2", unit: "min" });
+    expect(practiceTime(119 * 60_000)).toEqual({ value: "119", unit: "min" });
+    expect(practiceTime(150 * 60_000)).toEqual({ value: "2.5", unit: "h" });
+  });
+});

@@ -1,0 +1,44 @@
+{
+  "season": "2026-2027",
+  "source": "Test fixture for content/check.mjs. Not real event data; never shipped.",
+  "sourceUrls": ["https://www.deca.org/compete"],
+  "disclaimer": "Test fixture. Not official DECA material.",
+  "events": [
+    {
+      "code": "PMK",
+      "name": "Principles of Marketing",
+      "category": "Principles of Business Administration Events",
+      "cluster": "marketing",
+      "exam": "business-admin-core",
+      "components": ["exam", "roleplay"],
+      "teamSize": "1",
+      "summary": "Test fixture entry. Not a real event description.",
+      "officialUrl": "https://www.deca.org/compete",
+      "verifiedAt": "2026-10-11",
+      "notes": null,
+      "officialCluster": "Marketing",
+      "format": {
+        "prepMinutes": 10,
+        "presentMinutes": 10,
+        "judgeAppearance": null,
+        "performanceIndicators": 4,
+        "writtenLimit": null,
+        "scoring": null
+      },
+      "guidelinesUrl": null
+    },
+    {
+      "code": "EIP",
+      "name": "Innovation Plan",
+      "category": "Entrepreneurship",
+      "cluster": "entrepreneurship",
+      "exam": null,
+      "components": ["written", "presentation"],
+      "teamSize": "1-3",
+      "summary": "Test fixture entry for an event with no exam.",
+      "officialUrl": "https://www.deca.org/compete",
+      "verifiedAt": "2026-10-11",
+      "notes": null
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "finance",
+  "title": "Finance Cluster Exam",
+  "cluster": "finance",
+  "blurb": "Test fixture for a placeholder exam with no questions yet.",
+  "disclaimer": "Questions reused from openly licensed sources (credited on each question). Not official DECA exam content.",
+  "status": "placeholder",
+  "sources": [],
+  "placeholderNote": "Fixture placeholder: no openly licensed finance questions found yet.",
+  "questions": []
+}

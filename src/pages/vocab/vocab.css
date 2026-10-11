@@ -1,0 +1,19 @@
+/* Motion for the vocab study modes (off under reduced motion through the global rule in index.css). */
+@keyframes card-turn {
+  from {
+    opacity: 0;
+    transform: perspective(900px) rotateX(-14deg) translateY(6px);
+  }
+}
+@keyframes tile-miss {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}

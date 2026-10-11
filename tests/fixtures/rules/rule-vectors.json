@@ -1,0 +1,3253 @@
+{
+    "leitner": [
+        {
+            "box": -1,
+            "due": "2026-03-08T05:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 1,
+            "next_due": "2026-03-08T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-03-08T05:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-03-07T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 1,
+            "next_due": "2026-03-08T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-03-07T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-03-10T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 1,
+            "next_due": "2026-03-08T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-03-10T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-03-05T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 1,
+            "next_due": "2026-03-08T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-03-05T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-03-08T05:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 1,
+            "next_due": "2026-03-08T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-03-08T05:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-03-07T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 1,
+            "next_due": "2026-03-08T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-03-07T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-03-10T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-03-10T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-03-10T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-03-05T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 1,
+            "next_due": "2026-03-08T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-03-05T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-03-08T05:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 2,
+            "next_due": "2026-03-10T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-03-08T05:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-03-07T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 2,
+            "next_due": "2026-03-10T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-03-07T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-03-10T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 1,
+            "next_due": "2026-03-10T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-03-10T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-03-05T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 2,
+            "next_due": "2026-03-10T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-03-05T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-03-08T05:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 3,
+            "next_due": "2026-03-14T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-03-08T05:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-03-07T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 3,
+            "next_due": "2026-03-14T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-03-07T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-03-10T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 2,
+            "next_due": "2026-03-10T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-03-10T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-03-05T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 3,
+            "next_due": "2026-03-14T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-03-05T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-03-08T05:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 4,
+            "next_due": "2026-03-21T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-03-08T05:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-03-07T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 4,
+            "next_due": "2026-03-21T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-03-07T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-03-10T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 3,
+            "next_due": "2026-03-10T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-03-10T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-03-05T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 4,
+            "next_due": "2026-03-21T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-03-05T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-03-08T05:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 5,
+            "next_due": "2026-04-06T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-03-08T05:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-03-07T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 5,
+            "next_due": "2026-04-06T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-03-07T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-03-10T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 4,
+            "next_due": "2026-03-10T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-03-10T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-03-05T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 5,
+            "next_due": "2026-04-06T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-03-05T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-03-08T05:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 5,
+            "next_due": "2026-04-06T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-03-08T05:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-03-07T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 5,
+            "next_due": "2026-04-06T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-03-07T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-03-10T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 5,
+            "next_due": "2026-03-10T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-03-10T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-03-05T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 5,
+            "next_due": "2026-04-06T15:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-03-05T15:00:00+00:00",
+            "now": "2026-03-07T15:00:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-03-07T15:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-07-15T04:00:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 1,
+            "next_due": "2026-07-16T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-07-15T04:00:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-07-15T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 1,
+            "next_due": "2026-07-16T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-07-15T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-07-18T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 1,
+            "next_due": "2026-07-16T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-07-18T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-07-13T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 1,
+            "next_due": "2026-07-16T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-07-13T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-07-15T04:00:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 1,
+            "next_due": "2026-07-16T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-07-15T04:00:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-07-15T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 1,
+            "next_due": "2026-07-16T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-07-15T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-07-18T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-07-18T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-07-18T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-07-13T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 1,
+            "next_due": "2026-07-16T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-07-13T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-07-15T04:00:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 2,
+            "next_due": "2026-07-18T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-07-15T04:00:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-07-15T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 2,
+            "next_due": "2026-07-18T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-07-15T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-07-18T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 1,
+            "next_due": "2026-07-18T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-07-18T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-07-13T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 2,
+            "next_due": "2026-07-18T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-07-13T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-07-15T04:00:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 3,
+            "next_due": "2026-07-22T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-07-15T04:00:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-07-15T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 3,
+            "next_due": "2026-07-22T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-07-15T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-07-18T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 2,
+            "next_due": "2026-07-18T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-07-18T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-07-13T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 3,
+            "next_due": "2026-07-22T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-07-13T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-07-15T04:00:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 4,
+            "next_due": "2026-07-29T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-07-15T04:00:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-07-15T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 4,
+            "next_due": "2026-07-29T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-07-15T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-07-18T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 3,
+            "next_due": "2026-07-18T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-07-18T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-07-13T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 4,
+            "next_due": "2026-07-29T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-07-13T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-07-15T04:00:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 5,
+            "next_due": "2026-08-14T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-07-15T04:00:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-07-15T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 5,
+            "next_due": "2026-08-14T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-07-15T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-07-18T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 4,
+            "next_due": "2026-07-18T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-07-18T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-07-13T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 5,
+            "next_due": "2026-08-14T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-07-13T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-07-15T04:00:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 5,
+            "next_due": "2026-08-14T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-07-15T04:00:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-07-15T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 5,
+            "next_due": "2026-08-14T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-07-15T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-07-18T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 5,
+            "next_due": "2026-07-18T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-07-18T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-07-13T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 5,
+            "next_due": "2026-08-14T03:30:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-07-13T03:30:00+00:00",
+            "now": "2026-07-15T03:30:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-07-15T03:30:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-07-15T04:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-11-02T05:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 1,
+            "next_due": "2026-11-02T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-11-02T05:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-11-01T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 1,
+            "next_due": "2026-11-02T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-11-01T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-11-04T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 1,
+            "next_due": "2026-11-02T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-11-04T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-10-30T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 1,
+            "next_due": "2026-11-02T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": -1,
+            "due": "2026-10-30T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-11-02T05:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 1,
+            "next_due": "2026-11-02T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-11-02T05:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-11-01T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 1,
+            "next_due": "2026-11-02T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-11-01T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-11-04T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-11-04T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-11-04T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-10-30T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 1,
+            "next_due": "2026-11-02T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 0,
+            "due": "2026-10-30T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-11-02T05:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 2,
+            "next_due": "2026-11-04T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-11-02T05:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-11-01T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 2,
+            "next_due": "2026-11-04T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-11-01T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-11-04T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 1,
+            "next_due": "2026-11-04T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-11-04T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-10-30T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 2,
+            "next_due": "2026-11-04T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 1,
+            "due": "2026-10-30T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-11-02T05:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 3,
+            "next_due": "2026-11-08T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-11-02T05:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-11-01T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 3,
+            "next_due": "2026-11-08T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-11-01T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-11-04T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 2,
+            "next_due": "2026-11-04T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-11-04T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-10-30T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 3,
+            "next_due": "2026-11-08T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 2,
+            "due": "2026-10-30T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-11-02T05:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 4,
+            "next_due": "2026-11-15T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-11-02T05:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-11-01T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 4,
+            "next_due": "2026-11-15T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-11-01T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-11-04T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 3,
+            "next_due": "2026-11-04T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-11-04T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-10-30T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 4,
+            "next_due": "2026-11-15T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 3,
+            "due": "2026-10-30T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-11-02T05:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 5,
+            "next_due": "2026-12-01T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-11-02T05:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-11-01T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 5,
+            "next_due": "2026-12-01T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-11-01T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-11-04T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 4,
+            "next_due": "2026-11-04T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-11-04T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-10-30T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 5,
+            "next_due": "2026-12-01T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 4,
+            "due": "2026-10-30T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-11-02T05:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "due at end of day",
+            "next_box": 5,
+            "next_due": "2026-12-01T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-11-02T05:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "due at end of day",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-11-01T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "due now",
+            "next_box": 5,
+            "next_due": "2026-12-01T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-11-01T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "due now",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-11-04T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "not due",
+            "next_box": 5,
+            "next_due": "2026-11-04T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-11-04T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "not due",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-10-30T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": true,
+            "due_case": "overdue",
+            "next_box": 5,
+            "next_due": "2026-12-01T12:00:00+00:00",
+            "promoted": true,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "box": 5,
+            "due": "2026-10-30T12:00:00+00:00",
+            "now": "2026-11-01T12:00:00+00:00",
+            "correct": false,
+            "due_case": "overdue",
+            "next_box": 0,
+            "next_due": "2026-11-01T12:00:00+00:00",
+            "promoted": false,
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        }
+    ],
+    "elo_runs": [
+        {
+            "name": "floor at zero",
+            "start": 3,
+            "deltas": [
+                -3,
+                0,
+                18
+            ],
+            "answers": [
+                {
+                    "first": true,
+                    "correct": false,
+                    "difficulty": 1
+                },
+                {
+                    "first": true,
+                    "correct": false,
+                    "difficulty": 1
+                },
+                {
+                    "first": true,
+                    "correct": true,
+                    "difficulty": 3
+                }
+            ],
+            "final_exact": 18.23392623955099,
+            "final_shown": 18
+        },
+        {
+            "name": "hand run 1 (SQL suite): d1 right, d3 right, d1 wrong",
+            "start": 0,
+            "deltas": [
+                6,
+                18,
+                -19
+            ],
+            "answers": [
+                {
+                    "first": true,
+                    "correct": true,
+                    "difficulty": 1
+                },
+                {
+                    "first": true,
+                    "correct": true,
+                    "difficulty": 3
+                },
+                {
+                    "first": true,
+                    "correct": false,
+                    "difficulty": 1
+                }
+            ],
+            "final_exact": 5.039485096962501,
+            "final_shown": 5
+        },
+        {
+            "name": "mixed run with a repeat and unrated questions",
+            "start": 812.25,
+            "deltas": [
+                0,
+                -23,
+                0,
+                -24,
+                1
+            ],
+            "answers": [
+                {
+                    "first": true,
+                    "correct": true,
+                    "difficulty": null
+                },
+                {
+                    "first": true,
+                    "correct": false,
+                    "difficulty": 2
+                },
+                {
+                    "first": false,
+                    "correct": true,
+                    "difficulty": 3
+                },
+                {
+                    "first": true,
+                    "correct": false,
+                    "difficulty": 3
+                },
+                {
+                    "first": true,
+                    "correct": true,
+                    "difficulty": 1
+                }
+            ],
+            "final_exact": 765.5686771892862,
+            "final_shown": 766
+        },
+        {
+            "name": "ten right answers from zero",
+            "start": 0,
+            "deltas": [
+                6,
+                12,
+                17,
+                5,
+                11,
+                17,
+                4,
+                10,
+                15,
+                4
+            ],
+            "answers": [
+                {
+                    "first": true,
+                    "correct": true,
+                    "difficulty": 1
+                },
+                {
+                    "first": true,
+                    "correct": true,
+                    "difficulty": 2
+                },
+                {
+                    "first": true,
+                    "correct": true,
+                    "difficulty": 3
+                },
+                {
+                    "first": true,
+                    "correct": true,
+                    "difficulty": 1
+                },
+                {
+                    "first": true,
+                    "correct": true,
+                    "difficulty": 2
+                },
+                {
+                    "first": true,
+                    "correct": true,
+                    "difficulty": 3
+                },
+                {
+                    "first": true,
+                    "correct": true,
+                    "difficulty": 1
+                },
+                {
+                    "first": true,
+                    "correct": true,
+                    "difficulty": 2
+                },
+                {
+                    "first": true,
+                    "correct": true,
+                    "difficulty": 3
+                },
+                {
+                    "first": true,
+                    "correct": true,
+                    "difficulty": 1
+                }
+            ],
+            "final_exact": 101.13054383669778,
+            "final_shown": 101
+        }
+    ],
+    "pg_round": [
+        {
+            "value": 0.49999999999999994,
+            "rounded": 1
+        },
+        {
+            "value": 2.4999999999999996,
+            "rounded": 3
+        },
+        {
+            "value": 7.4999999999999,
+            "rounded": 7
+        },
+        {
+            "value": 12.5,
+            "rounded": 13
+        },
+        {
+            "value": 99.50000000000001,
+            "rounded": 100
+        },
+        {
+            "value": 1234.4999999999998,
+            "rounded": 1235
+        }
+    ],
+    "elo_steps": [
+        {
+            "next": 12,
+            "first": true,
+            "rating": 0,
+            "correct": true,
+            "difficulty": null,
+            "shown_after": 12,
+            "shown_before": 0
+        },
+        {
+            "next": 0,
+            "first": false,
+            "rating": 0,
+            "correct": true,
+            "difficulty": null,
+            "shown_after": 0,
+            "shown_before": 0
+        },
+        {
+            "next": 0,
+            "first": true,
+            "rating": 0,
+            "correct": false,
+            "difficulty": null,
+            "shown_after": 0,
+            "shown_before": 0
+        },
+        {
+            "next": 0,
+            "first": false,
+            "rating": 0,
+            "correct": false,
+            "difficulty": null,
+            "shown_after": 0,
+            "shown_before": 0
+        },
+        {
+            "next": 5.766073760449012,
+            "first": true,
+            "rating": 0,
+            "correct": true,
+            "difficulty": 1,
+            "shown_after": 6,
+            "shown_before": 0
+        },
+        {
+            "next": 0,
+            "first": false,
+            "rating": 0,
+            "correct": true,
+            "difficulty": 1,
+            "shown_after": 0,
+            "shown_before": 0
+        },
+        {
+            "next": 0,
+            "first": true,
+            "rating": 0,
+            "correct": false,
+            "difficulty": 1,
+            "shown_after": 0,
+            "shown_before": 0
+        },
+        {
+            "next": 0,
+            "first": false,
+            "rating": 0,
+            "correct": false,
+            "difficulty": 1,
+            "shown_after": 0,
+            "shown_before": 0
+        },
+        {
+            "next": 12,
+            "first": true,
+            "rating": 0,
+            "correct": true,
+            "difficulty": 2,
+            "shown_after": 12,
+            "shown_before": 0
+        },
+        {
+            "next": 0,
+            "first": false,
+            "rating": 0,
+            "correct": true,
+            "difficulty": 2,
+            "shown_after": 0,
+            "shown_before": 0
+        },
+        {
+            "next": 0,
+            "first": true,
+            "rating": 0,
+            "correct": false,
+            "difficulty": 2,
+            "shown_after": 0,
+            "shown_before": 0
+        },
+        {
+            "next": 0,
+            "first": false,
+            "rating": 0,
+            "correct": false,
+            "difficulty": 2,
+            "shown_after": 0,
+            "shown_before": 0
+        },
+        {
+            "next": 18.23392623955099,
+            "first": true,
+            "rating": 0,
+            "correct": true,
+            "difficulty": 3,
+            "shown_after": 18,
+            "shown_before": 0
+        },
+        {
+            "next": 0,
+            "first": false,
+            "rating": 0,
+            "correct": true,
+            "difficulty": 3,
+            "shown_after": 0,
+            "shown_before": 0
+        },
+        {
+            "next": 0,
+            "first": true,
+            "rating": 0,
+            "correct": false,
+            "difficulty": 3,
+            "shown_after": 0,
+            "shown_before": 0
+        },
+        {
+            "next": 0,
+            "first": false,
+            "rating": 0,
+            "correct": false,
+            "difficulty": 3,
+            "shown_after": 0,
+            "shown_before": 0
+        },
+        {
+            "next": 16.865485266280068,
+            "first": true,
+            "rating": 5.039532341,
+            "correct": true,
+            "difficulty": null,
+            "shown_after": 17,
+            "shown_before": 5
+        },
+        {
+            "next": 5.039532341,
+            "first": false,
+            "rating": 5.039532341,
+            "correct": true,
+            "difficulty": null,
+            "shown_after": 5,
+            "shown_before": 5
+        },
+        {
+            "next": 0,
+            "first": true,
+            "rating": 5.039532341,
+            "correct": false,
+            "difficulty": null,
+            "shown_after": 0,
+            "shown_before": 5
+        },
+        {
+            "next": 5.039532341,
+            "first": false,
+            "rating": 5.039532341,
+            "correct": false,
+            "difficulty": null,
+            "shown_after": 5,
+            "shown_before": 5
+        },
+        {
+            "next": 10.679480104629997,
+            "first": true,
+            "rating": 5.039532341,
+            "correct": true,
+            "difficulty": 1,
+            "shown_after": 11,
+            "shown_before": 5
+        },
+        {
+            "next": 5.039532341,
+            "first": false,
+            "rating": 5.039532341,
+            "correct": true,
+            "difficulty": 1,
+            "shown_after": 5,
+            "shown_before": 5
+        },
+        {
+            "next": 0,
+            "first": true,
+            "rating": 5.039532341,
+            "correct": false,
+            "difficulty": 1,
+            "shown_after": 0,
+            "shown_before": 5
+        },
+        {
+            "next": 5.039532341,
+            "first": false,
+            "rating": 5.039532341,
+            "correct": false,
+            "difficulty": 1,
+            "shown_after": 5,
+            "shown_before": 5
+        },
+        {
+            "next": 16.865485266280068,
+            "first": true,
+            "rating": 5.039532341,
+            "correct": true,
+            "difficulty": 2,
+            "shown_after": 17,
+            "shown_before": 5
+        },
+        {
+            "next": 5.039532341,
+            "first": false,
+            "rating": 5.039532341,
+            "correct": true,
+            "difficulty": 2,
+            "shown_after": 5,
+            "shown_before": 5
+        },
+        {
+            "next": 0,
+            "first": true,
+            "rating": 5.039532341,
+            "correct": false,
+            "difficulty": 2,
+            "shown_after": 0,
+            "shown_before": 5
+        },
+        {
+            "next": 5.039532341,
+            "first": false,
+            "rating": 5.039532341,
+            "correct": false,
+            "difficulty": 2,
+            "shown_after": 5,
+            "shown_before": 5
+        },
+        {
+            "next": 23.145417511447466,
+            "first": true,
+            "rating": 5.039532341,
+            "correct": true,
+            "difficulty": 3,
+            "shown_after": 23,
+            "shown_before": 5
+        },
+        {
+            "next": 5.039532341,
+            "first": false,
+            "rating": 5.039532341,
+            "correct": true,
+            "difficulty": 3,
+            "shown_after": 5,
+            "shown_before": 5
+        },
+        {
+            "next": 0,
+            "first": true,
+            "rating": 5.039532341,
+            "correct": false,
+            "difficulty": 3,
+            "shown_after": 0,
+            "shown_before": 5
+        },
+        {
+            "next": 5.039532341,
+            "first": false,
+            "rating": 5.039532341,
+            "correct": false,
+            "difficulty": 3,
+            "shown_after": 5,
+            "shown_before": 5
+        },
+        {
+            "next": 35.02754165331385,
+            "first": true,
+            "rating": 23.85,
+            "correct": true,
+            "difficulty": null,
+            "shown_after": 35,
+            "shown_before": 24
+        },
+        {
+            "next": 23.85,
+            "first": false,
+            "rating": 23.85,
+            "correct": true,
+            "difficulty": null,
+            "shown_after": 24,
+            "shown_before": 24
+        },
+        {
+            "next": 11.027541653313843,
+            "first": true,
+            "rating": 23.85,
+            "correct": false,
+            "difficulty": null,
+            "shown_after": 11,
+            "shown_before": 24
+        },
+        {
+            "next": 23.85,
+            "first": false,
+            "rating": 23.85,
+            "correct": false,
+            "difficulty": null,
+            "shown_after": 24,
+            "shown_before": 24
+        },
+        {
+            "next": 29.03622117604427,
+            "first": true,
+            "rating": 23.85,
+            "correct": true,
+            "difficulty": 1,
+            "shown_after": 29,
+            "shown_before": 24
+        },
+        {
+            "next": 23.85,
+            "first": false,
+            "rating": 23.85,
+            "correct": true,
+            "difficulty": 1,
+            "shown_after": 24,
+            "shown_before": 24
+        },
+        {
+            "next": 5.036221176044268,
+            "first": true,
+            "rating": 23.85,
+            "correct": false,
+            "difficulty": 1,
+            "shown_after": 5,
+            "shown_before": 24
+        },
+        {
+            "next": 23.85,
+            "first": false,
+            "rating": 23.85,
+            "correct": false,
+            "difficulty": 1,
+            "shown_after": 24,
+            "shown_before": 24
+        },
+        {
+            "next": 35.02754165331385,
+            "first": true,
+            "rating": 23.85,
+            "correct": true,
+            "difficulty": 2,
+            "shown_after": 35,
+            "shown_before": 24
+        },
+        {
+            "next": 23.85,
+            "first": false,
+            "rating": 23.85,
+            "correct": true,
+            "difficulty": 2,
+            "shown_after": 24,
+            "shown_before": 24
+        },
+        {
+            "next": 11.027541653313843,
+            "first": true,
+            "rating": 23.85,
+            "correct": false,
+            "difficulty": 2,
+            "shown_after": 11,
+            "shown_before": 24
+        },
+        {
+            "next": 23.85,
+            "first": false,
+            "rating": 23.85,
+            "correct": false,
+            "difficulty": 2,
+            "shown_after": 24,
+            "shown_before": 24
+        },
+        {
+            "next": 41.4612576839551,
+            "first": true,
+            "rating": 23.85,
+            "correct": true,
+            "difficulty": 3,
+            "shown_after": 41,
+            "shown_before": 24
+        },
+        {
+            "next": 23.85,
+            "first": false,
+            "rating": 23.85,
+            "correct": true,
+            "difficulty": 3,
+            "shown_after": 24,
+            "shown_before": 24
+        },
+        {
+            "next": 17.461257683955097,
+            "first": true,
+            "rating": 23.85,
+            "correct": false,
+            "difficulty": 3,
+            "shown_after": 17,
+            "shown_before": 24
+        },
+        {
+            "next": 23.85,
+            "first": false,
+            "rating": 23.85,
+            "correct": false,
+            "difficulty": 3,
+            "shown_after": 24,
+            "shown_before": 24
+        },
+        {
+            "next": 157.1187599166761,
+            "first": true,
+            "rating": 150,
+            "correct": true,
+            "difficulty": null,
+            "shown_after": 157,
+            "shown_before": 150
+        },
+        {
+            "next": 150,
+            "first": false,
+            "rating": 150,
+            "correct": true,
+            "difficulty": null,
+            "shown_after": 150,
+            "shown_before": 150
+        },
+        {
+            "next": 133.1187599166761,
+            "first": true,
+            "rating": 150,
+            "correct": false,
+            "difficulty": null,
+            "shown_after": 133,
+            "shown_before": 150
+        },
+        {
+            "next": 150,
+            "first": false,
+            "rating": 150,
+            "correct": false,
+            "difficulty": null,
+            "shown_after": 150,
+            "shown_before": 150
+        },
+        {
+            "next": 152.8238808708734,
+            "first": true,
+            "rating": 150,
+            "correct": true,
+            "difficulty": 1,
+            "shown_after": 153,
+            "shown_before": 150
+        },
+        {
+            "next": 150,
+            "first": false,
+            "rating": 150,
+            "correct": true,
+            "difficulty": 1,
+            "shown_after": 150,
+            "shown_before": 150
+        },
+        {
+            "next": 128.8238808708734,
+            "first": true,
+            "rating": 150,
+            "correct": false,
+            "difficulty": 1,
+            "shown_after": 129,
+            "shown_before": 150
+        },
+        {
+            "next": 150,
+            "first": false,
+            "rating": 150,
+            "correct": false,
+            "difficulty": 1,
+            "shown_after": 150,
+            "shown_before": 150
+        },
+        {
+            "next": 157.1187599166761,
+            "first": true,
+            "rating": 150,
+            "correct": true,
+            "difficulty": 2,
+            "shown_after": 157,
+            "shown_before": 150
+        },
+        {
+            "next": 150,
+            "first": false,
+            "rating": 150,
+            "correct": true,
+            "difficulty": 2,
+            "shown_after": 150,
+            "shown_before": 150
+        },
+        {
+            "next": 133.1187599166761,
+            "first": true,
+            "rating": 150,
+            "correct": false,
+            "difficulty": 2,
+            "shown_after": 133,
+            "shown_before": 150
+        },
+        {
+            "next": 150,
+            "first": false,
+            "rating": 150,
+            "correct": false,
+            "difficulty": 2,
+            "shown_after": 150,
+            "shown_before": 150
+        },
+        {
+            "next": 163.71511481780115,
+            "first": true,
+            "rating": 150,
+            "correct": true,
+            "difficulty": 3,
+            "shown_after": 164,
+            "shown_before": 150
+        },
+        {
+            "next": 150,
+            "first": false,
+            "rating": 150,
+            "correct": true,
+            "difficulty": 3,
+            "shown_after": 150,
+            "shown_before": 150
+        },
+        {
+            "next": 139.71511481780115,
+            "first": true,
+            "rating": 150,
+            "correct": false,
+            "difficulty": 3,
+            "shown_after": 140,
+            "shown_before": 150
+        },
+        {
+            "next": 150,
+            "first": false,
+            "rating": 150,
+            "correct": false,
+            "difficulty": 3,
+            "shown_after": 150,
+            "shown_before": 150
+        },
+        {
+            "next": 401.6875337964305,
+            "first": true,
+            "rating": 399.5,
+            "correct": true,
+            "difficulty": null,
+            "shown_after": 402,
+            "shown_before": 400
+        },
+        {
+            "next": 399.5,
+            "first": false,
+            "rating": 399.5,
+            "correct": true,
+            "difficulty": null,
+            "shown_after": 400,
+            "shown_before": 400
+        },
+        {
+            "next": 377.6875337964305,
+            "first": true,
+            "rating": 399.5,
+            "correct": false,
+            "difficulty": null,
+            "shown_after": 378,
+            "shown_before": 400
+        },
+        {
+            "next": 399.5,
+            "first": false,
+            "rating": 399.5,
+            "correct": false,
+            "difficulty": null,
+            "shown_after": 400,
+            "shown_before": 400
+        },
+        {
+            "next": 400.2377376522637,
+            "first": true,
+            "rating": 399.5,
+            "correct": true,
+            "difficulty": 1,
+            "shown_after": 400,
+            "shown_before": 400
+        },
+        {
+            "next": 399.5,
+            "first": false,
+            "rating": 399.5,
+            "correct": true,
+            "difficulty": 1,
+            "shown_after": 400,
+            "shown_before": 400
+        },
+        {
+            "next": 376.2377376522637,
+            "first": true,
+            "rating": 399.5,
+            "correct": false,
+            "difficulty": 1,
+            "shown_after": 376,
+            "shown_before": 400
+        },
+        {
+            "next": 399.5,
+            "first": false,
+            "rating": 399.5,
+            "correct": false,
+            "difficulty": 1,
+            "shown_after": 400,
+            "shown_before": 400
+        },
+        {
+            "next": 401.6875337964305,
+            "first": true,
+            "rating": 399.5,
+            "correct": true,
+            "difficulty": 2,
+            "shown_after": 402,
+            "shown_before": 400
+        },
+        {
+            "next": 399.5,
+            "first": false,
+            "rating": 399.5,
+            "correct": true,
+            "difficulty": 2,
+            "shown_after": 400,
+            "shown_before": 400
+        },
+        {
+            "next": 377.6875337964305,
+            "first": true,
+            "rating": 399.5,
+            "correct": false,
+            "difficulty": 2,
+            "shown_after": 378,
+            "shown_before": 400
+        },
+        {
+            "next": 399.5,
+            "first": false,
+            "rating": 399.5,
+            "correct": false,
+            "difficulty": 2,
+            "shown_after": 400,
+            "shown_before": 400
+        },
+        {
+            "next": 405.27869201697723,
+            "first": true,
+            "rating": 399.5,
+            "correct": true,
+            "difficulty": 3,
+            "shown_after": 405,
+            "shown_before": 400
+        },
+        {
+            "next": 399.5,
+            "first": false,
+            "rating": 399.5,
+            "correct": true,
+            "difficulty": 3,
+            "shown_after": 400,
+            "shown_before": 400
+        },
+        {
+            "next": 381.27869201697723,
+            "first": true,
+            "rating": 399.5,
+            "correct": false,
+            "difficulty": 3,
+            "shown_after": 381,
+            "shown_before": 400
+        },
+        {
+            "next": 399.5,
+            "first": false,
+            "rating": 399.5,
+            "correct": false,
+            "difficulty": 3,
+            "shown_after": 400,
+            "shown_before": 400
+        },
+        {
+            "next": 1000.0756554203982,
+            "first": true,
+            "rating": 1000,
+            "correct": true,
+            "difficulty": null,
+            "shown_after": 1000,
+            "shown_before": 1000
+        },
+        {
+            "next": 1000,
+            "first": false,
+            "rating": 1000,
+            "correct": true,
+            "difficulty": null,
+            "shown_after": 1000,
+            "shown_before": 1000
+        },
+        {
+            "next": 976.0756554203982,
+            "first": true,
+            "rating": 1000,
+            "correct": false,
+            "difficulty": null,
+            "shown_after": 976,
+            "shown_before": 1000
+        },
+        {
+            "next": 1000,
+            "first": false,
+            "rating": 1000,
+            "correct": false,
+            "difficulty": null,
+            "shown_after": 1000,
+            "shown_before": 1000
+        },
+        {
+            "next": 1000.023976023976,
+            "first": true,
+            "rating": 1000,
+            "correct": true,
+            "difficulty": 1,
+            "shown_after": 1000,
+            "shown_before": 1000
+        },
+        {
+            "next": 1000,
+            "first": false,
+            "rating": 1000,
+            "correct": true,
+            "difficulty": 1,
+            "shown_after": 1000,
+            "shown_before": 1000
+        },
+        {
+            "next": 976.023976023976,
+            "first": true,
+            "rating": 1000,
+            "correct": false,
+            "difficulty": 1,
+            "shown_after": 976,
+            "shown_before": 1000
+        },
+        {
+            "next": 1000,
+            "first": false,
+            "rating": 1000,
+            "correct": false,
+            "difficulty": 1,
+            "shown_after": 1000,
+            "shown_before": 1000
+        },
+        {
+            "next": 1000.0756554203982,
+            "first": true,
+            "rating": 1000,
+            "correct": true,
+            "difficulty": 2,
+            "shown_after": 1000,
+            "shown_before": 1000
+        },
+        {
+            "next": 1000,
+            "first": false,
+            "rating": 1000,
+            "correct": true,
+            "difficulty": 2,
+            "shown_after": 1000,
+            "shown_before": 1000
+        },
+        {
+            "next": 976.0756554203982,
+            "first": true,
+            "rating": 1000,
+            "correct": false,
+            "difficulty": 2,
+            "shown_after": 976,
+            "shown_before": 1000
+        },
+        {
+            "next": 1000,
+            "first": false,
+            "rating": 1000,
+            "correct": false,
+            "difficulty": 2,
+            "shown_after": 1000,
+            "shown_before": 1000
+        },
+        {
+            "next": 1000.2376237623762,
+            "first": true,
+            "rating": 1000,
+            "correct": true,
+            "difficulty": 3,
+            "shown_after": 1000,
+            "shown_before": 1000
+        },
+        {
+            "next": 1000,
+            "first": false,
+            "rating": 1000,
+            "correct": true,
+            "difficulty": 3,
+            "shown_after": 1000,
+            "shown_before": 1000
+        },
+        {
+            "next": 976.2376237623762,
+            "first": true,
+            "rating": 1000,
+            "correct": false,
+            "difficulty": 3,
+            "shown_after": 976,
+            "shown_before": 1000
+        },
+        {
+            "next": 1000,
+            "first": false,
+            "rating": 1000,
+            "correct": false,
+            "difficulty": 3,
+            "shown_after": 1000,
+            "shown_before": 1000
+        },
+        {
+            "next": 1234.5874533214396,
+            "first": true,
+            "rating": 1234.5678,
+            "correct": true,
+            "difficulty": null,
+            "shown_after": 1235,
+            "shown_before": 1235
+        },
+        {
+            "next": 1234.5678,
+            "first": false,
+            "rating": 1234.5678,
+            "correct": true,
+            "difficulty": null,
+            "shown_after": 1235,
+            "shown_before": 1235
+        },
+        {
+            "next": 1210.5874533214396,
+            "first": true,
+            "rating": 1234.5678,
+            "correct": false,
+            "difficulty": null,
+            "shown_after": 1211,
+            "shown_before": 1235
+        },
+        {
+            "next": 1234.5678,
+            "first": false,
+            "rating": 1234.5678,
+            "correct": false,
+            "difficulty": null,
+            "shown_after": 1235,
+            "shown_before": 1235
+        },
+        {
+            "next": 1234.5740184078263,
+            "first": true,
+            "rating": 1234.5678,
+            "correct": true,
+            "difficulty": 1,
+            "shown_after": 1235,
+            "shown_before": 1235
+        },
+        {
+            "next": 1234.5678,
+            "first": false,
+            "rating": 1234.5678,
+            "correct": true,
+            "difficulty": 1,
+            "shown_after": 1235,
+            "shown_before": 1235
+        },
+        {
+            "next": 1210.5740184078263,
+            "first": true,
+            "rating": 1234.5678,
+            "correct": false,
+            "difficulty": 1,
+            "shown_after": 1211,
+            "shown_before": 1235
+        },
+        {
+            "next": 1234.5678,
+            "first": false,
+            "rating": 1234.5678,
+            "correct": false,
+            "difficulty": 1,
+            "shown_after": 1235,
+            "shown_before": 1235
+        },
+        {
+            "next": 1234.5874533214396,
+            "first": true,
+            "rating": 1234.5678,
+            "correct": true,
+            "difficulty": 2,
+            "shown_after": 1235,
+            "shown_before": 1235
+        },
+        {
+            "next": 1234.5678,
+            "first": false,
+            "rating": 1234.5678,
+            "correct": true,
+            "difficulty": 2,
+            "shown_after": 1235,
+            "shown_before": 1235
+        },
+        {
+            "next": 1210.5874533214396,
+            "first": true,
+            "rating": 1234.5678,
+            "correct": false,
+            "difficulty": 2,
+            "shown_after": 1211,
+            "shown_before": 1235
+        },
+        {
+            "next": 1234.5678,
+            "first": false,
+            "rating": 1234.5678,
+            "correct": false,
+            "difficulty": 2,
+            "shown_after": 1235,
+            "shown_before": 1235
+        },
+        {
+            "next": 1234.629839408385,
+            "first": true,
+            "rating": 1234.5678,
+            "correct": true,
+            "difficulty": 3,
+            "shown_after": 1235,
+            "shown_before": 1235
+        },
+        {
+            "next": 1234.5678,
+            "first": false,
+            "rating": 1234.5678,
+            "correct": true,
+            "difficulty": 3,
+            "shown_after": 1235,
+            "shown_before": 1235
+        },
+        {
+            "next": 1210.629839408385,
+            "first": true,
+            "rating": 1234.5678,
+            "correct": false,
+            "difficulty": 3,
+            "shown_after": 1211,
+            "shown_before": 1235
+        },
+        {
+            "next": 1234.5678,
+            "first": false,
+            "rating": 1234.5678,
+            "correct": false,
+            "difficulty": 3,
+            "shown_after": 1235,
+            "shown_before": 1235
+        },
+        {
+            "next": 2600.000007589464,
+            "first": true,
+            "rating": 2600,
+            "correct": true,
+            "difficulty": null,
+            "shown_after": 2600,
+            "shown_before": 2600
+        },
+        {
+            "next": 2600,
+            "first": false,
+            "rating": 2600,
+            "correct": true,
+            "difficulty": null,
+            "shown_after": 2600,
+            "shown_before": 2600
+        },
+        {
+            "next": 2576.000007589464,
+            "first": true,
+            "rating": 2600,
+            "correct": false,
+            "difficulty": null,
+            "shown_after": 2576,
+            "shown_before": 2600
+        },
+        {
+            "next": 2600,
+            "first": false,
+            "rating": 2600,
+            "correct": false,
+            "difficulty": null,
+            "shown_after": 2600,
+            "shown_before": 2600
+        },
+        {
+            "next": 2600.0000023999996,
+            "first": true,
+            "rating": 2600,
+            "correct": true,
+            "difficulty": 1,
+            "shown_after": 2600,
+            "shown_before": 2600
+        },
+        {
+            "next": 2600,
+            "first": false,
+            "rating": 2600,
+            "correct": true,
+            "difficulty": 1,
+            "shown_after": 2600,
+            "shown_before": 2600
+        },
+        {
+            "next": 2576.0000023999996,
+            "first": true,
+            "rating": 2600,
+            "correct": false,
+            "difficulty": 1,
+            "shown_after": 2576,
+            "shown_before": 2600
+        },
+        {
+            "next": 2600,
+            "first": false,
+            "rating": 2600,
+            "correct": false,
+            "difficulty": 1,
+            "shown_after": 2600,
+            "shown_before": 2600
+        },
+        {
+            "next": 2600.000007589464,
+            "first": true,
+            "rating": 2600,
+            "correct": true,
+            "difficulty": 2,
+            "shown_after": 2600,
+            "shown_before": 2600
+        },
+        {
+            "next": 2600,
+            "first": false,
+            "rating": 2600,
+            "correct": true,
+            "difficulty": 2,
+            "shown_after": 2600,
+            "shown_before": 2600
+        },
+        {
+            "next": 2576.000007589464,
+            "first": true,
+            "rating": 2600,
+            "correct": false,
+            "difficulty": 2,
+            "shown_after": 2576,
+            "shown_before": 2600
+        },
+        {
+            "next": 2600,
+            "first": false,
+            "rating": 2600,
+            "correct": false,
+            "difficulty": 2,
+            "shown_after": 2600,
+            "shown_before": 2600
+        },
+        {
+            "next": 2600.000023999976,
+            "first": true,
+            "rating": 2600,
+            "correct": true,
+            "difficulty": 3,
+            "shown_after": 2600,
+            "shown_before": 2600
+        },
+        {
+            "next": 2600,
+            "first": false,
+            "rating": 2600,
+            "correct": true,
+            "difficulty": 3,
+            "shown_after": 2600,
+            "shown_before": 2600
+        },
+        {
+            "next": 2576.000023999976,
+            "first": true,
+            "rating": 2600,
+            "correct": false,
+            "difficulty": 3,
+            "shown_after": 2576,
+            "shown_before": 2600
+        },
+        {
+            "next": 2600,
+            "first": false,
+            "rating": 2600,
+            "correct": false,
+            "difficulty": 3,
+            "shown_after": 2600,
+            "shown_before": 2600
+        }
+    ],
+    "generated_by": "supabase/tests/rule_vectors.sql (deca_private.deca_elo_next, deca_private.deca_leitner_next)",
+    "toronto_end_of_day": [
+        {
+            "now": "2026-03-08T04:59:59+00:00",
+            "today": "2026-03-07",
+            "end_of_day": "2026-03-08T05:00:00+00:00"
+        },
+        {
+            "now": "2026-03-08T05:00:00+00:00",
+            "today": "2026-03-08",
+            "end_of_day": "2026-03-09T04:00:00+00:00"
+        },
+        {
+            "now": "2026-03-08T12:00:00+00:00",
+            "today": "2026-03-08",
+            "end_of_day": "2026-03-09T04:00:00+00:00"
+        },
+        {
+            "now": "2026-03-09T03:59:59+00:00",
+            "today": "2026-03-08",
+            "end_of_day": "2026-03-09T04:00:00+00:00"
+        },
+        {
+            "now": "2026-10-31T23:30:00+00:00",
+            "today": "2026-10-31",
+            "end_of_day": "2026-11-01T04:00:00+00:00"
+        },
+        {
+            "now": "2026-11-01T03:30:00+00:00",
+            "today": "2026-10-31",
+            "end_of_day": "2026-11-01T04:00:00+00:00"
+        },
+        {
+            "now": "2026-11-01T04:00:00+00:00",
+            "today": "2026-11-01",
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "now": "2026-11-01T12:00:00+00:00",
+            "today": "2026-11-01",
+            "end_of_day": "2026-11-02T05:00:00+00:00"
+        },
+        {
+            "now": "2026-12-31T23:00:00+00:00",
+            "today": "2026-12-31",
+            "end_of_day": "2027-01-01T05:00:00+00:00"
+        },
+        {
+            "now": "2027-01-01T05:00:00+00:00",
+            "today": "2027-01-01",
+            "end_of_day": "2027-01-02T05:00:00+00:00"
+        }
+    ]
+}
