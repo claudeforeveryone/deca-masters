@@ -35,7 +35,7 @@ export function Footer() {
               <li key={l.to}>
                 <Link
                   to={l.to}
-                  className="inline-flex min-h-10 items-center text-on-navy underline-offset-4 hover:underline"
+                  className="inline-flex min-h-11 items-center text-on-navy underline-offset-4 hover:underline"
                 >
                   {l.label}
                 </Link>
@@ -44,7 +44,7 @@ export function Footer() {
             <li>
               <a
                 href="mailto:josephislockedin@gmail.com"
-                className="inline-flex min-h-10 items-center text-on-navy underline-offset-4 hover:underline"
+                className="inline-flex min-h-11 items-center text-on-navy underline-offset-4 hover:underline"
               >
                 Contact
               </a>

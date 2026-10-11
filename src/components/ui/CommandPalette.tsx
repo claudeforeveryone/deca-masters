@@ -159,7 +159,7 @@ export function CommandPalette({
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
-      className="mx-auto mt-[12dvh] mb-auto w-[calc(100%-1.5rem)] max-w-xl rounded border border-line bg-surface p-0 text-ink shadow-dialog backdrop:bg-scrim open:motion-safe:animate-[overlay-in_var(--dur-3)_var(--ease-out)] max-sm:mt-3"
+      className="mx-auto mt-[12dvh] mb-auto w-[calc(100%-1.5rem)] max-w-xl rounded border border-line bg-surface p-0 text-ink shadow-dialog backdrop:bg-scrim max-sm:mt-3"
     >
       {open ? (
         <div className="flex max-h-[min(34rem,76dvh)] flex-col">

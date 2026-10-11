@@ -102,7 +102,7 @@ export function SignupPage() {
       <form
         onSubmit={onSubmit}
         className="grid gap-5"
-        aria-label="Create account"
+        aria-label="Create an account"
       >
         {error ? (
           <Notice tone="error">
@@ -148,7 +148,7 @@ export function SignupPage() {
         </p>
         <div>
           <Button type="submit" busy={busy}>
-            {busy ? "Creating your account" : "Create account"}
+            {busy ? "Creating your account" : "Create an account"}
           </Button>
         </div>
       </form>
