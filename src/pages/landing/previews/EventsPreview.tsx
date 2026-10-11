@@ -31,7 +31,7 @@ export function EventsPreview({ events }: { events: EventItem[] }) {
   );
 
   return (
-    <AppWindow path="/events" note="Real events">
+    <AppWindow path="/events" note={events.length ? "Real events" : undefined}>
       {events.length ? (
         <>
           <FilterChips

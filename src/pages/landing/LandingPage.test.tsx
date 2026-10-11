@@ -201,6 +201,11 @@ describe("landing, with nothing published", () => {
     expect(
       screen.getAllByRole("link", { name: "Create an account" }).length,
     ).toBe(2);
+    // An empty preview window carries no label about content it does not have.
+    fireEvent.click(screen.getByRole("tab", { name: /Events/ }));
+    expect(screen.queryByText("Real events")).toBeNull();
+    fireEvent.click(screen.getByRole("tab", { name: /Role-play trainer/ }));
+    expect(screen.queryByText(/Demo clock/)).toBeNull();
   });
 
   it("says the list did not load when the request fails", async () => {

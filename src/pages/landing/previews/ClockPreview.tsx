@@ -216,7 +216,10 @@ export function ClockPreview({ events }: { events: EventItem[] }) {
   const event = timed.find((e) => e.code === code) ?? timed[0];
 
   return (
-    <AppWindow path="/roleplay" note="Demo clock: runs here, saves nothing">
+    <AppWindow
+      path="/roleplay"
+      note={event ? "Demo clock: runs here, saves nothing" : undefined}
+    >
       {event ? (
         <>
           <Select

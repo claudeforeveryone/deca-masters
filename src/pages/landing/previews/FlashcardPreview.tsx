@@ -57,7 +57,14 @@ export function FlashcardPreview({ index }: { index: ContentIndex | null }) {
   const term = terms[card % Math.max(1, terms.length)];
 
   return (
-    <AppWindow path="/vocab" note="Real terms, nothing saved">
+    <AppWindow
+      path="/vocab"
+      note={
+        state.status === "ready" || state.status === "loading"
+          ? "Real terms, nothing saved"
+          : undefined
+      }
+    >
       {state.status === "loading" ? (
         <div role="status" aria-label="Loading the sample cards">
           <Skeleton className="h-52 w-full" />
