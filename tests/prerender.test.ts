@@ -1,7 +1,10 @@
 // @vitest-environment node
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 // Plain ESM shared with the build (scripts/prerender.mjs).
 import { chunkFiles, injectPrerender } from "../scripts/prerender-lib.mjs";
+import { PREF_PREFIX } from "../src/lib/prefs";
+import { SESSION_STORAGE_KEY } from "../src/lib/supabase";
 
 const PAGE = [
   "<!doctype html><html><head><title>x</title>",
@@ -62,9 +65,48 @@ describe("injectPrerender", () => {
     expect(head.match(/react-r\.js/g)).toHaveLength(1);
   });
 
+  it("copies the markup literally, dollar signs included", () => {
+    const markup = "<p>Costs $& and $' and $` and $$</p>";
+    expect(injectPrerender(PAGE, markup, [])).toContain(
+      `<div id="root" data-prerendered>${markup}</div>`,
+    );
+  });
+
   it("refuses a page without an empty root rather than shipping it unrendered", () => {
     expect(() =>
       injectPrerender(PAGE.replace('id="root"', 'id="app"'), "<p>x</p>", []),
     ).toThrow(/#root/);
+  });
+});
+
+describe("index.html head script", () => {
+  const head = readFileSync(new URL("../index.html", import.meta.url), "utf8");
+
+  it("reads the same session key as the app, so a stored session skips the prerender", () => {
+    expect(head).toContain(`localStorage.getItem("${SESSION_STORAGE_KEY}")`);
+  });
+
+  it("reads the same theme key as the app", () => {
+    expect(head).toContain(`localStorage.getItem("${PREF_PREFIX}theme")`);
+  });
+});
+
+describe("vercel.json", () => {
+  const config = JSON.parse(
+    readFileSync(new URL("../vercel.json", import.meta.url), "utf8"),
+  ) as { rewrites: { source: string; destination: string }[] };
+  const shell = config.rewrites.find((r) => r.destination === "/app.html");
+  const matches = (path: string) =>
+    new RegExp(`^${shell!.source}$`).test(path);
+
+  it("sends deep links to the plain shell", () => {
+    expect(matches("/practice")).toBe(true);
+    expect(matches("/events/PBM")).toBe(true);
+  });
+
+  it("leaves / to index.html, the prerendered landing, and files to themselves", () => {
+    expect(matches("/")).toBe(false);
+    expect(matches("/assets/index-a.js")).toBe(false);
+    expect(matches("/content/index.json")).toBe(false);
   });
 });

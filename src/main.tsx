@@ -28,15 +28,22 @@ const tree = (home?: ComponentType) => (
 // A production build ships the signed-out landing as HTML (scripts/prerender.mjs). index.html's head script marks the
 // visits it does not fit (another path, or a stored session) before first paint, and those render from scratch.
 const html = document.documentElement;
+
+function renderFromScratch(container: HTMLElement) {
+  container.replaceChildren();
+  container.removeAttribute("data-prerendered");
+  html.removeAttribute("data-prerender-skip");
+  createRoot(container).render(tree());
+}
+
 if (root.hasAttribute("data-prerendered") && !html.hasAttribute("data-prerender-skip")) {
   // Load the home page module before hydrating, so hydration never suspends on its chunk (a suspended boundary that
-  // then sees the session resolve would throw the HTML away and flash the loading state).
-  void import("./pages/home/HomePage").then(({ HomePage }) => {
-    hydrateRoot(root, tree(HomePage));
-  });
+  // then sees the session resolve would throw the HTML away and flash the loading state). If the chunk cannot load,
+  // render normally: the route's lazy load retries and its error boundary explains, instead of a dead page.
+  import("./pages/home/HomePage").then(
+    ({ HomePage }) => hydrateRoot(root, tree(HomePage)),
+    () => renderFromScratch(root),
+  );
 } else {
-  root.replaceChildren();
-  root.removeAttribute("data-prerendered");
-  html.removeAttribute("data-prerender-skip");
-  createRoot(root).render(tree());
+  renderFromScratch(root);
 }

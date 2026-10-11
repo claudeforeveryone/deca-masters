@@ -31,7 +31,8 @@ export function injectPrerender(html, markup, preloads) {
     .filter((file) => !html.includes(`/${file}"`))
     .map((file) => `<link rel="modulepreload" crossorigin href="/${file}">`)
     .join("");
+  // Replacer functions: a replacement string would expand $& and friends inside the page's own text.
   return html
-    .replace("</head>", `${links}</head>`)
-    .replace(empty, `<div id="root" data-prerendered>${markup}</div>`);
+    .replace("</head>", () => `${links}</head>`)
+    .replace(empty, () => `<div id="root" data-prerendered>${markup}</div>`);
 }
