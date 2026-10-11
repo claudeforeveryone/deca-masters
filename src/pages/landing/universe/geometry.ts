@@ -154,6 +154,48 @@ export function buildGem(): Panel[] {
   });
 }
 
+export type Seam = {
+  a: Vec3;
+  b: Vec3;
+  /** The two facets (panel ids) that meet here. */
+  facets: [number, number];
+  /** Outward unit normal: the mean of the two facets' normals. */
+  normal: Vec3;
+  /** The sector both facets belong to, or -1 on a boundary between sectors (or the core). */
+  sector: number;
+};
+
+/** Every edge of the gem once, with the two facets on either side: where the light shows between the panels. */
+export function gemEdges(panels: Panel[]): Seam[] {
+  const key = (v: Vec3) => v.map((x) => x.toFixed(6)).join(",");
+  const found = new Map<string, { a: Vec3; b: Vec3; facets: number[] }>();
+  for (const p of panels) {
+    for (let e = 0; e < 3; e++) {
+      const a = p.verts[e];
+      const b = p.verts[(e + 1) % 3];
+      const [ka, kb] = [key(a), key(b)];
+      const k = ka < kb ? `${ka}|${kb}` : `${kb}|${ka}`;
+      const seen = found.get(k);
+      if (seen) seen.facets.push(p.id);
+      else found.set(k, { a, b, facets: [p.id] });
+    }
+  }
+  return [...found.values()].map(({ a, b, facets }) => {
+    const [f1, f2] = facets.map((id) => panels[id]);
+    return {
+      a,
+      b,
+      facets: [f1.id, f2.id],
+      normal: norm([
+        f1.normal[0] + f2.normal[0],
+        f1.normal[1] + f2.normal[1],
+        f1.normal[2] + f2.normal[2],
+      ]),
+      sector: f1.sector === f2.sector ? f1.sector : -1,
+    };
+  });
+}
+
 /** Seconds after the scene starts at which a panel begins its flight in. Sector by sector around the axis, then the
  *  table (the core) last, so the structure visibly closes over its centre. */
 export function panelDelay(p: Pick<Panel, "sector" | "ring" | "seed">): number {
