@@ -1,13 +1,16 @@
 // GLSL for the Strategy Universe. The panel material is three's MeshStandardMaterial (real PBR metal lit by a
 // generated environment) patched with onBeforeCompile; edges, ring and streams are small ShaderMaterials.
 import {
-  AdditiveBlending,
+  AddEquation,
   Color,
+  CustomBlending,
   DoubleSide,
   FrontSide,
   MeshStandardMaterial,
+  OneFactor,
   ShaderMaterial,
   Vector3,
+  ZeroFactor,
   type IUniform,
 } from "three";
 
@@ -48,6 +51,22 @@ vec3 assemble(vec3 p) {
   return q;
 }
 `;
+
+/**
+ * Light that adds to whatever is behind it. The colour adds and the canvas alpha is left alone: the canvas is
+ * transparent and composited premultiplied, so light over an empty pixel adds onto the page instead of painting an
+ * opaque one. (three's AdditiveBlending also adds alpha, which turned unlit light, black, into opaque black shapes.)
+ * Fragment shaders using this output premultiplied colour; their alpha is ignored.
+ */
+function addLight(m: ShaderMaterial): ShaderMaterial {
+  m.blending = CustomBlending;
+  m.blendEquation = AddEquation;
+  m.blendSrc = OneFactor;
+  m.blendDst = OneFactor;
+  m.blendSrcAlpha = ZeroFactor;
+  m.blendDstAlpha = OneFactor;
+  return m;
+}
 
 const SWEEP = /* glsl */ `
 uniform float uSweep;
@@ -160,7 +179,7 @@ roughnessFactor = clamp(roughnessFactor + (vSeed - 0.5) * 0.24, 0.1, 1.0);`,
  * turned to the viewer, white-hot where the sweep crosses. uCore 0 is fully dark (adds nothing).
  */
 export function makeShellMaterial(u: PanelUniforms): ShaderMaterial {
-  return new ShaderMaterial({
+  return addLight(new ShaderMaterial({
     uniforms: {
       uSweep: u.uSweep,
       uSweepDir: u.uSweepDir,
@@ -172,7 +191,6 @@ export function makeShellMaterial(u: PanelUniforms): ShaderMaterial {
     },
     transparent: true,
     depthWrite: false,
-    blending: AdditiveBlending,
     side: FrontSide,
     vertexShader: /* glsl */ `
       uniform float uSel[7];
@@ -204,7 +222,7 @@ export function makeShellMaterial(u: PanelUniforms): ShaderMaterial {
         vec3 col = base * (0.45 + 0.75 * facing) + uHot * band * 1.1 + uElectric * vSel * 0.35;
         gl_FragColor = vec4(col * uCore, 1.0);
       }`,
-  });
+  }));
 }
 
 /**
@@ -212,7 +230,7 @@ export function makeShellMaterial(u: PanelUniforms): ShaderMaterial {
  * in the sweep. Interior seams lift with their sector in the explorer, like the panels around them.
  */
 export function makeSeamMaterial(u: PanelUniforms): ShaderMaterial {
-  return new ShaderMaterial({
+  return addLight(new ShaderMaterial({
     uniforms: {
       uSweep: u.uSweep,
       uSweepDir: u.uSweepDir,
@@ -225,7 +243,6 @@ export function makeSeamMaterial(u: PanelUniforms): ShaderMaterial {
     },
     transparent: true,
     depthWrite: false,
-    blending: AdditiveBlending,
     side: DoubleSide,
     vertexShader: /* glsl */ `
       uniform float uSel[7];
@@ -269,18 +286,17 @@ export function makeSeamMaterial(u: PanelUniforms): ShaderMaterial {
         vec3 col = (base + uHot * band * 1.4 + uElectric * vSel * 0.5) * profile;
         gl_FragColor = vec4(col * uCore, 1.0);
       }`,
-  });
+  }));
 }
 
 /** 1px electric outlines: brighter in the sweep and on the selected sector, fading in as each panel lands. */
 export function makeEdgeMaterial(
   u: PanelUniforms & { uOpacity: IUniform<number> },
 ): ShaderMaterial {
-  return new ShaderMaterial({
+  return addLight(new ShaderMaterial({
     uniforms: u,
     transparent: true,
     depthWrite: false,
-    blending: AdditiveBlending,
     vertexShader: /* glsl */ `
       ${ASSEMBLY}
       varying vec3 vWorld;
@@ -300,14 +316,14 @@ export function makeEdgeMaterial(
       void main() {
         float band = sweepBand(vWorld);
         float glow = 0.16 + band * 1.2 + vSel * 0.6;
-        gl_FragColor = vec4(uElectric * glow, vArrive * uOpacity);
+        gl_FragColor = vec4(uElectric * glow * vArrive * uOpacity, 1.0);
       }`,
-  });
+  }));
 }
 
 /** The orbit ring's circle and event ticks, drawn around as uReveal goes 0 to 1. */
 export function makeRingMaterial(): ShaderMaterial {
-  return new ShaderMaterial({
+  return addLight(new ShaderMaterial({
     uniforms: {
       uReveal: { value: 0 },
       uSel: { value: [0, 0, 0, 0, 0, 0] },
@@ -316,7 +332,6 @@ export function makeRingMaterial(): ShaderMaterial {
     },
     transparent: true,
     depthWrite: false,
-    blending: AdditiveBlending,
     vertexShader: /* glsl */ `
       uniform float uSel[6];
       uniform float uRadius;
@@ -350,12 +365,12 @@ export function makeRingMaterial(): ShaderMaterial {
         float base = vKind < 0.5 ? 0.16 : (vKind > 1.5 ? 0.42 : 0.3);
         gl_FragColor = vec4(uElectric * (base + vSel * 0.85), 1.0);
       }`,
-  });
+  }));
 }
 
 /** Data streams: points spiralling from the ring into the table, faded at both ends. */
 export function makeStreamMaterial(pixelRatio: number): ShaderMaterial {
-  return new ShaderMaterial({
+  return addLight(new ShaderMaterial({
     uniforms: {
       uTime: { value: 0 },
       uOpacity: { value: 0 },
@@ -364,7 +379,6 @@ export function makeStreamMaterial(pixelRatio: number): ShaderMaterial {
     },
     transparent: true,
     depthWrite: false,
-    blending: AdditiveBlending,
     vertexShader: /* glsl */ `
       uniform float uTime;
       uniform float uSize;
@@ -387,7 +401,7 @@ export function makeStreamMaterial(pixelRatio: number): ShaderMaterial {
       uniform float uOpacity;
       varying float vFade;
       void main() {
-        gl_FragColor = vec4(uElectric, vFade * uOpacity * 0.55);
+        gl_FragColor = vec4(uElectric * vFade * uOpacity * 0.55, 1.0);
       }`,
-  });
+  }));
 }
