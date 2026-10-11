@@ -1,0 +1,24 @@
+{
+  "cluster": "marketing",
+  "status": "placeholder",
+  "events": [
+    {
+      "eventCode": "PMK",
+      "eventName": "Principles of Marketing",
+      "officialSamples": [
+        {
+          "title": "Fixture link to an official sample (test only)",
+          "url": "https://www.deca.org/compete",
+          "season": "2026-2027"
+        }
+      ],
+      "format": {
+        "prepMinutes": 10,
+        "presentationMinutes": 10,
+        "judgeRole": null
+      },
+      "placeholder": true,
+      "note": "Fixture: official sample role plays open on deca.org; practise with the trainer."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source": "Test fixture: links only, never copied text.",
+  "exams": [
+    {
+      "exam": "marketing",
+      "samples": [
+        {
+          "title": "Fixture link to an official sample exam (test only)",
+          "url": "https://www.deca.org/compete",
+          "season": "2026-2027"
+        }
+      ]
+    }
+  ]
+}
