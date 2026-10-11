@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { CheckCircle, XCircle, Timer, X, ArrowRight, ArrowCounterClockwise } from '@phosphor-icons/react'
 import { examOf } from '../data/events'
 import type { Question } from '../data/questions'
+import { cue, cueFinish } from '../sound'
 
 export type QuizResult = { correct: number; total: number; seconds: number; wrongIds: string[] }
 
@@ -84,6 +85,10 @@ export default function QuizRunner({ title, questions, timeLimitSec, eloPerCorre
     answersRef.current = updated
     setAnswers(updated)
     onAnswer?.(updated)
+    // Right answers in a row climb in pitch.
+    let streak = 0
+    while (streak <= i && updated[i - streak] === questions[i - streak].answer) streak++
+    cue(streak ? 'correct' : 'wrong', { streak })
     if (!showExplanations) setTimeout(next, 550)
   }
 
@@ -167,7 +172,7 @@ export default function QuizRunner({ title, questions, timeLimitSec, eloPerCorre
               disabled={picked !== null}
               className={`flex items-center gap-4 border-2 px-4 py-4 text-left transition-colors disabled:cursor-default ${state}`}
             >
-              <span className={`grid h-8 w-8 shrink-0 place-items-center text-[13px] font-bold ${picked === null ? "bg-canvas text-ink" : "bg-white/70 text-ink"}`}>
+              <span className={`grid h-8 w-8 shrink-0 place-items-center text-[13px] font-bold ${picked === null ? "bg-canvas text-ink" : "bg-surface/70 text-ink"}`}>
                 {'ABCD'[idx]}
               </span>
               <span className="flex-1 text-[15px]">{c}</span>
@@ -196,6 +201,14 @@ export default function QuizRunner({ title, questions, timeLimitSec, eloPerCorre
 
 export function ResultCard({ r, delta, title = 'Session complete', onAgain, onDone, note }: { r: QuizResult; delta: number; title?: string; onAgain?: () => void; onDone: () => void; note?: string }) {
   const pct = r.total ? Math.round((r.correct / r.total) * 100) : 0
+  // Once per result, even when StrictMode mounts it twice.
+  const cheered = useRef(false)
+  useEffect(() => {
+    if (cheered.current || r.total === 0) return
+    cheered.current = true
+    cueFinish(delta)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   return (
     <div className="surface enter mx-auto mt-12 max-w-md border-t-4 border-t-brand p-8">
       <p className="text-[11px] font-bold uppercase tracking-label text-brand">{title}</p>

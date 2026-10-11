@@ -6,6 +6,7 @@ import { clearActive, loadActive, saveActive } from '../data/activeSession'
 import { useMyEvent, useStore, type PlayerRow } from '../store'
 import QuizRunner, { fmtTime, type QuizResult } from '../components/QuizRunner'
 import { Avatar, EmptyState, PageBand, SectionHeader, Tabs } from '../components/ui'
+import { cue } from '../sound'
 
 const MATCH_SECONDS = 150 // up to 10 questions, 2:30 on the clock
 const ELO_PER_CORRECT = 12
@@ -83,6 +84,8 @@ export default function Arena() {
     const them = { correct: theirCorrect, total: mine.total, seconds: Math.round(50 + Math.random() * 90), wrongIds: [] }
     const won = didWin(mine, them)
     const delta = record({ title: `Arena vs ${opponent.name}`, exam: live.exam, total: mine.total, correct: mine.correct, seconds: mine.seconds, wrongIds: mine.wrongIds, arena: { opponent: opponent.name, won } }, ELO_PER_CORRECT)
+    cue(won ? 'win' : 'lose')
+    if (delta > 0) cue('elo', { delay: 0.8 })
     setMatch({ opponent, me: mine, them, delta })
     setLive(null)
   }
