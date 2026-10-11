@@ -73,6 +73,11 @@ const CreditsPage = page(
   "CreditsPage",
 );
 const NotFoundPage = page(() => import("./pages/NotFoundPage"), "NotFoundPage");
+// Development only: the UI kit gallery. In a production build import.meta.env.DEV is false, so the route and the
+// dynamic import are dropped and no chunk is emitted.
+const UiGalleryPage = import.meta.env.DEV
+  ? page(() => import("./pages/dev/UiGalleryPage"), "UiGalleryPage")
+  : null;
 
 /** The shell stays put while a page chunk loads; a page that throws is contained and cleared on the next route. */
 function ShellLayout() {
@@ -125,6 +130,9 @@ export function App() {
           <Route path="owner" element={<OwnerPage />} />
         </Route>
 
+        {UiGalleryPage ? (
+          <Route path="dev/ui" element={<UiGalleryPage />} />
+        ) : null}
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
