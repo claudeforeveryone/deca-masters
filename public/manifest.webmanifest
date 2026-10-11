@@ -1,0 +1,26 @@
+{
+  "name": "DECA Masters",
+  "short_name": "DECA Masters",
+  "description": "Cluster-exam drills, role-play prep and vocab for DECA members. A free, independent study tool made by students, not affiliated with DECA Inc.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#071634",
+  "theme_color": "#071634",
+  "lang": "en-CA",
+  "dir": "ltr",
+  "categories": ["education"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "Practice exams", "url": "/practice", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Vocab flashcards", "url": "/vocab", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Role-play trainer", "url": "/roleplay", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
