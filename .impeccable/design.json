@@ -1,0 +1,584 @@
+{
+ "schemaVersion": 2,
+ "generatedAt": "2026-10-11T06:11:08+00:00",
+ "title": "Design System: DECA Masters",
+ "extensions": {
+  "colorMeta": {
+   "stage": {
+    "role": "neutral",
+    "displayName": "Stage Navy",
+    "canonical": "#071634",
+    "tonalRamp": [
+     "#020a1f",
+     "#132342",
+     "#2d3f61",
+     "#4a5e81",
+     "#697ea3",
+     "#899fc6",
+     "#aec5ee",
+     "#d9efff"
+    ]
+   },
+   "stage-deep": {
+    "role": "neutral",
+    "displayName": "Stage Deep",
+    "canonical": "#040a18",
+    "tonalRamp": [
+     "#040b19",
+     "#1b2434",
+     "#364051",
+     "#535e71",
+     "#737e91",
+     "#939fb3",
+     "#b9c5da",
+     "#e3efff"
+    ]
+   },
+   "stage-raised": {
+    "role": "neutral",
+    "displayName": "Stage Raised",
+    "canonical": "#0c1f45",
+    "tonalRamp": [
+     "#020a1f",
+     "#0f2248",
+     "#293f68",
+     "#465d89",
+     "#657dab",
+     "#859fce",
+     "#aac5f6",
+     "#d9efff"
+    ]
+   },
+   "stage-line": {
+    "role": "neutral",
+    "displayName": "Stage Hairline",
+    "canonical": "#1b2f57",
+    "tonalRamp": [
+     "#020a1f",
+     "#0f2248",
+     "#293f68",
+     "#465d89",
+     "#657dab",
+     "#859fcf",
+     "#aac5f7",
+     "#d9efff"
+    ]
+   },
+   "stage-line-strong": {
+    "role": "neutral",
+    "displayName": "Stage Control Line",
+    "canonical": "#5a74a2",
+    "tonalRamp": [
+     "#020a1f",
+     "#0d2249",
+     "#283f69",
+     "#455d8a",
+     "#637eac",
+     "#839fd0",
+     "#a8c5f8",
+     "#d8f0ff"
+    ]
+   },
+   "navy": {
+    "role": "neutral",
+    "displayName": "DECA Navy",
+    "canonical": "#002d6b",
+    "tonalRamp": [
+     "#010a1f",
+     "#06224b",
+     "#113d7c",
+     "#305d9f",
+     "#507dc3",
+     "#709fe7",
+     "#94c6ff",
+     "#d6f0ff"
+    ]
+   },
+   "deca-blue": {
+    "role": "primary",
+    "displayName": "DECA Blue",
+    "canonical": "#0072ce",
+    "tonalRamp": [
+     "#000b1e",
+     "#00244a",
+     "#00407b",
+     "#005db0",
+     "#1b7edc",
+     "#46a1ff",
+     "#6dc8ff",
+     "#d2f2ff"
+    ]
+   },
+   "electric": {
+    "role": "primary",
+    "displayName": "Electric Edge Light",
+    "canonical": "#008dff",
+    "tonalRamp": [
+     "#000b1e",
+     "#00244a",
+     "#003f7c",
+     "#005db0",
+     "#007de8",
+     "#29a0ff",
+     "#58c7ff",
+     "#d3f2ff"
+    ]
+   },
+   "electric-text": {
+    "role": "primary",
+    "displayName": "Electric Text",
+    "canonical": "#4dabff",
+    "tonalRamp": [
+     "#000c1e",
+     "#00254a",
+     "#00417a",
+     "#0060ae",
+     "#1981d2",
+     "#45a4f7",
+     "#6ecbff",
+     "#d0f3ff"
+    ]
+   },
+   "on-navy": {
+    "role": "neutral",
+    "displayName": "On Navy",
+    "canonical": "#f2f6fc",
+    "tonalRamp": [
+     "#090b0f",
+     "#212428",
+     "#3d4045",
+     "#5a5e63",
+     "#7a7d83",
+     "#9b9fa4",
+     "#c0c4ca",
+     "#ebeff5"
+    ]
+   },
+   "on-navy-2": {
+    "role": "neutral",
+    "displayName": "On Navy Secondary",
+    "canonical": "#afbeda",
+    "tonalRamp": [
+     "#030a1d",
+     "#192439",
+     "#344057",
+     "#515e76",
+     "#707e98",
+     "#909fba",
+     "#b6c5e1",
+     "#dfefff"
+    ]
+   },
+   "on-stage-3": {
+    "role": "neutral",
+    "displayName": "On Stage Tertiary",
+    "canonical": "#8fa3c6",
+    "tonalRamp": [
+     "#020a1f",
+     "#14233f",
+     "#2f405e",
+     "#4c5e7e",
+     "#6b7e9f",
+     "#8b9fc2",
+     "#b0c5e9",
+     "#daf0ff"
+    ]
+   },
+   "canvas": {
+    "role": "neutral",
+    "displayName": "Refined White Canvas",
+    "canonical": "#f3f6fb",
+    "tonalRamp": [
+     "#090b0e",
+     "#222428",
+     "#3d4044",
+     "#5b5e62",
+     "#7b7d82",
+     "#9c9ea3",
+     "#c1c4c9",
+     "#eceff4"
+    ]
+   },
+   "surface": {
+    "role": "neutral",
+    "displayName": "Surface White",
+    "canonical": "#ffffff",
+    "tonalRamp": [
+     "#0b0b0b",
+     "#242424",
+     "#404040",
+     "#5d5d5d",
+     "#7d7d7d",
+     "#9e9e9e",
+     "#c4c4c4",
+     "#eeeeee"
+    ]
+   },
+   "surface-2": {
+    "role": "neutral",
+    "displayName": "Blue-Tinted Well",
+    "canonical": "#e9f0f9",
+    "tonalRamp": [
+     "#070b11",
+     "#1f242b",
+     "#3b4047",
+     "#585e66",
+     "#787e86",
+     "#999fa7",
+     "#bec5cd",
+     "#e8eff8"
+    ]
+   },
+   "ink": {
+    "role": "neutral",
+    "displayName": "Navy-Black Ink",
+    "canonical": "#0b1730",
+    "tonalRamp": [
+     "#030a1f",
+     "#16233d",
+     "#313f5c",
+     "#4e5e7c",
+     "#6d7e9d",
+     "#8d9fc0",
+     "#b3c5e7",
+     "#dcefff"
+    ]
+   },
+   "ink-2": {
+    "role": "neutral",
+    "displayName": "Ink Secondary",
+    "canonical": "#364563",
+    "tonalRamp": [
+     "#030a1f",
+     "#16233e",
+     "#313f5d",
+     "#4e5e7d",
+     "#6c7d9f",
+     "#8d9fc1",
+     "#b2c5e9",
+     "#dcefff"
+    ]
+   },
+   "ink-3": {
+    "role": "neutral",
+    "displayName": "Ink Tertiary",
+    "canonical": "#56647f",
+    "tonalRamp": [
+     "#030a1e",
+     "#18243b",
+     "#334059",
+     "#505e78",
+     "#6f7e9a",
+     "#8f9fbc",
+     "#b5c5e3",
+     "#deefff"
+    ]
+   },
+   "line": {
+    "role": "neutral",
+    "displayName": "Hairline",
+    "canonical": "#d8e0ec",
+    "tonalRamp": [
+     "#070b13",
+     "#1f242d",
+     "#3a404a",
+     "#575e68",
+     "#777e89",
+     "#979faa",
+     "#bdc5d0",
+     "#e7effb"
+    ]
+   },
+   "line-strong": {
+    "role": "neutral",
+    "displayName": "Control Line",
+    "canonical": "#78879f",
+    "tonalRamp": [
+     "#030b1c",
+     "#182438",
+     "#334055",
+     "#505e75",
+     "#6f7e96",
+     "#909fb8",
+     "#b5c5df",
+     "#dff0ff"
+    ]
+   },
+   "link": {
+    "role": "primary",
+    "displayName": "Link Blue",
+    "canonical": "#0062b3",
+    "tonalRamp": [
+     "#000b1e",
+     "#00244a",
+     "#003f7b",
+     "#005eae",
+     "#2e7fd3",
+     "#52a2f8",
+     "#78c9ff",
+     "#d2f2ff"
+    ]
+   },
+   "good": {
+    "role": "status",
+    "displayName": "Good Green",
+    "canonical": "#0a7a3d",
+    "tonalRamp": [
+     "#001003",
+     "#002e0d",
+     "#00501c",
+     "#007135",
+     "#319354",
+     "#57b574",
+     "#7edc99",
+     "#d2fbdb"
+    ]
+   },
+   "bad": {
+    "role": "status",
+    "displayName": "Bad Red",
+    "canonical": "#b71a31",
+    "tonalRamp": [
+     "#1b0304",
+     "#440d11",
+     "#711c23",
+     "#a22c36",
+     "#d63e4a",
+     "#fe646a",
+     "#ff8b8e",
+     "#ffdfdd"
+    ]
+   },
+   "warn": {
+    "role": "status",
+    "displayName": "Warn Amber",
+    "canonical": "#7d5200",
+    "tonalRamp": [
+     "#170700",
+     "#3b1b00",
+     "#5e3500",
+     "#7f5403",
+     "#a17431",
+     "#c49553",
+     "#ebbb79",
+     "#ffe9c3"
+    ]
+   }
+  },
+  "typographyMeta": {
+   "hero": {
+    "displayName": "Hero",
+    "purpose": "The landing H1 and the closing H2 only."
+   },
+   "display": {
+    "displayName": "Display",
+    "purpose": "Section headings and page titles."
+   },
+   "title": {
+    "displayName": "Title",
+    "purpose": "Card, panel and list headings."
+   },
+   "body": {
+    "displayName": "Body",
+    "purpose": "Reading text, capped near 68ch."
+   },
+   "lead": {
+    "displayName": "Lead",
+    "purpose": "The first paragraph under a heading."
+   },
+   "data": {
+    "displayName": "Data",
+    "purpose": "Event codes, timers, scores, counts, minutes and routes; always tabular."
+   },
+   "control": {
+    "displayName": "Control",
+    "purpose": "Text inside buttons, nav links, tabs, menu items, table cells and list rows."
+   }
+  },
+  "shadows": [
+   {
+    "name": "overlay",
+    "value": "0 16px 40px -16px rgb(3 10 26 / 0.45), 0 2px 6px rgb(3 10 26 / 0.12)",
+    "purpose": "Menus, popovers, the command palette, toasts."
+   },
+   {
+    "name": "dialog",
+    "value": "0 32px 80px -24px rgb(3 10 26 / 0.6), 0 4px 12px rgb(3 10 26 / 0.18)",
+    "purpose": "Dialogs and drawers over the scrim."
+   },
+   {
+    "name": "edge-highlight",
+    "value": "inset 0 1px 0 rgb(255 255 255 / 0.07)",
+    "purpose": "The cut-metal top edge on navy panels and the top bar."
+   }
+  ],
+  "motion": [
+   {
+    "name": "ease-out",
+    "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "purpose": "Arrivals: panels, popovers, the hero lines."
+   },
+   {
+    "name": "ease-in-out",
+    "value": "cubic-bezier(0.65, 0, 0.35, 1)",
+    "purpose": "Skeleton sweep and looping states."
+   },
+   {
+    "name": "ease-in",
+    "value": "cubic-bezier(0.7, 0, 0.84, 0)",
+    "purpose": "Exits, faster than arrivals."
+   },
+   {
+    "name": "dur-1",
+    "value": "120ms",
+    "purpose": "Hover and press."
+   },
+   {
+    "name": "dur-2",
+    "value": "180ms",
+    "purpose": "Small reveals, the tab marker."
+   },
+   {
+    "name": "dur-3",
+    "value": "240ms",
+    "purpose": "Panels, popovers, toasts."
+   },
+   {
+    "name": "dur-4",
+    "value": "400ms",
+    "purpose": "Dialogs, drawers, section state, the 3D fade-in."
+   },
+   {
+    "name": "dur-5",
+    "value": "700ms",
+    "purpose": "The one authored moment: the hero headline."
+   }
+  ],
+  "breakpoints": [
+   {
+    "name": "sm",
+    "value": "640px"
+   },
+   {
+    "name": "md",
+    "value": "768px"
+   },
+   {
+    "name": "lg",
+    "value": "1024px"
+   },
+   {
+    "name": "xl",
+    "value": "1280px"
+   }
+  ]
+ },
+ "components": [
+  {
+   "name": "Primary Button",
+   "kind": "button",
+   "refersTo": "button-primary",
+   "description": "The one primary action per light view.",
+   "html": "<button class=\"ds-btn-primary\">Start a run</button>",
+   "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 20px;border:0;border-radius:2px;background:#0072ce;color:#fff;font:600 0.95rem/1 'Instrument Sans Variable',system-ui,sans-serif;transition:background-color 120ms cubic-bezier(0.16,1,0.3,1),translate 120ms}.ds-btn-primary:hover{background:#005faf}.ds-btn-primary:active{background:#004d8f;translate:0 1px}.ds-btn-primary:focus-visible{outline:2px solid #008dff;outline-offset:2px}"
+  },
+  {
+   "name": "On-Navy Buttons",
+   "kind": "button",
+   "refersTo": "button-on-navy",
+   "description": "The two actions on the navy stage.",
+   "html": "<div class=\"ds-stage\"><button class=\"ds-btn-on-navy\">Create an account</button><button class=\"ds-btn-on-navy-outline\">Sign in</button></div>",
+   "css": ".ds-stage{background:#071634;padding:24px;display:flex;gap:12px}.ds-btn-on-navy,.ds-btn-on-navy-outline{min-height:52px;padding:0 24px;border-radius:2px;font:600 1rem/1 'Instrument Sans Variable',system-ui,sans-serif;transition:background-color 120ms,border-color 120ms}.ds-btn-on-navy{border:0;background:#f2f6fc;color:#071634}.ds-btn-on-navy:hover{background:#fff}.ds-btn-on-navy-outline{border:1px solid #5a74a2;background:transparent;color:#f2f6fc}.ds-btn-on-navy-outline:hover{border-color:#afbeda;background:rgb(255 255 255/0.05)}.ds-btn-on-navy:focus-visible,.ds-btn-on-navy-outline:focus-visible{outline:2px solid #8fc8ff;outline-offset:2px}"
+  },
+  {
+   "name": "Text Field",
+   "kind": "input",
+   "refersTo": "input",
+   "description": "Label above, hint or error below, 44px tall.",
+   "html": "<label class=\"ds-field\"><span>Email</span><input class=\"ds-input\" type=\"email\"></label>",
+   "css": ".ds-field{display:grid;gap:6px;font:600 0.875rem 'Instrument Sans Variable',system-ui,sans-serif;color:#0b1730}.ds-input{min-height:44px;padding:0 12px;border:1px solid #78879f;border-radius:2px;background:#fff;color:#0b1730;font:400 1rem 'Instrument Sans Variable',system-ui,sans-serif}.ds-input:focus-visible{outline:2px solid #008dff;outline-offset:2px}"
+  },
+  {
+   "name": "Top Bar",
+   "kind": "nav",
+   "refersTo": "top-bar",
+   "description": "Navy bar with an electric underline on the current route.",
+   "html": "<nav class=\"ds-bar\"><b>DECA <i>Masters</i></b><a class=\"on\" href=\"#\">Events</a><a href=\"#\">Practice</a><a href=\"#\">Role play</a></nav>",
+   "css": ".ds-bar{display:flex;align-items:stretch;gap:24px;height:56px;padding:0 24px;background:#071634;border-bottom:1px solid #1b2f57;box-shadow:inset 0 1px 0 rgb(255 255 255/0.07);font:400 0.95rem 'Instrument Sans Variable',system-ui,sans-serif}.ds-bar b{align-self:center;color:#f2f6fc;font:700 1.25rem 'Saira Semi Condensed',sans-serif}.ds-bar i{font-style:normal;color:#4dabff}.ds-bar a{position:relative;display:flex;align-items:center;color:#afbeda;text-decoration:none}.ds-bar a:hover,.ds-bar a.on{color:#f2f6fc}.ds-bar a.on::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:#008dff}.ds-bar a:focus-visible{outline:2px solid #8fc8ff;outline-offset:2px}"
+  },
+  {
+   "name": "Filter Chips",
+   "kind": "chip",
+   "refersTo": "tag",
+   "description": "Single-choice chips are a radio group; the count is mono.",
+   "html": "<div class=\"ds-chips\"><button class=\"ds-chip on\">Role play <span>20</span></button><button class=\"ds-chip\">Team case study <span>8</span></button></div>",
+   "css": ".ds-chips{display:flex;gap:8px}.ds-chip{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 12px;border:1px solid #78879f;border-radius:2px;background:#fff;color:#364563;font:600 0.875rem 'Instrument Sans Variable',system-ui,sans-serif}.ds-chip span{font:0.75rem 'JetBrains Mono Variable',monospace;opacity:0.7}.ds-chip:hover{border-color:#56647f;color:#0b1730}.ds-chip.on{background:#0b1730;border-color:#0b1730;color:#f3f6fb}.ds-chip:focus-visible{outline:2px solid #008dff;outline-offset:2px}"
+  },
+  {
+   "name": "Card",
+   "kind": "card",
+   "refersTo": "card",
+   "description": "Hairline surface, 4px corners, no shadow at rest.",
+   "html": "<section class=\"ds-card\"><h3>Marketing Cluster Exam</h3><p>Timed run, finished.</p></section>",
+   "css": ".ds-card{padding:24px;border:1px solid #d8e0ec;border-radius:4px;background:#fff;color:#0b1730}.ds-card h3{margin:0;font:700 1.5rem 'Saira Semi Condensed',sans-serif}.ds-card p{margin:8px 0 0;color:#364563;font:400 1rem 'Instrument Sans Variable',system-ui,sans-serif}"
+  },
+  {
+   "name": "Event Row",
+   "kind": "custom",
+   "description": "The program grammar: mono event code as the key, then name and format.",
+   "html": "<a class=\"ds-event\" href=\"#\"><code>ACT</code><span>Accounting Applications Series</span><small>Role play</small></a>",
+   "css": ".ds-event{display:grid;grid-template-columns:4.5rem 1fr auto;align-items:baseline;gap:16px;padding:14px 16px;border-bottom:1px solid #1b2f57;background:#040a18;color:#f2f6fc;text-decoration:none;font:400 0.95rem 'Instrument Sans Variable',system-ui,sans-serif}.ds-event code{font:600 0.875rem 'JetBrains Mono Variable',monospace;color:#4dabff}.ds-event small{color:#8fa3c6;font-size:0.875rem}.ds-event:hover span{text-decoration:underline;text-underline-offset:4px}.ds-event:focus-visible{outline:2px solid #8fc8ff;outline-offset:-2px}"
+  }
+ ],
+ "narrative": {
+  "northStar": "The Competition Terminal",
+  "overview": "DECA Masters looks like the board at a competition: a deep navy stage, one electric edge light, refined white type, and event codes as the primary keys of everything. The signed-out landing is the stage itself (navy in both colour schemes) with a faceted metal structure of six cluster sectors around a lit core; the app pages follow the visitor's scheme in a refined white with navy-black ink, and the navy top bar and footer frame both.\n\nDensity is a program, not a dashboard: ruled rows, fixed columns that never move, mono for codes, timers and counts, and plain sentence-case words for everything else. Motion is one authored moment (the hero's assembly and headline) plus small state answers to what the visitor does. The system refuses the gradient hero with a device mock-up and a row of three cards, glass as decoration, and anything that implies DECA Inc. made it (no DECA diamond logo, ever).",
+  "keyCharacteristics": [
+   "Navy stage (#071634 to #040a18) with a single electric accent; never a second accent hue.",
+   "Corners from 2px (controls) to 6px (the ceiling); nothing rounder.",
+   "The 45 degree facet square is the repeated unit: list marker, progress tick, cluster key, journey stop.",
+   "Mono only for measured things: event codes, timers, scores, counts, routes.",
+   "Illustrative numbers always carry an \"Illustrative values\" tag; empty data says so in words."
+  ],
+  "rules": [
+   {
+    "name": "The One Light Rule",
+    "body": "Electric is the only light source. It marks the selected, the focused and the live; it never fills large areas and never becomes a gradient behind text.",
+    "section": "colors"
+   },
+   {
+    "name": "The Cluster Key Rule",
+    "body": "DECA's cluster colours (finance #009b46, marketing #cc1d36, business management #f7bc00, entrepreneurship #7c8689, hospitality #0b74bf, personal finance #91c659) appear only as small facet markers, never as fills behind text.",
+    "section": "colors"
+   },
+   {
+    "name": "The Measured Mono Rule",
+    "body": "Mono is for measured things only. Words such as \"Solo\", \"Pairs\" or \"Every event\" stay in the body face, even in a table of numbers.",
+    "section": "typography"
+   },
+   {
+    "name": "The No Eyebrow Rule",
+    "body": "No small label above a heading. The heading carries itself; supporting facts go after it.",
+    "section": "typography"
+   },
+   {
+    "name": "The No Ghost Card Rule",
+    "body": "A hairline border is the card's elevation. A card with a border gets no soft shadow under it.",
+    "section": "elevation"
+   }
+  ],
+  "dos": [
+   "Do keep the landing navy in both colour schemes and the working pages in the visitor's scheme.",
+   "Do compute every count, time and format fact from the published content; show \"None\", \"n of m\" or an honest empty state when the data is missing.",
+   "Do tag made-up numbers \"Illustrative values\" on the window that shows them.",
+   "Do keep 3D behind Mount3D: lazy chunk, device tier, poster first, paused off screen."
+  ],
+  "donts": [
+   "Don't use the DECA diamond logo or anything that implies DECA Inc. made or endorses the site.",
+   "Don't round anything past 6px, add glass outside panels floating on the 3D canvas, or add a second accent hue.",
+   "Don't put a coloured border-left on a list item or card to show selection; use an outline or a fill.",
+   "Don't use mono for words, or a small label above a heading.",
+   "Don't fade the first viewport's largest text in from transparent; it holds back the page's largest paint."
+  ]
+ }
+}
