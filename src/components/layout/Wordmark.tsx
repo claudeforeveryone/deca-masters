@@ -1,16 +1,30 @@
 /**
- * The site's own mark: a blue block with an electric baseline (same as the favicon), then the name. It is not DECA's
- * diamond and must not become one: DECA's logo and trade dress are reserved for chartered associations and chapters.
+ * The site's own mark, set like the original DECA Masters lockup: "DECA", a hairline, then "MASTERS" in spaced caps.
+ * It is type only, never DECA's diamond logo: DECA's logo and trade dress are reserved for chartered associations and
+ * chapters. Colours follow the surrounding text, with "DECA" in the accent on light surfaces.
  */
-export function Wordmark({ className = "" }: { className?: string }) {
+export function Wordmark({
+  className = "",
+  inverse = false,
+}: {
+  className?: string;
+  inverse?: boolean;
+}) {
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
-      <svg aria-hidden="true" viewBox="0 0 16 16" className="size-4 shrink-0">
-        <rect width="16" height="16" fill="var(--deca-blue)" />
-        <rect y="11" width="16" height="5" fill="var(--electric)" />
-      </svg>
-      <span className="font-display text-[1.3rem] leading-none font-bold tracking-[-0.01em] whitespace-nowrap">
-        DECA <span className="text-electric-text">Masters</span>
+      <span
+        className={`text-[1.25rem] leading-none font-extrabold tracking-[-0.03em] ${inverse ? "text-white" : "text-link"}`}
+      >
+        DECA
+      </span>
+      <span
+        aria-hidden="true"
+        className={`h-5 w-px ${inverse ? "bg-white/30" : "bg-line-strong"}`}
+      />
+      <span
+        className={`text-[0.8125rem] leading-none font-bold tracking-[0.14em] uppercase ${inverse ? "text-white" : "text-ink"}`}
+      >
+        Masters
       </span>
     </span>
   );

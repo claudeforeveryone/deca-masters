@@ -23,8 +23,8 @@ type State =
 // Licences read from each package's package.json (2026-10-11). Update when a dependency is added.
 const SOFTWARE = [
   {
-    name: "Saira Semi Condensed, Instrument Sans, JetBrains Mono",
-    what: "typefaces",
+    name: "Montserrat",
+    what: "typeface",
     licence: "SIL Open Font License 1.1",
   },
   { name: "Lucide", what: "icons", licence: "ISC" },

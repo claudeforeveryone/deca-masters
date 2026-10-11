@@ -41,31 +41,35 @@
     12 31 69 / 0.78
   ); /* stage-2 at 78%: only for panels floating over the 3D canvas */
 
-  /* ---- themed ---- */
-  --canvas: #f3f6fb;
-  --surface: #ffffff;
-  --surface-2: #e9f0f9; /* a quiet blue-tinted step for selected rows, code, wells */
-  --ink: #0b1730; /* navy-black, never pure black */
-  --ink-2: #364563;
-  --ink-3: #56647f;
-  --line: #d8e0ec; /* hairlines do the structural work */
-  --line-strong: #78879f; /* input borders and other UI boundaries: 3.4:1 on canvas, 3.2:1 on surface-2 */
+  /* ---- themed: the original DECA Masters palette (deca.org webflow variables), restored 2026-10-11 ---- */
+  --canvas: #ffffff; /* the page is white, as before v2 */
+  --surface: #ffffff; /* cards are white with a hairline */
+  --surface-2: #f2f4f7; /* DECA grey-001 panels, selected rows, wells */
+  --ink: #141414;
+  --ink-2: #333333;
+  --ink-3: #666666;
+  --line: #e4e4e4;
+  --line-strong: #b1b1b1;
 
   --accent: var(--deca-blue); /* one primary action per view */
-  --accent-hover: #005faf;
-  --accent-press: #004d8f;
+  --accent-hover: #055ca8;
+  --accent-press: #174783;
   --on-accent: #ffffff;
-  --link: #0062b3;
-  --focus: #008dff;
+  --link: #0072ce;
+  --focus: #0072ce;
 
-  --good: #0a7a3d;
-  --good-surface: #e4f3ea;
-  --bad: #b71a31;
+  --good: #007a37;
+  --good-surface: #e6f5ec;
+  --bad: #cc1d36;
   --bad-surface: #fbe8eb;
   --warn: #7d5200;
   --warn-surface: #fdf1d3;
 
-  --selection: rgb(0 114 206 / 0.22);
+  --tint: #eff6fc; /* blue-001, the old badge and unread fill */
+  --tint-2: #a1ceef;
+  --navy-footer: #1f2a32;
+
+  --selection: #a1ceef;
   --scrim: rgb(4 10 24 / 0.62);
 
   /* DECA's career clusters (deca.org colours) plus Business Administration Core. Facet markers and tags only. */
@@ -78,19 +82,15 @@
   --cluster-personal-finance: #91c659;
 
   /* ---- type ----
-   * Display: Saira Semi Condensed, squared and slightly condensed, with timetable and scoreboard energy. Headings only.
-   * Body: Instrument Sans, a sturdy reading face for long question stems and forms.
-   * Data: JetBrains Mono, only for measured things: event codes, timers, scores, counts. Always tabular.
+   * Montserrat for everything, as in the original DECA Masters: semibold headings with tight tracking, regular body.
+   * Measured things (event codes, timers, scores, counts) use its tabular figures via .font-mono / .tabular.
    * The @fontsource-variable packages register the family as "<name> Variable"; the stacks must say so. */
-  --f-display: "Saira Semi Condensed", "Arial Narrow", system-ui, sans-serif;
-  --f-body:
-    "Instrument Sans Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --f-mono:
-    "JetBrains Mono Variable", ui-monospace, "SFMono-Regular", Menlo, Consolas,
-    monospace;
+  --f-display: "Montserrat Variable", Montserrat, Arial, sans-serif;
+  --f-body: "Montserrat Variable", Montserrat, Arial, sans-serif;
+  --f-mono: "Montserrat Variable", Montserrat, Arial, sans-serif; /* tabular figures, no monospace face */
 
-  --track-display: -0.015em;
-  --track-hero: -0.02em;
+  --track-display: -0.025em;
+  --track-hero: -0.03em;
   --measure: 68ch;
 
   /* ---- spacing: 4px base (Tailwind's --spacing matches), plus layout rhythm ---- */
@@ -106,15 +106,15 @@
   --space-16: 4rem;
   --space-24: 6rem;
   --gutter: 1rem; /* side gutter on phones; 1.5rem from 640px, 2rem from 1024px (see index.css) */
-  --shell-max: 76rem;
-  --bar-h: 3.5rem; /* top bar */
+  --shell-max: 81.25rem; /* 1300px, the old container-page */
+  --bar-h: 4rem; /* top bar */
   --tabbar-h: 3.75rem; /* phone bottom bar, before the safe-area inset */
   --section-y: 4rem; /* landing section padding; 6rem from 1024px */
 
   /* ---- shape: 2px controls, 4px cards, 6px is the ceiling ---- */
-  --r-control: 2px;
-  --r-card: 4px;
-  --r-max: 6px;
+  --r-control: 4px; /* rounded-soft: buttons, inputs, tags */
+  --r-card: 10px; /* rounded-box: cards, panels, bordered boxes */
+  --r-max: 10px;
 
   /* ---- elevation: declared once. e0 = hairline + surface step (cards, panels). e1 = overlays (menus, popovers,
    * toasts). e2 = dialogs and drawers, over the scrim. Never a hairline under a wide soft shadow. ---- */
@@ -144,25 +144,28 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --canvas: #050c1c;
-    --surface: #0b1629;
-    --surface-2: #11203a;
-    --ink: #e9eff8;
-    --ink-2: #aebcd4;
-    --ink-3: #8796b2;
-    --line: #1c2c49;
-    --line-strong: #5b7298;
-    --accent-hover: #0a66b8;
-    --accent-press: #0b579c;
-    --link: #62b0ff;
-    --focus: #3da2ff;
-    --good: #45cc85;
-    --good-surface: #0c2a1d;
-    --bad: #ff7488;
-    --bad-surface: #2f111a;
+    --canvas: #0f141b;
+    --surface: #0f141b;
+    --surface-2: #19202a;
+    --ink: #edf1f6;
+    --ink-2: #cbd2db;
+    --ink-3: #96a0ad;
+    --line: #2d3745;
+    --line-strong: #586576;
+    --accent: #1f86da;
+    --accent-hover: #4098e4;
+    --accent-press: #6eb0ea;
+    --link: #70b0e0;
+    --focus: #4098e4;
+    --good: #40c77a;
+    --good-surface: #0f2e1e;
+    --bad: #ff7082;
+    --bad-surface: #3e151e;
     --warn: #f2b640;
     --warn-surface: #2b2108;
-    --selection: rgb(61 162 255 / 0.32);
+    --tint: #10233a;
+    --tint-2: #244e7a;
+    --selection: #244e7a;
     --scrim: rgb(2 6 16 / 0.72);
     --shadow-overlay:
       0 18px 44px -14px rgb(0 0 0 / 0.7), 0 2px 6px rgb(0 0 0 / 0.4);
@@ -174,25 +177,28 @@
 :root[data-theme="dark"],
 .theme-dark {
   color-scheme: dark;
-  --canvas: #050c1c;
-  --surface: #0b1629;
-  --surface-2: #11203a;
-  --ink: #e9eff8;
-  --ink-2: #aebcd4;
-  --ink-3: #8796b2;
-  --line: #1c2c49;
-  --line-strong: #5b7298;
-  --accent-hover: #0a66b8;
-  --accent-press: #0b579c;
-  --link: #62b0ff;
-  --focus: #3da2ff;
-  --good: #45cc85;
-  --good-surface: #0c2a1d;
-  --bad: #ff7488;
-  --bad-surface: #2f111a;
+  --canvas: #0f141b;
+  --surface: #0f141b;
+  --surface-2: #19202a;
+  --ink: #edf1f6;
+  --ink-2: #cbd2db;
+  --ink-3: #96a0ad;
+  --line: #2d3745;
+  --line-strong: #586576;
+  --accent: #1f86da;
+  --accent-hover: #4098e4;
+  --accent-press: #6eb0ea;
+  --link: #70b0e0;
+  --focus: #4098e4;
+  --good: #40c77a;
+  --good-surface: #0f2e1e;
+  --bad: #ff7082;
+  --bad-surface: #3e151e;
   --warn: #f2b640;
   --warn-surface: #2b2108;
-  --selection: rgb(61 162 255 / 0.32);
+  --tint: #10233a;
+  --tint-2: #244e7a;
+  --selection: #244e7a;
   --scrim: rgb(2 6 16 / 0.72);
   --shadow-overlay:
     0 18px 44px -14px rgb(0 0 0 / 0.7), 0 2px 6px rgb(0 0 0 / 0.4);
@@ -239,6 +245,9 @@
   --color-warn: var(--warn);
   --color-warn-surface: var(--warn-surface);
   --color-scrim: var(--scrim);
+  --color-tint: var(--tint);
+  --color-tint-2: var(--tint-2);
+  --color-navy-footer: var(--navy-footer);
   --color-cluster-core: var(--cluster-core);
   --color-cluster-business-management: var(--cluster-business-management);
   --color-cluster-entrepreneurship: var(--cluster-entrepreneurship);
@@ -262,25 +271,26 @@
  * Tailwind radius step is capped at 6px, so rounded-xl and friends cannot sneak big corners back in. rounded-full
  * stays for the avatar initial and dots only. */
 @theme {
-  --text-hero: clamp(3rem, 1.5rem + 6.2vw, 6rem);
-  --text-hero--line-height: 0.92;
-  --text-display: clamp(2.125rem, 1.45rem + 2.6vw, 3.75rem);
-  --text-display--line-height: 1;
-  --text-title: clamp(1.375rem, 1.2rem + 0.6vw, 1.75rem);
+  --text-hero: clamp(2.5rem, 1.4rem + 4.4vw, 4.5rem);
+  --text-hero--line-height: 0.98;
+  --text-display: clamp(1.875rem, 1.4rem + 1.8vw, 2.75rem);
+  --text-display--line-height: 1.1;
+  --text-title: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
   --text-title--line-height: 1.12;
   --text-lead: 1.1875rem;
   --text-lead--line-height: 1.5;
   --text-micro: 0.8125rem;
   --text-micro--line-height: 1.35;
-  --text-data: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --text-data: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem);
   --text-data--line-height: 1;
 
-  --radius-xs: 2px;
-  --radius-sm: 2px;
-  --radius-md: 4px;
-  --radius-lg: 4px;
-  --radius-xl: 6px;
-  --radius-2xl: 6px;
-  --radius-3xl: 6px;
-  --radius-4xl: 6px;
+  --radius: 10px;
+  --radius-xs: 4px;
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 10px;
+  --radius-xl: 10px;
+  --radius-2xl: 10px;
+  --radius-3xl: 10px;
+  --radius-4xl: 10px;
 }

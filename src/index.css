@@ -32,10 +32,10 @@
     margin: 0;
     min-height: 100dvh;
     background: var(--canvas);
-    color: var(--ink);
+    color: var(--ink-2);
     font-family: var(--f-body);
-    font-size: 1rem;
-    line-height: 1.55;
+    font-size: 0.9375rem;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -47,9 +47,10 @@
   h2,
   h3 {
     font-family: var(--f-display);
-    font-weight: 700;
+    font-weight: 600;
+    color: var(--ink);
     letter-spacing: var(--track-display);
-    line-height: 1.05;
+    line-height: 1.1;
     text-wrap: balance;
   }
 
@@ -115,6 +116,11 @@
     color: var(--on-navy);
     background: var(--stage-1);
     color-scheme: dark;
+  }
+  /* Headings are ink on light pages (base layer); on navy they take the surrounding text colour. */
+  .stage :is(h1, h2, h3),
+  .text-on-navy :is(h1, h2, h3) {
+    color: inherit;
   }
   .stage ::selection {
     background: rgb(77 171 255 / 0.36);

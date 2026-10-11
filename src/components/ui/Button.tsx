@@ -5,27 +5,27 @@ export type ButtonVariant =
 export type ButtonSize = "sm" | "md" | "lg";
 
 // The state grammar every control shares: rest, hover (colour), pressed (1px drop), selected (set by the caller),
-// disabled (50%, no pointer), focus (the global 2px ring). 2px corners. No other motion.
+// disabled (50%, no pointer), focus (the global 2px ring). 4px corners and a 2px border, as in the original DECA Masters.
 const BASE =
-  "inline-flex items-center justify-center gap-2 rounded-sm font-semibold leading-none no-underline whitespace-nowrap select-none transition-[background-color,border-color,color,translate] duration-(--dur-1) ease-out active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-busy:cursor-progress";
+  "inline-flex items-center justify-center gap-2 rounded-sm border-2 font-semibold tracking-[0.04em] leading-none no-underline whitespace-nowrap select-none transition-[background-color,border-color,color,translate] duration-(--dur-1) ease-out active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-busy:cursor-progress";
 
 // 44px is the default touch height. sm (36px) is only for dense table rows on a pointer device; lg for hero actions.
 const SIZES: Record<ButtonSize, string> = {
-  sm: "min-h-9 px-3 text-sm",
-  md: "min-h-11 px-5 text-[0.95rem]",
-  lg: "min-h-13 px-6 text-base",
+  sm: "min-h-9 px-3 text-xs",
+  md: "min-h-11 px-4 text-[0.8125rem]",
+  lg: "min-h-12 px-6 text-sm",
 };
 
 const VARIANTS: Record<ButtonVariant, string> = {
   primary:
-    "bg-accent text-on-accent hover:bg-accent-hover active:bg-accent-press",
+    "border-accent bg-accent text-on-accent hover:border-accent-hover hover:bg-accent-hover active:bg-accent-press",
   secondary:
-    "border border-line-strong bg-surface text-ink hover:border-accent hover:text-link",
-  quiet: "px-2! text-link underline-offset-4 hover:underline",
-  danger: "border border-bad/50 bg-surface text-bad hover:bg-bad-surface",
-  onNavy: "bg-on-navy text-navy-deep hover:bg-white",
+    "border-accent bg-transparent text-link hover:bg-accent hover:text-on-accent",
+  quiet: "border-transparent px-2! text-link underline-offset-4 hover:underline",
+  danger: "border-bad/60 bg-surface text-bad hover:bg-bad-surface",
+  onNavy: "border-white bg-white text-deca-blue hover:bg-transparent hover:text-white",
   onNavyOutline:
-    "border border-stage-line-strong text-on-navy hover:border-on-navy-2 hover:bg-white/5",
+    "border-white text-white hover:bg-white hover:text-deca-blue",
 };
 
 /** Classes for a button, so a link can look like one: <Link className={buttonClass("primary")}>.
