@@ -78,7 +78,7 @@ export function FlashcardPreview({ index }: { index: ContentIndex | null }) {
             </span>
           </div>
           <div className="mt-3 rounded border border-line bg-surface p-5 sm:p-7">
-            <p className="font-display text-[1.75rem] leading-tight font-bold first-letter:uppercase">
+            <p className="font-display text-title font-bold first-letter:uppercase">
               {term.term}
             </p>
             <div aria-live="polite">

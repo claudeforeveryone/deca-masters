@@ -191,7 +191,7 @@ export function CommandPalette({
                 setActive(0);
               }}
               onKeyDown={onKeyDown}
-              className="h-14 w-full bg-transparent pr-14 pl-12 text-[1.0625rem] text-ink outline-none placeholder:text-ink-3"
+              className="h-14 w-full bg-transparent pr-14 pl-12 text-lead text-ink outline-none placeholder:text-ink-3 focus-visible:shadow-[inset_0_-2px_0_var(--focus)]"
             />
             <Kbd className="absolute top-1/2 right-4 -translate-y-1/2">Esc</Kbd>
           </div>
