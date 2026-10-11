@@ -302,7 +302,8 @@ create trigger deca_analytics_feedback after insert on public.deca_feedback
 
 -- ---------------------------------------------------------------- audit log (append-only)
 -- Written by the owner RPCs (deca_0006) through deca_private.deca_audit. Owner RPCs set the transaction-local
--- settings deca.via ('owner_console') and deca.reason, folded into the row's detail. Clients cannot insert, update or delete; only platform owners can read.
+-- settings deca.via ('owner_console') and deca.reason, folded into the row's detail. Clients cannot insert, update
+-- or delete; only platform owners can read.
 create table if not exists public.deca_audit_log (
   id bigint generated always as identity primary key,
   actor_id uuid,   -- no foreign keys: an audit row must outlive the account it names
@@ -313,7 +314,7 @@ create table if not exists public.deca_audit_log (
   created_at timestamptz not null default now()
 );
 comment on table public.deca_audit_log is
-  'DECA audit log. Append-only (triggers block update/delete/truncate). Written by owner RPCs and triggers; read by platform owners only.';
+  'DECA audit log. Append-only (triggers block update/delete/truncate). Written by owner RPCs; read by platform owners only.';
 create index if not exists deca_audit_log_created_idx on public.deca_audit_log (created_at desc);
 create index if not exists deca_audit_log_actor_idx on public.deca_audit_log (actor_id, created_at desc);
 create index if not exists deca_audit_log_action_idx on public.deca_audit_log (action, created_at desc);
