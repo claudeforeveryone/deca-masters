@@ -32,6 +32,10 @@ function subscribe(l: () => void) {
 }
 const read = () => snap;
 
+// Each load, save and reset takes a new number; a load's answer is used only while its number is still the latest, so a
+// slow read cannot overwrite a profile saved after it started (or land in a store that was reset).
+let seq = 0;
+
 function load(uid: string, force = false) {
   if (
     !force &&
@@ -40,6 +44,7 @@ function load(uid: string, force = false) {
     snap.status !== "error"
   )
     return;
+  const mine = ++seq;
   publish({
     uid,
     status: "loading",
@@ -48,11 +53,11 @@ function load(uid: string, force = false) {
   });
   getMyProfile().then(
     (profile) => {
-      if (snap.uid === uid)
+      if (mine === seq && snap.uid === uid)
         publish({ uid, status: "ready", profile, error: null });
     },
     (e: unknown) => {
-      if (snap.uid === uid)
+      if (mine === seq && snap.uid === uid)
         publish({
           ...snap,
           status: "error",
@@ -67,11 +72,14 @@ function load(uid: string, force = false) {
 
 /** Puts a freshly saved profile (or null after deleting DECA data) in place for every page. */
 export function setMyProfile(profile: Profile | null): void {
-  if (snap.uid) publish({ ...snap, status: "ready", profile, error: null });
+  if (!snap.uid) return;
+  seq++;
+  publish({ ...snap, status: "ready", profile, error: null });
 }
 
-/** Tests only: forget the cached profile. */
+/** Forgets the cached profile (tests, and anything that changes who is signed in). */
 export function resetProfileStore(): void {
+  seq++;
   publish(IDLE);
 }
 
