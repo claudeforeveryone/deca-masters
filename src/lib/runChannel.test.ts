@@ -81,9 +81,32 @@ describe("openRunChannel", () => {
   });
 
   it("works without BroadcastChannel (older browsers): no channel, nothing breaks", () => {
-    expect(
-      openRunChannel("run1", { onMessage: vi.fn(), onPeers: vi.fn() }, null),
-    ).toBeNull();
+    vi.stubGlobal("BroadcastChannel", undefined);
+    try {
+      expect(
+        openRunChannel("run1", { onMessage: vi.fn(), onPeers: vi.fn() }),
+      ).toBeNull();
+    } finally {
+      vi.unstubAllGlobals();
+    }
+  });
+
+  it("works when the browser refuses to open the channel", () => {
+    vi.stubGlobal(
+      "BroadcastChannel",
+      class {
+        constructor() {
+          throw new Error("SecurityError");
+        }
+      },
+    );
+    try {
+      expect(
+        openRunChannel("run1", { onMessage: vi.fn(), onPeers: vi.fn() }),
+      ).toBeNull();
+    } finally {
+      vi.unstubAllGlobals();
+    }
   });
 });
 

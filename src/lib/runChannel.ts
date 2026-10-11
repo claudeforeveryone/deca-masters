@@ -68,19 +68,23 @@ export function parseRunMessage(data: unknown): RunMessage | null {
   }
 }
 
-const browserChannel =
-  typeof BroadcastChannel === "undefined"
-    ? null
-    : (name: string): ChannelLike => {
-        const bc = new BroadcastChannel(name);
-        const ch: ChannelLike = {
-          onmessage: null,
-          postMessage: (data) => bc.postMessage(data),
-          close: () => bc.close(),
-        };
-        bc.onmessage = (e: MessageEvent) => ch.onmessage?.({ data: e.data });
-        return ch;
-      };
+/** Checked when a run opens, not at import, and a browser that refuses the channel just gets a run without tab sync. */
+function browserChannel(name: string): ChannelLike | null {
+  if (typeof BroadcastChannel === "undefined") return null;
+  let bc: BroadcastChannel;
+  try {
+    bc = new BroadcastChannel(name);
+  } catch {
+    return null;
+  }
+  const ch: ChannelLike = {
+    onmessage: null,
+    postMessage: (data) => bc.postMessage(data),
+    close: () => bc.close(),
+  };
+  bc.onmessage = (e: MessageEvent) => ch.onmessage?.({ data: e.data });
+  return ch;
+}
 
 /** Opens the run's channel, or returns null where BroadcastChannel does not exist. */
 export function openRunChannel(
@@ -90,12 +94,12 @@ export function openRunChannel(
     /** How many other tabs have this run open. */
     onPeers: (count: number) => void;
   },
-  make: ((name: string) => ChannelLike) | null = browserChannel,
+  make: (name: string) => ChannelLike | null = browserChannel,
 ) {
-  if (!make) return null;
+  const ch = make(`deca-masters:run:${attemptId}`);
+  if (!ch) return null;
   const tab = Math.random().toString(36).slice(2, 10);
   const peers = new Set<string>();
-  const ch = make(`deca-masters:run:${attemptId}`);
   const send = (m: RunMessage) => ch.postMessage(m);
 
   ch.onmessage = (e) => {
