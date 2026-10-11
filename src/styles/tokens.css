@@ -1,0 +1,236 @@
+/*
+ * Competition Terminal: starter tokens for DECA Masters v2. The deca-universe track refines these values; every
+ * component reads them through the variables (or the Tailwind names bridged at the bottom), never raw hex.
+ *
+ * Blues. #0072CE is the DECA blue: it is the fill in deca.org's own logo file, and PANTONE 285 C (the spot colour in
+ * DECA's Brand Guidelines PDF, Lab 45.1 / -5 / -59) converts to #0071CE. #002D6B (navy), #071634 (deep navy) and
+ * #008DFF (electric) are deca.org's own site colours. DECA publishes no official hex values, so treat all four as
+ * reference values, not a brand spec. Neutrals, state colours and the dark theme are ours.
+ *
+ * Contrast (WCAG 2.2, recomputed 2026-10-11 by deca-foundation): ink, ink-2, ink-3 and link are 4.5:1 or better on
+ * canvas, surface and surface-2 in both themes (ink-3 on surface-2, the lowest, is 5.2:1 light / 5.5:1 dark);
+ * white on the accent is 4.9:1; state colours on their own surfaces are 4.7:1 or better. UI boundaries
+ * (line-strong, focus) are 3:1 or better against canvas and surface. On navy: on-navy 16.5:1, on-navy-2 9.6:1,
+ * electric-text 7.3:1.
+ */
+
+:root {
+  color-scheme: light;
+
+  /* ---- fixed in both themes: the navy chrome (top bar, footer, hero bands) ---- */
+  --navy-deep: #071634;
+  --navy: #002d6b;
+  --deca-blue: #0072ce;
+  --electric: #008dff;
+  --electric-text: #4dabff; /* electric used as text on navy (7.3:1) */
+  --on-navy: #f2f6fc;
+  --on-navy-2: #afbeda;
+  --on-navy-line: #1e3360;
+
+  /* ---- themed: light ("refined white") ---- */
+  --canvas: #f3f6fb;
+  --surface: #ffffff;
+  --surface-2: #e9f0f9; /* a quiet blue-tinted step for selected rows, code, wells */
+  --ink: #0b1730; /* navy-black, never pure black */
+  --ink-2: #364563;
+  --ink-3: #56647f;
+  --line: #d8e0ec; /* hairlines do the structural work */
+  --line-strong: #78879f; /* input borders and other UI boundaries: 3.4:1 on canvas, 3.2:1 on surface-2 */
+
+  --accent: var(--deca-blue); /* one primary action per view */
+  --accent-hover: #005faf;
+  --accent-press: #004d8f;
+  --on-accent: #ffffff;
+  --link: #0062b3;
+  --focus: #008dff;
+
+  --good: #0a7a3d;
+  --good-surface: #e4f3ea;
+  --bad: #b71a31;
+  --bad-surface: #fbe8eb;
+  --warn: #7d5200;
+  --warn-surface: #fdf1d3;
+
+  --selection: rgb(0 114 206 / 0.22);
+
+  /* DECA's career clusters (deca.org colours) plus Business Administration Core. Use for tags and markers only. */
+  --cluster-core: #002d6b;
+  --cluster-business-management: #f7bc00;
+  --cluster-entrepreneurship: #7c8689;
+  --cluster-finance: #009b46;
+  --cluster-hospitality-tourism: #0b74bf;
+  --cluster-marketing: #cc1d36;
+  --cluster-personal-finance: #91c659;
+
+  /* ---- type ----
+   * Display: Saira Semi Condensed, a squared, slightly condensed grotesque with scoreboard energy. Headings only.
+   * Body: Instrument Sans, a sturdy reading face for long question stems and forms.
+   * Data: JetBrains Mono, only for numbers that are measured: timers, scores, counts, codes. Always tabular.
+   * The @fontsource-variable packages register the family as "<name> Variable"; the stacks must say so. */
+  --f-display: "Saira Semi Condensed", "Arial Narrow", system-ui, sans-serif;
+  --f-body:
+    "Instrument Sans Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:
+    "JetBrains Mono Variable", ui-monospace, "SFMono-Regular", Menlo, Consolas,
+    monospace;
+
+  --track-display: -0.015em;
+  --track-caps: 0.06em; /* the rare uppercase micro label in a table header */
+  --measure: 68ch;
+
+  /* ---- spacing: 4px base (Tailwind's --spacing matches), plus layout rhythm ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --gutter: 1rem; /* side gutter on phones; 1.5rem from 640px, 2rem from 1024px (see index.css) */
+  --shell-max: 72rem;
+  --bar-h: 3.5rem; /* top bar */
+  --tabbar-h: 3.75rem; /* phone bottom bar, before the safe-area inset */
+
+  /* ---- shape: 2px controls, 4px cards, 6px is the ceiling ---- */
+  --r-control: 2px;
+  --r-card: 4px;
+  --r-max: 6px;
+
+  /* ---- elevation: declared once. Surfaces separate by hairline and background step; only overlays
+   * (menus, toasts, dialogs) cast a shadow. ---- */
+  --shadow-overlay:
+    0 16px 40px -16px rgb(3 10 26 / 0.45), 0 2px 6px rgb(3 10 26 / 0.12);
+
+  /* ---- motion: exponential ease-out, short. Animate transform, opacity, clip-path, filter; never layout. ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-1: 120ms; /* hover, press */
+  --dur-2: 180ms; /* small reveals, tab underline */
+  --dur-3: 240ms; /* panels, route content */
+  --dur-4: 400ms; /* the one authored moment per surface */
+
+  --z-bar: 30;
+  --z-overlay: 50;
+}
+
+/* ---- themed: dark ("deep navy"). Follows the system unless the visitor picked a theme on this device. ---- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --canvas: #050c1c;
+    --surface: #0b1629;
+    --surface-2: #11203a;
+    --ink: #e9eff8;
+    --ink-2: #aebcd4;
+    --ink-3: #8796b2;
+    --line: #1c2c49;
+    --line-strong: #5b7298;
+    --accent-hover: #0a66b8;
+    --accent-press: #0b579c;
+    --link: #62b0ff;
+    --focus: #3da2ff;
+    --good: #45cc85;
+    --good-surface: #0c2a1d;
+    --bad: #ff7488;
+    --bad-surface: #2f111a;
+    --warn: #f2b640;
+    --warn-surface: #2b2108;
+    --selection: rgb(61 162 255 / 0.32);
+    --shadow-overlay:
+      0 18px 44px -14px rgb(0 0 0 / 0.7), 0 2px 6px rgb(0 0 0 / 0.4);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --canvas: #050c1c;
+  --surface: #0b1629;
+  --surface-2: #11203a;
+  --ink: #e9eff8;
+  --ink-2: #aebcd4;
+  --ink-3: #8796b2;
+  --line: #1c2c49;
+  --line-strong: #5b7298;
+  --accent-hover: #0a66b8;
+  --accent-press: #0b579c;
+  --link: #62b0ff;
+  --focus: #3da2ff;
+  --good: #45cc85;
+  --good-surface: #0c2a1d;
+  --bad: #ff7488;
+  --bad-surface: #2f111a;
+  --warn: #f2b640;
+  --warn-surface: #2b2108;
+  --selection: rgb(61 162 255 / 0.32);
+  --shadow-overlay:
+    0 18px 44px -14px rgb(0 0 0 / 0.7), 0 2px 6px rgb(0 0 0 / 0.4);
+}
+
+/* ---- Tailwind bridge: bg-surface, text-ink, border-line, font-display, ease-out ... read the tokens above ---- */
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy: var(--navy);
+  --color-deca-blue: var(--deca-blue);
+  --color-electric: var(--electric);
+  --color-electric-text: var(--electric-text);
+  --color-on-navy: var(--on-navy);
+  --color-on-navy-2: var(--on-navy-2);
+  --color-on-navy-line: var(--on-navy-line);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-press: var(--accent-press);
+  --color-on-accent: var(--on-accent);
+  --color-link: var(--link);
+  --color-focus: var(--focus);
+  --color-good: var(--good);
+  --color-good-surface: var(--good-surface);
+  --color-bad: var(--bad);
+  --color-bad-surface: var(--bad-surface);
+  --color-warn: var(--warn);
+  --color-warn-surface: var(--warn-surface);
+  --color-cluster-core: var(--cluster-core);
+  --color-cluster-business-management: var(--cluster-business-management);
+  --color-cluster-entrepreneurship: var(--cluster-entrepreneurship);
+  --color-cluster-finance: var(--cluster-finance);
+  --color-cluster-hospitality-tourism: var(--cluster-hospitality-tourism);
+  --color-cluster-marketing: var(--cluster-marketing);
+  --color-cluster-personal-finance: var(--cluster-personal-finance);
+
+  --font-sans: var(--f-body);
+  --font-display: var(--f-display);
+  --font-mono: var(--f-mono);
+
+  --shadow-overlay: var(--shadow-overlay);
+  --ease-out: var(--ease-out);
+  --ease-in-out: var(--ease-in-out);
+}
+
+/* Display sizes (text-hero, text-display) and the radius ceiling. Every Tailwind radius step is capped at 6px, so
+ * rounded-xl and friends cannot sneak big corners back in. rounded-full stays for avatars and dots only. */
+@theme {
+  --text-hero: clamp(2.5rem, 1.35rem + 4.9vw, 5.25rem);
+  --text-hero--line-height: 0.98;
+  --text-display: clamp(2rem, 1.55rem + 1.9vw, 3.25rem);
+  --text-display--line-height: 1.02;
+
+  --radius-xs: 2px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 4px;
+  --radius-xl: 6px;
+  --radius-2xl: 6px;
+  --radius-3xl: 6px;
+  --radius-4xl: 6px;
+}
