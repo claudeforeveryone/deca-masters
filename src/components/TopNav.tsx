@@ -3,6 +3,7 @@ import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom'
 import { Bell, List, X, SignOut, UserCircle } from '@phosphor-icons/react'
 import { useMyEvent, useStore } from '../store'
 import { Avatar } from './ui'
+import { assignmentLink } from './Assigned'
 import Logo from './Logo'
 
 const LINKS = [
@@ -19,7 +20,7 @@ const LINKS = [
 type Note = { id: string; text: string; to?: string }
 
 export default function TopNav() {
-  const { signedIn, isGuest, me, myChapter, logout } = useStore()
+  const { signedIn, isGuest, me, myChapter, myAssignments, logout } = useStore()
   const { event } = useMyEvent()
   const [menu, setMenu] = useState(false)
   const [open, setOpen] = useState<'bell' | 'account' | null>(null)
@@ -35,8 +36,9 @@ export default function TopNav() {
     if (isGuest) list.unshift({ id: 'guest', text: 'You are using a guest session. Create an account to save progress and join the leaderboard.', to: '/register' })
     else if (!myChapter) list.unshift({ id: 'chapter', text: 'Join your chapter with its code, or create a new chapter.', to: '/chapter' })
     if (me.progress.streak > 1) list.unshift({ id: `streak${me.progress.streak}`, text: `You are on a ${me.progress.streak}-day practice streak.`, to: '/play' })
+    for (const a of myAssignments.filter((x) => !x.results?.[me.id])) list.unshift({ id: `assign-${a.id}`, text: `${a.by} assigned you "${a.title}".`, to: assignmentLink(a) })
     return list
-  }, [me, isGuest, myChapter, event])
+  }, [me, isGuest, myChapter, myAssignments, event])
   const unread = notes.filter((n) => !read.has(n.id)).length
 
   useEffect(() => {

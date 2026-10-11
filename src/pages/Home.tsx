@@ -96,8 +96,8 @@ export default function Home() {
       </section>
 
       {/* Arena: navy split block */}
-      <section className="grid md:grid-cols-2">
-        <div className="rounded-t-box bg-navy-midnight p-8 text-white sm:p-12 md:rounded-tr-none md:rounded-bl-box">
+      <section className="grid overflow-hidden rounded-box border border-line md:grid-cols-2">
+        <div className="bg-navy-midnight p-8 text-white sm:p-12">
           <span className="tag">Arena</span>
           <h2 className="mt-4 text-3xl text-white">Challenge someone to a 1v1.</h2>
           <p className="mt-3 max-w-[42ch] text-sm leading-relaxed text-white/80">
@@ -105,7 +105,7 @@ export default function Home() {
           </p>
           <div className="mt-8"><ArrowLink to="/arena" inverse>Open the Arena</ArrowLink></div>
         </div>
-        <div className="rounded-none rounded-b-box border border-line border-t-0 md:rounded-r-box md:rounded-bl-none md:border-l-0 md:border-t">
+        <div className="bg-white">
           <p className="border-b border-line px-6 py-3 text-[11px] font-bold uppercase tracking-label text-ink-3 sm:px-8">Online now</p>
           <ul className="divide-y divide-line">
             {online.map((x) => (

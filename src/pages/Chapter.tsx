@@ -1,10 +1,11 @@
 import { useEffect, useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
-import { Copy, Check, LinkSimple, Megaphone, Newspaper, UserMinus, Prohibit, EnvelopeSimple, Plus, Shuffle, PencilSimple, ShieldCheck, ArrowSquareOut, UserPlus, UsersThree, ClipboardText, CalendarBlank } from '@phosphor-icons/react'
+import { Copy, Check, LinkSimple, Megaphone, Newspaper, UserMinus, Prohibit, EnvelopeSimple, Plus, Shuffle, PencilSimple, ShieldCheck, ArrowSquareOut, UserPlus, UsersThree, ClipboardText, CalendarBlank, CaretDown } from '@phosphor-icons/react'
 import { CLUSTERS, EXAMS, examOf, eventByCode, type ExamId } from '../data/events'
-import { sample, useQuestions, type Question } from '../data/questions'
-import { useStore, type Assignment, type ChapterMeta, type ChapterRow, type Post, type Role } from '../store'
+import { questionCount, sample, useQuestions, type Question } from '../data/questions'
+import { canAssign, useStore, type Assignment, type ChapterMeta, type ChapterRow, type Post, type Role } from '../store'
 import { Avatar, EmptyState, Meter, PageBand, RankRow, SectionHeader, Stat, Toggle } from '../components/ui'
+import AssignedToYou, { assignmentKind, fmtDue, isOverdue } from '../components/Assigned'
 
 const TABS = ['Classroom', 'Leaderboard', 'Members', 'Trainers', 'Attendance', 'Insights', 'Assignments'] as const
 type Tab = (typeof TABS)[number]
@@ -30,7 +31,8 @@ export default function Chapter() {
   const meta = chapterMeta(myChapter.id)
   const role: Role = meta.roles[me!.id] ?? 'Member'
   const isAdmin = role === 'President' || role === 'Executive'
-  const canTrain = isAdmin || role === 'Trainer'
+  // President, Executives, members given the Trainer role and cluster trainers can post and assign work.
+  const canTrain = canAssign(meta, me!.id)
   const visible = TABS.filter((t) => (t === 'Insights' ? isAdmin : t === 'Attendance' ? canTrain : true))
   const current = visible.includes(tab) ? tab : 'Classroom'
   const update = (fn: (m: ChapterMeta) => ChapterMeta) => updateMeta(myChapter.id, fn)
@@ -74,7 +76,7 @@ export default function Chapter() {
         {current === 'Trainers' && <Trainers chapter={myChapter} meta={meta} update={update} isAdmin={isAdmin} />}
         {current === 'Attendance' && <Attendance chapter={myChapter} meta={meta} update={update} />}
         {current === 'Insights' && <Insights chapter={myChapter} meta={meta} />}
-        {current === 'Assignments' && <Assignments meta={meta} update={update} canEdit={canTrain} />}
+        {current === 'Assignments' && <Assignments chapter={myChapter} meta={meta} update={update} canEdit={canTrain} />}
       </div>
     </div>
   )
@@ -492,106 +494,298 @@ function Insights({ chapter, meta }: { chapter: ChapterRow; meta: ChapterMeta })
   )
 }
 
-const BUILDER_SIZE = 20
+const QUESTION_COUNTS = [10, 20, 30, 50, 100]
+const KINDS: { type: Assignment['type']; label: string; body: string }[] = [
+  { type: 'Test', label: 'Test', body: 'Everyone gets the same questions, drawn below.' },
+  { type: 'Shuffled exam', label: 'Shuffled exam', body: 'Each member gets their own random draw.' },
+  { type: 'Flashcards', label: 'Vocab', body: 'A set of terms to study as flashcards.' },
+]
+const toggled = <T,>(set: Set<T>, v: T) => {
+  const n = new Set(set)
+  if (n.has(v)) n.delete(v)
+  else n.add(v)
+  return n
+}
 
-function Assignments({ meta, update, canEdit }: { meta: ChapterMeta; update: (fn: (m: ChapterMeta) => ChapterMeta) => void; canEdit: boolean }) {
-  const { me } = useStore()
-  const [title, setTitle] = useState('')
+function Assignments({ chapter, meta, update, canEdit }: Props & { canEdit: boolean }) {
+  const { myAssignments } = useStore()
+  const members = chapter.members
+  const nameOf = (id: string) => members.find((p) => p.id === id)?.name ?? 'Former member'
+
+  return (
+    <div className="space-y-10">
+      {(!canEdit || myAssignments.length > 0) && (
+        <section>
+          <SectionHeader title="Assigned to you" />
+          <AssignedToYou />
+        </section>
+      )}
+
+      {canEdit && (
+        <>
+          <section>
+            <SectionHeader title="Chapter assignments" action={<span className="num text-sm text-ink-3">{meta.assignments.length}</span>} />
+            {meta.assignments.length === 0 ? (
+              <div className="panel"><EmptyState icon={<ClipboardText size={22} />} title="Nothing assigned" body="Create a test or vocab set for your members below." /></div>
+            ) : (
+              <ul className="divide-y divide-line border border-line">
+                {meta.assignments.map((a) => {
+                  const who = a.assignees ?? members.map((p) => p.id)
+                  const finished = who.filter((id) => a.results?.[id])
+                  return (
+                    <li key={a.id}>
+                      <details className="group">
+                        <summary className="flex cursor-pointer list-none flex-wrap items-center gap-x-4 gap-y-2 px-5 py-3.5 hover:bg-canvas">
+                          <span className="h-8 w-1.5 shrink-0" style={{ background: examOf(a.exam).color }} aria-hidden />
+                          <div className="min-w-0 flex-1">
+                            <p className="truncate text-sm font-semibold text-ink">{a.title}</p>
+                            <p className="text-xs text-ink-3">
+                              {assignmentKind(a)}, {examOf(a.exam).name}, {a.assignees ? `${a.assignees.length} ${a.assignees.length === 1 ? 'member' : 'members'}` : 'whole chapter'}, by {a.by}
+                            </p>
+                          </div>
+                          {a.due && <span className={`inline-flex items-center gap-1 text-xs ${isOverdue(a.due) ? 'text-bad' : 'text-ink-2'}`}><CalendarBlank size={14} /> {fmtDue(a.due)}</span>}
+                          <span className="num text-right text-xs font-semibold text-ink">{finished.length}/{who.length} done</span>
+                          <CaretDown size={14} className="text-ink-3 transition-transform group-open:rotate-180" />
+                        </summary>
+                        <div className="border-t border-line bg-canvas px-5 py-4">
+                          <Meter value={(finished.length / Math.max(1, who.length)) * 100} color={examOf(a.exam).color} />
+                          <ul className="mt-3 grid gap-x-6 gap-y-1.5 text-sm sm:grid-cols-2">
+                            {who.map((id) => {
+                              const r = a.results?.[id]
+                              return (
+                                <li key={id} className="flex items-center justify-between gap-3">
+                                  <span className="truncate text-ink-2">{nameOf(id)}</span>
+                                  <span className={`num shrink-0 text-xs ${r ? 'font-semibold text-good' : 'text-ink-3'}`}>
+                                    {r ? (r.total ? `${r.correct}/${r.total} (${Math.round(((r.correct ?? 0) / r.total) * 100)}%)` : `Done ${fmtDate(r.date)}`) : 'Not started'}
+                                  </span>
+                                </li>
+                              )
+                            })}
+                          </ul>
+                          <div className="mt-4 flex justify-end">
+                            <button className="link text-xs" onClick={() => confirm(`Remove "${a.title}"? Scores recorded on it go too.`) && update((m) => ({ ...m, assignments: m.assignments.filter((x) => x.id !== a.id) }))}>Remove assignment</button>
+                          </div>
+                        </div>
+                      </details>
+                    </li>
+                  )
+                })}
+              </ul>
+            )}
+          </section>
+          <NewAssignment chapter={chapter} meta={meta} update={update} />
+        </>
+      )}
+    </div>
+  )
+}
+
+/** Form for officers and trainers: kind, exam, questions or terms, assignees and an optional due date. */
+function NewAssignment({ chapter, update }: Props) {
+  const { me, deck } = useStore()
+  const myExam = eventByCode(me!.eventCode)?.exam ?? 'bac'
   const [type, setType] = useState<Assignment['type']>('Test')
-  const [exam, setExam] = useState<ExamId>('bac')
+  const [title, setTitle] = useState('')
+  const [exam, setExam] = useState<ExamId>(myExam)
   const [due, setDue] = useState('')
-  const [builderExam, setBuilderExam] = useState<ExamId>('bac')
-  const bank = useQuestions(builderExam)
+  const [count, setCount] = useState(20)
+  const [everyone, setEveryone] = useState(true)
+  const [who, setWho] = useState<Set<string>>(new Set())
+  const [error, setError] = useState('')
+  const [saved, setSaved] = useState('')
+
+  // Test: a draft drawn from the bank that the trainer can redraw and reword before assigning.
+  const bank = useQuestions(exam)
   const [questions, setQuestions] = useState<Question[]>([])
-  // A fresh 20-question draft from the bank whenever the exam changes.
-  useEffect(() => { setQuestions(bank.questions ? sample(bank.questions, BUILDER_SIZE) : []) }, [bank.questions])
+  useEffect(() => { setQuestions(bank.questions ? sample(bank.questions, count) : []) }, [bank.questions, count])
   const [editing, setEditing] = useState<string | null>(null)
 
-  const add = (e: FormEvent) => {
+  // Vocab: terms picked from the whole deck (built-in, your own and the chapter's custom terms).
+  const [termFilter, setTermFilter] = useState<ExamId | 'all'>(myExam)
+  const [terms, setTerms] = useState<Set<string>>(new Set())
+  const shown = deck.filter((c) => termFilter === 'all' || c.exam === termFilter)
+  const chosen = deck.filter((c) => terms.has(c.id))
+
+  const submit = (e: FormEvent) => {
     e.preventDefault()
-    if (!title.trim() || !due) return
-    update((m) => ({ ...m, assignments: [...m.assignments, { id: Math.random().toString(36).slice(2), title: title.trim(), type, exam, due, by: me!.name }] }))
+    setError('')
+    setSaved('')
+    const isVocab = type === 'Flashcards'
+    if (!everyone && who.size === 0) return setError('Pick at least one member, or assign it to the whole chapter.')
+    if (isVocab && chosen.length === 0) return setError('Pick at least one term.')
+    if (type === 'Test' && questions.length === 0) return setError('Wait for the questions to load.')
+    // A vocab set is filed under the exam most of its terms come from.
+    const tally = chosen.reduce<Record<string, number>>((t, c) => ({ ...t, [c.exam]: (t[c.exam] ?? 0) + 1 }), {})
+    const vocabExam = (Object.entries(tally).sort((a, b) => b[1] - a[1])[0]?.[0] as ExamId | undefined) ?? exam
+    const originals = new Map(bank.questions?.map((q) => [q.id, q.prompt]))
+    const edits = Object.fromEntries(questions.filter((q) => originals.get(q.id) !== q.prompt).map((q) => [q.id, q.prompt]))
+    const a: Assignment = {
+      id: Math.random().toString(36).slice(2),
+      title: title.trim() || (isVocab ? `${examOf(vocabExam).name} vocab` : `${examOf(exam).name} ${type === 'Test' ? 'test' : 'exam'}`),
+      type,
+      exam: isVocab ? vocabExam : exam,
+      due,
+      by: me!.name,
+      byId: me!.id,
+      assignees: everyone ? undefined : [...who],
+      ...(isVocab
+        ? { cards: chosen.map(({ id, term, def, exam: x }) => ({ id, term, def, exam: x })) }
+        : { count, ...(type === 'Test' ? { questionIds: questions.map((q) => q.id), edits: Object.keys(edits).length ? edits : undefined } : {}) }),
+      results: {},
+    }
+    update((m) => ({ ...m, assignments: [a, ...m.assignments] }))
+    setSaved(`Assigned "${a.title}".`)
     setTitle('')
     setDue('')
+    setTerms(new Set())
+    if (bank.questions) setQuestions(sample(bank.questions, count))
   }
 
   return (
-    <div className="grid gap-10 lg:grid-cols-2">
-      <div className="space-y-8">
-        <section>
-          <SectionHeader title="Assigned work" />
-          {meta.assignments.length === 0 ? (
-            <div className="panel"><EmptyState icon={<ClipboardText size={22} />} title="Nothing assigned" body={canEdit ? 'Create a test or flashcard set for your members below.' : 'Your trainers have not assigned anything yet.'} /></div>
-          ) : (
-            <ul className="divide-y divide-line border border-line">
-              {meta.assignments.map((a) => (
-                <li key={a.id} className="flex items-center gap-4 px-5 py-3.5">
-                  <span className="h-8 w-1.5 shrink-0" style={{ background: examOf(a.exam).color }} aria-hidden />
-                  <div className="min-w-0 flex-1">
-                    <p className="truncate text-sm font-semibold text-ink">{a.title}</p>
-                    <p className="text-xs text-ink-3">{a.type}, {examOf(a.exam).name}, by {a.by}</p>
-                  </div>
-                  <span className="inline-flex items-center gap-1 text-xs text-ink-2"><CalendarBlank size={14} /> {fmtDate(a.due)}</span>
-                  {canEdit && <button className="link text-xs" onClick={() => update((m) => ({ ...m, assignments: m.assignments.filter((x) => x.id !== a.id) }))}>Remove</button>}
-                </li>
-              ))}
-            </ul>
-          )}
-        </section>
-        {canEdit && (
-          <form className="panel space-y-4 p-6" onSubmit={add}>
-            <h2 className="h-section">New assignment</h2>
-            <div><label className="field-label" htmlFor="as-title">Title</label><input id="as-title" className="input" value={title} onChange={(e) => setTitle(e.target.value)} required /></div>
-            <div className="grid gap-3 sm:grid-cols-3">
-              <div>
-                <label className="field-label" htmlFor="as-type">Type</label>
-                <select id="as-type" className="input" value={type} onChange={(e) => setType(e.target.value as Assignment['type'])}><option>Test</option><option>Flashcards</option><option>Shuffled exam</option></select>
-              </div>
+    <form className="grid gap-10 lg:grid-cols-2" onSubmit={submit}>
+      <div className="panel space-y-5 p-6">
+        <h2 className="h-section">New assignment</h2>
+        <div>
+          <p className="field-label">Kind</p>
+          <div className="grid gap-2 sm:grid-cols-3">
+            {KINDS.map((k) => (
+              <button
+                type="button"
+                key={k.type}
+                aria-pressed={type === k.type}
+                onClick={() => { setType(k.type); setError('') }}
+                className={`rounded-soft border-2 bg-white p-3 text-left transition-colors ${type === k.type ? 'border-brand' : 'border-line hover:border-line-strong'}`}
+              >
+                <span className={`block text-sm font-semibold ${type === k.type ? 'text-brand' : 'text-ink'}`}>{k.label}</span>
+                <span className="mt-0.5 block text-xs text-ink-3">{k.body}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+        <div>
+          <label className="field-label" htmlFor="as-title">Title <span className="font-normal text-ink-3">(optional)</span></label>
+          <input id="as-title" className="input" value={title} onChange={(e) => setTitle(e.target.value)} placeholder={type === 'Flashcards' ? 'e.g. Week 3 finance terms' : 'e.g. Marketing practice test'} />
+        </div>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {type !== 'Flashcards' && (
+            <>
               <div>
                 <label className="field-label" htmlFor="as-exam">Exam</label>
                 <select id="as-exam" className="input" value={exam} onChange={(e) => setExam(e.target.value as ExamId)}>{EXAMS.map((x) => <option key={x.id} value={x.id}>{x.name}</option>)}</select>
               </div>
               <div>
-                <label className="field-label" htmlFor="as-due">Due</label>
-                <input id="as-due" type="date" className="input" value={due} onChange={(e) => setDue(e.target.value)} required />
+                <label className="field-label" htmlFor="as-count">Questions</label>
+                <select id="as-count" className="input" value={count} onChange={(e) => setCount(Number(e.target.value))}>{QUESTION_COUNTS.map((n) => <option key={n} value={n}>{n} ({n} min)</option>)}</select>
               </div>
+            </>
+          )}
+          <div>
+            <label className="field-label" htmlFor="as-due">Due <span className="font-normal text-ink-3">(optional)</span></label>
+            <input id="as-due" type="date" className="input" min={today()} value={due} onChange={(e) => setDue(e.target.value)} />
+          </div>
+        </div>
+        <div>
+          <div className="flex items-center justify-between gap-3">
+            <p className="field-label mb-0">Assign to</p>
+            <label className="flex items-center gap-2 text-sm text-ink-2"><Toggle on={everyone} onChange={setEveryone} label="Whole chapter" /> Whole chapter</label>
+          </div>
+          {!everyone && (
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {chapter.members.map((p) => {
+                const on = who.has(p.id)
+                return (
+                  <button
+                    type="button"
+                    key={p.id}
+                    onClick={() => setWho(toggled(who, p.id))}
+                    aria-pressed={on}
+                    className={`inline-flex items-center gap-1.5 rounded-soft border py-1 pl-1 pr-2.5 text-[13px] transition-colors ${on ? 'border-brand bg-tint font-semibold text-brand' : 'border-line bg-white text-ink-3 hover:border-line-strong hover:text-ink'}`}
+                  >
+                    <Avatar name={p.name} size={20} />
+                    {p.name}
+                  </button>
+                )
+              })}
             </div>
-            <button className="btn-primary"><Plus size={16} /> Assign to chapter</button>
-          </form>
-        )}
+          )}
+        </div>
+        {error && <p role="alert" className="text-sm font-medium text-bad">{error}</p>}
+        {saved && <p role="status" className="flex items-center gap-1.5 text-sm font-medium text-good"><Check size={15} /> {saved}</p>}
+        <button className="btn-primary"><Plus size={16} /> {everyone ? 'Assign to chapter' : `Assign to ${who.size} ${who.size === 1 ? 'member' : 'members'}`}</button>
       </div>
 
-      <section>
-        <SectionHeader
-          title="Test builder"
-          action={canEdit ? <button className="btn-secondary btn-sm" disabled={!bank.questions} onClick={() => bank.questions && setQuestions(sample(bank.questions, BUILDER_SIZE))}><Shuffle size={15} /> New draw</button> : undefined}
-        />
-        <label className="sr-only" htmlFor="tb-exam">Exam</label>
-        <select id="tb-exam" className="input mb-4" value={builderExam} onChange={(e) => setBuilderExam(e.target.value as ExamId)}>
-          {EXAMS.map((x) => <option key={x.id} value={x.id}>{x.name}</option>)}
-        </select>
-        {!bank.questions && <p className="text-sm text-ink-3">{bank.error ?? 'Loading questions…'}</p>}
-        <ol className="divide-y divide-line border border-line empty:hidden">
-          {questions.map((qq, i) => (
-            <li key={qq.id} className="flex gap-3 px-5 py-4 text-sm">
-              <span className="num pt-px font-semibold text-ink-3">{i + 1}.</span>
-              <div className="min-w-0 flex-1">
-                {editing === qq.id ? (
-                  <textarea aria-label="Question text" rows={3} className="input resize-none" value={qq.prompt} onChange={(e) => setQuestions(questions.map((x) => (x.id === qq.id ? { ...x, prompt: e.target.value } : x)))} />
-                ) : (
-                  <p className="text-ink">{qq.prompt}</p>
-                )}
-                <p className="mt-1.5 text-xs text-ink-3">Answer: {qq.choices[qq.answer]}</p>
-              </div>
-              {canEdit && (
-                <button className="btn-ghost btn-sm h-7 w-7 shrink-0 px-0" onClick={() => setEditing(editing === qq.id ? null : qq.id)} aria-label={editing === qq.id ? 'Done editing' : 'Edit question'}>
+      {type === 'Flashcards' ? (
+        <section>
+          <SectionHeader title="Pick terms" action={<span className="num text-sm font-semibold text-brand">{chosen.length} picked</span>} />
+          <div className="mb-3 flex gap-2">
+            <label className="sr-only" htmlFor="tp-exam">Exam</label>
+            <select id="tp-exam" className="input" value={termFilter} onChange={(e) => setTermFilter(e.target.value as ExamId | 'all')}>
+              <option value="all">All exams</option>
+              {EXAMS.map((x) => <option key={x.id} value={x.id}>{x.name}</option>)}
+            </select>
+            <button type="button" className="btn-secondary shrink-0" disabled={!shown.length} onClick={() => setTerms(new Set([...terms, ...shown.map((c) => c.id)]))}>Select all</button>
+            <button type="button" className="btn-ghost shrink-0" disabled={!terms.size} onClick={() => setTerms(new Set())}>Clear</button>
+          </div>
+          {shown.length === 0 ? (
+            <p className="text-sm text-ink-3">No terms for this exam yet. <Link to="/vocab" className="link">Add some on the Vocab page</Link>.</p>
+          ) : (
+            <ul className="max-h-[420px] divide-y divide-line overflow-y-auto border border-line">
+              {shown.map((c) => {
+                const on = terms.has(c.id)
+                return (
+                  <li key={c.id}>
+                    <label className={`flex cursor-pointer gap-3 px-4 py-3 text-sm ${on ? 'bg-tint' : 'hover:bg-canvas'}`}>
+                      <input type="checkbox" className="mt-0.5 h-4 w-4 shrink-0 accent-brand" checked={on} onChange={() => setTerms(toggled(terms, c.id))} />
+                      <span className="min-w-0 flex-1">
+                        <span className="flex items-center gap-2 font-semibold text-ink">
+                          {c.term}
+                          {c.custom && <span className="badge-neutral px-1.5 text-[10px]">{c.custom.chapterId && <UsersThree size={11} />} Custom</span>}
+                        </span>
+                        <span className="mt-0.5 block text-xs text-ink-3">{c.def}</span>
+                      </span>
+                    </label>
+                  </li>
+                )
+              })}
+            </ul>
+          )}
+          <p className="mt-3 text-xs text-ink-3">The set keeps a copy of each term, so your own terms work even if you have not shared them with the chapter.</p>
+        </section>
+      ) : type === 'Shuffled exam' ? (
+        <section>
+          <SectionHeader title="Shuffled exam" />
+          <p className="text-sm leading-relaxed text-ink-2">
+            Each member gets {count} random {examOf(exam).name} questions from the bank ({questionCount(exam).toLocaleString()} questions), with {count} minutes on the clock and no explanations until the end. Their score is recorded on the assignment.
+          </p>
+        </section>
+      ) : (
+        <section>
+          <SectionHeader
+            title="Test builder"
+            action={<button type="button" className="btn-secondary btn-sm" disabled={!bank.questions} onClick={() => bank.questions && setQuestions(sample(bank.questions, count))}><Shuffle size={15} /> New draw</button>}
+          />
+          <p className="mb-4 text-xs text-ink-3">Every assignee gets these {questions.length || count} questions, one minute each. Use the pencil to reword one.</p>
+          {!bank.questions && <p className="text-sm text-ink-3">{bank.error ?? 'Loading questions…'}</p>}
+          <ol className="max-h-[560px] divide-y divide-line overflow-y-auto border border-line empty:hidden">
+            {questions.map((qq, i) => (
+              <li key={qq.id} className="flex gap-3 px-5 py-4 text-sm">
+                <span className="num pt-px font-semibold text-ink-3">{i + 1}.</span>
+                <div className="min-w-0 flex-1">
+                  {editing === qq.id ? (
+                    <textarea aria-label="Question text" rows={3} className="input resize-none" value={qq.prompt} onChange={(e) => setQuestions(questions.map((x) => (x.id === qq.id ? { ...x, prompt: e.target.value } : x)))} />
+                  ) : (
+                    <p className="text-ink">{qq.prompt}</p>
+                  )}
+                  <p className="mt-1.5 text-xs text-ink-3">Answer: {qq.choices[qq.answer]}</p>
+                </div>
+                <button type="button" className="btn-ghost btn-sm h-7 w-7 shrink-0 px-0" onClick={() => setEditing(editing === qq.id ? null : qq.id)} aria-label={editing === qq.id ? 'Done editing' : 'Edit question'}>
                   {editing === qq.id ? <Check size={15} /> : <PencilSimple size={15} />}
                 </button>
-              )}
-            </li>
-          ))}
-        </ol>
-      </section>
-    </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+    </form>
   )
 }

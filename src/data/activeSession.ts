@@ -14,6 +14,8 @@ export type ActiveSession = {
   explanations: boolean
   unranked?: boolean
   opponentId?: string
+  /** A chapter assignment: the score is saved to it at the end. */
+  assignmentId?: string
 }
 
 const key = (userId: string, kind: ActiveSession['kind']) => `deca-masters:active:${kind}:${userId}`
