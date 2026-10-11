@@ -117,7 +117,7 @@ components:
 
 DECA Masters looks like the board at a competition: a deep navy stage, one electric edge light, refined white type, and
 event codes as the primary keys of everything. The signed-out landing is the stage itself (navy in both colour
-schemes) with a faceted metal structure of six cluster sectors around a lit core; the app pages follow the visitor's
+schemes) with a faceted metal structure of six cluster sectors, lit from inside through its seams; the app pages follow the visitor's
 scheme in a refined white with navy-black ink, and the navy top bar and footer frame both.
 
 Density is a program, not a dashboard: ruled rows, fixed columns that never move, mono for codes, timers and counts,
@@ -235,7 +235,7 @@ Hard-edged and machined: 2px on controls (buttons, inputs, tags, chips), 4px on 
 
 ### The Strategy Universe (signature)
 
-A 96-panel faceted metal structure: six 60 degree sectors (one per career cluster) around a lit core, an orbit ring with one tick per published event, and an electric sweep. It renders in WebGL only on capable desktops; everywhere else, and underneath while it loads, an SVG poster projected from the same geometry. In the explorer, the selected cluster's sector lifts out and turns to the camera; hovering a cluster lifts it part way.
+A 96-panel faceted metal structure: six 60 degree sectors (one per career cluster) lit from inside, the light showing only through the seams between plates, an orbit ring with one tick per published event, and an electric sweep. It renders in WebGL only on capable desktops; everywhere else, and underneath while it loads, an SVG poster projected from the same geometry. In the explorer, the selected cluster's sector lifts out and turns to the camera; hovering a cluster lifts it part way.
 
 ## Do's and Don'ts
 
