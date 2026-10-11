@@ -639,6 +639,7 @@ function EventRow({
         <button
           type="button"
           aria-pressed={comparing}
+          aria-label={`Compare ${e.code}`}
           onClick={onCompare}
           className={`inline-flex min-h-11 items-center gap-1.5 rounded-sm border px-3 text-sm font-semibold transition-colors duration-(--dur-1) active:translate-y-px ${
             comparing
@@ -648,7 +649,6 @@ function EventRow({
         >
           {comparing ? <Check aria-hidden="true" className="size-4" /> : null}
           Compare
-          <span className="sr-only"> {e.code}</span>
         </button>
         {bookmark ? (
           <Tooltip content={bookmark.on ? "Remove bookmark" : "Bookmark"}>

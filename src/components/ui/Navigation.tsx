@@ -140,6 +140,8 @@ export function FilterChips({
               <span
                 className={`font-mono text-xs tabular-nums ${on ? "opacity-80" : "opacity-70"}`}
               >
+                {/* so a screen reader says "Finance, 2" rather than "Finance2" */}
+                <span className="sr-only">, </span>
                 {c.count}
               </span>
             ) : null}
