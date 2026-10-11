@@ -2,10 +2,7 @@ import { StrictMode } from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 // Self-hosted faces (no third-party font requests). Only the weights the tokens use.
-import "@fontsource/saira-semi-condensed/600.css";
-import "@fontsource/saira-semi-condensed/700.css";
-import "@fontsource-variable/instrument-sans/wght.css";
-import "@fontsource-variable/jetbrains-mono/wght.css";
+import "@fontsource-variable/montserrat/wght.css";
 import "./index.css";
 import { App, preloadRoute } from "./App";
 import { AuthProvider } from "./lib/auth";
