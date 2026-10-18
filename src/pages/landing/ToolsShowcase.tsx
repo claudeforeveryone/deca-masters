@@ -63,11 +63,6 @@ export function ToolsShowcase({ state }: { state: IndexState }) {
         <h2 id="tools-title" className="text-display text-on-navy">
           The tools, working.
         </h2>
-        <p className="mt-4 max-w-[58ch] text-lead text-on-navy-2">
-          Each window is built from the same parts as the app. The clock runs,
-          the cards flip and the events are real. Where a page needs your own
-          history, it shows made-up numbers and says so.
-        </p>
 
         <Tabs
           className="mt-10"
@@ -85,9 +80,8 @@ export function ToolsShowcase({ state }: { state: IndexState }) {
                   action="Open practice exams"
                   preview={<ExamPreview index={index} />}
                 >
-                  Timed runs on the seven cluster exams, from openly licensed
-                  questions with the source on every one. Answers are checked on
-                  the server, so the key never sits in your browser.
+                  Timed runs on all seven cluster exams, from past DECA exams.
+                  Every miss comes back with the right answer and why.
                 </Panel>
               ),
             },

@@ -267,9 +267,8 @@
   --ease-in: var(--ease-in);
 }
 
-/* Type scale (text-hero, text-display, text-title, text-lead, text-micro, text-data) and the radius ceiling. Every
- * Tailwind radius step is capped at 6px, so rounded-xl and friends cannot sneak big corners back in. rounded-full
- * stays for the avatar initial and dots only. */
+/* Type scale (text-hero, text-display, text-title, text-lead, text-micro, text-data) and the radius scale. Every
+ * corner is square: each Tailwind radius step is 0, so rounded-xl and friends cannot bring corners back. */
 @theme {
   --text-hero: clamp(2.5rem, 1.4rem + 4.4vw, 4.5rem);
   --text-hero--line-height: 0.98;
@@ -284,13 +283,13 @@
   --text-data: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem);
   --text-data--line-height: 1;
 
-  --radius: 10px;
-  --radius-xs: 4px;
-  --radius-sm: 4px;
-  --radius-md: 10px;
-  --radius-lg: 10px;
-  --radius-xl: 10px;
-  --radius-2xl: 10px;
-  --radius-3xl: 10px;
-  --radius-4xl: 10px;
+  --radius: 0px;
+  --radius-xs: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-4xl: 0px;
 }

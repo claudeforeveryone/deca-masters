@@ -43,7 +43,7 @@ describe("route map, signed out", () => {
     const footer = screen.getByRole("contentinfo");
     expect(footer.textContent).toMatch(/Built with.*by Joseph & Kaden/);
     expect(footer.textContent).toMatch(/not affiliated with DECA Inc/);
-    expect(footer.textContent).toMatch(/not endorsed or sponsored by DECA Inc/);
+    expect(footer.textContent).toMatch(/not affiliated with DECA Inc/);
     expect(
       within(footer)
         .getByRole("link", { name: "Terms of Use" })

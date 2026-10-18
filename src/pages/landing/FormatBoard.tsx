@@ -136,13 +136,6 @@ export function FormatBoard({ state }: { state: IndexState }) {
           <h2 id="format-title" className="text-display text-on-navy">
             Know the format before you face it.
           </h2>
-          <p className="mt-4 max-w-[60ch] text-lead text-on-navy-2">
-            Each event is a role play, a team case study, a prepared entry or an
-            online simulation. Many also start with a 100-question exam, one of
-            seven: Business Administration Core, Business Management and
-            Administration, Entrepreneurship, Finance, Hospitality and Tourism,
-            Marketing, and Personal Financial Literacy.
-          </p>
         </div>
 
         {state.status === "loading" ? (
@@ -176,10 +169,9 @@ export function FormatBoard({ state }: { state: IndexState }) {
 
         {hasEvents ? (
           <p className="mt-6 text-sm text-on-stage-3">
-            Computed from {state.index.events.length} events
-            {state.index.season ? ` in the ${state.index.season} season` : ""},
-            from DECA&apos;s public event pages. Check your event&apos;s
-            guidelines before you compete.
+            {state.index.events.length} events
+            {state.index.season ? `, ${state.index.season} season` : ""}, from
+            DECA&apos;s event pages.
           </p>
         ) : null}
       </div>

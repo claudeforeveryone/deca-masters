@@ -202,7 +202,7 @@ export function PracticePage() {
     <>
       <PageHeader
         title="Practice"
-        lede="Cluster exam questions from credited open sources. Every answer is graded on the server, and every run is saved to your account."
+        lede="Past DECA exam questions for all seven cluster exams. Every run is saved to your account."
       />
 
       <div className="mt-8 grid gap-12">

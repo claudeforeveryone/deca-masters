@@ -106,7 +106,7 @@ describe("landing, with a published event list", () => {
   it("counts each format from the events, not from typed-in numbers", async () => {
     serve(EVENTS);
     renderLanding();
-    await screen.findByText(/Computed from 5 events in the 2026-2027 season/);
+    await screen.findByText(/5 events, 2026-2027 season/);
     const board = screen.getByRole("table", { name: /event formats/ });
     const row = (name: string) =>
       within(board)
@@ -153,7 +153,7 @@ describe("landing, with a published event list", () => {
   it("runs the role-play clock from the event's published format", async () => {
     serve(EVENTS);
     renderLanding();
-    await screen.findByText(/Computed from 5 events/);
+    await screen.findByText(/5 events, 2026-2027 season/);
     fireEvent.click(screen.getByRole("tab", { name: /Role-play trainer/ }));
 
     const timer = screen.getByRole("timer");

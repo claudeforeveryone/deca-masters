@@ -60,11 +60,6 @@ export function ClusterExplorer({
           <h2 id="clusters-title" className="text-display text-on-navy">
             Find your event by cluster.
           </h2>
-          <p className="mt-4 max-w-[52ch] text-lead text-on-navy-2">
-            Each side of the structure is one of DECA&apos;s six career
-            clusters, and each mark on its ring is one event. Pick a cluster to
-            see what you could compete in.
-          </p>
         </div>
 
         {/* The structure: live on capable screens, the plan diagram everywhere else (and underneath while it loads). */}

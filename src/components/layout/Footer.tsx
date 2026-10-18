@@ -28,9 +28,7 @@ export function Footer() {
             Independent practice tool, not affiliated with DECA Inc.
           </p>
           <p className="mt-2 max-w-[60ch] text-[13px] leading-relaxed text-[#b4b4b4]">
-            DECA Masters is made by students. It is not endorsed or sponsored by DECA Inc., and nothing here is
-            official DECA material: practice questions and vocab come from openly licensed sources, credited on each
-            item, and role plays link to DECA&apos;s own public samples.
+            Exam questions are from past DECA exams (copyright MBA Research and DECA Inc.), credited on each one.
           </p>
         </div>
         <nav aria-label="Legal and contact">

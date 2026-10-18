@@ -114,7 +114,7 @@ export function VocabPage() {
     <div>
       <PageHeader
         title="Vocab"
-        lede={`One deck for each cluster exam${load.status === "ready" ? `, ${totalTerms.toLocaleString("en-CA")} terms in all` : ""}, from openly licensed glossaries with the source on every term. Terms you miss come back sooner; terms you know wait longer.`}
+        lede={`One deck for each cluster exam${load.status === "ready" ? `, ${totalTerms.toLocaleString("en-CA")} terms in all` : ""}. Terms you miss come back sooner.`}
       />
       <MemberNotice
         state={member.state}
