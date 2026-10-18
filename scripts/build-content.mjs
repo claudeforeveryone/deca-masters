@@ -7,6 +7,8 @@
 //   vocab/<slug>.json        terms with definitions and per-term credits (nothing to hide in a glossary)
 //   roleplays/<cluster>.json links to DECA's official samples plus timing (links only, by schema)
 //   official-samples.json    DECA's official sample-exam links, copied as is
+//   past-exams.json          per exam, each past DECA exam booklet with its question ids in booklet order (the quiz
+//                            page offers one booklet as a whole test, like AnswerWrite's practice exams)
 //   credits.json             every source (whole work) once, with where it is used (the credits page reads it)
 //
 // Answer keys and explanations stay server-side: the deca-backend track loads content/ into deca_questions, where
@@ -56,6 +58,10 @@ const works = (sources) =>
       attribution,
     }));
 
+/** "Finance past DECA exam, booklet 1028-FIN" -> "1028-FIN"; null for every other source. */
+export const bookletCode = (title) =>
+  /past DECA exam, booklet (\S+)$/.exec(title)?.[1] ?? null;
+
 const EXAM_ORDER = Object.keys(EXAMS);
 const bySlug = (a, b) =>
   EXAM_ORDER.indexOf(a.slug) - EXAM_ORDER.indexOf(b.slug);
@@ -94,6 +100,7 @@ export function buildContent({
     roleplayEvents: 0,
     sources: 0,
   };
+  const pastExams = {}; // exam slug -> [{ code, questions, ids }]
   const credits = new Map(); // url -> credit with usedIn
   const credit = (s, usedIn) => {
     const c = credits.get(s.url) ?? {
@@ -152,6 +159,17 @@ export function buildContent({
       });
       for (const s of works(doc.sources)) credit(s, doc.title);
       counts.questions += questions.length;
+      const booklets = new Map();
+      for (const q of questions) {
+        const code = bookletCode(q.source.title);
+        if (!code) continue;
+        if (!booklets.has(code)) booklets.set(code, []);
+        booklets.get(code).push(q.id);
+      }
+      if (booklets.size)
+        pastExams[doc.slug] = [...booklets]
+          .sort(([a], [b]) => a.localeCompare(b))
+          .map(([code, ids]) => ({ code, questions: ids.length, ids }));
     } else if (kind === "vocab") {
       const terms = doc.terms.map(({ id, term, definition, area, source }) => ({
         id,
@@ -198,6 +216,7 @@ export function buildContent({
   );
   counts.sources = sources.length;
   write(join(outDir, "credits.json"), { sources });
+  write(join(outDir, "past-exams.json"), { exams: pastExams });
   write(join(outDir, "index.json"), index);
   return counts;
 }

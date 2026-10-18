@@ -203,6 +203,11 @@ export function PracticePage() {
       <PageHeader
         title="Practice"
         lede="Past DECA exam questions for all seven cluster exams. Every run is saved to your account."
+        actions={
+          <Link to="/quiz" className={buttonClass("secondary")}>
+            Build a custom quiz
+          </Link>
+        }
       />
 
       <div className="mt-8 grid gap-12">
