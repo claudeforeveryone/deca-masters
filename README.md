@@ -49,7 +49,7 @@ jsdom, lucide-react (the only icon set), three + React Three Fiber 9 + drei 10 +
 - **Owner access is decided by the database** (`public.is_platform_owner()`, keyed on `auth.uid()`); the UI only
   hides links.
 - **localStorage is for per-device UI prefs only** (`src/lib/prefs.ts`, keys `deca-masters:pref:*`).
-- **Look:** radii 2px controls, 4px cards, 6px ceiling (Tailwind's radius scale is capped in `tokens.css`); no purple
+- **Look:** square corners everywhere (every Tailwind radius step is 0 in `tokens.css`); no purple
   gradients, no glass, no emoji icons; reduced motion respected; 44px touch targets; visible focus.
 - DECA's diamond logo and trade dress are not used: they are reserved for chartered associations and chapters.
 

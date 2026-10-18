@@ -4,7 +4,6 @@ import { Closing } from "./Closing";
 import { eventsByCluster, ringTicks } from "./data";
 import { FormatBoard } from "./FormatBoard";
 import { Hero } from "./Hero";
-import { Journey } from "./Journey";
 import { ToolsShowcase } from "./ToolsShowcase";
 import { SECTORS } from "./universe/geometry";
 import { useContentIndex } from "./useContentIndex";
@@ -28,7 +27,6 @@ export function LandingPage() {
       <FormatBoard state={state} />
       <ClusterExplorer state={state} ticks={ticks} />
       <ToolsShowcase state={state} />
-      <Journey />
       <Closing ticks={ticks} />
     </>
   );

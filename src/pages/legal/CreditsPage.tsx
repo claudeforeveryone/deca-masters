@@ -78,7 +78,7 @@ export function CreditsPage() {
     <div>
       <PageHeader
         title="Credits"
-        lede="DECA Masters reuses openly licensed material and credits it here and on every question and term. Nothing on this site is official DECA content."
+        lede="Every source DECA Masters uses, credited here and on each question and term. Past DECA exam questions are copyright MBA Research and DECA Inc., used for free student practice."
       />
 
       <section aria-labelledby="content-heading" className="mt-10 max-w-3xl">

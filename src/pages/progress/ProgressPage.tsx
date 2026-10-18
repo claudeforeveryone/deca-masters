@@ -307,7 +307,7 @@ export function ProgressPage() {
     <div>
       <PageHeader
         title="Progress"
-        lede="Your practice over time, built only from runs the server graded and sessions you saved. Nothing on this page predicts a score."
+        lede="Your practice over time."
       />
 
       <Loading load={stats} label="Your numbers">
@@ -347,7 +347,7 @@ export function ProgressPage() {
       <Section
         id="time"
         title="Performance over time"
-        lede="Your rating after each day with a graded run, and accuracy week by week (weeks start Monday, Toronto time)."
+        lede="Rating by day, accuracy by week."
       >
         <Loading load={stats} label="Your history">
           {(s) => (
@@ -431,7 +431,7 @@ export function ProgressPage() {
       <Section
         id="areas"
         title="Accuracy by area"
-        lede="Every instructional area you have answered in, by exam. Under 5 answers is too few to call."
+        lede="Under 5 answers is too few to call."
       >
         <Loading load={weak} label="Your areas">
           {(spots) => {
@@ -478,7 +478,7 @@ export function ProgressPage() {
       <Section
         id="consistency"
         title="Consistency"
-        lede="Which days you practised. A day counts for your streak when you finish a run, review vocab or save a role play."
+        lede="Finish a run, review vocab or save a role play to keep a day."
       >
         <Loading load={stats} label="Your activity">
           {(s) => {
@@ -518,7 +518,7 @@ export function ProgressPage() {
       <Section
         id="readiness"
         title="Readiness"
-        lede="For each of your events: how much of the bank you have covered, how you are scoring lately, your vocab and your role-play reps. Counts side by side, no combined score and no prediction."
+        lede="Bank covered, recent accuracy, vocab and role plays for each event."
       >
         {mapFailed ? (
           <ErrorState
@@ -599,7 +599,7 @@ export function ProgressPage() {
       <Section
         id="map"
         title="Strategy map"
-        lede="Your events, what you practise them with here, and the instructional areas they test, coloured by how you are doing. Select anything to light up what it connects to."
+        lede="Select anything to see what it connects to."
       >
         {mapFailed ? (
           <ErrorState
@@ -622,7 +622,7 @@ export function ProgressPage() {
       <Section
         id="runs"
         title="Run history"
-        lede="Every graded run, newest first. Open one to review it question by question."
+        lede="Newest first. Open one to review it."
       >
         <RunHistory />
       </Section>

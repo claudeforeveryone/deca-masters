@@ -179,11 +179,12 @@ function Centre({ profile, user }: { profile: Profile; user: User }) {
             <h2 id="board-heading" className="text-title">
               Your board
             </h2>
-            <p className="mt-1 text-sm text-ink-2">
-              {arranging
-                ? "Drag a row by its handle, or use the arrows. Your order is saved to your account."
-                : "Open a row for details. Arrange it in the order you use it."}
-            </p>
+            {arranging ? (
+              <p className="mt-1 text-sm text-ink-2">
+                Drag a row by its handle, or use the arrows. Your order is saved
+                to your account.
+              </p>
+            ) : null}
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <SaveStatus state={save} onRetry={retrySave} />
@@ -326,18 +327,6 @@ function NextUp({
           {next.cta}
         </Link>
       ) : null}
-      <details className="text-sm text-ink-3 sm:col-span-2">
-        <summary className="inline-flex min-h-11 cursor-pointer items-center font-semibold text-ink-2 hover:text-ink">
-          How this is picked
-        </summary>
-        <p className="max-w-(--measure) pb-1">
-          From your own records, first match wins: pick your events, finish an
-          unfinished run, review due vocab, get a first graded set, do the daily
-          10, drill an area under 70% (5+ answers), run a role play for your
-          main event if none in 7 days, then keep practising your main exam.
-          Nothing here predicts a score.
-        </p>
-      </details>
     </section>
   );
 }

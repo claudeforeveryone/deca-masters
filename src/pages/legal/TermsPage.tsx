@@ -17,8 +17,10 @@ const sections: LegalSection[] = [
         <p>
           It is an independent project. It is not affiliated with, endorsed by,
           or sponsored by DECA Inc. or any DECA association, and nothing on it
-          is official DECA material. Practice questions and vocab come from
-          openly licensed sources, credited on each item and on the{" "}
+          is official DECA material. Practice questions come from past DECA
+          exams (copyright MBA Research and DECA Inc., used for free student
+          practice) and openly licensed sources, and vocab from openly licensed
+          glossaries, each credited on the item and on the{" "}
           <Link to="/credits">credits page</Link>. Role-play practice links to
           DECA&apos;s own public samples instead of copying them. A score here
           does not predict a score at a competition.
@@ -186,7 +188,7 @@ export function TermsPage() {
       lede="The deal for using DECA Masters, in plain language: what the site is, what it is not, and what we ask of you."
       summary={[
         "DECA Masters is a free, student-made practice site. It is not affiliated with or endorsed by DECA Inc.",
-        "Questions come from openly licensed sources, credited on each item. A score here is practice, not a prediction.",
+        "Questions come from past DECA exams and open sources, credited on each item. A score here is practice, not a prediction.",
         "Be fair: one account each, no cheating the leaderboard, no poking at other people's data.",
         "The site is offered as it is, without guarantees. Ontario and Canadian law apply.",
         <>

@@ -119,8 +119,8 @@ export function Hero({
             className="hero-fade mt-6 max-w-[34rem] text-lead text-on-navy-2"
             style={{ "--d": "420ms" } as CSSProperties}
           >
-            Practise DECA the way it&apos;s judged: timed cluster exams, role
-            plays on the official clock, vocab on a spaced schedule.
+            Thousands of past DECA exam questions, role plays on the official
+            clock and vocab on a spaced schedule.
           </p>
           <div
             className="hero-fade mt-9 flex flex-wrap items-center gap-3"
