@@ -3,6 +3,10 @@
 > **2026-10-11 user decision, overrides everything below that says "original":** DECA Masters ships no AI-written
 > questions, vocab or role plays. See the SOURCED CONTENT addendum at the end. The original-content rules below
 > survive only for formats, IDs, areas and validation.
+>
+> **2026-10-18 user decision:** the past DECA exam banks are back. Exam files may carry questions from past DECA
+> cluster exam booklets (licence `DECA past exam (MBA Research)`, ids from `<prefix>-1001` up, keys from the booklet,
+> choices in booklet order). Each one is credited to its booklet and to MBA Research and DECA Inc. as copyright holders.
 
 (Superseded) All practice content is ORIGINAL, written for DECA Masters. Never copy DECA Inc. exams, released role plays or
 other copyrighted material. Every file states that it is independent practice content, not official DECA material.
@@ -135,7 +139,7 @@ Slugs: `business-admin-core`, `business-management`, `entrepreneurship`, `financ
 Every item is either openly licensed material reused under its licence, or a clearly labelled placeholder.
 
 - Every question and vocab term has `source` as an object, replacing the old `"original"` string:
-  `{ "title": "...", "url": "...", "licence": "CC BY 4.0 | CC BY-SA 4.0 | CC BY-NC 4.0 | CC BY-NC-SA 4.0 | CC0 | Public domain (US federal work)", "attribution": "exact TASL line", "adapted": true, "keyFrom": "source | verified" }`.
+  `{ "title": "...", "url": "...", "licence": "CC BY 4.0 | CC BY-SA 4.0 | CC BY-NC 4.0 | CC BY-NC-SA 4.0 | CC0 | Public domain (US federal work) | DECA past exam (MBA Research)", "attribution": "exact TASL line", "adapted": true, "keyFrom": "source | verified" }`.
 - Every exam/vocab/roleplay file has a top-level `"status": "sourced" | "placeholder"`, `"sources": [...]` and, for
   placeholders, a `"placeholderNote"`. Each `sources` entry needs `title`, `url`, `licence` and `attribution`, and
   every item's `source.url` must be listed there exactly (the database loader checks the same rule). A whole work

@@ -34,7 +34,7 @@ export const COMPONENTS = [
   "portfolio",
   "online",
 ];
-/** Licences whose terms allow reuse with attribution (SCHEMA.md). No-derivatives licences are not on the list. */
+/** Licences an item may carry (SCHEMA.md): open licences that allow reuse with attribution, plus past DECA exams. */
 export const LICENCES = [
   "CC BY 4.0",
   "CC BY-SA 4.0",
@@ -42,6 +42,9 @@ export const LICENCES = [
   "CC BY-NC-SA 4.0",
   "CC0",
   "Public domain (US federal work)",
+  // Past DECA cluster exam questions (copyright MBA Research and DECA Inc.), shipped for free student practice by the
+  // owner's 2026-10-18 decision. Not an open licence: the credit names the booklet and the copyright holders.
+  "DECA past exam (MBA Research)",
 ];
 export const STATUSES = ["sourced", "placeholder"];
 export const KEY_FROM = ["source", "verified"];
