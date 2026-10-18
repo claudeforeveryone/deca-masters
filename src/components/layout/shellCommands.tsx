@@ -14,6 +14,7 @@ import {
   Moon,
   Play,
   Settings,
+  SlidersHorizontal,
   Sun,
   Timer,
   TrendingUp,
@@ -116,6 +117,15 @@ export function useShellCommands(open: boolean): PaletteCommand[] {
         keywords: ["exam", "test", "quiz"],
         icon: <ClipboardCheck aria-hidden="true" />,
         run: go("/practice"),
+      },
+      {
+        id: "quiz",
+        label: "Build a quiz",
+        group: "Go to",
+        hint: "/quiz",
+        keywords: ["quiz", "custom", "answerwrite", "past exam", "settings"],
+        icon: <SlidersHorizontal aria-hidden="true" />,
+        run: go("/quiz"),
       },
       {
         id: "roleplay",

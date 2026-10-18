@@ -11,6 +11,7 @@ import {
 export const DESKTOP_NAV = [
   { to: "/events", label: "Events" },
   { to: "/practice", label: "Practice" },
+  { to: "/quiz", label: "Quiz" },
   { to: "/roleplay", label: "Role play" },
   { to: "/vocab", label: "Vocab" },
   { to: "/progress", label: "Progress" },

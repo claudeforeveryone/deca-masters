@@ -70,6 +70,7 @@ const PracticePage = page(
   () => import("./pages/practice/PracticePage"),
   "PracticePage",
 );
+const QuizPage = page(() => import("./pages/quiz/QuizPage"), "QuizPage");
 const RunPage = page(() => import("./pages/practice/RunPage"), "RunPage");
 const ReviewPage = page(
   () => import("./pages/practice/ReviewPage"),
@@ -202,6 +203,7 @@ export function App() {
           <Route path="onboarding" element={<OnboardingPage />} />
           <Route path="practice" element={<PracticePage />} />
           <Route path="practice/run" element={<RunPage />} />
+          <Route path="quiz" element={<QuizPage />} />
           <Route path="practice/review/:attemptId" element={<ReviewPage />} />
           <Route path="leaderboard" element={<LeaderboardPage />} />
           <Route path="me/settings" element={<SettingsPage />} />

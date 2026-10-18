@@ -203,6 +203,10 @@ export type OfficialExamSamples = {
   }[];
 };
 
+/** One past DECA exam booklet: its code ("1028-FIN") and question ids in booklet order. */
+export type PastExam = { code: string; questions: number; ids: string[] };
+export type PastExams = { exams: Partial<Record<ExamSlug, PastExam[]>> };
+
 const cache = new Map<string, Promise<unknown>>();
 /** Files already loaded (or primed), by path under content/, readable without waiting. */
 const ready = new Map<string, unknown>();
@@ -271,6 +275,7 @@ export const loadVocabDeck = (slug: ExamSlug) =>
   getJson<VocabDeck>(`vocab/${slug}.json`);
 export const loadRoleplays = (cluster: ClusterSlug) =>
   getJson<RoleplaySet>(`roleplays/${cluster}.json`);
+export const loadPastExams = () => getJson<PastExams>("past-exams.json");
 export const loadOfficialSamples = () =>
   getJson<OfficialExamSamples>("official-samples.json");
 
