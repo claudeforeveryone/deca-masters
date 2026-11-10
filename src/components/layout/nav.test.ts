@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { DESKTOP_NAV, PHONE_MORE, PHONE_NAV } from "./nav";
+import { DESKTOP_NAV, isRunPage, PHONE_MORE, PHONE_NAV } from "./nav";
 
 describe("phone navigation", () => {
   it("reaches every section the desktop bar has", () => {
@@ -15,5 +15,15 @@ describe("phone navigation", () => {
   it("lists no page twice", () => {
     const all = [...PHONE_NAV, ...PHONE_MORE].map((i) => i.to);
     expect(new Set(all).size).toBe(all.length);
+  });
+});
+
+describe("isRunPage", () => {
+  it("is true only for a run in progress", () => {
+    expect(isRunPage("/practice/run")).toBe(true);
+    expect(isRunPage("/practice/run/")).toBe(true);
+    expect(isRunPage("/practice")).toBe(false);
+    expect(isRunPage("/practice/review/abc")).toBe(false);
+    expect(isRunPage("/")).toBe(false);
   });
 });

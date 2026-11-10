@@ -38,3 +38,8 @@ export const PHONE_MORE: PhoneItem[] = [
   { to: "/progress", label: "Progress", Icon: TrendingUp, end: false },
   { to: "/leaderboard", label: "Leaderboard", Icon: ListOrdered, end: false },
 ];
+
+/** A practice run in progress. The shell drops the footer there, so the question's own buttons end the page. */
+export function isRunPage(pathname: string): boolean {
+  return pathname.replace(/\/+$/, "") === "/practice/run";
+}

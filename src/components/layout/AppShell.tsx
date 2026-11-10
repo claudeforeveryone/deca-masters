@@ -24,7 +24,7 @@ import { Menu, type MenuItem } from "../ui/Popover";
 import { Kbd } from "../ui/Tag";
 import { ToastProvider } from "../ui/Toast";
 import { Footer } from "./Footer";
-import { DESKTOP_NAV, PHONE_MORE, PHONE_NAV } from "./nav";
+import { DESKTOP_NAV, isRunPage, PHONE_MORE, PHONE_NAV } from "./nav";
 import { RouteMeta } from "./RouteMeta";
 import { useShellCommands } from "./shellCommands";
 import { Wordmark } from "./Wordmark";
@@ -64,6 +64,10 @@ function Shell({ children }: { children: ReactNode }) {
   usePaletteShortcut(setPaletteOpen);
   const commands = useShellCommands(paletteOpen);
   const closePalette = useCallback(() => setPaletteOpen(false), []);
+  // A run in progress is the one page with nothing after it: no footer under the question, so the Next button is the
+  // last thing on the screen.
+  const { pathname } = useLocation();
+  const inRun = isRunPage(pathname);
 
   return (
     <>
@@ -83,7 +87,7 @@ function Shell({ children }: { children: ReactNode }) {
         >
           {children}
         </main>
-        <Footer />
+        {inRun ? null : <Footer />}
         <PhoneTabs />
       </div>
       <CommandPalette
