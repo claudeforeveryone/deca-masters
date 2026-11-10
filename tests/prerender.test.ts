@@ -234,3 +234,16 @@ describe("vercel.json", () => {
     expect(matches("/content/index.json")).toBe(false);
   });
 });
+
+describe("vercel.json", () => {
+  // Vercel's Vite preset runs a bare `vite build`, which ships no public/content, no dist/app.html and no prerendered
+  // pages: every URL but "/" then 404s on the live site. The full build has to be named here.
+  it("runs the full build, not the framework default", () => {
+    const config = JSON.parse(readFileSync("vercel.json", "utf8"));
+    const pkg = JSON.parse(readFileSync("package.json", "utf8"));
+    expect(config.buildCommand).toBe("npm run build");
+    expect(config.outputDirectory).toBe("dist");
+    expect(pkg.scripts.build).toContain("scripts/build-content.mjs");
+    expect(pkg.scripts.build).toContain("scripts/prerender.mjs");
+  });
+});
