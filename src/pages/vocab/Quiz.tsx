@@ -9,6 +9,7 @@ import type { ExamSlug, VocabTerm } from "../../lib/content";
 import { CreditRow, SessionPanel, useHotkeys } from "./parts";
 import { buildQuiz, shuffled, type QuizDirection } from "./study";
 import type { DeckProgress } from "./useDeckProgress";
+import { usePhoneFocus } from "../../lib/viewport";
 
 /** Four choices a question, instant feedback, and every answer updates the review schedule. */
 export function Quiz({
@@ -121,6 +122,7 @@ function Run({
   onNew: () => void;
   onExit: () => void;
 }) {
+  const rootRef = usePhoneFocus<HTMLDivElement>();
   // Built once per run: the questions and their options never shuffle under you.
   const [questions] = useState(() =>
     buildQuiz(terms, pool, Math.random, direction),
@@ -215,7 +217,7 @@ function Run({
   const isRight = picked !== null && q.options[picked].id === q.term.id;
 
   return (
-    <div className="mx-auto grid max-w-2xl gap-5">
+    <div ref={rootRef} className="mx-auto grid max-w-2xl gap-5">
       <ProgressBar
         value={pos}
         max={questions.length}

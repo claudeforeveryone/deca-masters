@@ -217,19 +217,27 @@ export function StatTile({
   );
 }
 
+// Phone layout for a dense row: each stat reads "80 New" on a wrapping line instead of a tile in a two-column grid.
+// The value leads, then the label, then any caption.
+const DENSE =
+  "max-sm:flex max-sm:flex-wrap max-sm:gap-x-5 max-sm:gap-y-1.5 max-sm:py-3 max-sm:[&>div]:flex max-sm:[&>div]:items-baseline max-sm:[&>div]:gap-1.5 max-sm:[&_dt]:order-1 max-sm:[&_dd]:order-2 max-sm:[&_dd:first-of-type]:order-none max-sm:[&_dd_span]:text-base";
+
 /** A ruled row of stat tiles (a <dl>), dividers between tiles, not floating cards. */
 export function StatRow({
   children,
   className = "",
   tone = "surface",
+  dense = false,
 }: {
   children: ReactNode;
   className?: string;
   tone?: "surface" | "stage";
+  /** On a phone, fold the tiles into one or two short lines so what follows stays on the first screen. */
+  dense?: boolean;
 }) {
   return (
     <dl
-      className={`grid grid-cols-2 gap-x-6 gap-y-6 border-y py-5 sm:grid-cols-[repeat(auto-fit,minmax(9rem,1fr))] ${tone === "stage" ? "border-stage-line" : "border-line"} ${className}`}
+      className={`grid grid-cols-2 gap-x-6 gap-y-6 border-y py-5 sm:grid-cols-[repeat(auto-fit,minmax(9rem,1fr))] ${tone === "stage" ? "border-stage-line" : "border-line"} ${dense ? DENSE : ""} ${className}`}
     >
       {children}
     </dl>

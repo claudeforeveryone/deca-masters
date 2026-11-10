@@ -3,6 +3,10 @@ import type { BankExam } from "../../../api/questions";
 import { Button } from "../../../components/ui/Button";
 import { Checkbox, Select } from "../../../components/ui/Inputs";
 import { FilterChips } from "../../../components/ui/Navigation";
+import {
+  PhoneActionBar,
+  useOnScreen,
+} from "../../../components/ui/PhoneActionBar";
 import { EXAM_FORMAT } from "../../../lib/examTiming";
 import {
   MODES,
@@ -42,6 +46,11 @@ export function ModePanel({
         ? countChoices(areaCount)
         : [];
   const size = Math.min(opts.count ?? 20, sizes.at(-1) ?? 0);
+
+  // On a phone the Start row sits about three screens down, under both pickers. While it is off the screen a slim
+  // bar above the tab bar carries the same summary and Start, so a member who keeps their last exam and mode starts
+  // without scrolling.
+  const [startRow, startInView] = useOnScreen<HTMLDivElement>();
 
   return (
     <div className="grid min-w-0 gap-6">
@@ -134,7 +143,10 @@ export function ModePanel({
         )}
       </div>
 
-      <div className="grid gap-4 border-t border-line pt-5 sm:grid-cols-[1fr_auto] sm:items-center">
+      <div
+        ref={startRow}
+        className="grid gap-4 border-t border-line pt-5 sm:grid-cols-[1fr_auto] sm:items-center"
+      >
         <p className="text-ink-2" aria-live="polite">
           {plan.problem ?? plan.summary}
         </p>
@@ -157,6 +169,21 @@ export function ModePanel({
           </p>
         ) : null}
       </div>
+
+      <PhoneActionBar show={!startInView}>
+        <p className="min-w-0 flex-1 text-sm leading-snug text-ink-2">
+          {plan.problem ?? plan.summary}
+        </p>
+        <Button
+          onClick={onStart}
+          busy={starting}
+          disabled={!!plan.problem}
+          className="shrink-0"
+        >
+          <Play aria-hidden="true" className="size-4.5" />
+          {starting ? "Starting" : "Start"}
+        </Button>
+      </PhoneActionBar>
     </div>
   );
 }

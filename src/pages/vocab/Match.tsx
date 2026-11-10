@@ -4,6 +4,7 @@ import { track } from "../../api/track";
 import { Button } from "../../components/ui/Button";
 import { FilterChips, StatRow, StatTile } from "../../components/ui/Navigation";
 import type { ExamSlug, VocabTerm } from "../../lib/content";
+import { isPhoneWidth, usePhoneFocus } from "../../lib/viewport";
 import { Credit, SessionPanel } from "./parts";
 import { buildMatchBoard, matchReducer, shuffled } from "./study";
 
@@ -21,7 +22,10 @@ function formatRace(ms: number): string {
  */
 export function Match({ deck, terms }: { deck: ExamSlug; terms: VocabTerm[] }) {
   const max = Math.min(8, terms.length);
-  const [pairs, setPairs] = useState(Math.min(6, max));
+  // Six pairs of full definitions run past a phone screen, and scrolling a timed board costs seconds: start at four.
+  const [pairs, setPairs] = useState(() =>
+    Math.min(isPhoneWidth() ? 4 : 6, max),
+  );
   const [round, setRound] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [best, setBest] = useState<Record<number, number>>({});
@@ -118,6 +122,8 @@ function Board({
   const [now, setNow] = useState(() => performance.now());
   const [final, setFinal] = useState<number | null>(null);
   const [announce, setAnnounce] = useState("");
+  // On a phone the board opens under the deck header; bring it up so as much of it as possible is in reach.
+  const boardRef = usePhoneFocus<HTMLDivElement>();
 
   useEffect(() => {
     if (state.done) return;
@@ -191,7 +197,7 @@ function Board({
     );
 
   return (
-    <div className="grid gap-4">
+    <div ref={boardRef} className="grid gap-4 max-sm:gap-3">
       <div className="flex flex-wrap items-baseline justify-between gap-3">
         <p
           className="font-mono text-data leading-none font-semibold tabular-nums"
@@ -207,7 +213,7 @@ function Board({
       <p aria-live="polite" className="sr-only">
         {announce}
       </p>
-      <ul className="grid grid-cols-2 gap-2.5 md:grid-cols-4">
+      <ul className="grid grid-cols-2 gap-2.5 max-sm:gap-2 md:grid-cols-4">
         {state.tiles.map((tile) => {
           const cleared = state.cleared.includes(tile.pair);
           const selected = state.selected === tile.key;
@@ -219,7 +225,7 @@ function Board({
                 disabled={cleared}
                 aria-pressed={selected}
                 onClick={() => dispatch({ type: "pick", key: tile.key })}
-                className={`flex h-full min-h-24 w-full items-center rounded-sm border px-3 py-3 text-left transition-[background-color,border-color,opacity] duration-(--dur-2) disabled:cursor-default ${
+                className={`flex h-full min-h-24 w-full items-center rounded-sm border px-3 py-3 text-left max-sm:min-h-20 max-sm:px-2.5 max-sm:py-2 transition-[background-color,border-color,opacity] duration-(--dur-2) disabled:cursor-default ${
                   cleared
                     ? "border-transparent bg-transparent opacity-0"
                     : selected
@@ -227,7 +233,7 @@ function Board({
                       : missed
                         ? "border-bad bg-bad-surface text-ink motion-safe:animate-[tile-miss_var(--dur-3)_var(--ease-out)]"
                         : "border-line-strong bg-surface text-ink hover:border-accent"
-                } ${tile.kind === "term" ? "font-semibold" : "text-sm leading-snug"}`}
+                } ${tile.kind === "term" ? "font-semibold max-sm:text-[0.9375rem] max-sm:leading-snug" : "text-sm leading-snug max-sm:text-[0.8125rem]"}`}
               >
                 <span className="sr-only">
                   {tile.kind === "term" ? "Term:" : "Definition:"}

@@ -95,7 +95,7 @@ export function Tabs({
         ref={listRef}
         role="tablist"
         aria-label={label}
-        className={`flex gap-1 overflow-x-auto border-b [scrollbar-width:none] ${stage ? "border-stage-line" : "border-line"} ${listClassName}`}
+        className={`flex overflow-x-auto border-b sm:gap-1 [scrollbar-width:none] ${stage ? "border-stage-line" : "border-line"} ${listClassName}`}
       >
         {tabs.map((t, i) => {
           const on = t.id === current?.id;
@@ -113,7 +113,7 @@ export function Tabs({
               tabIndex={on ? 0 : -1}
               onClick={() => select(t.id)}
               onKeyDown={(e) => onKeyDown(e, i)}
-              className={`relative inline-flex min-h-11 shrink-0 items-center gap-2 px-3 text-[0.95rem] whitespace-nowrap transition-colors duration-(--dur-1) after:absolute after:inset-x-2 after:-bottom-px after:h-0.5 after:origin-center after:transition-transform after:duration-(--dur-2) after:ease-out focus-visible:-outline-offset-2 [&_svg]:size-4.5 ${
+              className={`relative inline-flex min-h-11 shrink-0 items-center gap-2 px-2 text-[0.95rem] sm:px-3 whitespace-nowrap transition-colors duration-(--dur-1) after:absolute after:inset-x-2 after:-bottom-px after:h-0.5 after:origin-center after:transition-transform after:duration-(--dur-2) after:ease-out focus-visible:-outline-offset-2 [&_svg]:size-4.5 ${
                 stage
                   ? `after:bg-electric ${on ? "font-semibold text-on-navy after:scale-x-100" : "text-on-navy-2 after:scale-x-0 hover:text-on-navy"}`
                   : `after:bg-accent ${on ? "font-semibold text-ink after:scale-x-100" : "text-ink-2 after:scale-x-0 hover:text-ink"}`
