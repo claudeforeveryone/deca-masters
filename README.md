@@ -53,4 +53,4 @@ jsdom, lucide-react (the only icon set), three + React Three Fiber 9 + drei 10 +
   gradients, no glass, no emoji icons; reduced motion respected; 44px touch targets; visible focus.
 - DECA's diamond logo and trade dress are not used: they are reserved for chartered associations and chapters.
 
-Built with love by Joseph & Kaden.
+Made by Joseph and Kaden.

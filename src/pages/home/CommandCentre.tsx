@@ -146,10 +146,9 @@ function Centre({ profile, user }: { profile: Profile; user: User }) {
   return (
     <div>
       <PageHeader
-        title="Command centre"
+        title={`Hi, ${profile.display_name}`}
         lede={
           <>
-            Hi {profile.display_name}.{" "}
             {mainEvent ? (
               <>
                 Main event:{" "}

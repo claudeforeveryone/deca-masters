@@ -3,7 +3,10 @@ import {
   ClipboardCheck,
   House,
   ListChecks,
-  UserRound,
+  ListOrdered,
+  SlidersHorizontal,
+  Timer,
+  TrendingUp,
   type LucideIcon,
 } from "lucide-react";
 
@@ -18,15 +21,20 @@ export const DESKTOP_NAV = [
   { to: "/leaderboard", label: "Leaderboard" },
 ] as const;
 
-export const PHONE_NAV: {
-  to: string;
-  label: string;
-  Icon: LucideIcon;
-  end: boolean;
-}[] = [
+type PhoneItem = { to: string; label: string; Icon: LucideIcon; end: boolean };
+
+// The phone tab bar holds four tabs and a More button. Everything in DESKTOP_NAV has to be in one of the two lists
+// (nav.test.ts checks), so no section is ever desktop-only.
+export const PHONE_NAV: PhoneItem[] = [
   { to: "/", label: "Home", Icon: House, end: true },
-  { to: "/events", label: "Events", Icon: ListChecks, end: false },
   { to: "/practice", label: "Practice", Icon: ClipboardCheck, end: false },
+  { to: "/roleplay", label: "Role play", Icon: Timer, end: false },
   { to: "/vocab", label: "Vocab", Icon: BookOpen, end: false },
-  { to: "/me", label: "Me", Icon: UserRound, end: false },
+];
+
+export const PHONE_MORE: PhoneItem[] = [
+  { to: "/quiz", label: "Quiz", Icon: SlidersHorizontal, end: false },
+  { to: "/events", label: "Events", Icon: ListChecks, end: false },
+  { to: "/progress", label: "Progress", Icon: TrendingUp, end: false },
+  { to: "/leaderboard", label: "Leaderboard", Icon: ListOrdered, end: false },
 ];

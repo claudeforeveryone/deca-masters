@@ -143,7 +143,7 @@ export function recommendNext(input: NextInput): NextAction {
     return {
       id: "first-run",
       title: examTitle
-        ? `Start with the ${examTitle} exam`
+        ? `Start with the ${examTitle.replace(/\s+exam$/i, "")} exam`
         : "Start your first practice set",
       why: "Nothing is graded yet. One set puts real numbers on this board.",
       to: practiceTo,

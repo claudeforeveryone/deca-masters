@@ -1,4 +1,5 @@
 import {
+  Ellipsis,
   Gauge,
   LogIn,
   LogOut,
@@ -23,7 +24,7 @@ import { Menu, type MenuItem } from "../ui/Popover";
 import { Kbd } from "../ui/Tag";
 import { ToastProvider } from "../ui/Toast";
 import { Footer } from "./Footer";
-import { DESKTOP_NAV, PHONE_NAV } from "./nav";
+import { DESKTOP_NAV, PHONE_MORE, PHONE_NAV } from "./nav";
 import { RouteMeta } from "./RouteMeta";
 import { useShellCommands } from "./shellCommands";
 import { Wordmark } from "./Wordmark";
@@ -276,7 +277,23 @@ function AccountMenu({ email }: { email: string }) {
   );
 }
 
+const TAB =
+  "relative flex flex-1 flex-col items-center justify-center gap-1 text-xs font-semibold no-underline before:absolute before:inset-x-5 before:-top-px before:h-0.5 before:bg-accent before:transition-transform before:duration-(--dur-2)";
+const TAB_ON = "text-link before:scale-x-100";
+const TAB_OFF = "text-ink-3 before:scale-x-0";
+
 function PhoneTabs() {
+  const { pathname } = useLocation();
+  // The More tab reads as current on any page it leads to, so the bar always shows where you are.
+  const inMore = PHONE_MORE.some(
+    (m) => pathname === m.to || pathname.startsWith(`${m.to}/`),
+  );
+  const more: MenuItem[] = PHONE_MORE.map(({ to, label, Icon }) => ({
+    kind: "link",
+    label,
+    to,
+    icon: <Icon aria-hidden="true" />,
+  }));
   return (
     <>
       {/* reserves the tab bar's height so the footer is never hidden behind it */}
@@ -295,11 +312,7 @@ function PhoneTabs() {
                 to={to}
                 end={end}
                 className={({ isActive }) =>
-                  `relative flex flex-1 flex-col items-center justify-center gap-1 text-xs font-semibold no-underline before:absolute before:inset-x-5 before:-top-px before:h-0.5 before:bg-accent before:transition-transform before:duration-(--dur-2) ${
-                    isActive
-                      ? "text-link before:scale-x-100"
-                      : "text-ink-3 before:scale-x-0"
-                  }`
+                  `${TAB} ${isActive ? TAB_ON : TAB_OFF}`
                 }
               >
                 <Icon aria-hidden="true" className="size-5" />
@@ -307,6 +320,23 @@ function PhoneTabs() {
               </NavLink>
             </li>
           ))}
+          <li className="flex">
+            <Menu
+              label="More pages"
+              placement="top-end"
+              items={more}
+              trigger={(p) => (
+                <button
+                  type="button"
+                  {...p}
+                  className={`${TAB} cursor-pointer ${inMore || p["aria-expanded"] ? TAB_ON : TAB_OFF}`}
+                >
+                  <Ellipsis aria-hidden="true" className="size-5" />
+                  More
+                </button>
+              )}
+            />
+          </li>
         </ul>
       </nav>
     </>

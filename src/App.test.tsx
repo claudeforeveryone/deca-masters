@@ -41,7 +41,7 @@ describe("route map, signed out", () => {
     expect(signIn.length).toBe(2);
     for (const link of signIn) expect(link.getAttribute("href")).toBe("/login");
     const footer = screen.getByRole("contentinfo");
-    expect(footer.textContent).toMatch(/Built with.*by Joseph & Kaden/);
+    expect(footer.textContent).toMatch(/Made by Joseph and Kaden/);
     expect(footer.textContent).toMatch(/not affiliated with DECA Inc/);
     expect(footer.textContent).toMatch(/not affiliated with DECA Inc/);
     expect(
