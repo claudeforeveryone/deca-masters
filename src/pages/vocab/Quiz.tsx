@@ -266,7 +266,7 @@ function Run({
                           : "border-line-strong bg-surface text-ink hover:border-accent"
                   }`}
                 >
-                  <Kbd className="mt-0.5 hidden sm:inline-flex">{i + 1}</Kbd>
+                  <Kbd className="mt-0.5 max-sm:hidden">{i + 1}</Kbd>
                   <span
                     className={`min-w-0 flex-1 ${direction === "definition" ? "font-semibold" : ""}`}
                   >
