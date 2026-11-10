@@ -209,14 +209,6 @@ export function Board({
 
   return (
     <>
-      <div
-        aria-hidden="true"
-        className={`hidden border-b border-line pb-2 text-micro font-semibold text-ink-3 lg:grid-cols-[12rem_minmax(0,1.15fr)_minmax(0,1fr)_9.5rem_2.75rem] lg:gap-x-6 ${arranging ? "" : "lg:grid"}`}
-      >
-        <span>Module</span>
-        <span>Reading</span>
-        <span>Trace</span>
-      </div>
       <ol ref={listRef} className="relative" aria-label="Your board">
         {views.map((v, index) => {
           const isOpen =

@@ -55,7 +55,8 @@ faked. (inferred from the README rules and the content policy)
 - Name "DECA Masters". Independent, not affiliated with or endorsed by DECA Inc.; say so in the footer.
 - Do not use or alter DECA's diamond logo or trade dress (DECA's Acceptable Use Policy reserves it for chartered
   associations and chapters).
-- Footer credit: "Built with <heart icon> by Joseph & Kaden", Terms and Privacy links.
+- Footer credit: "Made by Joseph and Kaden, two DECA members." (plain line, no heart icon: house design guide,
+  2026-11-09), Terms and Privacy links.
 - Visual direction pinned by the Omega brief: "The Competition Terminal" (deep navy, electric blue, refined white,
   purposeful glass and metal, diamond-inspired geometry that is not the logo) and the 3D "DECA Strategy Universe".
   It must be clearly different from FBLA's gold/glass Leadership Observatory.

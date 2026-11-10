@@ -1,4 +1,3 @@
-import { Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../lib/auth";
 import { useFeedback } from "../feedback/Feedback";
@@ -66,14 +65,8 @@ export function Footer() {
         </nav>
       </div>
       <div className="border-t border-white/10">
-        <p className="shell flex flex-wrap items-center gap-x-2 py-4 text-[13px] text-[#b4b4b4]">
-          Built with
-          <Heart
-            aria-label="love"
-            role="img"
-            className="size-4 fill-current text-electric"
-          />
-          by Joseph &amp; Kaden
+        <p className="shell py-4 text-[13px] text-[#b4b4b4]">
+          Made by Joseph and Kaden, two DECA members.
         </p>
       </div>
     </footer>
