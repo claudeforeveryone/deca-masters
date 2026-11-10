@@ -202,7 +202,7 @@ export function DeckPage() {
           </details>
         ) : null}
         {showProgress ? (
-          <StatRow className="mt-6">
+          <StatRow dense className="mt-6 max-sm:mt-3">
             <StatTile label="New" value={stats.fresh} />
             <StatTile label="Learning" value={stats.learning} />
             <StatTile label="Reviewing" value={stats.review} />

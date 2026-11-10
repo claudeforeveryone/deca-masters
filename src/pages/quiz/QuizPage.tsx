@@ -17,6 +17,10 @@ import { Checkbox, Select } from "../../components/ui/Inputs";
 import { FilterChips } from "../../components/ui/Navigation";
 import { Notice } from "../../components/ui/Notice";
 import { PageHeader } from "../../components/ui/PageHeader";
+import {
+  PhoneActionBar,
+  useOnScreen,
+} from "../../components/ui/PhoneActionBar";
 import { RouteFallback } from "../../components/layout/RouteFallback";
 import {
   loadPastExams,
@@ -81,6 +85,8 @@ export function QuizPage() {
   );
   const [customCount, setCustomCount] = useState(false);
   const [starting, setStarting] = useState(false);
+  // The Start button closes a long form on a phone; while it is off the screen the same button rides above the tabs.
+  const [startRow, startInView] = useOnScreen<HTMLDivElement>();
   const [startError, setStartError] = useState<string | null>(null);
   const [emptyPick, setEmptyPick] = useState<string | null>(null);
   const intent = useRef<{ key: string; clientId: string } | null>(null);
@@ -521,16 +527,18 @@ export function QuizPage() {
             <p className="text-sm text-ink-2" aria-live="polite">
               {plan.problem ?? plan.summary}
             </p>
-            <Button
-              size="lg"
-              onClick={() => void start()}
-              busy={starting}
-              disabled={!!plan.problem}
-              className="w-full"
-            >
-              <Play aria-hidden="true" className="size-4.5" />
-              {starting ? "Starting" : "Start quiz"}
-            </Button>
+            <div ref={startRow}>
+              <Button
+                size="lg"
+                onClick={() => void start()}
+                busy={starting}
+                disabled={!!plan.problem}
+                className="w-full"
+              >
+                <Play aria-hidden="true" className="size-4.5" />
+                {starting ? "Starting" : "Start quiz"}
+              </Button>
+            </div>
             {startError ? (
               <p role="alert" className="text-sm font-semibold text-bad">
                 {startError}
@@ -540,6 +548,21 @@ export function QuizPage() {
           </div>
         </aside>
       </div>
+
+      <PhoneActionBar show={!startInView}>
+        <p className="min-w-0 flex-1 text-sm leading-snug text-ink-2">
+          {plan.problem ?? plan.summary}
+        </p>
+        <Button
+          onClick={() => void start()}
+          busy={starting}
+          disabled={!!plan.problem}
+          className="shrink-0"
+        >
+          <Play aria-hidden="true" className="size-4.5" />
+          {starting ? "Starting" : "Start quiz"}
+        </Button>
+      </PhoneActionBar>
     </>
   );
 }

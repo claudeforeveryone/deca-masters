@@ -47,6 +47,8 @@ function useScrollbarWidth() {
   }, []);
 }
 
+// The seven desktop links need about 1000px beside the wordmark, search and account (more when signed out, with
+// two buttons there), so the link row starts at lg. Below that, tablets included, the bottom tab bar does the job.
 /** Top bar (white with a hairline, as in the original DECA Masters), page column, footer, phone tab bar, the command palette and toasts. */
 export function AppShell({ children }: { children: ReactNode }) {
   return (
@@ -113,7 +115,7 @@ function TopBar({ onSearch }: { onSearch: () => void }) {
           <Wordmark />
         </Link>
 
-        <nav aria-label="Main" className="hidden min-w-0 flex-1 md:flex">
+        <nav aria-label="Main" className="hidden min-w-0 flex-1 lg:flex">
           <ul className="flex items-stretch gap-5 lg:gap-7 xl:gap-8">
             {DESKTOP_NAV.map((item) => (
               <li key={item.to} className="flex">
@@ -139,7 +141,7 @@ function TopBar({ onSearch }: { onSearch: () => void }) {
             type="button"
             onClick={onSearch}
             aria-label="Search pages, events and actions"
-            className="hidden min-h-10 items-center gap-2.5 rounded-sm border border-line px-3 text-sm text-ink-3 transition-colors duration-(--dur-1) hover:border-line-strong hover:text-ink md:inline-flex"
+            className="hidden min-h-10 items-center gap-2.5 rounded-sm border border-line px-3 text-sm text-ink-3 transition-colors duration-(--dur-1) hover:border-line-strong hover:text-ink lg:inline-flex"
           >
             <Search aria-hidden="true" className="size-4.5" />
             <span className="hidden xl:inline">Search</span>
@@ -147,7 +149,7 @@ function TopBar({ onSearch }: { onSearch: () => void }) {
               {shortcut}
             </Kbd>
           </button>
-          <span className="md:hidden">
+          <span className="lg:hidden">
             <IconButton
               label="Search pages, events and actions"
               icon={<Search aria-hidden="true" />}
@@ -177,8 +179,9 @@ function SignedOutActions() {
         <LogIn aria-hidden="true" className="size-4.5 sm:hidden" />
         Sign in
       </Link>
-      {/* The wrapper owns visibility: buttonClass sets inline-flex, which would beat a `hidden` passed to it. */}
-      <span className="hidden sm:flex">
+      {/* The wrapper owns visibility: buttonClass sets inline-flex, which would beat a `hidden` passed to it.
+          From lg to xl the link row needs the room, so the button steps aside; Sign in leads to it. */}
+      <span className="hidden sm:flex lg:hidden xl:flex">
         <Link to="/signup" className={buttonClass("primary", "px-4", "sm")}>
           Create an account
         </Link>
@@ -303,11 +306,11 @@ function PhoneTabs() {
       {/* reserves the tab bar's height so the footer is never hidden behind it */}
       <div
         aria-hidden="true"
-        className="h-[calc(var(--tabbar-h)+env(safe-area-inset-bottom))] md:hidden"
+        className="h-[calc(var(--tabbar-h)+env(safe-area-inset-bottom))] lg:hidden"
       />
       <nav
         aria-label="Primary"
-        className="fixed inset-x-0 bottom-0 z-(--z-bar) border-t border-line bg-surface pb-[env(safe-area-inset-bottom)] md:hidden"
+        className="fixed inset-x-0 bottom-0 z-(--z-bar) border-t border-line bg-surface pb-[env(safe-area-inset-bottom)] lg:hidden"
       >
         <ul className="grid h-(--tabbar-h) grid-cols-5">
           {PHONE_NAV.map(({ to, label, Icon, end }) => (

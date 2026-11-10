@@ -225,22 +225,23 @@ function Pile({
         </span>
         {!flipped ? (
           <span className="mt-6 inline-flex items-center justify-center gap-2 text-sm text-ink-3">
-            Tap to flip <Kbd className="hidden sm:inline-flex">Space</Kbd>
+            Tap to flip <Kbd className="max-sm:hidden">Space</Kbd>
           </span>
         ) : null}
       </button>
-      <div className="flex flex-wrap items-center justify-between gap-3">
+      {/* Pinned above the phone tab bar: a long definition would otherwise push Missed it and Knew it off the screen. */}
+      <div className="sticky bottom-[calc(var(--tabbar-h)+env(safe-area-inset-bottom))] z-10 -mx-(--gutter) flex flex-wrap items-center justify-between gap-3 border-t border-line bg-canvas px-(--gutter) py-3 lg:static lg:mx-0 lg:border-t-0 lg:bg-transparent lg:p-0">
         {flipped ? (
           <div className="flex flex-wrap gap-3">
             <Button variant="secondary" onClick={() => grade(false)}>
               <X aria-hidden="true" className="size-4.5" />
               Missed it
-              <Kbd className="hidden sm:inline-flex">1</Kbd>
+              <Kbd className="max-sm:hidden">1</Kbd>
             </Button>
             <Button onClick={() => grade(true)}>
               <Check aria-hidden="true" className="size-4.5" />
               Knew it
-              <Kbd className="hidden border-white/30 bg-white/15 text-on-accent sm:inline-flex">
+              <Kbd className="border-white/30 bg-white/15 text-on-accent max-sm:hidden">
                 2
               </Kbd>
             </Button>

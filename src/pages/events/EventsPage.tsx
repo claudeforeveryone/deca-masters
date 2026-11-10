@@ -616,7 +616,7 @@ function EventRow({
         <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-2">
           {e.components.map((c) => COMPONENT_LABELS[c] ?? c).join(", ")}
           {mine >= 0 ? (
-            <Tag tone="accent" className="hidden md:inline-flex">
+            <Tag tone="accent" className="max-md:hidden">
               {mine === 0 ? "Main event" : "Your event"}
             </Tag>
           ) : null}
@@ -716,7 +716,7 @@ function CompareTray({
     <div
       role="region"
       aria-label="Compare events"
-      className="fixed inset-x-0 bottom-[calc(var(--tabbar-h)+env(safe-area-inset-bottom))] z-(--z-bar) border-t border-stage-line bg-navy-deep text-on-navy shadow-(--edge-highlight) md:bottom-0"
+      className="fixed inset-x-0 bottom-[calc(var(--tabbar-h)+env(safe-area-inset-bottom))] z-(--z-bar) border-t border-stage-line bg-navy-deep text-on-navy shadow-(--edge-highlight) lg:bottom-0"
     >
       <div className="shell flex flex-wrap items-center gap-x-4 gap-y-2 py-3">
         <p className="text-sm text-on-navy-2">

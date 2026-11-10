@@ -8,6 +8,7 @@ import {
   Flag,
   X,
 } from "lucide-react";
+import { useEffect, useRef } from "react";
 import type { Choice } from "../../../api/practice";
 import type { QuestionPublic } from "../../../api/questions";
 import { Button } from "../../../components/ui/Button";
@@ -112,6 +113,28 @@ export function QuestionPanel({
   const canCheck = feedback && chosen !== null && !locked;
   const headingId = `q-${qid}`;
 
+  // Checking an answer adds the result under the choices, often below the fold on a phone: bring it into view. Not
+  // for a question that opens already checked (this panel remounts for each question).
+  const hasResult = locked && answer?.correctChoice !== undefined;
+  const resultRef = useRef<HTMLDivElement>(null);
+  const shownResult = useRef(hasResult);
+  useEffect(() => {
+    if (!hasResult || shownResult.current) return;
+    shownResult.current = true;
+    const calm =
+      typeof window.matchMedia === "function" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const box = resultRef.current;
+    if (!box?.scrollIntoView) return;
+    // A long explanation is taller than the space between the bars: start at its first line (which names the
+    // answer) instead of landing mid-paragraph. A short one only needs to clear the bottom bar.
+    const tall = box.getBoundingClientRect().height > window.innerHeight * 0.55;
+    box.scrollIntoView({
+      block: tall ? "start" : "nearest",
+      behavior: calm ? "auto" : "smooth",
+    });
+  }, [hasResult]);
+
   return (
     <article aria-labelledby={headingId} className="grid gap-6">
       <header className="flex flex-wrap items-center gap-x-3 gap-y-2">
@@ -197,8 +220,9 @@ export function QuestionPanel({
 
       {locked && answer?.correctChoice !== undefined ? (
         <div
+          ref={resultRef}
           role="status"
-          className={`grid gap-2 rounded border px-4 py-4 ${answer.correct ? "border-good/40 bg-good-surface" : "border-bad/40 bg-bad-surface"}`}
+          className={`grid scroll-mt-28 scroll-mb-[calc(var(--tabbar-h)+5.5rem)] gap-2 rounded border px-4 py-4 lg:scroll-mb-6 ${answer.correct ? "border-good/40 bg-good-surface" : "border-bad/40 bg-bad-surface"}`}
         >
           <p className="flex items-center gap-2 font-semibold">
             {answer.correct ? (
@@ -225,10 +249,12 @@ export function QuestionPanel({
 
       {question ? <Credit source={question.source} /> : null}
 
-      <div className="flex flex-wrap items-center gap-2 border-t border-line pt-5">
+      {/* On a phone the bar stays above the tab bar, so Check answer and Next never sit below the fold; the side
+          buttons drop to icons there to keep it on one line. */}
+      <div className="sticky bottom-[calc(var(--tabbar-h)+env(safe-area-inset-bottom))] z-10 -mx-(--gutter) flex items-center gap-2 border-t border-line bg-canvas px-(--gutter) py-3 lg:static lg:mx-0 lg:flex-wrap lg:px-0 lg:pt-5 lg:pb-0">
         <Button variant="secondary" onClick={onPrev} disabled={index === 0}>
           <ChevronLeft aria-hidden="true" className="size-4.5" />
-          Previous
+          <span className="max-sm:sr-only">Previous</span>
         </Button>
         <Button
           variant="secondary"
@@ -238,12 +264,12 @@ export function QuestionPanel({
           className={flagged ? "border-warn! text-warn!" : ""}
         >
           <Flag aria-hidden="true" className="size-4.5" />
-          {flagged ? "Flagged" : "Flag"}
+          <span className="max-sm:sr-only">{flagged ? "Flagged" : "Flag"}</span>
         </Button>
         {chosen !== null && !locked ? (
           <Button variant="quiet" onClick={onClear}>
             <Eraser aria-hidden="true" className="size-4" />
-            Clear
+            <span className="max-sm:sr-only">Clear</span>
           </Button>
         ) : null}
         <span className="ml-auto">
@@ -262,7 +288,7 @@ export function QuestionPanel({
         </span>
       </div>
 
-      <p className="hidden flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-3 md:flex">
+      <p className="hidden flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-3 lg:flex">
         <Kbd>A</Kbd>-<Kbd>D</Kbd> or <Kbd>1</Kbd>-<Kbd>4</Kbd> to answer,
         <Kbd>F</Kbd> to flag, <Kbd>←</Kbd> <Kbd>→</Kbd> to move,
         <Kbd>Enter</Kbd> to {feedback ? "check or go on" : "go on"}.

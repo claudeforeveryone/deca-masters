@@ -183,7 +183,7 @@ One navy family, one electric light, and a refined white for the working pages.
 
 ## Layout
 
-One page column (76rem max, gutters 16px on phones, 24px from 640px, 32px from 1024px) under a 56px navy bar; phones add a 60px bottom tab bar. The landing runs edge to edge: each section is a full-bleed band (main keeps its box; the band reaches the viewport edges minus the scrollbar) with its own column inside, separated by stage hairlines, 64px of section padding (96px from 1024px). Two-column splits are asymmetric (about 4:7 for text beside a tool window; 1:1 for the explorer, with the structure sticky on wide screens). Tables become definition-list blocks on phones rather than scrolling. The scrollbar gutter is reserved so pages never shift sideways as they grow.
+One page column (76rem max, gutters 16px on phones, 24px from 640px, 32px from 1024px) under a 56px navy bar; below 1024px (phones and tablets) the link row gives way to a 60px bottom tab bar. The landing runs edge to edge: each section is a full-bleed band (main keeps its box; the band reaches the viewport edges minus the scrollbar) with its own column inside, separated by stage hairlines, 64px of section padding (96px from 1024px). Two-column splits are asymmetric (about 4:7 for text beside a tool window; 1:1 for the explorer, with the structure sticky on wide screens). Tables become definition-list blocks on phones rather than scrolling. The scrollbar gutter is reserved so pages never shift sideways as they grow.
 
 ## Elevation & Depth
 
@@ -230,7 +230,7 @@ Hard-edged and machined: 2px on controls (buttons, inputs, tags, chips), 4px on 
 
 ### Navigation
 
-- **Top bar:** stage navy, 56px, wordmark, main nav with an electric underline on the current route, the command palette trigger (Ctrl or Cmd K, and /) and an account menu. **Phone:** a 60px bottom tab bar with a 2px electric marker over the current tab.
+- **Top bar:** stage navy, 56px, wordmark, main nav with an electric underline on the current route, the command palette trigger (Ctrl or Cmd K, and /) and an account menu. **Below 1024px:** a 60px bottom tab bar with a 2px electric marker over the current tab. On those screens the action row of a run, the flashcard buttons and the Start bar on Practice and Quiz pin just above it.
 - **Command palette:** a native dialog with a combobox; pages, events (searchable by code) and actions.
 
 ### The Strategy Universe (signature)

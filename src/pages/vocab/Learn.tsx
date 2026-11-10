@@ -18,6 +18,7 @@ import {
   weakestQueue,
 } from "./study";
 import type { DeckProgress } from "./useDeckProgress";
+import { usePhoneFocus } from "../../lib/viewport";
 
 type Mode = "srs" | "drill";
 
@@ -99,7 +100,7 @@ export function Learn({
                 ? `${due} due ${due === 1 ? "review" : "reviews"}. Clear them before they pile up.`
                 : `${fresh} new ${fresh === 1 ? "term" : "terms"} to learn.`}
           </p>
-          <StatRow className="mt-5">
+          <StatRow dense className="mt-5">
             <StatTile label="Due" value={due} />
             <StatTile label="New" value={fresh} />
             <StatTile
@@ -182,6 +183,7 @@ function Session({
   drill: boolean;
   onAgain: () => void;
 }) {
+  const rootRef = usePhoneFocus<HTMLDivElement>();
   const [items, setItems] = useState<Item[]>(() =>
     initial.map((term) => ({ term, attempt: 0 })),
   );
@@ -315,7 +317,7 @@ function Session({
       : null;
 
   return (
-    <div className="mx-auto grid max-w-2xl gap-5">
+    <div ref={rootRef} className="mx-auto grid max-w-2xl gap-5">
       <ProgressBar
         value={cleared}
         max={total}
@@ -362,7 +364,7 @@ function Session({
                             : "border-line-strong bg-surface text-ink hover:border-accent"
                     }`}
                   >
-                    <Kbd className="hidden sm:inline-flex">{i + 1}</Kbd>
+                    <Kbd className="max-sm:hidden">{i + 1}</Kbd>
                     <span className="min-w-0 flex-1 font-semibold">
                       {o.term}
                     </span>
@@ -388,11 +390,11 @@ function Session({
                 onClick={() => (answer(false), advance())}
               >
                 <X aria-hidden="true" className="size-4.5" />I missed it
-                <Kbd className="hidden sm:inline-flex">1</Kbd>
+                <Kbd className="max-sm:hidden">1</Kbd>
               </Button>
               <Button onClick={() => (answer(true), advance())}>
                 <Check aria-hidden="true" className="size-4.5" />I had it
-                <Kbd className="hidden border-white/30 bg-white/15 text-on-accent sm:inline-flex">
+                <Kbd className="border-white/30 bg-white/15 text-on-accent max-sm:hidden">
                   2
                 </Kbd>
               </Button>
@@ -406,7 +408,7 @@ function Session({
           >
             <Eye aria-hidden="true" className="size-4.5" />
             Show the term
-            <Kbd className="hidden sm:inline-flex">Space</Kbd>
+            <Kbd className="max-sm:hidden">Space</Kbd>
           </Button>
         )}
 
